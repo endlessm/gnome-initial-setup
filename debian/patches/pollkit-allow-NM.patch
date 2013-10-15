@@ -1,0 +1,10 @@
+--- a/data/20-gnome-initial-setup.rules
++++ b/data/20-gnome-initial-setup.rules
+@@ -11,6 +11,7 @@
+ 
+     var actionMatches = (action.id === 'org.freedesktop.udisks2.filesystem-mount-system' ||
+                          action.id.indexOf('org.freedesktop.hostname1.') === 0 ||
++                         action.id.indexOf('org.freedesktop.NetworkManager.') === 0 ||
+                          action.id.indexOf('org.freedesktop.locale1.') === 0 ||
+                          action.id.indexOf('org.freedesktop.accounts.') === 0 ||
+                          action.id.indexOf('org.freedesktop.timedate1.') === 0 ||
