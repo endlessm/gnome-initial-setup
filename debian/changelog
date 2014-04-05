@@ -1,4 +1,4 @@
-gnome-initial-setup (0.12-1) UNRELEASED; urgency=low
+gnome-initial-setup (3.12.0-1) UNRELEASED; urgency=low
 
   [ Javier Martinez ]
   * Initial release.
@@ -7,4 +7,11 @@ gnome-initial-setup (0.12-1) UNRELEASED; urgency=low
   * debian/patches/pollkit-allow-NM.patch:
     - Added. Allow the gnome-initial-setup user to control the network
 
- -- Sjoerd Simons <sjoerd@debian.org>  Tue, 13 Aug 2013 09:29:47 +0200
+  [ Jordi Mallach ]
+  * New upstream release.
+  * Update Build-Depends as per configure.ac.
+  * Add missing GPL-2+ license to copyright.
+  * Add missing ${shlibs:Depends} substitution variable.
+  * Add dependency on adduser.
+
+ -- Jordi Mallach <jordi@debian.org>  Fri, 04 Apr 2014 22:43:24 +0200
