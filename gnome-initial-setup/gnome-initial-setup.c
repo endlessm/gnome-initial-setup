@@ -231,6 +231,19 @@ rebuild_pages_cb (GisDriver *driver)
   g_strfreev (skip_pages);
 }
 
+static gboolean
+is_running_as_user (const gchar *username)
+{
+  struct passwd pw, *pwp;
+  char buf[4096];
+
+  getpwnam_r (username, &pw, buf, sizeof (buf), &pwp);
+  if (pwp == NULL)
+    return FALSE;
+
+  return pw.pw_uid == getuid ();
+}
+
 static GisDriverMode
 get_mode (void)
 {
@@ -283,6 +296,17 @@ main (int argc, char *argv[])
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
+  mode = get_mode ();
+  driver = gis_driver_new (mode);
+
+  /* If initial-setup has been automatically launched and this is the Shared
+     Account user, just quit quietly */
+  if (is_running_as_user ("shared")) {
+    gis_ensure_stamp_files (driver);
+    g_message ("Skipping gnome-initial-setup for shared user");
+    return EXIT_SUCCESS;
+  }
+
 #ifdef HAVE_CHEESE
   cheese_gtk_init (NULL, NULL);
 #endif
@@ -296,7 +320,6 @@ main (int argc, char *argv[])
     g_message ("Production mode: changes will be saved to disk");
 
   skipped_pages = g_ptr_array_new_with_free_func ((GDestroyNotify) gtk_widget_destroy);
-  mode = get_mode ();
 
   /* When we are running as the gnome-initial-setup user we
    * dont have a normal user session and need to initialize
@@ -305,8 +328,6 @@ main (int argc, char *argv[])
    */
   if (mode == GIS_DRIVER_MODE_NEW_USER && !gis_get_mock_mode ())
     gis_ensure_login_keyring ();
-
-  driver = gis_driver_new (mode);
 
   /* We only do this in existing-user mode, because if gdm launches us
    * in new-user mode and we just exit, gdm's special g-i-s session
