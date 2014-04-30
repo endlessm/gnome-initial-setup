@@ -174,6 +174,24 @@ gis_assistant_previous_page (GisAssistant *assistant)
 }
 
 static void
+update_accel_group (GisAssistant *assistant)
+{
+  GisPage *current_page = gis_assistant_get_current_page (assistant);
+  GtkWindow *window;
+  static GtkAccelGroup *accel_group = NULL;
+
+  window = GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (assistant)));
+
+/* Remove previous accel group */
+  if (accel_group)
+    gtk_window_remove_accel_group (window, accel_group);
+
+  accel_group = gis_page_get_accel_group (current_page);
+  if (accel_group)
+    gtk_window_add_accel_group (window, accel_group);
+}
+
+static void
 set_suggested_action_sensitive (GtkWidget *widget,
                                 gboolean   sensitive)
 {
@@ -380,6 +398,7 @@ update_current_page (GisAssistant *assistant,
   update_titlebar (assistant);
   update_applying_state (assistant);
   update_navigation_buttons (assistant);
+  update_accel_group (assistant);
 
   gtk_widget_grab_focus (assistant->forward);
 
