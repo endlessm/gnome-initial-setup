@@ -37,6 +37,7 @@ EXTRA_DIST =						\
 	gnome-initial-setup-copy-worker.desktop.in.in	\
 	gnome-initial-setup.session			\
 	initial-setup.json				\
+	product_serial.conf                             \
 	$(NULL)
 
 CLEANFILES =						\
@@ -58,3 +59,8 @@ autostart_DATA =					\
 
 libexec_SCRIPTS =						\
 	gnome-welcome-tour
+
+tmpfilesdir = $(libdir)/tmpfiles.d
+tmpfiles_DATA =                                         \
+	product_serial.conf                             \
+	$(NULL)
