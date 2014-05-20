@@ -126,3 +126,10 @@ configure_file(
 
 mode_dir = join_paths(data_dir, 'gnome-shell', 'modes')
 install_data('initial-setup.json', install_dir: mode_dir)
+
+systemd_dep = dependency ('systemd')
+
+install_data(
+    'product_serial.conf',
+    install_dir: systemd_dep.get_pkgconfig_variable('tmpfilesdir')
+)
