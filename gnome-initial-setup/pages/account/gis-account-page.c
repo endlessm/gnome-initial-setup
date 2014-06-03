@@ -1208,12 +1208,10 @@ gis_account_page_constructed (GObject *object)
   priv->has_enterprise = FALSE;
 
   priv->accel_group = gtk_accel_group_new ();
-  GClosure *closure = g_cclosure_new_swap (G_CALLBACK (switch_login_mode), page, NULL);
+  GClosure *closure = g_cclosure_new_object (G_CALLBACK (switch_login_mode), G_OBJECT (page));
 
   /* Use Ctrl+Alt+e to activate the enterprise login mode */
   gtk_accel_group_connect (priv->accel_group, GDK_KEY_e, GDK_CONTROL_MASK | GDK_MOD1_MASK, 0, closure);
-  g_closure_unref (closure);
- 
 
   /* force a refresh by setting to an invalid value */
   priv->mode = NUM_MODES;
