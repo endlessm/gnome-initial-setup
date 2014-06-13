@@ -62,6 +62,8 @@ PKG_CHECK_MODULES(INITIAL_SETUP,
                   json-glib-1.0
                   libsecret-1
                   pwquality
+                  evince-view-3.0
+                  evince-document-3.0
                   webkit2gtk-4.0)
 
 
@@ -147,6 +149,7 @@ gnome-initial-setup/pages/Makefile
 gnome-initial-setup/pages/language/Makefile
 gnome-initial-setup/pages/region/Makefile
 gnome-initial-setup/pages/keyboard/Makefile
+gnome-initial-setup/pages/endless-eula/Makefile
 gnome-initial-setup/pages/eulas/Makefile
 gnome-initial-setup/pages/network/Makefile
 gnome-initial-setup/pages/timezone/Makefile

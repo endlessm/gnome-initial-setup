@@ -3,6 +3,7 @@ SUBDIRS = \
 	language \
 	region \
 	keyboard \
+	endless-eula \
 	eulas \
 	network \
 	timezone \
