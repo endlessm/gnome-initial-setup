@@ -31,6 +31,8 @@ dependencies = [
     dependency ('polkit-gobject-1', version: '>= 0.103'),
     dependency ('accountsservice'),
     dependency ('gnome-desktop-3.0', version: '>= 3.7.5'),
+    dependency ('evince-document-3.0'),
+    dependency ('evince-view-3.0'),
     dependency ('fontconfig'),
     dependency ('gweather-3.0'),
     dependency ('goa-1.0'),
