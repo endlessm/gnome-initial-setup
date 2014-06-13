@@ -27,6 +27,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <glib/gi18n.h>
+#include <evince-document.h>
 
 #ifdef HAVE_CHEESE
 #include <cheese-gtk.h>
@@ -34,6 +35,7 @@
 
 #include "pages/language/gis-language-page.h"
 #include "pages/keyboard/gis-keyboard-page.h"
+#include "pages/endless-eula/gis-endless-eula-page.h"
 #include "pages/network/gis-network-page.h"
 #include "pages/timezone/gis-timezone-page.h"
 #include "pages/privacy/gis-privacy-page.h"
@@ -66,6 +68,7 @@ typedef struct {
 static PageData page_table[] = {
   PAGE (language, FALSE),
   PAGE (keyboard, FALSE),
+  PAGE (endless_eula, TRUE),
   PAGE (network,  FALSE),
   PAGE (privacy,  FALSE),
   PAGE (timezone, TRUE),
@@ -356,6 +359,7 @@ main (int argc, char *argv[])
 #endif
 
   gtk_init (&argc, &argv);
+  ev_init ();
 
   g_message ("Starting gnome-initial-setup");
   if (gis_get_mock_mode ())
@@ -385,6 +389,8 @@ main (int argc, char *argv[])
 
   g_object_unref (driver);
   g_option_context_free (context);
+  ev_shutdown ();
+
   return status;
 }
 

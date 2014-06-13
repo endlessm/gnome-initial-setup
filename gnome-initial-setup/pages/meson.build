@@ -2,6 +2,7 @@ pages = [
    'account',
    'language',
    'keyboard',
+   'endless-eula',
    'network',
    'timezone',
    'privacy',
