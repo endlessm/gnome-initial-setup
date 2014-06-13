@@ -30,6 +30,7 @@
 
 #include "cc-common-language.h"
 #include "gis-assistant.h"
+#include "gis-page-util.h"
 
 #define GIS_TYPE_DRIVER_MODE (gis_driver_mode_get_type ())
 
@@ -102,6 +103,8 @@ struct _GisDriverPrivate {
 
   const gchar *vendor_conf_file_path;
   GKeyFile *vendor_conf_file;
+
+  gchar *product_name;
 };
 typedef struct _GisDriverPrivate GisDriverPrivate;
 
@@ -154,6 +157,52 @@ running_live_session (void)
   return TRUE;
 }
 
+#define EOS_IMAGE_VERSION_PATH "/sysroot"
+#define EOS_IMAGE_VERSION_ALT_PATH "/"
+
+static char *
+get_image_version (void)
+{
+  g_autoptr(GError) error_sysroot = NULL;
+  g_autoptr(GError) error_root = NULL;
+  char *image_version =
+    gis_page_util_get_image_version (EOS_IMAGE_VERSION_PATH, &error_sysroot);
+
+  if (image_version == NULL)
+    image_version =
+      gis_page_util_get_image_version (EOS_IMAGE_VERSION_ALT_PATH, &error_root);
+
+  if (image_version == NULL)
+    {
+      g_warning ("%s", error_sysroot->message);
+      g_warning ("%s", error_root->message);
+    }
+
+  return image_version;
+}
+
+static gchar *
+get_product_from_image_version (const gchar *image_version)
+{
+  gchar *hyphen_index = NULL;
+
+  if (image_version == NULL)
+    return NULL;
+
+  hyphen_index = index (image_version, '-');
+  if (hyphen_index == NULL)
+    return NULL;
+
+  return g_strndup (image_version, hyphen_index - image_version);
+}
+
+const gchar *
+gis_driver_get_product_name (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  return priv->product_name;
+}
+
 static void
 gis_driver_dispose (GObject *object)
 {
@@ -173,6 +222,7 @@ gis_driver_finalize (GObject *object)
   GisDriver *driver = GIS_DRIVER (object);
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
 
+  g_free (priv->product_name);
   g_free (priv->lang_id);
   g_free (priv->username);
   g_free (priv->full_name);
@@ -953,6 +1003,7 @@ gis_driver_startup (GApplication *app)
   GisDriver *driver = GIS_DRIVER (app);
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   WebKitWebContext *context = webkit_web_context_get_default ();
+  g_autofree char *image_version = NULL;
 
   G_APPLICATION_CLASS (gis_driver_parent_class)->startup (app);
 
@@ -977,6 +1028,9 @@ gis_driver_startup (GApplication *app)
   gtk_container_add (GTK_CONTAINER (priv->main_window), GTK_WIDGET (priv->assistant));
 
   gtk_widget_show (GTK_WIDGET (priv->assistant));
+
+  image_version = get_image_version ();
+  priv->product_name = get_product_from_image_version (image_version);
 
   priv->is_live_session = running_live_session ();
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
