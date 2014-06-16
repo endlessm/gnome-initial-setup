@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[gnome-initial-setup.app]
+source_file = po/gnome-initial-setup.pot
+source_lang = en
+file_filter = po/<lang>.po
+type = PO
+
