@@ -35,6 +35,7 @@
 
 #include "pages/language/gis-language-page.h"
 #include "pages/keyboard/gis-keyboard-page.h"
+#include "pages/display/gis-display-page.h"
 #include "pages/endless-eula/gis-endless-eula-page.h"
 #include "pages/network/gis-network-page.h"
 #include "pages/timezone/gis-timezone-page.h"
@@ -68,6 +69,7 @@ typedef struct {
 static PageData page_table[] = {
   PAGE (language, FALSE),
   PAGE (keyboard, FALSE),
+  PAGE (display, TRUE),
   PAGE (endless_eula, TRUE),
   PAGE (network,  FALSE),
   /* PAGE (privacy,  FALSE), */
