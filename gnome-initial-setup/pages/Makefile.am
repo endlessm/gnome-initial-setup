@@ -3,6 +3,7 @@ SUBDIRS = \
 	language \
 	region \
 	keyboard \
+	display \
 	endless-eula \
 	eulas \
 	network \
