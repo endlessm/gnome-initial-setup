@@ -38,6 +38,7 @@ gnome_initial_setup_LDADD =	\
 	pages/language/libgislanguage.la \
 	pages/region/libgisregion.la \
 	pages/keyboard/libgiskeyboard.la \
+	pages/display/libgisdisplay.la \
 	pages/endless-eula/libgisendlesseula.la \
 	pages/eulas/libgiseulas.la \
 	pages/network/libgisnetwork.la \
