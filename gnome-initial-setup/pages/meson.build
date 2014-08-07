@@ -1,5 +1,6 @@
 pages = [
    'account',
+   'display',
    'language',
    'keyboard',
    'endless-eula',
