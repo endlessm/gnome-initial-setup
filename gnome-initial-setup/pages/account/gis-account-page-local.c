@@ -313,6 +313,7 @@ fullname_changed (GtkWidget      *w,
 
   if ((name == NULL || strlen (name) == 0) && !priv->has_custom_username) {
     gtk_entry_set_text (GTK_ENTRY (entry), "");
+    generate_username_choices ("", GTK_LIST_STORE (model));
   }
   else if (name != NULL && strlen (name) != 0) {
     generate_username_choices (name, GTK_LIST_STORE (model));
