@@ -70,7 +70,7 @@ static PageData page_table[] = {
   PAGE (privacy,  FALSE),
   PAGE (timezone, TRUE),
   PAGE (software, TRUE),
-  PAGE (goa,      FALSE),
+  /* PAGE (goa,      FALSE), */
   PAGE (account,  TRUE),
   PAGE (password, TRUE),
   PAGE (summary,  FALSE),
