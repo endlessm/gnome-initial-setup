@@ -67,6 +67,8 @@ GType gis_page_get_type (void);
 
 char *       gis_page_get_title (GisPage *page);
 void         gis_page_set_title (GisPage *page, char *title);
+const char *       gis_page_get_forward_text (GisPage *page);
+void         gis_page_set_forward_text (GisPage *page, const char *text);
 gboolean     gis_page_get_complete (GisPage *page);
 void         gis_page_set_complete (GisPage *page, gboolean complete);
 gboolean     gis_page_get_skippable (GisPage *page);
