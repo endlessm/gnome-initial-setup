@@ -62,6 +62,7 @@ void      gis_assistant_add_page          (GisAssistant *assistant,
 
 void      gis_assistant_next_page         (GisAssistant *assistant);
 void      gis_assistant_previous_page     (GisAssistant *assistant);
+void      gis_assistant_hide_window       (GisAssistant *assistant);
 GisPage * gis_assistant_get_current_page  (GisAssistant *assistant);
 GList   * gis_assistant_get_all_pages     (GisAssistant *assistant);
 const gchar *gis_assistant_get_title      (GisAssistant *assistant);

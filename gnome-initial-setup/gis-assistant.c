@@ -55,6 +55,7 @@ struct _GisAssistantPrivate
   GtkWidget *spinner;
   GtkWidget *titlebar;
   GtkWidget *stack;
+  GtkWidget *main_window;
 
   GList *pages;
   GisPage *current_page;
@@ -118,6 +119,14 @@ gis_assistant_next_page (GisAssistant *assistant)
   else
     g_signal_emit (assistant, signals[NEXT_PAGE], 0,
                    priv->current_page);
+}
+
+void
+gis_assistant_hide_window (GisAssistant *assistant)
+{
+  GisAssistantPrivate *priv = gis_assistant_get_instance_private (assistant);
+
+  gtk_widget_hide (GTK_WIDGET (priv->main_window));
 }
 
 static inline gboolean
@@ -499,6 +508,7 @@ gis_assistant_class_init (GisAssistantClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAssistant, spinner);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAssistant, titlebar);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAssistant, stack);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAssistant, main_window);
 
   gobject_class->get_property = gis_assistant_get_property;
 

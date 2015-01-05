@@ -222,6 +222,15 @@ log_user_in (GisSummaryPage *page)
 }
 
 static void
+hide_window (gpointer user_data)
+{
+  GisSummaryPage *summary = user_data;
+  GisAssistant *assistant = gis_driver_get_assistant (GIS_PAGE (summary)->driver);
+
+  gis_assistant_hide_window (assistant);
+}
+
+static void
 play_tutorial_ready_callback (GObject *fbe_remote,
                               GAsyncResult *res,
                               gpointer user_data)
