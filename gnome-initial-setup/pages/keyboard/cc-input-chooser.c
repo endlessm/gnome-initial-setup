@@ -433,6 +433,8 @@ input_visible (GtkListBoxRow *row,
                 return !priv->showing_extra && g_hash_table_size (priv->inputs) > MIN_ROWS;
 
         widget = get_input_widget (child);
+        if (g_strcmp0 (priv->id, widget->id) == 0)
+                return TRUE;
 
         if (!priv->showing_extra && widget->is_extra)
                 return FALSE;
