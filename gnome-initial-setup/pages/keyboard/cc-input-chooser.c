@@ -456,6 +456,8 @@ input_visible (GtkListBoxRow *row,
         }
 
         widget = get_input_widget (child);
+        if (g_strcmp0 (priv->id, widget->id) == 0)
+                return TRUE;
 
         if (search_term && *search_term)
                 return g_str_match_string (search_term, widget->name, TRUE);
