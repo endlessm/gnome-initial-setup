@@ -335,43 +335,11 @@ no_results_widget_new (void)
 }
 
 static void
-choose_non_extras (CcInputChooser *chooser)
-{
-        CcInputChooserPrivate *priv;
-        guint count = 0;
-        gsize i;
-
-        priv = cc_input_chooser_get_instance_private (chooser);
-
-        for (i = 0; i < priv->input_widget_boxes->len; i++) {
-                InputWidget *widget;
-                GtkWidget *child;
-
-                if (++count > MIN_ROWS)
-                        break;
-
-                child = g_ptr_array_index (priv->input_widget_boxes, i);
-                widget = get_input_widget (child);
-                g_assert (widget != NULL);
-                g_assert (widget->box == child);
-
-                g_debug ("Picking %s (%s:%s) as non-extra",
-                         widget->name, widget->type, widget->id);
-                widget->is_extra = FALSE;
-        }
-
-        /* Changing is_extra above affects the ordering and the visibility
-         * of the newly non-extra rows.
-         */
-        gtk_list_box_invalidate_sort (GTK_LIST_BOX (priv->input_list));
-        gtk_list_box_invalidate_filter (GTK_LIST_BOX (priv->input_list));
-}
-
-static void
 add_rows_to_list (CcInputChooser  *chooser,
 	          GList            *list,
 	          const gchar      *type,
-	          const gchar      *default_id)
+	          const gchar      *default_id,
+		  gboolean          is_extra)
 {
         CcInputChooserPrivate *priv = cc_input_chooser_get_instance_private (chooser);
 	const gchar *id;
@@ -391,7 +359,9 @@ add_rows_to_list (CcInputChooser  *chooser,
 		}
 		g_hash_table_add (priv->inputs, key);
 
-		widget = input_widget_new (chooser, type, id, TRUE);
+		if (g_hash_table_size (priv->inputs) > MIN_ROWS)
+			is_extra = TRUE;
+		widget = input_widget_new (chooser, type, id, is_extra);
 		g_ptr_array_add (priv->input_widget_boxes, g_object_ref_sink (widget));
 		gtk_list_box_append (GTK_LIST_BOX (priv->input_list), widget);
 	}
@@ -400,11 +370,12 @@ add_rows_to_list (CcInputChooser  *chooser,
 static void
 add_row_to_list (CcInputChooser *chooser,
 		 const gchar     *type,
-		 const gchar     *id)
+		 const gchar     *id,
+		 gboolean         is_extra)
 {
 	GList tmp = { 0 };
 	tmp.data = (gpointer)id;
-	add_rows_to_list (chooser, &tmp, type, NULL);
+	add_rows_to_list (chooser, &tmp, type, NULL, is_extra);
 }
 
 static void
@@ -417,7 +388,7 @@ get_locale_infos (CcInputChooser *chooser)
 	GList *list;
 
 	if (gnome_get_input_source_from_locale (priv->locale, &type, &id)) {
-                add_row_to_list (chooser, type, id);
+                add_row_to_list (chooser, type, id, FALSE);
 		if (!priv->id) {
 			priv->id = g_strdup (id);
 			priv->type = g_strdup (type);
@@ -428,19 +399,17 @@ get_locale_infos (CcInputChooser *chooser)
 		goto out;
 
 	list = gnome_xkb_info_get_layouts_for_language (priv->xkb_info, lang);
-	add_rows_to_list (chooser, list, INPUT_SOURCE_TYPE_XKB, id);
+	add_rows_to_list (chooser, list, INPUT_SOURCE_TYPE_XKB, id, FALSE);
 	g_list_free (list);
 
 	if (country != NULL) {
 		list = gnome_xkb_info_get_layouts_for_country (priv->xkb_info, country);
-		add_rows_to_list (chooser, list, INPUT_SOURCE_TYPE_XKB, id);
+		add_rows_to_list (chooser, list, INPUT_SOURCE_TYPE_XKB, id, FALSE);
 		g_list_free (list);
 	}
 
-        choose_non_extras (chooser);
-
 	list = gnome_xkb_info_get_all_layouts (priv->xkb_info);
-	add_rows_to_list (chooser, list, INPUT_SOURCE_TYPE_XKB, id);
+	add_rows_to_list (chooser, list, INPUT_SOURCE_TYPE_XKB, id, TRUE);
 	g_list_free (list);
 
 out:
@@ -649,7 +618,7 @@ get_ibus_locale_infos (CcInputChooser *chooser)
 
 	g_hash_table_iter_init (&iter, priv->ibus_engines);
 	while (g_hash_table_iter_next (&iter, (gpointer *) &engine_id, (gpointer *) &engine))
-                add_row_to_list (chooser, INPUT_SOURCE_TYPE_IBUS, engine_id);
+                add_row_to_list (chooser, INPUT_SOURCE_TYPE_IBUS, engine_id, TRUE);
 }
 
 static void
