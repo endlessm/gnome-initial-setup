@@ -2,16 +2,16 @@ SUBDIRS = pages
 
 BUILT_SOURCES =
 
-uidir = $(datadir)/gnome-initial-setup
+pkgdatadir = $(datadir)/gnome-initial-setup
 
 AM_CPPFLAGS = \
 	$(INITIAL_SETUP_CFLAGS) \
 	-DSECRET_API_SUBJECT_TO_CHANGE \
 	-DGCR_API_SUBJECT_TO_CHANGE \
-	-DUIDIR="\"$(uidir)\"" \
+	-DUIDIR="\"$(pkgdatadir)\"" \
+	-DPKGDATADIR="\"$(pkgdatadir)\"" \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
-	-DLIBLOCALEDIR=\""$(prefix)/lib/locale"\" \
-	-DDATADIR=\""$(datadir)"\"
+	-DLIBLOCALEDIR=\""$(prefix)/lib/locale"\"
 
 libexec_PROGRAMS = gnome-initial-setup gnome-initial-setup-copy-worker
 
@@ -29,6 +29,7 @@ gnome_initial_setup_SOURCES = \
 	gis-page.c gis-page.h \
 	gis-driver.c gis-driver.h \
 	gis-keyring.c gis-keyring.h \
+	gis-music-player.c gis-music-player.h \
 	gis-window.c gis-window.h
 
 gnome_initial_setup_LDADD =	\

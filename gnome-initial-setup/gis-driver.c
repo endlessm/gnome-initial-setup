@@ -30,6 +30,7 @@
 
 #include "gis-assistant.h"
 #include "gis-window.h"
+#include "gis-music-player.h"
 
 #define GIS_TYPE_DRIVER_MODE (gis_driver_mode_get_type ())
 
@@ -85,6 +86,8 @@ struct _GisDriverPrivate {
   gchar *lang_override;
   gchar *default_timezone;
 
+  GisMusicPlayer *music_player;
+
   GisDriverMode mode;
 };
 typedef struct _GisDriverPrivate GisDriverPrivate;
@@ -101,6 +104,17 @@ gis_driver_finalize (GObject *object)
   g_free (priv->lang_id);
   g_free (priv->lang_override);
   g_free (priv->default_timezone);
+
+  G_OBJECT_CLASS (gis_driver_parent_class)->finalize (object);
+}
+
+static void
+gis_driver_dispose (GObject *object)
+{
+  GisDriver *driver = GIS_DRIVER (object);
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  g_clear_object (&priv->music_player);
 
   G_OBJECT_CLASS (gis_driver_parent_class)->finalize (object);
 }
@@ -264,6 +278,7 @@ gis_driver_activate (GApplication *app)
   G_APPLICATION_CLASS (gis_driver_parent_class)->activate (app);
 
   gtk_window_present (GTK_WINDOW (priv->main_window));
+  gis_music_player_play (priv->music_player);
 }
 
 static void
@@ -312,6 +327,7 @@ gis_driver_startup (GApplication *app)
 
   priv->main_window = gis_window_new (driver);
   priv->assistant = gis_window_get_assistant (GIS_WINDOW (priv->main_window));
+  priv->music_player = gis_music_player_new ("file://" PKGDATADIR "/fbe.ogg");
 
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL));
 
@@ -331,6 +347,7 @@ gis_driver_class_init (GisDriverClass *klass)
 
   gobject_class->get_property = gis_driver_get_property;
   gobject_class->set_property = gis_driver_set_property;
+  gobject_class->dispose = gis_driver_dispose;
   gobject_class->finalize = gis_driver_finalize;
   application_class->startup = gis_driver_startup;
   application_class->activate = gis_driver_activate;

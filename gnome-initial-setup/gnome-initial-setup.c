@@ -39,6 +39,8 @@
 #include <cheese-gtk.h>
 #endif
 
+#include <gst/gst.h>
+
 #include <egg-list-box.h>
 
 #include "pages/language/gis-language-page.h"
@@ -265,6 +267,7 @@ main (int argc, char *argv[])
   cheese_gtk_init (NULL, NULL);
 #endif
 
+  gst_init (&argc, &argv);
   gtk_init (&argc, &argv);
   ev_init ();
 
