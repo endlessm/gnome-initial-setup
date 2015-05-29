@@ -10,10 +10,16 @@ edit = $(AM_V_GEN) sed \
 %.desktop.in: %.desktop.in.in Makefile
 	$(edit) $< >$@
 
+%.policy: %.policy.in Makefile
+	$(edit) $< >$@
+
 @INTLTOOL_DESKTOP_RULE@
 
 rulesdir = $(datadir)/polkit-1/rules.d
 rules_DATA = 20-gnome-initial-setup.rules
+
+actionsdir = $(datadir)/polkit-1/actions
+actions_DATA = com.endlessm.TestMode.policy
 
 sessiondir = $(datadir)/gnome-session/sessions
 session_DATA = gnome-initial-setup.session
@@ -38,6 +44,7 @@ EXTRA_DIST =						\
 	gnome-initial-setup.session			\
 	initial-setup.json				\
 	product_serial.conf                             \
+	com.endlessm.TestMode.policy.in			\
 	$(NULL)
 
 CLEANFILES =						\
@@ -48,6 +55,7 @@ CLEANFILES =						\
 	gnome-initial-setup-first-login.desktop		\
 	gnome-welcome-tour.desktop.in			\
 	gnome-welcome-tour.desktop			\
+	com.endlessm.TestMode.policy			\
 	$(NULL)
 
 autostartdir = $(sysconfdir)/xdg/autostart
