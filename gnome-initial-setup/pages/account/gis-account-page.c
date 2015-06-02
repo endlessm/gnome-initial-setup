@@ -490,6 +490,61 @@ create_shared_user (GisAccountPage *page)
   g_object_unref (shared_user);
 }
 
+static gboolean
+is_ostree_system (void)
+{
+  gboolean ret = FALSE;
+  GFile *proc_cmdline = NULL;
+  char *contents = NULL;
+  gsize len;
+  GError *error = NULL;
+  gchar **options = NULL;
+  gchar **iter;
+
+  proc_cmdline = g_file_new_for_path ("/proc/cmdline");
+  if (!g_file_load_contents (proc_cmdline, NULL, &contents, &len, NULL,
+                             &error)) {
+    g_warning ("Failed to load /proc/cmdline: %s", error->message);
+    g_error_free (error);
+    goto out;
+  }
+
+  options = g_strsplit (contents, " ", -1);
+  for (iter = options; *iter; iter++) {
+    if (g_str_has_prefix (*iter, "ostree=")) {
+        ret = TRUE;
+        break;
+      }
+  }
+
+ out:
+  g_clear_object (&proc_cmdline);
+  g_free (contents);
+  g_strfreev (options);
+  return ret;
+}
+
+static void
+delete_root_password (GisAccountPage *page)
+{
+  GisAccountPagePrivate *priv = gis_account_page_get_instance_private (page);
+  ActUser *root_user;
+
+  /* Only delete on ostree systems */
+  if (!is_ostree_system ())
+    return;
+
+  root_user = act_user_manager_get_user_by_id (priv->act_client, 0);
+  if (root_user == NULL) {
+    g_warning ("Failed to get root user account");
+    return;
+  }
+
+  act_user_set_password_mode (root_user, ACT_USER_PASSWORD_MODE_NONE);
+
+  g_object_unref (root_user);
+}
+
 static void
 local_create_user (GisAccountPage *page)
 {
@@ -545,6 +600,9 @@ local_create_user (GisAccountPage *page)
                                    password);
 
   gis_update_login_keyring_password (old_password, password);
+
+  /* Local user created, delete root password */
+  delete_root_password (page);
 
   g_free (username);
 }
