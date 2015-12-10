@@ -54,7 +54,7 @@ struct _GisWindowClass
 
 GType gis_window_get_type (void);
 
-GtkWidget *gis_window_new (GisDriver *driver);
+GtkWindow *gis_window_new (GisDriver *driver);
 GisAssistant * gis_window_get_assistant (GisWindow *window);
 
 G_END_DECLS
