@@ -6,6 +6,7 @@
     <property name="visible">True</property>
     <property name="margin-left">80</property>
     <property name="margin-right">80</property>
+    <property name="row-spacing">6</property>
     <property name="halign">fill</property>
     <property name="valign">fill</property>
     <child>
@@ -99,33 +100,6 @@
       </object>
       <packing>
         <property name="left_attach">0</property>
-        <property name="top_attach">3</property>
-        <property name="width">1</property>
-        <property name="height">1</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkGrid" id="no-network-grid">
-        <property name="visible">True</property>
-        <property name="halign">start</property>
-        <property name="valign">start</property>
-        <child>
-          <object class="GtkLabel" id="no-network-label">
-            <property name="visible">True</property>
-            <property name="label" translatable="yes">No wireless available</property>
-            <property name="halign">center</property>
-            <property name="valign">center</property>
-          </object>
-          <packing>
-            <property name="left_attach">0</property>
-            <property name="top_attach">0</property>
-            <property name="width">1</property>
-            <property name="height">1</property>
-          </packing>
-        </child>
-      </object>
-      <packing>
-        <property name="left_attach">0</property>
         <property name="top_attach">4</property>
         <property name="width">1</property>
         <property name="height">1</property>
@@ -141,10 +115,17 @@
       </object>
       <packing>
         <property name="left_attach">0</property>
-        <property name="top_attach">5</property>
+        <property name="top_attach">3</property>
         <property name="width">1</property>
         <property name="height">1</property>
       </packing>
     </child>
+  </object>
+  <object class="GtkLabel" id="no-network-label">
+    <property name="visible">True</property>
+    <property name="label" translatable="yes">No wireless available</property>
+    <style>
+      <class name="dim-label" />
+    </style>
   </object>
 </interface>

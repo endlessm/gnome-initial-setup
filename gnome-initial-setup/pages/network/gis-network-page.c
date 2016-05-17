@@ -359,9 +359,7 @@ refresh_without_device (GisNetworkPage *page)
 {
   GisNetworkPagePrivate *priv = gis_network_page_get_instance_private (page);
   GtkWidget *label;
-  GtkWidget *swin;
 
-  swin = WID("network-scrolledwindow");
   label = WID("no-network-label");
 
   if (nm_client_get_state (priv->nm_client) == NM_STATE_CONNECTED_GLOBAL)
@@ -370,9 +368,6 @@ refresh_without_device (GisNetworkPage *page)
     gtk_label_set_text (GTK_LABEL (label), _("Network is not available."));
   else
     gtk_label_set_text (GTK_LABEL (label), _("No network devices found."));
-
-  gtk_widget_hide (swin);
-  gtk_widget_show (label);
 }
 
 static void
@@ -387,7 +382,6 @@ refresh_wireless_list (GisNetworkPage *page)
   gboolean disable_skip = FALSE;
   guint i;
   GtkWidget *label;
-  GtkWidget *swin;
   GList *children, *l;
   GtkWidget *list;
 
@@ -431,7 +425,6 @@ refresh_wireless_list (GisNetworkPage *page)
     }
   }
 
-  swin = WID("network-scrolledwindow");
   label = WID("no-network-label");
 
   if (state == NM_DEVICE_STATE_UNMANAGED ||
@@ -441,15 +434,9 @@ refresh_wireless_list (GisNetworkPage *page)
   }
   else if (aps == NULL || aps->len == 0) {
     gtk_label_set_text (GTK_LABEL (label), _("Checking for available wireless networks"));
-    gtk_widget_hide (swin);
-    gtk_widget_show (label);
     priv->refresh_timeout_id = g_timeout_add_seconds (1, refresh_again, page);
 
     goto out;
-  }
-  else {
-    gtk_widget_show (swin);
-    gtk_widget_hide (label);
   }
 
   unique_aps = get_strongest_unique_aps (aps);
@@ -669,6 +656,7 @@ gis_network_page_constructed (GObject *object)
   gtk_list_box_set_selection_mode (GTK_LIST_BOX (box), GTK_SELECTION_NONE);
   gtk_list_box_set_header_func (GTK_LIST_BOX (box), update_header_func, NULL, NULL);
   gtk_list_box_set_sort_func (GTK_LIST_BOX (box), ap_sort, NULL, NULL);
+  gtk_list_box_set_placeholder (GTK_LIST_BOX (box), WID ("no-network-label"));
 
   g_signal_connect (box, "row-activated",
                     G_CALLBACK (row_activated), page);
