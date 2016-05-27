@@ -1,4 +1,4 @@
-gnome-initial-setup (3.12.0-1) UNRELEASED; urgency=low
+gnome-initial-setup (3.20.1-1) UNRELEASED; urgency=low
 
   [ Javier Martinez ]
   * Initial release.
@@ -13,5 +13,11 @@ gnome-initial-setup (3.12.0-1) UNRELEASED; urgency=low
   * Add missing GPL-2+ license to copyright.
   * Add missing ${shlibs:Depends} substitution variable.
   * Add dependency on adduser.
+
+  [ Jeremy Bicha ]
+  * New upstream release. Update build-dependencies accordingly.
+  * Use dh
+  * Set Arch to linux-any since it needs gdm to build and run
+  * Add to description and d/copyright
 
  -- Jordi Mallach <jordi@debian.org>  Fri, 04 Apr 2014 22:43:24 +0200
