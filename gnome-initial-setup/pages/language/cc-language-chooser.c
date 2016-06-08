@@ -23,6 +23,7 @@
 #include "config.h"
 #include "cc-language-chooser.h"
 
+#include <string.h>
 #include <locale.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
@@ -348,6 +349,8 @@ sort_languages (GtkListBoxRow *a,
                 gpointer       data)
 {
         LanguageWidget *la, *lb;
+        gchar *normalized_a, *normalized_b;
+        gint retval;
 
         la = get_language_widget (gtk_bin_get_child (GTK_BIN (a)));
         lb = get_language_widget (gtk_bin_get_child (GTK_BIN (b)));
@@ -364,7 +367,15 @@ sort_languages (GtkListBoxRow *a,
         if (!la->is_extra && lb->is_extra)
                 return -1;
 
-        return strcmp (la->sort_key, lb->sort_key);
+        normalized_a = cc_util_normalize_casefold_and_unaccent (la->locale_name);
+        normalized_b = cc_util_normalize_casefold_and_unaccent (lb->locale_name);
+
+        retval = strcmp (normalized_a, normalized_b);
+
+        g_free (normalized_a);
+        g_free (normalized_b);
+
+        return retval;
 }
 
 static void
