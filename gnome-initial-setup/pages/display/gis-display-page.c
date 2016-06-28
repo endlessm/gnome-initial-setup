@@ -142,17 +142,16 @@ static gboolean
 should_display_overscan (GisDisplayPage *page)
 {
   GisDisplayPagePrivate *priv = gis_display_page_get_instance_private (page);
-  GnomeRROutputInfo *output = priv->current_output;
+  GnomeRROutput *output;
   char *output_name;
-  int width, height;
 
-  output_name = gnome_rr_output_info_get_name (output);
-  gnome_rr_output_info_get_geometry (output, NULL, NULL, &width, &height);
+  output_name = gnome_rr_output_info_get_name (priv->current_output);
+  output = gnome_rr_screen_get_output_by_name (priv->screen, output_name);
 
-  return strncmp (output_name, "HDMI", 4) == 0 &&
-    ((width == 1920 && height == 1080) ||
-     (width == 1440 && height == 1080) ||
-     (width == 1280 && height == 720));
+  if (!output)
+    return FALSE;
+
+  return gnome_rr_output_supports_underscanning (output);
 }
 
 static void
