@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Aditi Kabir <aditi.kabir@gmail.com>, 2016
 # Shimon Sharmin <oparthib@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-21 02:50+0000\n"
-"PO-Revision-Date: 2016-06-26 16:38+0000\n"
-"Last-Translator: Shimon Sharmin <oparthib@gmail.com>\n"
+"POT-Creation-Date: 2016-06-28 02:47+0000\n"
+"PO-Revision-Date: 2016-06-28 15:58+0000\n"
+"Last-Translator: Aditi Kabir <aditi.kabir@gmail.com>\n"
 "Language-Team: Bengali (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/bn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,11 +68,11 @@ msgstr "ডোমেইনে প্রবেশ করতে ব্যর্থ
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:898
 msgid "Failed to log into domain"
-msgstr "ডোমেইনে লগইন করতে ব্যর্থ"
+msgstr "ডোমেইনে লগিন করতে ব্যর্থ"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:1327
 msgid "Login"
-msgstr "লগইন"
+msgstr "লগিন "
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:1
 msgid "Create a Personal Account"
@@ -81,7 +82,7 @@ msgstr "একটি ব্যক্তিগত একাউন্ট তৈর
 msgid ""
 "Type your full name and a password that you'll remember. Pay attention to "
 "upper case letters."
-msgstr "আপনার পুরো নাম এবংএকটি পাসওয়ার্ড লিখুন যা আপনি মনে রাখতে পারবেন। বড়-ছোট অক্ষরের দিকে নজর রাখুন।"
+msgstr "আপনার পুরো নাম এবং একটি পাসওয়ার্ড লিখুন যা আপনি মনে রাখতে পারবেন। বড় অক্ষরের দিকে নজর রাখুন।"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:3
 msgid "_Full Name"
@@ -118,7 +119,7 @@ msgstr "আপনার পাসওয়ার্ড মনে থাকবে �
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:10
 msgid "Password _reminder"
-msgstr "পাসওয়ার্ড_স্মরণকারী_চিহ্ন"
+msgstr "পাসওয়ার্ড_স্মরণকারী চিহ্ন"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:11
 msgid "To continue, please make sure you fill in all the blanks."
@@ -142,11 +143,11 @@ msgstr "যৌথ ডোমেইন অথবা সাম্রাজ্যে
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:16
 msgid "C_ontinue"
-msgstr "C_ontinue"
+msgstr "চা_লিয়ে যাওয়া "
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:17
 msgid "Domain Administrator Login"
-msgstr "ডোমেইন প্রশাসক লগইন"
+msgstr "ডোমেইন প্রশাসক লগিন "
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:18
 msgid ""
@@ -196,7 +197,7 @@ msgstr "ভাল"
 #: ../gnome-initial-setup/pages/account/pw-utils.c:117
 msgctxt "Password strength"
 msgid "Strong"
-msgstr "শক্তিশালী"
+msgstr "শক্তিশালী "
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:352
 msgid "Cannot automatically join this type of domain"
@@ -211,7 +212,7 @@ msgstr "এমন কোন ডোমেইন বা সাম্রাজ্�
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:836
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
-msgstr "%s ডোমেইনে %s হিসেবে লগইন করা যাবে না"
+msgstr "%s ডোমেইনে %s হিসেবে লগিন করা যাবে না"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:828
 msgid "Invalid password, please try again"
@@ -389,7 +390,7 @@ msgstr "কোন তথ্য পাওয়া যায়নি"
 
 #: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
 msgid "Your keyboard layout seems to be:"
-msgstr "আপনার কিবোর্ডের লেআউট এমন:"
+msgstr "আপনার কিবোর্ডের ধরন এমন:"
 
 #: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:304
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:2
@@ -406,15 +407,15 @@ msgstr "লেখা হচ্ছে"
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:1
 msgid "Select your keyboard layout"
-msgstr "আপনার কিবোর্ডের লেআউট নির্বাচন করুন"
+msgstr "আপনার কিবোর্ডের ধরন নির্বাচন করুন"
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
 msgid "Help detect my keyboard layout"
-msgstr "আমার কিবোর্ডের লেআউট সনাক্তে সাহায্য করুন"
+msgstr "আমার কিবোর্ডের লেআউট শনাক্তে সাহায্য করুন"
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
 msgid "Detect Keyboard Layout..."
-msgstr "কিবোর্ড লেআউট বাছাই করুন..."
+msgstr "কিবোর্ড ধরন শণাক্ত করুন..."
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
 msgid "Select"
@@ -426,7 +427,7 @@ msgstr "কোনো ভাষা পাওয়া যায়নি"
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:594
 msgid "Disabled"
-msgstr "অকার্যকর"
+msgstr "নিষ্ক্রিয় "
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:596
 #, c-format
@@ -457,12 +458,12 @@ msgstr "বন্ধ করুন"
 
 #: ../gnome-initial-setup/pages/location/gis-location-page.c:662
 msgid "Search for a location"
-msgstr "একটি অঞ্চল খোঁজ করুন"
+msgstr "একটি অবস্থান খোঁজ করুন"
 
 #: ../gnome-initial-setup/pages/location/gis-location-page.c:790
 #: ../gnome-initial-setup/pages/location/gis-location-page.ui.h:15
 msgid "Location"
-msgstr "অঞ্চল"
+msgstr "অবস্থান  "
 
 #: ../gnome-initial-setup/pages/location/gis-location-page.ui.h:1
 msgid "January"
@@ -514,11 +515,11 @@ msgstr "ডিসেম্বর"
 
 #: ../gnome-initial-setup/pages/location/gis-location-page.ui.h:13
 msgid "Choose Your Location"
-msgstr "আপনার অঞ্চল নির্বাচন করুন"
+msgstr "আপনার অবস্থান নির্বাচন করুন "
 
 #: ../gnome-initial-setup/pages/location/gis-location-page.ui.h:14
 msgid "_Determine your location automatically"
-msgstr "_আপনার অঞ্চল স্বয়ংক্রিয়ভাবে নির্বাচন করুন"
+msgstr "_আপনার অবস্থান  স্বয়ংক্রিয়ভাবে নির্বাচন করুন "
 
 #: ../gnome-initial-setup/pages/location/gis-location-page.ui.h:16
 msgid "Time Zone"
