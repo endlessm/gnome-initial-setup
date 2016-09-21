@@ -230,7 +230,9 @@ update_navigation_buttons (GisAssistant *assistant)
       else
         next_widget = priv->forward;
 
-      if (gis_page_get_complete (page)) {
+      if (gis_page_get_hide_forward_button (page)) {
+        set_navigation_button (assistant, NULL);
+      } else if (gis_page_get_complete (page)) {
         set_suggested_action_sensitive (next_widget, TRUE);
         set_navigation_button (assistant, next_widget);
       } else if (gis_page_get_skippable (page)) {
