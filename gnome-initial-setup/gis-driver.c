@@ -58,6 +58,7 @@ static guint signals[LAST_SIGNAL];
 
 enum {
   PROP_0,
+  PROP_LIVE_SESSION,
   PROP_MODE,
   PROP_USERNAME,
   PROP_SMALL_SCREEN,
@@ -76,6 +77,8 @@ struct _GisDriverPrivate {
   gchar *lang_id;
   gchar *username;
 
+  gboolean is_live_session;
+
   GisDriverMode mode;
   UmAccountMode account_mode;
   gboolean small_screen;
@@ -83,6 +86,29 @@ struct _GisDriverPrivate {
 typedef struct _GisDriverPrivate GisDriverPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE(GisDriver, gis_driver, GTK_TYPE_APPLICATION)
+
+static gboolean
+running_live_session (void)
+{
+  gboolean has_live_boot_param;
+  GError *error;
+  g_autofree gchar *contents = NULL;
+
+  error = NULL;
+
+  g_file_get_contents ("/proc/cmdline", &contents, NULL, &error);
+
+  if (error)
+    {
+      g_warning ("Couldn't check kernel parameters: %s", error->message);
+      g_clear_error (&error);
+      return FALSE;
+    }
+
+  has_live_boot_param = g_strrstr (contents, "endless.live_boot") != NULL;
+
+  return has_live_boot_param;
+}
 
 static void
 gis_driver_finalize (GObject *object)
@@ -231,6 +257,14 @@ gis_driver_add_page (GisDriver *driver,
 }
 
 void
+gis_driver_show_window (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  gtk_window_present (priv->main_window);
+}
+
+void
 gis_driver_hide_window (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
@@ -265,6 +299,13 @@ gis_driver_get_mode (GisDriver *driver)
 }
 
 gboolean
+gis_driver_is_live_session (GisDriver *driver)
+{
+    GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+    return priv->is_live_session;
+}
+
+gboolean
 gis_driver_is_small_screen (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
@@ -290,6 +331,9 @@ gis_driver_get_property (GObject      *object,
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   switch (prop_id)
     {
+    case PROP_LIVE_SESSION:
+      g_value_set_boolean (value, priv->is_live_session);
+      break;
     case PROP_MODE:
       g_value_set_enum (value, priv->mode);
       break;
@@ -464,6 +508,9 @@ gis_driver_startup (GApplication *app)
 
   priv->assistant = gis_window_get_assistant (GIS_WINDOW (priv->main_window));
 
+  priv->is_live_session = running_live_session ();
+  g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
+
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL));
 
   prepare_main_window (driver);
@@ -512,6 +559,11 @@ gis_driver_class_init (GisDriverClass *klass)
                   G_STRUCT_OFFSET (GisDriverClass, locale_changed),
                   NULL, NULL, NULL,
                   G_TYPE_NONE, 0);
+
+  obj_props[PROP_LIVE_SESSION] =
+    g_param_spec_boolean ("live-session", "", "",
+                          FALSE,
+                          G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
   obj_props[PROP_MODE] =
     g_param_spec_enum ("mode", "", "",
