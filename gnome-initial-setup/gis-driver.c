@@ -27,9 +27,11 @@
 #include <locale.h>
 #include <stdlib.h>
 #include <webkit2/webkit2.h>
+#include <gio/gunixmounts.h>
 
 #include "cc-common-language.h"
 #include "gis-assistant.h"
+#include "gis-page-util.h"
 
 #define GIS_TYPE_DRIVER_MODE (gis_driver_mode_get_type ())
 
@@ -60,6 +62,8 @@ static guint signals[LAST_SIGNAL];
 
 typedef enum {
   PROP_MODE = 1,
+  PROP_LIVE_SESSION,
+  PROP_LIVE_PERSISTENCE,
   PROP_USERNAME,
   PROP_SMALL_SCREEN,
   PROP_PARENTAL_CONTROLS_ENABLED,
@@ -93,6 +97,10 @@ struct _GisDriver {
 
   GdkPixbuf *avatar;  /* (owned) (nullable) */
 
+  gboolean is_live_session;
+  gboolean is_reformatter;
+  gboolean has_live_persistence;
+
   GisDriverMode mode;
   UmAccountMode account_mode;
   gboolean small_screen;
@@ -101,9 +109,126 @@ struct _GisDriver {
 
   const gchar *vendor_conf_file_path;
   GKeyFile *vendor_conf_file;
+
+  gchar *product_name;
 };
 
 G_DEFINE_TYPE (GisDriver, gis_driver, GTK_TYPE_APPLICATION)
+
+/* Should be kept in sync with eos-installer */
+static gboolean
+check_for_live_boot (gchar **uuid)
+{
+  const gchar *force = NULL;
+  GError *error = NULL;
+  g_autofree gchar *cmdline = NULL;
+  gboolean live_boot = FALSE;
+  g_autoptr(GRegex) reg = NULL;
+  g_autoptr(GMatchInfo) info = NULL;
+
+  g_return_val_if_fail (uuid != NULL, FALSE);
+
+  force = g_getenv ("EI_FORCE_LIVE_BOOT_UUID");
+  if (force != NULL && *force != '\0')
+    {
+      *uuid = g_strdup (force);
+      return TRUE;
+    }
+
+  if (!g_file_get_contents ("/proc/cmdline", &cmdline, NULL, &error))
+    {
+      g_error_free (error);
+      return FALSE;
+    }
+
+  live_boot = g_regex_match_simple ("\\bendless\\.live_boot\\b", cmdline, 0, 0);
+
+  reg = g_regex_new ("\\bendless\\.image\\.device=UUID=([^\\s]*)", 0, 0, NULL);
+  g_regex_match (reg, cmdline, 0, &info);
+  if (g_match_info_matches (info))
+    *uuid = g_match_info_fetch (info, 1);
+
+  return live_boot;
+}
+
+static gboolean
+running_live_session (void)
+{
+  g_autofree gchar *uuid = NULL;
+
+  if (!check_for_live_boot (&uuid))
+    return FALSE;
+
+  return TRUE;
+}
+
+static void
+check_live_persistence (GisDriver *driver)
+{
+  g_autoptr(GUnixMountEntry) entry = NULL;
+
+  if (driver->is_live_session)
+    {
+      entry = g_unix_mount_at ("/run/eos-live", NULL);
+      driver->has_live_persistence = entry != NULL;
+    }
+  else
+    {
+      driver->has_live_persistence = FALSE;
+    }
+}
+
+#define EOS_IMAGE_VERSION_PATH "/sysroot"
+#define EOS_IMAGE_VERSION_ALT_PATH "/"
+
+static char *
+get_image_version (void)
+{
+  g_autoptr(GError) error_sysroot = NULL;
+  g_autoptr(GError) error_root = NULL;
+  char *image_version =
+    gis_page_util_get_image_version (EOS_IMAGE_VERSION_PATH, &error_sysroot);
+
+  if (image_version == NULL)
+    image_version =
+      gis_page_util_get_image_version (EOS_IMAGE_VERSION_ALT_PATH, &error_root);
+
+  if (image_version == NULL)
+    {
+      g_warning ("%s", error_sysroot->message);
+      g_warning ("%s", error_root->message);
+    }
+
+  return image_version;
+}
+
+static gboolean
+image_is_reformatter (const gchar *image_version)
+{
+  return image_version != NULL &&
+    g_str_has_prefix (image_version, "eosinstaller-");
+}
+
+static gchar *
+get_product_from_image_version (const gchar *image_version)
+{
+  gchar *hyphen_index = NULL;
+
+  if (image_version == NULL)
+    return NULL;
+
+  hyphen_index = index (image_version, '-');
+  if (hyphen_index == NULL)
+    return NULL;
+
+  return g_strndup (image_version, hyphen_index - image_version);
+}
+
+const gchar *
+gis_driver_get_product_name (GisDriver *driver)
+{
+  return driver->product_name;
+}
 
 static void
 gis_driver_dispose (GObject *object)
@@ -122,6 +247,7 @@ gis_driver_finalize (GObject *object)
 {
   GisDriver *driver = GIS_DRIVER (object);
 
+  g_free (driver->product_name);
   g_free (driver->lang_id);
   g_free (driver->username);
   g_free (driver->full_name);
@@ -465,6 +591,12 @@ gis_driver_add_page (GisDriver *driver,
 }
 
 void
+gis_driver_show_window (GisDriver *driver)
+{
+  gtk_window_present (driver->main_window);
+}
+
+void
 gis_driver_hide_window (GisDriver *driver)
 {
   gtk_widget_hide (GTK_WIDGET (driver->main_window));
@@ -584,6 +716,24 @@ gis_driver_get_mode (GisDriver *driver)
 }
 
 gboolean
+gis_driver_is_live_session (GisDriver *driver)
+{
+    return driver->is_live_session;
+}
+
+gboolean
+gis_driver_has_live_persistence (GisDriver *driver)
+{
+    return driver->has_live_persistence;
+}
+
+gboolean
+gis_driver_is_reformatter (GisDriver *driver)
+{
+  return driver->is_reformatter;
+}
+
+gboolean
 gis_driver_is_small_screen (GisDriver *driver)
 {
   return driver->small_screen;
@@ -611,6 +761,12 @@ gis_driver_get_property (GObject      *object,
 
   switch ((GisDriverProperty) prop_id)
     {
+    case PROP_LIVE_SESSION:
+      g_value_set_boolean (value, driver->is_live_session);
+      break;
+    case PROP_LIVE_PERSISTENCE:
+      g_value_set_boolean (value, driver->has_live_persistence);
+      break;
     case PROP_MODE:
       g_value_set_enum (value, driver->mode);
       break;
@@ -814,6 +970,7 @@ gis_driver_startup (GApplication *app)
 {
   GisDriver *driver = GIS_DRIVER (app);
   WebKitWebContext *context = webkit_web_context_get_default ();
+  g_autofree char *image_version = NULL;
 
   G_APPLICATION_CLASS (gis_driver_parent_class)->startup (app);
 
@@ -838,6 +995,17 @@ gis_driver_startup (GApplication *app)
   gtk_container_add (GTK_CONTAINER (driver->main_window), GTK_WIDGET (driver->assistant));
 
   gtk_widget_show (GTK_WIDGET (driver->assistant));
+
+  image_version = get_image_version ();
+  driver->product_name = get_product_from_image_version (image_version);
+
+  driver->is_live_session = running_live_session ();
+  g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
+
+  check_live_persistence (driver);
+  g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_PERSISTENCE]);
+
+  driver->is_reformatter = image_is_reformatter (image_version);
 
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL), FALSE);
 
@@ -889,6 +1057,16 @@ gis_driver_class_init (GisDriverClass *klass)
                   0,
                   NULL, NULL, NULL,
                   G_TYPE_NONE, 0);
+
+  obj_props[PROP_LIVE_SESSION] =
+    g_param_spec_boolean ("live-session", "", "",
+                          FALSE,
+                          G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
+
+  obj_props[PROP_LIVE_PERSISTENCE] =
+    g_param_spec_boolean ("live-persistence", "", "",
+                          FALSE,
+                          G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
   obj_props[PROP_MODE] =
     g_param_spec_enum ("mode", "", "",
