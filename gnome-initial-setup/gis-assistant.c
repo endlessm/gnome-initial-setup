@@ -227,8 +227,8 @@ update_navigation_buttons (GisAssistant *assistant)
     }
   else
     {
-      gboolean is_first_page;
       GtkWidget *next_widget;
+      gboolean is_first_page;
 
       is_first_page = (page_priv->link->prev == NULL);
       gtk_widget_set_visible (priv->back, !is_first_page);
@@ -238,7 +238,9 @@ update_navigation_buttons (GisAssistant *assistant)
       else
         next_widget = priv->forward;
 
-      if (gis_page_get_complete (page)) {
+      if (gis_page_get_hide_forward_button (page)) {
+        set_navigation_button (assistant, NULL);
+      } else if (gis_page_get_complete (page)) {
         set_suggested_action_sensitive (next_widget, TRUE);
         set_navigation_button (assistant, next_widget);
       } else if (gis_page_get_skippable (page)) {

@@ -37,6 +37,8 @@ typedef struct _GisPage        GisPage;
 typedef struct _GisPageClass   GisPageClass;
 typedef struct _GisAssistantPagePrivate GisAssistantPagePrivate;
 
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (GisPage, g_object_unref)
+
 typedef void (* GisPageApplyCallback) (GisPage *page,
                                        gboolean valid,
                                        gpointer user_data);
@@ -69,6 +71,8 @@ char *       gis_page_get_title (GisPage *page);
 void         gis_page_set_title (GisPage *page, char *title);
 const char *       gis_page_get_forward_text (GisPage *page);
 void         gis_page_set_forward_text (GisPage *page, const char *text);
+gboolean     gis_page_get_hide_forward_button (GisPage *page);
+void         gis_page_set_hide_forward_button (GisPage *page, gboolean hide_forward_button);
 gboolean     gis_page_get_complete (GisPage *page);
 void         gis_page_set_complete (GisPage *page, gboolean complete);
 gboolean     gis_page_get_skippable (GisPage *page);
