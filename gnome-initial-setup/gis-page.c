@@ -29,6 +29,7 @@ struct _GisPagePrivate
 {
   char *title;
   char *forward_text;
+  gboolean hide_forward_button;
 
   gboolean applying;
   GCancellable *apply_cancel;
@@ -55,6 +56,7 @@ enum
   PROP_NEEDS_ACCEPT,
   PROP_APPLYING,
   PROP_SMALL_SCREEN,
+  PROP_HIDE_FORWARD_BUTTON,
   PROP_LAST,
 };
 
@@ -97,6 +99,9 @@ gis_page_get_property (GObject    *object,
       else
         g_value_set_boolean (value, FALSE);
       break;
+    case PROP_HIDE_FORWARD_BUTTON:
+      g_value_set_boolean (value, priv->hide_forward_button);
+      break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -138,6 +143,9 @@ gis_page_set_property (GObject      *object,
       break;
     case PROP_COMPLETE:
       priv->complete = g_value_get_boolean (value);
+      break;
+    case PROP_HIDE_FORWARD_BUTTON:
+      priv->hide_forward_button = g_value_get_boolean (value);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -231,6 +239,10 @@ gis_page_class_init (GisPageClass *klass)
   obj_props[PROP_SMALL_SCREEN] =
     g_param_spec_boolean ("small-screen", "", "", FALSE,
                           G_PARAM_STATIC_STRINGS | G_PARAM_READABLE);
+  obj_props[PROP_HIDE_FORWARD_BUTTON] =
+    g_param_spec_boolean ("hide-forward-button", "", "", FALSE,
+                          G_PARAM_STATIC_STRINGS | G_PARAM_READWRITE);
+
 
   g_object_class_install_properties (object_class, PROP_LAST, obj_props);
 }
@@ -277,6 +289,21 @@ gis_page_set_forward_text (GisPage *page, const char *text)
   g_clear_pointer (&priv->forward_text, g_free);
   priv->forward_text = g_strdup (text);
   g_object_notify_by_pspec (G_OBJECT (page), obj_props[PROP_FORWARD_TEXT]);
+}
+
+gboolean
+gis_page_get_hide_forward_button (GisPage *page)
+{
+  GisPagePrivate *priv = gis_page_get_instance_private (page);
+  return priv->hide_forward_button;
+}
+
+void
+gis_page_set_hide_forward_button (GisPage *page, gboolean hide_forward_button)
+{
+  GisPagePrivate *priv = gis_page_get_instance_private (page);
+  priv->hide_forward_button = hide_forward_button;
+  g_object_notify_by_pspec (G_OBJECT (page), obj_props[PROP_HIDE_FORWARD_BUTTON]);
 }
 
 gboolean
