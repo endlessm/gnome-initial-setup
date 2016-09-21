@@ -117,12 +117,16 @@ gboolean gis_driver_get_gdm_objects (GisDriver        *driver,
 
 GisDriverMode gis_driver_get_mode (GisDriver *driver);
 
+gboolean gis_driver_is_live_session (GisDriver *driver);
+
 gboolean gis_driver_is_small_screen (GisDriver *driver);
 
 GKeyFile *gis_driver_get_vendor_conf_file (GisDriver *driver);
 
 void gis_driver_add_page (GisDriver *driver,
                           GisPage   *page);
+
+void gis_driver_show_window (GisDriver *driver);
 
 void gis_driver_hide_window (GisDriver *driver);
 
