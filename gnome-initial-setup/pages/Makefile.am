@@ -9,6 +9,7 @@ SUBDIRS = \
 	network \
 	timezone \
 	privacy \
+	live-chooser \
 	goa \
 	account \
 	password \
