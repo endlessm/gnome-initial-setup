@@ -385,6 +385,9 @@ gis_goa_page_init (GisGoaPage *page)
 GisPage *
 gis_prepare_goa_page (GisDriver *driver)
 {
+  if (gis_driver_is_live_session (driver))
+    return NULL;
+
   return g_object_new (GIS_TYPE_GOA_PAGE,
                        "driver", driver,
                        NULL);
