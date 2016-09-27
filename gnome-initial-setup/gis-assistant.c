@@ -243,7 +243,7 @@ update_navigation_buttons (GisAssistant *assistant)
     }
   else
     {
-      gboolean can_go_forward, is_first_page;
+      gboolean can_go_forward, is_first_page, hide_forward_button;
 
       gtk_widget_show (priv->back);
       gtk_widget_show (priv->forward);
@@ -253,6 +253,10 @@ update_navigation_buttons (GisAssistant *assistant)
 
       can_go_forward = gis_page_get_complete (page);
       gtk_widget_set_sensitive (priv->forward, can_go_forward);
+
+      hide_forward_button = gis_page_get_hide_forward_button (priv->current_page);
+      gtk_widget_set_visible (priv->forward, !hide_forward_button);
+
       if (can_go_forward)
         gtk_style_context_add_class (gtk_widget_get_style_context (priv->forward), "suggested-action");
       else
