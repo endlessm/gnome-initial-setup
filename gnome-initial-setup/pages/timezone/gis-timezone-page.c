@@ -555,6 +555,10 @@ gis_timezone_page_init (GisTimezonePage *page)
 GisPage *
 gis_prepare_timezone_page (GisDriver *driver)
 {
+  if (gis_driver_is_live_session (driver) &&
+      !gis_driver_has_live_persistence (driver))
+    return NULL;
+
   return g_object_new (GIS_TYPE_TIMEZONE_PAGE,
                        "driver", driver,
                        NULL);
