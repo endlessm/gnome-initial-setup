@@ -56,6 +56,11 @@ dependencies = [
     ibus_dep,
 ]
 
+install_data(
+    'eos-transient-setup',
+    install_dir: libexec_dir
+)
+
 executable(
     'gnome-initial-setup',
     sources,
