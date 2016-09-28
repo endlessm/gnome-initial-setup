@@ -232,6 +232,14 @@ gis_driver_add_page (GisDriver *driver,
 }
 
 void
+gis_driver_show_window (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  gtk_window_present (priv->main_window);
+}
+
+void
 gis_driver_hide_window (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
