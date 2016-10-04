@@ -134,6 +134,7 @@ gnome-initial-setup/pages/display/Makefile
 gnome-initial-setup/pages/endless-eula/Makefile
 gnome-initial-setup/pages/eulas/Makefile
 gnome-initial-setup/pages/account/Makefile
+gnome-initial-setup/pages/live-chooser/Makefile
 gnome-initial-setup/pages/location/Makefile
 gnome-initial-setup/pages/network/Makefile
 gnome-initial-setup/pages/goa/Makefile

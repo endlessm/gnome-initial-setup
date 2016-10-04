@@ -1351,6 +1351,9 @@ gis_account_page_init (GisAccountPage *page)
 void
 gis_prepare_account_page (GisDriver *driver)
 {
+  if (gis_driver_is_live_session (driver))
+    return;
+
   gis_driver_add_page (driver,
                        g_object_new (GIS_TYPE_ACCOUNT_PAGE,
                                      "driver", driver,

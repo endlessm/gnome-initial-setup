@@ -45,6 +45,7 @@ gnome_initial_setup_LDADD =	\
 	pages/endless-eula/libgisendlesseula.la \
 	pages/eulas/libgiseulas.la \
 	pages/network/libgisnetwork.la \
+	pages/live-chooser/libgislivechooser.la \
 	pages/location/libgislocation.la \
 	pages/account/libgisaccount.la \
 	pages/goa/libgisgoa.la \

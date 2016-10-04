@@ -48,6 +48,7 @@
 #include "pages/eulas/gis-eula-pages.h"
 #include "pages/network/gis-network-page.h"
 #include "pages/account/gis-account-page.h"
+#include "pages/live-chooser/gis-live-chooser-page.h"
 #include "pages/location/gis-location-page.h"
 #include "pages/goa/gis-goa-page.h"
 #include "pages/summary/gis-summary-page.h"
@@ -59,6 +60,7 @@ static const gchar *system_setup_pages[] = {
     "account",
     "display",
     "endless_eula",
+    "live-chooser",
     "location"
 };
 
@@ -73,6 +75,7 @@ typedef struct {
 
 static PageData page_table[] = {
   PAGE (language),
+  PAGE (live_chooser),
   PAGE (keyboard),
   PAGE (display),
   PAGE (eula),

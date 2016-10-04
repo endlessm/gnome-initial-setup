@@ -7,6 +7,7 @@ SUBDIRS = \
 	eulas \
 	network \
 	account \
+	live-chooser \
 	location \
 	goa \
 	summary
