@@ -118,10 +118,10 @@
                 <property name="orientation">vertical</property>
                 <property name="spacing">18</property>
                 <child>
-                  <object class="GtkLabel" id="install_label">
+                  <object class="GtkLabel" id="reformat_label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Install Endless OS on this computer.</property>
+                    <property name="label" translatable="yes">Reformat this computer with Endless OS.</property>
                     <property name="justify">center</property>
                     <property name="wrap">True</property>
                     <property name="max_width_chars">30</property>
@@ -139,7 +139,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkImage" id="install_icon">
+                  <object class="GtkImage" id="reformat_icon">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="resource">/org/gnome/initial-setup/install-endless.png</property>
@@ -151,8 +151,8 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="install_button">
-                    <property name="label" translatable="yes">Install</property>
+                  <object class="GtkButton" id="reformat_button">
+                    <property name="label" translatable="yes">Reformat</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>

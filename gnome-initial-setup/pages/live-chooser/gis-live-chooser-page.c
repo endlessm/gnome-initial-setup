@@ -135,9 +135,9 @@ try_button_clicked (GisLiveChooserPage *self)
 }
 
 static void
-installer_exited_cb (GPid     pid,
-                     gint     status,
-                     gpointer user_data)
+reformatter_exited_cb (GPid     pid,
+                       gint     status,
+                       gpointer user_data)
 {
   GisLiveChooserPage *self = user_data;
   GError *error = NULL;
@@ -148,13 +148,13 @@ installer_exited_cb (GPid     pid,
     {
       GtkWidget *message_dialog;
 
-      g_critical ("Error running the installer: %s", error->message);
+      g_critical ("Error running the reformatter: %s", error->message);
 
       message_dialog = gtk_message_dialog_new (GTK_WINDOW (gtk_widget_get_toplevel (user_data)),
                                                GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
                                                GTK_MESSAGE_ERROR,
                                                GTK_BUTTONS_CLOSE,
-                                               _("Error running the installer: %s"), error->message);
+                                               _("Error running the reformatter: %s"), error->message);
 
       gis_driver_show_window (GIS_PAGE (self)->driver);
       gtk_widget_show (message_dialog);
@@ -168,7 +168,7 @@ installer_exited_cb (GPid     pid,
 }
 
 static void
-install_button_clicked (GisLiveChooserPage *self)
+reformat_button_clicked (GisLiveChooserPage *self)
 {
   GError *error = NULL;
   GPid pid;
@@ -186,7 +186,7 @@ install_button_clicked (GisLiveChooserPage *self)
 
   if (error)
     {
-      g_critical ("Error running the installer: %s", error->message);
+      g_critical ("Error running the reformatter: %s", error->message);
       g_clear_error (&error);
       return;
     }
@@ -194,10 +194,10 @@ install_button_clicked (GisLiveChooserPage *self)
   gis_driver_hide_window (GIS_PAGE (self)->driver);
 
   /*
-   * Check for when the installer finishes running, and check
+   * Check for when the reformatter finishes running, and check
    * if it exited smoothly.
    */
-  g_child_watch_add (pid, installer_exited_cb, self);
+  g_child_watch_add (pid, reformatter_exited_cb, self);
 }
 
 static void
@@ -227,9 +227,9 @@ gis_live_chooser_page_constructed (GObject *object)
                             G_CALLBACK (try_button_clicked),
                             self);
 
-  g_signal_connect_swapped (WID ("install_button"),
+  g_signal_connect_swapped (WID ("reformat_button"),
                             "clicked",
-                            G_CALLBACK (install_button_clicked),
+                            G_CALLBACK (reformat_button_clicked),
                             self);
 
 
@@ -263,9 +263,9 @@ gis_live_chooser_page_locale_changed (GisPage *page)
   GisLiveChooserPage *self = GIS_LIVE_CHOOSER_PAGE (page);
 
   gtk_label_set_label (OBJ (GtkLabel*, "try_label"), _("Try Endless OS by running it from the USB Stick."));
-  gtk_label_set_label (OBJ (GtkLabel*, "install_label"), _("Install Endless OS on this computer."));
+  gtk_label_set_label (OBJ (GtkLabel*, "reformat_label"), _("Reformat this computer with Endless OS."));
   gtk_button_set_label (OBJ (GtkButton*, "try_button"), _("Try It"));
-  gtk_button_set_label (OBJ (GtkButton*, "install_button"), _("Install"));
+  gtk_button_set_label (OBJ (GtkButton*, "reformat_button"), _("Reformat"));
 
   gis_page_set_title (page, _("Endless USB Stick"));
 }
