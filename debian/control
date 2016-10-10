@@ -43,6 +43,7 @@ Package: gnome-initial-setup
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
+         eos-installer,
          gdm3,
 	 policykit-1 (>= 0.106)
 Recommends: gnome-getting-started-docs
