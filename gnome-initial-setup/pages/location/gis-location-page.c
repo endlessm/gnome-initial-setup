@@ -812,6 +812,9 @@ gis_location_page_init (GisLocationPage *page)
 void
 gis_prepare_location_page (GisDriver *driver)
 {
+  if (gis_driver_is_live_session (driver))
+    return;
+
   gis_driver_add_page (driver,
                        g_object_new (GIS_TYPE_LOCATION_PAGE,
                                      "driver", driver,
