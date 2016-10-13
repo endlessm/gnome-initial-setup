@@ -477,58 +477,27 @@ static void
 system_testmode (GtkButton *button, gpointer data)
 {
   GtkWindow *factory_dialog = GTK_WINDOW (data);
-  GSubprocessLauncher *launcher = NULL;
-  GSubprocess *process = NULL;
   GError *error = NULL;
 
   /* Test mode can only be initialized once */
   gtk_widget_set_sensitive (GTK_WIDGET (button), FALSE);
 
-  launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_NONE);
-
-  /* pkexec won't let us run the program if $SHELL isn't in /etc/shells,
-   * so remove it from the environment.
-   */
-  g_subprocess_launcher_unsetenv (launcher, "SHELL");
-  process = g_subprocess_launcher_spawn (launcher, &error,
-                                         "pkexec",
-                                         LIBEXECDIR "/eos-test-mode",
-                                         NULL);
-  if (!process) {
+  if (!gis_pkexec (LIBEXECDIR "/eos-test-mode", NULL, &error)) {
     GtkWidget *dialog;
 
-    g_warning ("Failed to create test mode process: %s", error->message);
+    g_warning ("%s", error->message);
     dialog = gtk_message_dialog_new (factory_dialog,
                                      GTK_DIALOG_DESTROY_WITH_PARENT,
                                      GTK_MESSAGE_ERROR,
                                      GTK_BUTTONS_CLOSE,
-                                     "Failed to create test mode process: %s",
-                                     error->message);
-    gtk_dialog_run (GTK_DIALOG (dialog));
-    gtk_widget_destroy (dialog);
-    g_error_free (error);
-    goto out;
-  }
-
-  if (!g_subprocess_wait_check (process, NULL, &error)) {
-    GtkWidget *dialog;
-
-    g_warning ("eos-test-mode failed: %s", error->message);
-    dialog = gtk_message_dialog_new (factory_dialog,
-                                     GTK_DIALOG_DESTROY_WITH_PARENT,
-                                     GTK_MESSAGE_ERROR,
-                                     GTK_BUTTONS_CLOSE,
-                                     "eos-test-mode failed: %s",
+                                     "%s",
                                      error->message);
     gtk_dialog_run (GTK_DIALOG (dialog));
     gtk_widget_destroy (dialog);
     g_error_free (error);
   }
 
- out:
   gtk_window_close (factory_dialog);
-  g_clear_object (&process);
-  g_clear_object (&launcher);
 }
 
 static void
