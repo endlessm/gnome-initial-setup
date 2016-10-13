@@ -50,10 +50,9 @@ static void
 create_live_user (GisLiveChooserPage *self)
 {
   ActUser *user;
-  GError *error;
+  GError *error = NULL;
   const gchar *language;
 
-  error = NULL;
   user = act_user_manager_create_user (self->act_client,
                                        LIVE_ACCOUNT_USERNAME,
                                        LIVE_ACCOUNT_FULLNAME,
@@ -73,6 +72,13 @@ create_live_user (GisLiveChooserPage *self)
 
   if (language)
     act_user_set_language (user, language);
+
+  if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user", LIVE_ACCOUNT_USERNAME,
+                   &error))
+    {
+      g_warning ("%s\n", error->message);
+      g_clear_error (&error);
+    }
 
   gis_driver_set_user_permissions (GIS_PAGE (self)->driver, user, NULL);
 
