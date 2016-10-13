@@ -687,6 +687,26 @@ gis_location_page_constructed (GObject *object)
 
   update_timezone (page);
 
+  /*
+   * When running on a Live session, it's important to try to not touch
+   * the system clock and use the RTC as local rather than UTC. Timedate1
+   * has a method that tries to do that (although there are no guarantees
+   * that it works all the time.)
+   */
+  if (gis_driver_is_live_session (GIS_PAGE (object)->driver)) {
+    timedate1_call_set_local_rtc_sync (priv->dtm,
+                                       TRUE,
+                                       TRUE,
+                                       FALSE,
+                                       NULL,
+                                       &error);
+
+    if (error) {
+      g_warning ("Error calling SetLocalRTC(): %s", error->message);
+      g_clear_error (&error);
+    }
+  }
+
   g_signal_connect (G_OBJECT (entry), "notify::location",
                     G_CALLBACK (location_changed), page);
 
@@ -812,8 +832,14 @@ gis_location_page_init (GisLocationPage *page)
 void
 gis_prepare_location_page (GisDriver *driver)
 {
-  gis_driver_add_page (driver,
-                       g_object_new (GIS_TYPE_LOCATION_PAGE,
-                                     "driver", driver,
-                                     NULL));
+  GisPage *page;
+
+  page = g_object_new (GIS_TYPE_LOCATION_PAGE,
+                       "driver", driver,
+                       NULL);
+
+  if (gis_driver_is_live_session (driver))
+    return;
+
+  gis_driver_add_page (driver, page);
 }

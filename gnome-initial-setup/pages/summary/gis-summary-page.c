@@ -411,6 +411,19 @@ gis_summary_page_constructed (GObject *object)
 
   gis_page_set_complete (GIS_PAGE (page), TRUE);
 
+  gtk_widget_set_visible (WID ("warning_icon"),
+                          gis_driver_is_live_session (GIS_PAGE (object)->driver));
+
+  if (gis_driver_is_live_session (GIS_PAGE (object)->driver))
+    {
+      gtk_label_set_label (OBJ (GtkLabel*, "summary-details"),
+                           _("You're ready to try Endless OS"));
+
+      gtk_label_set_markup (OBJ (GtkLabel*, "summary-details2"),
+                            _("<b>Any files you download or documents you create will be "
+                              "lost forever when you restart or shutdown the computer.</b>"));
+    }
+
   gtk_widget_show (GTK_WIDGET (page));
 }
 
