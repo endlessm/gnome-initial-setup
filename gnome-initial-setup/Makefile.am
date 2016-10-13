@@ -29,6 +29,7 @@ gnome_initial_setup_SOURCES = \
 	gnome-initial-setup.c gnome-initial-setup.h \
 	gis-assistant.c gis-assistant.h \
 	gis-page.c gis-page.h \
+	gis-pkexec.c gis-pkexec.h \
 	gis-driver.c gis-driver.h \
 	gis-keyring.c gis-keyring.h
 
