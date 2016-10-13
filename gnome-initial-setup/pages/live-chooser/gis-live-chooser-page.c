@@ -59,7 +59,7 @@ disable_chrome_auto_download (GisLiveChooserPage *page)
   GError *error = NULL;
 
   if (!gis_pkexec (DATADIR "/eos-google-chrome-helper/eos-google-chrome-system-helper.py",
-                   NULL, &error))
+                   NULL, NULL, &error))
     {
       g_warning ("Failed to disable Chrome auto-download: %s\n", error->message);
       g_clear_error (&error);
@@ -71,7 +71,7 @@ create_live_user (GisLiveChooserPage *page)
 {
   GisLiveChooserPagePrivate *priv = gis_live_chooser_page_get_instance_private (page);
   ActUser *user;
-  GError *error;
+  GError *error = NULL;
   const gchar *language;
 
   error = NULL;
@@ -96,6 +96,15 @@ create_live_user (GisLiveChooserPage *page)
     act_user_set_language (user, language);
 
   gis_driver_set_user_permissions (GIS_PAGE (page)->driver, user, NULL);
+  if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user",
+                   NULL,
+                   LIVE_ACCOUNT_USERNAME,
+                   &error))
+    {
+      g_warning ("%s\n", error->message);
+      g_clear_error (&error);
+    }
+
   gis_update_login_keyring_password ("");
 
   g_object_unref (user);

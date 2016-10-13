@@ -29,4 +29,4 @@ libgislivechooser_la_LDFLAGS = -export_dynamic -avoid-version -module -no-undefi
 
 EXTRA_DIST = live-chooser.gresource.xml $(resource_files)
 
-#dist_libexec_SCRIPTS = eos-test-mode
+dist_libexec_SCRIPTS = eos-setup-live-user
