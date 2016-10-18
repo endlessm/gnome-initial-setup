@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-04 03:23+0000\n"
-"PO-Revision-Date: 2016-08-31 21:39+0000\n"
-"Last-Translator: Philip Chimento <philip.chimento@gmail.com>\n"
+"POT-Creation-Date: 2016-10-11 03:10+0000\n"
+"PO-Revision-Date: 2016-10-11 03:11+0000\n"
+"Last-Translator: endlessmobile_build <philip@endlessm.com>\n"
 "Language-Team: Bengali (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/bn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,24 +24,24 @@ msgstr ""
 msgid "Initial Setup"
 msgstr "প্রাথমিক সেটআপ"
 
-#: ../gnome-initial-setup/gis-assistant.c:300
+#: ../gnome-initial-setup/gis-assistant.c:304
 msgid "_Next"
 msgstr "_পরবর্তী"
 
-#: ../gnome-initial-setup/gis-assistant.c:439
+#: ../gnome-initial-setup/gis-assistant.c:443
 msgid "_Previous"
 msgstr "_পূর্ববর্তী"
 
-#: ../gnome-initial-setup/gis-assistant.c:440
+#: ../gnome-initial-setup/gis-assistant.c:444
 #: ../gnome-initial-setup/pages/goa/cc-online-accounts-add-account-dialog.c:379
 msgid "_Cancel"
 msgstr "_বাতিল"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:295
+#: ../gnome-initial-setup/gnome-initial-setup.c:298
 msgid "Force new user mode"
 msgstr "নতুন ব্যবহারকারী রূপে যেতে বাধ্য করুন"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:299
+#: ../gnome-initial-setup/gnome-initial-setup.c:302
 msgid "- GNOME initial setup"
 msgstr "- GNOME প্রাথমিক সেটআপ"
 
@@ -455,6 +455,35 @@ msgstr "পরীক্ষা রূপ"
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:2
 msgid "Power Off"
 msgstr "বন্ধ করুন"
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:157
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:265
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
+msgid "Try Endless OS by running it from the USB Stick."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:266
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
+msgid "Reformat this computer with Endless OS."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:267
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
+msgid "Try It"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:268
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
+msgid "Reformat"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:270
+msgid "Endless USB Stick"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/location/gis-location-page.c:662
 msgid "Search for a location"
