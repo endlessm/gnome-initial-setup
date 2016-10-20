@@ -7,6 +7,7 @@
 # Enrico Nicoletto <liverig@gmail.com>, 2013
 # Felipe Borges <felipeborges@src.gnome.org>, 2012
 # Georges Basile Stavracas Neto <georges.stavracas@gmail.com>, 2013
+# Mariana Barbosa <mariana@endlessm.com>, 2016
 # Mariana Barbosa <mari@endlessm.com>, 2015
 # Philip Chimento <philip.chimento@gmail.com>, 2014
 # Rafael Fontenelle <rffontenelle@gmail.com>, 2013
@@ -15,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-11 03:10+0000\n"
-"PO-Revision-Date: 2016-10-11 03:11+0000\n"
-"Last-Translator: endlessmobile_build <philip@endlessm.com>\n"
+"POT-Creation-Date: 2016-10-18 03:00+0000\n"
+"PO-Revision-Date: 2016-10-19 21:43+0000\n"
+"Last-Translator: Mariana Barbosa <mariana@endlessm.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -431,25 +432,25 @@ msgstr "Selecionar"
 msgid "No languages found"
 msgstr "Nenhum idioma encontrado"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:594
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:563
 msgid "Disabled"
 msgstr "Desabilitado"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:596
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:565
 #, c-format
 msgid "SD Card: %s"
 msgstr "Cartão SD: %s"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:675
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:644
 msgid "Welcome"
 msgstr "Bem vindo"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:679
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:648
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:3
 msgid "Welcome to Endless!"
 msgstr "Bem-vindo ao Endless!"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:681
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:650
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:4
 msgid "Let's set up your computer..."
 msgstr "Vamos configurar seu computador... "
@@ -462,40 +463,40 @@ msgstr "Modo teste"
 msgid "Power Off"
 msgstr "Desligar"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:157
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:163
 #, c-format
 msgid "Error running the reformatter: %s"
-msgstr ""
+msgstr "Erro ao executar a reformatação: %s"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:265
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:271
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
+msgstr "Teste o Endless OS rodando o sistema em um pendrive"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:266
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:272
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Reformat this computer with Endless OS."
-msgstr ""
+msgstr "Reformatar este computador com o Endless OS"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:267
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:273
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
 msgid "Try It"
-msgstr ""
+msgstr "Experimente"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:268
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:274
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat"
-msgstr ""
+msgstr "Reformatar"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:270
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:276
 msgid "Endless USB Stick"
-msgstr ""
+msgstr "Pendrive Endless"
 
 #: ../gnome-initial-setup/pages/location/gis-location-page.c:662
 msgid "Search for a location"
 msgstr "Pesquisar uma localização"
 
-#: ../gnome-initial-setup/pages/location/gis-location-page.c:790
+#: ../gnome-initial-setup/pages/location/gis-location-page.c:810
 #: ../gnome-initial-setup/pages/location/gis-location-page.ui.h:15
 msgid "Location"
 msgstr "Localização"
@@ -630,6 +631,16 @@ msgid "_Start using %s"
 msgstr "_Começar a usar o %s"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:420
+msgid "You're ready to try Endless OS"
+msgstr "Tudo pronto para você experimentar o Endless OS"
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:423
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr "<b>Qualquer arquivo que você baixar ou documento que você criar será perdido para sempre quando você reiniciar ou desligar o computador.</b>"
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:433
 msgid "Thank You"
 msgstr "Obrigado"
 

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-11 03:10+0000\n"
-"PO-Revision-Date: 2016-10-11 03:11+0000\n"
+"POT-Creation-Date: 2016-10-18 03:00+0000\n"
+"PO-Revision-Date: 2016-10-19 07:33+0000\n"
 "Last-Translator: endlessmobile_build <philip@endlessm.com>\n"
 "Language-Team: Thai (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/th/)\n"
 "MIME-Version: 1.0\n"
@@ -424,25 +424,25 @@ msgstr "เลือก"
 msgid "No languages found"
 msgstr "ไม่พบภาษา"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:594
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:563
 msgid "Disabled"
 msgstr "ปิดการใช้งาน"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:596
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:565
 #, c-format
 msgid "SD Card: %s"
 msgstr "SD Card: %s"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:675
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:644
 msgid "Welcome"
 msgstr "ยินดีต้อนรับ"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:679
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:648
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:3
 msgid "Welcome to Endless!"
 msgstr "ขอต้อนรับสู่ Endless!"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:681
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:650
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:4
 msgid "Let's set up your computer..."
 msgstr "มาตั้งค่าคอมพิวเตอร์ของคุณกันเถอะ..."
@@ -455,40 +455,40 @@ msgstr "โหมดทดสอบ"
 msgid "Power Off"
 msgstr "ปิดเครื่อง"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:157
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:163
 #, c-format
 msgid "Error running the reformatter: %s"
-msgstr ""
+msgstr "ข้อผิดพลาดในการรันตัวฟอร์แมตใหม่: %s"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:265
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:271
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
+msgstr "ลองใช้ Endless OS โดยรันจากแฟลชไดรฟ์"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:266
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:272
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Reformat this computer with Endless OS."
-msgstr ""
+msgstr "ฟอร์แมตคอมพิวเตอร์นี้ใหม่ด้วย Endless OS"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:267
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:273
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
 msgid "Try It"
-msgstr ""
+msgstr "ทดลองใช้"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:268
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:274
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat"
-msgstr ""
+msgstr "ฟอร์แมตใหม่"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:270
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:276
 msgid "Endless USB Stick"
-msgstr ""
+msgstr "แฟลชไดรฟ์ Endless"
 
 #: ../gnome-initial-setup/pages/location/gis-location-page.c:662
 msgid "Search for a location"
 msgstr "ค้นหาตำแหน่งที่ตั้ง"
 
-#: ../gnome-initial-setup/pages/location/gis-location-page.c:790
+#: ../gnome-initial-setup/pages/location/gis-location-page.c:810
 #: ../gnome-initial-setup/pages/location/gis-location-page.ui.h:15
 msgid "Location"
 msgstr "ตำแหน่งที่ตั้ง"
@@ -623,6 +623,16 @@ msgid "_Start using %s"
 msgstr "_เริ่มใช้งาน %s"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:420
+msgid "You're ready to try Endless OS"
+msgstr "คุณพร้อมแล้วที่จะลองใช้ Endless OS"
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:423
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr "<b>ไฟล์ใดๆ ที่คุณดาวน์โหลดหรือเอกสารใดๆ ที่คุณสร้างขึ้นจะสูญหายไปอย่างถาวรเมื่อคุณรีสตาร์ตหรือปิดคอมพิวเตอร์</b>"
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:433
 msgid "Thank You"
 msgstr "ขอขอบคุณ"
 
