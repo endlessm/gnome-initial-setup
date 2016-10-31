@@ -37,34 +37,59 @@ EOS_INSTALLER = 'eos-installer.desktop'
 GDM_APPS_DIR = '/usr/share/gdm/greeter/applications'
 EOS_INSTALLER_PATH = os.path.join(GDM_APPS_DIR, EOS_INSTALLER)
 
-SCHEMA = 'org.gnome.shell'
+SHELL_SCHEMA = 'org.gnome.shell'
 ICON_GRID_LAYOUT = 'icon-grid-layout'
 TASKBAR_PINS = 'taskbar-pins'
 
+GS_SCHEMA = 'org.gnome.software'
+ALLOW_UPDATES = 'allow-updates'
+
+class SettingsUpdates(object):
+    def __init__(self, schema):
+        self._settings = Gio.Settings(schema=schema)
+        self._updates = {}
+
+    def get_settings(self):
+        return self._settings
+
+    def set(self, key, value):
+        self._updates[key] = value
+
+    def to_keyfile_str(self):
+        schema_id = self._settings.get_property('schema-id')
+        keyfile_lines = '[{}]\n'.format(schema_id.replace('.', '/'))
+
+        for k, v in self._updates.items():
+            if k is None:
+                continue
+            keyfile_lines += '{}={}\n'.format(k, v.print_(False))
+        return keyfile_lines
+
+    def apply(self):
+        for key, value in self._updates.items():
+            self._settings.set_value(key, value)
 
 class SetupLiveUser(object):
     def __init__(self):
-        self.settings = Gio.Settings(schema=SCHEMA)
-        self.updates = {}
+        self.updates = {SHELL_SCHEMA: SettingsUpdates(SHELL_SCHEMA),
+                        GS_SCHEMA: SettingsUpdates(GS_SCHEMA)}
 
-    def update(self, key, variant):
-        log.info("Updating %s to %s", key, variant.print_(False))
-        self.updates[key] = variant
+    def update(self, schema, key, variant):
+        log.info('Updating {}: {} to {}'.format(schema, key, variant.print_(False)))
+        self.updates[schema].set(key, variant)
 
     def format_keyfile(self):
-        keyfile_lines = ['[{}]'.format(SCHEMA.replace('.', '/'))]
-        for k, v in self.updates.items():
-            if v is not None:
-                keyfile_lines.append('{}={}'.format(
-                    k, v.print_(False),
-                ))
+        keyfile_lines = []
+        for updates in self.updates.values():
+            keyfile_lines.append(updates.to_keyfile_str())
 
-        return '\n'.join(keyfile_lines) + '\n'
+        return '\n'.join(keyfile_lines)
 
     def prepare(self):
         self.add_symlink()
         self.update_icon_grid()
         self.update_taskbar_pins()
+        self.disallow_app_center_updates()
 
     def write_gsettings(self):
         '''Write changed settings using GSettings. This seems like the obvious
@@ -74,8 +99,8 @@ class SetupLiveUser(object):
         connection with which to auto-launch one. Interestingly there seems to
         be no way to get an error out of GSettings – you get nice warnings on
         the console, but nothing here.'''
-        for k, v in self.updates.items():
-            self.settings.set_value(k, v)
+        for updates in self.updates.values():
+            updates.apply()
 
     def write_dconf_compile(self):
         '''This is a bit roundabout, and depends on the knowledge that the user
@@ -155,14 +180,19 @@ class SetupLiveUser(object):
 
         if EOS_INSTALLER not in icon_tree['desktop']:
             icon_tree['desktop'].insert(0, EOS_INSTALLER)
-            self.update(ICON_GRID_LAYOUT, GLib.Variant('a{sas}', icon_tree))
+            self.update(SHELL_SCHEMA, ICON_GRID_LAYOUT,
+                        GLib.Variant('a{sas}', icon_tree))
 
     def update_taskbar_pins(self):
-        taskbar_pins = self.settings.get_strv(TASKBAR_PINS)
+        updates = self.updates[SHELL_SCHEMA]
+        taskbar_pins = updates.get_settings().get_strv(TASKBAR_PINS)
         if EOS_INSTALLER not in taskbar_pins:
             taskbar_pins.insert(0, EOS_INSTALLER)
-            self.update(TASKBAR_PINS, GLib.Variant('as', taskbar_pins))
+            self.update(SHELL_SCHEMA, TASKBAR_PINS,
+                        GLib.Variant('as', taskbar_pins))
 
+    def disallow_app_center_updates (self):
+        self.update(GS_SCHEMA, ALLOW_UPDATES, GLib.Variant('b', False))
 
 def main():
     p = argparse.ArgumentParser(
