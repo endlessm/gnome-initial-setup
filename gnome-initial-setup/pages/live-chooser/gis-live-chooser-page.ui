@@ -40,7 +40,7 @@
                 <property name="hexpand">True</property>
                 <property name="border_width">18</property>
                 <property name="orientation">vertical</property>
-                <property name="spacing">18</property>
+                <property name="spacing">24</property>
                 <child>
                   <object class="GtkLabel" id="try_label">
                     <property name="visible">True</property>
@@ -48,6 +48,7 @@
                     <property name="label" translatable="yes">Try Endless OS by running it from the USB Stick.</property>
                     <property name="justify">center</property>
                     <property name="wrap">True</property>
+                    <property name="yalign">0</property>
                     <property name="max_width_chars">30</property>
                     <attributes>
                       <attribute name="scale" value="1.4"/>
@@ -113,7 +114,7 @@
                 <property name="hexpand">True</property>
                 <property name="border_width">18</property>
                 <property name="orientation">vertical</property>
-                <property name="spacing">18</property>
+                <property name="spacing">24</property>
                 <child>
                   <object class="GtkLabel" id="reformat_label">
                     <property name="visible">True</property>
@@ -121,6 +122,7 @@
                     <property name="label" translatable="yes">Reformat this computer with Endless OS.</property>
                     <property name="justify">center</property>
                     <property name="wrap">True</property>
+                    <property name="yalign">0</property>
                     <property name="max_width_chars">30</property>
                     <attributes>
                       <attribute name="scale" value="1.4"/>
@@ -179,6 +181,13 @@
         <property name="position">1</property>
       </packing>
     </child>
+  </object>
+  <object class="GtkSizeGroup">
+    <property name="mode">vertical</property>
+    <widgets>
+      <widget name="reformat_label"/>
+      <widget name="try_label"/>
+    </widgets>
   </object>
   <object class="GtkSizeGroup">
     <property name="mode">vertical</property>

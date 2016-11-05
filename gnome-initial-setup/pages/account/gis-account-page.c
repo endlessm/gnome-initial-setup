@@ -208,6 +208,15 @@ update_account_page_status (GisAccountPage *page)
 }
 
 static void
+entry_activated (GisAccountPage *self)
+{
+  if (!gis_page_get_complete (GIS_PAGE (self)))
+    return;
+
+  gis_assistant_next_page (gis_driver_get_assistant (GIS_PAGE (self)->driver));
+}
+
+static void
 set_mode (GisAccountPage *page,
           UmAccountMode   mode)
 {
@@ -1261,6 +1270,16 @@ gis_account_page_constructed (GObject *object)
                     G_CALLBACK (on_domain_changed), page);
   g_signal_connect (WID("enterprise-login"), "changed",
                     G_CALLBACK (on_entry_changed), page);
+
+  g_signal_connect_swapped (fullname_entry, "activate",
+                            G_CALLBACK (entry_activated), page);
+  g_signal_connect_swapped (password_entry, "activate",
+                            G_CALLBACK (entry_activated), page);
+  g_signal_connect_swapped (confirm_entry, "activate",
+                            G_CALLBACK (entry_activated), page);
+  g_signal_connect_swapped (reminder_entry, "activate",
+                            G_CALLBACK (entry_activated), page);
+
 
   priv->act_client = act_user_manager_get_default ();
 
