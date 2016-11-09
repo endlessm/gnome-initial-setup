@@ -329,6 +329,17 @@ gis_endless_eula_page_constructed (GObject *object)
   gtk_widget_show (GTK_WIDGET (page));
 
   widget = WID ("metrics-checkbutton");
+
+  /* Disable metrics on live sessions, and hide the option. */
+  if (gis_driver_is_live_session (GIS_PAGE (object)->driver))
+    {
+      gtk_widget_hide (WID ("metrics-separator"));
+      gtk_widget_hide (WID ("metrics-label"));
+      gtk_widget_hide (WID ("metrics-checkbutton"));
+
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), FALSE);
+    }
+
   g_signal_connect_swapped (widget, "toggled",
                             G_CALLBACK (sync_metrics_active_state), page);
 
