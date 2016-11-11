@@ -362,6 +362,13 @@
             <child>
               <placeholder/>
             </child>
+            <focus-chain>
+              <widget name="account-fullname-entry" />
+              <widget name="account-password-entry" />
+              <widget name="account-confirm-entry" />
+              <widget name="account-password-visibility-toggle" />
+              <widget name="account-reminder-entry" />
+            </focus-chain>
           </object>
         </child>
         <child type="tab">

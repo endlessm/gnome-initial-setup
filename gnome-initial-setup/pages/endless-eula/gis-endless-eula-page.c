@@ -335,7 +335,7 @@ gis_endless_eula_page_constructed (GObject *object)
     {
       gtk_widget_hide (WID ("metrics-separator"));
       gtk_widget_hide (WID ("metrics-label"));
-      gtk_widget_hide (WID ("metrics-checkbutton-box"));
+      gtk_widget_hide (WID ("metrics-checkbutton"));
 
       gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), FALSE);
     }
