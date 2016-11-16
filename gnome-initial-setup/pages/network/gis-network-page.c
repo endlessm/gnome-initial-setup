@@ -599,6 +599,7 @@ gis_network_page_constructed (GObject *object)
   DBusGConnection *bus;
   GError *error;
   gboolean visible = TRUE;
+  gboolean has_ethernet_connection = FALSE;
   GtkWidget *box;
 
   G_OBJECT_CLASS (gis_network_page_parent_class)->constructed (object);
@@ -617,12 +618,24 @@ gis_network_page_constructed (GObject *object)
       if (!nm_device_get_managed (device))
         continue;
 
-      if (nm_device_get_device_type (device) == NM_DEVICE_TYPE_WIFI) {
-        /* FIXME deal with multiple, dynamic devices */
-        priv->nm_device = g_object_ref (device);
+      switch (nm_device_get_device_type (device)) {
+      case NM_DEVICE_TYPE_ETHERNET:
+        has_ethernet_connection = TRUE;
         break;
+
+      case NM_DEVICE_TYPE_WIFI:
+        /* FIXME deal with multiple, dynamic devices */
+        g_set_object (&priv->nm_device, device);
+
+      default:
+        continue;
       }
     }
+  }
+
+  if (has_ethernet_connection) {
+    visible = FALSE;
+    goto out;
   }
 
   if (priv->nm_device == NULL) {
