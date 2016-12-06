@@ -59,6 +59,7 @@ struct _GisNetworkPagePrivate {
   GtkWidget *skip_button;
 
   guint refresh_timeout_id;
+  guint network_handler_id;
 };
 typedef struct _GisNetworkPagePrivate GisNetworkPagePrivate;
 
@@ -101,12 +102,16 @@ static void
 sync_page_complete (GisNetworkPage *page)
 {
   GisNetworkPagePrivate *priv = gis_network_page_get_instance_private (page);
-  gboolean skip_network, network_configured;
+  GNetworkMonitor *monitor;
+  gboolean skip_network, network_configured, has_connection;
 
+  monitor = g_network_monitor_get_default ();
   skip_network = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (priv->skip_button));
+  has_connection = g_network_monitor_get_connectivity (monitor) == G_NETWORK_CONNECTIVITY_FULL;
+
   get_device_activation_state (priv->nm_device, &network_configured, NULL);
 
-  gis_page_set_complete (GIS_PAGE (page), skip_network || network_configured);
+  gis_page_set_complete (GIS_PAGE (page), skip_network || network_configured || has_connection);
 }
 
 static GPtrArray *
@@ -588,18 +593,53 @@ active_connections_changed (NMClient *client, GParamSpec *pspec, GisNetworkPage 
   refresh_wireless_list (page);
 }
 
+static gboolean
+skip_page_for_ethernet_connection (GisNetworkPage  *self,
+                                   GNetworkMonitor *monitor)
+{
+  GisNetworkPagePrivate *priv;
+  GisAssistant *assistant;
+  gboolean is_current_page, has_connection;
+
+  priv = gis_network_page_get_instance_private (self);
+  assistant = gis_driver_get_assistant (GIS_PAGE (self)->driver);
+  is_current_page = gis_assistant_get_current_page (assistant) == GIS_PAGE (self);
+  has_connection = g_network_monitor_get_connectivity (monitor) == G_NETWORK_CONNECTIVITY_FULL;
+
+  /*
+   * Hide the Network page if a connection is available and it's not
+   * visible. This way, the user won't be even prompted about network.
+   * Otherwise, make it visible so the user can connect to a network,
+   * keeping in mind this page is only visible with a Wireless adapter.
+   */
+  if (!is_current_page)
+    gtk_widget_set_visible (GTK_WIDGET (self), !has_connection && priv->nm_device);
+
+  sync_page_complete (self);
+
+  return has_connection;
+}
+
+static void
+network_connectivity_changed_cb (GNetworkMonitor *monitor,
+                                 GParamSpec      *pspec,
+                                 GisNetworkPage  *self)
+{
+  skip_page_for_ethernet_connection (self, monitor);
+}
+
 static void
 gis_network_page_constructed (GObject *object)
 {
   GisNetworkPage *page = GIS_NETWORK_PAGE (object);
   GisNetworkPagePrivate *priv = gis_network_page_get_instance_private (page);
+  GNetworkMonitor *monitor;
   const GPtrArray *devices;
   NMDevice *device;
   guint i;
   DBusGConnection *bus;
   GError *error;
   gboolean visible = TRUE;
-  gboolean has_ethernet_connection = FALSE;
   GtkWidget *box;
 
   G_OBJECT_CLASS (gis_network_page_parent_class)->constructed (object);
@@ -618,26 +658,32 @@ gis_network_page_constructed (GObject *object)
       if (!nm_device_get_managed (device))
         continue;
 
-      switch (nm_device_get_device_type (device)) {
-      case NM_DEVICE_TYPE_ETHERNET:
-        has_ethernet_connection = TRUE;
-        break;
-
-      case NM_DEVICE_TYPE_WIFI:
+      if (nm_device_get_device_type (device) == NM_DEVICE_TYPE_WIFI) {
         /* FIXME deal with multiple, dynamic devices */
-        g_set_object (&priv->nm_device, device);
-
-      default:
-        continue;
+        priv->nm_device = g_object_ref (device);
+        break;
       }
     }
   }
 
-  if (has_ethernet_connection) {
-    visible = FALSE;
-    goto out;
-  }
+  /*
+   * Monitor the network to see if the network gets available without
+   * using this panel.
+   */
+  monitor = g_network_monitor_get_default ();
 
+  priv->network_handler_id = g_signal_connect (monitor,
+                                               "notify::connectivity",
+                                               G_CALLBACK (network_connectivity_changed_cb),
+                                               page);
+
+  if (skip_page_for_ethernet_connection (page, monitor))
+    {
+      visible = FALSE;
+      goto out;
+    }
+
+  /* Check for available Wi-Fi devices */
   if (priv->nm_device == NULL) {
     visible = FALSE;
     refresh_without_device (page);
@@ -699,6 +745,12 @@ gis_network_page_dispose (GObject *object)
   g_clear_object (&priv->nm_settings);
   g_clear_object (&priv->nm_device);
   g_clear_object (&priv->icons);
+
+  if (priv->network_handler_id > 0)
+    {
+      g_signal_handler_disconnect (g_network_monitor_get_default (), priv->network_handler_id);
+      priv->network_handler_id = 0;
+    }
 
   if (priv->refresh_timeout_id != 0)
     {
