@@ -677,11 +677,13 @@ gis_network_page_constructed (GObject *object)
                                                G_CALLBACK (network_connectivity_changed_cb),
                                                page);
 
+  /*
+   * When there already is a working connection available, we hide the page from the
+   * setup but still populate it with the networks. If the user happens to disconnect
+   * after this page is created, we can still be able to connect to something afterwards.
+   */
   if (skip_page_for_ethernet_connection (page, monitor))
-    {
-      visible = FALSE;
-      goto out;
-    }
+    visible = FALSE;
 
   /* Check for available Wi-Fi devices */
   if (priv->nm_device == NULL) {
