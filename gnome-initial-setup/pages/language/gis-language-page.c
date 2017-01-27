@@ -647,7 +647,7 @@ gis_language_page_locale_changed (GisPage *page)
   if (priv->welcome_text)
     gtk_label_set_text (GTK_LABEL (priv->welcome_text), _("Welcome to Endless!"));
   if (priv->set_up_text)
-    gtk_label_set_text (GTK_LABEL (priv->set_up_text), _("Let's set up your computer..."));
+    gtk_label_set_text (GTK_LABEL (priv->set_up_text), _("Let’s set up your computer…"));
 }
 
 static void
