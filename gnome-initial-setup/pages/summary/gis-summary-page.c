@@ -391,7 +391,7 @@ update_distro_name (GisSummaryPage *page)
   if (name)
     {
       gchar *label;
-      label = g_strdup_printf (_("_Start using %s"), name);
+      label = g_strdup_printf (_("_Start Using %s"), name);
       gtk_label_set_label (GTK_LABEL (WID ("summary-start-button-label")), label);
       g_free (label);
       g_free (name);
