@@ -73,7 +73,7 @@ create_live_user (GisLiveChooserPage *self)
                                        &error);
   if (error)
     {
-      g_warning ("Failed to created shared user: %s", error->message);
+      g_warning ("Failed to create live user: %s", error->message);
       g_clear_error (&error);
       return;
     }
@@ -89,7 +89,7 @@ create_live_user (GisLiveChooserPage *self)
   if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user", LIVE_ACCOUNT_USERNAME,
                    &error))
     {
-      g_warning ("%s\n", error->message);
+      g_warning ("Failed to setup live user: %s\n", error->message);
       g_clear_error (&error);
     }
 
