@@ -47,6 +47,19 @@ G_DEFINE_TYPE (GisLiveChooserPage, gis_live_chooser_page, GIS_TYPE_PAGE)
 #define WID(name) OBJ(GtkWidget*,name)
 
 static void
+disable_chrome_auto_download (GisLiveChooserPage *self)
+{
+  GError *error = NULL;
+
+  if (!gis_pkexec (DATADIR "eos-google-chrome-helper/eos-google-chrome-system-helper.py",
+                   NULL, &error))
+    {
+      g_warning ("Failed to disable Chrome auto-download: %s\n", error->message);
+      g_clear_error (&error);
+    }
+}
+
+static void
 create_live_user (GisLiveChooserPage *self)
 {
   ActUser *user;
@@ -60,7 +73,7 @@ create_live_user (GisLiveChooserPage *self)
                                        &error);
   if (error)
     {
-      g_warning ("Failed to created shared user: %s", error->message);
+      g_warning ("Failed to create live user: %s", error->message);
       g_clear_error (&error);
       return;
     }
@@ -76,7 +89,7 @@ create_live_user (GisLiveChooserPage *self)
   if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user", LIVE_ACCOUNT_USERNAME,
                    &error))
     {
-      g_warning ("%s\n", error->message);
+      g_warning ("Failed to setup live user: %s\n", error->message);
       g_clear_error (&error);
     }
 
@@ -137,6 +150,7 @@ static void
 try_button_clicked (GisLiveChooserPage *self)
 {
   create_live_user (self);
+  disable_chrome_auto_download (self);
   update_assistant (self);
 }
 
