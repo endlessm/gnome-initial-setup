@@ -547,6 +547,7 @@ void
 cc_language_chooser_init (CcLanguageChooser *chooser)
 {
         chooser->priv = GET_PRIVATE (chooser);
+        chooser->priv->showing_extra = TRUE;
 }
 
 void
