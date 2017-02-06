@@ -59,6 +59,9 @@ struct _CcLanguageChooserPrivate
         GtkWidget *more_item;
         GtkWidget *filter_entry;
         GtkWidget *language_list;
+        GtkWidget *language_scrolledwindow;
+        GtkWidget *to_be_scrolled_row;
+        gboolean initial_scroll;
         gboolean showing_extra;
         gchar **filter_words;
         gchar *language;
@@ -145,10 +148,63 @@ language_widget_new (const char *locale_id,
         return widget->box;
 }
 
+static inline gint
+get_selected_language_row_y (GtkWidget *row)
+{
+        GtkAllocation alloc;
+
+        gtk_widget_get_allocation (row, &alloc);
+
+        return alloc.y + alloc.height / 2.0;
+}
+
+static void
+update_scroll_position (CcLanguageChooser *self)
+{
+        GtkAdjustment *vadjustment;
+        GtkWidget *row;
+        gdouble page_increment;
+        gdouble real_value;
+
+        row = self->priv->to_be_scrolled_row;
+
+        vadjustment = gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (self->priv->language_scrolledwindow));
+        page_increment = gtk_adjustment_get_page_increment (vadjustment);
+        real_value = get_selected_language_row_y (row) - page_increment / 2.0;
+
+        /*
+         * Since GtkScrolledWindow tries to follow the focused row of a listbox,
+         * make sure that the current row is focused.
+         */
+        gtk_widget_grab_focus (row);
+
+        gtk_adjustment_set_value (vadjustment, real_value);
+
+        self->priv->initial_scroll = TRUE;
+}
+
+static void
+schedule_scroll (CcLanguageChooser *self,
+                 GtkWidget         *row)
+{
+        self->priv->to_be_scrolled_row = row;
+
+        if (gtk_widget_get_realized (self->priv->language_scrolledwindow)) {
+                update_scroll_position (self);
+                return;
+        }
+
+        g_signal_connect_swapped (self->priv->language_scrolledwindow,
+                                  "realize",
+                                  G_CALLBACK (update_scroll_position),
+                                  self);
+}
+
 static void
 sync_checkmark (GtkWidget *row,
                 gpointer   user_data)
 {
+        CcLanguageChooser *chooser;
         GtkWidget *child;
         LanguageWidget *widget;
         gchar *locale_id;
@@ -160,9 +216,13 @@ sync_checkmark (GtkWidget *row,
         if (widget == NULL)
                 return;
 
-        locale_id = user_data;
+        chooser = user_data;
+        locale_id = chooser->priv->language;
         should_be_visible = g_str_equal (widget->locale_id, locale_id);
         gtk_widget_set_opacity (widget->checkmark, should_be_visible ? 1.0 : 0.0);
+
+        if (should_be_visible && !chooser->priv->initial_scroll)
+                schedule_scroll (chooser, row);
 }
 
 static void
@@ -171,7 +231,7 @@ sync_all_checkmarks (CcLanguageChooser *chooser)
         CcLanguageChooserPrivate *priv = chooser->priv;
 
         gtk_container_foreach (GTK_CONTAINER (priv->language_list),
-                               sync_checkmark, priv->language);
+                               sync_checkmark, chooser);
 }
 
 static GtkWidget *
@@ -446,6 +506,7 @@ cc_language_chooser_constructed (GObject *object)
 
         priv->filter_entry = WID ("language-filter-entry");
         priv->language_list = WID ("language-list");
+        priv->language_scrolledwindow = WID ("language-scrolledwindow");
         priv->more_item = more_widget_new ();
         priv->no_results = no_results_widget_new ();
 
