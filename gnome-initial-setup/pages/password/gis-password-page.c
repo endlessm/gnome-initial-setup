@@ -147,6 +147,14 @@ validate (GisPasswordPage *page)
   verify = gtk_entry_get_text (GTK_ENTRY (priv->confirm_entry));
 
   pw_strength (password, NULL, priv->username, &hint, &long_hint, &strength_level);
+
+  /*
+   * If the password is not empty but it's strength is 0, show a
+   * red bar instead of nothing.
+   */
+  if (gtk_entry_get_text_length (GTK_ENTRY (priv->password_entry)) > 0)
+    strength_level = MIN (4, strength_level + 1);
+
   gtk_level_bar_set_value (GTK_LEVEL_BAR (priv->password_strength), strength_level);
   gtk_label_set_label (GTK_LABEL (priv->password_explanation), long_hint);
 
@@ -245,6 +253,21 @@ confirm (GisPasswordPage *page)
 }
 
 static void
+load_css_overrides (GisPasswordPage *self)
+{
+  GtkCssProvider *provider;
+
+  provider = gtk_css_provider_new ();
+  gtk_css_provider_load_from_resource (provider, "/org/gnome/initial-setup/password.css");
+
+  gtk_style_context_add_provider_for_screen (gtk_widget_get_screen (GTK_WIDGET (self)),
+                                             GTK_STYLE_PROVIDER (provider),
+                                             GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+  g_object_unref (provider);
+}
+
+static void
 gis_password_page_constructed (GObject *object)
 {
   GisPasswordPage *page = GIS_PASSWORD_PAGE (object);
@@ -252,6 +275,8 @@ gis_password_page_constructed (GObject *object)
   GtkSettings *settings;
 
   G_OBJECT_CLASS (gis_password_page_parent_class)->constructed (object);
+
+  load_css_overrides (page);
 
   g_signal_connect (priv->password_entry, "notify::text",
                     G_CALLBACK (password_changed), page);
@@ -283,6 +308,12 @@ gis_password_page_constructed (GObject *object)
   validate (page);
 
   gtk_widget_show (GTK_WIDGET (page));
+
+  /* Add custom style classes to the level bar */
+  gtk_level_bar_add_offset_value (GTK_LEVEL_BAR (priv->password_strength), "weak", 1);
+  gtk_level_bar_add_offset_value (GTK_LEVEL_BAR (priv->password_strength), "regular", 2);
+  gtk_level_bar_add_offset_value (GTK_LEVEL_BAR (priv->password_strength), "good", 3);
+  gtk_level_bar_add_offset_value (GTK_LEVEL_BAR (priv->password_strength), "good", 4);
 }
 
 static void
