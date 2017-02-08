@@ -400,6 +400,14 @@ update_password_entries (GisAccountPage *page)
     clear_password_validation_error (page);
 
   pw_strength (password, NULL, username, &hint, &long_hint, &strength_level);
+
+  /*
+   * If the password is not empty but it's strength is 0, show a
+   * red bar instead of nothing.
+   */
+  if (gtk_entry_get_text_length (GTK_ENTRY (password_entry)) > 0)
+    strength_level = MIN (4, strength_level + 1);
+
   gtk_level_bar_set_value (GTK_LEVEL_BAR (password_strength), strength_level);
 
   gtk_widget_set_sensitive (confirm_entry, TRUE);
@@ -1218,6 +1226,21 @@ gis_account_page_save_data (GisPage *gis_page)
 }
 
 static void
+load_css_overrides (GisAccountPage *self)
+{
+  GtkCssProvider *provider;
+
+  provider = gtk_css_provider_new ();
+  gtk_css_provider_load_from_resource (provider, "/org/gnome/initial-setup/account.css");
+
+  gtk_style_context_add_provider_for_screen (gtk_widget_get_screen (GTK_WIDGET (self)),
+                                             GTK_STYLE_PROVIDER (provider),
+                                             GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+  g_object_unref (provider);
+}
+
+static void
 gis_account_page_constructed (GObject *object)
 {
   GisAccountPage *page = GIS_ACCOUNT_PAGE (object);
@@ -1228,9 +1251,12 @@ gis_account_page_constructed (GObject *object)
   GtkWidget *confirm_entry;
   GtkWidget *reminder_entry;
   GtkWidget *password_toggle;
+  GtkWidget *password_bar;
   GtkSettings *settings;
 
   G_OBJECT_CLASS (gis_account_page_parent_class)->constructed (object);
+
+  load_css_overrides (page);
 
   gtk_container_add (GTK_CONTAINER (page), WID ("account-page"));
 
@@ -1242,6 +1268,7 @@ gis_account_page_constructed (GObject *object)
   fullname_entry = WID("account-fullname-entry");
   username_combo = WID("account-username-combo");
   password_entry = WID("account-password-entry");
+  password_bar = WID("account-password-strength");
   confirm_entry = WID("account-confirm-entry");
   reminder_entry = WID("account-reminder-entry");
   password_toggle = WID("account-password-visibility-toggle");
@@ -1305,6 +1332,12 @@ gis_account_page_constructed (GObject *object)
   g_object_set (G_OBJECT (settings), "gtk-entry-password-hint-timeout", 600, NULL);
 
   gtk_widget_show (GTK_WIDGET (page));
+
+  /* Add custom style classes to the level bar */
+  gtk_level_bar_add_offset_value (GTK_LEVEL_BAR (password_bar), "weak", 1);
+  gtk_level_bar_add_offset_value (GTK_LEVEL_BAR (password_bar), "regular", 2);
+  gtk_level_bar_add_offset_value (GTK_LEVEL_BAR (password_bar), "good", 3);
+  gtk_level_bar_add_offset_value (GTK_LEVEL_BAR (password_bar), "good", 4);
 }
 
 static void
