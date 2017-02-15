@@ -51,7 +51,7 @@ disable_chrome_auto_download (GisLiveChooserPage *self)
 {
   GError *error = NULL;
 
-  if (!gis_pkexec (DATADIR "eos-google-chrome-helper/eos-google-chrome-system-helper.py",
+  if (!gis_pkexec (DATADIR "/eos-google-chrome-helper/eos-google-chrome-system-helper.py",
                    NULL, &error))
     {
       g_warning ("Failed to disable Chrome auto-download: %s\n", error->message);
