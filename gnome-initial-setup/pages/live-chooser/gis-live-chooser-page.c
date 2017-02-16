@@ -97,7 +97,7 @@ create_live_user (GisLiveChooserPage *page)
 
   gis_driver_set_user_permissions (GIS_PAGE (page)->driver, user, NULL);
   if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user",
-                   NULL,
+                   "user",
                    LIVE_ACCOUNT_USERNAME,
                    &error))
     {
