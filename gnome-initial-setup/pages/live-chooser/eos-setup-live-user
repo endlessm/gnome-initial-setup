@@ -37,6 +37,9 @@ EOS_INSTALLER = 'eos-installer.desktop'
 GDM_APPS_DIR = '/usr/share/gdm/greeter/applications'
 EOS_INSTALLER_PATH = os.path.join(GDM_APPS_DIR, EOS_INSTALLER)
 
+GOOGLE_CHROME = 'google-chrome.desktop'
+CHROMIUM_BROWSER = 'chromium-browser.desktop'
+
 SHELL_SCHEMA = 'org.gnome.shell'
 ICON_GRID_LAYOUT = 'icon-grid-layout'
 TASKBAR_PINS = 'taskbar-pins'
@@ -186,8 +189,23 @@ class SetupLiveUser(object):
     def update_taskbar_pins(self):
         updates = self.updates[SHELL_SCHEMA]
         taskbar_pins = updates.get_settings().get_strv(TASKBAR_PINS)
+        changed = False
+
+        # Prepend installer icon
         if EOS_INSTALLER not in taskbar_pins:
             taskbar_pins.insert(0, EOS_INSTALLER)
+            changed = True
+
+        # Replace Chrome (downloaded on demand) with Chromium (pre-installed).
+        # This effectively undoes a step taken in the image builder,
+        # pre-seeding /var/eos-image-defaults/settings with the opposite
+        # change.
+        if GOOGLE_CHROME in taskbar_pins:
+            i = taskbar_pins.index(GOOGLE_CHROME)
+            taskbar_pins[i] = CHROMIUM_BROWSER
+            changed = True
+
+        if changed:
             self.update(SHELL_SCHEMA, TASKBAR_PINS,
                         GLib.Variant('as', taskbar_pins))
 
