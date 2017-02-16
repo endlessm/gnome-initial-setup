@@ -87,7 +87,7 @@ create_live_user (GisLiveChooserPage *self)
     act_user_set_language (user, language);
 
   if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user",
-                   NULL,
+                   "user",
                    LIVE_ACCOUNT_USERNAME,
                    &error))
     {

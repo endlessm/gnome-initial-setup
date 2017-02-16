@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # eos-setup-live-user - adds eos-installer icons to a newly-created account
-# Copyright (C) 2016 Endless Mobile, Ltd.
+# Copyright (C) 2016-2017 Endless Mobile, Ltd.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -214,16 +214,22 @@ class SetupLiveUser(object):
 
 def main():
     p = argparse.ArgumentParser(
-        description='Adds eos-installer icons to a newly-created account',
-        epilog='Run this as the target account. Note that "--output '
-               'gsettings" will fail if run outside a user session, and '
-               '"--output dconf-compile" will fail if the user has ever '
-               'logged in.')
-    p.add_argument(
+        description='Configures system and user settings for live session')
+    subparsers = p.add_subparsers(title='modes', dest='mode')
+
+    user = subparsers.add_parser(
+        'user',
+        description='description',
+        help='Configure a user account. '
+             'Should be executed as the target user.')
+    user.add_argument(
         '-o', '--output',
         choices=('gsettings', 'dconf-compile', 'stdout'),
         help='Write new settings via GSettings, via `dconf compile`, or '
-             'as a keyfile to stdout (default: dconf-compile)',
+             'as a keyfile to stdout (default: dconf-compile).  '
+             'Note that "--output gsettings" will fail if run outside a '
+             'user session, and "--output dconf-compile" will fail if '
+             'the user has ever logged in.',
         default='dconf-compile')
     a = p.parse_args()
 
@@ -232,17 +238,18 @@ def main():
         format='%(name)s:%(lineno)-3s %(funcName)20s %(levelname)7s: '
                '%(message)s')
 
-    setup = SetupLiveUser()
-    setup.prepare()
+    if a.mode == 'user':
+        setup = SetupLiveUser()
+        setup.prepare()
 
-    if a.output == 'gsettings':
-        setup.write_gsettings()
-    elif a.output == 'dconf-compile':
-        setup.write_dconf_compile()
-    elif a.output == 'stdout':
-        setup.write_stdout()
-    else:
-        raise Exception('Unexpected --output value ' + a.output)
+        if a.output == 'gsettings':
+            setup.write_gsettings()
+        elif a.output == 'dconf-compile':
+            setup.write_dconf_compile()
+        elif a.output == 'stdout':
+            setup.write_stdout()
+        else:
+            raise Exception('Unexpected --output value ' + a.output)
 
 
 if __name__ == '__main__':
