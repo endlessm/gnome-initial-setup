@@ -87,6 +87,15 @@ create_live_user (GisLiveChooserPage *self)
     act_user_set_language (user, language);
 
   if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user",
+                   "system",
+                   NULL, /* root */
+                   &error))
+    {
+      g_warning ("Failed to setup live system settings: %s\n", error->message);
+      g_clear_error (&error);
+    }
+
+  if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user",
                    "user",
                    LIVE_ACCOUNT_USERNAME,
                    &error))

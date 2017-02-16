@@ -17,6 +17,7 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 import argparse
+import glob
 import json
 import logging
 import os
@@ -28,8 +29,7 @@ from gi.repository import GLib, Gio
 
 log = logging.getLogger(sys.argv[0])
 
-DEFAULT_CONFIGS_DIR = '/usr/share/eos-shell-content/icon-grid-defaults'
-DEFAULT_CONFIG_NAME_BASE = 'icon-grid'
+ICON_GRID_DIR = '/var/eos-image-defaults/icon-grid'
 
 DESKTOP_GRID_ID = 'desktop'
 
@@ -41,7 +41,6 @@ GOOGLE_CHROME = 'google-chrome.desktop'
 CHROMIUM_BROWSER = 'chromium-browser.desktop'
 
 SHELL_SCHEMA = 'org.gnome.shell'
-ICON_GRID_LAYOUT = 'icon-grid-layout'
 TASKBAR_PINS = 'taskbar-pins'
 
 GS_SCHEMA = 'org.gnome.software'
@@ -90,7 +89,6 @@ class SetupLiveUser(object):
 
     def prepare(self):
         self.add_symlink()
-        self.update_icon_grid()
         self.update_taskbar_pins()
         self.disallow_app_center_updates()
 
@@ -150,42 +148,6 @@ class SetupLiveUser(object):
             log.info('symlinking %s to %s', EOS_INSTALLER, user_desktop_path)
             os.symlink(EOS_INSTALLER_PATH, user_desktop_path)
 
-    def get_default_icons(self):
-        """Reimplementation of IconGridLayout._getDefaultIcons from
-        eos-desktop"""
-        icon_tree = None
-
-        for l in GLib.get_language_names():
-            if '.' in l:
-                continue
-
-            path = os.path.join(DEFAULT_CONFIGS_DIR, '{}-{}.json'.format(
-                DEFAULT_CONFIG_NAME_BASE, l))
-            try:
-                with open(path, 'r') as fp:
-                    icon_tree = json.load(fp=fp)
-                    log.info('Loaded defaults from %s', path)
-                    break
-            except FileNotFoundError:
-                pass
-            except:
-                log.warning('Failed to read %s', path, exc_info=True)
-                pass
-
-        if not icon_tree:
-            icon_tree = {}
-
-        icon_tree.setdefault(DESKTOP_GRID_ID, [])
-        return icon_tree
-
-    def update_icon_grid(self):
-        icon_tree = self.get_default_icons()
-
-        if EOS_INSTALLER not in icon_tree['desktop']:
-            icon_tree['desktop'].insert(0, EOS_INSTALLER)
-            self.update(SHELL_SCHEMA, ICON_GRID_LAYOUT,
-                        GLib.Variant('a{sas}', icon_tree))
-
     def update_taskbar_pins(self):
         updates = self.updates[SHELL_SCHEMA]
         taskbar_pins = updates.get_settings().get_strv(TASKBAR_PINS)
@@ -212,6 +174,54 @@ class SetupLiveUser(object):
     def disallow_app_center_updates (self):
         self.update(GS_SCHEMA, ALLOW_UPDATES, GLib.Variant('b', False))
 
+
+def dq(s):
+    return '"{}"'.format(s)
+
+
+def remove_chrome_from_icon_grids():
+    log.info("Restoring Chromium to icon grids, if needed")
+
+    pattern = os.path.join(ICON_GRID_DIR, 'icon-grid-*.json')
+    for path in glob.glob(pattern):
+        log.info("Checking %s", path)
+        try:
+            with open(path, 'r') as f:
+                grid = f.read()
+
+            if GOOGLE_CHROME in grid:
+                log.info("Updating %s", path)
+                grid = grid.replace(dq(GOOGLE_CHROME), dq(CHROMIUM_BROWSER))
+
+                with open(path, 'w') as f:
+                    f.write(grid)
+        except:
+            log.exception("while processing %s", path)
+
+
+def prepend_installer_to_icon_grid():
+    log.info("Adding installer icon to the desktop")
+    path = os.path.join(ICON_GRID_DIR, 'icon-grid-prepend-C.json')
+
+    try:
+        with open(path, 'r') as f:
+            log.info("reading existing file %s", path)
+            grid = json.load(fp=f)
+    except FileNotFoundError:
+        log.info("%s doesn't exist (as expected)", path)
+        grid = {}
+    except:
+        log.exception("failed to load %s", path)
+
+    desktop = grid.setdefault(DESKTOP_GRID_ID, [])
+    if EOS_INSTALLER not in desktop:
+        desktop.insert(0, EOS_INSTALLER)
+
+    log.info("Writing %s: %s", path, json.dumps(obj=grid))
+    with open(path, 'w') as f:
+        json.dump(obj=grid, fp=f)
+
+
 def main():
     p = argparse.ArgumentParser(
         description='Configures system and user settings for live session')
@@ -231,6 +241,12 @@ def main():
              'user session, and "--output dconf-compile" will fail if '
              'the user has ever logged in.',
         default='dconf-compile')
+
+    subparsers.add_parser(
+        'system',
+        help='Makes system-wide changes for live session. Should be executed '
+             'as root.')
+
     a = p.parse_args()
 
     logging.basicConfig(
@@ -250,6 +266,9 @@ def main():
             setup.write_stdout()
         else:
             raise Exception('Unexpected --output value ' + a.output)
+    elif a.mode == 'system':
+        remove_chrome_from_icon_grids()
+        prepend_installer_to_icon_grid()
 
 
 if __name__ == '__main__':
