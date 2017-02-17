@@ -201,25 +201,32 @@ def remove_chrome_from_icon_grids():
 
 def prepend_installer_to_icon_grid():
     log.info("Adding installer icon to the desktop")
-    path = os.path.join(ICON_GRID_DIR, 'icon-grid-prepend-C.json')
 
-    try:
-        with open(path, 'r') as f:
-            log.info("reading existing file %s", path)
-            grid = json.load(fp=f)
-    except FileNotFoundError:
-        log.info("%s doesn't exist (as expected)", path)
-        grid = {}
-    except:
-        log.exception("failed to load %s", path)
+    pattern = os.path.join(ICON_GRID_DIR, 'icon-grid-prepend-*.json')
+    c_path = os.path.join(ICON_GRID_DIR, 'icon-grid-prepend-C.json')
+    paths = glob.glob(pattern)
+    if c_path not in paths:
+        paths.append(c_path)
 
-    desktop = grid.setdefault(DESKTOP_GRID_ID, [])
-    if EOS_INSTALLER not in desktop:
-        desktop.insert(0, EOS_INSTALLER)
+    for path in paths:
+        try:
+            try:
+                with open(path, 'r') as f:
+                    log.info("reading existing file %s", path)
+                    grid = json.load(fp=f)
+            except FileNotFoundError:
+                log.info("%s doesn't exist (as expected)", path)
+                grid = {}
 
-    log.info("Writing %s: %s", path, json.dumps(obj=grid))
-    with open(path, 'w') as f:
-        json.dump(obj=grid, fp=f)
+            desktop = grid.setdefault(DESKTOP_GRID_ID, [])
+            if EOS_INSTALLER not in desktop:
+                desktop.insert(0, EOS_INSTALLER)
+
+                log.info("Writing %s: %s", path, json.dumps(obj=grid))
+                with open(path, 'w') as f:
+                    json.dump(obj=grid, fp=f)
+        except:
+            log.exception("while processing %s", path)
 
 
 def main():
