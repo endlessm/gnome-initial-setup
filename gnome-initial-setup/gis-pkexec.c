@@ -1,6 +1,7 @@
 /* -*- mode: C; c-file-style: "gnu"; indent-tabs-mode: nil; -*- */
 /*
- * Copyright (C) 2015-2016 Endless Mobile, Inc. Red Hat
+ * Copyright (C) 2015-2016 Red Hat
+ * Copyright (C) 2015-2017 Endless Mobile, Inc.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -26,13 +27,14 @@
 
 gboolean
 gis_pkexec (const gchar *command,
+            const gchar *arg1,
             const gchar *user,
             GError     **error)
 {
   GSubprocessLauncher *launcher = NULL;
   GSubprocess *process = NULL;
-  const gchar * const root_argv[] = { "pkexec", command, NULL };
-  const gchar * const user_argv[] = { "pkexec", "--user", user, command, NULL };
+  const gchar * const root_argv[] = { "pkexec", command, arg1, NULL };
+  const gchar * const user_argv[] = { "pkexec", "--user", user, command, arg1, NULL };
   const gchar * const *argv = user == NULL ? root_argv : user_argv;
   gboolean ret = FALSE;
 

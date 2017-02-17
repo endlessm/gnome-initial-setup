@@ -482,7 +482,7 @@ system_testmode (GtkButton *button, gpointer data)
   /* Test mode can only be initialized once */
   gtk_widget_set_sensitive (GTK_WIDGET (button), FALSE);
 
-  if (!gis_pkexec (LIBEXECDIR "/eos-test-mode", NULL, &error)) {
+  if (!gis_pkexec (LIBEXECDIR "/eos-test-mode", NULL, NULL, &error)) {
     GtkWidget *dialog;
 
     g_warning ("%s", error->message);

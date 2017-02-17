@@ -1,6 +1,7 @@
 /* -*- mode: C; c-file-style: "gnu"; indent-tabs-mode: nil; -*- */
 /*
- * Copyright (C) 2015-2016 Endless Mobile, Inc. Red Hat
+ * Copyright (C) 2015-2016 Red Hat
+ * Copyright (C) 2015-2017 Endless Mobile, Inc.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -31,6 +32,7 @@ G_BEGIN_DECLS
 
 gboolean
 gis_pkexec (const gchar *command,
+            const gchar *arg1,
             const gchar *user,
             GError     **error);
 

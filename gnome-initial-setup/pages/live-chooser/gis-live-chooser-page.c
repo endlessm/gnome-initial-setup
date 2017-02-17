@@ -52,7 +52,7 @@ disable_chrome_auto_download (GisLiveChooserPage *self)
   GError *error = NULL;
 
   if (!gis_pkexec (DATADIR "/eos-google-chrome-helper/eos-google-chrome-system-helper.py",
-                   NULL, &error))
+                   NULL, NULL, &error))
     {
       g_warning ("Failed to disable Chrome auto-download: %s\n", error->message);
       g_clear_error (&error);
@@ -86,7 +86,18 @@ create_live_user (GisLiveChooserPage *self)
   if (language)
     act_user_set_language (user, language);
 
-  if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user", LIVE_ACCOUNT_USERNAME,
+  if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user",
+                   "system",
+                   NULL, /* root */
+                   &error))
+    {
+      g_warning ("Failed to setup live system settings: %s\n", error->message);
+      g_clear_error (&error);
+    }
+
+  if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user",
+                   "user",
+                   LIVE_ACCOUNT_USERNAME,
                    &error))
     {
       g_warning ("Failed to setup live user: %s\n", error->message);
