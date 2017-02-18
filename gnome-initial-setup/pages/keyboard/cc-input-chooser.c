@@ -355,7 +355,7 @@ choose_non_extras (CcInputChooser *chooser)
                                choose_non_extras_foreach, &count);
 }
 
-static void
+static int
 add_rows_to_list (CcInputChooser  *chooser,
 	          GList            *list,
 	          const gchar      *type,
@@ -366,6 +366,7 @@ add_rows_to_list (CcInputChooser  *chooser,
 	const gchar *id;
 	GtkWidget *widget;
 	gchar *key;
+	int rows_added = 0;
 
 	for (; list; list = list->next) {
 		id = (const gchar *) list->data;
@@ -379,15 +380,18 @@ add_rows_to_list (CcInputChooser  *chooser,
 			continue;
 		}
 		g_hash_table_add (priv->inputs, key);
+		rows_added++;
 
 		if (g_hash_table_size (priv->inputs) > MIN_ROWS)
 			is_extra = TRUE;
 		widget = input_widget_new (chooser, type, id, is_extra);
 		gtk_container_add (GTK_CONTAINER (priv->input_list), widget);
 	}
+
+	return rows_added;
 }
 
-static void
+static int
 add_row_to_list (CcInputChooser *chooser,
 		 const gchar     *type,
 		 const gchar     *id,
@@ -395,7 +399,7 @@ add_row_to_list (CcInputChooser *chooser,
 {
 	GList tmp = { 0 };
 	tmp.data = (gpointer)id;
-	add_rows_to_list (chooser, &tmp, type, NULL, is_extra);
+	return add_rows_to_list (chooser, &tmp, type, NULL, is_extra);
 }
 
 static void
@@ -406,9 +410,10 @@ get_locale_infos (CcInputChooser *chooser)
 	const gchar *id = NULL;
 	gchar *lang, *country;
 	GList *list;
+	int non_extra_layouts = 0;
 
 	if (gnome_get_input_source_from_locale (priv->locale, &type, &id)) {
-	  add_row_to_list (chooser, type, id, FALSE);
+		non_extra_layouts += add_row_to_list (chooser, type, id, FALSE);
 		if (!priv->id) {
 			priv->id = g_strdup (id);
 			priv->type = g_strdup (type);
@@ -419,12 +424,20 @@ get_locale_infos (CcInputChooser *chooser)
 		goto out;
 
 	list = gnome_xkb_info_get_layouts_for_language (priv->xkb_info, lang);
-	add_rows_to_list (chooser, list, INPUT_SOURCE_TYPE_XKB, id, FALSE);
+	non_extra_layouts += add_rows_to_list (chooser, list, INPUT_SOURCE_TYPE_XKB, id, FALSE);
 	g_list_free (list);
 
 	list = gnome_xkb_info_get_layouts_for_country (priv->xkb_info, country);
-	add_rows_to_list (chooser, list, INPUT_SOURCE_TYPE_XKB, id, FALSE);
+	non_extra_layouts += add_rows_to_list (chooser, list, INPUT_SOURCE_TYPE_XKB, id, FALSE);
 	g_list_free (list);
+
+	/* Add default us and us+intl non-extra layouts in case we could not
+	 * find anything more specific.
+	 */
+	if (non_extra_layouts == 0) {
+		add_row_to_list (chooser, INPUT_SOURCE_TYPE_XKB, "us", FALSE);
+		add_row_to_list (chooser, INPUT_SOURCE_TYPE_XKB, "us+intl", FALSE);
+	}
 
 	list = gnome_xkb_info_get_all_layouts (priv->xkb_info);
 	add_rows_to_list (chooser, list, INPUT_SOURCE_TYPE_XKB, id, TRUE);
