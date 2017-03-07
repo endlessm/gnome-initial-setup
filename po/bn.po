@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-07 04:21+0000\n"
+"POT-Creation-Date: 2017-02-28 04:16+0000\n"
 "PO-Revision-Date: 2017-01-13 07:36+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Bengali (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/bn/)\n"
@@ -51,27 +51,27 @@ msgid "No password"
 msgstr "পাসওয়ার্ড নেই"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:345
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:459
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:467
 msgid "Passwords do not match"
 msgstr "পাসওয়ার্ডে মিল নেই"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:591
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:599
 msgid "Failed to register account"
 msgstr "একাউন্ট নিবন্ধন করতে ব্যর্থ"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:799
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:807
 msgid "No supported way to authenticate with this domain"
 msgstr "এই ডোমেইন যাচাই করার কোনো সমর্থিত উপায় নেই"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:839
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:847
 msgid "Failed to join domain"
 msgstr "ডোমেইনে প্রবেশ করতে ব্যর্থ"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:907
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:915
 msgid "Failed to log into domain"
 msgstr "ডোমেইনে লগিন করতে ব্যর্থ"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:1346
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:1379
 msgid "Login"
 msgstr "লগিন "
 
@@ -81,7 +81,7 @@ msgstr "একটি ব্যক্তিগত একাউন্ট তৈর
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:2
 msgid ""
-"Type your full name and a password that you’ll remember. Pay attention to "
+"Type your full name and a password that you'll remember. Pay attention to "
 "upper case letters."
 msgstr "আপনার পুরো নাম এবং একটি পাসওয়ার্ড লিখুন যা আপনি মনে রাখতে পারবেন। বড় অক্ষরের দিকে নজর রাখুন।"
 
@@ -104,7 +104,7 @@ msgid "_Password"
 msgstr "_পাসওয়ার্ড"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:7
-msgid "_Confirm Password"
+msgid "_Confirm password"
 msgstr "_পাসওয়ার্ড নিশ্চিত করুন"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:8
@@ -119,7 +119,7 @@ msgid ""
 msgstr "আপনার পাসওয়ার্ড মনে থাকবে নিশ্চিত করতে কোথাও লিখে রাখুন! আপনি এখানে পাসওয়ার্ড স্মরণকারী কোন চিহ্ন লিখতে পারেন, কিন্তু জেনে রাখা উচিত যে এই পাসওয়ার্ড স্মরণকারী চিহ্নটি অন্যরাও দেখতে পাবে।"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:10
-msgid "Password _Reminder"
+msgid "Password _reminder"
 msgstr "পাসওয়ার্ড_স্মরণকারী চিহ্ন"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:11
@@ -221,12 +221,12 @@ msgstr "সঠিক পাসওয়ার্ড নয়, আবার চেষ�
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:841
 #, c-format
-msgid "Couldn’t connect to the %s domain: %s"
+msgid "Couldn't connect to the %s domain: %s"
 msgstr "%s ডোমেইনে লগইন করা যায়নি: %s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:150
 #, c-format
-msgid "A user with the username ‘%s’ already exists"
+msgid "A user with the username '%s' already exists"
 msgstr "'%s' নামে একজন ব্যবহারকারী ইতিমধ্যেই আছেন"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:154
@@ -235,7 +235,7 @@ msgid "The username is too long"
 msgstr "ব্যবহারকারী নামটি বেশি লম্বা"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:157
-msgid "The username cannot start with a ‘-’"
+msgid "The username cannot start with a '-'"
 msgstr "'-' দিয়ে কোন ব্যবহারকারী নাম শুরু হতে পারবে না"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:160
@@ -243,7 +243,7 @@ msgid ""
 "The username must only consist of:\n"
 " ➣ letters from the English alphabet\n"
 " ➣ digits\n"
-" ➣ any of the characters ‘.’, ‘-’ and ‘_’"
+" ➣ any of the characters '.', '-' and '_'"
 msgstr "ব্যবহারকারী নামে শুধুমাত্র থাকতে পারবে:\n➣ বর্ণমালার অক্ষরসমূহ\n➣ সংখ্যা\n➣ '.', '-' ও '_' চিহ্নসমূহ"
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:280
@@ -276,7 +276,7 @@ msgid "Third Party Software"
 msgstr "তৃতীয় পক্ষ সফটওয়্যার"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:349
-msgid "_Accept and Continue"
+msgid "_Accept and continue"
 msgstr "_মেনে নিন এবং চালিয়ে যান"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
@@ -285,7 +285,7 @@ msgstr "অনুগ্রহ করে নিম্নোক্ত শর্ত
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
 msgid ""
-"By clicking ‘Accept and Continue,’ you acknowledge that you have read, "
+"By clicking \"Accept and continue,\" you acknowledge that you have read, "
 "understood, and agree to be bound by the following terms and conditions."
 msgstr "\"মেনে নিন এবং চালিয়ে যান\" চাপার মাধ্যমে আপনি স্বীকার করে নিলেন যে আপনি নিম্নোক্ত নিয়ম ও শর্তাবলী পড়েছেন, বুঝেছেন এবং মানতে রাজি হয়েছেন।"
 
@@ -379,9 +379,9 @@ msgid "Preview"
 msgstr "আবার দেখুন"
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:297
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:184
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:244
 msgid "More…"
-msgstr "আরো…"
+msgstr "আরো..."
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
@@ -411,18 +411,18 @@ msgid "Select your keyboard layout"
 msgstr "আপনার কিবোর্ডের ধরন নির্বাচন করুন"
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
-msgid "Help Detect My Keyboard Layout"
+msgid "Help detect my keyboard layout"
 msgstr "আমার কিবোর্ডের লেআউট শনাক্তে সাহায্য করুন"
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
-msgid "Detect Keyboard Layout…"
-msgstr "কিবোর্ড ধরন শণাক্ত করুন…"
+msgid "Detect Keyboard Layout..."
+msgstr "কিবোর্ড ধরন শণাক্ত করুন..."
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
 msgid "_Select"
 msgstr "_নির্বাচন করুন"
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:201
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:260
 msgid "No languages found"
 msgstr "কোনো ভাষা পাওয়া যায়নি"
 
@@ -446,8 +446,8 @@ msgstr "এন্ডলেসে স্বাগতম!"
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:650
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:4
-msgid "Let’s set up your computer…"
-msgstr "চলুন আপনার কম্পিউটার সেটআপ করি…"
+msgid "Let's set up your computer..."
+msgstr "চলুন আপনার কম্পিউটার সেটআপ করি..."
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
 msgid "Test Mode"
@@ -457,32 +457,32 @@ msgstr "পরীক্ষা রূপ"
 msgid "Power Off"
 msgstr "বন্ধ করুন"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:188
 #, c-format
 msgid "Error running the reformatter: %s"
 msgstr "পুনঃ ফর্ম্যাটকারী চালাতে ত্রুটি:  %s"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:285
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:296
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr "ইউএসবি স্টিক থেকে এন্ডলেস ওএস চালাতে চেষ্টা করুন। "
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:286
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:297
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Reformat this computer with Endless OS."
 msgstr "এন্ডলেস ওএস দিয়ে এই কম্পিউটারটি পুনঃ ফর্ম্যাট করুন। "
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:287
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:298
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
 msgid "Try It"
 msgstr "চেষ্টা করুন "
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:288
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:299
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat"
 msgstr "পুনঃ ফর্ম্যাট "
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:290
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:301
 msgid "Endless USB Stick"
 msgstr "এন্ডলেস ইউএসবি স্টিক "
 
@@ -574,7 +574,7 @@ msgstr ":"
 #: ../gnome-initial-setup/pages/network/gis-network-page.c:339
 msgctxt "Wireless access point"
 msgid "Other…"
-msgstr "অন্যকিছু…"
+msgstr "অন্যকিছু..."
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.c:373
 msgid "Network is not available."
@@ -621,11 +621,11 @@ msgstr "কোন ওয়্যারলেস পাওয়া যায়নি"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:394
 #, c-format
-msgid "_Start Using %s"
+msgid "_Start using %s"
 msgstr "_%s শুরু করুন"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:420
-msgid "You’re ready to try Endless OS"
+msgid "You're ready to try Endless OS"
 msgstr "এন্ডলেস ওএস দিয়ে চেষ্টা করার জন্য আপনি তৈরি "
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:423

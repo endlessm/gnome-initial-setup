@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-07 04:21+0000\n"
-"PO-Revision-Date: 2017-01-13 07:35+0000\n"
-"Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
+"POT-Creation-Date: 2017-02-28 04:16+0000\n"
+"PO-Revision-Date: 2017-02-18 15:22+0000\n"
+"Last-Translator: georgian balan <braila222@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,27 +52,27 @@ msgid "No password"
 msgstr "Nici o parola"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:345
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:459
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:467
 msgid "Passwords do not match"
 msgstr "Parolele nu corespund"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:591
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:599
 msgid "Failed to register account"
 msgstr "Esuat in creearea contului"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:799
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:807
 msgid "No supported way to authenticate with this domain"
 msgstr "Nici un mod suportat de autentificare cu acest domeniu"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:839
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:847
 msgid "Failed to join domain"
 msgstr "Esuat in adaugarea domeniului"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:907
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:915
 msgid "Failed to log into domain"
 msgstr "Esuat de autentificare in domeniu"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:1346
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:1379
 msgid "Login"
 msgstr "Conectare"
 
@@ -82,7 +82,7 @@ msgstr "Creeaza un Cont Personal"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:2
 msgid ""
-"Type your full name and a password that you’ll remember. Pay attention to "
+"Type your full name and a password that you'll remember. Pay attention to "
 "upper case letters."
 msgstr "Tasteaza numele complet si o parola pe care sa ti-o amintesti usor.Ai grija la majuscule."
 
@@ -105,7 +105,7 @@ msgid "_Password"
 msgstr "_Parolă"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:7
-msgid "_Confirm Password"
+msgid "_Confirm password"
 msgstr "_Confirma parola"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:8
@@ -120,7 +120,7 @@ msgid ""
 msgstr "Ai grija sa iti notezi undeva parola pentru a nu o uita.Poti sa iti notezi un memento aici,dar sa stii ca acest memento poate fi vazut si de altii."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:10
-msgid "Password _Reminder"
+msgid "Password _reminder"
 msgstr "Reaminteste_parola(memento)"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:11
@@ -222,12 +222,12 @@ msgstr "Parolă nevalidă, încercați din nou"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:841
 #, c-format
-msgid "Couldn’t connect to the %s domain: %s"
+msgid "Couldn't connect to the %s domain: %s"
 msgstr "Nu s-a putut conecta la domeniul %s: %s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:150
 #, c-format
-msgid "A user with the username ‘%s’ already exists"
+msgid "A user with the username '%s' already exists"
 msgstr "Un utilizator cu acest nume '%s' exista deja"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:154
@@ -236,7 +236,7 @@ msgid "The username is too long"
 msgstr "Nume de utilizator prea lung"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:157
-msgid "The username cannot start with a ‘-’"
+msgid "The username cannot start with a '-'"
 msgstr "Numele de utilizator nu poate incepe cu '-'"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:160
@@ -244,7 +244,7 @@ msgid ""
 "The username must only consist of:\n"
 " ➣ letters from the English alphabet\n"
 " ➣ digits\n"
-" ➣ any of the characters ‘.’, ‘-’ and ‘_’"
+" ➣ any of the characters '.', '-' and '_'"
 msgstr "Numele de utilizator trebuie sa contina:\n➣ litere din alfabetul Roman\n➣ numere\n➣ unul din caracterele '.', '-' si '_'"
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:280
@@ -277,7 +277,7 @@ msgid "Third Party Software"
 msgstr "Soft tertiar"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:349
-msgid "_Accept and Continue"
+msgid "_Accept and continue"
 msgstr "_Accepta si continua"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
@@ -286,7 +286,7 @@ msgstr "Cititi urmatorii termeni cu atentie"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
 msgid ""
-"By clicking ‘Accept and Continue,’ you acknowledge that you have read, "
+"By clicking \"Accept and continue,\" you acknowledge that you have read, "
 "understood, and agree to be bound by the following terms and conditions."
 msgstr "Daca dai click pe \"Accepta si contiuna\",iei la cunostina ca au citit,inteles si ai fost de acord cu termenii si conditiile de utilizare."
 
@@ -380,7 +380,7 @@ msgid "Preview"
 msgstr "Previzualizează"
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:297
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:184
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:244
 msgid "More…"
 msgstr "Mai mult…"
 
@@ -412,18 +412,18 @@ msgid "Select your keyboard layout"
 msgstr "Selecteaza aspectul tastaturii"
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
-msgid "Help Detect My Keyboard Layout"
+msgid "Help detect my keyboard layout"
 msgstr "Ajutor in detectarea aspectului tastaturii"
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
-msgid "Detect Keyboard Layout…"
+msgid "Detect Keyboard Layout..."
 msgstr "Detecteaza aspectul tastaturii"
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
 msgid "_Select"
 msgstr "_Selecteaza"
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:201
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:260
 msgid "No languages found"
 msgstr "Nici o limba gasita"
 
@@ -447,8 +447,8 @@ msgstr "Bun venit la Endless!"
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:650
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:4
-msgid "Let’s set up your computer…"
-msgstr "Lasa-ne sa iti setam computerul…"
+msgid "Let's set up your computer..."
+msgstr "Lasa-ne sa iti setam computerul..."
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
 msgid "Test Mode"
@@ -458,32 +458,32 @@ msgstr "Mod de testare"
 msgid "Power Off"
 msgstr "Stinge"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:188
 #, c-format
 msgid "Error running the reformatter: %s"
 msgstr "Eroare la pornirea reformatarii: %s"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:285
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:296
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr "Incearca Endless OS direct de pe un Stick USB"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:286
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:297
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Reformat this computer with Endless OS."
 msgstr "Reformateaza acest computer cu Endless OS"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:287
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:298
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
 msgid "Try It"
 msgstr "Incearcal"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:288
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:299
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat"
 msgstr "Reformateaza"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:290
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:301
 msgid "Endless USB Stick"
 msgstr "Stick USB Endless"
 
@@ -622,11 +622,11 @@ msgstr "Nicio rețea fără fir disponibilă"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:394
 #, c-format
-msgid "_Start Using %s"
+msgid "_Start using %s"
 msgstr "Î_ncepeți să utilizați %s"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:420
-msgid "You’re ready to try Endless OS"
+msgid "You're ready to try Endless OS"
 msgstr "Esti gata sa incerci Endless OS"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:423

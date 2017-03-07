@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-07 04:21+0000\n"
+"POT-Creation-Date: 2017-02-28 04:16+0000\n"
 "PO-Revision-Date: 2017-01-13 07:35+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Russian (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/ru/)\n"
@@ -54,27 +54,27 @@ msgid "No password"
 msgstr "Пароль не указан"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:345
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:459
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:467
 msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:591
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:599
 msgid "Failed to register account"
 msgstr "Не удалось зарегистрировать учётную запись"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:799
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:807
 msgid "No supported way to authenticate with this domain"
 msgstr "Нет поддерживаемых способов аутентификации в этом домене"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:839
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:847
 msgid "Failed to join domain"
 msgstr "Не удалось присоединиться к домену"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:907
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:915
 msgid "Failed to log into domain"
 msgstr "Не удалось войти в домен"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:1346
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:1379
 msgid "Login"
 msgstr "Вход в систему"
 
@@ -84,7 +84,7 @@ msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:2
 msgid ""
-"Type your full name and a password that you’ll remember. Pay attention to "
+"Type your full name and a password that you'll remember. Pay attention to "
 "upper case letters."
 msgstr ""
 
@@ -107,7 +107,7 @@ msgid "_Password"
 msgstr "_Пароль"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:7
-msgid "_Confirm Password"
+msgid "_Confirm password"
 msgstr "П_одтвердите пароль"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:8
@@ -122,7 +122,7 @@ msgid ""
 msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:10
-msgid "Password _Reminder"
+msgid "Password _reminder"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:11
@@ -224,12 +224,12 @@ msgstr "Неправильный пароль. Попробуйте ещё ра�
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:841
 #, c-format
-msgid "Couldn’t connect to the %s domain: %s"
+msgid "Couldn't connect to the %s domain: %s"
 msgstr "Не удалось подключиться к домену %s: %s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:150
 #, c-format
-msgid "A user with the username ‘%s’ already exists"
+msgid "A user with the username '%s' already exists"
 msgstr "Пользователь с именем «%s» уже существует"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:154
@@ -238,7 +238,7 @@ msgid "The username is too long"
 msgstr "Имя пользователя слишком длинное"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:157
-msgid "The username cannot start with a ‘-’"
+msgid "The username cannot start with a '-'"
 msgstr "Имя пользователя не может начинаться со знака «-»"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:160
@@ -246,7 +246,7 @@ msgid ""
 "The username must only consist of:\n"
 " ➣ letters from the English alphabet\n"
 " ➣ digits\n"
-" ➣ any of the characters ‘.’, ‘-’ and ‘_’"
+" ➣ any of the characters '.', '-' and '_'"
 msgstr "Имя пользователя может состоять только из:\n ➣ букв латинского алфавита;\n ➣ цифр;\n ➣ символов «.», «-» и «_»."
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:280
@@ -279,7 +279,7 @@ msgid "Third Party Software"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:349
-msgid "_Accept and Continue"
+msgid "_Accept and continue"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
@@ -288,7 +288,7 @@ msgstr ""
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
 msgid ""
-"By clicking ‘Accept and Continue,’ you acknowledge that you have read, "
+"By clicking \"Accept and continue,\" you acknowledge that you have read, "
 "understood, and agree to be bound by the following terms and conditions."
 msgstr ""
 
@@ -382,7 +382,7 @@ msgid "Preview"
 msgstr "Предпросмотр"
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:297
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:184
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:244
 msgid "More…"
 msgstr "Ещё…"
 
@@ -414,18 +414,18 @@ msgid "Select your keyboard layout"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
-msgid "Help Detect My Keyboard Layout"
+msgid "Help detect my keyboard layout"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
-msgid "Detect Keyboard Layout…"
+msgid "Detect Keyboard Layout..."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
 msgid "_Select"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:201
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:260
 msgid "No languages found"
 msgstr "Языки не найдены"
 
@@ -449,7 +449,7 @@ msgstr ""
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:650
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:4
-msgid "Let’s set up your computer…"
+msgid "Let's set up your computer..."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
@@ -460,32 +460,32 @@ msgstr ""
 msgid "Power Off"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:188
 #, c-format
 msgid "Error running the reformatter: %s"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:285
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:296
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:286
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:297
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Reformat this computer with Endless OS."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:287
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:298
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
 msgid "Try It"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:288
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:299
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:290
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:301
 msgid "Endless USB Stick"
 msgstr ""
 
@@ -624,11 +624,11 @@ msgstr "Беспроводные сети не найдены"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:394
 #, c-format
-msgid "_Start Using %s"
+msgid "_Start using %s"
 msgstr "_Начать работу с %s"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:420
-msgid "You’re ready to try Endless OS"
+msgid "You're ready to try Endless OS"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:423
