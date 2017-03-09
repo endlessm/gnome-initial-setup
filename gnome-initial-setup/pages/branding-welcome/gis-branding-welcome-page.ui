@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <template class="GisBrandingWelcomePage" parent="GisPage">
+    <child>
+      <object class="GtkGrid" id="page">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="halign">center</property>
+        <property name="margin_start">24</property>
+        <property name="margin_end">24</property>
+        <property name="hexpand">False</property>
+        <property name="vexpand">False</property>
+        <property name="orientation">vertical</property>
+        <property name="row_spacing">12</property>
+        <child>
+          <object class="GtkLabel" id="branding_title">
+            <property name="name">branding-title</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">center</property>
+            <property name="hexpand">False</property>
+            <property name="vexpand">False</property>
+            <property name="label" translatable="yes"></property>
+            <property name="justify">center</property>
+            <style>
+              <class name="branding-title"/>
+            </style>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="branding_logo">
+            <property name="name">branding-logo</property>
+            <property name="can_focus">False</property>
+            <property name="valign">center</property>
+            <property name="hexpand">False</property>
+            <property name="vexpand">False</property>
+            <property name="pixel_size">24</property>
+            <style>
+              <class name="branding-logo"/>
+            </style>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="branding_text">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">center</property>
+            <property name="valign">start</property>
+            <property name="hexpand">False</property>
+            <property name="vexpand">False</property>
+            <property name="label" translatable="yes"></property>
+            <property name="wrap">True</property>
+            <property name="max_width_chars">84</property>
+            <property name="justify">center</property>
+            <!-- Rise the baseline 6px (6 * 1024 pango units) to make -->
+            <!-- it look as if the line had line-height of 20px -->
+            <attributes>
+              <attribute name="rise" value="6144"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

@@ -1,5 +1,6 @@
 pages = [
    'account',
+   'branding-welcome',
    'display',
    'language',
    'live-chooser',
