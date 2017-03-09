@@ -11,6 +11,7 @@ AM_CPPFLAGS = \
 	-DUIDIR="\"$(uidir)\"" \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DLIBLOCALEDIR=\""$(prefix)/lib/locale"\" \
+	-DCONFIGDIR=\"$(sysconfdir)/$(PACKAGE)\" \
 	-DDATADIR=\""$(datadir)"\" \
 	-DLOCALSTATEDIR=\""$(localstatedir)"\" \
 	-DLIBEXECDIR=\""$(libexecdir)"\"
