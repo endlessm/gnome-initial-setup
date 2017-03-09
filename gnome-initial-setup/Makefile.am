@@ -43,6 +43,7 @@ gnome_initial_setup_SOURCES = \
 	gis-keyring.c gis-keyring.h
 
 gnome_initial_setup_LDADD =	\
+	pages/branding-welcome/libgisbrandingwelcome.la \
 	pages/language/libgislanguage.la \
 	pages/region/libgisregion.la \
 	pages/keyboard/libgiskeyboard.la \
