@@ -30,11 +30,14 @@
 #include "gis-branding-welcome-page.h"
 
 #include "branding-welcome-resources.h"
+#include "gis-page-util.h"
 
 struct _GisBrandingWelcomePagePrivate {
   gchar *title;
   gchar *description;
   gchar *logo_path;
+
+  GtkAccelGroup *accel_group;
 };
 typedef struct _GisBrandingWelcomePagePrivate GisBrandingWelcomePagePrivate;
 
@@ -138,11 +141,21 @@ update_branding_specific_info (GisBrandingWelcomePage *page)
   }
 }
 
+static GtkAccelGroup *
+gis_branding_welcome_page_get_accel_group (GisPage *page)
+{
+  GisBrandingWelcomePage *self = GIS_BRANDING_WELCOME_PAGE (page);
+  GisBrandingWelcomePagePrivate *priv = gis_branding_welcome_page_get_instance_private (self);
+
+  return priv->accel_group;
+}
+
 static void
 gis_branding_welcome_page_constructed (GObject *object)
 {
   GisBrandingWelcomePage *page = GIS_BRANDING_WELCOME_PAGE (object);
   GisBrandingWelcomePagePrivate *priv = gis_branding_welcome_page_get_instance_private (page);
+  GClosure *closure;
 
   G_OBJECT_CLASS (gis_branding_welcome_page_parent_class)->constructed (object);
 
@@ -150,6 +163,12 @@ gis_branding_welcome_page_constructed (GObject *object)
 
   update_branding_specific_info (page);
   load_css_overrides (page);
+
+  /* Use ctrl+f to show factory dialog */
+  priv->accel_group = gtk_accel_group_new ();
+  closure = g_cclosure_new_swap (G_CALLBACK (gis_page_util_show_factory_dialog), page, NULL);
+  gtk_accel_group_connect (priv->accel_group, GDK_KEY_f, GDK_CONTROL_MASK, 0, closure);
+  g_closure_unref (closure);
 
   gis_page_set_complete (GIS_PAGE (page), TRUE);
   gtk_widget_show (GTK_WIDGET (page));
@@ -164,6 +183,7 @@ gis_branding_welcome_page_finalize (GObject *object)
   g_free (priv->title);
   g_free (priv->description);
   g_free (priv->logo_path);
+  g_clear_object (&priv->accel_group);
 
   G_OBJECT_CLASS (gis_branding_welcome_page_parent_class)->finalize (object);
 }
@@ -175,6 +195,7 @@ gis_branding_welcome_page_class_init (GisBrandingWelcomePageClass *klass)
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
   page_class->page_id = PAGE_ID;
+  page_class->get_accel_group = gis_branding_welcome_page_get_accel_group;
   object_class->constructed = gis_branding_welcome_page_constructed;
   object_class->finalize = gis_branding_welcome_page_finalize;
 }
