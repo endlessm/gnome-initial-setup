@@ -11,16 +11,26 @@ AM_CPPFLAGS = \
 	-DUIDIR="\"$(uidir)\"" \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DLIBLOCALEDIR=\""$(prefix)/lib/locale"\" \
-	-DDATADIR=\""$(datadir)"\"
+	-DDATADIR=\""$(datadir)"\" \
+	-DLOCALSTATEDIR=\""$(localstatedir)"\" \
+	-DLIBEXECDIR=\""$(libexecdir)"\"
 
 libexec_PROGRAMS = gnome-initial-setup gnome-initial-setup-copy-worker
 
-resource_files = $(shell glib-compile-resources --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/gis-assistant.gresource.xml)
-gis-assistant-resources.c: gis-assistant.gresource.xml $(resource_files)
+assistant_resource_files = $(shell glib-compile-resources --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/gis-assistant.gresource.xml)
+gis-assistant-resources.c: gis-assistant.gresource.xml $(assistant_resource_files)
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source $<
-gis-assistant-resources.h: gis-assistant.gresource.xml $(resource_files)
+gis-assistant-resources.h: gis-assistant.gresource.xml $(assistant_resource_files)
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-header $<
 BUILT_SOURCES += gis-assistant-resources.c gis-assistant-resources.h
+
+page_util_resource_files = $(shell glib-compile-resources --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/gis-page-util.gresource.xml)
+gis-page-util-resources.c: gis-page-util.gresource.xml $(page_util_resource_files)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source $<
+gis-page-util-resources.h: gis-page-util.gresource.xml $(page_util_resource_files)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-header $<
+BUILT_SOURCES += gis-page-util-resources.c gis-page-util-resources.h
+
 
 fbe-remote-generated.c: fbe-remote-generated.h
 fbe-remote-generated.h: $(srcdir)/com.endlessm.Tutorial.FBERemote.xml
@@ -34,6 +44,7 @@ gnome_initial_setup_SOURCES = \
 	gnome-initial-setup.c gnome-initial-setup.h \
 	gis-assistant.c gis-assistant.h \
 	gis-page.c gis-page.h \
+	gis-page-util.c gis-page-util.h \
 	gis-pkexec.c gis-pkexec.h \
 	gis-driver.c gis-driver.h \
 	gis-keyring.c gis-keyring.h \
@@ -67,4 +78,5 @@ gnome_initial_setup_copy_worker_LDADD = \
 EXTRA_DIST = \
 	com.endlessm.Tutorial.FBERemote.xml \
 	gis-assistant.gresource.xml \
-	$(resource_files)
+	$(assistant_resource_files) \
+	$(page_util_resource_files)

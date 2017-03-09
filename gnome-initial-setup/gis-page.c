@@ -23,9 +23,9 @@
 
 #include "config.h"
 
-#include <glib-object.h>
-
 #include "gis-page.h"
+
+#include <glib-object.h>
 
 struct _GisPagePrivate
 {
