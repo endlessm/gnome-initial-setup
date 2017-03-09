@@ -96,6 +96,7 @@ create_live_user (GisLiveChooserPage *page)
     act_user_set_language (user, language);
 
   gis_driver_set_user_permissions (GIS_PAGE (page)->driver, user, NULL);
+  gis_update_login_keyring_password ("");
 
   g_object_unref (user);
 }
