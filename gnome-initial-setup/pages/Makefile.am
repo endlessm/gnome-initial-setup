@@ -1,5 +1,6 @@
 
 SUBDIRS = \
+	branding-welcome \
 	language \
 	region \
 	keyboard \

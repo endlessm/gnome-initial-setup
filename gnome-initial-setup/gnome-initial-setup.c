@@ -37,6 +37,7 @@
 #include <cheese-gtk.h>
 #endif
 
+#include "pages/branding-welcome/gis-branding-welcome-page.h"
 #include "pages/language/gis-language-page.h"
 #include "pages/region/gis-region-page.h"
 #include "pages/keyboard/gis-keyboard-page.h"
@@ -69,6 +70,7 @@ typedef struct {
 #define PAGE(name, new_user_only) { #name, gis_prepare_ ## name ## _page, new_user_only }
 
 static PageData page_table[] = {
+  PAGE (branding_welcome, TRUE),
   PAGE (language, FALSE),
   PAGE (live_chooser, TRUE),
   /* PAGE (region,   FALSE), */
