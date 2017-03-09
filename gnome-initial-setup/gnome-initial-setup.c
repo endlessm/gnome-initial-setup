@@ -40,6 +40,7 @@
 #endif
 
 #include "fbe-remote-generated.h"
+#include "pages/branding-welcome/gis-branding-welcome-page.h"
 #include "pages/language/cc-common-language.h"
 #include "pages/language/gis-language-page.h"
 #include "pages/keyboard/gis-keyboard-page.h"
@@ -58,6 +59,7 @@
 static gboolean force_new_user_mode;
 static const gchar *system_setup_pages[] = {
     "account",
+    "branding_welcome",
     "display",
     "endless_eula",
     "live-chooser",
@@ -74,6 +76,7 @@ typedef struct {
 #define PAGE(name) { #name, gis_prepare_ ## name ## _page }
 
 static PageData page_table[] = {
+  PAGE (branding_welcome),
   PAGE (language),
   PAGE (live_chooser),
   PAGE (keyboard),
