@@ -40,6 +40,7 @@
 #endif
 
 #include "fbe-remote-generated.h"
+#include "pages/branding-welcome/gis-branding-welcome-page.h"
 #include "pages/language/cc-common-language.h"
 #include "pages/language/gis-language-page.h"
 #include "pages/keyboard/gis-keyboard-page.h"
@@ -55,9 +56,12 @@
 
 /* main {{{1 */
 
+#define SKIP_PAGES_FILE CONFIGDIR "/skip_pages_file"
+
 static gboolean force_new_user_mode;
 static const gchar *system_setup_pages[] = {
     "account",
+    "branding_welcome",
     "display",
     "endless_eula",
     "live-chooser",
@@ -74,6 +78,7 @@ typedef struct {
 #define PAGE(name) { #name, gis_prepare_ ## name ## _page }
 
 static PageData page_table[] = {
+  PAGE (branding_welcome),
   PAGE (language),
   PAGE (live_chooser),
   PAGE (keyboard),
@@ -128,8 +133,7 @@ pages_to_skip_from_file (void)
   gchar **skip_pages;
 
   skip_pages_file = g_key_file_new ();
-  /* TODO: put the skipfile somewhere sensible */
-  if (g_key_file_load_from_file (skip_pages_file, "/tmp/skip_pages_file",
+  if (g_key_file_load_from_file (skip_pages_file, SKIP_PAGES_FILE,
                                  G_KEY_FILE_NONE,
                                  NULL)) {
     skip_pages = g_key_file_get_string_list (skip_pages_file, "pages", "skip",
