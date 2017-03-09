@@ -7,6 +7,8 @@
 # Cheng Lu <chenglu1990@gmail.com>, 2012
 # chenzibing <chenzibing_endless@126.com>, 2016
 # CN C2 <e2f48d4sf5ds@outlook.com>, 2016
+# Dianjin Wang <1132321739qq@gmail.com>, 2013
+# e2f_cn c5 <jarvisn@ecinnovations.com>, 2017
 # e2f_cn c5 <jarvisn@ecinnovations.com>, 2017
 # liuxuejiao <liuxuejiao_endless@126.com>, 2016
 # Roddy Shuler <roddy@endlessm.com>, 2017
@@ -18,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-28 04:16+0000\n"
-"PO-Revision-Date: 2017-01-13 07:36+0000\n"
+"POT-Creation-Date: 2017-02-15 13:16+0000\n"
+"PO-Revision-Date: 2017-03-09 07:49+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -89,7 +91,7 @@ msgstr "建立个人账户"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:2
 msgid ""
-"Type your full name and a password that you'll remember. Pay attention to "
+"Type your full name and a password that you’ll remember. Pay attention to "
 "upper case letters."
 msgstr "请输入您的全名和密码并记住它们。请注意字母的大小写。"
 
@@ -112,7 +114,7 @@ msgid "_Password"
 msgstr "密码(_P)"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:7
-msgid "_Confirm password"
+msgid "_Confirm Password"
 msgstr "确认密码(_C)"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:8
@@ -127,7 +129,7 @@ msgid ""
 msgstr "请确保已记录下您的密码以防忘记。您可以在此设定密码提示问题，但注意该密码提示问题对他人可见。"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:10
-msgid "Password _reminder"
+msgid "Password _Reminder"
 msgstr "密码提示问题"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:11
@@ -229,12 +231,12 @@ msgstr "密码错误，请重试"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:841
 #, c-format
-msgid "Couldn't connect to the %s domain: %s"
+msgid "Couldn’t connect to the %s domain: %s"
 msgstr "无法连接到 %s 域：%s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:150
 #, c-format
-msgid "A user with the username '%s' already exists"
+msgid "A user with the username ‘%s’ already exists"
 msgstr "名为 %s 的用户已存在"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:154
@@ -243,7 +245,7 @@ msgid "The username is too long"
 msgstr "用户名太长"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:157
-msgid "The username cannot start with a '-'"
+msgid "The username cannot start with a ‘-’"
 msgstr "用户名不能以“-”开头"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:160
@@ -251,7 +253,7 @@ msgid ""
 "The username must only consist of:\n"
 " ➣ letters from the English alphabet\n"
 " ➣ digits\n"
-" ➣ any of the characters '.', '-' and '_'"
+" ➣ any of the characters ‘.’, ‘-’ and ‘_’"
 msgstr "用户名只能包含：\n ➣ 英文字母\n ➣ 数字\n ➣ “.”、“-”或“_”"
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:280
@@ -284,7 +286,7 @@ msgid "Third Party Software"
 msgstr "第三方软件"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:349
-msgid "_Accept and continue"
+msgid "_Accept and Continue"
 msgstr "接受并继续"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
@@ -293,7 +295,7 @@ msgstr "请仔细阅读以下使用条款"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
 msgid ""
-"By clicking \"Accept and continue,\" you acknowledge that you have read, "
+"By clicking ‘Accept and Continue,’ you acknowledge that you have read, "
 "understood, and agree to be bound by the following terms and conditions."
 msgstr "点击“接受并继续”，您即承认您已阅读、理解并同意接受以下条款与条件的约束。"
 
@@ -419,11 +421,11 @@ msgid "Select your keyboard layout"
 msgstr "选择您的键盘布局"
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
-msgid "Help detect my keyboard layout"
+msgid "Help Detect My Keyboard Layout"
 msgstr "帮助检测您的键盘布局"
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
-msgid "Detect Keyboard Layout..."
+msgid "Detect Keyboard Layout…"
 msgstr "检测键盘布局……"
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
@@ -454,7 +456,7 @@ msgstr "欢迎进入Endless!"
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:650
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:4
-msgid "Let's set up your computer..."
+msgid "Let’s set up your computer…"
 msgstr "请设置您的电脑……"
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
@@ -465,32 +467,32 @@ msgstr "测试模式"
 msgid "Power Off"
 msgstr "关机"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:188
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #, c-format
 msgid "Error running the reformatter: %s"
 msgstr "运行重新格式化程序时出错: %s"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:296
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:285
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr "请通过从U盘运行重新格式化程序来试用Endless操作系统。"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:297
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:286
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Reformat this computer with Endless OS."
 msgstr "使用Endless操作系统重新格式化这台电脑。"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:298
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:287
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
 msgid "Try It"
 msgstr "试试看"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:299
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:288
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat"
 msgstr "重新格式化"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:301
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:290
 msgid "Endless USB Stick"
 msgstr "Endless U盘"
 
@@ -629,11 +631,11 @@ msgstr "没有可用的无线网络"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:394
 #, c-format
-msgid "_Start using %s"
+msgid "_Start Using %s"
 msgstr "开始使用 %s(_S)"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:420
-msgid "You're ready to try Endless OS"
+msgid "You’re ready to try Endless OS"
 msgstr "您已准备好试用Endless操作系统"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:423

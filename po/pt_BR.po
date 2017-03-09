@@ -11,14 +11,15 @@
 # Mariana Barbosa <mari@endlessm.com>, 2015
 # Philip Chimento <philip.chimento@gmail.com>, 2014
 # Rafael Fontenelle <rffontenelle@gmail.com>, 2013
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2013
 # Richard Vignais, 2014
 # Roddy Shuler <roddy@endlessm.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-28 04:16+0000\n"
-"PO-Revision-Date: 2017-01-13 07:38+0000\n"
+"POT-Creation-Date: 2017-02-15 13:16+0000\n"
+"PO-Revision-Date: 2017-03-09 07:48+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -88,7 +89,7 @@ msgstr "Criar uma conta "
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:2
 msgid ""
-"Type your full name and a password that you'll remember. Pay attention to "
+"Type your full name and a password that you’ll remember. Pay attention to "
 "upper case letters."
 msgstr "Escreva seu nome completo e uma senha da qual você vá se lembrar. Preste atenção nas letras maiúsculas. "
 
@@ -111,7 +112,7 @@ msgid "_Password"
 msgstr "_Senha"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:7
-msgid "_Confirm password"
+msgid "_Confirm Password"
 msgstr "_Confirmar senha"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:8
@@ -126,7 +127,7 @@ msgid ""
 msgstr "Tenha certeza de que escreveu uma senha da qual se lembrará! Você pode adicionar um lembrete de senha aqui mas saiba que esse lembrete poderá ser visto por outras pessoas. "
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:10
-msgid "Password _reminder"
+msgid "Password _Reminder"
 msgstr "Lembrete_ de senha"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:11
@@ -228,12 +229,12 @@ msgstr "Senha inválida. Por favor, tente novamente"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:841
 #, c-format
-msgid "Couldn't connect to the %s domain: %s"
+msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Não foi possível conectar-se a %s domínio: %s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:150
 #, c-format
-msgid "A user with the username '%s' already exists"
+msgid "A user with the username ‘%s’ already exists"
 msgstr "Já existe um usuário com o nome de usuário '%s'"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:154
@@ -242,7 +243,7 @@ msgid "The username is too long"
 msgstr "O nome de usuário é muito longo"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:157
-msgid "The username cannot start with a '-'"
+msgid "The username cannot start with a ‘-’"
 msgstr "O nome de usuário não pode começar com  '-'"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:160
@@ -250,7 +251,7 @@ msgid ""
 "The username must only consist of:\n"
 " ➣ letters from the English alphabet\n"
 " ➣ digits\n"
-" ➣ any of the characters '.', '-' and '_'"
+" ➣ any of the characters ‘.’, ‘-’ and ‘_’"
 msgstr "O nome de usuário deve ser composto apenas por:\n ➣ letras do alfabeto português\n ➣ números\n ➣ qualquer um dos caracteres '.', '-' e '_'"
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:280
@@ -283,7 +284,7 @@ msgid "Third Party Software"
 msgstr "Aplicativo de terceiros"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:349
-msgid "_Accept and continue"
+msgid "_Accept and Continue"
 msgstr "_Aceitar e continuar"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
@@ -292,7 +293,7 @@ msgstr "Por favor, leia os termos de serviço atentamente "
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
 msgid ""
-"By clicking \"Accept and continue,\" you acknowledge that you have read, "
+"By clicking ‘Accept and Continue,’ you acknowledge that you have read, "
 "understood, and agree to be bound by the following terms and conditions."
 msgstr "Ao clicar em \"Aceitar e continuar\", você reconhece haver lido, entendido e concorda com os seguintes termos e condições. "
 
@@ -418,12 +419,12 @@ msgid "Select your keyboard layout"
 msgstr "Selecione a disposição de seu teclado"
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
-msgid "Help detect my keyboard layout"
+msgid "Help Detect My Keyboard Layout"
 msgstr "Ajude-me a detectar minha configuração de teclado"
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
-msgid "Detect Keyboard Layout..."
-msgstr "Detectar minha configuração de teclado..."
+msgid "Detect Keyboard Layout…"
+msgstr "Detectar minha configuração de teclado…"
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
 msgid "_Select"
@@ -453,8 +454,8 @@ msgstr "Bem-vindo ao Endless!"
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:650
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:4
-msgid "Let's set up your computer..."
-msgstr "Vamos configurar seu computador... "
+msgid "Let’s set up your computer…"
+msgstr "Vamos configurar seu computador…"
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
 msgid "Test Mode"
@@ -464,32 +465,32 @@ msgstr "Modo teste"
 msgid "Power Off"
 msgstr "Desligar"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:188
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #, c-format
 msgid "Error running the reformatter: %s"
 msgstr "Erro ao executar a reformatação: %s"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:296
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:285
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr "Teste o Endless OS rodando o sistema em um pendrive"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:297
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:286
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Reformat this computer with Endless OS."
 msgstr "Reformatar este computador com o Endless OS"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:298
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:287
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
 msgid "Try It"
 msgstr "Experimente"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:299
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:288
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat"
 msgstr "Reformatar"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:301
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:290
 msgid "Endless USB Stick"
 msgstr "Pendrive Endless"
 
@@ -628,11 +629,11 @@ msgstr "Nenhuma rede sem fio (WIFI) disponível"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:394
 #, c-format
-msgid "_Start using %s"
+msgid "_Start Using %s"
 msgstr "_Começar a usar o %s"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:420
-msgid "You're ready to try Endless OS"
+msgid "You’re ready to try Endless OS"
 msgstr "Tudo pronto para você experimentar o Endless OS"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:423

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-28 04:16+0000\n"
-"PO-Revision-Date: 2017-01-13 07:40+0000\n"
+"POT-Creation-Date: 2017-02-15 13:16+0000\n"
+"PO-Revision-Date: 2017-03-09 07:48+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr "Tạo Tài khoản Cá nhân"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:2
 msgid ""
-"Type your full name and a password that you'll remember. Pay attention to "
+"Type your full name and a password that you’ll remember. Pay attention to "
 "upper case letters."
 msgstr "Gõ tên đầy đủ của bạn và một mật khẩu dễ nhớ đối với bạn. Chú ý chữ in hoa."
 
@@ -103,7 +103,7 @@ msgid "_Password"
 msgstr "Mật _khẩu"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:7
-msgid "_Confirm password"
+msgid "_Confirm Password"
 msgstr "_Xác nhận mật khẩu"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:8
@@ -118,7 +118,7 @@ msgid ""
 msgstr "Đảm bảo bạn viết ra mật khẩu của mình để ghi nhớ nó! Bạn có thể tự viết lời nhắc ở đây, nhưng lưu ý rằng lời nhắc mật khẩu này có thể bị người khác nhìn thấy."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:10
-msgid "Password _reminder"
+msgid "Password _Reminder"
 msgstr "Nhắc mật khẩu"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:11
@@ -220,12 +220,12 @@ msgstr "Mật khẩu không hợp lệ, vui lòng thử lại"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:841
 #, c-format
-msgid "Couldn't connect to the %s domain: %s"
+msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Không thể kết nối đến miền %s: %s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:150
 #, c-format
-msgid "A user with the username '%s' already exists"
+msgid "A user with the username ‘%s’ already exists"
 msgstr "Một người dùng có tên đăng nhập '%s' đã tồn tại"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:154
@@ -234,7 +234,7 @@ msgid "The username is too long"
 msgstr "Tên người dùng quá dài"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:157
-msgid "The username cannot start with a '-'"
+msgid "The username cannot start with a ‘-’"
 msgstr "Tên người dùng không thể bắt đầu bằng dấu \"-\""
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:160
@@ -242,7 +242,7 @@ msgid ""
 "The username must only consist of:\n"
 " ➣ letters from the English alphabet\n"
 " ➣ digits\n"
-" ➣ any of the characters '.', '-' and '_'"
+" ➣ any of the characters ‘.’, ‘-’ and ‘_’"
 msgstr "Tên người dùng chỉ được bao gồm:\n ➣ các chữ cái thuộc bảng chữ cái tiếng Anh\n ➣ các chữ số\n ➣ bất kỳ ký tự nào '.', '-' và '_'"
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:280
@@ -275,7 +275,7 @@ msgid "Third Party Software"
 msgstr "Phần mềm Bên Thứ Ba"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:349
-msgid "_Accept and continue"
+msgid "_Accept and Continue"
 msgstr "_Chấp nhận và tiếp tục"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
@@ -284,7 +284,7 @@ msgstr "Vui lòng đọc kỹ các điều khoản sử dụng sau đây"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
 msgid ""
-"By clicking \"Accept and continue,\" you acknowledge that you have read, "
+"By clicking ‘Accept and Continue,’ you acknowledge that you have read, "
 "understood, and agree to be bound by the following terms and conditions."
 msgstr "i"
 
@@ -410,12 +410,12 @@ msgid "Select your keyboard layout"
 msgstr "Chọn bố cục bàn phím của bạn"
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
-msgid "Help detect my keyboard layout"
+msgid "Help Detect My Keyboard Layout"
 msgstr "Hỗ trợ dò tìm bố cục bàn phím của tôi"
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
-msgid "Detect Keyboard Layout..."
-msgstr "Phát hiện Bố cục Bàn phím..."
+msgid "Detect Keyboard Layout…"
+msgstr "Phát hiện Bố cục Bàn phím…"
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
 msgid "_Select"
@@ -445,8 +445,8 @@ msgstr "Chào mừng bạn đến với Endess!"
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:650
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:4
-msgid "Let's set up your computer..."
-msgstr "Hãy thiết lập máy tính của bạn..."
+msgid "Let’s set up your computer…"
+msgstr "Hãy thiết lập máy tính của bạn…"
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
 msgid "Test Mode"
@@ -456,32 +456,32 @@ msgstr "Chế độ Thử nghiệm"
 msgid "Power Off"
 msgstr "Tắt Nguồn"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:188
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #, c-format
 msgid "Error running the reformatter: %s"
 msgstr "Có lỗi khi chạy trình định dạng lại: %s"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:296
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:285
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr "Dùng thử HĐH Endless bằng cách chạy hệ điều hành này từ Thanh USB."
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:297
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:286
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Reformat this computer with Endless OS."
 msgstr "Định dạng lại máy tính này với HĐH Endless."
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:298
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:287
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
 msgid "Try It"
 msgstr "Dùng thử nó"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:299
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:288
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat"
 msgstr "Định dạng lại"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:301
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:290
 msgid "Endless USB Stick"
 msgstr "Thanh USB Endless"
 
@@ -620,11 +620,11 @@ msgstr "Không có mạng không dây dùng được"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:394
 #, c-format
-msgid "_Start using %s"
+msgid "_Start Using %s"
 msgstr "_Bắt đầu dùng %s"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:420
-msgid "You're ready to try Endless OS"
+msgid "You’re ready to try Endless OS"
 msgstr "Bạn đã sẵn sàng dùng thử HĐH Endless"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:423

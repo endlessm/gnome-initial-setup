@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-28 04:16+0000\n"
-"PO-Revision-Date: 2017-01-13 07:35+0000\n"
+"POT-Creation-Date: 2017-02-15 13:16+0000\n"
+"PO-Revision-Date: 2017-03-09 07:47+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Korean (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:2
 msgid ""
-"Type your full name and a password that you'll remember. Pay attention to "
+"Type your full name and a password that you’ll remember. Pay attention to "
 "upper case letters."
 msgstr ""
 
@@ -103,7 +103,7 @@ msgid "_Password"
 msgstr "암호(_P)"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:7
-msgid "_Confirm password"
+msgid "_Confirm Password"
 msgstr "암호 확인(_C)"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:8
@@ -118,7 +118,7 @@ msgid ""
 msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:10
-msgid "Password _reminder"
+msgid "Password _Reminder"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:11
@@ -220,12 +220,12 @@ msgstr "암호가 잘못되었습니다, 다시 시도하십시오"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:841
 #, c-format
-msgid "Couldn't connect to the %s domain: %s"
+msgid "Couldn’t connect to the %s domain: %s"
 msgstr "%s 도메인에 연결할 수 없습니다: %s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:150
 #, c-format
-msgid "A user with the username '%s' already exists"
+msgid "A user with the username ‘%s’ already exists"
 msgstr "'%s' 이름을 가진 사용자가 이미 있습니다"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:154
@@ -234,7 +234,7 @@ msgid "The username is too long"
 msgstr "사용자 이름이 너무 깁니다"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:157
-msgid "The username cannot start with a '-'"
+msgid "The username cannot start with a ‘-’"
 msgstr "사용자 이름을 '-'로 시작할 수 없습니다"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:160
@@ -242,7 +242,7 @@ msgid ""
 "The username must only consist of:\n"
 " ➣ letters from the English alphabet\n"
 " ➣ digits\n"
-" ➣ any of the characters '.', '-' and '_'"
+" ➣ any of the characters ‘.’, ‘-’ and ‘_’"
 msgstr "사용자 이름은 다음 문자로만 구성해야 합니다:\n ➣ 영문 알파벳 문자\n ➣ 숫자\n ➣ '.', '-' 그리고 '_' 중 한가지 문자"
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:280
@@ -275,7 +275,7 @@ msgid "Third Party Software"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:349
-msgid "_Accept and continue"
+msgid "_Accept and Continue"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
@@ -284,7 +284,7 @@ msgstr ""
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
 msgid ""
-"By clicking \"Accept and continue,\" you acknowledge that you have read, "
+"By clicking ‘Accept and Continue,’ you acknowledge that you have read, "
 "understood, and agree to be bound by the following terms and conditions."
 msgstr ""
 
@@ -410,11 +410,11 @@ msgid "Select your keyboard layout"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
-msgid "Help detect my keyboard layout"
+msgid "Help Detect My Keyboard Layout"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
-msgid "Detect Keyboard Layout..."
+msgid "Detect Keyboard Layout…"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
@@ -445,7 +445,7 @@ msgstr ""
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:650
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:4
-msgid "Let's set up your computer..."
+msgid "Let’s set up your computer…"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
@@ -456,32 +456,32 @@ msgstr ""
 msgid "Power Off"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:188
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #, c-format
 msgid "Error running the reformatter: %s"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:296
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:285
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:297
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:286
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Reformat this computer with Endless OS."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:298
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:287
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
 msgid "Try It"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:299
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:288
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:301
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:290
 msgid "Endless USB Stick"
 msgstr ""
 
@@ -620,11 +620,11 @@ msgstr "무선 네트워크 연결이 없습니다"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:394
 #, c-format
-msgid "_Start using %s"
+msgid "_Start Using %s"
 msgstr "%s 사용 시작하기(_S)"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:420
-msgid "You're ready to try Endless OS"
+msgid "You’re ready to try Endless OS"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:423

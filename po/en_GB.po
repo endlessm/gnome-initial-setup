@@ -1,22 +1,22 @@
-# British English translation for gnome-initial-setup.
-# Copyright (C) 2012 gnome-initial-setup's COPYRIGHT HOLDER
-# This file is distributed under the same license as the gnome-initial-setup package.
-# Bruce Cowan <bruce@bcowan.me.uk>, 2012, 2013.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Bruce Cowan <bruce@bcowan.me.uk>, 2012-2013
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
+"Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-18 22:43-0700\n"
-"PO-Revision-Date: 2013-03-05 19:44+0100\n"
-"Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
-"Language-Team: British English <en@li.org>\n"
-"Language: en_GB\n"
+"POT-Creation-Date: 2017-02-15 13:16+0000\n"
+"PO-Revision-Date: 2017-03-09 07:49+0000\n"
+"Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
+"Language-Team: English (United Kingdom) (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
-"X-Project-Style: gnome\n"
 
 #: ../data/gnome-initial-setup.desktop.in.in.h:1
 #: ../data/gnome-initial-setup-first-login.desktop.in.in.h:1
@@ -44,40 +44,38 @@ msgstr "Force new user mode"
 msgid "- GNOME initial setup"
 msgstr "- GNOME initial setup"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:333
-#, fuzzy
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:342
 msgid "No password"
-msgstr "_Confirm Password"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:336
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:450
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:345
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:467
 msgid "Passwords do not match"
 msgstr "Passwords do not match"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:582
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:599
 msgid "Failed to register account"
 msgstr "Failed to register account"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:790
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:807
 msgid "No supported way to authenticate with this domain"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:830
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:847
 msgid "Failed to join domain"
 msgstr "Failed to join domain"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:898
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:915
 msgid "Failed to log into domain"
 msgstr "Failed to log into domain"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:1327
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:1379
 msgid "Login"
 msgstr "Login"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:1
-#, fuzzy
 msgid "Create a Personal Account"
-msgstr "Create a Local Account"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:2
 msgid ""
@@ -94,11 +92,10 @@ msgid "_Username"
 msgstr "_Username"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:5
-#, fuzzy
 msgid ""
 "The username will be used to name your personal folder, and it cannot be "
 "changed."
-msgstr "This will be used to name your home folder and can't be changed."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:6
 msgid "_Password"
@@ -109,9 +106,8 @@ msgid "_Confirm Password"
 msgstr "_Confirm Password"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:8
-#, fuzzy
 msgid "Show password"
-msgstr "_Confirm Password"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:9
 msgid ""
@@ -241,17 +237,12 @@ msgid "The username cannot start with a ‘-’"
 msgstr "The username cannot start with a ‘-’"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:160
-#, fuzzy
 msgid ""
 "The username must only consist of:\n"
 " ➣ letters from the English alphabet\n"
 " ➣ digits\n"
 " ➣ any of the characters ‘.’, ‘-’ and ‘_’"
 msgstr ""
-"The username must consist of:\n"
-" ➣ letters from the English alphabet\n"
-" ➣ digits\n"
-" ➣ any of the characters ‘.’, ‘-’ and ‘_’"
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:280
 msgid "Display"
@@ -274,7 +265,7 @@ msgid "I do not see it. Shrink screen to fit TV."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:239
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:345
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:356
 msgid "Terms of Use"
 msgstr ""
 
@@ -282,7 +273,7 @@ msgstr ""
 msgid "Third Party Software"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:338
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:349
 msgid "_Accept and Continue"
 msgstr ""
 
@@ -302,8 +293,8 @@ msgstr ""
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:4
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.c:324
@@ -315,15 +306,12 @@ msgstr "Licence Agreements"
 msgid ""
 "I have _agreed to the terms and conditions in this end user license "
 "agreement."
-msgstr ""
-"I have _agreed to the terms and conditions in this end user licence "
-"agreement."
+msgstr "I have _agreed to the terms and conditions in this end user licence agreement."
 
 #: ../gnome-initial-setup/pages/goa/cc-online-accounts-add-account-dialog.c:200
-#, fuzzy
 msgctxt "Online Account"
 msgid "Other"
-msgstr "Other…"
+msgstr ""
 
 #. translators: This is the title of the "Add Account" dialog.
 #: ../gnome-initial-setup/pages/goa/cc-online-accounts-add-account-dialog.c:318
@@ -378,36 +366,30 @@ msgstr "Connect to your existing data in the cloud"
 msgid ""
 "Adding accounts will allow you to transparently connect to your online "
 "photos, contacts, mail, and more."
-msgstr ""
-"Adding accounts will allow you to transparently connect to your online "
-"photos, contacts, mail and more."
+msgstr "Adding accounts will allow you to transparently connect to your online photos, contacts, mail and more."
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:3
-#, fuzzy
 msgid "_Add Account"
-msgstr "Add Account"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:240
 msgid "Preview"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:297
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:184
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:244
 msgid "More…"
 msgstr "More…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:318
-#, fuzzy
 msgid "No inputs found"
-msgstr "Move Input Source Down"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
-#, fuzzy
 msgid "Your keyboard layout seems to be:"
-msgstr "Show Keyboard Layout"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:304
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:2
@@ -423,32 +405,28 @@ msgid "Typing"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:1
-#, fuzzy
 msgid "Select your keyboard layout"
-msgstr "Show Keyboard Layout"
-
-#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
-#, fuzzy
-msgid "Help Detect My Keyboard Layout"
-msgstr "Show Keyboard Layout"
-
-#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
-#, fuzzy
-msgid "Detect Keyboard Layout…"
-msgstr "Show Keyboard Layout"
-
-#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
-msgid "Select"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:201
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
+msgid "Help Detect My Keyboard Layout"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
+msgid "Detect Keyboard Layout…"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
+msgid "_Select"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:260
 msgid "No languages found"
 msgstr "No languages found"
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:563
-#, fuzzy
 msgid "Disabled"
-msgstr "Disable image"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:565
 #, c-format
@@ -477,32 +455,32 @@ msgstr ""
 msgid "Power Off"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:163
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #, c-format
 msgid "Error running the reformatter: %s"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:271
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:285
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:272
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:286
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Reformat this computer with Endless OS."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:273
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:287
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
 msgid "Try It"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:274
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:288
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:276
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:290
 msgid "Endless USB Stick"
 msgstr ""
 
@@ -576,9 +554,8 @@ msgid "Time Zone"
 msgstr "Time Zone"
 
 #: ../gnome-initial-setup/pages/location/gis-location-page.ui.h:17
-#, fuzzy
 msgid "Network Time"
-msgstr "Network"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/location/gis-location-page.ui.h:18
 msgid "16"
@@ -592,24 +569,24 @@ msgstr ""
 msgid ":"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:334
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:339
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "Other…"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:368
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:373
 msgid "Network is not available."
 msgstr "Network is not available."
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:370
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:375
 msgid "No network devices found."
 msgstr "No network devices found."
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:436
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:441
 msgid "Checking for available wireless networks"
 msgstr "Checking for available wireless networks"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:702
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:769
 msgid "Network"
 msgstr "Network"
 
@@ -621,14 +598,15 @@ msgstr "Wireless Networks"
 msgid ""
 "Do you have wireless internet (WiFi)? If you do, connect your computer to "
 "the internet by clicking on the name of your WiFi network and entering the "
-"network password. This password may be different from your computer password."
+"network password. This password may be different from your computer "
+"password."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
 msgid ""
 "TIP: You can use your computer without internet if you do not have a "
-"connection now. If you get an internet connection in the future, you can set "
-"it up in \"Network Settings.\""
+"connection now. If you get an internet connection in the future, you can set"
+" it up in \"Network Settings.\""
 msgstr ""
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:4
@@ -636,14 +614,13 @@ msgid "_Skip WiFi setup"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:5
-#, fuzzy
 msgid "No wireless available"
-msgstr "Network is not available."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:394
-#, fuzzy, c-format
+#, c-format
 msgid "_Start Using %s"
-msgstr "_Start using GNOME 3"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:420
 msgid "You’re ready to try Endless OS"
@@ -670,107 +647,3 @@ msgstr "You may change these options at any time in Settings."
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:3
 msgid "_Start using GNOME 3"
 msgstr "_Start using GNOME 3"
-
-#, fuzzy
-#~ msgid "Privacy and License Agreements"
-#~ msgstr "Licence Agreements"
-
-#, fuzzy
-#~ msgid "Other"
-#~ msgstr "Other…"
-
-#, fuzzy
-#~ msgid "Keyboard Layouts"
-#~ msgstr "Keyboard Layout"
-
-#, fuzzy
-#~ msgid "Add a Keyboard Layout"
-#~ msgstr "Keyboard Layout"
-
-#~ msgid ""
-#~ "Try to use at least 8 different characters. Mix upper and lower case and "
-#~ "use a number or two."
-#~ msgstr ""
-#~ "Try to use at least 8 different characters. Mix upper and lower case and "
-#~ "use a number or two."
-
-#~ msgid "_Back"
-#~ msgstr "_Back"
-
-#~ msgid "Strength: %s"
-#~ msgstr "Strength: %s"
-
-#~ msgid "Select input sources"
-#~ msgstr "Select input sources"
-
-#~ msgid "Add Input Source"
-#~ msgstr "Add Input Source"
-
-#~ msgid "Remove Input Source"
-#~ msgstr "Remove Input Source"
-
-#~ msgid "Move Input Source Up"
-#~ msgstr "Move Input Source Up"
-
-#~ msgid "Input Source Settings"
-#~ msgstr "Input Source Settings"
-
-#~ msgid "Select an input source"
-#~ msgstr "Select an input source"
-
-#~ msgid "Use %s"
-#~ msgstr "Use %s"
-
-#~ msgid "Create Local Account"
-#~ msgstr "Create Local Account"
-
-#~ msgid "_Done"
-#~ msgstr "_Done"
-
-#~ msgid "_Require a password to use this account"
-#~ msgstr "_Require a password to use this account"
-
-#~ msgid "_Act as administrator of this computer"
-#~ msgstr "_Act as administrator of this computer"
-
-#~ msgid "Choose How to Login"
-#~ msgstr "Choose How to Login"
-
-#~ msgid "Take a photo…"
-#~ msgstr "Take a photo…"
-
-#~ msgid "Remove"
-#~ msgstr "Remove"
-
-#~ msgid "English"
-#~ msgstr "English"
-
-#~ msgid "British English"
-#~ msgstr "British English"
-
-#~ msgid "German"
-#~ msgstr "German"
-
-#~ msgid "French"
-#~ msgstr "French"
-
-#~ msgid "Spanish"
-#~ msgstr "Spanish"
-
-#~ msgid "Chinese (simplified)"
-#~ msgstr "Chinese (simplified)"
-
-#~ msgid "Unspecified"
-#~ msgstr "Unspecified"
-
-#~ msgid "Show _all"
-#~ msgstr "Show _all"
-
-#~ msgid "Enjoy GNOME!"
-#~ msgstr "Enjoy GNOME!"
-
-#~ msgid "New to GNOME 3 and need help finding your way around?"
-#~ msgstr "New to GNOME 3 and need help finding your way around?"
-
-#~ msgid "_Take a Tour"
-#~ msgstr "_Take a Tour"

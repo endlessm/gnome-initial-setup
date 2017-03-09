@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-28 04:16+0000\n"
-"PO-Revision-Date: 2017-01-13 07:40+0000\n"
+"POT-Creation-Date: 2017-02-15 13:16+0000\n"
+"PO-Revision-Date: 2017-03-09 07:48+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Thai (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/th/)\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr "สร้างบัญชีผู้ใช้ส่วนบุคค
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:2
 msgid ""
-"Type your full name and a password that you'll remember. Pay attention to "
+"Type your full name and a password that you’ll remember. Pay attention to "
 "upper case letters."
 msgstr "พิมพ์ชื่อเต็มของคุณและรหัสผ่านที่คุณจะจำได้ โปรดระมัดระวังตัวอักษรตัวพิมพ์ใหญ่"
 
@@ -103,7 +103,7 @@ msgid "_Password"
 msgstr "_รหัสผ่าน"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:7
-msgid "_Confirm password"
+msgid "_Confirm Password"
 msgstr "_ยืนยันรหัสผ่าน"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:8
@@ -118,7 +118,7 @@ msgid ""
 msgstr "ขอให้แน่ใจว่าคุณได้จดบันทึกรหัสผ่านไว้แล้ว!  คุณสามารถเขียนการแจ้งเตือนได้ที่นี่ แต่โปรดทราบว่าตัวแจ้งเตือนรหัสผ่านอาจถูกผู้อื่นพบเห็นได้"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:10
-msgid "Password _reminder"
+msgid "Password _Reminder"
 msgstr "ตัวช่วยจำ _รหัสผ่าน"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:11
@@ -220,12 +220,12 @@ msgstr "รหัสผ่านไม่ถูกต้อง กรุณา�
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:841
 #, c-format
-msgid "Couldn't connect to the %s domain: %s"
+msgid "Couldn’t connect to the %s domain: %s"
 msgstr "ไม่สามารถเชื่อมต่อกับโดเมน %s: %s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:150
 #, c-format
-msgid "A user with the username '%s' already exists"
+msgid "A user with the username ‘%s’ already exists"
 msgstr "มีผู้ใช้ที่ใช้ชื่อ '%s' อยู่ก่อนแล้ว"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:154
@@ -234,7 +234,7 @@ msgid "The username is too long"
 msgstr "ชื่อผู้ใช้ยาวเกินไป"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:157
-msgid "The username cannot start with a '-'"
+msgid "The username cannot start with a ‘-’"
 msgstr "ชื่อผู้ใช้ไม่สามารถขึ้นต้นด้วย '-'"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:160
@@ -242,7 +242,7 @@ msgid ""
 "The username must only consist of:\n"
 " ➣ letters from the English alphabet\n"
 " ➣ digits\n"
-" ➣ any of the characters '.', '-' and '_'"
+" ➣ any of the characters ‘.’, ‘-’ and ‘_’"
 msgstr "ชื่อผู้ใช้จะต้องประกอบด้วย:\n➣ อักขระตัวอักษรภาษาอังกฤษ\n➣ ตัวเลข\n➣ อักขระใดๆ ต่อไปนี้ '.', '-' และ '_'"
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:280
@@ -275,7 +275,7 @@ msgid "Third Party Software"
 msgstr "ซอร์ฟแวร์บุคคลที่สาม"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:349
-msgid "_Accept and continue"
+msgid "_Accept and Continue"
 msgstr "_ยอมรับและไปต่อ"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
@@ -284,7 +284,7 @@ msgstr "กรุณาอ่านข้อกำหนดดังต่อไ
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
 msgid ""
-"By clicking \"Accept and continue,\" you acknowledge that you have read, "
+"By clicking ‘Accept and Continue,’ you acknowledge that you have read, "
 "understood, and agree to be bound by the following terms and conditions."
 msgstr "เมื่อคลิกที่ \"ยอมรับและทำต่อ\" คุณได้รับทราบว่าได้อ่าน, เข้าใจ และยอมรับข้อผูกพันของเงื่อนไขและข้อกำหนดต่อไปนี้"
 
@@ -380,7 +380,7 @@ msgstr "ตัวอย่าง"
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:297
 #: ../gnome-initial-setup/pages/language/cc-language-chooser.c:244
 msgid "More…"
-msgstr "เพิ่มเติม..."
+msgstr "เพิ่มเติม…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
@@ -410,12 +410,12 @@ msgid "Select your keyboard layout"
 msgstr "เลือกผังคีย์บอร์ดของคุณ"
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
-msgid "Help detect my keyboard layout"
+msgid "Help Detect My Keyboard Layout"
 msgstr "ช่วยตรวจจับเลย์เอาต์แป้นพิมพ์ของฉัน"
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
-msgid "Detect Keyboard Layout..."
-msgstr "ตรวจจับเลย์เอาต์แป้นพิมพ์..."
+msgid "Detect Keyboard Layout…"
+msgstr "ตรวจจับเลย์เอาต์แป้นพิมพ์…"
 
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
 msgid "_Select"
@@ -445,8 +445,8 @@ msgstr "ขอต้อนรับสู่ Endless!"
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:650
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:4
-msgid "Let's set up your computer..."
-msgstr "มาตั้งค่าคอมพิวเตอร์ของคุณกันเถอะ..."
+msgid "Let’s set up your computer…"
+msgstr "มาตั้งค่าคอมพิวเตอร์ของคุณกันเถอะ…"
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
 msgid "Test Mode"
@@ -456,32 +456,32 @@ msgstr "โหมดทดสอบ"
 msgid "Power Off"
 msgstr "ปิดเครื่อง"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:188
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #, c-format
 msgid "Error running the reformatter: %s"
 msgstr "ข้อผิดพลาดในการรันตัวฟอร์แมตใหม่: %s"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:296
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:285
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr "ลองใช้ Endless OS โดยรันจากแฟลชไดรฟ์"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:297
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:286
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Reformat this computer with Endless OS."
 msgstr "ฟอร์แมตคอมพิวเตอร์นี้ใหม่ด้วย Endless OS"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:298
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:287
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
 msgid "Try It"
 msgstr "ทดลองใช้"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:299
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:288
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat"
 msgstr "ฟอร์แมตใหม่"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:301
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:290
 msgid "Endless USB Stick"
 msgstr "แฟลชไดรฟ์ Endless"
 
@@ -573,7 +573,7 @@ msgstr ":"
 #: ../gnome-initial-setup/pages/network/gis-network-page.c:339
 msgctxt "Wireless access point"
 msgid "Other…"
-msgstr "อื่นๆ..."
+msgstr "อื่นๆ…"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.c:373
 msgid "Network is not available."
@@ -620,11 +620,11 @@ msgstr "ไม่มีบริการไร้สาย"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:394
 #, c-format
-msgid "_Start using %s"
+msgid "_Start Using %s"
 msgstr "_เริ่มใช้งาน %s"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:420
-msgid "You're ready to try Endless OS"
+msgid "You’re ready to try Endless OS"
 msgstr "คุณพร้อมแล้วที่จะลองใช้ Endless OS"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:423
