@@ -56,6 +56,8 @@
 
 /* main {{{1 */
 
+#define SKIP_PAGES_FILE CONFIGDIR "/skip_pages_file"
+
 static gboolean force_new_user_mode;
 static const gchar *system_setup_pages[] = {
     "account",
@@ -131,8 +133,7 @@ pages_to_skip_from_file (void)
   gchar **skip_pages;
 
   skip_pages_file = g_key_file_new ();
-  /* TODO: put the skipfile somewhere sensible */
-  if (g_key_file_load_from_file (skip_pages_file, "/tmp/skip_pages_file",
+  if (g_key_file_load_from_file (skip_pages_file, SKIP_PAGES_FILE,
                                  G_KEY_FILE_NONE,
                                  NULL)) {
     skip_pages = g_key_file_get_string_list (skip_pages_file, "pages", "skip",
