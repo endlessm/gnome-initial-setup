@@ -40,6 +40,7 @@ gnome_initial_setup_SOURCES = \
 	gis-window.c gis-window.h
 
 gnome_initial_setup_LDADD =	\
+	pages/branding-welcome/libgisbrandingwelcome.la \
 	pages/language/libgislanguage.la \
 	pages/keyboard/libgiskeyboard.la \
 	pages/display/libgisdisplay.la \
