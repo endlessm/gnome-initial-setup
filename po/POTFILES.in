@@ -1,12 +1,15 @@
 data/gnome-initial-setup.desktop.in.in
 data/gnome-initial-setup-first-login.desktop.in.in
 gnome-initial-setup/gis-assistant.c
+gnome-initial-setup/gis-page-util.c
+gnome-initial-setup/gis-page-util.ui
 gnome-initial-setup/gnome-initial-setup.c
 gnome-initial-setup/pages/account/gis-account-page.c
 [type: gettext/glade]gnome-initial-setup/pages/account/gis-account-page.ui
 gnome-initial-setup/pages/account/pw-utils.c
 gnome-initial-setup/pages/account/um-realm-manager.c
 gnome-initial-setup/pages/account/um-utils.c
+[type: gettext/glade]gnome-initial-setup/pages/branding-welcome/gis-branding-welcome-page.ui
 gnome-initial-setup/pages/display/gis-display-page.c
 [type: gettext/glade]gnome-initial-setup/pages/display/gis-display-page.ui
 gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c
