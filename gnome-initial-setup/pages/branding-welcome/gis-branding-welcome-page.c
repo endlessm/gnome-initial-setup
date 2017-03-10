@@ -80,7 +80,7 @@ load_css_overrides (GisBrandingWelcomePage *page)
                                              GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 }
 
-static gboolean
+static void
 read_config_file (GisBrandingWelcomePage *page)
 {
   GisBrandingWelcomePagePrivate *priv = NULL;
@@ -93,7 +93,7 @@ read_config_file (GisBrandingWelcomePage *page)
       if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
         g_warning ("Could not read file %s: %s", CONFIG_FILEPATH, error->message);
 
-      return FALSE;
+      return;
     }
 
   priv = gis_branding_welcome_page_get_instance_private (page);
@@ -101,7 +101,7 @@ read_config_file (GisBrandingWelcomePage *page)
   priv->title = g_key_file_get_string (keyfile, "Welcome", "title", &error);
   if (priv->title == NULL) {
     g_warning ("Could not find 'title' in %s: %s", CONFIG_FILEPATH, error->message);
-    return FALSE;
+    return;
   }
 
   priv->description = g_key_file_get_string (keyfile, "Welcome", "description", NULL);
@@ -111,8 +111,6 @@ read_config_file (GisBrandingWelcomePage *page)
   priv->logo_path = g_key_file_get_string (keyfile, "Welcome", "logo", NULL);
   if (priv->logo_path == NULL)
     g_warning ("Unable to get logo for 'Welcome' branding page");
-
-  return TRUE;
 }
 
 static void
@@ -121,7 +119,9 @@ update_branding_specific_info (GisBrandingWelcomePage *page)
   GisBrandingWelcomePagePrivate *priv = gis_branding_welcome_page_get_instance_private (page);
   GtkWidget *opt_widget = NULL;
 
-  if (!read_config_file (page)) {
+  read_config_file (page);
+
+  if (priv->title == NULL) {
     g_debug ("No branding configuration found");
     return;
   }
