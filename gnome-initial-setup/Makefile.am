@@ -79,5 +79,6 @@ gnome_initial_setup_copy_worker_LDADD = \
 EXTRA_DIST = \
 	com.endlessm.Tutorial.FBERemote.xml \
 	gis-assistant.gresource.xml \
+	gis-page-util.gresource.xml \
 	$(assistant_resource_files) \
 	$(page_util_resource_files)
