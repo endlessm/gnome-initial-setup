@@ -3,6 +3,7 @@ noinst_LTLIBRARIES = libgisbrandingwelcome.la
 
 AM_CPPFLAGS = \
 	$(INITIAL_SETUP_CFLAGS) \
+	-DVENDOR_CONF_FILE="\"$(VENDOR_CONF_FILE)\"" \
 	-DCONFIGDIR=\"$(sysconfdir)/$(PACKAGE)\" \
 	-DLOCALSTATEDIR="\"$(localstatedir)\"" \
 	-DUIDIR="\"$(uidir)\""
