@@ -17,6 +17,17 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [gettext package])
 
 AM_GLIB_GNU_GETTEXT
 
+AC_ARG_WITH(vendor-conf-file,
+            AS_HELP_STRING([--with-vendor-conf-file=<file>],
+                           [vendor conf file]))
+
+if ! test -z "$with_vendor_conf_file"; then
+   VENDOR_CONF_FILE=$with_vendor_conf_file
+else
+   VENDOR_CONF_FILE=${localstatedir}/lib/gnome-initial-setup/vendor.conf
+fi
+AC_SUBST(VENDOR_CONF_FILE)
+
 NETWORK_MANAGER_REQUIRED_VERSION=0.9.6.4
 GLIB_REQUIRED_VERSION=2.40.0
 GTK_REQUIRED_VERSION=3.7.11
