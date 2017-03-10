@@ -96,6 +96,17 @@ if test x$have_ibus = xyes; then
   AC_DEFINE(HAVE_IBUS, 1, [Build with IBus support?])
 fi
 
+AC_ARG_WITH(vendor-conf-file,
+            AS_HELP_STRING([--with-vendor-conf-file=<file>],
+                           [vendor conf file]))
+
+if ! test -z "$with_vendor_conf_file"; then
+   VENDOR_CONF_FILE=$with_vendor_conf_file
+else
+   VENDOR_CONF_FILE=${localstatedir}/lib/gnome-initial-setup/vendor.conf
+fi
+AC_SUBST(VENDOR_CONF_FILE)
+
 # Kerberos kerberos support
 AC_PATH_PROG(KRB5_CONFIG, krb5-config, no)
 if test "$KRB5_CONFIG" = "no"; then
