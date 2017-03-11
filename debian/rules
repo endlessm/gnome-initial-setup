@@ -16,7 +16,7 @@ override_dh_auto_configure:
 	dh_auto_configure -- \
 		-Dauto_features=enabled \
 		$(PARENTAL_CONTROL) \
-		-Dvendor-conf-file=/usr/lib/gnome-initial-setup/vendor.conf
+		-Dvendor-conf-file=/var/lib/eos-image-defaults/branding/gnome-initial-setup.conf
 
 # Skip language chooser on Ubuntu since it doesn't work there
 override_dh_install:
