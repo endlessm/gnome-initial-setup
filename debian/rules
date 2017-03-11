@@ -4,3 +4,5 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/gnome.mk
 -include /usr/share/gnome-pkg-tools/1/rules/gnome-get-source.mk
 include /usr/share/cdbs/1/rules/autoreconf.mk
+
+DEB_CONFIGURE_EXTRA_FLAGS += --with-vendor-conf-file=/var/eos-image-defaults/branding/gnome-initial-setup.conf
