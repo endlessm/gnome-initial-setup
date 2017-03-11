@@ -46,29 +46,10 @@ G_DEFINE_TYPE_WITH_PRIVATE (GisBrandingWelcomePage, gis_branding_welcome_page, G
 #define OBJ(type,name) ((type)gtk_builder_get_object(GIS_PAGE(page)->builder,(name)))
 #define WID(name) OBJ(GtkWidget*,name)
 
-/*
- * CONFIG_FILEPATH points to /etc/gnome-initial-setup/branding.conf, which is a file
- * containing groups of key-value pairs under a group called "Welcome", defining
- * the usual parameters needed to render the "branding-welcome" page.
- *
- * Among those parameters, the only required one is the "title", meaning that the page will
- * be forgiving about the rest of them not being there, rendering the title and any other
- * optional field that it's there, if present.
- *
- * Fields:
- *   - title (required): string containing a short string to show as title.
- *   - description (optional): string containing long text, likely to be wrapped.
- *   - logo (optional): absolute path to the file with a logo for the brand.
- *
- * For example, this is how this file would look on a branded image defining a title,
- * a description an a logo:
- *
- *   [Welcome]
- *   title=A title to be shown at the top
- *   description=A long description that will be shown at the bottom of this page, right below the branded logo (if any), explaining what the branded edition is about.
- *   logo=/path/to/the/image/with/the/logo.png
- */
-#define CONFIG_FILEPATH CONFIGDIR "/branding.conf"
+#define VENDOR_BRANDING_WELCOME_GROUP "Info"
+#define VENDOR_BRANDING_WELCOME_TITLE_KEY "title"
+#define VENDOR_BRANDING_WELCOME_DESC_KEY "description"
+#define VENDOR_BRANDING_WELCOME_LOGO_KEY "logo"
 
 static void
 load_css_overrides (GisBrandingWelcomePage *page)
@@ -80,39 +61,63 @@ load_css_overrides (GisBrandingWelcomePage *page)
                                              GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 }
 
-static gboolean
+static void
 read_config_file (GisBrandingWelcomePage *page)
 {
   GisBrandingWelcomePagePrivate *priv = NULL;
   g_autoptr(GKeyFile) keyfile = NULL;
   g_autoptr(GError) error = NULL;
 
+  /* VENDOR_CONF_FILE points to a keyfile containing vendor customization
+   * options. This code will look for options under the "Welcome" group, and
+   * supports the following keys:
+   *   - title (required): short string to show as title.
+   *   - description (optional): string containing long text, likely to be wrapped.
+   *   - logo (optional): absolute path to the file with a logo for the brand.
+   *
+   * For example, this is how this file would look on a vendor image defining a title,
+   * a description an a logo:
+   *
+   *   [Welcome]
+   *   title=A title to be shown at the top
+   *   description=A long description that will be shown at the bottom of this
+   *     page, right below the branded logo (if any), explaining what the
+   *     branded edition is about.
+   *   logo=/path/to/the/image/with/the/logo.png
+   */
   keyfile = g_key_file_new ();
-  if (!g_key_file_load_from_file (keyfile, CONFIG_FILEPATH, G_KEY_FILE_NONE, &error))
-    {
-      if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
-        g_warning ("Could not read file %s: %s", CONFIG_FILEPATH, error->message);
+  if (!g_key_file_load_from_file (keyfile, VENDOR_CONF_FILE, G_KEY_FILE_NONE, &error)) {
+    if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
+      g_warning ("Could not read file %s: %s", VENDOR_CONF_FILE, error->message);
 
-      return FALSE;
-    }
+    return;
+  }
 
   priv = gis_branding_welcome_page_get_instance_private (page);
 
-  priv->title = g_key_file_get_string (keyfile, "Welcome", "title", &error);
+  priv->title = g_key_file_get_string (keyfile, VENDOR_BRANDING_WELCOME_GROUP,
+                                       VENDOR_BRANDING_WELCOME_TITLE_KEY, &error);
   if (priv->title == NULL) {
-    g_warning ("Could not find 'title' in %s: %s", CONFIG_FILEPATH, error->message);
-    return FALSE;
+    g_warning ("Could not read title for 'Welcome' branding page from %s: %s",
+               VENDOR_CONF_FILE, error->message);
+    return;
   }
 
-  priv->description = g_key_file_get_string (keyfile, "Welcome", "description", NULL);
-  if (priv->description == NULL)
-    g_warning ("No description found for 'Welcome' branding page");
+  priv->description = g_key_file_get_string (keyfile, VENDOR_BRANDING_WELCOME_GROUP,
+                                             VENDOR_BRANDING_WELCOME_DESC_KEY, &error);
+  if (priv->description == NULL) {
+    g_debug ("Could not read description for 'Welcome' branding page from %s: %s",
+             VENDOR_CONF_FILE, error->message);
+    g_clear_error (&error);
+  }
 
-  priv->logo_path = g_key_file_get_string (keyfile, "Welcome", "logo", NULL);
-  if (priv->logo_path == NULL)
-    g_warning ("Unable to get logo for 'Welcome' branding page");
-
-  return TRUE;
+  priv->logo_path = g_key_file_get_string (keyfile, VENDOR_BRANDING_WELCOME_GROUP,
+                                           VENDOR_BRANDING_WELCOME_LOGO_KEY, &error);
+  if (priv->logo_path == NULL) {
+    g_debug ("Could not read logo path for 'Welcome' branding page from %s: %s",
+             VENDOR_CONF_FILE, error->message);
+    g_clear_error (&error);
+  }
 }
 
 static void
@@ -121,7 +126,9 @@ update_branding_specific_info (GisBrandingWelcomePage *page)
   GisBrandingWelcomePagePrivate *priv = gis_branding_welcome_page_get_instance_private (page);
   GtkWidget *opt_widget = NULL;
 
-  if (!read_config_file (page)) {
+  read_config_file (page);
+
+  if (priv->title == NULL) {
     g_debug ("No branding configuration found");
     return;
   }
