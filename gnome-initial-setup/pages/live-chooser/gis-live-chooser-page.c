@@ -29,6 +29,9 @@
 
 #include <locale.h>
 
+#include "pages/language/cc-language-chooser.h"
+
+
 #define LIVE_ACCOUNT_USERNAME "live"
 #define LIVE_ACCOUNT_FULLNAME "Endless OS"
 
@@ -246,6 +249,8 @@ static void
 gis_live_chooser_page_constructed (GObject *object)
 {
   GisLiveChooserPage *self = GIS_LIVE_CHOOSER_PAGE (object);
+
+  g_type_ensure (CC_TYPE_LANGUAGE_CHOOSER);
 
   G_OBJECT_CLASS (gis_live_chooser_page_parent_class)->constructed (object);
 
