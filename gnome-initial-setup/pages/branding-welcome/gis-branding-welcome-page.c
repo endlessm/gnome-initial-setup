@@ -46,7 +46,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (GisBrandingWelcomePage, gis_branding_welcome_page, G
 #define OBJ(type,name) ((type)gtk_builder_get_object(GIS_PAGE(page)->builder,(name)))
 #define WID(name) OBJ(GtkWidget*,name)
 
-#define VENDOR_BRANDING_WELCOME_GROUP "Info"
+#define VENDOR_BRANDING_WELCOME_GROUP "Welcome"
 #define VENDOR_BRANDING_WELCOME_TITLE_KEY "title"
 #define VENDOR_BRANDING_WELCOME_DESC_KEY "description"
 #define VENDOR_BRANDING_WELCOME_LOGO_KEY "logo"
