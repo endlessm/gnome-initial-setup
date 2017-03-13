@@ -108,6 +108,7 @@ create_live_user (GisLiveChooserPage *self)
     }
 
   gis_driver_set_user_permissions (GIS_PAGE (self)->driver, user, NULL);
+  gis_update_login_keyring_password ("gis", "");
 
   g_object_unref (user);
 }
