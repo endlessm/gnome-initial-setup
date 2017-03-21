@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-15 13:16+0000\n"
-"PO-Revision-Date: 2017-03-09 07:48+0000\n"
-"Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
+"POT-Creation-Date: 2017-03-14 03:17+0000\n"
+"PO-Revision-Date: 2017-03-14 03:18+0000\n"
+"Last-Translator: endlessmobile_build <philip@endlessm.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,11 +36,20 @@ msgstr "上一個(_P)"
 msgid "_Cancel"
 msgstr "取消(_C)"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:298
+#: ../gnome-initial-setup/gis-page-util.c:426
+msgid "Disabled"
+msgstr "已關閉"
+
+#: ../gnome-initial-setup/gis-page-util.c:428
+#, c-format
+msgid "SD Card: %s"
+msgstr "SD 卡：%s"
+
+#: ../gnome-initial-setup/gnome-initial-setup.c:319
 msgid "Force new user mode"
 msgstr "強制新用戶模式"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:302
+#: ../gnome-initial-setup/gnome-initial-setup.c:323
 msgid "- GNOME initial setup"
 msgstr "- GNOME 初始設定"
 
@@ -424,63 +433,46 @@ msgstr "_選擇"
 msgid "No languages found"
 msgstr "找不到語言"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:563
-msgid "Disabled"
-msgstr "已關閉"
-
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:565
-#, c-format
-msgid "SD Card: %s"
-msgstr "SD 卡：%s"
-
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:644
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:253
 msgid "Welcome"
 msgstr "歡迎使用"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:648
-#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:3
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:257
+#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
 msgid "Welcome to Endless!"
 msgstr "歡迎使用 Endless！"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:650
-#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:4
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:259
+#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:2
 msgid "Let’s set up your computer…"
 msgstr "讓我們來開始設定你的電腦…"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
-msgid "Test Mode"
-msgstr "測試模式"
-
-#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:2
-msgid "Power Off"
-msgstr "關閉電源"
-
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:192
 #, c-format
 msgid "Error running the reformatter: %s"
 msgstr "執行重新格式化程式時發生錯誤：%s"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:285
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:302
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr "在 USD 隨身碟上試用 Endless OS。"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:286
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:303
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Reformat this computer with Endless OS."
 msgstr "將 Endless 作業系統安裝在這臺電腦上。"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:287
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:304
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
 msgid "Try It"
 msgstr "試試看"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:288
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:305
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat"
 msgstr "格式化"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:290
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:307
 msgid "Endless USB Stick"
 msgstr "Endless USB Stick"
 

@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-15 13:16+0000\n"
-"PO-Revision-Date: 2017-03-09 07:48+0000\n"
-"Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
+"POT-Creation-Date: 2017-03-14 03:17+0000\n"
+"PO-Revision-Date: 2017-03-14 03:18+0000\n"
+"Last-Translator: endlessmobile_build <philip@endlessm.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,11 +37,20 @@ msgstr "T_rước"
 msgid "_Cancel"
 msgstr "T_hôi"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:298
+#: ../gnome-initial-setup/gis-page-util.c:426
+msgid "Disabled"
+msgstr "Đã vô hiệu hóa"
+
+#: ../gnome-initial-setup/gis-page-util.c:428
+#, c-format
+msgid "SD Card: %s"
+msgstr "Thẻ SD: %s"
+
+#: ../gnome-initial-setup/gnome-initial-setup.c:319
 msgid "Force new user mode"
 msgstr "Ép chế độ người dùng mới"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:302
+#: ../gnome-initial-setup/gnome-initial-setup.c:323
 msgid "- GNOME initial setup"
 msgstr "- Cài đặt GNOME lần đầu"
 
@@ -425,63 +434,46 @@ msgstr "_Lựa chọn"
 msgid "No languages found"
 msgstr "Không tìm thấy ngôn ngữ"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:563
-msgid "Disabled"
-msgstr "Đã vô hiệu hóa"
-
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:565
-#, c-format
-msgid "SD Card: %s"
-msgstr "Thẻ SD: %s"
-
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:644
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:253
 msgid "Welcome"
 msgstr "Chào mừng bạn"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:648
-#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:3
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:257
+#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
 msgid "Welcome to Endless!"
 msgstr "Chào mừng bạn đến với Endess!"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:650
-#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:4
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:259
+#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:2
 msgid "Let’s set up your computer…"
 msgstr "Hãy thiết lập máy tính của bạn…"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
-msgid "Test Mode"
-msgstr "Chế độ Thử nghiệm"
-
-#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:2
-msgid "Power Off"
-msgstr "Tắt Nguồn"
-
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:192
 #, c-format
 msgid "Error running the reformatter: %s"
 msgstr "Có lỗi khi chạy trình định dạng lại: %s"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:285
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:302
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr "Dùng thử HĐH Endless bằng cách chạy hệ điều hành này từ Thanh USB."
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:286
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:303
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Reformat this computer with Endless OS."
 msgstr "Định dạng lại máy tính này với HĐH Endless."
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:287
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:304
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
 msgid "Try It"
 msgstr "Dùng thử nó"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:288
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:305
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat"
 msgstr "Định dạng lại"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:290
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:307
 msgid "Endless USB Stick"
 msgstr "Thanh USB Endless"
 

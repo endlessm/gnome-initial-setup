@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-15 13:16+0000\n"
-"PO-Revision-Date: 2017-03-09 07:49+0000\n"
-"Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
+"POT-Creation-Date: 2017-03-14 03:17+0000\n"
+"PO-Revision-Date: 2017-03-14 03:18+0000\n"
+"Last-Translator: endlessmobile_build <philip@endlessm.com>\n"
 "Language-Team: Hindi (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/hi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,11 +39,20 @@ msgstr "पिछला (_P)"
 msgid "_Cancel"
 msgstr "रद्द करें (_C)"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:298
+#: ../gnome-initial-setup/gis-page-util.c:426
+msgid "Disabled"
+msgstr "अक्षम"
+
+#: ../gnome-initial-setup/gis-page-util.c:428
+#, c-format
+msgid "SD Card: %s"
+msgstr "SD कार्ड: %s"
+
+#: ../gnome-initial-setup/gnome-initial-setup.c:319
 msgid "Force new user mode"
 msgstr "नया उपयोगकर्ता मोड बलपूर्वक डालें"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:302
+#: ../gnome-initial-setup/gnome-initial-setup.c:323
 msgid "- GNOME initial setup"
 msgstr "- गनोम प्रारंभिक सेटअप"
 
@@ -427,63 +436,46 @@ msgstr "_चयन करें"
 msgid "No languages found"
 msgstr "कोई भाषा नहीं मिली"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:563
-msgid "Disabled"
-msgstr "अक्षम"
-
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:565
-#, c-format
-msgid "SD Card: %s"
-msgstr "SD कार्ड: %s"
-
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:644
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:253
 msgid "Welcome"
 msgstr "सुस्वागतम"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:648
-#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:3
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:257
+#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
 msgid "Welcome to Endless!"
 msgstr "Endless में आपका स्वागत है!"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:650
-#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:4
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:259
+#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:2
 msgid "Let’s set up your computer…"
 msgstr "आइए आपका कंप्यूटर सेट करें…"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
-msgid "Test Mode"
-msgstr "परीक्षण मोड"
-
-#: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:2
-msgid "Power Off"
-msgstr "पॉवर ऑफ़"
-
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:192
 #, c-format
 msgid "Error running the reformatter: %s"
 msgstr "रिफ़ॉर्मेटर को चलाने मेंं त्रुटि हुई: %s"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:285
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:302
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr "USB स्टिक से इसेे चलाकर Endless OS आजमाएं."
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:286
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:303
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Reformat this computer with Endless OS."
 msgstr "इस कंप्यूटर को Endless OS से पुनः फ़ॉर्मेट करें."
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:287
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:304
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
 msgid "Try It"
 msgstr "इसे आजमाएं"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:288
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:305
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat"
 msgstr "पुनः फ़ॉर्मेट करें"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:290
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:307
 msgid "Endless USB Stick"
 msgstr "Endless USB स्टिक"
 
