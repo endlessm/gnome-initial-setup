@@ -5,13 +5,14 @@
 # Translators:
 # Andika Triwidada <andika@gmail.com>, 2012-2015
 # Roddy Shuler <roddy@endlessm.com>, 2017
+# Septira Taruna <septira@endlessm.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-14 03:17+0000\n"
-"PO-Revision-Date: 2017-03-14 03:18+0000\n"
-"Last-Translator: endlessmobile_build <philip@endlessm.com>\n"
+"POT-Creation-Date: 2017-03-21 03:16+0000\n"
+"PO-Revision-Date: 2017-03-23 16:10+0000\n"
+"Last-Translator: Septira Taruna <septira@endlessm.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,12 +57,12 @@ msgstr "- GNOME Penyiapan Awal"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:342
 msgid "No password"
-msgstr "Tanpa sandi"
+msgstr "Tanpa kata sandi"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:345
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:467
 msgid "Passwords do not match"
-msgstr "Sandi tak cocok"
+msgstr "Kata sandi tidak cocok"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:599
 msgid "Failed to register account"
@@ -69,19 +70,19 @@ msgstr "Gagal mendaftar akun"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:807
 msgid "No supported way to authenticate with this domain"
-msgstr "Tak ada cara yang didukung untuk mengotentikasi dengan domain ini"
+msgstr "Tidak ada cara untuk mengotentikasi domain ini"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:847
 msgid "Failed to join domain"
-msgstr "Gagal bergabung domain"
+msgstr "Gagal bergabung dengan domain"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:915
 msgid "Failed to log into domain"
-msgstr "Gagal log masuk ke domain"
+msgstr "Gagal masuk ke domain"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:1379
 msgid "Login"
-msgstr "Log masuk"
+msgstr "Masuk"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:1
 msgid "Create a Personal Account"
@@ -91,7 +92,7 @@ msgstr "Buat Akun Pribadi"
 msgid ""
 "Type your full name and a password that you’ll remember. Pay attention to "
 "upper case letters."
-msgstr "Ketikkan nama lengkap Anda dan kata sandi yang Anda ingat. Harap perhatikan huruf besar dan huruf kecil."
+msgstr "Ketik nama lengkap Anda dan kata sandi yang akan Anda ingat. Harap perhatikan huruf besar dan huruf kecil."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:3
 msgid "_Full Name"
@@ -105,7 +106,7 @@ msgstr "Nama Pengg_una"
 msgid ""
 "The username will be used to name your personal folder, and it cannot be "
 "changed."
-msgstr "Nama pengguna akan dipakai untuk menamai folder pribadi Anda, dan tak dapat diubah."
+msgstr "Nama pengguna akan dipakai untuk menamai folder pribadi Anda, dan tidak dapat diubah."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:6
 msgid "_Password"
@@ -124,15 +125,15 @@ msgid ""
 "Make sure you write down your password to remember it! You can write "
 "yourself a reminder here, but note that this password reminder can be seen "
 "by others."
-msgstr "Pastikan Anda menuliskan kata sandi Anda untuk mengingatnya! Anda bisa menulis pengingat untuk diri Anda di sini, tetapi harap perhatikan bahwa pengingat kata sandi ini dapat dilihat oleh orang lain."
+msgstr "Pastikan Anda mencatat kata sandi supaya tetap diingat! Anda bisa menulis petunjuk untuk diri Anda di sini, tetapi harap diingat bahwa petunjuk kata sandi ini dapat dilihat oleh orang lain."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:10
 msgid "Password _Reminder"
-msgstr "Pengingat kata sandi"
+msgstr "Petunjuk kata sandi"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:11
 msgid "To continue, please make sure you fill in all the blanks."
-msgstr "Untuk melanjutkan, pastikan mengisi semua titik-titik kosong."
+msgstr "Untuk melanjutkan, pastikan Anda telah mengisi semua kolom kosong."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:12
 msgid "page 1"
@@ -176,7 +177,7 @@ msgstr "_Nama Administrator"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:24
 msgid "Administrator Password"
-msgstr "Sandi Administrator"
+msgstr "Kata Sandi Administrator"
 
 #: ../gnome-initial-setup/pages/account/pw-utils.c:94
 msgctxt "Password strength"
@@ -221,16 +222,16 @@ msgstr "Domain atau realm tak ditemukan"
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:836
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
-msgstr "Tak bisa log masuk sebagai %s pada domain %s"
+msgstr "Tidak bisa masuk sebagai %s pada domain %s"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:828
 msgid "Invalid password, please try again"
-msgstr "Sandi tak valid, harap coba lagi"
+msgstr "Kata sandi salah, mohon coba lagi"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:841
 #, c-format
 msgid "Couldn’t connect to the %s domain: %s"
-msgstr "Tak bisa menyambung ke domain %s: %s"
+msgstr "Tidak bisa menyambung ke domain %s: %s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:150
 #, c-format
@@ -244,7 +245,7 @@ msgstr "Nama pengguna terlalu panjang"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:157
 msgid "The username cannot start with a ‘-’"
-msgstr "Nama pengguna tak boleh diawali dengan '-'"
+msgstr "Nama pengguna tidak boleh diawali dengan '-'"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:160
 msgid ""
@@ -252,7 +253,7 @@ msgid ""
 " ➣ letters from the English alphabet\n"
 " ➣ digits\n"
 " ➣ any of the characters ‘.’, ‘-’ and ‘_’"
-msgstr "Nama pengguna mesti hanya terdiri dari:\n ➣ huruf dari alfabet bahasa Inggris\n ➣ dijit\n ➣ sebarang karakter '.', '-', atau '_'"
+msgstr "Nama pengguna hanya boleh terdiri dari:\n ➣ huruf dari alfabet Bahasa Inggris\n ➣ angka\n ➣ karakter '.', '-', atau '_'"
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:280
 msgid "Display"
@@ -264,7 +265,7 @@ msgstr "Sesuaikan untuk layar TV"
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:2
 msgid "Do you see this at the bottom right corner of your screen?"
-msgstr "Apakah Anda melihat ini di bagian sudut kanan bawah layar Anda?"
+msgstr "Apakah Anda melihat ini di bagian sudut kanan bawah layar?"
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:3
 msgid "I see it"
@@ -289,17 +290,17 @@ msgstr "_Terima dan lanjutkan"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
 msgid "Please read the following terms of use carefully"
-msgstr "Mohon baca ketentuan penggunaan berikut ini dengan saksama"
+msgstr "Mohon baca syarat dan ketentuan penggunaan berikut ini dengan seksama"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
 msgid ""
 "By clicking ‘Accept and Continue,’ you acknowledge that you have read, "
 "understood, and agree to be bound by the following terms and conditions."
-msgstr "Dengan mengklik \"Menerima dan melanjutkan,\" Anda menyatakan bahwa Anda telah membaca, memahami, dan sepakat untuk mematuhi ketentuan dan persyaratan berikut."
+msgstr "Dengan mengklik \"Menerima dan Lanjutkan,\" Anda menyatakan bahwa Anda telah membaca, memahami, dan menyetujui untuk mematuhi syarat dan ketentuan berikut."
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:3
 msgid "Help make Endless better for everyone"
-msgstr "Bantulah membuat Endless lebih baik bagi semua orang"
+msgstr "Bantu membuat Endless menjadi lebih baik untuk semua orang"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:4
 msgid ""
@@ -342,19 +343,19 @@ msgstr "Obrolan"
 
 #: ../gnome-initial-setup/pages/goa/cc-online-accounts-add-account-dialog.c:375
 msgid "Resources"
-msgstr "Sumber Daya"
+msgstr "Sumber Pengetahuan"
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.c:99
 msgid "Error creating account"
-msgstr "Galat saat membuat akun"
+msgstr "Error saat membuat akun"
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.c:145
 msgid "Error removing account"
-msgstr "Galat saat menghapus akun"
+msgstr "Error saat menghapus akun"
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.c:171
 msgid "Are you sure you want to remove the account?"
-msgstr "Apakah Anda yakin hendak menghapus akun tersebut?"
+msgstr "Apakah Anda yakin akan menghapus akun tersebut?"
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.c:173
 msgid "This will not remove the account on the server."
@@ -404,7 +405,7 @@ msgstr "Tata letak papan ketik Anda nampaknya:"
 #: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:304
 #: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:2
 msgid "Please press one of the following keys:"
-msgstr "Harap menekan salah satu tombol berikut:"
+msgstr "Mohon tekan salah satu tombol berikut:"
 
 #: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:305
 msgid "Is the following key present on your keyboard?"
@@ -432,7 +433,7 @@ msgstr "_Pilih"
 
 #: ../gnome-initial-setup/pages/language/cc-language-chooser.c:260
 msgid "No languages found"
-msgstr "Tak ada bahasa yang ditemukan"
+msgstr "Tidak ada bahasa yang ditemukan"
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:253
 msgid "Welcome"
@@ -441,12 +442,12 @@ msgstr "Selamat Datang"
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:257
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:1
 msgid "Welcome to Endless!"
-msgstr "Selamat datang di Tanpa Akhir!"
+msgstr "Selamat datang di Endless!"
 
 #: ../gnome-initial-setup/pages/language/gis-language-page.c:259
 #: ../gnome-initial-setup/pages/language/gis-language-page.ui.h:2
 msgid "Let’s set up your computer…"
-msgstr "Mari kita siapkan komputer Anda…"
+msgstr "Mari siapkan komputer Anda…"
 
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:192
 #, c-format
