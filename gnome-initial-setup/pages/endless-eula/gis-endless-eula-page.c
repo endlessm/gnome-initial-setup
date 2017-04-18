@@ -360,6 +360,12 @@ gis_endless_eula_page_locale_changed (GisPage *page)
 }
 
 static void
+gis_endless_eula_page_save_data (GisPage *page)
+{
+  sync_metrics_active_state (GIS_ENDLESS_EULA_PAGE (page));
+}
+
+static void
 gis_endless_eula_page_class_init (GisEndlessEulaPageClass *klass)
 {
   GisPageClass *page_class = GIS_PAGE_CLASS (klass);
@@ -375,6 +381,7 @@ gis_endless_eula_page_class_init (GisEndlessEulaPageClass *klass)
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_endless_eula_page_locale_changed;
+  page_class->save_data = gis_endless_eula_page_save_data;
   object_class->constructed = gis_endless_eula_page_constructed;
   object_class->finalize = gis_endless_eula_page_finalize;
 }
