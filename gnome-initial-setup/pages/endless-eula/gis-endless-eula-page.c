@@ -38,6 +38,7 @@
 
 typedef struct {
   GDBusProxy *metrics_proxy;
+  GtkToggleButton *metrics_checkbutton;
 } GisEndlessEulaPagePrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GisEndlessEulaPage, gis_endless_eula_page, GIS_TYPE_PAGE);
@@ -52,11 +53,9 @@ sync_metrics_active_state (GisEndlessEulaPage *page)
 {
   GisEndlessEulaPagePrivate *priv = gis_endless_eula_page_get_instance_private (page);
   GError *error = NULL;
-  GtkWidget *widget;
   gboolean metrics_active;
 
-  widget = WID ("metrics-checkbutton");
-  metrics_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
+  metrics_active = gtk_toggle_button_get_active (priv->metrics_checkbutton);
 
   if (!priv->metrics_proxy)
     return;
@@ -81,6 +80,7 @@ gis_endless_eula_page_finalize (GObject *object)
   GisEndlessEulaPagePrivate *priv = gis_endless_eula_page_get_instance_private (page);
 
   g_clear_object (&priv->metrics_proxy);
+  g_clear_object (&priv->metrics_checkbutton);
 
   G_OBJECT_CLASS (gis_endless_eula_page_parent_class)->finalize (object);
 }
@@ -328,7 +328,7 @@ gis_endless_eula_page_constructed (GObject *object)
   gtk_container_add (GTK_CONTAINER (page), WID ("endless-eula-page"));
   gtk_widget_show (GTK_WIDGET (page));
 
-  widget = WID ("metrics-checkbutton");
+  priv->metrics_checkbutton = GTK_TOGGLE_BUTTON (WID ("metrics-checkbutton"));
 
   /* Disable metrics on live sessions, and hide the option. */
   if (gis_driver_is_live_session (GIS_PAGE (object)->driver))
@@ -337,13 +337,9 @@ gis_endless_eula_page_constructed (GObject *object)
       gtk_widget_hide (WID ("metrics-label"));
       gtk_widget_hide (WID ("metrics-checkbutton"));
 
-      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), FALSE);
+      gtk_toggle_button_set_active (priv->metrics_checkbutton, FALSE);
     }
 
-  g_signal_connect_swapped (widget, "toggled",
-                            G_CALLBACK (sync_metrics_active_state), page);
-
-  sync_metrics_active_state (page);
   load_terms_view (page);
 
   gis_page_set_forward_text (GIS_PAGE (page), _("_Accept and Continue"));
@@ -357,6 +353,12 @@ gis_endless_eula_page_locale_changed (GisPage *page)
 }
 
 static void
+gis_endless_eula_page_save_data (GisPage *page)
+{
+  sync_metrics_active_state (GIS_ENDLESS_EULA_PAGE (page));
+}
+
+static void
 gis_endless_eula_page_class_init (GisEndlessEulaPageClass *klass)
 {
   GisPageClass *page_class = GIS_PAGE_CLASS (klass);
@@ -364,6 +366,7 @@ gis_endless_eula_page_class_init (GisEndlessEulaPageClass *klass)
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_endless_eula_page_locale_changed;
+  page_class->save_data = gis_endless_eula_page_save_data;
   object_class->constructed = gis_endless_eula_page_constructed;
   object_class->finalize = gis_endless_eula_page_finalize;
 }
