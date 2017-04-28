@@ -49,3 +49,6 @@ fi
 
 # Disable the updater for this boot
 systemctl mask --runtime --now eos-autoupdater.timer eos-autoupdater.service
+
+# Disable phoning home for this boot, too
+systemctl mask --runtime --now eos-phone-home.{service,timer,path}
