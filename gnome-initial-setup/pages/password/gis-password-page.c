@@ -137,7 +137,7 @@ validate (GisPasswordPage *page)
     set_entry_validation_checkmark (GTK_ENTRY (priv->password_entry));
 
   if (strlen (password) > 0 && strlen (verify) > 0) {
-    priv->valid_confirm = (strcmp (password, verify) == 0);
+    priv->valid_confirm = password && *password != '\0' && strcmp (password, verify) == 0;
     if (!priv->valid_confirm) {
       gtk_label_set_label (GTK_LABEL (priv->confirm_explanation), _("The passwords do not match."));
     }
