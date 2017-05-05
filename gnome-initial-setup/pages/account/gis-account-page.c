@@ -236,6 +236,19 @@ on_network_changed (GNetworkMonitor *monitor,
 }
 
 static void
+on_shared_user_created (GtkWidget       *page_local,
+                        ActUser         *user,
+                        char            *password,
+                        GisAccountPage  *page)
+{
+    const gchar *language;
+
+    language = gis_driver_get_user_language (GIS_PAGE (page)->driver);
+    if (language)
+        act_user_set_language (user, language);
+}
+
+static void
 gis_account_page_constructed (GObject *object)
 {
   GisAccountPage *page = GIS_ACCOUNT_PAGE (object);
@@ -253,6 +266,9 @@ gis_account_page_constructed (GObject *object)
                     G_CALLBACK (on_local_parent_user_created), page);
   g_signal_connect (priv->page_local, "confirm",
                     G_CALLBACK (on_local_page_confirmed), page);
+
+  g_signal_connect (priv->page_local, "shared-user-created",
+                    G_CALLBACK (on_shared_user_created), page);
 
   g_signal_connect (priv->page_enterprise, "validation-changed",
                     G_CALLBACK (on_validation_changed), page);
