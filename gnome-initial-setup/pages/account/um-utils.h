@@ -27,6 +27,13 @@
 
 G_BEGIN_DECLS
 
+/* Endless-specific: username and full name for the built-in shared account, an
+ * unprivileged, passwordless user created after the administrator account on
+ * most images.
+ */
+#define SHARED_ACCOUNT_USERNAME "shared"
+#define SHARED_ACCOUNT_FULLNAME "Shared Account"
+
 void     set_entry_validation_error       (GtkEntry    *entry,
                                            const gchar *text);
 void     set_entry_validation_checkmark   (GtkEntry    *entry);

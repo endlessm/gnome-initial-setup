@@ -77,6 +77,7 @@ enum {
   VALIDATION_CHANGED,
   MAIN_USER_CREATED,
   PARENT_USER_CREATED,
+  SHARED_USER_CREATED,
   CONFIRM,
   LAST_SIGNAL,
 };
@@ -535,6 +536,33 @@ set_user_avatar (GisAccountPageLocal *page,
 }
 
 static gboolean
+create_shared_user (GisAccountPageLocal  *local,
+                    GError              **error)
+{
+  GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (local);
+  g_autoptr(ActUser) shared_user = NULL;
+
+  shared_user = act_user_manager_create_user (priv->act_client,
+                                              SHARED_ACCOUNT_USERNAME,
+                                              SHARED_ACCOUNT_FULLNAME,
+                                              ACT_USER_ACCOUNT_TYPE_STANDARD,
+                                              error);
+  if (shared_user == NULL)
+    {
+        g_prefix_error (error,
+                        _("Failed to create user '%s': "),
+                        SHARED_ACCOUNT_USERNAME);
+        return FALSE;
+    }
+
+  act_user_set_password_mode (shared_user, ACT_USER_PASSWORD_MODE_NONE);
+
+  g_signal_emit (local, signals[SHARED_USER_CREATED], 0, shared_user, "");
+
+  return TRUE;
+}
+
+static gboolean
 local_create_user (GisAccountPageLocal  *local,
                    GisPage              *page,
                    GError              **error)
@@ -616,7 +644,7 @@ local_create_user (GisAccountPageLocal  *local,
 
   g_signal_emit (local, signals[MAIN_USER_CREATED], 0, main_user, "");
 
-  return TRUE;
+  return create_shared_user (local, error);
 }
 
 static void
@@ -649,6 +677,10 @@ gis_account_page_local_class_init (GisAccountPageLocalClass *klass)
   signals[PARENT_USER_CREATED] = g_signal_new ("parent-user-created", GIS_TYPE_ACCOUNT_PAGE_LOCAL,
                                                G_SIGNAL_RUN_LAST, 0, NULL, NULL, NULL,
                                                G_TYPE_NONE, 2, ACT_TYPE_USER, G_TYPE_STRING);
+
+  signals[SHARED_USER_CREATED] = g_signal_new ("shared-user-created", GIS_TYPE_ACCOUNT_PAGE_LOCAL,
+                                        G_SIGNAL_RUN_LAST, 0, NULL, NULL, NULL,
+                                        G_TYPE_NONE, 2, ACT_TYPE_USER, G_TYPE_STRING);
 
   signals[CONFIRM] = g_signal_new ("confirm", GIS_TYPE_ACCOUNT_PAGE_LOCAL,
                                    G_SIGNAL_RUN_LAST, 0, NULL, NULL, NULL,
