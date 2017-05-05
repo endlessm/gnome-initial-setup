@@ -75,6 +75,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (GisAccountPageLocal, gis_account_page_local, GTK_TYP
 enum {
   VALIDATION_CHANGED,
   USER_CREATED,
+  SHARED_USER_CREATED,
   CONFIRM,
   LAST_SIGNAL,
 };
@@ -509,6 +510,31 @@ set_user_avatar (GisAccountPageLocal *page)
 }
 
 static void
+create_shared_user (GisAccountPageLocal *page)
+{
+  GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (page);
+  GError *error = NULL;
+  ActUser *shared_user;
+
+  shared_user = act_user_manager_create_user (priv->act_client,
+                                              SHARED_ACCOUNT_USERNAME,
+                                              SHARED_ACCOUNT_FULLNAME,
+                                              ACT_USER_ACCOUNT_TYPE_STANDARD,
+                                              &error);
+  if (error != NULL) {
+    g_warning ("Failed to created shared user: %s", error->message);
+    g_error_free (error);
+    return;
+  }
+
+  act_user_set_password_mode (shared_user, ACT_USER_PASSWORD_MODE_NONE);
+
+  g_signal_emit (page, signals[SHARED_USER_CREATED], 0, shared_user, "");
+
+  g_object_unref (shared_user);
+}
+
+static void
 local_create_user (GisAccountPageLocal *page)
 {
   GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (page);
@@ -532,6 +558,8 @@ local_create_user (GisAccountPageLocal *page)
   set_user_avatar (page);
 
   g_signal_emit (page, signals[USER_CREATED], 0, priv->act_user, "");
+
+  create_shared_user (page);
 }
 
 static void
@@ -556,6 +584,10 @@ gis_account_page_local_class_init (GisAccountPageLocalClass *klass)
                                               G_TYPE_NONE, 0);
 
   signals[USER_CREATED] = g_signal_new ("user-created", GIS_TYPE_ACCOUNT_PAGE_LOCAL,
+                                        G_SIGNAL_RUN_LAST, 0, NULL, NULL, NULL,
+                                        G_TYPE_NONE, 2, ACT_TYPE_USER, G_TYPE_STRING);
+
+  signals[SHARED_USER_CREATED] = g_signal_new ("shared-user-created", GIS_TYPE_ACCOUNT_PAGE_LOCAL,
                                         G_SIGNAL_RUN_LAST, 0, NULL, NULL, NULL,
                                         G_TYPE_NONE, 2, ACT_TYPE_USER, G_TYPE_STRING);
 
