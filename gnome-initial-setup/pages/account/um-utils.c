@@ -184,6 +184,7 @@ is_valid_name (const gchar *name)
         /* Valid names must contain:
          *   1) at least one character.
          *   2) at least one non-"space" character.
+         *   3) no more than 80 bytes (see https://phabricator.endlessm.com/T25444).
          */
         for (c = name; *c; c++) {
                 gunichar unichar;
@@ -201,7 +202,8 @@ is_valid_name (const gchar *name)
                 }
         }
 
-        return !is_empty;
+        /* Here we check the number of bytes not characters */
+        return !is_empty && strlen (name) < 80;
 }
 
 gboolean
