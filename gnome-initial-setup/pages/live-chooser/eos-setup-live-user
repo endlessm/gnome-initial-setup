@@ -29,7 +29,7 @@ from gi.repository import GLib, Gio
 
 log = logging.getLogger(sys.argv[0])
 
-ICON_GRID_DIR = '/var/eos-image-defaults/icon-grid'
+ICON_GRID_DIR = '/var/lib/eos-image-defaults/icon-grid'
 
 DESKTOP_GRID_ID = 'desktop'
 
