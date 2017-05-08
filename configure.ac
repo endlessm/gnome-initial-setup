@@ -86,7 +86,7 @@ if test x$have_cheese = xyes; then
   AC_DEFINE(HAVE_CHEESE, 1, [Build with Cheese support?])
 fi
 
-PKG_CHECK_MODULES(COPY_WORKER, gio-2.0)
+PKG_CHECK_MODULES(COPY_WORKER, gio-2.0 gnome-keyring-1)
 
 AC_ARG_ENABLE(ibus,
         AS_HELP_STRING([--disable-ibus],
