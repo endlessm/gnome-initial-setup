@@ -332,6 +332,7 @@ gis_password_page_constructed (GObject *object)
 {
   GisPasswordPage *page = GIS_PASSWORD_PAGE (object);
   GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
+  GtkSettings *settings;
 
   G_OBJECT_CLASS (gis_password_page_parent_class)->constructed (object);
 
@@ -355,6 +356,12 @@ gis_password_page_constructed (GObject *object)
                     G_CALLBACK (full_name_or_avatar_changed), page);
   g_signal_connect (GIS_PAGE (page)->driver, "notify::avatar",
                     G_CALLBACK (full_name_or_avatar_changed), page);
+
+  /* show the last character from the password; 600 is the recommended value
+   * in the gtk-entry-password-hint-timeout documentation
+   */
+  settings = gtk_settings_get_default ();
+  g_object_set (G_OBJECT (settings), "gtk-entry-password-hint-timeout", 600, NULL);
 
   validate (page);
   update_header (page);
@@ -404,6 +411,9 @@ gis_password_page_set_property (GObject      *object,
 static void
 gis_password_page_dispose (GObject *object)
 {
+  GtkSettings *settings = gtk_settings_get_default ();
+  g_object_set (G_OBJECT (settings), "gtk-entry-password-hint-timeout", 0, NULL);
+
   if (GIS_PAGE (object)->driver) {
     g_signal_handlers_disconnect_by_func (GIS_PAGE (object)->driver,
                                           username_changed, object);
