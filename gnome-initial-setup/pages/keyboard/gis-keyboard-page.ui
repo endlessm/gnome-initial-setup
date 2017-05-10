@@ -25,6 +25,17 @@
             <property name="visible">True</property>
             <property name="halign">center</property>
             <property name="valign">start</property>
+            <property name="vexpand_set">True</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="input_auto_detect">
+            <property name="label" translatable="yes">Help Detect My Keyboard Layout</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="halign">center</property>
+            <property name="valign">start</property>
           </object>
         </child>
       </object>
