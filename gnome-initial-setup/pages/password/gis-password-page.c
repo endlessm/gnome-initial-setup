@@ -47,6 +47,7 @@ struct _GisPasswordPagePrivate
   GtkWidget *password_explanation;
   GtkWidget *confirm_explanation;
   GtkWidget *password_toggle;
+  GtkWidget *reminder_entry;
   gboolean valid_confirm;
   gboolean valid_password;
   guint timeout_id;
@@ -79,8 +80,9 @@ static gboolean
 page_validate (GisPasswordPage *page)
 {
   GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
+  gboolean has_reminder = (gtk_entry_get_text_length (GTK_ENTRY (priv->reminder_entry)) > 0);
 
-  return priv->valid_confirm;
+  return priv->valid_confirm && has_reminder;
 }
 
 static void
@@ -97,6 +99,8 @@ gis_password_page_save_data (GisPage *gis_page)
   ActUser *act_user;
   UmAccountMode account_mode;
   const gchar *password = NULL;
+  gchar *sanitized_reminder;
+  const gchar *reminder;
 
   if (gis_page->driver == NULL)
     return;
@@ -113,10 +117,14 @@ gis_password_page_save_data (GisPage *gis_page)
 
   password = gtk_entry_get_text (GTK_ENTRY (priv->password_entry));
 
-  if (strlen (password) == 0)
+  if (strlen (password) == 0) {
     act_user_set_password_mode (act_user, ACT_USER_PASSWORD_MODE_NONE);
-  else
-    act_user_set_password (act_user, password, "");
+  } else {
+    reminder = gtk_entry_get_text (GTK_ENTRY (priv->reminder_entry));
+    sanitized_reminder = g_strstrip (g_strdup (reminder));
+    act_user_set_password (act_user, password, sanitized_reminder);
+    g_free (sanitized_reminder);
+  }
 
   gis_driver_set_user_permissions (gis_page->driver, act_user, password);
 
@@ -185,6 +193,14 @@ on_focusout (GisPasswordPage *page)
   validate (page);
 
   return FALSE;
+}
+
+static void
+reminder_changed (GtkWidget       *w,
+                  GParamSpec      *pspec,
+                  GisPasswordPage *page)
+{
+  gis_page_set_complete (GIS_PAGE (page), page_validate (page));
 }
 
 static void
@@ -261,6 +277,8 @@ gis_password_page_constructed (GObject *object)
                             G_CALLBACK (on_focusout), page);
   g_signal_connect_swapped (priv->password_entry, "activate",
                             G_CALLBACK (confirm), page);
+  g_signal_connect (priv->reminder_entry, "notify::text",
+                      G_CALLBACK (reminder_changed), page);
 
   g_signal_connect (priv->confirm_entry, "notify::text",
                     G_CALLBACK (confirm_changed), page);
@@ -320,6 +338,7 @@ gis_password_page_class_init (GisPasswordPageClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPasswordPage, password_explanation);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPasswordPage, confirm_explanation);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPasswordPage, password_toggle);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPasswordPage, reminder_entry);
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_password_page_locale_changed;
