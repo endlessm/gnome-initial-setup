@@ -474,8 +474,12 @@ gis_timezone_page_init (GisTimezonePage *page)
 void
 gis_prepare_timezone_page (GisDriver *driver)
 {
-  gis_driver_add_page (driver,
-                       g_object_new (GIS_TYPE_TIMEZONE_PAGE,
-                                     "driver", driver,
-                                     NULL));
+  GisPage *page;
+  page = g_object_new (GIS_TYPE_TIMEZONE_PAGE,
+                       "driver", driver,
+                       NULL);
+  if (gis_driver_is_live_session (driver))
+    return;
+
+  gis_driver_add_page (driver, page);
 }
