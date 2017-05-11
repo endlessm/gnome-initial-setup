@@ -67,7 +67,7 @@ enum {
 static GParamSpec *obj_props[PROP_LAST];
 
 struct _GisDriverPrivate {
-  GtkWidget *main_window;
+  GtkWindow *main_window;
   GisAssistant *assistant;
 
   ActUser *user_account;
@@ -97,6 +97,45 @@ gis_driver_finalize (GObject *object)
   g_clear_object (&priv->user_account);
 
   G_OBJECT_CLASS (gis_driver_parent_class)->finalize (object);
+}
+
+static void
+prepare_main_window (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  GdkGeometry size_hints;
+
+  if (gis_driver_is_small_screen (driver))
+    {
+      GtkWidget *child, *sw;
+
+      child = g_object_ref (gtk_bin_get_child (GTK_BIN (priv->main_window)));
+      gtk_container_remove (GTK_CONTAINER (priv->main_window), child);
+      sw = gtk_scrolled_window_new (NULL, NULL);
+      gtk_widget_show (sw);
+      gtk_container_add (GTK_CONTAINER (priv->main_window), sw);
+      gtk_container_add (GTK_CONTAINER (sw), child);
+      g_object_unref (child);
+
+      gtk_window_maximize (priv->main_window);
+    }
+  else
+    {
+      size_hints.min_width = 747;
+      size_hints.min_height = 539;
+      size_hints.max_width = 747;
+      size_hints.max_height = 539;
+      size_hints.win_gravity = GDK_GRAVITY_CENTER;
+
+      gtk_window_set_geometry_hints (priv->main_window,
+                                     NULL,
+                                     &size_hints,
+                                     GDK_HINT_MIN_SIZE | GDK_HINT_MAX_SIZE | GDK_HINT_WIN_GRAVITY);
+      gtk_window_set_resizable (priv->main_window, FALSE);
+    }
+
+  gtk_window_set_titlebar (priv->main_window,
+                           gis_assistant_get_titlebar (priv->assistant));
 }
 
 static void
@@ -300,6 +339,21 @@ gis_driver_activate (GApplication *app)
   gtk_window_present (GTK_WINDOW (priv->main_window));
 }
 
+window_realize_cb (GtkWidget *widget,
+                   GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  GdkWindow *window;
+  GdkWMFunction funcs;
+
+  window = gtk_widget_get_window (GTK_WIDGET (priv->main_window));
+  funcs = GDK_FUNC_ALL | GDK_FUNC_MINIMIZE | GDK_FUNC_CLOSE;
+
+  if (!gis_driver_is_small_screen (driver))
+    funcs |= GDK_FUNC_RESIZE | GDK_FUNC_MOVE | GDK_FUNC_MAXIMIZE;
+
+  gdk_window_set_functions (window, funcs);
+}
 static gboolean
 maximize (gpointer data)
 {
@@ -402,11 +456,17 @@ gis_driver_startup (GApplication *app)
 
   G_APPLICATION_CLASS (gis_driver_parent_class)->startup (app);
 
-  priv->main_window = gis_window_new (driver);
+  priv->main_window = GTK_WINDOW (gis_window_new (driver));
+  g_signal_connect (priv->main_window,
+                    "realize",
+                    G_CALLBACK (window_realize_cb),
+                    app);
+
   priv->assistant = gis_window_get_assistant (GIS_WINDOW (priv->main_window));
 
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL));
 
+  prepare_main_window (driver);
   rebuild_pages (driver);
 }
 
