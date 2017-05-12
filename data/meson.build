@@ -80,6 +80,16 @@ install_data('initial-setup.json', install_dir: mode_dir)
 
 install_data('gnome-welcome-tour', install_dir: get_option('libexecdir'))
 
+policykit_actions_dir = policykit_dep.get_pkgconfig_variable('policydir')
+
+configure_file(
+    input: 'com.endlessm.TestMode.policy.in',
+    output: 'com.endlessm.TestMode.policy',
+    install: true,
+    install_dir: policykit_actions_dir,
+    configuration: desktop_conf,
+)
+
 systemd_dep = dependency ('systemd')
 
 install_data(
