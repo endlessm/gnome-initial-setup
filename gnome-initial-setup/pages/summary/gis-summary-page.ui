@@ -53,11 +53,33 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="tagline">
+              <object class="GtkBox" id="warning_box">
                 <property name="visible">True</property>
-                <property name="justify">center</property>
-                <property name="wrap">True</property>
-                <property name="max-width-chars">60</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="orientation">horizontal</property>
+                <property name="margin_start">24</property>
+                <property name="margin_end">24</property>
+                <property name="margin_bottom">6</property>
+                <property name="spacing">6</property>
+                <child>
+                  <object class="GtkImage" id="warning_icon">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="icon-name">dialog-warning-symbolic</property>
+                    <property name="pixel_size">24</property>
+                    <property name="valign">center</property>
+                    <property name="hexpand">True</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="tagline">
+                    <property name="visible">True</property>
+                    <property name="justify">left</property>
+                    <property name="wrap">True</property>
+                    <property name="max-width-chars">60</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="pack_type">end</property>
