@@ -40,6 +40,8 @@
 struct _GisSummaryPagePrivate {
   GtkWidget *start_button;
   AdwStatusPage *status_page;
+  GtkWidget *warning_label;
+  GtkWidget *warning_box;
 
   ActUser *user_account;
   const gchar *user_password;
@@ -254,6 +256,25 @@ gis_summary_page_constructed (GObject *object)
 
   gis_page_set_complete (GIS_PAGE (page), TRUE);
 
+  gtk_widget_set_visible (priv->warning_box,
+                          gis_driver_is_live_session (GIS_PAGE (object)->driver));
+
+  if (gis_driver_is_live_session (GIS_PAGE (object)->driver))
+  {
+    adw_status_page_set_title (ADW_STATUS_PAGE (priv->status_page),
+                               _("You're ready to try Endless OS"));
+    adw_status_page_set_description (ADW_STATUS_PAGE (priv->status_page),
+                                     NULL);
+    if (gis_driver_has_live_persistence (GIS_PAGE (object)->driver))
+      gtk_label_set_markup (GTK_LABEL (priv->warning_label),
+                            _("System software updates are unavailable when running from "
+                              "evaluation media. Please install Endless if you like it!"));
+    else
+      gtk_label_set_markup (GTK_LABEL (priv->warning_label),
+                            _("Any files you download or documents you create will be "
+                              "lost forever when you restart or shutdown the computer."));
+  }
+
   gtk_widget_show (GTK_WIDGET (page));
 }
 
@@ -274,6 +295,8 @@ gis_summary_page_class_init (GisSummaryPageClass *klass)
 
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, start_button);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, status_page);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, warning_label);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, warning_box);
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_summary_page_locale_changed;
