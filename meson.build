@@ -64,6 +64,9 @@ ibus_dep = dependency ('ibus-1.0',
                        required: get_option('ibus'))
 conf.set('HAVE_IBUS', ibus_dep.found())
 
+# Needed in both gnome-initial-setup/ and data/
+policykit_dep = dependency('polkit-gobject-1', version: '>= 0.103')
+
 configure_file(output: 'config.h',
                configuration: conf)
 config_h_dir = include_directories('.')
