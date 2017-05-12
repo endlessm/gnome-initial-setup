@@ -1,0 +1,44 @@
+#!/bin/bash -e
+
+# eos-test-mode - Setup system for non-persistent testing.
+# Copyright (C) 2015  Dan Nicholson <nicholson@endlessm.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+# Check to see if we've run eos-live-boot-overlayfs-setup already
+[ -d /run/eos-live ] && exit 0
+
+# The /var/endless-extra SD card filesystem needs to be unmounted before
+# adding the overlays below since the /var overlay will mask it.
+extra_unit="var-endless\x2dextra.mount"
+systemctl -q is-active "$extra_unit" && extra_active=true || extra_active=false
+
+# Unmount the SD card
+$extra_active && systemctl stop "$extra_unit"
+
+# Mount overlays over any directory that might be written to
+eos-live-boot-overlayfs-setup etc
+
+# Remount the SD card and mount a scratch overlay over it
+if $extra_active; then
+    systemctl start "$extra_unit"
+    eos-live-boot-overlayfs-setup var/endless-extra
+fi
+
+# Disable the updater for this boot
+systemctl mask --runtime --now eos-autoupdater.timer eos-autoupdater.service
+
+# Disable phoning home for this boot, too
+systemctl mask --runtime --now eos-phone-home.{service,timer,path}
