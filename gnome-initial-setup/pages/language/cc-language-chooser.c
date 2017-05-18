@@ -33,6 +33,7 @@
 #include <libgnome-desktop/gnome-languages.h>
 
 #include "cc-common-language.h"
+#include "cc-util.h"
 
 #include <glib-object.h>
 
