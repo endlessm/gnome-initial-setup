@@ -304,7 +304,7 @@ gis_live_chooser_page_set_property (GObject      *object,
 static void
 gis_live_chooser_page_locale_changed (GisPage *page)
 {
-  GisLiveChooserPagePrivate *priv = gis_live_chooser_page_get_instance_private (page);
+  GisLiveChooserPagePrivate *priv = gis_live_chooser_page_get_instance_private (GIS_LIVE_CHOOSER_PAGE (page));
 
   gtk_label_set_label (GTK_LABEL (priv->try_label), _("Try Endless OS by running it from the USB Stick."));
   gtk_label_set_label (GTK_LABEL (priv->reformat_label), _("Reformat this computer with Endless OS."));
