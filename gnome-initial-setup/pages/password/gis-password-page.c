@@ -117,7 +117,8 @@ gis_password_page_save_data (GisPage *gis_page)
     act_user_set_password_mode (act_user, ACT_USER_PASSWORD_MODE_NONE);
   }
   else {
-    sanitized_reminder = g_strstrip (g_strdup (priv->reminder_entry));
+    reminder = gtk_entry_get_text (GTK_ENTRY (priv->reminder_entry));
+    sanitized_reminder = g_strstrip (g_strdup (reminder));
     act_user_set_password (act_user, password, sanitized_reminder);
     g_free (sanitized_reminder);
   }
