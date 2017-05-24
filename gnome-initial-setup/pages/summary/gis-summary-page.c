@@ -331,9 +331,9 @@ gis_summary_page_constructed (GObject *object)
 
   if (gis_driver_is_live_session (GIS_PAGE (object)->driver))
   {
-    gtk_label_set_label (priv->title,
+    gtk_label_set_label (GTK_LABEL (priv->title),
                          _("You're ready to try Endless OS"));
-    gtk_label_set_markup (priv->tagline,
+    gtk_label_set_markup (GTK_LABEL (priv->tagline),
                           _("<b>Any files you download or documents you create will be "
                             "lost forever when you restart or shutdown the computer.</b>"));
   }
