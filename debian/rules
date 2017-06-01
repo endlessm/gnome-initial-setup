@@ -1,8 +1,14 @@
 #!/usr/bin/make -f
-
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/gnome.mk
 -include /usr/share/gnome-pkg-tools/1/rules/gnome-get-source.mk
-include /usr/share/cdbs/1/rules/autoreconf.mk
 
-DEB_CONFIGURE_EXTRA_FLAGS += --with-vendor-conf-file=/var/lib/eos-image-defaults/branding/gnome-initial-setup.conf
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,-O1 -Wl,--as-needed
+
+%:
+	dh $@ --parallel --with gnome
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		--libexecdir=/usr/lib/gnome-initial-setup \
+		--enable-software-sources \
+		--with-vendor-conf-file=/var/lib/eos-image-defaults/branding/gnome-initial-setup.conf
