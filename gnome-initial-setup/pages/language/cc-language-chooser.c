@@ -23,6 +23,7 @@
 #include "config.h"
 #include "cc-language-chooser.h"
 
+#include <string.h>
 #include <locale.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
@@ -33,6 +34,7 @@
 #include <libgnome-desktop/gnome-languages.h>
 
 #include "cc-common-language.h"
+#include "cc-util.h"
 
 #include <glib-object.h>
 
@@ -40,6 +42,9 @@ struct _CcLanguageChooserPrivate
 {
         GtkWidget *filter_entry;
         GtkWidget *language_list;
+
+        GtkWidget *to_be_scrolled_row;
+        gboolean initial_scroll;
 
         GtkWidget *scrolled_window;
         GtkWidget *no_results;
@@ -119,8 +124,10 @@ language_widget_new (const char *locale_id,
 {
 	GtkWidget *label;
         gchar *locale_name, *locale_current_name, *locale_untranslated_name;
-        gchar *language, *language_name;
-        gchar *country, *country_name;
+        gchar *language = NULL;
+        gchar *language_name;
+        gchar *country = NULL;
+        gchar *country_name = NULL;
         gchar *sort_key;
         LanguageWidget *widget = g_new0 (LanguageWidget, 1);
 
@@ -128,7 +135,9 @@ language_widget_new (const char *locale_id,
                 return NULL;
 
         language_name = gnome_get_language_from_code (language, locale_id);
-        country_name = gnome_get_country_from_code (country, locale_id);
+
+        if (country)
+                country_name = gnome_get_country_from_code (country, locale_id);
 
         locale_name = gnome_get_language_from_locale (locale_id, locale_id);
         locale_current_name = gnome_get_language_from_locale (locale_id, NULL);
@@ -151,13 +160,15 @@ language_widget_new (const char *locale_id,
         gtk_box_pack_start (GTK_BOX (widget->box), widget->checkmark, FALSE, FALSE, 0);
         gtk_widget_show (widget->checkmark);
 
-        label = gtk_label_new (country_name);
-        gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
-        gtk_label_set_max_width_chars (GTK_LABEL (label), 30);
-        gtk_style_context_add_class (gtk_widget_get_style_context (label), "dim-label");
-        gtk_label_set_xalign (GTK_LABEL (label), 0);
-        gtk_widget_set_halign (label, GTK_ALIGN_END);
-        gtk_box_pack_end (GTK_BOX (widget->box), label, FALSE, FALSE, 0);
+        if (country_name) {
+                label = gtk_label_new (country_name);
+                gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
+                gtk_label_set_max_width_chars (GTK_LABEL (label), 30);
+                gtk_style_context_add_class (gtk_widget_get_style_context (label), "dim-label");
+                gtk_label_set_xalign (GTK_LABEL (label), 0);
+                gtk_widget_set_halign (label, GTK_ALIGN_END);
+                gtk_box_pack_end (GTK_BOX (widget->box), label, FALSE, FALSE, 0);
+        }
 
         widget->locale_id = g_strdup (locale_id);
         widget->locale_name = locale_name;
@@ -180,10 +191,65 @@ language_widget_new (const char *locale_id,
         return widget->box;
 }
 
+static inline gint
+get_selected_language_row_y (GtkWidget *row)
+{
+        GtkAllocation alloc;
+
+        gtk_widget_get_allocation (row, &alloc);
+
+        return alloc.y + alloc.height / 2.0;
+}
+
+static void
+update_scroll_position (CcLanguageChooser *chooser)
+{
+        CcLanguageChooserPrivate *priv = cc_language_chooser_get_instance_private (chooser);
+        GtkAdjustment *vadjustment;
+        GtkWidget *row;
+        gdouble page_increment;
+        gdouble real_value;
+
+        row = priv->to_be_scrolled_row;
+
+        vadjustment = gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (priv->scrolled_window));
+        page_increment = gtk_adjustment_get_page_increment (vadjustment);
+        real_value = get_selected_language_row_y (row) - page_increment / 2.0;
+
+        /*
+         * Since GtkScrolledWindow tries to follow the focused row of a listbox,
+         * make sure that the current row is focused.
+         */
+        gtk_widget_grab_focus (row);
+
+        gtk_adjustment_set_value (vadjustment, real_value);
+
+        priv->initial_scroll = TRUE;
+}
+
+static void
+schedule_scroll (CcLanguageChooser *chooser,
+                 GtkWidget         *row)
+{
+        CcLanguageChooserPrivate *priv = cc_language_chooser_get_instance_private (chooser);
+        priv->to_be_scrolled_row = row;
+
+        if (gtk_widget_get_realized (priv->scrolled_window)) {
+                update_scroll_position (chooser);
+                return;
+        }
+
+        g_signal_connect_swapped (priv->scrolled_window,
+                                  "realize",
+                                  G_CALLBACK (update_scroll_position),
+                                  chooser);
+}
+
 static void
 sync_checkmark (GtkWidget *row,
                 gpointer   user_data)
 {
+        CcLanguageChooser *chooser;
         GtkWidget *child;
         LanguageWidget *widget;
         gchar *locale_id;
@@ -195,9 +261,14 @@ sync_checkmark (GtkWidget *row,
         if (widget == NULL)
                 return;
 
-        locale_id = user_data;
+        chooser = user_data;
+        CcLanguageChooserPrivate *priv = cc_language_chooser_get_instance_private (chooser);
+        locale_id = priv->language;
         should_be_visible = g_str_equal (widget->locale_id, locale_id);
         gtk_widget_set_opacity (widget->checkmark, should_be_visible ? 1.0 : 0.0);
+
+        if (should_be_visible && !priv->initial_scroll)
+                schedule_scroll (chooser, row);
 }
 
 static void
@@ -206,7 +277,7 @@ sync_all_checkmarks (CcLanguageChooser *chooser)
         CcLanguageChooserPrivate *priv = cc_language_chooser_get_instance_private (chooser);
 
         gtk_container_foreach (GTK_CONTAINER (priv->language_list),
-                               sync_checkmark, priv->language);
+                               sync_checkmark, chooser);
 }
 
 static GtkWidget *
@@ -345,6 +416,8 @@ sort_languages (GtkListBoxRow *a,
                 gpointer       data)
 {
         LanguageWidget *la, *lb;
+        gchar *normalized_a, *normalized_b;
+        gint retval;
 
         la = get_language_widget (gtk_bin_get_child (GTK_BIN (a)));
         lb = get_language_widget (gtk_bin_get_child (GTK_BIN (b)));
@@ -361,7 +434,15 @@ sort_languages (GtkListBoxRow *a,
         if (!la->is_extra && lb->is_extra)
                 return -1;
 
-        return strcmp (la->sort_key, lb->sort_key);
+        normalized_a = cc_util_normalize_casefold_and_unaccent (la->locale_name);
+        normalized_b = cc_util_normalize_casefold_and_unaccent (lb->locale_name);
+
+        retval = strcmp (normalized_a, normalized_b);
+
+        g_free (normalized_a);
+        g_free (normalized_b);
+
+        return retval;
 }
 
 static void
@@ -578,7 +659,9 @@ cc_language_chooser_class_init (CcLanguageChooserClass *klass)
 static void
 cc_language_chooser_init (CcLanguageChooser *chooser)
 {
+        CcLanguageChooserPrivate *priv = cc_language_chooser_get_instance_private (chooser);
         gtk_widget_init_template (GTK_WIDGET (chooser));
+        priv->showing_extra = FALSE;
 }
 
 void

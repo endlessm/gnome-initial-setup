@@ -39,6 +39,7 @@ struct _GisAccountPagePrivate
 
   GtkWidget *page_toggle;
   GtkWidget *stack;
+  GtkAccelGroup *accel_group;
 
   UmAccountMode mode;
 };
@@ -114,11 +115,13 @@ set_mode (GisAccountPage *page,
 }
 
 static void
-toggle_mode (GtkToggleButton *button,
-             gpointer         user_data)
+switch_login_mode (GisAccountPage *page)
 {
-  set_mode (GIS_ACCOUNT_PAGE (user_data),
-            gtk_toggle_button_get_active (button) ? UM_ENTERPRISE : UM_LOCAL);
+  GisAccountPagePrivate *priv = gis_account_page_get_instance_private (page);
+  if (priv->mode == UM_LOCAL)
+    set_mode (page, UM_ENTERPRISE);
+  else
+    set_mode (page, UM_LOCAL);
 }
 
 static gboolean
@@ -204,6 +207,21 @@ on_local_user_cached (GtkWidget      *page_local,
 }
 
 static void
+on_shared_user_created (GtkWidget       *page_local,
+                        ActUser         *user,
+                        char            *password,
+                        GisAccountPage  *page)
+{
+    const gchar *language;
+
+    language = gis_driver_get_user_language (GIS_PAGE (page)->driver);
+    if (language)
+        act_user_set_language (user, language);
+
+    gis_driver_set_user_permissions (GIS_PAGE (page)->driver, user, password);
+}
+
+static void
 gis_account_page_constructed (GObject *object)
 {
   GisAccountPage *page = GIS_ACCOUNT_PAGE (object);
@@ -218,6 +236,9 @@ gis_account_page_constructed (GObject *object)
   g_signal_connect (priv->page_local, "confirm",
                     G_CALLBACK (on_local_page_confirmed), page);
 
+  g_signal_connect (priv->page_local, "shared-user-created",
+                    G_CALLBACK (on_shared_user_created), page);
+
   g_signal_connect (priv->page_enterprise, "validation-changed",
                     G_CALLBACK (on_validation_changed), page);
   g_signal_connect (priv->page_enterprise, "user-cached",
@@ -225,8 +246,12 @@ gis_account_page_constructed (GObject *object)
 
   update_page_validation (page);
 
-  g_signal_connect (priv->page_toggle, "toggled", G_CALLBACK (toggle_mode), page);
-  g_object_bind_property (page, "applying", priv->page_toggle, "sensitive", G_BINDING_INVERT_BOOLEAN);
+  priv->accel_group = gtk_accel_group_new ();
+  GClosure *closure = g_cclosure_new_swap (G_CALLBACK (switch_login_mode), page, NULL);
+
+  /* Use Ctrl+Alt+e to activate the enterprise login mode */
+  gtk_accel_group_connect (priv->accel_group, GDK_KEY_e, GDK_CONTROL_MASK | GDK_MOD1_MASK, 0, closure);
+
   g_object_bind_property (priv->page_enterprise, "visible", priv->page_toggle, "visible", G_BINDING_DEFAULT | G_BINDING_SYNC_CREATE);
 
   /* force a refresh by setting to an invalid value */
@@ -240,6 +265,15 @@ static void
 gis_account_page_locale_changed (GisPage *page)
 {
   gis_page_set_title (GIS_PAGE (page), _("About You"));
+}
+
+static GtkAccelGroup *
+gis_account_page_get_accel_group (GisPage *page)
+{
+  GisAccountPage *account_page = GIS_ACCOUNT_PAGE (page);
+  GisAccountPagePrivate *priv = gis_account_page_get_instance_private (account_page);
+
+  return priv->accel_group;
 }
 
 static void
@@ -258,6 +292,7 @@ gis_account_page_class_init (GisAccountPageClass *klass)
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_account_page_locale_changed;
+  page_class->get_accel_group = gis_account_page_get_accel_group;
   page_class->apply = gis_account_page_apply;
   page_class->save_data = gis_account_page_save_data;
   page_class->shown = gis_account_page_shown;

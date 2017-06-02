@@ -1,7 +1,7 @@
 AC_INIT([gnome-initial-setup],[3.22.1])
 AC_CONFIG_MACRO_DIR([m4])
 
-AM_INIT_AUTOMAKE([dist-xz no-dist-gzip foreign])
+AM_INIT_AUTOMAKE([dist-xz no-dist-gzip foreign tar-ustar])
 AM_MAINTAINER_MODE([enable])
 AM_SILENT_RULES([yes])
 
@@ -17,6 +17,17 @@ AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [gettext package])
 
 AM_GLIB_GNU_GETTEXT
+
+AC_ARG_WITH(vendor-conf-file,
+            AS_HELP_STRING([--with-vendor-conf-file=<file>],
+                           [vendor conf file]))
+
+if ! test -z "$with_vendor_conf_file"; then
+   VENDOR_CONF_FILE=$with_vendor_conf_file
+else
+   VENDOR_CONF_FILE=${localstatedir}/lib/gnome-initial-setup/vendor.conf
+fi
+AC_SUBST(VENDOR_CONF_FILE)
 
 NETWORK_MANAGER_REQUIRED_VERSION=0.9.6.4
 GLIB_REQUIRED_VERSION=2.46.0
@@ -51,6 +62,8 @@ PKG_CHECK_MODULES(INITIAL_SETUP,
                   json-glib-1.0
 		  libsecret-1
                   pwquality
+                  evince-view-3.0
+                  evince-document-3.0
                   webkit2gtk-4.0)
 
 
@@ -75,7 +88,21 @@ if test x$have_cheese = xyes; then
   AC_DEFINE(HAVE_CHEESE, 1, [Build with Cheese support?])
 fi
 
-PKG_CHECK_MODULES(COPY_WORKER, gio-2.0)
+PKG_CHECK_MODULES(COPY_WORKER, gio-2.0 gnome-keyring-1)
+
+# Zint barcode
+AC_CHECK_LIB(zint, ZBarcode_Render,
+        [have_libzint=yes], [have_libzint=no])
+if test "x$have_libzint" = "xno" ; then
+   AC_MSG_ERROR([*** libzint not found ***])
+fi
+LIBZINT_CFLAGS=""
+LIBZINT_LIBS="-lzint"
+AC_SUBST(LIBZINT_CFLAGS)
+AC_SUBST(LIBZINT_LIBS)
+
+INITIAL_SETUP_CFLAGS="$INITIAL_SETUP_CFLAGS $LIBZINT_CFLAGS"
+INITIAL_SETUP_LIBS="$INITIAL_SETUP_LIBS $LIBZINT_LIBS"
 
 AC_ARG_ENABLE(ibus,
         AS_HELP_STRING([--disable-ibus],
@@ -133,10 +160,14 @@ Makefile
 data/Makefile
 gnome-initial-setup/Makefile
 gnome-initial-setup/pages/Makefile
+gnome-initial-setup/pages/branding-welcome/Makefile
 gnome-initial-setup/pages/language/Makefile
 gnome-initial-setup/pages/region/Makefile
 gnome-initial-setup/pages/keyboard/Makefile
+gnome-initial-setup/pages/display/Makefile
+gnome-initial-setup/pages/endless-eula/Makefile
 gnome-initial-setup/pages/eulas/Makefile
+gnome-initial-setup/pages/live-chooser/Makefile
 gnome-initial-setup/pages/network/Makefile
 gnome-initial-setup/pages/timezone/Makefile
 gnome-initial-setup/pages/privacy/Makefile

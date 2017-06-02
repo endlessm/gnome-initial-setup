@@ -43,6 +43,8 @@ struct _GisSummaryPagePrivate {
   GtkWidget *start_button;
   GtkWidget *start_button_label;
   GtkWidget *tagline;
+  GtkWidget *title;
+  GtkWidget *warning_icon;
 
   ActUser *user_account;
   const gchar *user_password;
@@ -214,33 +216,8 @@ log_user_in (GisSummaryPage *page)
 }
 
 static void
-add_setup_done_file (void)
-{
-  gchar *gis_done_path;
-  GError *error = NULL;
-
-  gis_done_path = g_build_filename (g_get_user_config_dir (),
-                                    "gnome-initial-setup-done",
-                                    NULL);
-
-  if (!g_file_set_contents (gis_done_path, "yes", -1, &error)) {
-      g_warning ("Unable to create %s: %s", gis_done_path, error->message);
-      g_clear_error (&error);
-  }
-
-  g_free (gis_done_path);
-}
-
-static void
 done_cb (GtkButton *button, GisSummaryPage *page)
 {
-  gchar *file;
-
-  /* the tour is triggered by $XDG_CONFIG_HOME/run-welcome-tour */
-  file = g_build_filename (g_get_user_config_dir (), "run-welcome-tour", NULL);
-  g_file_set_contents (file, "yes", -1, NULL);
-  g_free (file);
-
   switch (gis_driver_get_mode (GIS_PAGE (page)->driver))
     {
     case GIS_DRIVER_MODE_NEW_USER:
@@ -248,7 +225,7 @@ done_cb (GtkButton *button, GisSummaryPage *page)
       log_user_in (page);
       break;
     case GIS_DRIVER_MODE_EXISTING_USER:
-      add_setup_done_file ();
+      gis_add_setup_done_file ();
       g_application_quit (G_APPLICATION (GIS_PAGE (page)->driver));
     default:
       break;
@@ -349,6 +326,18 @@ gis_summary_page_constructed (GObject *object)
 
   gis_page_set_complete (GIS_PAGE (page), TRUE);
 
+  gtk_widget_set_visible (priv->warning_icon,
+                          gis_driver_is_live_session (GIS_PAGE (object)->driver));
+
+  if (gis_driver_is_live_session (GIS_PAGE (object)->driver))
+  {
+    gtk_label_set_label (GTK_LABEL (priv->title),
+                         _("You're ready to try Endless OS"));
+    gtk_label_set_markup (GTK_LABEL (priv->tagline),
+                          _("<b>Any files you download or documents you create will be "
+                            "lost forever when you restart or shutdown the computer.</b>"));
+  }
+
   gtk_widget_show (GTK_WIDGET (page));
 }
 
@@ -370,6 +359,8 @@ gis_summary_page_class_init (GisSummaryPageClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, start_button);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, start_button_label);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, tagline);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, title);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, warning_icon);
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_summary_page_locale_changed;

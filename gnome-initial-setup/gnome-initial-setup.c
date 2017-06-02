@@ -27,6 +27,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <glib/gi18n.h>
+#include <evince-document.h>
 
 #ifdef HAVE_CLUTTER
 #include <clutter-gtk/clutter-gtk.h>
@@ -36,18 +37,25 @@
 #include <cheese-gtk.h>
 #endif
 
+#include "pages/branding-welcome/gis-branding-welcome-page.h"
 #include "pages/language/gis-language-page.h"
 #include "pages/region/gis-region-page.h"
 #include "pages/keyboard/gis-keyboard-page.h"
+#include "pages/display/gis-display-page.h"
+#include "pages/endless-eula/gis-endless-eula-page.h"
 #include "pages/eulas/gis-eula-pages.h"
 #include "pages/network/gis-network-page.h"
 #include "pages/timezone/gis-timezone-page.h"
 #include "pages/privacy/gis-privacy-page.h"
 #include "pages/software/gis-software-page.h"
+#include "pages/live-chooser/gis-live-chooser-page.h"
 #include "pages/goa/gis-goa-page.h"
 #include "pages/account/gis-account-pages.h"
 #include "pages/password/gis-password-page.h"
 #include "pages/summary/gis-summary-page.h"
+
+#define VENDOR_PAGES_GROUP "pages"
+#define VENDOR_PAGES_SKIP_KEY "skip"
 
 static gboolean force_existing_user_mode;
 
@@ -62,10 +70,14 @@ typedef struct {
 #define PAGE(name, new_user_only) { #name, gis_prepare_ ## name ## _page, new_user_only }
 
 static PageData page_table[] = {
+  PAGE (branding_welcome, TRUE),
   PAGE (language, FALSE),
+  PAGE (live_chooser, TRUE),
   /* PAGE (region,   FALSE), */
   PAGE (keyboard, FALSE),
+  PAGE (display, TRUE),
   PAGE (eula,     FALSE),
+  PAGE (endless_eula, TRUE),
   PAGE (network,  FALSE),
   PAGE (privacy,  FALSE),
   PAGE (timezone, TRUE),
@@ -101,21 +113,36 @@ static gchar **
 pages_to_skip_from_file (void)
 {
   GKeyFile *skip_pages_file;
-  gchar **skip_pages;
+  gchar **skip_pages = NULL;
+  GError *error = NULL;
 
+  /* VENDOR_CONF_FILE points to a keyfile containing vendor customization
+   * options. This code will look for options under the "pages" group, and
+   * supports the following keys:
+   *   - skip (optional): list of pages to be skipped.
+   *
+   * This is how this file would look on a vendor image:
+   *
+   *   [pages]
+   *   skip=language
+   */
   skip_pages_file = g_key_file_new ();
-  /* TODO: put the skipfile somewhere sensible */
-  if (g_key_file_load_from_file (skip_pages_file, "/tmp/skip_pages_file",
-                                 G_KEY_FILE_NONE,
-                                 NULL)) {
-    skip_pages = g_key_file_get_string_list (skip_pages_file, "pages", "skip",
-                                             NULL, NULL);
-    g_key_file_free (skip_pages_file);
+  if (!g_key_file_load_from_file (skip_pages_file, VENDOR_CONF_FILE,
+                                  G_KEY_FILE_NONE, &error)) {
+    if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
+      g_warning ("Could not read file %s: %s", VENDOR_CONF_FILE, error->message);
 
-    return skip_pages;
+    g_error_free (error);
+    goto out;
   }
 
-  return NULL;
+  skip_pages = g_key_file_get_string_list (skip_pages_file, VENDOR_PAGES_GROUP,
+                                           VENDOR_PAGES_SKIP_KEY, NULL, NULL);
+
+ out:
+  g_key_file_free (skip_pages_file);
+
+  return skip_pages;
 }
 
 static void
@@ -177,6 +204,37 @@ rebuild_pages_cb (GisDriver *driver)
   g_strfreev (skip_pages);
 }
 
+static gboolean
+is_running_as_user (const gchar *username)
+{
+  struct passwd pw, *pwp;
+  char buf[4096];
+
+  getpwnam_r (username, &pw, buf, sizeof (buf), &pwp);
+  if (pwp == NULL)
+    return FALSE;
+
+  return pw.pw_uid == getuid ();
+}
+
+void
+gis_add_setup_done_file (void)
+{
+  gchar *gis_done_path;
+  GError *error = NULL;
+
+  gis_done_path = g_build_filename (g_get_user_config_dir (),
+                                    "gnome-initial-setup-done",
+                                    NULL);
+
+  if (!g_file_set_contents (gis_done_path, "yes", -1, &error)) {
+      g_warning ("Unable to create %s: %s", gis_done_path, error->message);
+      g_clear_error (&error);
+  }
+
+  g_free (gis_done_path);
+}
+
 static GisDriverMode
 get_mode (void)
 {
@@ -211,11 +269,19 @@ main (int argc, char *argv[])
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
+  /* If initial-setup has been automatically launched and this is the Shared
+     Account user, just quit quietly */
+  if (is_running_as_user ("shared")) {
+    gis_add_setup_done_file ();
+    return EXIT_SUCCESS;
+  }
+
 #ifdef HAVE_CHEESE
   cheese_gtk_init (NULL, NULL);
 #endif
 
   gtk_init (&argc, &argv);
+  ev_init ();
 
 #if HAVE_CLUTTER
   if (gtk_clutter_init (NULL, NULL) != CLUTTER_INIT_SUCCESS) {
@@ -240,5 +306,7 @@ main (int argc, char *argv[])
 
   g_object_unref (driver);
   g_option_context_free (context);
+  ev_shutdown ();
+
   return status;
 }

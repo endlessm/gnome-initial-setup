@@ -161,6 +161,24 @@ gis_assistant_previous_page (GisAssistant *assistant)
 }
 
 static void
+update_accel_group (GisAssistant *assistant)
+{
+  GisAssistantPrivate *priv = gis_assistant_get_instance_private (assistant);
+  GtkWindow *window;
+  static GtkAccelGroup *accel_group = NULL;
+
+  window = GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (assistant)));
+
+/* Remove previous accel group */
+  if (accel_group)
+    gtk_window_remove_accel_group (window, accel_group);
+
+  accel_group = gis_page_get_accel_group (priv->current_page);
+  if (accel_group)
+    gtk_window_add_accel_group (window, accel_group);
+}
+
+static void
 set_suggested_action_sensitive (GtkWidget *widget,
                                 gboolean   sensitive)
 {
@@ -209,8 +227,8 @@ update_navigation_buttons (GisAssistant *assistant)
     }
   else
     {
-      gboolean is_first_page;
       GtkWidget *next_widget;
+      gboolean can_go_forward, is_first_page, hide_forward_button;
 
       is_first_page = (page_priv->link->prev == NULL);
       gtk_widget_set_visible (priv->back, !is_first_page);
@@ -220,7 +238,13 @@ update_navigation_buttons (GisAssistant *assistant)
       else
         next_widget = priv->forward;
 
-      if (gis_page_get_complete (page)) {
+      can_go_forward = gis_page_get_complete (page);
+      gtk_widget_set_sensitive (priv->forward, can_go_forward);
+
+      hide_forward_button = gis_page_get_hide_forward_button (priv->current_page);
+      gtk_widget_set_visible (priv->forward, !hide_forward_button);
+
+      if (can_go_forward) {
         set_suggested_action_sensitive (next_widget, TRUE);
         set_navigation_button (assistant, next_widget);
       } else if (gis_page_get_skippable (page)) {
@@ -257,6 +281,19 @@ update_titlebar (GisAssistant *assistant)
 
   gtk_label_set_label (GTK_LABEL (priv->title),
                        gis_assistant_get_title (assistant));
+}
+
+static void
+update_forward_button (GisAssistant *assistant)
+{
+  const char *forward_text = NULL;
+  GisAssistantPrivate *priv = gis_assistant_get_instance_private (assistant);
+
+  if (priv->current_page != NULL) {
+    forward_text = gis_page_get_forward_text (priv->current_page);
+  }
+
+  gtk_button_set_label (GTK_BUTTON (priv->forward), forward_text ? forward_text : _("_Next"));
 }
 
 static void
@@ -366,8 +403,10 @@ update_current_page (GisAssistant *assistant,
   g_object_notify_by_pspec (G_OBJECT (assistant), obj_props[PROP_TITLE]);
 
   update_titlebar (assistant);
+  update_forward_button (assistant);
   update_applying_state (assistant);
   update_navigation_buttons (assistant);
+  update_accel_group (assistant);
 
   gtk_widget_grab_focus (priv->forward);
 
@@ -393,7 +432,7 @@ gis_assistant_locale_changed (GisAssistant *assistant)
   GisAssistantPrivate *priv = gis_assistant_get_instance_private (assistant);
   GList *l;
 
-  gtk_button_set_label (GTK_BUTTON (priv->forward), _("_Next"));
+  update_forward_button (assistant);
   gtk_button_set_label (GTK_BUTTON (priv->accept), _("_Accept"));
   gtk_button_set_label (GTK_BUTTON (priv->skip), _("_Skip"));
   gtk_button_set_label (GTK_BUTTON (priv->back), _("_Previous"));

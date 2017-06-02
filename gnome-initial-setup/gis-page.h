@@ -37,6 +37,8 @@ typedef struct _GisPage        GisPage;
 typedef struct _GisPageClass   GisPageClass;
 typedef struct _GisAssistantPagePrivate GisAssistantPagePrivate;
 
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (GisPage, g_object_unref)
+
 typedef void (* GisPageApplyCallback) (GisPage *page,
                                        gboolean valid,
                                        gpointer user_data);
@@ -56,6 +58,7 @@ struct _GisPageClass
   char *page_id;
 
   void         (*locale_changed) (GisPage *page);
+  GtkAccelGroup * (*get_accel_group) (GisPage *page);
   gboolean     (*apply) (GisPage *page,
                          GCancellable *cancellable);
   void         (*save_data) (GisPage *page);
@@ -66,6 +69,10 @@ GType gis_page_get_type (void);
 
 char *       gis_page_get_title (GisPage *page);
 void         gis_page_set_title (GisPage *page, char *title);
+const char *       gis_page_get_forward_text (GisPage *page);
+void         gis_page_set_forward_text (GisPage *page, const char *text);
+gboolean     gis_page_get_hide_forward_button (GisPage *page);
+void         gis_page_set_hide_forward_button (GisPage *page, gboolean hide_forward_button);
 gboolean     gis_page_get_complete (GisPage *page);
 void         gis_page_set_complete (GisPage *page, gboolean complete);
 gboolean     gis_page_get_skippable (GisPage *page);
@@ -73,6 +80,7 @@ void         gis_page_set_skippable (GisPage *page, gboolean skippable);
 gboolean     gis_page_get_needs_accept (GisPage *page);
 void         gis_page_set_needs_accept (GisPage *page, gboolean needs_accept);
 GtkWidget *  gis_page_get_action_widget (GisPage *page);
+GtkAccelGroup *  gis_page_get_accel_group (GisPage *page);
 void         gis_page_locale_changed (GisPage *page);
 void         gis_page_apply_begin (GisPage *page, GisPageApplyCallback callback, gpointer user_data);
 void         gis_page_apply_cancel (GisPage *page);

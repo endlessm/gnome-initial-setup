@@ -18,7 +18,7 @@ config.status
 config.guess
 config.rpath
 config.sub
-config
+/config
 configure
 depcomp
 gnome-doc-utils.make
@@ -47,6 +47,7 @@ gnome-initial-setup-*.tar.xz
 gnome-initial-setup/gnome-initial-setup
 gnome-initial-setup/gnome-initial-setup-copy-worker
 gnome-initial-setup/gis-assistant-resources.[ch]
+gnome-initial-setup/gis-page-util-resources.[ch]
 
 gnome-initial-setup/pages/welcome/welcome-resources.[ch]
 gnome-initial-setup/pages/language/language-resources.[ch]
@@ -65,11 +66,16 @@ gnome-initial-setup/pages/account/account-resources.[ch]
 gnome-initial-setup/pages/account/um-realm-generated.[ch]
 gnome-initial-setup/pages/software/software-resources.[ch]
 gnome-initial-setup/pages/summary/summary-resources.[ch]
+gnome-initial-setup/pages/endless-eula/endless-eula-resources.[ch]
+gnome-initial-setup/pages/location/geoclue.[ch]
+gnome-initial-setup/pages/live-chooser/live-chooser-resources.[ch]
+gnome-initial-setup/pages/branding-welcome/branding-welcome-resources.[ch]
 
 gnome-initial-setup-first-login.desktop
 gnome-initial-setup.desktop
 gnome-initial-setup-copy-worker.desktop
 gnome-welcome-tour.desktop
+com.endlessm.TestMode.policy
 
 gnome-initial-setup-0.*
 gnome-initial-setup-3.*

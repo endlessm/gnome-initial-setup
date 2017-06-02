@@ -28,6 +28,8 @@
 struct _GisPagePrivate
 {
   char *title;
+  char *forward_text;
+  gboolean hide_forward_button;
 
   gboolean applying;
   GCancellable *apply_cancel;
@@ -48,11 +50,13 @@ enum
   PROP_0,
   PROP_DRIVER,
   PROP_TITLE,
+  PROP_FORWARD_TEXT,
   PROP_COMPLETE,
   PROP_SKIPPABLE,
   PROP_NEEDS_ACCEPT,
   PROP_APPLYING,
   PROP_SMALL_SCREEN,
+  PROP_HIDE_FORWARD_BUTTON,
   PROP_LAST,
 };
 
@@ -73,6 +77,9 @@ gis_page_get_property (GObject    *object,
       break;
     case PROP_TITLE:
       g_value_set_string (value, priv->title);
+      break;
+    case PROP_FORWARD_TEXT:
+      g_value_set_string (value, priv->forward_text);
       break;
     case PROP_COMPLETE:
       g_value_set_boolean (value, priv->complete);
@@ -122,6 +129,9 @@ gis_page_set_property (GObject      *object,
     case PROP_TITLE:
       gis_page_set_title (page, (char *) g_value_get_string (value));
       break;
+    case PROP_FORWARD_TEXT:
+      gis_page_set_forward_text (page, (char *) g_value_get_string (value));
+      break;
     case PROP_SKIPPABLE:
       priv->skippable = g_value_get_boolean (value);
       break;
@@ -144,6 +154,7 @@ gis_page_finalize (GObject *object)
   GisPagePrivate *priv = gis_page_get_instance_private (page);
 
   g_free (priv->title);
+  g_free (priv->forward_text);
   g_assert (!priv->applying);
   g_assert (priv->apply_cb == NULL);
   g_assert (priv->apply_cancel == NULL);
@@ -204,6 +215,9 @@ gis_page_class_init (GisPageClass *klass)
   obj_props[PROP_TITLE] =
     g_param_spec_string ("title", "", "", "",
                          G_PARAM_STATIC_STRINGS | G_PARAM_READWRITE);
+  obj_props[PROP_FORWARD_TEXT] =
+    g_param_spec_string ("forward-text", "", "", NULL,
+                         G_PARAM_STATIC_STRINGS | G_PARAM_READWRITE);
   obj_props[PROP_COMPLETE] =
     g_param_spec_boolean ("complete", "", "", FALSE,
                           G_PARAM_STATIC_STRINGS | G_PARAM_READWRITE);
@@ -219,6 +233,10 @@ gis_page_class_init (GisPageClass *klass)
   obj_props[PROP_SMALL_SCREEN] =
     g_param_spec_boolean ("small-screen", "", "", FALSE,
                           G_PARAM_STATIC_STRINGS | G_PARAM_READABLE);
+  obj_props[PROP_HIDE_FORWARD_BUTTON] =
+    g_param_spec_boolean ("hide-forward-button", "", "", FALSE,
+                          G_PARAM_STATIC_STRINGS | G_PARAM_READWRITE);
+
 
   g_object_class_install_properties (object_class, PROP_LAST, obj_props);
 }
@@ -249,6 +267,37 @@ gis_page_set_title (GisPage *page, char *title)
   g_clear_pointer (&priv->title, g_free);
   priv->title = g_strdup (title);
   g_object_notify_by_pspec (G_OBJECT (page), obj_props[PROP_TITLE]);
+}
+
+const char *
+gis_page_get_forward_text (GisPage *page)
+{
+  GisPagePrivate *priv = gis_page_get_instance_private (page);
+  return priv->forward_text;
+}
+
+void
+gis_page_set_forward_text (GisPage *page, const char *text)
+{
+  GisPagePrivate *priv = gis_page_get_instance_private (page);
+  g_clear_pointer (&priv->forward_text, g_free);
+  priv->forward_text = g_strdup (text);
+  g_object_notify_by_pspec (G_OBJECT (page), obj_props[PROP_FORWARD_TEXT]);
+}
+
+gboolean
+gis_page_get_hide_forward_button (GisPage *page)
+{
+  GisPagePrivate *priv = gis_page_get_instance_private (page);
+  return priv->hide_forward_button;
+}
+
+void
+gis_page_set_hide_forward_button (GisPage *page, gboolean hide_forward_button)
+{
+  GisPagePrivate *priv = gis_page_get_instance_private (page);
+  priv->hide_forward_button = hide_forward_button;
+  g_object_notify_by_pspec (G_OBJECT (page), obj_props[PROP_HIDE_FORWARD_BUTTON]);
 }
 
 gboolean
@@ -294,6 +343,14 @@ gis_page_set_needs_accept (GisPage *page, gboolean needs_accept)
   GisPagePrivate *priv = gis_page_get_instance_private (page);
   priv->needs_accept = needs_accept;
   g_object_notify_by_pspec (G_OBJECT (page), obj_props[PROP_NEEDS_ACCEPT]);
+}
+
+GtkAccelGroup *
+gis_page_get_accel_group (GisPage *page)
+{
+  if (GIS_PAGE_GET_CLASS (page)->get_accel_group)
+    return GIS_PAGE_GET_CLASS (page)->get_accel_group (page);
+  return NULL;
 }
 
 void

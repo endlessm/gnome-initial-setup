@@ -27,6 +27,7 @@
 #include <locale.h>
 
 #include "gis-assistant.h"
+#include "gis-window.h"
 
 #define GIS_TYPE_DRIVER_MODE (gis_driver_mode_get_type ())
 
@@ -57,6 +58,7 @@ static guint signals[LAST_SIGNAL];
 
 enum {
   PROP_0,
+  PROP_LIVE_SESSION,
   PROP_MODE,
   PROP_USERNAME,
   PROP_SMALL_SCREEN,
@@ -75,6 +77,8 @@ struct _GisDriverPrivate {
   gchar *lang_id;
   gchar *username;
 
+  gboolean is_live_session;
+
   GisDriverMode mode;
   UmAccountMode account_mode;
   gboolean small_screen;
@@ -82,6 +86,29 @@ struct _GisDriverPrivate {
 typedef struct _GisDriverPrivate GisDriverPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE(GisDriver, gis_driver, GTK_TYPE_APPLICATION)
+
+static gboolean
+running_live_session (void)
+{
+  gboolean has_live_boot_param;
+  GError *error;
+  g_autofree gchar *contents = NULL;
+
+  error = NULL;
+
+  g_file_get_contents ("/proc/cmdline", &contents, NULL, &error);
+
+  if (error)
+    {
+      g_warning ("Couldn't check kernel parameters: %s", error->message);
+      g_clear_error (&error);
+      return FALSE;
+    }
+
+  has_live_boot_param = g_strrstr (contents, "endless.live_boot") != NULL;
+
+  return has_live_boot_param;
+}
 
 static void
 gis_driver_finalize (GObject *object)
@@ -99,32 +126,48 @@ gis_driver_finalize (GObject *object)
 }
 
 static void
-assistant_page_changed (GtkScrolledWindow *sw)
-{
-  gtk_adjustment_set_value (gtk_scrolled_window_get_vadjustment (sw), 0);
-}
-
-static void
 prepare_main_window (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
-  GtkWidget *child, *sw;
+  GdkGeometry size_hints;
 
-  child = g_object_ref (gtk_bin_get_child (GTK_BIN (priv->main_window)));
-  gtk_container_remove (GTK_CONTAINER (priv->main_window), child);
-  sw = gtk_scrolled_window_new (NULL, NULL);
-  gtk_widget_show (sw);
-  gtk_container_add (GTK_CONTAINER (priv->main_window), sw);
-  gtk_container_add (GTK_CONTAINER (sw), child);
-  g_object_unref (child);
+  if (gis_driver_is_small_screen (driver))
+    {
+      GtkWidget *child, *sw;
 
-  g_signal_connect_swapped (priv->assistant,
-                            "page-changed",
-                            G_CALLBACK (assistant_page_changed),
-                            sw);
+      child = g_object_ref (gtk_bin_get_child (GTK_BIN (priv->main_window)));
+      gtk_container_remove (GTK_CONTAINER (priv->main_window), child);
+      sw = gtk_scrolled_window_new (NULL, NULL);
+      gtk_widget_show (sw);
+      gtk_container_add (GTK_CONTAINER (priv->main_window), sw);
+      gtk_container_add (GTK_CONTAINER (sw), child);
+      g_object_unref (child);
+
+      gtk_window_maximize (priv->main_window);
+    }
+  else
+    {
+      size_hints.min_width = 747;
+      size_hints.min_height = 539;
+      size_hints.max_width = 747;
+      size_hints.max_height = 539;
+      size_hints.win_gravity = GDK_GRAVITY_CENTER;
+
+      gtk_window_set_geometry_hints (priv->main_window,
+                                     NULL,
+                                     &size_hints,
+                                     GDK_HINT_MIN_SIZE | GDK_HINT_MAX_SIZE | GDK_HINT_WIN_GRAVITY);
+      gtk_window_set_resizable (priv->main_window, FALSE);
+    }
 
   gtk_window_set_titlebar (priv->main_window,
                            gis_assistant_get_titlebar (priv->assistant));
+}
+
+static void
+assistant_page_changed (GtkScrolledWindow *sw)
+{
+  gtk_adjustment_set_value (gtk_scrolled_window_get_vadjustment (sw), 0);
 }
 
 static void
@@ -214,6 +257,14 @@ gis_driver_add_page (GisDriver *driver,
 }
 
 void
+gis_driver_show_window (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  gtk_window_present (priv->main_window);
+}
+
+void
 gis_driver_hide_window (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
@@ -225,7 +276,12 @@ static void
 gis_driver_real_locale_changed (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  GtkTextDirection direction;
+
   rebuild_pages (driver);
+
+  direction = gtk_get_locale_direction ();
+  gtk_widget_set_default_direction (direction);
   gis_assistant_locale_changed (priv->assistant);
 }
 
@@ -240,6 +296,13 @@ gis_driver_get_mode (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   return priv->mode;
+}
+
+gboolean
+gis_driver_is_live_session (GisDriver *driver)
+{
+    GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+    return priv->is_live_session;
 }
 
 gboolean
@@ -268,6 +331,9 @@ gis_driver_get_property (GObject      *object,
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   switch (prop_id)
     {
+    case PROP_LIVE_SESSION:
+      g_value_set_boolean (value, priv->is_live_session);
+      break;
     case PROP_MODE:
       g_value_set_enum (value, priv->mode);
       break;
@@ -315,6 +381,23 @@ gis_driver_activate (GApplication *app)
   G_APPLICATION_CLASS (gis_driver_parent_class)->activate (app);
 
   gtk_window_present (GTK_WINDOW (priv->main_window));
+}
+
+static void
+window_realize_cb (GtkWidget *widget,
+                   GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  GdkWindow *window;
+  GdkWMFunction funcs;
+
+  window = gtk_widget_get_window (GTK_WIDGET (priv->main_window));
+  funcs = GDK_FUNC_ALL | GDK_FUNC_MINIMIZE | GDK_FUNC_CLOSE;
+
+  if (!gis_driver_is_small_screen (driver))
+    funcs |= GDK_FUNC_RESIZE | GDK_FUNC_MOVE | GDK_FUNC_MAXIMIZE;
+
+  gdk_window_set_functions (window, funcs);
 }
 
 static gboolean
@@ -412,12 +495,6 @@ screen_size_changed (GdkScreen *screen, GisDriver *driver)
 }
 
 static void
-window_realize_cb (GtkWidget *widget, gpointer user_data)
-{
-  update_screen_size (GIS_DRIVER (user_data));
-}
-
-static void
 gis_driver_startup (GApplication *app)
 {
   GisDriver *driver = GIS_DRIVER (app);
@@ -425,22 +502,16 @@ gis_driver_startup (GApplication *app)
 
   G_APPLICATION_CLASS (gis_driver_parent_class)->startup (app);
 
-  priv->main_window = g_object_new (GTK_TYPE_APPLICATION_WINDOW,
-                                    "application", app,
-                                    "type", GTK_WINDOW_TOPLEVEL,
-                                    "icon-name", "preferences-system",
-                                    "deletable", FALSE,
-                                    NULL);
-
+  priv->main_window = GTK_WINDOW (gis_window_new (driver));
   g_signal_connect (priv->main_window,
                     "realize",
                     G_CALLBACK (window_realize_cb),
-                    (gpointer)app);
+                    app);
 
-  priv->assistant = g_object_new (GIS_TYPE_ASSISTANT, NULL);
-  gtk_container_add (GTK_CONTAINER (priv->main_window), GTK_WIDGET (priv->assistant));
+  priv->assistant = gis_window_get_assistant (GIS_WINDOW (priv->main_window));
 
-  gtk_widget_show (GTK_WIDGET (priv->assistant));
+  priv->is_live_session = running_live_session ();
+  g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
 
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL));
 
@@ -490,6 +561,11 @@ gis_driver_class_init (GisDriverClass *klass)
                   G_STRUCT_OFFSET (GisDriverClass, locale_changed),
                   NULL, NULL, NULL,
                   G_TYPE_NONE, 0);
+
+  obj_props[PROP_LIVE_SESSION] =
+    g_param_spec_boolean ("live-session", "", "",
+                          FALSE,
+                          G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
   obj_props[PROP_MODE] =
     g_param_spec_enum ("mode", "", "",
