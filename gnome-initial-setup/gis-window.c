@@ -86,11 +86,29 @@ gis_window_button_press_event (GtkWidget      *widget,
 }
 
 static void
+gis_window_realize (GtkWidget *widget)
+{
+  GdkWindow *window;
+
+  GTK_WIDGET_CLASS (gis_window_parent_class)->realize (widget);
+
+  window = gtk_widget_get_window (widget);
+  /* disable all the WM functions */
+  gdk_window_set_functions (window, GDK_FUNC_ALL
+                            | GDK_FUNC_RESIZE
+                            | GDK_FUNC_MOVE
+                            | GDK_FUNC_MINIMIZE
+                            | GDK_FUNC_MAXIMIZE
+                            | GDK_FUNC_CLOSE);
+}
+
+static void
 gis_window_class_init (GisWindowClass *klass)
 {
   GtkWidgetClass *wclass = GTK_WIDGET_CLASS (klass);
 
   wclass->button_press_event = gis_window_button_press_event;
+  wclass->realize = gis_window_realize;
 }
 
 static void
@@ -98,6 +116,17 @@ gis_window_init (GisWindow *window)
 {
   GisWindowPrivate *priv = gis_window_get_instance_private (window);
   GdkGeometry size_hints;
+
+  size_hints.min_width = 747;
+  size_hints.min_height = 539;
+  size_hints.max_width = 747;
+  size_hints.max_height = 539;
+  size_hints.win_gravity = GDK_GRAVITY_CENTER;
+
+  gtk_window_set_geometry_hints (GTK_WINDOW (window),
+                                 GTK_WIDGET (window),
+                                 &size_hints,
+                                 GDK_HINT_MIN_SIZE | GDK_HINT_MAX_SIZE | GDK_HINT_WIN_GRAVITY);
 
   priv->assistant = g_object_new (GIS_TYPE_ASSISTANT, NULL);
   gtk_container_add (GTK_CONTAINER (window), GTK_WIDGET (priv->assistant));
@@ -122,6 +151,7 @@ gis_window_new (GisDriver *driver)
   return g_object_new (GIS_TYPE_WINDOW,
 		       "application", driver,
 		       "type", GTK_WINDOW_TOPLEVEL,
+		       "border-width", 12,
 		       "icon-name", "preferences-system",
 		       "resizable", TRUE,
 		       "window-position", GTK_WIN_POS_CENTER_ALWAYS,
