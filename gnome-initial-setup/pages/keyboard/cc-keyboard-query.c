@@ -232,20 +232,6 @@ is_event_on_title (CcKeyboardQuery *self,
   return FALSE;
 }
 
-static gboolean
-cc_keyboard_query_button_press_event (GtkWidget      *widget,
-                                      GdkEventButton *event)
-{
-  CcKeyboardQuery *self = CC_KEYBOARD_QUERY (widget);
-
-  /* eat all the right clicks on the titlebar, since we run in a special session */
-  if (is_event_on_title (self, event) &&
-      event->button == GDK_BUTTON_SECONDARY)
-    return TRUE;
-
-  return GTK_WIDGET_CLASS (cc_keyboard_query_parent_class)->button_press_event (widget, event);
-}
-
 static void
 cc_keyboard_query_realize (GtkWidget *widget)
 {
@@ -289,7 +275,6 @@ cc_keyboard_query_class_init (CcKeyboardQueryClass *klass)
   gtk_widget_class_bind_template_callback (widget_class, key_press_event);
 
   widget_class->realize = cc_keyboard_query_realize;
-  widget_class->button_press_event = cc_keyboard_query_button_press_event;
 
   klass->layout_result = cc_keyboard_query_layout_result;
 }
