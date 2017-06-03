@@ -27,7 +27,6 @@
 #include <locale.h>
 
 #include "gis-assistant.h"
-#include "gis-window.h"
 
 #define GIS_TYPE_DRIVER_MODE (gis_driver_mode_get_type ())
 
@@ -68,7 +67,7 @@ enum {
 static GParamSpec *obj_props[PROP_LAST];
 
 struct _GisDriverPrivate {
-  GtkWidget *main_window;
+  GtkWindow *main_window;
   GisAssistant *assistant;
 
   ActUser *user_account;
@@ -129,6 +128,29 @@ static void
 assistant_page_changed (GtkScrolledWindow *sw)
 {
   gtk_adjustment_set_value (gtk_scrolled_window_get_vadjustment (sw), 0);
+}
+
+static void
+prepare_main_window (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  GtkWidget *child, *sw;
+
+  child = g_object_ref (gtk_bin_get_child (GTK_BIN (priv->main_window)));
+  gtk_container_remove (GTK_CONTAINER (priv->main_window), child);
+  sw = gtk_scrolled_window_new (NULL, NULL);
+  gtk_widget_show (sw);
+  gtk_container_add (GTK_CONTAINER (priv->main_window), sw);
+  gtk_container_add (GTK_CONTAINER (sw), child);
+  g_object_unref (child);
+
+  g_signal_connect_swapped (priv->assistant,
+                            "page-changed",
+                            G_CALLBACK (assistant_page_changed),
+                            sw);
+
+  gtk_window_set_titlebar (priv->main_window,
+                           gis_assistant_get_titlebar (priv->assistant));
 }
 
 static void
@@ -439,6 +461,12 @@ screen_size_changed (GdkScreen *screen, GisDriver *driver)
 }
 
 static void
+window_realize_cb (GtkWidget *widget, gpointer user_data)
+{
+  update_screen_size (GIS_DRIVER (user_data));
+}
+
+static void
 gis_driver_startup (GApplication *app)
 {
   GisDriver *driver = GIS_DRIVER (app);
@@ -446,14 +474,29 @@ gis_driver_startup (GApplication *app)
 
   G_APPLICATION_CLASS (gis_driver_parent_class)->startup (app);
 
-  priv->main_window = gis_window_new (driver);
-  priv->assistant = gis_window_get_assistant (GIS_WINDOW (priv->main_window));
+  priv->main_window = g_object_new (GTK_TYPE_APPLICATION_WINDOW,
+                                    "application", app,
+                                    "type", GTK_WINDOW_TOPLEVEL,
+                                    "icon-name", "preferences-system",
+                                    "deletable", FALSE,
+                                    NULL);
+
+  g_signal_connect (priv->main_window,
+                    "realize",
+                    G_CALLBACK (window_realize_cb),
+                    (gpointer)app);
+
+  priv->assistant = g_object_new (GIS_TYPE_ASSISTANT, NULL);
+  gtk_container_add (GTK_CONTAINER (priv->main_window), GTK_WIDGET (priv->assistant));
+
+  gtk_widget_show (GTK_WIDGET (priv->assistant));
 
   priv->is_live_session = running_live_session ();
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
 
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL));
 
+  prepare_main_window (driver);
   rebuild_pages (driver);
 }
 

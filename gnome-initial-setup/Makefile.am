@@ -41,8 +41,7 @@ gnome_initial_setup_SOURCES = \
 	gis-page-util.c gis-page-util.h \
 	gis-pkexec.c gis-pkexec.h \
 	gis-driver.c gis-driver.h \
-	gis-keyring.c gis-keyring.h \
-	gis-window.c gis-window.h
+	gis-keyring.c gis-keyring.h
 
 gnome_initial_setup_LDADD =	\
 	pages/branding-welcome/libgisbrandingwelcome.la \
