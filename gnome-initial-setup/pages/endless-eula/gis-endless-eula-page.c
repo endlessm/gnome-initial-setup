@@ -279,12 +279,10 @@ static void
 load_css_overrides (GisEndlessEulaPage *page)
 {
   GtkCssProvider *provider;
-  GFile *file;
   GError *error = NULL;
 
   provider = gtk_css_provider_new ();
   gtk_css_provider_load_from_resource (provider, "/org/gnome/initial-setup/endless-eula-page.css");
-  g_object_unref (file);
 
   if (error != NULL)
     {
