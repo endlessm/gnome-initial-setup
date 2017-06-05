@@ -70,7 +70,7 @@ static PageData page_table[] = {
   PAGE (keyboard, FALSE),
   PAGE (endless_eula, TRUE),
   PAGE (network,  FALSE),
-  PAGE (privacy,  FALSE),
+  /* PAGE (privacy,  FALSE), */
   PAGE (timezone, TRUE),
   PAGE (goa,      FALSE),
   PAGE (account,  TRUE),
