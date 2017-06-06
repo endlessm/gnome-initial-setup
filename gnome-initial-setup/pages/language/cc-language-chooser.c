@@ -571,6 +571,7 @@ cc_language_chooser_constructed (GObject *object)
                 priv->language = cc_common_language_get_current_language ();
 
         sync_all_checkmarks (chooser);
+        show_more (chooser);
 }
 
 static void
@@ -659,9 +660,7 @@ cc_language_chooser_class_init (CcLanguageChooserClass *klass)
 static void
 cc_language_chooser_init (CcLanguageChooser *chooser)
 {
-        CcLanguageChooserPrivate *priv = cc_language_chooser_get_instance_private (chooser);
         gtk_widget_init_template (GTK_WIDGET (chooser));
-        priv->showing_extra = FALSE;
 }
 
 void
