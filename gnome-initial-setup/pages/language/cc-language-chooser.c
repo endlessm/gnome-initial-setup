@@ -661,7 +661,7 @@ cc_language_chooser_init (CcLanguageChooser *chooser)
 {
         CcLanguageChooserPrivate *priv = cc_language_chooser_get_instance_private (chooser);
         gtk_widget_init_template (GTK_WIDGET (chooser));
-        priv->showing_extra = FALSE;
+        priv->showing_extra = TRUE;
 }
 
 void
