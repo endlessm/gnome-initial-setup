@@ -267,6 +267,7 @@ update_distro_logo (GisLanguagePage *page)
     const char *logo;
   } id_to_logo[] = {
     { "debian",                         "emblem-debian" },
+    { "endless",                        "endlessos" },
     { "fedora",                         "fedora-logo-icon" },
     { "ubuntu",                         "ubuntu-logo-icon" },
     { "openSUSE Tumbleweed",            "opensuse-logo-icon" },
