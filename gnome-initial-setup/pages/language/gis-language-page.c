@@ -35,10 +35,18 @@
 #include "cc-language-chooser.h"
 #include "gis-language-page.h"
 
-#include <act/act-user-manager.h>
-#include <polkit/polkit.h>
+#include <errno.h>
+#include <langinfo.h>
 #include <locale.h>
+
+#include <act/act-user-manager.h>
+#include <gdesktop-enums.h>
+#include <polkit/polkit.h>
 #include <gtk/gtk.h>
+
+#define CLOCK_SCHEMA "org.gnome.desktop.interface"
+#define CLOCK_FORMAT_KEY "clock-format"
+#define DEFAULT_CLOCK_FORMAT G_DESKTOP_CLOCK_FORMAT_24H
 
 struct _GisLanguagePagePrivate
 {
@@ -55,6 +63,8 @@ struct _GisLanguagePagePrivate
 typedef struct _GisLanguagePagePrivate GisLanguagePagePrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GisLanguagePage, gis_language_page, GIS_TYPE_PAGE);
+
+G_DEFINE_AUTO_CLEANUP_FREE_FUNC(locale_t, freelocale, NULL)
 
 static void
 set_localed_locale (GisLanguagePage *self)
@@ -110,6 +120,68 @@ user_loaded (GObject    *object,
   g_free (new_locale_id);
 }
 
+static GDesktopClockFormat
+get_default_time_format (const gchar *lang_id)
+{
+  const char *ampm, *nl_fmt;
+  locale_t undef_locale;
+
+  if (lang_id == NULL)
+    {
+      undef_locale = uselocale ((locale_t) 0);
+      if (undef_locale == (locale_t) 0)
+        {
+          g_warning ("Failed to detect current locale: %s", g_strerror (errno));
+          return DEFAULT_CLOCK_FORMAT;
+        }
+    }
+  else
+    {
+      undef_locale = newlocale (LC_MESSAGES_MASK | LC_TIME_MASK, lang_id, (locale_t) 0);
+      if (undef_locale == (locale_t) 0)
+        {
+          g_warning ("Failed to create locale %s: %s", lang_id, g_strerror (errno));
+          return DEFAULT_CLOCK_FORMAT;
+        }
+    }
+
+  /* It's necessary to duplicate the locale because undef_locale might be
+   * LC_GLOBAL_LOCALE, and duplocale() will make a concrete locale. Passing
+   * LC_GLOBAL_LOCALE to nl_langinfo_l() is undefined behaviour. */
+  g_auto(locale_t) locale = duplocale (undef_locale);
+  if (locale == (locale_t) 0)
+    {
+      g_warning ("Failed to copy current locale: %s", g_strerror (errno));
+      return DEFAULT_CLOCK_FORMAT;
+    }
+
+  /* Default if we can't get the format from the locale */
+  nl_fmt = nl_langinfo_l (T_FMT, locale);
+  if (nl_fmt == NULL || *nl_fmt == '\0')
+    return DEFAULT_CLOCK_FORMAT;
+
+  /* Fall back to 24 hour specifically if AM/PM is not available in the locale */
+  ampm = nl_langinfo_l (AM_STR, locale);
+  if (ampm == NULL || ampm[0] == '\0')
+    return G_DESKTOP_CLOCK_FORMAT_24H;
+
+  /* Parse out any formats that use 12h format. See stftime(3). */
+  if (g_str_has_prefix (nl_fmt, "%I") ||
+      g_str_has_prefix (nl_fmt, "%l") ||
+      g_str_has_prefix (nl_fmt, "%r"))
+    return G_DESKTOP_CLOCK_FORMAT_12H;
+  else
+    return G_DESKTOP_CLOCK_FORMAT_24H;
+}
+
+static void
+set_time_format (const char *lang_id)
+{
+  g_autoptr(GSettings) settings = g_settings_new (CLOCK_SCHEMA);
+  GDesktopClockFormat clock_format = get_default_time_format (lang_id);
+  g_settings_set_enum (settings, CLOCK_FORMAT_KEY, clock_format);
+}
+
 static void
 language_changed (CcLanguageChooser  *chooser,
                   GParamSpec         *pspec,
@@ -125,6 +197,7 @@ language_changed (CcLanguageChooser  *chooser,
 
   gis_driver_set_user_language (driver, priv->new_locale_id, TRUE);
   gtk_widget_set_default_direction (gtk_get_locale_direction ());
+  set_time_format (priv->new_locale_id);
 
   if (gis_driver_get_mode (driver) == GIS_DRIVER_MODE_NEW_USER) {
       if (g_permission_get_allowed (priv->permission)) {
@@ -229,6 +302,7 @@ gis_language_page_constructed (GObject *object)
   G_OBJECT_CLASS (gis_language_page_parent_class)->constructed (object);
 
   update_distro_logo (page);
+  set_time_format (NULL);
 
   g_signal_connect (priv->language_chooser, "notify::language",
                     G_CALLBACK (language_changed), page);
