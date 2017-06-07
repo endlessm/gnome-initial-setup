@@ -76,7 +76,7 @@ struct _GisTimezonePage
   GCancellable *dtm_cancellable;
 
   GnomeWallClock *clock;
-  GDesktopClockFormat clock_format;
+  GSettings *clock_settings;
   gboolean in_search;
 
   gulong search_entry_text_changed_id;
@@ -276,9 +276,12 @@ update_timezone (GisTimezonePage *page, TzLocation *location)
   char *time_label;
   GTimeZone *zone;
   GDateTime *date;
+  GDesktopClockFormat clock_format;
   gboolean use_ampm;
 
-  if (page->clock_format == G_DESKTOP_CLOCK_FORMAT_12H)
+  clock_format = g_settings_get_enum (page->clock_settings, CLOCK_FORMAT_KEY);
+
+  if (clock_format == G_DESKTOP_CLOCK_FORMAT_12H)
     use_ampm = TRUE;
   else
     use_ampm = FALSE;
@@ -402,7 +405,6 @@ gis_timezone_page_constructed (GObject *object)
 {
   GisTimezonePage *page = GIS_TIMEZONE_PAGE (object);
   GError *error;
-  GSettings *settings;
 
   G_OBJECT_CLASS (gis_timezone_page_parent_class)->constructed (object);
 
@@ -423,9 +425,7 @@ gis_timezone_page_constructed (GObject *object)
   page->clock = g_object_new (GNOME_TYPE_WALL_CLOCK, NULL);
   g_signal_connect (page->clock, "notify::clock", G_CALLBACK (on_clock_changed), page);
 
-  settings = g_settings_new (CLOCK_SCHEMA);
-  page->clock_format = g_settings_get_enum (settings, CLOCK_FORMAT_KEY);
-  g_object_unref (settings);
+  page->clock_settings = g_settings_new (CLOCK_SCHEMA);
 
   set_location (page, NULL);
 
@@ -457,6 +457,7 @@ gis_timezone_page_dispose (GObject *object)
 
   g_clear_object (&page->dtm);
   g_clear_object (&page->clock);
+  g_clear_object (&page->clock_settings);
 
   G_OBJECT_CLASS (gis_timezone_page_parent_class)->dispose (object);
 }
