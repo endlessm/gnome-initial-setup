@@ -54,6 +54,8 @@ void      gis_assistant_add_page          (GisAssistant *assistant,
 void      gis_assistant_next_page         (GisAssistant *assistant);
 void      gis_assistant_previous_page     (GisAssistant *assistant);
 GisPage * gis_assistant_get_current_page  (GisAssistant *assistant);
+GisPage * gis_assistant_get_page_by_id    (GisAssistant *assistant,
+                                           const char   *id);
 GList   * gis_assistant_get_all_pages     (GisAssistant *assistant);
 const gchar *gis_assistant_get_title      (GisAssistant *assistant);
 GtkWidget *gis_assistant_get_titlebar     (GisAssistant *assistant);
