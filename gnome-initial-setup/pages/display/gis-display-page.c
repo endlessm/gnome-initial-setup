@@ -45,7 +45,6 @@ typedef struct {
   GnomeRROutputInfo *current_output;
 
   guint screen_changed_id;
-  guint next_page_id;
 } GisDisplayPagePrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GisDisplayPage, gis_display_page, GIS_TYPE_PAGE);
@@ -168,15 +167,6 @@ update_overscan (GisDisplayPage *page)
 }
 
 static void
-next_page_cb (GisAssistant *assistant,
-              GisPage *which_page,
-              GisPage *this_page)
-{
-  if (which_page == this_page)
-    update_overscan (GIS_DISPLAY_PAGE (this_page));
-}
-
-static void
 overscan_radio_toggled (GtkWidget *radio,
                         GisDisplayPage *page)
 {
@@ -204,13 +194,6 @@ gis_display_page_dispose (GObject *gobject)
     {
       g_signal_handler_disconnect (priv->screen, priv->screen_changed_id);
       priv->screen_changed_id = 0;
-    }
-
-  if (priv->next_page_id != 0)
-    {
-      g_signal_handler_disconnect (gis_driver_get_assistant (GIS_PAGE (page)->driver),
-                                   priv->next_page_id);
-      priv->next_page_id = 0;
     }
 
   g_clear_object (&priv->current_config);
@@ -259,11 +242,6 @@ gis_display_page_constructed (GObject *object)
                                                       G_CALLBACK (read_screen_config),
                                                       page);
 
-  priv->next_page_id = g_signal_connect (gis_driver_get_assistant (GIS_PAGE (page)->driver),
-                                         "next-page",
-                                         G_CALLBACK (next_page_cb),
-                                         page);
-
   widget = priv->overscan_on;
   g_signal_connect (widget, "toggled",
                     G_CALLBACK (overscan_radio_toggled), page);
@@ -274,6 +252,15 @@ gis_display_page_constructed (GObject *object)
 
  out:
   gtk_widget_set_visible (GTK_WIDGET (page), visible);
+}
+
+static gboolean
+gis_display_page_apply (GisPage *gis_page,
+                        GCancellable *cancellable)
+{
+  update_overscan (GIS_DISPLAY_PAGE (gis_page));
+
+  return FALSE;
 }
 
 static void
@@ -295,6 +282,7 @@ gis_display_page_class_init (GisDisplayPageClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisDisplayPage, overscan_default_selection);
 
   page_class->page_id = PAGE_ID;
+  page_class->apply = gis_display_page_apply;
   page_class->locale_changed = gis_display_page_locale_changed;
   object_class->constructed = gis_display_page_constructed;
   object_class->dispose = gis_display_page_dispose;
