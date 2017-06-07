@@ -79,7 +79,7 @@ struct _GisTimezonePagePrivate
   GCancellable *dtm_cancellable;
 
   GnomeWallClock *clock;
-  GDesktopClockFormat clock_format;
+  GSettings *clock_settings;
   gboolean in_search;
 
   gulong search_entry_text_changed_id;
@@ -290,9 +290,12 @@ update_timezone (GisTimezonePage *page, TzLocation *location)
   char *time_label;
   GTimeZone *zone;
   GDateTime *date;
+  GDesktopClockFormat clock_format;
   gboolean use_ampm;
 
-  if (priv->clock_format == G_DESKTOP_CLOCK_FORMAT_12H)
+  clock_format = g_settings_get_enum (priv->clock_settings, CLOCK_FORMAT_KEY);
+
+  if (clock_format == G_DESKTOP_CLOCK_FORMAT_12H)
     use_ampm = TRUE;
   else
     use_ampm = FALSE;
@@ -417,7 +420,6 @@ gis_timezone_page_constructed (GObject *object)
   GisTimezonePage *page = GIS_TIMEZONE_PAGE (object);
   GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
   GError *error;
-  GSettings *settings;
 
   G_OBJECT_CLASS (gis_timezone_page_parent_class)->constructed (object);
 
@@ -438,9 +440,7 @@ gis_timezone_page_constructed (GObject *object)
   priv->clock = g_object_new (GNOME_TYPE_WALL_CLOCK, NULL);
   g_signal_connect (priv->clock, "notify::clock", G_CALLBACK (on_clock_changed), page);
 
-  settings = g_settings_new (CLOCK_SCHEMA);
-  priv->clock_format = g_settings_get_enum (settings, CLOCK_FORMAT_KEY);
-  g_object_unref (settings);
+  priv->clock_settings = g_settings_new (CLOCK_SCHEMA);
 
   set_location (page, NULL);
 
@@ -455,6 +455,8 @@ gis_timezone_page_constructed (GObject *object)
                     G_CALLBACK (map_location_changed), page);
   g_signal_connect (GTK_WIDGET (page), "parent-set",
                     G_CALLBACK (page_added), NULL);
+  g_signal_connect (priv->clock_settings, "notify::" CLOCK_FORMAT_KEY,
+                    G_CALLBACK (update_timezone), page);
 
   gtk_widget_show (GTK_WIDGET (page));
 }
@@ -475,6 +477,7 @@ gis_timezone_page_dispose (GObject *object)
 
   g_clear_object (&priv->dtm);
   g_clear_object (&priv->clock);
+  g_clear_object (&priv->clock_settings);
 
   G_OBJECT_CLASS (gis_timezone_page_parent_class)->dispose (object);
 }
