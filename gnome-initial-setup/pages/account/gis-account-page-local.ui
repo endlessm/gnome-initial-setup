@@ -108,11 +108,21 @@
               </object>
             </child>
             <child>
+              <object class="GtkCheckButton" id="password_toggle">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Set a password</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">6</property>
+                </layout>
+              </object>
+            </child>
+            <child>
               <object class="GtkBox" id="enable_parental_controls_box">
                 <property name="orientation">vertical</property>
                 <layout>
                   <property name="column">1</property>
-                  <property name="row">6</property>
+                  <property name="row">7</property>
                 </layout>
                 <child>
                   <object class="GtkCheckButton" id="enable_parental_controls_check_button">
