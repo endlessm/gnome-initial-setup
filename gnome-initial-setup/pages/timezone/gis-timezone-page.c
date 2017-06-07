@@ -75,6 +75,30 @@ typedef struct _GisTimezonePagePrivate GisTimezonePagePrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GisTimezonePage, gis_timezone_page, GIS_TYPE_PAGE);
 
+static GDesktopClockFormat
+get_default_time_format (void)
+{
+  const char *ampm, *nl_fmt;
+
+  /* Default to 24 hour if we can't get the format from the locale */
+  nl_fmt = nl_langinfo (T_FMT);
+  if (nl_fmt == NULL || *nl_fmt == '\0')
+    return G_DESKTOP_CLOCK_FORMAT_24H;
+
+  /* Default to 24 hour if AM/PM is not available in the locale */
+  ampm = nl_langinfo (AM_STR);
+  if (ampm == NULL || ampm[0] == '\0')
+    return G_DESKTOP_CLOCK_FORMAT_24H;
+
+  /* Parse out any formats that use 12h format. See stftime(3). */
+  if (g_str_has_prefix (nl_fmt, "%I") ||
+      g_str_has_prefix (nl_fmt, "%l") ||
+      g_str_has_prefix (nl_fmt, "%r"))
+    return G_DESKTOP_CLOCK_FORMAT_12H;
+  else
+    return G_DESKTOP_CLOCK_FORMAT_24H;
+}
+
 static void
 set_timezone_cb (GObject      *source,
                  GAsyncResult *res,
@@ -388,7 +412,8 @@ gis_timezone_page_constructed (GObject *object)
   g_signal_connect (priv->clock, "notify::clock", G_CALLBACK (on_clock_changed), page);
 
   settings = g_settings_new (CLOCK_SCHEMA);
-  priv->clock_format = g_settings_get_enum (settings, CLOCK_FORMAT_KEY);
+  priv->clock_format = get_default_time_format ();
+  g_settings_set_enum (settings, CLOCK_FORMAT_KEY, priv->clock_format);
   g_object_unref (settings);
 
   priv->geoclue_cancellable = g_cancellable_new ();
