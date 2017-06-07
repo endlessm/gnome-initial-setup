@@ -112,6 +112,16 @@
                     </style>
                   </object>
                 </child>
+                <child>
+                  <object class="GtkCheckButton" id="password_toggle">
+                    <property name="visible">True</property>
+		    <property name="label" translatable="yes">Set a password</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">6</property>
+                    </layout>
+                  </object>
+                </child>
               </object>
             </child>
             <child>

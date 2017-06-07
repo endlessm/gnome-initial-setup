@@ -65,6 +65,8 @@ struct _GisAccountPageLocal
   GtkWidget *enable_parental_controls_switch_row;
   gboolean   has_custom_username;
   GtkWidget *username_explanation;
+  GtkWidget *password_toggle;
+  gboolean   passwordless;
   UmPhotoDialog *photo_dialog;
 
   gint timeout_id;
@@ -137,6 +139,8 @@ validate (GisAccountPageLocal *page)
   if (!g_str_equal (tip, current_label) && !g_str_equal (current_label, ""))
     gtk_accessible_announce (GTK_ACCESSIBLE (page), tip, GTK_ACCESSIBLE_ANNOUNCEMENT_PRIORITY_MEDIUM);
   gtk_label_set_text (GTK_LABEL (page->username_explanation), tip);
+
+  page->passwordless = !gtk_check_button_get_active (GTK_CHECK_BUTTON (page->password_toggle));
 
   validation_changed (page);
 
@@ -301,6 +305,8 @@ gis_account_page_local_constructed (GObject *object)
                             G_CALLBACK (confirm), page);
   g_signal_connect_swapped (page->fullname_row, "entry-activated",
                             G_CALLBACK (confirm), page);
+  g_signal_connect_swapped (page->password_toggle, "notify::active",
+                            G_CALLBACK (validate), page);
   g_signal_connect (page->enable_parental_controls_switch_row, "notify::active",
                     G_CALLBACK (enable_parental_controls_active_toggled), page);
 
@@ -474,6 +480,9 @@ local_create_done (GObject      *source_object,
 
   set_user_avatar (data->page, user);
 
+  if (data->local->passwordless)
+    act_user_set_password_mode (user, ACT_USER_PASSWORD_MODE_NONE);
+
   g_signal_emit (data->local, signals[MAIN_USER_CREATED], 0, user, "");
 
   gis_page_save_complete (data->page, NULL);
@@ -597,6 +606,7 @@ gis_account_page_local_class_init (GisAccountPageLocalClass *klass)
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, username_row);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, username_validity_icon);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, username_explanation);
+  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, password_toggle);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, enable_parental_controls_group);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, enable_parental_controls_switch_row);
   gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), on_remove_avatar_button_clicked);
