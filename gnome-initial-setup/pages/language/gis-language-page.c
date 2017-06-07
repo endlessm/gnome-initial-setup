@@ -250,6 +250,12 @@ update_distro_logo (GisLanguagePage *page)
     {
       g_object_set (priv->logo, "icon-name", "suse-logo-icon", NULL);
     }
+  else if (g_strcmp0 (id, "endless") == 0)
+    {
+      g_object_set (priv->logo,
+                    "resource", "/org/gnome/initial-setup/EndlessLogo.svg",
+                    NULL);
+    }
 
   g_free (id);
 }
