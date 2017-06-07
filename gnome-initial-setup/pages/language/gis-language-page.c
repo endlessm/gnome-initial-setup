@@ -43,6 +43,8 @@
 
 struct _GisLanguagePagePrivate
 {
+  GtkWidget *logo;
+  GtkWidget *welcome_widget;
   GtkWidget *language_chooser;
 
   GDBusProxy *localed;
@@ -161,6 +163,9 @@ language_changed (CcLanguageChooser  *chooser,
 
   gis_driver_set_user_language (driver, priv->new_locale_id);
 
+  gis_welcome_widget_show_locale (GIS_WELCOME_WIDGET (priv->welcome_widget),
+                                  priv->new_locale_id);
+
   gis_driver_locale_changed (driver);
 }
 
@@ -220,6 +225,35 @@ get_item (const char *buffer, const char *name)
 }
 
 static void
+update_distro_logo (GisLanguagePage *page)
+{
+  GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (page);
+  char *buffer;
+  char *id;
+
+  id = NULL;
+
+  if (g_file_get_contents ("/etc/os-release", &buffer, NULL, NULL))
+    {
+      id = get_item (buffer, "ID");
+      g_free (buffer);
+    }
+
+  if (g_strcmp0 (id, "fedora") == 0)
+    {
+      g_object_set (priv->logo, "icon-name", "fedora-logo-icon", NULL);
+    }
+  else if (g_strcmp0 (id, "endless") == 0)
+    {
+      g_object_set (priv->logo,
+                    "resource", "/org/gnome/initial-setup/EndlessLogo.svg",
+                    NULL);
+    }
+
+  g_free (id);
+}
+
+static void
 language_confirmed (CcLanguageChooser *chooser,
                     GisLanguagePage   *page)
 {
@@ -237,6 +271,8 @@ gis_language_page_constructed (GObject *object)
   g_type_ensure (CC_TYPE_LANGUAGE_CHOOSER);
 
   G_OBJECT_CLASS (gis_language_page_parent_class)->constructed (object);
+
+  update_distro_logo (page);
 
   g_signal_connect (priv->language_chooser, "notify::language",
                     G_CALLBACK (language_changed), page);
@@ -283,7 +319,7 @@ gis_language_page_get_accel_group (GisPage *page)
 static void
 gis_language_page_locale_changed (GisPage *page)
 {
-  gis_page_set_title (GIS_PAGE (page), _("Language"));
+  gis_page_set_title (GIS_PAGE (page), _("Welcome"));
 }
 
 static void
@@ -308,7 +344,9 @@ gis_language_page_class_init (GisLanguagePageClass *klass)
 
   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-language-page.ui");
 
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLanguagePage, welcome_widget);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLanguagePage, language_chooser);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLanguagePage, logo);
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_language_page_locale_changed;
