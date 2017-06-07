@@ -275,12 +275,21 @@ update_distro_logo (GisLanguagePage *page)
     { "SLES",                           "suse-logo-icon" },
   };
 
-  for (i = 0; i < G_N_ELEMENTS (id_to_logo); i++)
+  if (g_strcmp0 (id, "endless") == 0)
     {
-      if (g_strcmp0 (id, id_to_logo[i].id) == 0)
+      g_object_set (priv->logo,
+                    "resource", "/org/gnome/initial-setup/EndlessLogo.svg",
+                    NULL);
+    }
+  else
+    {
+      for (i = 0; i < G_N_ELEMENTS (id_to_logo); i++)
         {
-          g_object_set (priv->logo, "icon-name", id_to_logo[i].logo, NULL);
-          break;
+          if (g_strcmp0 (id, id_to_logo[i].id) == 0)
+            {
+              g_object_set (priv->logo, "icon-name", id_to_logo[i].logo, NULL);
+              break;
+            }
         }
     }
 }
