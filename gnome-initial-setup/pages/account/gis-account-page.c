@@ -48,11 +48,22 @@ typedef struct _GisAccountPagePrivate GisAccountPagePrivate;
 G_DEFINE_TYPE_WITH_PRIVATE (GisAccountPage, gis_account_page, GIS_TYPE_PAGE);
 
 static void
+set_password_page_visibility (GisAccountPage *page,
+                              gboolean        visible)
+{
+  GisAssistant *assistant = gis_driver_get_assistant (GIS_PAGE (page)->driver);
+  GisPage *password_page = gis_assistant_get_page_by_id (assistant, "password");
+
+  gtk_widget_set_visible (GTK_WIDGET (password_page), visible);
+}
+
+static void
 enterprise_apply_complete (GisPage  *dummy,
                            gboolean  valid,
                            gpointer  user_data)
 {
   GisAccountPage *page = GIS_ACCOUNT_PAGE (user_data);
+  set_password_page_visibility (page, FALSE);
   gis_driver_set_username (GIS_PAGE (page)->driver, NULL);
   gis_page_apply_complete (GIS_PAGE (page), valid);
 }
@@ -61,10 +72,16 @@ static gboolean
 page_validate (GisAccountPage *page)
 {
   GisAccountPagePrivate *priv = gis_account_page_get_instance_private (page);
+  gboolean passwordless, local_valid;
 
   switch (priv->mode) {
   case UM_LOCAL:
-    return gis_account_page_local_validate (GIS_ACCOUNT_PAGE_LOCAL (priv->page_local));
+    local_valid = gis_account_page_local_validate (GIS_ACCOUNT_PAGE_LOCAL (priv->page_local));
+    if (local_valid) {
+      passwordless = gis_account_page_local_is_passwordless (GIS_ACCOUNT_PAGE_LOCAL (priv->page_local));
+      set_password_page_visibility (page, !passwordless);
+    }
+    return local_valid;
   case UM_ENTERPRISE:
     return gis_account_page_enterprise_validate (GIS_ACCOUNT_PAGE_ENTERPRISE (priv->page_enterprise));
   default:

@@ -250,11 +250,6 @@ username_changed (GObject *obj, GParamSpec *pspec, GisPasswordPage *page)
   GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
   priv->username = gis_driver_get_username (GIS_DRIVER (obj));
 
-  if (priv->username)
-    gtk_widget_show (GTK_WIDGET (page));
-  else
-    gtk_widget_hide (GTK_WIDGET (page));  
-
   clear_entry_validation_error (GTK_ENTRY (priv->password_entry));
   clear_entry_validation_error (GTK_ENTRY (priv->confirm_entry));
 
