@@ -68,7 +68,7 @@ autostart_DATA =					\
 libexec_SCRIPTS =						\
 	gnome-welcome-tour
 
-tmpfilesdir = $(libdir)/tmpfiles.d
+tmpfilesdir = $(prefix)/lib/tmpfiles.d
 tmpfiles_DATA =                                         \
 	product_serial.conf                             \
 	$(NULL)
