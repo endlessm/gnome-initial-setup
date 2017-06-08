@@ -132,6 +132,24 @@ on_apply_done (GisPage *page,
     switch_to_next_page (assistant);
 }
 
+GisPage *
+gis_assistant_get_page_by_id (GisAssistant *assistant,
+                              const char   *id)
+{
+  GisAssistantPrivate *priv = gis_assistant_get_instance_private (assistant);
+  GList *l;
+
+  for (l = priv->pages; l != NULL; l = l->next) {
+    GisPage *page = l->data;
+    const char *page_id = GIS_PAGE_GET_CLASS (page)->page_id;
+
+    if (g_strcmp0 (page_id, id) == 0)
+      return page;
+  }
+
+  return NULL;
+}
+
 void
 gis_assistant_next_page (GisAssistant *assistant)
 {
