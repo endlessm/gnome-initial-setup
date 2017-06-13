@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-13 14:16-0700\n"
-"PO-Revision-Date: 2017-06-13 21:21+0000\n"
+"PO-Revision-Date: 2017-06-13 21:28+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: German (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -34,11 +34,11 @@ msgstr "_Weiter"
 
 #: ../gnome-initial-setup/gis-assistant.c:454
 msgid "_Accept"
-msgstr ""
+msgstr "_Akzeptieren"
 
 #: ../gnome-initial-setup/gis-assistant.c:455
 msgid "_Skip"
-msgstr ""
+msgstr "_Überspringen"
 
 #: ../gnome-initial-setup/gis-assistant.c:456
 msgid "_Previous"
@@ -59,7 +59,7 @@ msgstr "SD-Karte: %s"
 
 #: ../gnome-initial-setup/gnome-initial-setup.c:257
 msgid "Force existing user mode"
-msgstr ""
+msgstr "Existierenden Benutzermodus erzwingen"
 
 #: ../gnome-initial-setup/gnome-initial-setup.c:263
 msgid "- GNOME initial setup"
@@ -68,7 +68,7 @@ msgstr "- GNOME-Ersteinrichtung"
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:284
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
 msgid "About You"
-msgstr ""
+msgstr "Über Sie"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:182
 msgid "Failed to register account"
@@ -88,13 +88,13 @@ msgstr "Anmeldung in der Domäne fehlgeschlagen"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:1
 msgid "Enterprise Login"
-msgstr ""
+msgstr "Unternehmenszugang"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:2
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device."
-msgstr ""
+msgstr "Unternehmensanmeldung erlaubt es einen existierenden, zentral verwalteten Benutzer auf diesem Gerät zu verwenden."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:3
 msgid "_Domain"
@@ -127,7 +127,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
+msgstr "Um Unternehmensanmeldungen zu verwenden, muss dieser Rechner in einer Domäne registriert werden. Bitten Sie den Netzwerkadministrator, das Domänen-Passwort hier einzugeben und wählen Sie einen eindeutigen Namen für Ihren Rechner."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:10
 msgid "_Computer"
@@ -143,19 +143,19 @@ msgstr "Systemverwalter-Passwort"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.c:208
 msgid "Please check the name and username. You can choose a picture too."
-msgstr ""
+msgstr "Bitte überprüfen Sie den Namen und den Benutzernamen. Sie können auch ein Bild wählen."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.c:414
 msgid "We need a few details to complete setup."
-msgstr ""
+msgstr "Wir benötigen ein paar Details um das Einrichten abzuschließen."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:1
 msgid "Avatar image"
-msgstr ""
+msgstr "Benutzerbild"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:3
 msgid "Please provide a name and username. You can choose a picture too."
-msgstr ""
+msgstr "Bitte geben Sie den Namen und den Benutzernamen an. Sie können auch ein Bild wählen."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:4
 msgid "_Full Name"
@@ -167,15 +167,15 @@ msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:1
 msgid "Set Up _Enterprise Login"
-msgstr ""
+msgstr "_Unternehmenszugang einrichten"
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:246
 msgid "Disable image"
-msgstr ""
+msgstr "Bild deaktivieren"
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:264
 msgid "Take a photo..."
-msgstr ""
+msgstr "Ein Foto aufnehmen …"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
@@ -199,31 +199,31 @@ msgstr "Ungültiges Passwort, versuchen Sie es erneut."
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
 msgid "Couldn't connect to the %s domain: %s"
-msgstr ""
+msgstr "Es konnte nicht mit der Domäne »%s« verbunden werden: %s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:247
 #, c-format
 msgid "A user with the username '%s' already exists."
-msgstr ""
+msgstr "Ein Benutzer mit dem Benutzernamen »%s« ist bereits vorhanden."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:251
 #, c-format
 msgid "The username is too long."
-msgstr ""
+msgstr "Der Benutzername ist zu lang."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:254
 msgid "The username cannot start with a '-'."
-msgstr ""
+msgstr "Der Benutzername darf nicht mit einem »-« beginnen."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:257
 msgid ""
 "The username should only consist of lower and upper case letters from a-z, "
 "digits and any of characters '.', '-' and '_'."
-msgstr ""
+msgstr "Der Benutzername sollte nur aus diesen Zeichen bestehen:\n ➣ Buchstaben des englischen Alphabets\n ➣ Ziffern\n ➣ den Zeichen ».«, »-« und »_«"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:261
 msgid "This will be used to name your home folder and can't be changed."
-msgstr ""
+msgstr "Dies wird genutzt, um den Namen des Persönlichen Ordners festzulegen, und kann nicht geändert werden."
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:269
 msgid "Display"
@@ -299,18 +299,18 @@ msgstr "Online-Konten"
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:1
 msgid "Connect Your Online Accounts"
-msgstr ""
+msgstr "Verbinden Sie Ihre Online-Konten"
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:2
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
+msgstr "Durch Verbinden Ihrer Konten können Sie einfach auf E-Mails, Kalender, Kontakte, Dokumente und Fotos zugreifen."
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:3
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr ""
+msgstr "Benutzerkonten können jederzeit in den Einstellungen hinzugefügt und entfernt werden."
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:241
 msgid "Preview"
@@ -348,7 +348,7 @@ msgstr "Texteingabe"
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
 msgid "Select your keyboard layout or an input method."
-msgstr ""
+msgstr "Wählen Sie Ihre Tastaturbelegung oder eine Eingabemethode."
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:3
 msgid "Help Detect My Keyboard Layout"
@@ -375,7 +375,7 @@ msgstr "Willkommen"
 #. * suitable for this in your language you may replace it.
 #: ../gnome-initial-setup/pages/language/gis-welcome-widget.c:123
 msgid "Welcome!"
-msgstr ""
+msgstr "Willkommen!"
 
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:183
 #, c-format
@@ -413,7 +413,7 @@ msgstr "Andere …"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.c:355
 msgid "Wireless networking is disabled"
-msgstr ""
+msgstr "Funknetzwerke sind deaktiviert"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.c:361
 msgid "Checking for available wireless networks"
@@ -425,14 +425,14 @@ msgstr "Netzwerk"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:1
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Funknetzwerk"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:2
 msgid ""
 "Connecting to the Internet will enable you to set the time, add your "
 "details, and enable you to access your email, calendar, and contacts. It is "
 "also necessary for enterprise login accounts."
-msgstr ""
+msgstr "Wenn Sie sich mit dem Internet verbinden, können Sie die Zeit einstellen, persönliche Informationen angeben und auf Ihre E-Mails, Kalender und Kontakte zugreifen. Die Verbindung zum Internet wird auch für Unternehmensanmeldungen benötigt."
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
 msgid "No wireless available"
@@ -440,31 +440,31 @@ msgstr "Kein Funknetzwerk verfügbar"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:4
 msgid "Turn On"
-msgstr ""
+msgstr "Einschalten"
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.c:170
 msgid "This is a weak password."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort."
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.c:184
 msgid "The passwords do not match."
-msgstr ""
+msgstr "Passwörter stimmen nicht überein."
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.c:348
 msgid "Password"
-msgstr ""
+msgstr "Passwort"
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:1
 msgid "Set a Password"
-msgstr ""
+msgstr "Ein Passwort setzen"
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:2
 msgid "Be careful not to lose your password."
-msgstr ""
+msgstr "Seien Sie vorsichtig und verlieren Sie nicht Ihr Passwort."
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:4
 msgid "_Verify"
-msgstr ""
+msgstr "Über_prüfen"
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:5
 msgid "Show password"
@@ -481,14 +481,14 @@ msgstr ""
 #: ../gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
 msgid "The new password needs to be different from the old one."
-msgstr ""
+msgstr "Das neue Passwort muss sich vom alten Passwort unterscheiden."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
+msgstr "Dieses Passwort ist sehr ähnlich zu Ihrem letzten. Ändern Sie einige Buchstaben und Zahlen."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:85
 #: ../gnome-initial-setup/pages/password/pw-utils.c:93
@@ -496,124 +496,124 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
+msgstr "Dieses Passwort ist sehr ähnlich zu Ihrem letzten. Versuchen Sie, das Kennwort ein bisschen mehr zu ändern."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. A password without your user name would be "
 "stronger."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort. Ein Passwort ohne Ihren Benutzernamen wäre sicherer."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort. Versuchen Sie Ihren Namen im Passwort zu vermeiden."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort. Versuchen Sie einige der Wörter zu vermeiden, die im Passwort vorkommen."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort. Versuchen Sie geläufige Wörter zu vermeiden."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort. Versuchen Sie das Neuanordnen bestehender Wörter zu vermeiden."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort. Versuchen Sie mehr Ziffern zu verwenden."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort. Versuchen Sie mehr Großbuchstaben zu verwenden."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort. Versuchen Sie mehr Kleinbuchstaben zu verwenden."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort. Versuchen Sie, andere Zeichen wie Satzzeichen zu verwenden."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort. Versuchen Sie Buchstaben, Ziffern und Satzzeichen zu mischen."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort. Versuchen Sie, Wiederholungen eines Zeichens zu vermeiden."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort. Versuchen Sie, Wiederholungen eines Zeichens zu vermeiden: Mischen Sie Buchstaben, Ziffern und Satzzeichen."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort. Versuchen Sie, Zeichenfolgen wie »1234« oder »abcd« zu vermeiden."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid "This is a weak password. Try to add more letters, numbers and symbols."
-msgstr ""
+msgstr "Das ist ein unsicheres Passwort. Versuchen Sie, mehr Buchstaben, Zahlen oder Symbole hinzuzufügen."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and use a number or two."
-msgstr ""
+msgstr "Wechseln Sie zwischen Groß- und Kleinbuchstaben und verwenden Sie ein oder zwei verschiedene Ziffern."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Good password! Adding more letters, numbers and punctuation will make it "
 "stronger."
-msgstr ""
+msgstr "Gutes Passwort! Weitere Buchstaben, Zahlen und Satzzeichen werden es noch sicherer machen."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:141
 msgctxt "Password strength"
 msgid "Strength: Weak"
-msgstr ""
+msgstr "Sicherheit: Gering"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:145
 msgctxt "Password strength"
 msgid "Strength: Low"
-msgstr ""
+msgstr "Sicherheit: Niedrig"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:148
 msgctxt "Password strength"
 msgid "Strength: Medium"
-msgstr ""
+msgstr "Sicherheit: Mäßig"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:151
 msgctxt "Password strength"
 msgid "Strength: Good"
-msgstr ""
+msgstr "Sicherheit: Gut"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:154
 msgctxt "Password strength"
 msgid "Strength: High"
-msgstr ""
+msgstr "Sicherheit: Hoch"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -623,50 +623,50 @@ msgstr ""
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
+msgstr "Das Senden von Berichten über technische Probleme hilft uns, %s zu verbessern. Berichte werden anonym gesendet und persönliche Daten daraus entfernt."
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:116
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:175
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:250
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Datenschutzrichtlinie"
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:286
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:1
 msgid "Privacy"
-msgstr ""
+msgstr "Datenschutz"
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:2
 msgid "Location Services"
-msgstr ""
+msgstr "Ortungsdienste"
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:3
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
+msgstr "Legt fest, ob Anwendungen Ihren Ort bestimmen dürfen. Es wird angezeigt, wenn Ortungsdienste verwendet werden."
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:4
 msgid "Automatic Problem Reporting"
-msgstr ""
+msgstr "Automatische Problemberichterstattung"
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:5
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr ""
+msgstr "Die Datenschutzeinstellungen können jederzeit in den Einstellungen geändert werden."
 
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:228
 msgid "No regions found"
-msgstr ""
+msgstr "Keine Regionen gefunden"
 
 #: ../gnome-initial-setup/pages/region/gis-region-page.c:226
 #: ../gnome-initial-setup/pages/region/gis-region-page.ui.h:1
 msgid "Region"
-msgstr ""
+msgstr "Region"
 
 #: ../gnome-initial-setup/pages/region/gis-region-page.ui.h:2
 msgid "Choose your country or region."
-msgstr ""
+msgstr "Wählen Sie Ihr Land oder Ihre Region."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
@@ -674,7 +674,7 @@ msgstr ""
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:305
 #, c-format
 msgid "_Start using %s"
-msgstr ""
+msgstr "%s _starten"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:335
 msgid "You're ready to try Endless OS"
@@ -688,41 +688,41 @@ msgstr "<b>Alle angelegten Dateien und Dokumente werden beim Neustart oder Beend
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:347
 msgid "Ready to Go"
-msgstr ""
+msgstr "Bereit zum Starten"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:1
 msgid "You're ready to go!"
-msgstr ""
+msgstr "Alles eingerichtet!"
 
 #. Translators: "city, country"
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:261
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:298
 msgid "UTC%:::z"
-msgstr ""
+msgstr "UTC%:::z"
 
 #. Translators: This is the time format used in 12-hour mode.
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
 msgid "%l:%M %p"
-msgstr ""
+msgstr "%l:%M %p"
 
 #. Translators: This is the time format used in 24-hour mode.
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
 msgid "%R"
-msgstr ""
+msgstr "%R"
 
 #. Translators: "timezone (utc shift)"
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:449
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:1
@@ -733,11 +733,11 @@ msgstr "Zeitzone"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
+msgstr "Die Zeitzone wird automatisch gesetzt, wenn Ihr Ort gefunden wurde. Sie können auch selbst nach einem Ort suchen."
 
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:3
 msgid "Please search for a nearby city"
-msgstr ""
+msgstr "Bitte suchen Sie nach einer nahegelegenen Stadt"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -748,33 +748,33 @@ msgid ""
 "Proprietary software sources provide access to additional software, "
 "including web browsers and games. This software typically has restrictions "
 "on use and access to source code, and is not provided by %s."
-msgstr ""
+msgstr "Proprietäre Software ermöglicht den Zugriff auf zusätzliche Software wie Internet-Browser oder Spiele. Diese Software unterliegt üblicherweise Einschränkungen bezüglich Verwendung und Zugriff auf den Quellcode und wird von %s nicht zur Verfügung gestellt."
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.c:245
 msgid "Software Sources"
-msgstr ""
+msgstr "Softwarequellen"
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:1
 msgid "Additional Software Sources"
-msgstr ""
+msgstr "Zusätzliche Softwarequellen"
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:2
 msgid "<a href=\"more\">Find out more…</a>"
-msgstr ""
+msgstr "<a href=\"more\">Mehr herausfinden …</a>"
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:3
 msgid "Proprietary Software Sources"
-msgstr ""
+msgstr "Proprietäre Softwarequellen"
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:4
 msgid ""
 "Proprietary software typically has restrictions on how it can be used and on"
 " access to source code. This prevents anyone but the software owner from "
 "inspecting, improving or learning from its code."
-msgstr ""
+msgstr "Proprietäre Software unterliegt üblicherweise Einschränkungen bezüglich Verwendung und Zugriff auf den Quellcode. Dies verhindert, dass niemand außer dem Eigentümer der Software den Code überprüfen, verbessern oder davon lernen kann."
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:5
 msgid ""
 "In contrast, Free Software can be freely run, copied, distributed, studied "
 "and modified."
-msgstr ""
+msgstr "Im Gegensatz dazu kann freie Software frei ausgeführt, kopiert, verteilt, studiert und verändert werden."
