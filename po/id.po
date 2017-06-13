@@ -1,22 +1,23 @@
-# Indonesian translation for gnome-initial-setup.
-# Copyright (C) 2012 gnome-initial-setup's COPYRIGHT HOLDER
-# This file is distributed under the same license as the gnome-initial-setup package.
-# Andika Triwidada <andika@gmail.com>, 2012, 2013, 2014, 2015.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Andika Triwidada <andika@gmail.com>, 2012-2015
+# Roddy Shuler <roddy@endlessm.com>, 2017
+# Septira Taruna <septira@endlessm.com>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"initial-setup&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-09-01 15:51+0000\n"
-"PO-Revision-Date: 2016-09-04 22:41+0700\n"
-"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
-"Language-Team: Indonesian <gnome@i15n.org>\n"
-"Language: id\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-13 14:16-0700\n"
+"PO-Revision-Date: 2017-06-13 21:21+0000\n"
+"Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
+"Language-Team: Indonesian (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.9\n"
+"Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/gnome-initial-setup.desktop.in.in.h:1
@@ -24,38 +25,47 @@ msgstr ""
 msgid "Initial Setup"
 msgstr "Penyiapan Awal"
 
-#: ../gnome-initial-setup/gis-assistant.c:396
+#: ../gnome-initial-setup/gis-assistant.c:314
 msgid "_Next"
 msgstr "Sela_njutnya"
 
-#: ../gnome-initial-setup/gis-assistant.c:397
+#: ../gnome-initial-setup/gis-assistant.c:454
 msgid "_Accept"
-msgstr "Terim_a"
+msgstr ""
 
-#: ../gnome-initial-setup/gis-assistant.c:398
+#: ../gnome-initial-setup/gis-assistant.c:455
 msgid "_Skip"
-msgstr "Lewa_ti"
+msgstr ""
 
-#: ../gnome-initial-setup/gis-assistant.c:399
+#: ../gnome-initial-setup/gis-assistant.c:456
 msgid "_Previous"
 msgstr "Se_belumya"
 
-#: ../gnome-initial-setup/gis-assistant.c:400
+#: ../gnome-initial-setup/gis-assistant.c:457
 msgid "_Cancel"
 msgstr "_Batal"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:199
-msgid "Force existing user mode"
-msgstr "Paksakan mode pengguna yang ada"
+#: ../gnome-initial-setup/gis-page-util.c:421
+msgid "Disabled"
+msgstr "Nonaktif"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:205
+#: ../gnome-initial-setup/gis-page-util.c:423
+#, c-format
+msgid "SD Card: %s"
+msgstr "Kartu SD: %s"
+
+#: ../gnome-initial-setup/gnome-initial-setup.c:257
+msgid "Force existing user mode"
+msgstr ""
+
+#: ../gnome-initial-setup/gnome-initial-setup.c:263
 msgid "- GNOME initial setup"
 msgstr "- GNOME Penyiapan Awal"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:242
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:284
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
 msgid "About You"
-msgstr "Tentang Anda"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:182
 msgid "Failed to register account"
@@ -63,27 +73,25 @@ msgstr "Gagal mendaftar akun"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:376
 msgid "No supported way to authenticate with this domain"
-msgstr "Tak ada cara yang didukung untuk mengotentikasi dengan domain ini"
+msgstr "Tidak ada cara untuk mengotentikasi domain ini"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:416
 msgid "Failed to join domain"
-msgstr "Gagal bergabung domain"
+msgstr "Gagal bergabung dengan domain"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:484
 msgid "Failed to log into domain"
-msgstr "Gagal log masuk ke domain"
+msgstr "Gagal masuk ke domain"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:1
 msgid "Enterprise Login"
-msgstr "Log Masuk Enterprise"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:2
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device."
 msgstr ""
-"Log masuk enterprise memungkinkan akun pengguna yang telah ada dan dikelola "
-"secara terpusat dipakai pada perangkat ini."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:3
 msgid "_Domain"
@@ -97,7 +105,7 @@ msgstr "Nama Pengg_una"
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:5
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:3
 msgid "_Password"
-msgstr "_Sandi"
+msgstr "Kata _Sandi"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:6
 msgid "Enterprise domain or realm name"
@@ -117,9 +125,6 @@ msgid ""
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
 msgstr ""
-"Untuk memakai log masuk enterprise, komputer ini perlu didaftarkan ke dalam "
-"domain. Mintalah administrator jaringan Anda mengetikkan sandi domainnya di "
-"sini, dan pilih suatu nama komputer yang unik bagi komputer Anda."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:10
 msgid "_Computer"
@@ -131,39 +136,43 @@ msgstr "_Nama Administrator"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:12
 msgid "Administrator Password"
-msgstr "Sandi Administrator"
+msgstr "Kata Sandi Administrator"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:202
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:208
 msgid "Please check the name and username. You can choose a picture too."
-msgstr "Harap periksa nama dan nama pengguna. Anda juga dapat memilih gambar."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:403
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:414
 msgid "We need a few details to complete setup."
-msgstr "Kami perlu beberapa rincian untuk melengkapi penyiapan."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:1
 msgid "Avatar image"
-msgstr "Citra avatar"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:3
 msgid "Please provide a name and username. You can choose a picture too."
-msgstr "Harap isi nama dan nama pengguna. Anda juga dapat memilih gambar."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:4
 msgid "_Full Name"
 msgstr "Nama _Lengkap"
 
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:6
+msgid "Password protected"
+msgstr ""
+
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:1
 msgid "Set Up _Enterprise Login"
-msgstr "Menyiapkan Log Masuk _Enterprise"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:246
 msgid "Disable image"
-msgstr "Nonfungsikan citra"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:264
 msgid "Take a photo..."
-msgstr "Ambil foto…"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
@@ -178,42 +187,93 @@ msgstr "Domain atau realm tak ditemukan"
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:796
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
-msgstr "Tak bisa log masuk sebagai %s pada domain %s"
+msgstr "Tidak bisa masuk sebagai %s pada domain %s"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:788
 msgid "Invalid password, please try again"
-msgstr "Sandi tak valid, harap coba lagi"
+msgstr "Kata sandi salah, mohon coba lagi"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
 msgid "Couldn't connect to the %s domain: %s"
-msgstr "Tak bisa menyambung ke domain %s: %s"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:245
+#: ../gnome-initial-setup/pages/account/um-utils.c:247
 #, c-format
 msgid "A user with the username '%s' already exists."
-msgstr "Pengguna dengan nama '%s' telah ada."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:249
+#: ../gnome-initial-setup/pages/account/um-utils.c:251
 #, c-format
 msgid "The username is too long."
-msgstr "Nama pengguna terlalu panjang."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:252
+#: ../gnome-initial-setup/pages/account/um-utils.c:254
 msgid "The username cannot start with a '-'."
-msgstr "Nama pengguna tak boleh diawali dengan '-'."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:255
+#: ../gnome-initial-setup/pages/account/um-utils.c:257
 msgid ""
 "The username should only consist of lower and upper case letters from a-z, "
 "digits and any of characters '.', '-' and '_'."
 msgstr ""
-"Nama pengguna mesti hanya terdiri dari huruf kecil dan besar a-z, dijit, dan "
-"sebarang karakter '.', '-', atau '_'."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:259
+#: ../gnome-initial-setup/pages/account/um-utils.c:261
 msgid "This will be used to name your home folder and can't be changed."
-msgstr "Ini akan dipakai untuk menamai folder rumah Anda dan tak dapat diubah."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.c:269
+msgid "Display"
+msgstr "Layar"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:1
+msgid "Adjust for TV screen"
+msgstr "Sesuaikan untuk layar TV"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:2
+msgid "Do you see this at the bottom right corner of your screen?"
+msgstr "Apakah Anda melihat ini di bagian sudut kanan bawah layar?"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:3
+msgid "I see it"
+msgstr "Saya melihatnya"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:4
+msgid "I do not see it. Shrink screen to fit TV."
+msgstr "Saya tidak melihatnya. Kecilkan layar agar sesuai dengan TV."
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:242
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:346
+msgid "Terms of Use"
+msgstr "Syarat Penggunaan"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:247
+msgid "Third Party Software"
+msgstr "Perangkat Lunak Pihak Ketiga"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:339
+msgid "_Accept and Continue"
+msgstr "_Terima dan lanjutkan"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
+msgid "Please read the following terms of use carefully"
+msgstr "Mohon baca syarat dan ketentuan penggunaan berikut ini dengan seksama"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
+msgid ""
+"By clicking \"Accept and continue,\" you acknowledge that you have read, "
+"understood, and agree to be bound by the following terms and conditions."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:3
+msgid "Help make Endless better for everyone"
+msgstr "Bantu membuat Endless menjadi lebih baik untuk semua orang"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:4
+msgid ""
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr "Secara otomatis menyimpan dan mengirimkan statistik penggunaan dan laporan masalah ke Endless. Semua data anonim."
 
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.c:301
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.ui.h:1
@@ -224,9 +284,7 @@ msgstr "Persetujuan Lisensi"
 msgid ""
 "I have _agreed to the terms and conditions in this end user license "
 "agreement."
-msgstr ""
-"Saya telah setuj_u dengan syarat dan kondisi dalam perjanjian lisensi "
-"pengguna akhir ini."
+msgstr "Saya telah setuj_u dengan syarat dan kondisi dalam perjanjian lisensi pengguna akhir ini."
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.c:87
 msgid "Add Account"
@@ -234,87 +292,137 @@ msgstr "Tambah Akun"
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.c:336
 msgid "Online Accounts"
-msgstr "Akun Daring"
+msgstr "Akun Online"
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:1
 msgid "Connect Your Online Accounts"
-msgstr "Sambung Akun Daring Anda"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:2
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
 msgstr ""
-"Sambungkan akun Anda untuk dengan mudah mengakses surel, kalender daring, "
-"kontak, dokumen, dan foto Anda."
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:3
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr "Akun dapat ditambahkan dan dihapus kapanpun dari aplikasi Pengaturan."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:241
 msgid "Preview"
 msgstr "Pratinjau"
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:300
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:219
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:290
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "Lebih banyak…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:322
 msgid "No inputs found"
-msgstr "Tak ditemukan masukan"
+msgstr "Input tidak ditemukan"
 
-#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:363
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
+msgid "Your keyboard layout seems to be:"
+msgstr "Tata letak keyboard Anda seperti:"
+
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:289
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:2
+msgid "Please press one of the following keys:"
+msgstr "Mohon tekan salah satu tombol berikut:"
+
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:290
+msgid "Is the following key present on your keyboard?"
+msgstr "Apakah tombol-tombol berikut ada pada keyboard Anda?"
+
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:400
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:1
 msgid "Typing"
 msgstr "Mengetik"
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
 msgid "Select your keyboard layout or an input method."
-msgstr "Pilih tata letak papan tik Anda atau metoda masukan."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:235
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:3
+msgid "Help Detect My Keyboard Layout"
+msgstr "Deteksi Tata Letak Keyboard Saya"
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
+msgid "Detect Keyboard Layout…"
+msgstr "Mendeteksi Tata Letak Keyboard…"
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
+msgid "_Select"
+msgstr "_Pilih"
+
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:306
 msgid "No languages found"
-msgstr "Tak ada bahasa yang ditemukan"
+msgstr "Tidak ada bahasa yang ditemukan"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:292
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:322
 msgid "Welcome"
 msgstr "Selamat Datang"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: ../gnome-initial-setup/pages/language/gis-welcome-widget.c:123
 msgid "Welcome!"
-msgstr "Selamat Datang!"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:309
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:183
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr "Terjadi kesalahan saat menjalankan proses format ulang: %s"
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:276
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
+msgid "Try Endless OS by running it from the USB Stick."
+msgstr "Coba Endless OS dengan menjalankannya dari Stik USB."
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:277
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
+msgid "Reformat this computer with Endless OS."
+msgstr "Format ulang komputer ini dengan Endless OS."
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:278
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
+msgid "Try It"
+msgstr "Coba"
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:279
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
+msgid "Reformat"
+msgstr "Format Ulang"
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:281
+msgid "Endless USB Stick"
+msgstr "Stik USB Endless"
+
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:296
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "Lainnya…"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:368
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:355
 msgid "Wireless networking is disabled"
-msgstr "﻿Jaringan nirkabel dinonaktifkan"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:375
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:361
 msgid "Checking for available wireless networks"
 msgstr "Memeriksa ketersediaan jaringan nirkabel"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:641
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:625
 msgid "Network"
 msgstr "Jaringan"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:1
 msgid "Wi-Fi"
-msgstr "Wi-Fi"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:2
 msgid ""
@@ -322,46 +430,55 @@ msgid ""
 "details, and enable you to access your email, calendar, and contacts. It is "
 "also necessary for enterprise login accounts."
 msgstr ""
-"Menyambung ke Internet akan memungkinkan Anda menata waktu, menambah rincian "
-"Anda, dan mengakses surel, kalender, dan kontak Anda. Ini juga perlu bagi "
-"akun log masuk enterprise."
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
 msgid "No wireless available"
-msgstr "Tak ada jaringan nirkabel yang tersedia"
+msgstr "Tidak ada jaringan nirkabel yang tersedia"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:4
 msgid "Turn On"
-msgstr "Nyalakan"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:134
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:170
 msgid "This is a weak password."
-msgstr "Ini sandi yang lemah."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:148
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:184
 msgid "The passwords do not match."
-msgstr "Sandi tak cocok."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:270
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:348
 msgid "Password"
-msgstr "Sandi"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:1
 msgid "Set a Password"
-msgstr "Tata Sandi"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:2
 msgid "Be careful not to lose your password."
-msgstr "Berhati-hatilah jangan sampai kehilangan sandi Anda."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:4
 msgid "_Verify"
-msgstr "_Verifikasi"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:5
+msgid "Show password"
+msgstr "Perlihatkan kata sandi"
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:6
+msgid "Password _reminder"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:7
+msgid "Password reminder will be shown in case you forget your password."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
 msgid "The new password needs to be different from the old one."
-msgstr "Sandi baru mesti berbeda dengan yang lama."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
@@ -369,8 +486,6 @@ msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
 msgstr ""
-"Sandi ini sangat mirip dengan yang sebelumnya. Cobalah mengubah beberapa "
-"huruf dan angka."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:85
 #: ../gnome-initial-setup/pages/password/pw-utils.c:93
@@ -379,20 +494,18 @@ msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
 msgstr ""
-"Sandi ini sangat mirip dengan yang sebelumnya. Cobalah mengubah sandi "
-"sedikit lagi."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
+"This is a weak password. A password without your user name would be "
+"stronger."
 msgstr ""
-"Ini adalah sandi yang lemah. Sandi tanpa nama pengguna Anda akan lebih kuat."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr "This is a weak password. Try to avoid using your name in the password."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
@@ -400,34 +513,31 @@ msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
 msgstr ""
-"Ini adalah sandi yang lemah. Cobalah menghindari beberapa kata yang "
-"disertakan dalam sandi."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr "Ini adalah sandi yang lemah. Cobalah menghindari kata-kata umum."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
 msgstr ""
-"Ini adalah sandi yang lemah. Cobalah menghindari menata ulang kata yang ada."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr "Ini adalah sandi yang lemah. Cobalah memakai lebih banyak angka."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr "Ini adalah sandi yang lemah. Cobalah memakai lebih banyak huruf besar."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr "Ini adalah sandi yang lemah. Cobalah memakai lebih banyak huruf kecil."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
@@ -435,8 +545,6 @@ msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
 msgstr ""
-"Ini adalah sandi yang lemah. Cobalah memakai lebih banyak karakter khusus, "
-"seperti tanda seru."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
@@ -444,15 +552,11 @@ msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
 msgstr ""
-"Ini adalah sandi yang lemah. Cobalah memakai campuran huruf, angka, dan "
-"tanda baca."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
 msgstr ""
-"Ini adalah sandi yang lemah. Cobalah menghindari pengulangan karakter yang "
-"sama."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
@@ -460,27 +564,21 @@ msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
 msgstr ""
-"Ini adalah sandi yang lemah. Cobalah menghindari pengulangan tipe karakter "
-"yang sama: Anda perlu mencampur huruf, angka, dan tanda baca."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
 msgstr ""
-"Ini adalah sandi yang lemah. Cobalah menghindari urutan seperti 1234 atau "
-"abcd."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid "This is a weak password. Try to add more letters, numbers and symbols."
 msgstr ""
-"Ini adalah sandi yang lemah. Cobalah menambah lebih banyak huruf, angka, dan "
-"simbol."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and use a number or two."
-msgstr "Campurkan huruf besar dan kecil dan pakailah satu atau dua angka."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
@@ -488,143 +586,142 @@ msgid ""
 "Good password! Adding more letters, numbers and punctuation will make it "
 "stronger."
 msgstr ""
-"Sandi yang bagus! Menambah lebih banyak huruf, angka, dan tanda baca akan "
-"membuatnya lebih kuat."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:141
 msgctxt "Password strength"
 msgid "Strength: Weak"
-msgstr "Kekuatan: Lemah"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:145
 msgctxt "Password strength"
 msgid "Strength: Low"
-msgstr "Kekuatan: Rendah"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:148
 msgctxt "Password strength"
 msgid "Strength: Medium"
-msgstr "Kekuatan: Sedang"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:151
 msgctxt "Password strength"
 msgid "Strength: Good"
-msgstr "Kekuatan: Baik"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:154
 msgctxt "Password strength"
 msgid "Strength: High"
-msgstr "Kekuatan: Tinggi"
+msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:109
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:110
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
 msgstr ""
-"Mengirim laporan masalah teknis membantu kami memperbaiki %s. Laporan "
-"dikirim secara anonim dan dibersihkan dari data pribadi."
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:116
-msgid "Uses Mozilla Location Service:"
-msgstr "Memakai Layanan Lokasi Mozilla:"
-
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:116
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:238
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:175
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:250
 msgid "Privacy Policy"
-msgstr "Kebijakan Privasi"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:274
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:286
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:1
 msgid "Privacy"
-msgstr "Privasi"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:2
 msgid "Location Services"
-msgstr "Layanan Lokasi"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:3
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
 msgstr ""
-"Memungkinkan aplikasi menentukan lokasi geografis Anda. Suatu indikasi "
-"ditampilkan ketika layanan lokasi sedang dipakai."
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:4
 msgid "Automatic Problem Reporting"
-msgstr "Pelaporan Masalah Otomatis"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:5
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr "Kendali privasi dapat diubah setiap saat dari aplikasi Pengaturan."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:228
 msgid "No regions found"
-msgstr "Tak ada wilayah yang ditemukan"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/region/gis-region-page.c:226
 #: ../gnome-initial-setup/pages/region/gis-region-page.ui.h:1
 msgid "Region"
-msgstr "Wilayah"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/region/gis-region-page.ui.h:2
 msgid "Choose your country or region."
-msgstr "Pilih wilayah atau negara Anda."
+msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:328
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:305
 #, c-format
 msgid "_Start using %s"
-msgstr "_Mulai memakai %s"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:358
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:335
+msgid "You're ready to try Endless OS"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:337
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr "<b>Setiap file yang Anda unduh atau dokumen yang Anda buat akan hilang selamanya ketika Anda memulai ulang atau mematikan komputer.</b>"
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:347
 msgid "Ready to Go"
-msgstr "Siap Pergi"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:1
 msgid "You're ready to go!"
-msgstr "Anda telah siap!"
+msgstr ""
 
 #. Translators: "city, country"
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:374
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:261
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
-msgstr "%s, %s"
+msgstr ""
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:411
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:298
 msgid "UTC%:::z"
-msgstr "UTC%:::z"
+msgstr ""
 
 #. Translators: This is the time format used in 12-hour mode.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:415
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
 msgid "%l:%M %p"
-msgstr "%l:%M %p"
+msgstr ""
 
 #. Translators: This is the time format used in 24-hour mode.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:418
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
 msgid "%R"
-msgstr "%R"
+msgstr ""
 
 #. Translators: "timezone (utc shift)"
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:421
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
-msgstr "%s (%s)"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:566
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:449
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:1
 msgid "Time Zone"
 msgstr "Zona Waktu"
@@ -634,17 +731,14 @@ msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
 msgstr ""
-"Zona waktu akan ditata secara otomatis bila lokasi Anda dapat ditemukan. "
-"Anda juga dapat mencari sebuah kota untuk Anda tata sendiri."
 
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:3
 msgid "Please search for a nearby city"
-msgstr "Harap cari kota yang berdekatan"
+msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: ../gnome-initial-setup/pages/software/gis-software-page.c:112
 #, c-format
 msgid ""
@@ -652,42 +746,32 @@ msgid ""
 "including web browsers and games. This software typically has restrictions "
 "on use and access to source code, and is not provided by %s."
 msgstr ""
-"Sumber perangkat lunak proprietari menyediakan akses ke perangkat lunak "
-"tambahan, termasuk peramban web dan permainan. Perangkat lunak ini biasanya "
-"punya pembatasan pemakaian dan akses ke kode sumber, dan tidak disediakan "
-"oleh %s."
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.c:245
 msgid "Software Sources"
-msgstr "Sumber Perangkat Lunak"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:1
 msgid "Additional Software Sources"
-msgstr "Sumber Perangkat Lunak Tambahan"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:2
 msgid "<a href=\"more\">Find out more…</a>"
-msgstr "<a href=\"more\">Temukan lebih jauh…</a>"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:3
 msgid "Proprietary Software Sources"
-msgstr "Sumber Perangkat Lunak Proprietari"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:4
 msgid ""
-"Proprietary software typically has restrictions on how it can be used and on "
-"access to source code. This prevents anyone but the software owner from "
+"Proprietary software typically has restrictions on how it can be used and on"
+" access to source code. This prevents anyone but the software owner from "
 "inspecting, improving or learning from its code."
 msgstr ""
-"Perangkat lunak proprietari biasanya punya pembatasan atas bagaimana itu "
-"dapat dipakai dan atas akses ke kode sumber. Ini mencegah siapapun selain "
-"pemilik perangkat lunak untuk memeriksa, memperbaiki, atau belajar dari kode "
-"tersebut."
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:5
 msgid ""
 "In contrast, Free Software can be freely run, copied, distributed, studied "
 "and modified."
 msgstr ""
-"Sebaliknya, Perangkat Lunak Bebas dapat dijalankan, disalin, "
-"didistribusikan, dipelajari, dan diubah secara bebas."

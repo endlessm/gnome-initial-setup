@@ -1,91 +1,98 @@
-# Hindi translation for gnome-initial-setup.
-# Copyright (C) 2012 gnome-initial-setup's COPYRIGHT HOLDER
-# This file is distributed under the same license as the gnome-initial-setup package.
-#
-# chandan kumar <chandankumar.093047@gmail.com>, 2012, 2013.
-# Rajesh Ranjan <rajeshkajha@yahoo.com>, 2013, 2014.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Chandan kumar <chandankumar.093047@gmail.com>, 2012-2013
+# e2f_in c7 <e2f_in_c7@outlook.com>, 2016-2017
+# Rajesh Ranjan <rajeshkajha@yahoo.com>, 2013-2014
+# Roddy Shuler <roddy@endlessm.com>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"initial-setup&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-21 06:45+0000\n"
-"PO-Revision-Date: 2014-09-21 15:24+0530\n"
-"Last-Translator: RaviRatlami <raviratlami@yahoo.com>\n"
-"Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
-"Language: hi\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-13 14:16-0700\n"
+"PO-Revision-Date: 2017-06-13 21:21+0000\n"
+"Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
+"Language-Team: Hindi (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/hi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.5.5\n"
+"Language: hi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/gnome-initial-setup.desktop.in.in.h:1
 #: ../data/gnome-initial-setup-first-login.desktop.in.in.h:1
 msgid "Initial Setup"
 msgstr "आरंभिक सेटअप"
 
-#: ../gnome-initial-setup/gis-assistant.c:379
+#: ../gnome-initial-setup/gis-assistant.c:314
 msgid "_Next"
 msgstr "अगला (_N)"
 
-#: ../gnome-initial-setup/gis-assistant.c:380
+#: ../gnome-initial-setup/gis-assistant.c:454
 msgid "_Accept"
-msgstr "स्वीकारें (_A)"
+msgstr ""
 
-#: ../gnome-initial-setup/gis-assistant.c:381
+#: ../gnome-initial-setup/gis-assistant.c:455
 msgid "_Skip"
-msgstr "छोड़ें (_S)"
+msgstr ""
 
-#: ../gnome-initial-setup/gis-assistant.c:382
+#: ../gnome-initial-setup/gis-assistant.c:456
 msgid "_Previous"
 msgstr "पिछला (_P)"
 
-#: ../gnome-initial-setup/gis-assistant.c:383
+#: ../gnome-initial-setup/gis-assistant.c:457
 msgid "_Cancel"
 msgstr "रद्द करें (_C)"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:194
-#| msgid "Force new user mode"
-msgid "Force existing user mode"
-msgstr "मौजूदा उपयोक्ता मोड बलपूर्वक लागू करें"
+#: ../gnome-initial-setup/gis-page-util.c:421
+msgid "Disabled"
+msgstr "अक्षम"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:200
+#: ../gnome-initial-setup/gis-page-util.c:423
+#, c-format
+msgid "SD Card: %s"
+msgstr "SD कार्ड: %s"
+
+#: ../gnome-initial-setup/gnome-initial-setup.c:257
+msgid "Force existing user mode"
+msgstr ""
+
+#: ../gnome-initial-setup/gnome-initial-setup.c:263
 msgid "- GNOME initial setup"
 msgstr "- गनोम प्रारंभिक सेटअप"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:231
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:284
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
 msgid "About You"
-msgstr "आपका परिचय"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:179
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:182
 msgid "Failed to register account"
 msgstr "खाता पंजीयन में विफल"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:373
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:376
 msgid "No supported way to authenticate with this domain"
 msgstr "इस डोमेन के साथ प्रमाणित करने के लिए कोई समर्थित तरीका नहीं"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:413
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:416
 msgid "Failed to join domain"
 msgstr "डोमेन में शामिल होने में विफल"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:481
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:484
 msgid "Failed to log into domain"
 msgstr "डोमेन में लॉगिन में विफल"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:1
 msgid "Enterprise Login"
-msgstr "एंटरप्राइज लॉगिन"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:2
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device."
 msgstr ""
-"एंटरप्राइज़ लॉगिन के लिए इस उपकरण में केंद्रीयकृत प्रबंधित उपयोक्ता खाता वर्तमान में उपयोग में "
-"होना चाहिए."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:3
 msgid "_Domain"
@@ -114,19 +121,11 @@ msgid "Domain Administrator Login"
 msgstr "डोमेन प्रशासक लॉगिन"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:9
-#| msgid ""
-#| "In order to use enterprise logins, this computer needs to be\n"
-#| "enrolled in the domain. Please have your network administrator\n"
-#| "type their domain password here, and choose a unique computer\n"
-#| "name for your computer."
 msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
 msgstr ""
-"एंटरप्राइज लॉगिन के लिए, इस कंप्यूटर को इस डोमेन में नामांकित होने की जरूरत है. कृपया अपने "
-"संजाल प्रशासक को अपने डोमेन कूटशब्द को यहाँ टाइप करने दें और अपने कंप्यूटर के लिए अद्वितीय "
-"नाम चुनें."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:10
 msgid "_Computer"
@@ -140,35 +139,41 @@ msgstr "प्रशासक नाम (_N)"
 msgid "Administrator Password"
 msgstr "प्रशासक कूटशब्द"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:203
-msgid "Are these the right details? You can change them if you want."
-msgstr "क्या ये विवरण सही हैं? यदि आप चाहें तो इन्हें बदल सकते हैं."
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:208
+msgid "Please check the name and username. You can choose a picture too."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:404
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:3
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:414
 msgid "We need a few details to complete setup."
-msgstr "सेटअप पूरा करने के लिए हमें कुछ विवरणों की आवश्यकता है."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:1
 msgid "Avatar image"
-msgstr "अवतार चित्र"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:3
+msgid "Please provide a name and username. You can choose a picture too."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:4
 msgid "_Full Name"
 msgstr "पूरा नाम (_F)"
 
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:6
+msgid "Password protected"
+msgstr ""
+
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:1
-#| msgid "Create an Enterprise Account"
 msgid "Set Up _Enterprise Login"
-msgstr "एंटरप्राइज़ लॉगिन सेटअप करें [_E]"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:246
 msgid "Disable image"
-msgstr "छवि को अक्षम करें"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:264
 msgid "Take a photo..."
-msgstr "एक फ़ोटो खींचें..."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
@@ -192,42 +197,84 @@ msgstr "अमान्य कूटशब्द, पुनः कोशिश �
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
 msgid "Couldn't connect to the %s domain: %s"
-msgstr "%s डोमेन से कनेक्ट नहीं कर सका: %s"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:245
+#: ../gnome-initial-setup/pages/account/um-utils.c:247
 #, c-format
-#| msgid "A user with the username '%s' already exists"
 msgid "A user with the username '%s' already exists."
-msgstr "एक उपयोक्ता इस नाम '%s' से पहले से ही मौजूद है."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:249
+#: ../gnome-initial-setup/pages/account/um-utils.c:251
 #, c-format
-#| msgid "The username is too long"
 msgid "The username is too long."
-msgstr "उपयोक्ता नाम बहुत बड़ा है."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:252
-#| msgid "The username cannot start with a '-'"
+#: ../gnome-initial-setup/pages/account/um-utils.c:254
 msgid "The username cannot start with a '-'."
-msgstr "उपयोक्ता नाम '-' से प्रारंभ नहीं हो सकता."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:255
-#| msgid ""
-#| "The username must only consist of:\n"
-#| " ➣ letters from the English alphabet\n"
-#| " ➣ digits\n"
-#| " ➣ any of the characters '.', '-' and '_'"
+#: ../gnome-initial-setup/pages/account/um-utils.c:257
 msgid ""
 "The username should only consist of lower and upper case letters from a-z, "
 "digits and any of characters '.', '-' and '_'."
 msgstr ""
-"उपयोगकर्ता नाम केवल अंग्रेज़ी के a-z के अपरकेस तथा लोअरकेस अक्षरों, अंकों तथा इन वर्णों '.', "
-"'-' and '_' में से कोई भी हो सकते हैं."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:259
+#: ../gnome-initial-setup/pages/account/um-utils.c:261
 msgid "This will be used to name your home folder and can't be changed."
 msgstr ""
-"इसे आपके होम फ़ोल्डर का नाम देने के लिए उपयोग में लिया जाएगा और बदला नहीं जा सकता."
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.c:269
+msgid "Display"
+msgstr "प्रदर्श‍ित करें"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:1
+msgid "Adjust for TV screen"
+msgstr "टीवी स्क्रीन समायोजित करें"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:2
+msgid "Do you see this at the bottom right corner of your screen?"
+msgstr "क्या आपको अपने स्क्रीन के निचले दाएँँ कोने में यह दिखाई दे रहा है?"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:3
+msgid "I see it"
+msgstr "मुझे यह दिखाई दे रहा है"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:4
+msgid "I do not see it. Shrink screen to fit TV."
+msgstr "मुझे यह दिखाई नहीं दे रहा. टीवी में फ़ि‍ट करने के लिए स्क्रीन को श्रिंंक करें."
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:242
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:346
+msgid "Terms of Use"
+msgstr "उपयोग की शर्तें"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:247
+msgid "Third Party Software"
+msgstr "तृतीय पक्ष सॉफ़्टवेयर"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:339
+msgid "_Accept and Continue"
+msgstr "_स्वीकार करें और जारी रखें"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
+msgid "Please read the following terms of use carefully"
+msgstr "कृपया उपयोग की निम्न शर्तों को ध्यान से पढ़ेंं"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
+msgid ""
+"By clicking \"Accept and continue,\" you acknowledge that you have read, "
+"understood, and agree to be bound by the following terms and conditions."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:3
+msgid "Help make Endless better for everyone"
+msgstr "Endless को सभी के लिए बेहतर बनाने में सहायता करें"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:4
+msgid ""
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr "उपयोग सांख्यिकी और समस्या रिपोर्ट स्वचालित रूप से सहेजें और Endless को भेजें. समस्त डेटा अनाम है."
 
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.c:301
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.ui.h:1
@@ -244,92 +291,139 @@ msgstr "हम इस उपयोगकर्ता लाइसेंस अ�
 msgid "Add Account"
 msgstr "खाता जोड़ें"
 
-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:90
-#| msgid "_Cancel"
-msgid "Cancel"
-msgstr "रद्द करें"
-
-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:335
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:336
 msgid "Online Accounts"
 msgstr "ऑनलाइन खाता"
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:1
-#| msgid "Online Accounts"
 msgid "Connect Your Online Accounts"
-msgstr "अपने ऑनलाइन खाते कनेक्ट करें"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:2
-#| msgid ""
-#| "Adding accounts will allow you to transparently connect to your online "
-#| "photos, contacts, mail, and more."
 msgid ""
-"Connecting your accounts will allow you to easily access your email, online "
-"calendar, contacts, documents and photos."
+"Connect your accounts to easily access your email, online calendar, "
+"contacts, documents and photos."
 msgstr ""
-"अपने खाता को कनेक्ट करने पर आप अपने ईमेल, ऑनलाइन कैलेंडर, संपर्क, दस्तावेज़ तथा फ़ोटो आदि "
-"का आसानी से उपयोग कर सकते हैं."
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:3
-msgid "You can review your online accounts (and add others) after setup."
-msgstr "सेटअप के बाद आप अपने ऑनलाइन खाते की समीक्षा कर सकते हैं (तथा अन्य जोड़ सकते हैं)."
+msgid ""
+"Accounts can be added and removed at any time from the Settings application."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:241
-#| msgid "_Previous"
 msgid "Preview"
 msgstr "पूर्वावलोकन"
 
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:296
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:212
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:300
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:290
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "अधिक…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:317
-#| msgid "No input sources found"
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:322
 msgid "No inputs found"
 msgstr "कोई इनपुट नहीं मिला"
 
-#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:219
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
+msgid "Your keyboard layout seems to be:"
+msgstr "आपका कीबोर्ड लेआउट प्रतीत होता है:"
+
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:289
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:2
+msgid "Please press one of the following keys:"
+msgstr "कृपया निम्न में से कोई एक कुंजी दबाएँँ:"
+
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:290
+msgid "Is the following key present on your keyboard?"
+msgstr "क्या निम्न कुंजी आपके कीबोर्ड पर उपस्थित है?"
+
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:400
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:1
 msgid "Typing"
 msgstr "टाइपिंग"
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
 msgid "Select your keyboard layout or an input method."
-msgstr "अपना कुंजीपट खाका या इनपुट मैथड चुनें."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:229
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:3
+msgid "Help Detect My Keyboard Layout"
+msgstr "मेरा कीबोर्ड लेआउट खोजने में सहायता करें"
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
+msgid "Detect Keyboard Layout…"
+msgstr "कीबोर्ड लेआउट खोजें…"
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
+msgid "_Select"
+msgstr "_चयन करें"
+
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:306
 msgid "No languages found"
 msgstr "कोई भाषा नहीं मिली"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:282
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:322
 msgid "Welcome"
 msgstr "सुस्वागतम"
 
-#: ../gnome-initial-setup/pages/language/gis-welcome-widget.c:119
-#| msgid "Welcome"
+#. Translators: This is meant to be a warm, engaging welcome message,
+#. * like greeting somebody at the door. If the exclamation mark is not
+#. * suitable for this in your language you may replace it.
+#: ../gnome-initial-setup/pages/language/gis-welcome-widget.c:123
 msgid "Welcome!"
-msgstr "सुस्वागतम!"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:305
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:183
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr "रिफ़ॉर्मेटर को चलाने मेंं त्रुटि हुई: %s"
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:276
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
+msgid "Try Endless OS by running it from the USB Stick."
+msgstr "USB स्टिक से इसेे चलाकर Endless OS आजमाएं."
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:277
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
+msgid "Reformat this computer with Endless OS."
+msgstr "इस कंप्यूटर को Endless OS से पुनः फ़ॉर्मेट करें."
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:278
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
+msgid "Try It"
+msgstr "इसे आजमाएं"
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:279
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
+msgid "Reformat"
+msgstr "पुनः फ़ॉर्मेट करें"
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:281
+msgid "Endless USB Stick"
+msgstr "Endless USB स्टिक"
+
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:296
 msgctxt "Wireless access point"
 msgid "Other…"
-msgstr "अन्य... [वायरलेस ऐक्सेस पॉइंट]"
+msgstr "अन्य… [वायरलेस ऐक्सेस पॉइंट]"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:352
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:355
+msgid "Wireless networking is disabled"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:361
 msgid "Checking for available wireless networks"
 msgstr "उपलब्ध बेतार संजाल के लिए जाँच हो रही है"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:602
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:625
 msgid "Network"
 msgstr "संजाल"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:1
 msgid "Wi-Fi"
-msgstr "वाई-फ़ाई"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:2
 msgid ""
@@ -337,413 +431,348 @@ msgid ""
 "details, and enable you to access your email, calendar, and contacts. It is "
 "also necessary for enterprise login accounts."
 msgstr ""
-"इंटरनेट से कनेक्ट करने पर आप समय सेट कर सकते हैं, अपने विवरण जोड़ सकते हैं तथा अपने ईमेल, "
-"कैलेंडर और संपर्कों का उपयोग कर सकते हैं. यह एंटरप्राइज़ लॉगिन के लिए भी आवश्यक है."
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
 msgid "No wireless available"
 msgstr "कोई बेतार उपलब्ध नहीं है"
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:144
-#| msgid "Passwords do not match"
-msgid "The passwords do not match."
-msgstr "शब्दकूट समान नहीं हैं."
+#: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:4
+msgid "Turn On"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:266
-#| msgid "_Password"
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:170
+msgid "This is a weak password."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:184
+msgid "The passwords do not match."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:348
 msgid "Password"
-msgstr "शब्दकूट"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:1
-#| msgid "_Password"
 msgid "Set a Password"
-msgstr "कूटशब्द नियत करें"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:2
 msgid "Be careful not to lose your password."
-msgstr "सावधानी पूर्वक अपना कूटशब्द याद रखें."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:4
 msgid "_Verify"
-msgstr "सत्यापित करें (_V)"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:5
+msgid "Show password"
+msgstr "पासवर्ड दिखाएँँ"
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:6
+msgid "Password _reminder"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:7
+msgid "Password reminder will be shown in case you forget your password."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
 msgid "The new password needs to be different from the old one."
-msgstr "नया कूटशब्द पुराने से भिन्न होना चाहिए."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
-msgid "Try changing some letters and numbers."
-msgstr "कुछ अक्षरों तथा अंकों को बदल कर कोशिश करें"
+msgid ""
+"This password is very similar to your last one. Try changing some letters "
+"and numbers."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:85
 #: ../gnome-initial-setup/pages/password/pw-utils.c:93
 msgctxt "Password hint"
-msgid "Try changing the password a bit more."
-msgstr "कूटशब्द को थोड़ा और बदल कर कोशिश करें."
+msgid ""
+"This password is very similar to your last one. Try changing the password a "
+"bit more."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
-msgid "A password without your user name would be stronger."
-msgstr "आपके उपयोक्ता नाम रहित कूटशब्द मजबूत होगा."
+msgid ""
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
-msgid "Try to avoid using your name in the password."
-msgstr "कोशिश करें कि कूटशब्द में अपने नाम का उपयोग करने से बचें"
+msgid "This is a weak password. Try to avoid using your name in the password."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
-msgid "Try to avoid some of the words included in the password."
-msgstr "कोशिश करें कि कूटशब्द में शामिल कुछ शब्दों से बचें."
+msgid ""
+"This is a weak password. Try to avoid some of the words included in the "
+"password."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
-msgid "Try to avoid common words."
-msgstr "कोशिश करें कि सामान्य प्रचलित शब्दों से बचें."
+msgid "This is a weak password. Try to avoid common words."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
-msgid "Try to avoid reordering existing words."
-msgstr "कोशिश करें कि मौजूदा शब्दों का अनुक्रम बदलने से बचें"
+msgid "This is a weak password. Try to avoid reordering existing words."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
-msgid "Try to use more numbers."
-msgstr "कोशिश करें कि और अधिक अंकों का उपयोग करें."
+msgid "This is a weak password. Try to use more numbers."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
-msgid "Try to use more uppercase letters."
-msgstr "कोशिश करें कि और अपरकेस अक्षरों का उपयोग करें."
+msgid "This is a weak password. Try to use more uppercase letters."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
-msgid "Try to use more lowercase letters."
-msgstr "कोशिश करें कि और लोअरकेस अक्षरों का उपयोग करें."
+msgid "This is a weak password. Try to use more lowercase letters."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
-msgid "Try to use more special characters, like punctuation."
-msgstr "कोशिश करें कि और विशेष अक्षरों जैसे कि चिह्नों का उपयोग करें."
+msgid ""
+"This is a weak password. Try to use more special characters, like "
+"punctuation."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
-msgid "Try to use a mixture of letters, numbers and punctuation."
-msgstr "कोशिश करें कि अक्षरों, अंकों तथा चिह्नों का मिश्रण उपयोग करें."
+msgid ""
+"This is a weak password. Try to use a mixture of letters, numbers and "
+"punctuation."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
-msgid "Try to avoid repeating the same character."
-msgstr "कोशिश करें कि एक ही तरह के अक्षर दोहराएं नहीं. "
+msgid "This is a weak password. Try to avoid repeating the same character."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
-"Try to avoid repeating the same type of character: you need to mix up "
-"letters, numbers and punctuation."
+"This is a weak password. Try to avoid repeating the same type of character: "
+"you need to mix up letters, numbers and punctuation."
 msgstr ""
-"कोशिश करें कि एक ही तरह के अक्षर दोहराएं नहीं: आपको अक्षरों, अंकों तथा चिह्नों को मिलाना "
-"होगा."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
-msgid "Try to avoid sequences like 1234 or abcd."
-msgstr "कोशिश करें कि 1234 या abcd जैसे अनुक्रम का उपयोग न करें"
+msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
-msgid "Try to add more letters, numbers and symbols."
-msgstr "कोशिश करें कि और अक्षर, अंक तथा चिह्न जोड़ें."
+msgid "This is a weak password. Try to add more letters, numbers and symbols."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
-#| msgid ""
-#| "Try to use at least 8 different characters. Mix upper and lower case and "
-#| "use a number or two."
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and use a number or two."
-msgstr "अपरकेस तथा लोअरकेस और एक दो संख्या मिलाकर बनाएं"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Good password! Adding more letters, numbers and punctuation will make it "
 "stronger."
-msgstr "सही कूटशब्द! और अक्षर, अंक तथा विराम चिह्नों को जोड़ने पर यह और शक्तिशाली बनेगा."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:141
-#| msgid "Strength: %s"
 msgctxt "Password strength"
 msgid "Strength: Weak"
-msgstr "सामर्थ्य: कमजोर"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:145
-#| msgid "Strength: %s"
 msgctxt "Password strength"
 msgid "Strength: Low"
-msgstr "सामर्थ्य: निम्न"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:148
-#| msgid "Strength: %s"
 msgctxt "Password strength"
 msgid "Strength: Medium"
-msgstr "सामर्थ्य: मध्यम [कूटशब्द सामर्थ्य]"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:151
-#| msgid "Strength: %s"
 msgctxt "Password strength"
 msgid "Strength: Good"
-msgstr "सामर्थ्य: बढ़िया [कूटशब्द सामर्थ्य]"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:154
-#| msgid "Strength: %s"
 msgctxt "Password strength"
 msgid "Strength: High"
-msgstr "सामर्थ्य: उच्च [कूटशब्द सामर्थ्य]"
+msgstr ""
+
+#. Translators: the parameter here is the name of a distribution,
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
+#. * detect any distribution.
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:110
+#, c-format
+msgid ""
+"Sending reports of technical problems helps us to improve %s. Reports are "
+"sent anonymously and are scrubbed of personal data."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:116
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:175
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:250
+msgid "Privacy Policy"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:286
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:1
+msgid "Privacy"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:2
+msgid "Location Services"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:3
+msgid ""
+"Allows applications to determine your geographical location. An indication "
+"is shown when location services are in use."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:4
+msgid "Automatic Problem Reporting"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:5
+msgid ""
+"Privacy controls can be changed at any time from the Settings application."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:228
-#| msgid "No languages found"
 msgid "No regions found"
-msgstr "कोई क्षेत्र नहीं मिला"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/region/gis-region-page.c:226
 #: ../gnome-initial-setup/pages/region/gis-region-page.ui.h:1
 msgid "Region"
-msgstr "क्षेत्र"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/region/gis-region-page.ui.h:2
-#| msgid "Choose Your Location"
 msgid "Choose your country or region."
-msgstr "अपना देश या क्षेत्र चुनें"
-
-#. Translators: the parameter here is the name of a distribution,
-#. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
-#. * detect any distribution.
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:332
-#, c-format
-#| msgid "_Start using GNOME 3"
-msgid "_Start using %s"
-msgstr "%s का उपयोग कर प्रारंभ करें (_S)"
-
-#. Translators: the parameter here is the name of a distribution,
-#. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
-#. * detect any distribution.
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:339
-#, c-format
-msgid ""
-"Thank you for choosing %s.\n"
-"We hope that you love it."
 msgstr ""
-"%s चुनने के लिए आपका हार्दिक धन्यवाद.\n"
-"हमें उम्मीद है कि आप इसे पसंद करेंगे."
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:365
+#. Translators: the parameter here is the name of a distribution,
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
+#. * detect any distribution.
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:305
+#, c-format
+msgid "_Start using %s"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:335
+msgid "You're ready to try Endless OS"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:337
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr "<b>जब आप कंप्यूटर रीस्टार्ट करते हैं या शटडाउन करते हैं, तो कोई भी फ़ाइल जो आप डाउनलोड करते हैं या दस्तावेज़ जो आप बनाते हैं, हमेशा के लिए गुम हो सकतेे हैं.</b>"
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:347
 msgid "Ready to Go"
-msgstr "जारी रखने के लिए तैयार हैं"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:1
-msgid "You're all set!"
-msgstr "आप पूरी तरह से तैयार हैं!"
-
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:184
-#, c-format
-msgid ""
-"We think that your time zone is %s. Press Next to continue or search for a "
-"city to manually set the time zone."
+msgid "You're ready to go!"
 msgstr ""
-"हमें लगता है कि आपका समयक्षेत्र %s है. जारी रखने के लिए अगला दबाएं या समयक्षेत्र स्वयं सेट "
-"करने के लिए कोई शहर ढूंढें."
 
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:495
+#. Translators: "city, country"
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:261
+#, c-format
+msgctxt "timezone loc"
+msgid "%s, %s"
+msgstr ""
+
+#. Translators: UTC here means the Coordinated Universal Time.
+#. * %:::z will be replaced by the offset from UTC e.g. UTC+02
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:298
+msgid "UTC%:::z"
+msgstr ""
+
+#. Translators: This is the time format used in 12-hour mode.
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
+msgid "%l:%M %p"
+msgstr ""
+
+#. Translators: This is the time format used in 24-hour mode.
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
+msgid "%R"
+msgstr ""
+
+#. Translators: "timezone (utc shift)"
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
+#, c-format
+msgctxt "timezone map"
+msgid "%s (%s)"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:449
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:1
 msgid "Time Zone"
 msgstr "समय क्षेत्र"
 
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:2
+msgid ""
+"The time zone will be set automatically if your location can be found. You "
+"can also search for a city to set it yourself."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:3
 msgid "Please search for a nearby city"
-msgstr "कोई आस-पड़ोस का शहर ढूंढें"
+msgstr ""
 
-#~ msgid "No password"
-#~ msgstr "कोई कूटशब्द नहीं"
+#. Translators: the parameter here is the name of a distribution,
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
+#. * detect any distribution.
+#: ../gnome-initial-setup/pages/software/gis-software-page.c:112
+#, c-format
+msgid ""
+"Proprietary software sources provide access to additional software, "
+"including web browsers and games. This software typically has restrictions "
+"on use and access to source code, and is not provided by %s."
+msgstr ""
 
-#~ msgid "Login"
-#~ msgstr "लॉगइन"
+#: ../gnome-initial-setup/pages/software/gis-software-page.c:245
+msgid "Software Sources"
+msgstr ""
 
-#~ msgid "Create a Local Account"
-#~ msgstr "स्थानीय खाता बनाएँ"
+#: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:1
+msgid "Additional Software Sources"
+msgstr ""
 
-#~ msgid "_Confirm password"
-#~ msgstr "कूटशब्द की पुष्टि करें (_C) "
+#: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:2
+msgid "<a href=\"more\">Find out more…</a>"
+msgstr ""
 
-#~ msgid "page 1"
-#~ msgstr "पृष्ठ 1"
+#: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:3
+msgid "Proprietary Software Sources"
+msgstr ""
 
-#~ msgctxt "Password strength"
-#~ msgid "Too short"
-#~ msgstr "बहुत छोटा"
+#: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:4
+msgid ""
+"Proprietary software typically has restrictions on how it can be used and on"
+" access to source code. This prevents anyone but the software owner from "
+"inspecting, improving or learning from its code."
+msgstr ""
 
-#~ msgctxt "Password strength"
-#~ msgid "Not good enough"
-#~ msgstr "बहुत अच्छा नहीं"
-
-#~ msgctxt "Password strength"
-#~ msgid "Weak"
-#~ msgstr "कमजोर "
-
-#~ msgctxt "Password strength"
-#~ msgid "Fair"
-#~ msgstr "साफ"
-
-#~ msgctxt "Password strength"
-#~ msgid "Good"
-#~ msgstr "अच्छा"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strong"
-#~ msgstr "मजबूत"
-
-#~ msgid "Error creating account"
-#~ msgstr "खाता बनाने में त्रुटि"
-
-#~ msgid "Error removing account"
-#~ msgstr "खाता हटाने में त्रुटि"
-
-#~ msgid "Are you sure you want to remove the account?"
-#~ msgstr "क्या आप वाक़ई ख़ाता को मिटाना चाहते हैं?"
-
-#~ msgid "This will not remove the account on the server."
-#~ msgstr "यह सर्वर पर खाता को हटा देगा."
-
-#~ msgid "_Remove"
-#~ msgstr "हटाएं (_R)"
-
-#~ msgid "Connect to your existing data in the cloud"
-#~ msgstr "क्लाउड में अपने मौजूदा डेटा को कनेक्ट करें"
-
-#~ msgid "_Add Account"
-#~ msgstr "खाता जोड़ें (_A)"
-
-#~ msgid "Other"
-#~ msgstr "अन्य"
-
-#~ msgid "Input Sources"
-#~ msgstr "इनपुट स्रोत"
-
-#~ msgid "Select input sources"
-#~ msgstr "इनपुट सूत्रों का चयन करें"
-
-#~ msgid "Login settings are used by all users when logging into the system"
-#~ msgstr ""
-#~ "लॉगइन सेटिंग्स सभी उपयोक्ताओं द्वारा उपयोग किया जाता है जब तंत्र में प्रवेश करते हैं"
-
-#~ msgid "Add an Input Source"
-#~ msgstr "इनपुट स्रोत जोड़ें "
-
-#~ msgid "Search for a location"
-#~ msgstr "किसी स्थान के लिए ढूंढें"
-
-#~ msgid "Location"
-#~ msgstr "स्थान"
-
-#~ msgid "_Determine your location automatically"
-#~ msgstr "अपने स्थान को स्वतः सुनिश्चित करें (_D)"
-
-#~ msgid "Network is not available."
-#~ msgstr "संजाल उपलब्ध नहीं है."
-
-#~ msgid "No network devices found."
-#~ msgstr "कोई संजाल युक्ति नहीं मिला."
-
-#~ msgid "Wireless Networks"
-#~ msgstr "बेतार संजाल"
-
-#~ msgid "Thank You"
-#~ msgstr "शुक्रिया"
-
-#~ msgid "Your computer is ready to use."
-#~ msgstr "आपका कंप्यूटर का उपयोग करने के लिए तैयार है."
-
-#~ msgid "You may change these options at any time in Settings."
-#~ msgstr "आप सेटिंग में किसी भी समय पर इन विकल्पों को बदल सकते हैं."
-
-#~ msgid "_Back"
-#~ msgstr "पीछे (_B)"
-
-#~ msgid "Sorry"
-#~ msgstr "क्षमा करें"
-
-#~ msgid "Input methods can't be used on the login screen"
-#~ msgstr "इनपुट विधि लॉगिन स्क्रीन पर नहीं किया जा सकता"
-
-#~ msgid "No input source selected"
-#~ msgstr "कोई इनपुट स्रोत चयनित नहीं"
-
-#~ msgid "Keyboard Layout"
-#~ msgstr "कुंजीपट ख़ाका"
-
-#~ msgid "Remove Input Source"
-#~ msgstr "इनपुट स्रोत निकालें"
-
-#~ msgid "Move Input Source Up"
-#~ msgstr "इनपुट स्रोत ऊपर ले जाएं"
-
-#~ msgid "Show Keyboard Layout"
-#~ msgstr "कुंजीपट लेआउट दिखाएँ"
-
-#~ msgid "Select an input source"
-#~ msgstr "एक इनपुट स्रोत का चयन करें"
-
-#~ msgid "Create Local Account"
-#~ msgstr "स्थानीय खाता बनाएँ"
-
-#~ msgid "_Done"
-#~ msgstr "संपन्न (_D)"
-
-#~ msgid "_Require a password to use this account"
-#~ msgstr "इस खाते का उपयोग करने के लिए एक कूटशब्द की आवश्यकता होती है (_R)"
-
-#~ msgid "_Act as administrator of this computer"
-#~ msgstr "इस कंप्यूटर के प्रशासक के रूप में कार्य करें (_A)"
-
-#~ msgid "Choose How to Login"
-#~ msgstr "लॉगिन करने के लिए चुनें"
-
-#~ msgid "Remove"
-#~ msgstr "हटाएँ"
-
-#~ msgid "English"
-#~ msgstr "अंग्रेज़ी"
-
-#~ msgid "British English"
-#~ msgstr "ब्रिटिश अंग्रेज़ी"
-
-#~ msgid "German"
-#~ msgstr "जर्मन"
-
-#~ msgid "French"
-#~ msgstr "फ्रांसीसी"
-
-#~ msgid "Spanish"
-#~ msgstr "स्पेनी"
-
-#~ msgid "Chinese (simplified)"
-#~ msgstr "चीनी (सरल)"
-
-#~ msgid "Unspecified"
-#~ msgstr "अविशिष्ट"
-
-#~ msgid "Use %s"
-#~ msgstr "प्रयोग करें %s"
-
-#~ msgid "Show _all"
-#~ msgstr "सभी दिखायें (_a)"
-
-#~ msgid "Enjoy GNOME!"
-#~ msgstr "गनोम का आनंद लें!"
-
-#~ msgid "New to GNOME 3 and need help finding your way around?"
-#~ msgstr "गनोम 3 के लिए नये हैं और अपना तरीके से जानने के लिए मदद चाहते हैं?"
-
-#~ msgid "_Take a Tour"
-#~ msgstr "जायज़ा लें (_T)"
+#: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:5
+msgid ""
+"In contrast, Free Software can be freely run, copied, distributed, studied "
+"and modified."
+msgstr ""

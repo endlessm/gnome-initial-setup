@@ -1,70 +1,68 @@
-# Slovak translation for gnome-initial-setup.
-# Copyright (C) 2012-2013 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-initial-setup package.
-# Dušan Kazik <prescott66@gmail.com>, 2012-2013.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"initial-setup&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-09-01 15:51+0000\n"
-"PO-Revision-Date: 2016-09-05 19:13+0200\n"
-"Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
-"Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
-"Language: sk\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-13 14:16-0700\n"
+"PO-Revision-Date: 2017-06-13 21:21+0000\n"
+"Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
+"Language-Team: Slovak (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 1.8.8\n"
-"X-Project-Style: gnome\n"
+"Language: sk\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-# desktop entry name
 #: ../data/gnome-initial-setup.desktop.in.in.h:1
 #: ../data/gnome-initial-setup-first-login.desktop.in.in.h:1
 msgid "Initial Setup"
 msgstr "Prvotné nastavenie"
 
-# GTK_BUTTON
-#: ../gnome-initial-setup/gis-assistant.c:396
+#: ../gnome-initial-setup/gis-assistant.c:314
 msgid "_Next"
 msgstr "Ď_alej"
 
-# GTK_BUTTON
-#: ../gnome-initial-setup/gis-assistant.c:397
+#: ../gnome-initial-setup/gis-assistant.c:454
 msgid "_Accept"
-msgstr "_Prijať"
+msgstr ""
 
-# GTK_BUTTON
-#: ../gnome-initial-setup/gis-assistant.c:398
+#: ../gnome-initial-setup/gis-assistant.c:455
 msgid "_Skip"
-msgstr "Pre_skočiť"
+msgstr ""
 
-# gtk button
-#: ../gnome-initial-setup/gis-assistant.c:399
+#: ../gnome-initial-setup/gis-assistant.c:456
 msgid "_Previous"
 msgstr "_Späť"
 
-# GTK_BUTTON
-#: ../gnome-initial-setup/gis-assistant.c:400
+#: ../gnome-initial-setup/gis-assistant.c:457
 msgid "_Cancel"
 msgstr "_Zrušiť"
 
-# cmd desc
-#: ../gnome-initial-setup/gnome-initial-setup.c:199
-msgid "Force existing user mode"
-msgstr "Vynúti režim existujúceho používateľa"
+#: ../gnome-initial-setup/gis-page-util.c:421
+msgid "Disabled"
+msgstr ""
 
-# cmd desc
-#: ../gnome-initial-setup/gnome-initial-setup.c:205
+#: ../gnome-initial-setup/gis-page-util.c:423
+#, c-format
+msgid "SD Card: %s"
+msgstr ""
+
+#: ../gnome-initial-setup/gnome-initial-setup.c:257
+msgid "Force existing user mode"
+msgstr ""
+
+#: ../gnome-initial-setup/gnome-initial-setup.c:263
 msgid "- GNOME initial setup"
 msgstr "- Prvotné nastavenie prostredia GNOME"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:242
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:284
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
 msgid "About You"
-msgstr "Osobné údaje"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:182
 msgid "Failed to register account"
@@ -84,34 +82,28 @@ msgstr "Zlyhalo prihlásenie do domény"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:1
 msgid "Enterprise Login"
-msgstr "Firemné prihlásenie"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:2
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device."
 msgstr ""
-"Firemné prihlásenie umožňuje použiť na tomto zariadení centrálnu správu "
-"účtov."
 
-# GtkLabel label
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:3
 msgid "_Domain"
 msgstr "_Doména"
 
-# GtkLabel label
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:4
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:5
 msgid "_Username"
 msgstr "_Používateľské meno"
 
-# GtkLabel label
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:5
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:3
 msgid "_Password"
 msgstr "_Heslo"
 
-# GtkLabel label
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:6
 msgid "Enterprise domain or realm name"
 msgstr "Firemná doména alebo názov pôsobiska"
@@ -130,9 +122,6 @@ msgid ""
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
 msgstr ""
-"Aby bolo možné použiť firemné prihlasovacie údaje, musí byť tento počítač "
-"zahrnutý v doméne. Prosím, požiadajte správcu siete, aby sem zadal heslo k "
-"doméne, a potom zvoľte jedinečný názov pre váš počítač."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:10
 msgid "_Computer"
@@ -146,41 +135,41 @@ msgstr "Me_no správcu"
 msgid "Administrator Password"
 msgstr "Heslo správcu"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:202
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:208
 msgid "Please check the name and username. You can choose a picture too."
 msgstr ""
-"Prosím, skontrolujte meno a používateľské meno. Taktiež môžete zvoliť "
-"obrázok."
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:403
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:414
 msgid "We need a few details to complete setup."
-msgstr "Kvôli dokončeniu nastavenia je potrebných niekoľko údajov."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:1
 msgid "Avatar image"
-msgstr "Obrázok podobizne"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:3
 msgid "Please provide a name and username. You can choose a picture too."
 msgstr ""
-"Prosím, poskytnite meno a používateľské meno. Taktiež môžete zvoliť obrázok."
 
-# GtkLabel label
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:4
 msgid "_Full Name"
 msgstr "_Celé meno"
 
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:6
+msgid "Password protected"
+msgstr ""
+
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:1
 msgid "Set Up _Enterprise Login"
-msgstr "Nastaviť _firemné prihlásenie"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:246
 msgid "Disable image"
-msgstr "Zakázať obrázok"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:264
 msgid "Take a photo..."
-msgstr "Zosnímať fotografiu..."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
@@ -204,36 +193,84 @@ msgstr "Neplatné heslo. Prosím, skúste to znovu"
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
 msgid "Couldn't connect to the %s domain: %s"
-msgstr "Nepodarilo sa pripojiť k doméne %s: %s"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:245
+#: ../gnome-initial-setup/pages/account/um-utils.c:247
 #, c-format
 msgid "A user with the username '%s' already exists."
-msgstr "Používateľ s používateľským menom „%s“ už existuje."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:249
+#: ../gnome-initial-setup/pages/account/um-utils.c:251
 #, c-format
 msgid "The username is too long."
-msgstr "Používateľské meno je príliš dlhé."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:252
+#: ../gnome-initial-setup/pages/account/um-utils.c:254
 msgid "The username cannot start with a '-'."
-msgstr "Používateľské meno nemôže začínať na „-“."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:255
+#: ../gnome-initial-setup/pages/account/um-utils.c:257
 msgid ""
 "The username should only consist of lower and upper case letters from a-z, "
 "digits and any of characters '.', '-' and '_'."
 msgstr ""
-"Používateľské meno musí pozostávať iba z malých a veľkých písmen a-z, čísel "
-"a ktoréhokoľvek zo znakov „.“, „-“ a „_“."
 
-# GtkLabel label
-#: ../gnome-initial-setup/pages/account/um-utils.c:259
+#: ../gnome-initial-setup/pages/account/um-utils.c:261
 msgid "This will be used to name your home folder and can't be changed."
 msgstr ""
-"Toto sa použije ako názov vášho domovského priečinka a nebude možné ho "
-"zmeniť."
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.c:269
+msgid "Display"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:1
+msgid "Adjust for TV screen"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:2
+msgid "Do you see this at the bottom right corner of your screen?"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:3
+msgid "I see it"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:4
+msgid "I do not see it. Shrink screen to fit TV."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:242
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:346
+msgid "Terms of Use"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:247
+msgid "Third Party Software"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:339
+msgid "_Accept and Continue"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
+msgid "Please read the following terms of use carefully"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
+msgid ""
+"By clicking \"Accept and continue,\" you acknowledge that you have read, "
+"understood, and agree to be bound by the following terms and conditions."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:3
+msgid "Help make Endless better for everyone"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:4
+msgid ""
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.c:301
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.ui.h:1
@@ -244,105 +281,145 @@ msgstr "Licenčná zmluva"
 msgid ""
 "I have _agreed to the terms and conditions in this end user license "
 "agreement."
-msgstr ""
-"Súhl_asím s podmienkami uvedenými v tejto licenčnej zmluve pre koncového "
-"používateľa."
+msgstr "Súhl_asím s podmienkami uvedenými v tejto licenčnej zmluve pre koncového používateľa."
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.c:87
 msgid "Add Account"
 msgstr "Pridanie účtu"
 
-# page title
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.c:336
 msgid "Online Accounts"
 msgstr "Účty služieb"
 
-# gtk label
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:1
 msgid "Connect Your Online Accounts"
-msgstr "Pripojte vaše účty služieb"
+msgstr ""
 
-# GtkLabel label
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:2
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
 msgstr ""
-"Pripojte vaše účty a získajte jednoduchý prístup k vašim emailom, online "
-"kalendáru, kontaktom, dokumentom a fotografiám."
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:3
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr "Účty sa dajú kedykoľvek pridať a odstrániť v aplikácii Nastavenia."
+msgstr ""
 
-# gtk button
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:241
 msgid "Preview"
 msgstr "Náhľad"
 
-# tooltip
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:300
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:219
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:290
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "Viac…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:322
 msgid "No inputs found"
 msgstr "Nenašli sa žiadne zdroje vstupu"
 
-# nazov zalozky
-#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:363
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
+msgid "Your keyboard layout seems to be:"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:289
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:2
+msgid "Please press one of the following keys:"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:290
+msgid "Is the following key present on your keyboard?"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:400
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:1
 msgid "Typing"
 msgstr "Písanie"
 
-# label
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
 msgid "Select your keyboard layout or an input method."
-msgstr "Vyberte rozloženie klávesnice alebo metódu vstupu."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:235
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:3
+msgid "Help Detect My Keyboard Layout"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
+msgid "Detect Keyboard Layout…"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
+msgid "_Select"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:306
 msgid "No languages found"
 msgstr "Nenašli sa žiadne jazyky"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:292
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:322
 msgid "Welcome"
 msgstr "Vitajte"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: ../gnome-initial-setup/pages/language/gis-welcome-widget.c:123
 msgid "Welcome!"
-msgstr "Vitajte!"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:309
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:183
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:276
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
+msgid "Try Endless OS by running it from the USB Stick."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:277
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
+msgid "Reformat this computer with Endless OS."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:278
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
+msgid "Try It"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:279
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
+msgid "Reformat"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:281
+msgid "Endless USB Stick"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:296
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "Iný…"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:368
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:355
 msgid "Wireless networking is disabled"
-msgstr "Bezdrôtové siete sú zakázané"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:375
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:361
 msgid "Checking for available wireless networks"
 msgstr "Kontrolujú sa dostupné bezdrôtové siete"
 
-# page title
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:641
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:625
 msgid "Network"
 msgstr "Sieť"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:1
 msgid "Wi-Fi"
-msgstr "Wi-Fi"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:2
 msgid ""
@@ -350,9 +427,6 @@ msgid ""
 "details, and enable you to access your email, calendar, and contacts. It is "
 "also necessary for enterprise login accounts."
 msgstr ""
-"Pripojením na internet povolíte nastavenie času, pridanie podrobností o vás "
-"a tiež budete môcť pristupovať k vašim emailom, kalendáru a kontaktom. Je "
-"tiež potrebné na prihlásenie k firemným účtom."
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
 msgid "No wireless available"
@@ -360,38 +434,48 @@ msgstr "Bezdrôtová sieť nie je dostupná"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:4
 msgid "Turn On"
-msgstr "Zapnúť"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:134
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:170
 msgid "This is a weak password."
-msgstr "Toto heslo je slabé."
+msgstr ""
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:148
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:184
 msgid "The passwords do not match."
-msgstr "Heslá sa nezhodujú."
+msgstr ""
 
-# GtkLabel label
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:270
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:348
 msgid "Password"
-msgstr "Heslo"
+msgstr ""
 
-# GtkLabel label
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:1
 msgid "Set a Password"
-msgstr "Nastavte heslo"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:2
 msgid "Be careful not to lose your password."
-msgstr "Dajte pozor, aby ste heslo nezabudli."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:4
 msgid "_Verify"
-msgstr "O_veriť"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:5
+msgid "Show password"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:6
+msgid "Password _reminder"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:7
+msgid "Password reminder will be shown in case you forget your password."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
 msgid "The new password needs to be different from the old one."
-msgstr "Nové heslo musí byť odlišné od starého hesla."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
@@ -399,8 +483,6 @@ msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
 msgstr ""
-"Toto heslo je veľmi podobné vášmu poslednému. Skúste zmeniť niektoré písmená "
-"a číslice."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:85
 #: ../gnome-initial-setup/pages/password/pw-utils.c:93
@@ -409,20 +491,18 @@ msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
 msgstr ""
-"Toto heslo je veľmi podobné vášmu poslednému. Skúste zmeniť heslo trochu "
-"viac."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
+"This is a weak password. A password without your user name would be "
+"stronger."
 msgstr ""
-"Toto heslo je slabé. Heslo bez vášho používateľského mena bude silnejšie."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr "Toto heslo je slabé. Skúste sa vyhnúť použitiu vášho mena v hesle."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
@@ -430,32 +510,31 @@ msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
 msgstr ""
-"Toto heslo je slabé. Skúste sa vyhnúť niektorým slovám zahrnutým v hesle."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr "Toto heslo je slabé. Skúste sa vyhnúť bežným slovám."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr "Toto heslo je slabé. Skúste sa vyhnúť preskupeniu existujúcich slov."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr "Toto heslo je slabé. Skúste použiť viac číslic."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr "Toto heslo je slabé. Skúste použiť viac veľkých písmen."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr "Toto heslo je slabé. Skúste použiť viac malých písmen."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
@@ -463,8 +542,6 @@ msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
 msgstr ""
-"Toto heslo je slabé. Skúste použiť viac špeciálnych znakov, ako sú "
-"interpunkcie."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
@@ -472,12 +549,11 @@ msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
 msgstr ""
-"Toto heslo je slabé. Skúste použiť zmiešanie písmen, číslic a interpunkcií."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr "Toto heslo je slabé. Skúste sa vyhnúť opakovaniu toho istého znaku."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
@@ -485,25 +561,21 @@ msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
 msgstr ""
-"Toto heslo je slabé. Skúste sa vyhnúť opakovaniu toho istého znaku: musíte "
-"premiešať písmená, číslice a interpunkcie."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
 msgstr ""
-"Toto heslo je slabé. Skúste sa vyhnúť postupnosti ako sú 1234 alebo abcd."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid "This is a weak password. Try to add more letters, numbers and symbols."
-msgstr "Toto heslo je slabé. Skúste pridať viac písmen, číslic a znakov."
+msgstr ""
 
-# GtkLabel label
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and use a number or two."
-msgstr "Pomiešajte malé a veľké písmená a použite zopár číslic."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
@@ -511,147 +583,142 @@ msgid ""
 "Good password! Adding more letters, numbers and punctuation will make it "
 "stronger."
 msgstr ""
-"Dobré heslo! Pridaním viacerých písmen, číslic a interpunkcií ho ešte "
-"zosilníte."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:141
 msgctxt "Password strength"
 msgid "Strength: Weak"
-msgstr "Sila: Slabé"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:145
 msgctxt "Password strength"
 msgid "Strength: Low"
-msgstr "Sila: Nízke"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:148
 msgctxt "Password strength"
 msgid "Strength: Medium"
-msgstr "Sila: Priemerné"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:151
 msgctxt "Password strength"
 msgid "Strength: Good"
-msgstr "Sila: Dobré"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:154
 msgctxt "Password strength"
 msgid "Strength: High"
-msgstr "Sila: Silné"
+msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:109
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:110
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
 msgstr ""
-"Odoslaním hlásení o technických problémoch nám pomôžete vylepšiť systém %s. "
-"Hlásenia sú odosielané anonymne a neobsahujú osobné údaje."
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:116
-msgid "Uses Mozilla Location Service:"
-msgstr "Využívajú sa služby umiestnenia spoločnosti Mozilla:"
-
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:116
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:238
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:175
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:250
 msgid "Privacy Policy"
-msgstr "Zásady súkromia"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:274
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:286
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:1
 msgid "Privacy"
-msgstr "Súkromie"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:2
 msgid "Location Services"
-msgstr "Služby umiestnenia"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:3
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
 msgstr ""
-"Umožňujú aplikáciám zistiť vašu geografickú polohu. Používanie služieb "
-"umiestnenia je indikované ikonou."
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:4
 msgid "Automatic Problem Reporting"
-msgstr "Automatické hlásenie problémov"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:5
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr "Nastavenia súkromia sa dajú kedykoľvek zmeniť v aplikácii Nastavenia."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:228
 msgid "No regions found"
-msgstr "Žiadne oblasti nenájdené"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/region/gis-region-page.c:226
 #: ../gnome-initial-setup/pages/region/gis-region-page.ui.h:1
 msgid "Region"
-msgstr "Oblasť"
+msgstr ""
 
-# GtkLabel label
 #: ../gnome-initial-setup/pages/region/gis-region-page.ui.h:2
 msgid "Choose your country or region."
-msgstr "Zvoľte krajinu alebo oblasť."
+msgstr ""
 
-# DK: %s=nazov OS
-# GtkButton label
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:328
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:305
 #, c-format
 msgid "_Start using %s"
-msgstr "_Začať používať systém %s"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:358
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:335
+msgid "You're ready to try Endless OS"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:337
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:347
 msgid "Ready to Go"
-msgstr "Pripravený na spustenie"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:1
 msgid "You're ready to go!"
-msgstr "Všetko je pripravené na spustenie!"
+msgstr ""
 
 #. Translators: "city, country"
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:374
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:261
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
-msgstr "%s, %s"
+msgstr ""
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:411
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:298
 msgid "UTC%:::z"
-msgstr "UTC%:::z"
+msgstr ""
 
 #. Translators: This is the time format used in 12-hour mode.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:415
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
 msgid "%l:%M %p"
-msgstr "%-H:%M"
+msgstr ""
 
 #. Translators: This is the time format used in 24-hour mode.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:418
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
 msgid "%R"
-msgstr "%R"
+msgstr ""
 
 #. Translators: "timezone (utc shift)"
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:421
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
-msgstr "%s (%s)"
+msgstr ""
 
-# GtkLabel label
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:566
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:449
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:1
 msgid "Time Zone"
 msgstr "Časové pásmo"
@@ -661,17 +728,14 @@ msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
 msgstr ""
-"Časové pásmo bude nastavené automaticky, ak je možné nájsť vaše umiestnenie. "
-"Taktiež môžete vyhľadať a nastaviť mesto podľa vlastného výberu."
 
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:3
 msgid "Please search for a nearby city"
-msgstr "Vyhľadajte blízke mesto"
+msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: ../gnome-initial-setup/pages/software/gis-software-page.c:112
 #, c-format
 msgid ""
@@ -679,253 +743,32 @@ msgid ""
 "including web browsers and games. This software typically has restrictions "
 "on use and access to source code, and is not provided by %s."
 msgstr ""
-"Zdroje uzavretého softvéru poskytujú prístup k dodatočnému softvéru, vrátane "
-"prehliadačov a hier. Tento softvér obvykle obsahuje obmedzenia spojené s "
-"používaním a prístupom k zdrojovému kódu a nie je poskytovaný systémom %s."
 
-# GtkButton AtkObjekt
 #: ../gnome-initial-setup/pages/software/gis-software-page.c:245
 msgid "Software Sources"
-msgstr "Zdroje softvéru"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:1
 msgid "Additional Software Sources"
-msgstr "Dodatočné zdroje softvéru"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:2
 msgid "<a href=\"more\">Find out more…</a>"
-msgstr "<a href=\"more\">Zistite viac…</a>"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:3
 msgid "Proprietary Software Sources"
-msgstr "Zdroje uzavretého softvéru"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:4
 msgid ""
-"Proprietary software typically has restrictions on how it can be used and on "
-"access to source code. This prevents anyone but the software owner from "
+"Proprietary software typically has restrictions on how it can be used and on"
+" access to source code. This prevents anyone but the software owner from "
 "inspecting, improving or learning from its code."
 msgstr ""
-"Uzavretý softvér obvykle obsahuje obmedzenia spojené s používaním a "
-"prístupom k zdrojovému kódu. Tým je zabránená komukoľvek okrem majiteľa "
-"softvéru kontrolovať, zlepšovať alebo učiť sa kód."
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:5
 msgid ""
 "In contrast, Free Software can be freely run, copied, distributed, studied "
 "and modified."
 msgstr ""
-"Naopak slobodný softvér je možné slobodne spúšťať, kopírovať, šíriť, "
-"študovať a upravovať."
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "Sú toto správne údaje? Ak budete chcieť, môžete ich zmeniť."
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr "Môžete prezrieť vaše účty služieb (a pridať ďalšie) po inštalácii."
-
-#~ msgid ""
-#~ "Thank you for choosing %s.\n"
-#~ "We hope that you love it."
-#~ msgstr ""
-#~ "Ďakujeme, že ste si vybrali systém %s.\n"
-#~ "Veríme, že sa vám bude páčiť."
-
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "Počítač zistil, že sa nachádzate v časovom pásme %s. Pokračujte stlačením "
-#~ "tlačidla Ďalej alebo ručne nastavte časové pásmo vyhľadaním mesta."
-
-#~ msgid "Cancel"
-#~ msgstr "Zrušiť"
-
-#~ msgid "Your username cannot be changed after setup."
-#~ msgstr "Po dokončení nastavenia sa používateľské meno nedá zmeniť."
-
-#~| msgid ""
-#~| "In order to use enterprise logins, this computer needs to be\n"
-#~| "enrolled in the domain. Please have your network administrator\n"
-#~| "type their domain password here, and choose a unique computer\n"
-#~| "name for your computer."
-#~ msgid ""
-#~ "In order to use enterprise logins, this computer needs to be enrolled in "
-#~ "the domain. Please have your network administrator type their domain "
-#~ "password here, and choose a unique computer name for your computer."
-#~ msgstr ""
-#~ "Aby bolo možné použiť firemné prihlasovacie údaje, musí byť tento počítač "
-#~ "zahrnutý v doméne. Prosím, požiadajte správcu siete, aby sem zadal heslo "
-#~ "k doméne, a potom zvoľte jedinečný názov pre váš počítač."
-
-#~ msgid "No password"
-#~ msgstr "Bez hesla"
-
-# GtkLabel label
-#~ msgid "_Confirm password"
-#~ msgstr "Po_tvrdenie hesla"
-
-#~ msgctxt "Password strength"
-#~ msgid "Too short"
-#~ msgstr "Príliš krátke"
-
-#~ msgctxt "Password strength"
-#~ msgid "Not good enough"
-#~ msgstr "Nedostatočne dobré"
-
-#~ msgctxt "Password strength"
-#~ msgid "Weak"
-#~ msgstr "Slabé"
-
-#~ msgctxt "Password strength"
-#~ msgid "Fair"
-#~ msgstr "Dostatočné"
-
-#~ msgctxt "Password strength"
-#~ msgid "Good"
-#~ msgstr "Dobré"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strong"
-#~ msgstr "Silné"
-
-# page title
-#~ msgid "Login"
-#~ msgstr "Prihlásenie"
-
-# GtkLabel label
-#~ msgid "Create a Local Account"
-#~ msgstr "Vytvorte miestny účet"
-
-# tab
-#~ msgid "page 1"
-#~ msgstr "strana 1"
-
-# GtkLabel label
-#~ msgid "Create an Enterprise Account"
-#~ msgstr "Vytvorte firemný účet"
-
-#~ msgid "Other"
-#~ msgstr "Iný"
-
-#~| msgid "No input sources found"
-#~ msgid "No input source selected"
-#~ msgstr "Neboli vybrané žiadne zdroje vstupu"
-
-# dialog title
-#~ msgid "Add an Input Source"
-#~ msgstr "Pridanie zdroja vstupu"
-
-#~ msgid "Thank You"
-#~ msgstr "Ďakujeme"
-
-#~ msgid "That's it!"
-#~ msgstr "To je všetko!"
-
-# GtkButton label
-#~ msgid "_Start using GNOME 3"
-#~ msgstr "_Začať používať GNOME 3"
-
-#~ msgctxt "Online Account"
-#~ msgid "Other"
-#~ msgstr "Iný"
-
-#~ msgid "Mail"
-#~ msgstr "Pošta"
-
-#~ msgid "Contacts"
-#~ msgstr "Kontakty"
-
-#~ msgid "Chat"
-#~ msgstr "Rozhovor"
-
-#~ msgid "Resources"
-#~ msgstr "Zdroje"
-
-#~ msgid "Error creating account"
-#~ msgstr "Chyba pri vytváraní účtu"
-
-#~ msgid "Error removing account"
-#~ msgstr "Chyba pri odstraňovaní účtu"
-
-#~ msgid "Are you sure you want to remove the account?"
-#~ msgstr "Naozaj chcete odstrániť účet?"
-
-#~ msgid "This will not remove the account on the server."
-#~ msgstr "Týmto sa neodstráni účet na serveri."
-
-# button
-#~ msgid "_Remove"
-#~ msgstr "O_dstrániť"
-
-# GtkLabel label
-#~ msgid "Connect to your existing data in the cloud"
-#~ msgstr "Spojte sa s vašimi existujúcimi údajmi v cloude"
-
-# button label
-#~ msgid "_Add Account"
-#~ msgstr "_Pridať účet"
-
-# location (London, ...)
-#~ msgid "Search for a location"
-#~ msgstr "Vyhľadajte miesto"
-
-# GtkButton label
-#~ msgid "_Determine your location automatically"
-#~ msgstr "_Určiť moju polohu automaticky"
-
-#~ msgid "No network devices found."
-#~ msgstr "Nenašli sa žiadne sieťové zariadenia."
-
-# GtkLabel label
-#~ msgid "Your computer is ready to use."
-#~ msgstr "Váš počítač je pripravený na používanie."
-
-# GtkLabel label
-#~ msgid "You may change these options at any time in Settings."
-#~ msgstr "Tieto voľby môžete zmeniť kedykoľvek v Nastaveniach systému."
-
-# GtkLabel
-#~ msgid "Select keyboard layouts"
-#~ msgstr "Vyberte rozloženia klávesnice"
-
-#~ msgid "Login settings are used by all users when logging into the system"
-#~ msgstr ""
-#~ "Nastavenia prihlásenia sú používané všetkými používateľmi počas "
-#~ "prihlasovania do systému"
-
-# GTK_BUTTON
-#~ msgid "_Back"
-#~ msgstr "_Späť"
-
-# GtkLabel label
-#~ msgid "Select input sources"
-#~ msgstr "Vyberte zdroje vstupu"
-
-# page title
-#~ msgid "Keyboard Layout"
-#~ msgstr "Rozloženie klávesnice"
-
-# GtkButton AtkObjekt
-#~ msgid "Remove Input Source"
-#~ msgstr "Odstrániť zdroj vstupu"
-
-# GtkButton AtkObjekt
-#~ msgid "Move Input Source Up"
-#~ msgstr "Presunúť zdroj vstupu nahor"
-
-# GtkButton AtkObjekt
-#~ msgid "Input Source Settings"
-#~ msgstr "Nastavenia zdroja vstupu"
-
-# GtkDialog label
-#~ msgid "Select an input source"
-#~ msgstr "Výber zdroja vstupu"
-
-# PM: k tomuto reťazcu je zle zapísaný komentár pre prekladateľov - nahlás bug
-#, fuzzy
-#~ msgid "Use %s"
-#~ msgstr "Použiť jazyk %s"
-
-#~ msgid "Unspecified"
-#~ msgstr "Neurčený"
