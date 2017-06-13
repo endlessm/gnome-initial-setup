@@ -46,6 +46,8 @@
 
 #define MIN_ROWS 5
 
+#define TECLA_CMD "/usr/bin/tecla"
+
 struct _CcInputChooserPrivate
 {
         GtkWidget *filter_entry;
@@ -174,6 +176,16 @@ preview_cb (GtkLabel       *label,
 	const gchar *layout;
 	const gchar *variant;
 	gchar *commandline;
+	gint argc;
+	gchar **argv = NULL;
+	gchar **env;
+	GError *error = NULL;
+	GPid pid;
+
+	g_autofree gchar *lc_msg = cc_common_language_get_current_language ();
+
+	env = g_get_environ ();
+	env = g_environ_setenv (env, "LC_MESSAGES", lc_msg, TRUE);
 
 	row = gtk_widget_get_parent (GTK_WIDGET (label));
 	widget = get_input_widget (row);
@@ -182,12 +194,40 @@ preview_cb (GtkLabel       *label,
 		return TRUE;
 
 	if (variant[0])
-		commandline = g_strdup_printf ("tecla \"%s+%s\"", layout, variant);
+		commandline = g_strdup_printf (TECLA_CMD" \"%s+%s\"", layout, variant);
 	else
-		commandline = g_strdup_printf ("tecla %s", layout);
-	g_spawn_command_line_async (commandline, NULL);
-	g_free (commandline);
+		commandline = g_strdup_printf (TECLA_CMD" %s", layout);
 
+	g_shell_parse_argv (commandline,
+			    &argc,
+			    &argv,
+			    &error);
+
+	if (error) {
+		g_critical ("Error parsing gkbd-keyboard-display command: %s", error->message);
+		g_clear_error (&error);
+		goto out;
+	}
+
+	g_spawn_async (NULL,
+		       argv,
+		       env,
+		       G_SPAWN_DEFAULT,
+		       NULL,
+		       NULL,
+		       &pid,
+		       &error);
+
+	if (error) {
+		g_critical ("Error running gkbd-keyboard-display: %s", error->message);
+		g_clear_error (&error);
+		goto out;
+	}
+
+out:
+	g_strfreev (env);
+	g_strfreev (argv);
+	g_free (commandline);
 	return TRUE;
 }
 
