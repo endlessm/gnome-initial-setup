@@ -175,10 +175,10 @@ add_provider_to_list (GisGoaPage *page, const char *provider_type)
 static void
 populate_provider_list (GisGoaPage *page)
 {
-  add_provider_to_list (page, "google");
-  add_provider_to_list (page, "owncloud");
-  add_provider_to_list (page, "windows_live");
   add_provider_to_list (page, "facebook");
+  add_provider_to_list (page, "google");
+  add_provider_to_list (page, "windows_live");
+  add_provider_to_list (page, "owncloud");
 }
 
 static void
