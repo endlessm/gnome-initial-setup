@@ -186,7 +186,7 @@ populate_provider_list (GisGoaPage *page)
   g_auto(GStrv) conf_providers =
     gis_driver_conf_get_string_list (GIS_PAGE (page)->driver, VENDOR_GOA_GROUP, VENDOR_PROVIDERS_KEY, NULL);
   GStrv providers = conf_providers ? conf_providers :
-    (gchar *[]) { "google", "owncloud", "windows_live", "facebook", NULL };
+    (gchar *[]) { "facebook", "google", "windows_live", "owncloud", NULL };
 
   /* This code will read the keyfile containing vendor customization options and
    * look for options under the "goa" group, and supports the following keys:
