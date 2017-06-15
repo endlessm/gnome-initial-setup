@@ -59,6 +59,7 @@
                 <property name="orientation">horizontal</property>
                 <property name="margin_start">24</property>
                 <property name="margin_end">24</property>
+                <property name="margin_bottom">6</property>
                 <property name="spacing">6</property>
                 <child>
                   <object class="GtkImage" id="warning_icon">
@@ -75,6 +76,7 @@
                     <property name="visible">True</property>
                     <property name="justify">left</property>
                     <property name="wrap">True</property>
+                    <property name="max-width-chars">60</property>
                   </object>
                 </child>
               </object>
