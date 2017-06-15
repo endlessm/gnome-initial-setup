@@ -99,6 +99,9 @@ gis_page_get_property (GObject    *object,
       else
         g_value_set_boolean (value, FALSE);
       break;
+    case PROP_HIDE_FORWARD_BUTTON:
+      g_value_set_boolean (value, priv->hide_forward_button);
+      break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -140,6 +143,9 @@ gis_page_set_property (GObject      *object,
       break;
     case PROP_COMPLETE:
       priv->complete = g_value_get_boolean (value);
+      break;
+    case PROP_HIDE_FORWARD_BUTTON:
+      priv->hide_forward_button = g_value_get_boolean (value);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
