@@ -356,6 +356,9 @@ gis_password_page_init (GisPasswordPage *page)
 void
 gis_prepare_password_page (GisDriver *driver)
 {
+  if (gis_driver_is_live_session (driver))
+    return;
+
   gis_driver_add_page (driver,
                        g_object_new (GIS_TYPE_PASSWORD_PAGE,
                                      "driver", driver,
