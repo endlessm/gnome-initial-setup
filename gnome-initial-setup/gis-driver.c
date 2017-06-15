@@ -97,9 +97,19 @@ G_DEFINE_TYPE_WITH_PRIVATE(GisDriver, gis_driver, GTK_TYPE_APPLICATION)
 static gboolean
 running_live_session (void)
 {
+  /* This is the same variable used by eos-installer. We do not care about
+   * the UUID of the image partition here, just whether the variable is set.
+   */
+  const gchar *force = g_getenv ("EI_FORCE_LIVE_BOOT_UUID");
   gboolean has_live_boot_param;
   GError *error = NULL;
   g_autofree gchar *contents = NULL;
+
+  if (force != NULL && *force != '\0')
+    {
+      return TRUE;
+    }
+
 
   if (!g_file_get_contents ("/proc/cmdline", &contents, NULL, &error))
     {
