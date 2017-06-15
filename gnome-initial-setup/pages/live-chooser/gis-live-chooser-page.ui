@@ -184,20 +184,20 @@
           </packing>
         </child>
       </object>
-      <object class="GtkSizeGroup">
-        <property name="mode">vertical</property>
-        <widgets>
-          <widget name="reformat_label"/>
-          <widget name="try_label"/>
-        </widgets>
-      </object>
-      <object class="GtkSizeGroup">
-        <property name="mode">vertical</property>
-        <widgets>
-          <widget name="reformat_icon"/>
-          <widget name="try_icon"/>
-        </widgets>
-      </object>
     </child>
   </template>
+  <object class="GtkSizeGroup">
+    <property name="mode">vertical</property>
+    <widgets>
+      <widget name="reformat_label"/>
+      <widget name="try_label"/>
+    </widgets>
+  </object>
+  <object class="GtkSizeGroup">
+    <property name="mode">vertical</property>
+    <widgets>
+      <widget name="reformat_icon"/>
+      <widget name="try_icon"/>
+    </widgets>
+  </object>
 </interface>
