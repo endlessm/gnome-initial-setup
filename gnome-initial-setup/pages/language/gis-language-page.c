@@ -127,12 +127,7 @@ language_changed (CcLanguageChooser  *chooser,
   driver = GIS_PAGE (page)->driver;
 
   setlocale (LC_MESSAGES, priv->new_locale_id);
-  setlocale (LC_TIME, priv->new_locale_id);
   gtk_widget_set_default_direction (gtk_get_locale_direction ());
-
-  /* gis spawns processes that also need to be localised */
-  g_setenv ("LC_MESSAGES", priv->new_locale_id, TRUE);
-  g_setenv ("LC_TIME", priv->new_locale_id, TRUE);
 
   if (gis_driver_get_mode (driver) == GIS_DRIVER_MODE_NEW_USER) {
       if (g_permission_get_allowed (priv->permission)) {
