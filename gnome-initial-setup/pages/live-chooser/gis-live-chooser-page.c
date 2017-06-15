@@ -122,12 +122,10 @@ load_css_overrides (GisLiveChooserPage *page)
 {
   GtkCssProvider *provider;
   GError *error;
-  GFile *file;
 
   error = NULL;
   provider = gtk_css_provider_new ();
   gtk_css_provider_load_from_resource (provider, "/org/gnome/initial-setup/live-chooser.css");
-  g_object_unref (file);
 
   if (error != NULL)
     {
