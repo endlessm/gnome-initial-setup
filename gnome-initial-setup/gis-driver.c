@@ -90,14 +90,10 @@ static gboolean
 running_live_session (void)
 {
   gboolean has_live_boot_param;
-  GError *error;
+  GError *error = NULL;
   g_autofree gchar *contents = NULL;
 
-  error = NULL;
-
-  g_file_get_contents ("/proc/cmdline", &contents, NULL, &error);
-
-  if (error)
+  if (!g_file_get_contents ("/proc/cmdline", &contents, NULL, &error))
     {
       g_warning ("Couldn't check kernel parameters: %s", error->message);
       g_clear_error (&error);
