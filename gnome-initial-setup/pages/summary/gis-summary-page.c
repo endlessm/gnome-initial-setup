@@ -44,7 +44,7 @@ struct _GisSummaryPagePrivate {
   GtkWidget *start_button_label;
   GtkWidget *tagline;
   GtkWidget *title;
-  GtkWidget *warning_icon;
+  GtkWidget *warning_box;
 
   ActUser *user_account;
   const gchar *user_password;
@@ -326,7 +326,7 @@ gis_summary_page_constructed (GObject *object)
 
   gis_page_set_complete (GIS_PAGE (page), TRUE);
 
-  gtk_widget_set_visible (priv->warning_icon,
+  gtk_widget_set_visible (priv->warning_box,
                           gis_driver_is_live_session (GIS_PAGE (object)->driver));
 
   if (gis_driver_is_live_session (GIS_PAGE (object)->driver))
@@ -360,7 +360,7 @@ gis_summary_page_class_init (GisSummaryPageClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, start_button_label);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, tagline);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, title);
-  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, warning_icon);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, warning_box);
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_summary_page_locale_changed;
