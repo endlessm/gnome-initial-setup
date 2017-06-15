@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
-  <template class="GisSummaryPage" parent="GisPage">
+  <template class="GisLiveChooserPage" parent="GisPage">
     <child>
       <object class="GtkPopover" id="language_popover">
         <property name="can_focus">False</property>
