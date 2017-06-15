@@ -288,6 +288,8 @@ gis_live_chooser_page_class_init (GisLiveChooserPageClass *klass)
   page_class->page_id = "live-chooser";
   page_class->locale_changed = gis_live_chooser_page_locale_changed;
 
+  gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-live-chooser-page.ui");
+
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, try_label);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, reformat_label);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, try_button);
