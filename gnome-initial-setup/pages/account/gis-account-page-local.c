@@ -44,6 +44,8 @@
 #define SHARED_ACCOUNT_USERNAME "shared"
 #define SHARED_ACCOUNT_FULLNAME "Shared Account"
 
+#define AVATAR_IMAGE_DEFAULT "/usr/share/pixmaps/faces/sunflower.jpg"
+
 struct _GisAccountPageLocalPrivate
 {
   GtkWidget *avatar_button;
@@ -430,6 +432,8 @@ gis_account_page_local_constructed (GObject *object)
   priv->photo_dialog = um_photo_dialog_new (priv->avatar_button,
                                             avatar_callback,
                                             page);
+
+  avatar_callback(NULL, AVATAR_IMAGE_DEFAULT, page);
 
   validate (page);
 }
