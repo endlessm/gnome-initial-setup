@@ -433,7 +433,7 @@ gis_account_page_local_constructed (GObject *object)
                                             avatar_callback,
                                             page);
 
-  avatar_callback(NULL, AVATAR_IMAGE_DEFAULT, page);
+  avatar_callback (NULL, AVATAR_IMAGE_DEFAULT, page);
 
   validate (page);
 }
