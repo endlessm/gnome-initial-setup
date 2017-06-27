@@ -46,6 +46,7 @@ FAVORITE_APPS_KEY = 'favorite-apps'
 GS_SCHEMA = 'org.gnome.software'
 ALLOW_UPDATES = 'allow-updates'
 
+
 class SettingsUpdates(object):
     def __init__(self, schema):
         self._settings = Gio.Settings(schema=schema)
@@ -71,13 +72,15 @@ class SettingsUpdates(object):
         for key, value in self._updates.items():
             self._settings.set_value(key, value)
 
+
 class SetupLiveUser(object):
     def __init__(self):
         self.updates = {SHELL_SCHEMA: SettingsUpdates(SHELL_SCHEMA),
                         GS_SCHEMA: SettingsUpdates(GS_SCHEMA)}
 
     def update(self, schema, key, variant):
-        log.info('Updating {}: {} to {}'.format(schema, key, variant.print_(False)))
+        log.info('Updating %s: %s to %s',
+                 schema, key, variant.print_(False))
         self.updates[schema].set(key, variant)
 
     def format_keyfile(self):
@@ -171,7 +174,7 @@ class SetupLiveUser(object):
             self.update(SHELL_SCHEMA, FAVORITE_APPS_KEY,
                         GLib.Variant('as', favorite_apps))
 
-    def disallow_app_center_updates (self):
+    def disallow_app_center_updates(self):
         self.update(GS_SCHEMA, ALLOW_UPDATES, GLib.Variant('b', False))
 
 
