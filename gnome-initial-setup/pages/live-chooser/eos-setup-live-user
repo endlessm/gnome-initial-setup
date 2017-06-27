@@ -41,7 +41,7 @@ GOOGLE_CHROME = 'google-chrome.desktop'
 CHROMIUM_BROWSER = 'chromium-browser.desktop'
 
 SHELL_SCHEMA = 'org.gnome.shell'
-TASKBAR_PINS = 'taskbar-pins'
+FAVORITE_APPS_KEY = 'favorite-apps'
 
 GS_SCHEMA = 'org.gnome.software'
 ALLOW_UPDATES = 'allow-updates'
@@ -92,7 +92,7 @@ class SetupLiveUser(object):
 
     def prepare(self):
         self.add_symlink()
-        self.update_taskbar_pins()
+        self.update_favorite_apps()
         self.disallow_app_center_updates()
 
     def write_gsettings(self):
@@ -151,28 +151,28 @@ class SetupLiveUser(object):
             log.info('symlinking %s to %s', EOS_INSTALLER, user_desktop_path)
             os.symlink(EOS_INSTALLER_PATH, user_desktop_path)
 
-    def update_taskbar_pins(self):
+    def update_favorite_apps(self):
         updates = self.updates[SHELL_SCHEMA]
-        taskbar_pins = updates.get_settings().get_strv(TASKBAR_PINS)
+        favorite_apps = updates.get_settings().get_strv(FAVORITE_APPS_KEY)
         changed = False
 
         # Prepend installer icon
-        if EOS_INSTALLER not in taskbar_pins:
-            taskbar_pins.insert(0, EOS_INSTALLER)
+        if EOS_INSTALLER not in favorite_apps:
+            favorite_apps.insert(0, EOS_INSTALLER)
             changed = True
 
         # Replace Chrome (downloaded on demand) with Chromium (pre-installed).
         # This effectively undoes a step taken in the image builder,
         # pre-seeding /var/eos-image-defaults/settings with the opposite
         # change.
-        if GOOGLE_CHROME in taskbar_pins:
-            i = taskbar_pins.index(GOOGLE_CHROME)
-            taskbar_pins[i] = CHROMIUM_BROWSER
+        if GOOGLE_CHROME in favorite_apps:
+            i = favorite_apps.index(GOOGLE_CHROME)
+            favorite_apps[i] = CHROMIUM_BROWSER
             changed = True
 
         if changed:
-            self.update(SHELL_SCHEMA, TASKBAR_PINS,
-                        GLib.Variant('as', taskbar_pins))
+            self.update(SHELL_SCHEMA, FAVORITE_APPS_KEY,
+                        GLib.Variant('as', favorite_apps))
 
     def disallow_app_center_updates(self):
         self.update(GS_SCHEMA, ALLOW_UPDATES, GLib.Variant('b', False))
