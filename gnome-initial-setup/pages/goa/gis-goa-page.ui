@@ -11,44 +11,6 @@
         <property name="valign">fill</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkImage" id="image1">
-            <property name="visible" bind-source="GisGoaPage" bind-property="small-screen" bind-flags="invert-boolean|sync-create"/>
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="pixel_size">96</property>
-            <property name="icon_name">goa-panel-symbolic</property>
-            <property name="icon_size">1</property>
-            <property name="margin_top">24</property>
-            <style>
-              <class name="dim-label" />
-            </style>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkLabel" id="title">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="halign">center</property>
-            <property name="valign">start</property>
-            <property name="margin_top">18</property>
-            <property name="label" translatable="yes">Connect Your Online Accounts</property>
-            <attributes>
-              <attribute name="weight" value="bold"/>
-              <attribute name="scale" value="1.6000000000000001"/>
-            </attributes>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
           <object class="GtkLabel" id="label">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
