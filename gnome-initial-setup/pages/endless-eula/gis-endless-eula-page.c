@@ -215,6 +215,8 @@ load_evince_view_for_file (GFile *file)
   model = ev_document_model_new_with_document (document);
   view = ev_view_new ();
   ev_view_set_model (EV_VIEW (view), model);
+
+  g_object_unref (document);
   g_object_unref (model);
 
   gtk_widget_set_hexpand (view, TRUE);
