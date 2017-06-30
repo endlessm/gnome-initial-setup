@@ -34,10 +34,12 @@
 #include <evince-document.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
+#include <locale.h>
 #include <webkit2/webkit2.h>
 
 typedef struct {
   GtkWidget *eula_scrolledwin;
+  GtkWidget *evince_view;
   GtkWidget *metrics_separator;
   GtkWidget *metrics_label;
   GtkWidget *metrics_checkbutton;
@@ -121,49 +123,88 @@ present_view_in_modal (GisEndlessEulaPage *page,
                     G_CALLBACK (gtk_widget_destroy), NULL);
 }
 
-static GFile *
-get_terms_document (void)
+static char *
+find_terms_document_for_language (const gchar *language)
 {
-  const gchar * const * languages;
   const gchar * const * data_dirs;
-  const gchar *language;
   gchar *path = NULL;
-  gint i, j;
-  gboolean found = FALSE;
-  GFile *file;
+  gint i;
 
   data_dirs = g_get_system_data_dirs ();
-  languages = g_get_language_names ();
-  path = NULL;
+
+  for (i = 0; data_dirs[i] != NULL; i++)
+    {
+      path = g_build_filename (data_dirs[i],
+                               "eos-license-service",
+                               "terms",
+                               language,
+                               "Endless-Terms-of-Use.pdf",
+                               NULL);
+
+      if (g_file_test (path, G_FILE_TEST_EXISTS))
+        return path;
+
+      g_free (path);
+    }
+
+  return NULL;
+}
+
+static char *
+find_terms_document_for_languages (const gchar * const *languages)
+{
+  int i;
+  gchar *path;
 
   for (i = 0; languages[i] != NULL; i++)
     {
-      language = languages[i];
+      path = find_terms_document_for_language (languages[i]);
 
-      for (j = 0; data_dirs[j] != NULL; j++)
-        {
-          path = g_build_filename (data_dirs[j],
-                                   "eos-license-service",
-                                   "terms",
-                                   language,
-                                   "Endless-Terms-of-Use.pdf",
-                                   NULL);
-
-          if (g_file_test (path, G_FILE_TEST_EXISTS))
-            {
-              found = TRUE;
-              break;
-            }
-
-          g_free (path);
-          path = NULL;
-        }
-
-      if (found)
-        break;
+      if (path != NULL)
+        return path;
     }
 
-  if (!found)
+  return NULL;
+}
+
+
+static GFile *
+get_terms_document (void)
+{
+  const gchar * const *languages;
+  gchar **locale_variants;
+  const gchar *language;
+  gchar *path = NULL;
+  GFile *file;
+
+  /* Get the current locale. We can't rely on g_get_language_names(), because
+   * that relies on environment variables, and the locale might have been
+   * changed on the language page. That page does not update the environment,
+   * since that would not be safe in this multithreaded application and we have
+   * previously found it to crash the first boot experience in practice.
+   *
+   * Now, this is pretty terrible, since the return value of setenv() is
+   * technically an opaque string, and since this results in a bunch of calls to
+   * find_terms_document_for_language() that are guaranteed to fail. So this
+   * might break in future versions of glibc, although that's not likely. And it
+   * might not work at all with other C libraries, although it probably will.
+   * But I think there is no other way to do this without causing random
+   * crashes, and the worst-case behavior if this fails is the wrong language
+   * will be selected by the fallback to "C", so it's worth
+   * doing for the chance of probably getting the language right.
+   */
+  language = setlocale (LC_MESSAGES, NULL);
+  locale_variants = g_get_locale_variants (language);
+  path = find_terms_document_for_languages ((const gchar * const *)locale_variants);
+  g_strfreev (locale_variants);
+
+  if (path == NULL)
+    {
+      /* Now use "C" as a fallback. */
+      path = find_terms_document_for_language ("C");
+    }
+
+  if (path == NULL)
     {
       g_critical ("Unable to find terms and conditions PDF on the system");
       return NULL;
@@ -188,12 +229,10 @@ load_license_service_view (void)
   return view;
 }
 
-static GtkWidget *
-load_evince_view_for_file (GFile *file)
+static EvDocument *
+load_evince_document_for_file (GFile *file)
 {
   EvDocument *document;
-  EvDocumentModel *model;
-  GtkWidget *view;
   GError *error = NULL;
   gchar *path;
 
@@ -201,7 +240,6 @@ load_evince_view_for_file (GFile *file)
                                                          EV_DOCUMENT_LOAD_FLAG_NONE,
                                                          NULL,
                                                          &error);
-
   if (error != NULL)
     {
       path = g_file_get_path (file);
@@ -212,9 +250,22 @@ load_evince_view_for_file (GFile *file)
       return NULL;
     }
 
+  return document;
+}
+
+static GtkWidget *
+load_evince_view_for_file (GFile *file)
+{
+  EvDocument *document;
+  EvDocumentModel *model;
+  GtkWidget *view;
+
+  document = load_evince_document_for_file (file);
   model = ev_document_model_new_with_document (document);
   view = ev_view_new ();
   ev_view_set_model (EV_VIEW (view), model);
+
+  g_object_unref (document);
   g_object_unref (model);
 
   gtk_widget_set_hexpand (view, TRUE);
@@ -255,24 +306,47 @@ load_terms_view (GisEndlessEulaPage *page)
 {
   GisEndlessEulaPagePrivate *priv = gis_endless_eula_page_get_instance_private (page);
   GFile *file;
-  GtkWidget *widget, *view;
+  GtkWidget *widget;
 
   file = get_terms_document ();
   if (file == NULL)
     return;
 
-  view = load_evince_view_for_file (file);
+  priv->evince_view = load_evince_view_for_file (file);
   g_object_unref (file);
 
-  if (view == NULL)
+  if (priv->evince_view == NULL)
     return;
 
   widget = priv->eula_scrolledwin;
-  gtk_container_add (GTK_CONTAINER (widget), view);
-  gtk_widget_show (view);
+  gtk_container_add (GTK_CONTAINER (widget), priv->evince_view);
+  gtk_widget_show (priv->evince_view);
 
-  g_signal_connect (view, "external-link",
+  g_signal_connect (priv->evince_view, "external-link",
                     G_CALLBACK (eula_view_external_link_cb), page);
+}
+
+static void
+reload_terms_view (GisEndlessEulaPage *page)
+{
+  GisEndlessEulaPagePrivate *priv = gis_endless_eula_page_get_instance_private (page);
+  EvDocument *document;
+  EvDocumentModel *model;
+  GFile *file;
+
+  if (priv->evince_view == NULL)
+    return;
+
+  file = get_terms_document ();
+  if (file == NULL)
+    return;
+
+  document = load_evince_document_for_file (file);
+  model = ev_document_model_new_with_document (document);
+  ev_view_set_model (EV_VIEW (priv->evince_view), model);
+
+  g_object_unref (document);
+  g_object_unref (model);
 }
 
 static void
@@ -344,6 +418,7 @@ static void
 gis_endless_eula_page_locale_changed (GisPage *page)
 {
   gis_page_set_title (page, _("Terms of Use"));
+  reload_terms_view (GIS_ENDLESS_EULA_PAGE (page));
 }
 
 static void
