@@ -34,6 +34,8 @@ G_DEFINE_TYPE (CcTimezoneMap, cc_timezone_map, GTK_TYPE_WIDGET)
 #define PIN_HOT_POINT_X 8
 #define PIN_HOT_POINT_Y 15
 
+#define MAP_SCREEN_SCALE_POINT 900
+
 #define DATETIME_RESOURCE_PATH "/org/gnome/control-center/datetime"
 
 typedef struct
@@ -164,12 +166,24 @@ cc_timezone_map_get_preferred_width (GtkWidget *widget,
                                      gint      *natural)
 {
   CcTimezoneMapPrivate *priv = CC_TIMEZONE_MAP (widget)->priv;
-  gint size;
+  gint size, width, screen_height;
+  gdouble delta;
 
   size = gdk_pixbuf_get_width (priv->orig_background);
+  screen_height = gdk_screen_get_height (gtk_widget_get_screen (widget));
+
+  /* HACK: if the screen height is MAP_SCREEN_SCALE_POINT or less,
+   * we scale the minimum size to make sure it fits
+   */
+  delta = screen_height / (gdouble) MAP_SCREEN_SCALE_POINT;
+
+  if (delta < 1)
+    width = size * delta;
+  else
+    width = size;
 
   if (minimum != NULL)
-    *minimum = size;
+    *minimum = width;
   if (natural != NULL)
     *natural = size;
 }
@@ -180,12 +194,24 @@ cc_timezone_map_get_preferred_height (GtkWidget *widget,
                                       gint      *natural)
 {
   CcTimezoneMapPrivate *priv = CC_TIMEZONE_MAP (widget)->priv;
-  gint size;
+  gint size, height, screen_height;
+  gdouble delta;
 
   size = gdk_pixbuf_get_height (priv->orig_background);
+  screen_height = gdk_screen_get_height (gtk_widget_get_screen (widget));
+
+  /* HACK: if the screen height is MAP_SCREEN_SCALE_POINT or less,
+   * we scale the minimum size to make sure it fits
+   */
+  delta = screen_height / (gdouble) MAP_SCREEN_SCALE_POINT;
+
+  if (delta < 1)
+    height = size * delta;
+  else
+    height = size;
 
   if (minimum != NULL)
-    *minimum = size;
+    *minimum = height;
   if (natural != NULL)
     *natural = size;
 }
