@@ -307,7 +307,8 @@ screen_is_small (GdkScreen *screen)
   if (g_getenv ("GIS_SMALL_SCREEN"))
     return TRUE;
 
-  return gdk_screen_get_height (screen) < 800;
+  return gdk_screen_get_height (screen) < 600 ||
+         gdk_screen_get_width (screen) < 800;
 }
 
 static void
@@ -435,8 +436,8 @@ update_screen_size (GisDriver *driver)
                                       GTK_POLICY_NEVER,
                                       GTK_POLICY_NEVER);
 
-      size_hints.min_width = size_hints.max_width = 1024;
-      size_hints.min_height = size_hints.max_height = 768;
+      size_hints.min_width = size_hints.max_width = 747;
+      size_hints.min_height = size_hints.max_height = 539;
       size_hints.win_gravity = GDK_GRAVITY_CENTER;
 
       gtk_window_set_geometry_hints (priv->main_window,
