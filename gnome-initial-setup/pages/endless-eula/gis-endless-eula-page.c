@@ -190,7 +190,7 @@ get_terms_document (void)
    * might not work at all with other C libraries, although it probably will.
    * But I think there is no other way to do this without causing random
    * crashes, and the worst-case behavior if this fails is the wrong language
-   * will be selected by the fallback to g_get_language_names(), so it's worth
+   * will be selected by the fallback to "C", so it's worth
    * doing for the chance of probably getting the language right.
    */
   language = setlocale (LC_MESSAGES, NULL);
@@ -200,9 +200,8 @@ get_terms_document (void)
 
   if (path == NULL)
     {
-      /* Now use g_get_language_names as a fallback. */
-      languages = g_get_language_names ();
-      path = find_terms_document_for_languages (languages);
+      /* Now use "C" as a fallback. */
+      path = find_terms_document_for_language ("C");
     }
 
   if (path == NULL)
