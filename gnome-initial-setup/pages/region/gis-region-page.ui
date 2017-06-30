@@ -23,6 +23,7 @@
         </child>
         <child>
           <object class="GtkLabel" id="title">
+            <property name="visible" bind-source="GisRegionPage" bind-property="small-screen" bind-flags="invert-boolean|sync-create"/>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="halign">center</property>
