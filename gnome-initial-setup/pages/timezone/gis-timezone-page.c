@@ -71,6 +71,8 @@ struct _GisTimezonePagePrivate
   GnomeWallClock *clock;
   GDesktopClockFormat clock_format;
   gboolean in_search;
+
+  gulong map_location_changed_id;
 };
 typedef struct _GisTimezonePagePrivate GisTimezonePagePrivate;
 
@@ -331,12 +333,24 @@ map_location_changed (CcTimezoneMap   *map,
                       GisTimezonePage *page)
 {
   GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
+  GWeatherLocation *glocation;
 
   if (!priv->in_search)
     gtk_entry_set_text (GTK_ENTRY (priv->search_entry), "");
 
   update_timezone (page, location);
   queue_set_timezone (page, location->zone);
+
+  /* Avoid re-entering this callback */
+  g_signal_handler_block (map, priv->map_location_changed_id);
+
+  glocation = gweather_location_find_nearest_city (NULL,
+                                                   location->latitude,
+                                                   location->longitude);
+  set_location (page, glocation);
+  gweather_location_unref (glocation);
+
+  g_signal_handler_unblock (map, priv->map_location_changed_id);
 }
 
 static void
@@ -423,8 +437,9 @@ gis_timezone_page_constructed (GObject *object)
                     G_CALLBACK (entry_location_changed), page);
   g_signal_connect (priv->search_entry, "map",
                     G_CALLBACK (entry_mapped), page);
-  g_signal_connect (priv->map, "location-changed",
-                    G_CALLBACK (map_location_changed), page);
+  priv->map_location_changed_id =
+    g_signal_connect (priv->map, "location-changed",
+                      G_CALLBACK (map_location_changed), page);
 
   gtk_widget_show (GTK_WIDGET (page));
 }
