@@ -1,0 +1,4 @@
+#! /bin/sh
+
+export LD_PRELOAD=@setlocale_wrapper_dir@/libsetlocale-wrapper.so
+exec @libexecdir@/gnome-initial-setup-exec $@
