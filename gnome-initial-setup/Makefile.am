@@ -16,7 +16,7 @@ AM_CPPFLAGS = \
 	-DLOCALSTATEDIR=\""$(localstatedir)"\" \
 	-DLIBEXECDIR=\""$(libexecdir)"\"
 
-libexec_PROGRAMS = gnome-initial-setup gnome-initial-setup-copy-worker
+libexec_PROGRAMS = gnome-initial-setup-exec gnome-initial-setup-copy-worker
 
 assistant_resource_files = $(shell glib-compile-resources --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/gis-assistant.gresource.xml)
 gis-assistant-resources.c: gis-assistant.gresource.xml $(assistant_resource_files)
@@ -32,7 +32,7 @@ gis-page-util-resources.h: gis-page-util.gresource.xml $(page_util_resource_file
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-header $<
 BUILT_SOURCES += gis-page-util-resources.c gis-page-util-resources.h
 
-gnome_initial_setup_SOURCES = \
+gnome_initial_setup_exec_SOURCES = \
 	$(BUILT_SOURCES) \
 	gnome-initial-setup.c gnome-initial-setup.h \
 	gis-assistant.c gis-assistant.h \
@@ -42,7 +42,7 @@ gnome_initial_setup_SOURCES = \
 	gis-driver.c gis-driver.h \
 	gis-keyring.c gis-keyring.h
 
-gnome_initial_setup_LDADD =	\
+gnome_initial_setup_exec_LDADD =	\
 	pages/branding-welcome/libgisbrandingwelcome.la \
 	pages/language/libgislanguage.la \
 	pages/region/libgisregion.la \
@@ -71,8 +71,24 @@ gnome_initial_setup_copy_worker_CFLAGS = \
 gnome_initial_setup_copy_worker_LDADD = \
 	$(COPY_WORKER_LIBS)
 
+setlocalewrapperdir = $(SETLOCALE_WRAPPER_DIR)
+setlocalewrapper_LTLIBRARIES = libsetlocale-wrapper.la
+libsetlocale_wrapper_la_SOURCES = setlocale-wrapper.c
+libsetlocale_wrapper_la_LIBADD = -ldl
+
+gnome-initial-setup: gnome-initial-setup.in Makefile
+	$(AM_V_GEN) sed -e "s|@setlocale_wrapper_dir[@]|$(SETLOCALE_WRAPPER_DIR)|g;" -e "s|@libexecdir[@]|$(libexecdir)|g" $< > $@ && chmod +x $@ || (rm -f $@ && exit 1)
+
+libexec_SCRIPTS = gnome-initial-setup
+
 EXTRA_DIST = \
 	gis-assistant.gresource.xml \
 	gis-page-util.gresource.xml \
+	gnome-initial-setup.in \
 	$(assistant_resource_files) \
+	$(libexec_SCRIPTS)		\
 	$(page_util_resource_files)
+
+CLEANFILES = \
+	gnome-initial-setup \
+	$(NULL)
