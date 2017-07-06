@@ -146,6 +146,8 @@ PKG_CHECK_MODULES(ISOCODES, iso-codes)
 AC_DEFINE_UNQUOTED([ISO_CODES_PREFIX],["`$PKG_CONFIG --variable=prefix iso-codes`"],[ISO codes prefix])
 ISO_CODES=iso-codes
 
+AC_SUBST(SETLOCALE_WRAPPER_DIR, "\$(libdir)/gnome-initial-setup")
+
 AC_SUBST(INITIAL_SETUP_CFLAGS)
 AC_SUBST(INITIAL_SETUP_LIBS)
 
