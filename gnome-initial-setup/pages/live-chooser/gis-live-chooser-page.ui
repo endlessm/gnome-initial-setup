@@ -3,15 +3,6 @@
   <!-- interface-requires gtk+ 3.0 -->
   <template class="GisLiveChooserPage" parent="GisPage">
     <child>
-      <object class="GtkPopover" id="language_popover">
-        <property name="can_focus">False</property>
-        <child>
-          <object class="CcLanguageChooser" id="language_chooser">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-          </object>
-        </child>
-      </object>
       <object class="GtkBox" id="main_box">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
