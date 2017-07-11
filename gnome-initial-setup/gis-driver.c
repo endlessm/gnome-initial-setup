@@ -961,6 +961,10 @@ gis_driver_startup (GApplication *app)
                                     "title", _("Initial Setup"),
                                     NULL);
 
+  gtk_application_inhibit (GTK_APPLICATION (app), driver->main_window,
+                           GTK_APPLICATION_INHIBIT_IDLE,
+                           "Should not be idle on first boot.");
+
   g_signal_connect (driver->main_window,
                     "realize",
                     G_CALLBACK (window_realize_cb),
