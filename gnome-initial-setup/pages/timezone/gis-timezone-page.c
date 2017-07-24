@@ -31,6 +31,8 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <langinfo.h>
+#include <locale.h>
 
 #define GNOME_DESKTOP_USE_UNSTABLE_API
 #include <libgnome-desktop/gnome-languages.h>
@@ -77,18 +79,22 @@ typedef struct _GisTimezonePagePrivate GisTimezonePagePrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GisTimezonePage, gis_timezone_page, GIS_TYPE_PAGE);
 
+G_DEFINE_AUTO_CLEANUP_FREE_FUNC(locale_t, freelocale, NULL)
+
 static GDesktopClockFormat
 get_default_time_format (void)
 {
   const char *ampm, *nl_fmt;
+  const char *locale_str = setlocale (LC_ALL, NULL);
+  g_auto(locale_t) locale = newlocale (LC_ALL_MASK, locale_str, NULL);
 
   /* Default to 24 hour if we can't get the format from the locale */
-  nl_fmt = nl_langinfo (T_FMT);
+  nl_fmt = nl_langinfo_l (T_FMT, locale);
   if (nl_fmt == NULL || *nl_fmt == '\0')
     return G_DESKTOP_CLOCK_FORMAT_24H;
 
   /* Default to 24 hour if AM/PM is not available in the locale */
-  ampm = nl_langinfo (AM_STR);
+  ampm = nl_langinfo_l (AM_STR, locale);
   if (ampm == NULL || ampm[0] == '\0')
     return G_DESKTOP_CLOCK_FORMAT_24H;
 
