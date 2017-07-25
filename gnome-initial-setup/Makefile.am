@@ -84,6 +84,11 @@ libexec_SCRIPTS = gnome-initial-setup
 EXTRA_DIST = \
 	gis-assistant.gresource.xml \
 	gis-page-util.gresource.xml \
+	gnome-initial-setup.in \
 	$(assistant_resource_files) \
 	$(libexec_SCRIPTS)		\
 	$(page_util_resource_files)
+
+CLEANFILES = \
+	gnome-initial-setup \
+	$(NULL)
