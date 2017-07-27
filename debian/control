@@ -48,6 +48,7 @@ Depends: ${shlibs:Depends},
          gdm3,
          policykit-1 (>= 0.103),
          adduser,
+         gnome-settings-daemon (>= 3.24),
          ${misc:Depends}
 Recommends: gnome-getting-started-docs
 Description: Initial GNOME system setup helper

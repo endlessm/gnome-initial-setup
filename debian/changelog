@@ -1,8 +1,10 @@
 gnome-initial-setup (3.24.2-1) UNRELEASED; urgency=medium
 
-  * New upstream release
+  * New upstream release (Closes: #869942)
+    - Adapt gnome-session file for gnome-settings-daemon 3.24
   * debian/control.in:
     - Update NetworkManager related Build-Depends
+    - Add explicit dependency on gnome-settings-daemon >= 3.24
 
  -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 27 Jul 2017 17:16:52 -0400
 
