@@ -1,0 +1,20 @@
+From 5de6661a071741fd3debbb5136e15a8c9d80659b Mon Sep 17 00:00:00 2001
+From: Rui Matos <tiagomatos@gmail.com>
+Date: Fri, 9 Jun 2017 15:14:22 +0200
+Subject: data: Adjust to g-s-d's plugin removals
+
+The orientation and xrandr plugins have been removed.
+---
+ data/gnome-initial-setup.session | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/gnome-initial-setup.session b/data/gnome-initial-setup.session
+index 0d81bb1..80d2475 100644
+--- a/data/gnome-initial-setup.session
++++ b/data/gnome-initial-setup.session
+@@ -1,3 +1,3 @@
+ [GNOME Session]
+ Name=GNOME Initial Setup
+-RequiredComponents=setup-shell;gnome-initial-setup;org.gnome.SettingsDaemon.A11yKeyboard;org.gnome.SettingsDaemon.A11ySettings;org.gnome.SettingsDaemon.Clipboard;org.gnome.SettingsDaemon.Color;org.gnome.SettingsDaemon.Datetime;org.gnome.SettingsDaemon.Housekeeping;org.gnome.SettingsDaemon.Keyboard;org.gnome.SettingsDaemon.MediaKeys;org.gnome.SettingsDaemon.Mouse;org.gnome.SettingsDaemon.Orientation;org.gnome.SettingsDaemon.Power;org.gnome.SettingsDaemon.PrintNotifications;org.gnome.SettingsDaemon.Rfkill;org.gnome.SettingsDaemon.ScreensaverProxy;org.gnome.SettingsDaemon.Sharing;org.gnome.SettingsDaemon.Smartcard;org.gnome.SettingsDaemon.Sound;org.gnome.SettingsDaemon.Wacom;org.gnome.SettingsDaemon.XRANDR;org.gnome.SettingsDaemon.XSettings;
++RequiredComponents=setup-shell;gnome-initial-setup;org.gnome.SettingsDaemon.A11yKeyboard;org.gnome.SettingsDaemon.A11ySettings;org.gnome.SettingsDaemon.Clipboard;org.gnome.SettingsDaemon.Color;org.gnome.SettingsDaemon.Datetime;org.gnome.SettingsDaemon.Housekeeping;org.gnome.SettingsDaemon.Keyboard;org.gnome.SettingsDaemon.MediaKeys;org.gnome.SettingsDaemon.Mouse;org.gnome.SettingsDaemon.Power;org.gnome.SettingsDaemon.PrintNotifications;org.gnome.SettingsDaemon.Rfkill;org.gnome.SettingsDaemon.ScreensaverProxy;org.gnome.SettingsDaemon.Sharing;org.gnome.SettingsDaemon.Smartcard;org.gnome.SettingsDaemon.Sound;org.gnome.SettingsDaemon.Wacom;org.gnome.SettingsDaemon.XSettings;
+

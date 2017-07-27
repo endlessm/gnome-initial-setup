@@ -5,6 +5,10 @@ gnome-initial-setup (3.24.2-1) UNRELEASED; urgency=medium
   * debian/control.in:
     - Update NetworkManager related Build-Depends
     - Add explicit dependency on gnome-settings-daemon >= 3.24
+  * Add adapt-to-gsd325.patch:
+    - Don't require the orientation or xrandr plugins that will
+      be dropped in gnome-settings-daemon 3.26 to smooth that
+      transition
 
  -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 27 Jul 2017 17:16:52 -0400
 
