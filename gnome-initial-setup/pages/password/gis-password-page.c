@@ -387,6 +387,9 @@ gis_prepare_password_page (GisDriver *driver)
   if (gis_driver_is_live_session (driver))
     return;
 
+  if (gis_driver_is_in_demo_mode (driver))
+    return;
+
   gis_driver_add_page (driver,
                        g_object_new (GIS_TYPE_PASSWORD_PAGE,
                                      "driver", driver,

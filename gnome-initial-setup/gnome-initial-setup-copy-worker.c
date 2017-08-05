@@ -109,6 +109,7 @@ main (int    argc,
   move_file_from_homedir (src, dest, path);
 
   FILE (".config/run-welcome-tour");
+  FILE (".config/eos-demo-mode");
   FILE (".config/dconf/user");
   FILE (".config/goa-1.0/accounts.conf");
   FILE (".config/monitors.xml");
