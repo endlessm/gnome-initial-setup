@@ -162,6 +162,7 @@ AC_CONFIG_FILES([
 Makefile
 data/Makefile
 gnome-initial-setup/Makefile
+gnome-initial-setup/demo/Makefile
 gnome-initial-setup/pages/Makefile
 gnome-initial-setup/pages/branding-welcome/Makefile
 gnome-initial-setup/pages/language/Makefile

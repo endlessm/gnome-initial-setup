@@ -108,6 +108,7 @@ main (int    argc,
 
   FILE (".config/gnome-initial-setup-done");
   FILE (".config/run-welcome-tour");
+  FILE (".config/eos-demo-mode");
   FILE (".config/dconf/user");
   FILE (".config/goa-1.0/accounts.conf");
   FILE (".config/monitors.xml");
