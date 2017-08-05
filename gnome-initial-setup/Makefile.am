@@ -81,6 +81,10 @@ gnome-initial-setup: gnome-initial-setup.in Makefile
 	$(AM_V_GEN) sed -e "s|@setlocale_wrapper_dir[@]|$(SETLOCALE_WRAPPER_DIR)|g;" -e "s|@libexecdir[@]|$(libexecdir)|g" $< > $@
 
 libexec_SCRIPTS = gnome-initial-setup
+dist_libexec_SCRIPTS = \
+	eos-setup-demo-user \
+	eos-note-demo-config \
+	$(NULL)
 
 EXTRA_DIST = \
 	gis-assistant.gresource.xml \

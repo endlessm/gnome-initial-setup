@@ -279,6 +279,9 @@ gis_region_page_init (GisRegionPage *page)
 void
 gis_prepare_region_page (GisDriver *driver)
 {
+  if (gis_driver_demo_mode_already_configured (driver))
+    return;
+
   gis_driver_add_page (driver,
                        g_object_new (GIS_TYPE_REGION_PAGE,
                                      "driver", driver,

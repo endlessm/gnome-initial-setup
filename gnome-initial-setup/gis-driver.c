@@ -77,6 +77,8 @@ struct _GisDriverPrivate {
   gchar *username;
 
   gboolean is_live_session;
+  gboolean is_in_demo_mode;
+  gboolean auto_configured_demo_mode;
 
   GisDriverMode mode;
   UmAccountMode account_mode;
@@ -178,6 +180,11 @@ gis_driver_set_user_language (GisDriver *driver, const gchar *lang_id)
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   g_free (priv->lang_id);
   priv->lang_id = g_strdup (lang_id);
+
+  /* Now, if we already have a user configured, make sure to
+   * propogate that change to the user */
+  if (priv->user_account)
+    act_user_set_language (priv->user_account, lang_id);
 }
 
 const gchar *
@@ -285,6 +292,161 @@ gis_driver_get_mode (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   return priv->mode;
+}
+
+gboolean
+gis_driver_is_in_demo_mode (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  return priv->is_in_demo_mode;
+}
+
+gboolean
+gis_driver_demo_mode_already_configured (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  return priv->auto_configured_demo_mode;
+}
+
+#define DEMO_ACCOUNT_USERNAME "demo-guest"
+#define DEMO_ACCOUNT_FULLNAME "Demo"
+
+static gboolean
+drop_existing_demo_user (GisDriver *driver, GError **error)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  ActUserManager *manager = act_user_manager_get_default ();
+  ActUser *user = act_user_manager_get_user (manager, DEMO_ACCOUNT_USERNAME);
+
+  /* It seems like if the user does not exist, act_user_manager_get_user
+   * will always try and return *a* user, in this case, the root user.
+   * Detect this case and return early, since there is nothing to drop */
+  if (act_user_get_uid (user) == 0)
+    return TRUE;
+
+  return act_user_manager_delete_user (manager, user, TRUE, error);
+}
+
+static void
+handle_demo_mode_error (GError *error)
+{
+  GtkWidget *dialog;
+
+  g_warning ("%s", error->message);
+  dialog = gtk_message_dialog_new (NULL,
+                                   GTK_DIALOG_DESTROY_WITH_PARENT,
+                                   GTK_MESSAGE_ERROR,
+                                   GTK_BUTTONS_CLOSE,
+                                   "Failed to enter demo mode: %s",
+                                   error->message);
+  gtk_dialog_run (GTK_DIALOG (dialog));
+  gtk_widget_destroy (dialog);
+  g_error_free (error);
+}
+
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (ActUser, g_object_unref)
+
+static gboolean
+create_demo_user (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  g_autoptr(ActUser) user;
+  GError *error = NULL;
+  const gchar *language;
+
+  error = NULL;
+  if (!drop_existing_demo_user (driver, &error))
+    {
+      handle_demo_mode_error (error);
+      return FALSE;
+    }
+
+  user = act_user_manager_create_user (act_user_manager_get_default (),
+                                       DEMO_ACCOUNT_USERNAME,
+                                       DEMO_ACCOUNT_FULLNAME,
+                                       ACT_USER_ACCOUNT_TYPE_ADMINISTRATOR,
+                                       &error);
+  if (error)
+    {
+      handle_demo_mode_error (error);
+      return FALSE;
+    }
+
+  act_user_set_password_mode (user, ACT_USER_PASSWORD_MODE_NONE);
+  act_user_set_automatic_login (user, FALSE);
+
+  language = gis_driver_get_user_language (driver);
+
+  if (language)
+    act_user_set_language (user, language);
+
+  gis_driver_set_user_permissions (driver, user, NULL);
+  if (!gis_pkexec (LIBEXECDIR "/eos-setup-demo-user",
+                   "user",
+                   DEMO_ACCOUNT_USERNAME,
+                   &error))
+    {
+      handle_demo_mode_error (error);
+      return FALSE;
+    }
+
+  gis_update_login_keyring_password ("");
+
+  return TRUE;
+}
+
+#define DEMO_MODE_KEY_FILE_GROUP "Demo Mode"
+#define DEMO_MODE_LANGUAGE "Language"
+#define DEMO_MODE_CONFIG_FILE "/run/eos-demo-mode.config"
+
+void
+gis_driver_save_demo_mode_config (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  if (!priv->is_in_demo_mode)
+    return;
+
+  GError *error = NULL;
+  if (!gis_pkexec (LIBEXECDIR "/eos-note-demo-config",
+                   priv->lang_id,
+                   NULL, /* root */
+                   &error))
+    {
+      handle_demo_mode_error (error);
+      return FALSE;
+    }
+}
+
+void
+gis_driver_enter_demo_mode (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  if (priv->is_in_demo_mode)
+    return;
+
+  /* Enter test mode.
+   *
+   * After this point, all data on the system will become ephemeral,
+   * including /home, which means any changes will be lost on reboot.
+   */
+  GError *error = NULL;
+  if (!gis_pkexec (LIBEXECDIR "/eos-test-mode", NULL, NULL, &error)) {
+    handle_demo_mode_error (error);
+    return;
+  }
+
+  if (!create_demo_user (driver)) {
+    return;
+  }
+
+  priv->is_in_demo_mode = TRUE;
+
+  /* Set up the demo user account, destroying it if necessary */
+  gis_driver_set_username (driver, DEMO_ACCOUNT_USERNAME);
+
+  rebuild_pages (driver);
 }
 
 gboolean
@@ -474,6 +636,98 @@ window_realize_cb (GtkWidget *widget, gpointer user_data)
 }
 
 static void
+on_pages_rebuilt_after_auto_demo_mode (GisDriver *driver,
+                                       gpointer user_data)
+{
+  g_signal_handlers_disconnect_by_func (driver, on_pages_rebuilt_after_auto_demo_mode, NULL);
+
+  /* Go to the next page now, which should be the last page */
+  GisAssistant *assistant = gis_driver_get_assistant (driver);
+  gis_assistant_next_page (assistant);
+}
+
+static void
+maybe_auto_enter_demo_mode (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  /* Check to see if we've already saved the demo mode
+   * configuration in /run and if so save the language
+   * and rebuild the state, skipping all pages until
+   * the end where we automatically display the demo
+   * mode video */
+  g_autoptr(GKeyFile) demo_mode_config = g_key_file_new ();
+
+  if (g_key_file_load_from_file (demo_mode_config,
+                                 DEMO_MODE_CONFIG_FILE,
+                                 G_KEY_FILE_NONE,
+                                 NULL))
+    {
+      g_message("Automatically entering demo mode");
+      gis_driver_set_user_language (driver,
+                                    g_key_file_get_string (demo_mode_config,
+                                                           DEMO_MODE_LANGUAGE,
+                                                           DEMO_MODE_CONFIG_FILE,
+                                                           NULL));
+
+      /* We'll set this here so that when we enter demo mode
+       * again and rebuild the pages, all the irrelevant pages
+       * get removed */
+      priv->auto_configured_demo_mode = TRUE;
+      gis_driver_enter_demo_mode (driver);
+    }
+}
+
+static void
+gis_driver_accounts_service_users_ready (GObject    *object,
+                                         GParamSpec *pspec,
+                                         gpointer   user_data)
+{
+  maybe_auto_enter_demo_mode (GIS_DRIVER (user_data));
+}
+
+static void
+maybe_enter_auto_demo_mode_if_users_ready (GisDriver *driver)
+{
+  /* Because reading the users list from libaccountservice
+   * is not defined if it is not ready, we need to check
+   * here first whether it is ready, and if not, wait for
+   * to become ready before we can decide whether to enter
+   * the demo mode automatically. This is beacuse the demo
+   * mode path needs to delete the old demo mode user
+   * and create it again */
+  ActUserManager *manager = act_user_manager_get_default ();
+  gboolean is_loaded;
+
+  /* Now, entering demo mode will cause pages to be rebuilt
+   * skipping most of the pages until the end in the
+   * case of the demo mode being automatically configured.
+   *
+   * However, the page rebuild process rebuilds from the
+   * page *after* the one that we are currently on (for good
+   * reason, we wouldn't want to reset the state of the
+   * current page just because the user changed a setting). So,
+   * we'll need to make sure to proceed to the next page
+   * on the assistant once we're done rebuilding pages. */
+  g_signal_connect_after (driver,
+                          "rebuild-pages",
+                          G_CALLBACK (on_pages_rebuilt_after_auto_demo_mode),
+                          NULL);
+
+  g_object_get (manager, "is-loaded", &is_loaded, NULL);
+  if (is_loaded)
+    {
+      maybe_auto_enter_demo_mode (driver);
+      return;
+    }
+
+  g_signal_connect_object (manager,
+                           "notify::is-loaded",
+                           G_CALLBACK (gis_driver_accounts_service_users_ready),
+                           driver,
+                           G_CONNECT_AFTER);
+}
+
+static void
 gis_driver_startup (GApplication *app)
 {
   GisDriver *driver = GIS_DRIVER (app);
@@ -509,6 +763,7 @@ gis_driver_startup (GApplication *app)
 
   prepare_main_window (driver);
   rebuild_pages (driver);
+  maybe_enter_auto_demo_mode_if_users_ready (driver);
 }
 
 static void

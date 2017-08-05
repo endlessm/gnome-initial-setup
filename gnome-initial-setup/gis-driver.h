@@ -91,6 +91,14 @@ const gchar *gis_driver_get_username (GisDriver *driver);
 
 GisDriverMode gis_driver_get_mode (GisDriver *driver);
 
+void gis_driver_enter_demo_mode (GisDriver *driver);
+
+gboolean gis_driver_is_in_demo_mode (GisDriver *driver);
+
+void gis_driver_save_demo_mode_config (GisDriver *driver);
+
+gboolean gis_driver_demo_mode_already_configured (GisDriver *driver);
+
 gboolean gis_driver_is_live_session (GisDriver *driver);
 
 gboolean gis_driver_is_small_screen (GisDriver *driver);

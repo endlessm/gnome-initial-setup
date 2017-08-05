@@ -656,6 +656,9 @@ gis_network_page_init (GisNetworkPage *page)
 void
 gis_prepare_network_page (GisDriver *driver)
 {
+  if (gis_driver_demo_mode_already_configured (driver))
+    return;
+
   gis_driver_add_page (driver,
                        g_object_new (GIS_TYPE_NETWORK_PAGE,
                                      "driver", driver,

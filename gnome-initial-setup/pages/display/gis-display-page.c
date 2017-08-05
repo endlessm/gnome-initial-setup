@@ -299,6 +299,9 @@ gis_display_page_init (GisDisplayPage *page)
 void
 gis_prepare_display_page (GisDriver *driver)
 {
+  if (gis_driver_demo_mode_already_configured (driver))
+    return;
+
   gis_driver_add_page (driver,
                        g_object_new (GIS_TYPE_DISPLAY_PAGE,
                                      "driver", driver,

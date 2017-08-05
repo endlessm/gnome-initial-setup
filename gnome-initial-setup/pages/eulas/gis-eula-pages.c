@@ -34,6 +34,9 @@ gis_prepare_eula_page (GisDriver *driver)
   GFileEnumerator *enumerator = NULL;
   GFileInfo *info;
 
+  if (gis_driver_demo_mode_already_configured (driver))
+    return;
+
   eulas_dir_path = g_build_filename (PKGDATADIR, "eulas", NULL);
   eulas_dir = g_file_new_for_path (eulas_dir_path);
   g_free (eulas_dir_path);

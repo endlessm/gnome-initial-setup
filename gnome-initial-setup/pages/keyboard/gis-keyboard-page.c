@@ -430,6 +430,9 @@ gis_keyboard_page_init (GisKeyboardPage *self)
 void
 gis_prepare_keyboard_page (GisDriver *driver)
 {
+  if (gis_driver_demo_mode_already_configured (driver))
+    return;
+
   gis_driver_add_page (driver,
                        g_object_new (GIS_TYPE_KEYBOARD_PAGE,
                                      "driver", driver,

@@ -182,6 +182,8 @@ log_user_in (GisSummaryPage *page)
   GdmGreeter *greeter;
   GdmUserVerifier *user_verifier;
 
+  gis_driver_save_demo_mode_config (GIS_PAGE (page)->driver);
+
   if (!connect_to_gdm (&greeter, &user_verifier)) {
     g_warning ("No GDM connection; not initiating login");
     return;
@@ -233,16 +235,63 @@ done_cb (GtkButton *button, GisSummaryPage *page)
 }
 
 static void
+on_demo_splash_event (GtkWidget *widget,
+                      GdkEvent  *event,
+                      gpointer  user_data)
+{
+  GisSummaryPage *page = GIS_SUMMARY_PAGE (user_data);
+
+  if (event->type == GDK_KEY_PRESS ||
+      event->type == GDK_MOTION_NOTIFY ||
+      event->type == GDK_BUTTON_PRESS)
+    {
+      /* Destroy the splash screen and log the user in */
+      gtk_widget_destroy (widget);
+      log_user_in (page);
+    }
+}
+
+static void
+show_demo_splash_video (GisPage *page)
+{
+  /* Create a fullscreen window which will show our demo
+   * splash video. When the user moves their mouse, initiate
+   * the login sequence for the demo user */
+  GtkWindow *window = GTK_WINDOW (gtk_window_new (GTK_WINDOW_TOPLEVEL));
+  GtkWidget *placeholder = gtk_label_new ("Placeholder");
+  gtk_container_add (GTK_CONTAINER (window), placeholder);
+  gtk_window_fullscreen (window);
+  gtk_widget_set_events (GTK_WIDGET (window),
+                         GDK_POINTER_MOTION_MASK |
+                         GDK_BUTTON_PRESS_MASK |
+                         GDK_KEY_PRESS_MASK);
+  g_signal_connect_object (window,
+                           "event",
+                           G_CALLBACK (on_demo_splash_event),
+                           page,
+                           G_CONNECT_AFTER);
+  gtk_widget_show_all (GTK_WIDGET (window));
+}
+
+static void
 gis_summary_page_shown (GisPage *page)
 {
+  GisDriver *driver = GIS_PAGE (page)->driver;
   GisSummaryPage *summary = GIS_SUMMARY_PAGE (page);
   GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (summary);
 
-  gis_driver_save_data (GIS_PAGE (page)->driver);
+  gis_driver_save_data (driver);
 
-  gis_driver_get_user_permissions (GIS_PAGE (page)->driver,
+  gis_driver_get_user_permissions (driver,
                                    &priv->user_account,
                                    &priv->user_password);
+
+  if (gis_driver_is_in_demo_mode (driver))
+    {
+      gis_driver_hide_window (driver);
+      show_demo_splash_video (page);
+      return;
+    }
 
   gtk_widget_grab_focus (priv->start_button);
 }

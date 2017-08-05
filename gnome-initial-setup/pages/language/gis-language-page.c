@@ -298,6 +298,10 @@ gis_language_page_constructed (GObject *object)
   gtk_accel_group_connect (priv->accel_group, GDK_KEY_f, GDK_CONTROL_MASK, 0, closure);
   g_closure_unref (closure);
 
+  closure = g_cclosure_new_swap (G_CALLBACK (gis_page_util_show_demo_dialog), page, NULL);
+  gtk_accel_group_connect (priv->accel_group, GDK_KEY_d, GDK_CONTROL_MASK, 0, closure);
+  g_closure_unref (closure);
+
   gis_page_set_complete (GIS_PAGE (page), TRUE);
   gtk_widget_show (GTK_WIDGET (page));
 }
@@ -363,6 +367,9 @@ gis_language_page_init (GisLanguagePage *page)
 void
 gis_prepare_language_page (GisDriver *driver)
 {
+  if (gis_driver_demo_mode_already_configured (driver))
+    return;
+
   gis_driver_add_page (driver,
                        g_object_new (GIS_TYPE_LANGUAGE_PAGE,
                                      "driver", driver,

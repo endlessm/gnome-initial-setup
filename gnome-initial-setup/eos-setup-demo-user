@@ -1,0 +1,192 @@
+#!/usr/bin/env python3
+# eos-setup-demo-user - configure demo user account
+# Copyright (C) 2016-2017 Endless Mobile, Ltd.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+import argparse
+import logging
+import os
+import subprocess
+import sys
+import tempfile
+
+from gi.repository import GLib, Gio
+
+log = logging.getLogger(sys.argv[0])
+
+GOOGLE_CHROME = 'google-chrome.desktop'
+CHROMIUM_BROWSER = 'chromium-browser.desktop'
+
+SHELL_SCHEMA = 'org.gnome.shell'
+FAVORITE_APPS_KEY = 'favorite-apps'
+
+GS_SCHEMA = 'org.gnome.software'
+ALLOW_UPDATES = 'allow-updates'
+
+
+class SettingsUpdates(object):
+    def __init__(self, schema):
+        self._settings = Gio.Settings(schema=schema)
+        self._updates = {}
+
+    def get_settings(self):
+        return self._settings
+
+    def set(self, key, value):
+        self._updates[key] = value
+
+    def to_keyfile_str(self):
+        schema_id = self._settings.get_property('schema-id')
+        keyfile_lines = '[{}]\n'.format(schema_id.replace('.', '/'))
+
+        for k, v in self._updates.items():
+            if k is None:
+                continue
+            keyfile_lines += '{}={}\n'.format(k, v.print_(False))
+        return keyfile_lines
+
+    def apply(self):
+        for key, value in self._updates.items():
+            self._settings.set_value(key, value)
+
+
+class SetupLiveUser(object):
+    def __init__(self):
+        self.updates = {SHELL_SCHEMA: SettingsUpdates(SHELL_SCHEMA),
+                        GS_SCHEMA: SettingsUpdates(GS_SCHEMA)}
+
+    def update(self, schema, key, variant):
+        log.info('Updating %s: %s to %s',
+                 schema, key, variant.print_(False))
+        self.updates[schema].set(key, variant)
+
+    def format_keyfile(self):
+        keyfile_lines = []
+        for updates in self.updates.values():
+            keyfile_lines.append(updates.to_keyfile_str())
+
+        return '\n'.join(keyfile_lines)
+
+    def prepare(self):
+        self.update_favorite_apps()
+        self.disallow_app_center_updates()
+
+    def write_gsettings(self):
+        '''Write changed settings using GSettings. This seems like the obvious
+        thing to do, of course, but does not work when pkexec'd by g-i-s:
+        dconf writes happen in a dedicated process, which is service activated
+        over D-Bus; but the pkexec environment has no session bus, and no X11
+        connection with which to auto-launch one. Interestingly there seems to
+        be no way to get an error out of GSettings – you get nice warnings on
+        the console, but nothing here.'''
+        for updates in self.updates.values():
+            updates.apply()
+
+    def write_dconf_compile(self):
+        '''This is a bit roundabout, and depends on the knowledge that the user
+        database lives at $XDG_CONFIG_HOME/dconf/user, but has the advantage
+        of actually working when there's no session bus.'''
+        keyfile_contents = self.format_keyfile()
+
+        with tempfile.TemporaryDirectory(suffix='.d') as d:
+            keyfile = os.path.join(d, '00-live')
+            log.info('writing keyfile to %s', keyfile)
+            with open(keyfile, 'w') as f:
+                f.write(keyfile_contents)
+
+            user_dconf_dir = os.path.join(GLib.get_user_config_dir(), 'dconf')
+            log.info('ensuring %s exists', user_dconf_dir)
+            os.makedirs(user_dconf_dir, exist_ok=True)
+
+            user_dconf = os.path.join(user_dconf_dir, 'user')
+            if os.path.exists(user_dconf):
+                log.error('%s already exists, refusing to overwrite it',
+                          user_dconf)
+                raise SystemExit(1)
+
+            args = ['dconf', 'compile', user_dconf, d]
+            log.info('$ %s', ' '.join(args))
+            subprocess.check_call(args)
+
+    def write_stdout(self):
+        '''Just write the keyfile used by `dconf compile` to stdout.
+        For debugging purposes only.'''
+        print(self.format_keyfile())
+
+    def update_favorite_apps(self):
+        updates = self.updates[SHELL_SCHEMA]
+        favorite_apps = updates.get_settings().get_strv(FAVORITE_APPS_KEY)
+        changed = False
+
+        # Replace Chrome (downloaded on demand) with Chromium (pre-installed).
+        # This effectively undoes a step taken in the image builder,
+        # pre-seeding /var/eos-image-defaults/settings with the opposite
+        # change.
+        if GOOGLE_CHROME in favorite_apps:
+            i = favorite_apps.index(GOOGLE_CHROME)
+            favorite_apps[i] = CHROMIUM_BROWSER
+            changed = True
+
+        if changed:
+            self.update(SHELL_SCHEMA, FAVORITE_APPS_KEY,
+                        GLib.Variant('as', favorite_apps))
+
+    def disallow_app_center_updates(self):
+        self.update(GS_SCHEMA, ALLOW_UPDATES, GLib.Variant('b', False))
+
+
+def main():
+    p = argparse.ArgumentParser(
+        description='Configures system and user settings for demo session')
+    subparsers = p.add_subparsers(title='modes', dest='mode')
+
+    user = subparsers.add_parser(
+        'user',
+        description='description',
+        help='Configure a user account. '
+             'Should be executed as the target user.')
+    user.add_argument(
+        '-o', '--output',
+        choices=('gsettings', 'dconf-compile', 'stdout'),
+        help='Write new settings via GSettings, via `dconf compile`, or '
+             'as a keyfile to stdout (default: dconf-compile).  '
+             'Note that "--output gsettings" will fail if run outside a '
+             'user session, and "--output dconf-compile" will fail if '
+             'the user has ever logged in.',
+        default='dconf-compile')
+
+    a = p.parse_args()
+
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(name)s:%(lineno)-3s %(funcName)20s %(levelname)7s: '
+               '%(message)s')
+
+    setup = SetupLiveUser()
+    setup.prepare()
+
+    if a.output == 'gsettings':
+        setup.write_gsettings()
+    elif a.output == 'dconf-compile':
+        setup.write_dconf_compile()
+    elif a.output == 'stdout':
+        setup.write_stdout()
+    else:
+        raise Exception('Unexpected --output value ' + a.output)
+
+
+if __name__ == '__main__':
+    main()

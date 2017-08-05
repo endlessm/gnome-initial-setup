@@ -446,3 +446,68 @@ gis_page_util_show_factory_dialog (GisPage *page)
 
   g_free (version);
 }
+
+typedef struct _DemoButtonData {
+  GtkDialog *demo_dialog;
+  GisDriver *driver;
+} DemoButtonData;
+
+static DemoButtonData *
+demo_button_data_new (GtkDialog *dialog, GisDriver *driver)
+{
+  DemoButtonData *data = (DemoButtonData *) g_slice_new (DemoButtonData);
+  data->demo_dialog = dialog;
+  data->driver = g_object_ref (driver);
+
+  return data;
+}
+
+static void
+demo_button_data_free (gpointer data, GClosure *closure)
+{
+  DemoButtonData *db_data;
+
+  g_clear_object (&db_data->driver);
+  g_slice_free (DemoButtonData, db_data);
+}
+
+static void
+pressed_demo_button (GtkWidget *widget, gpointer user_data)
+{
+  DemoButtonData *data = (DemoButtonData *) user_data;
+
+  gis_driver_enter_demo_mode (data->driver);
+  gtk_window_close (GTK_WINDOW (data->demo_dialog));
+}
+
+void
+gis_page_util_show_demo_dialog (GisPage *page)
+{
+  GisDriver *driver = GIS_PAGE (page)->driver;
+  GtkBuilder *builder = NULL;
+  GtkButton *demo_button;
+  GtkDialog *demo_dialog;
+
+  builder = get_modals_builder ();
+  if (builder == NULL) {
+    g_warning ("Can't get private builder object for demo mode!");
+    return;
+  }
+
+  demo_dialog = (GtkDialog *)gtk_builder_get_object (builder, "demo-dialog");
+  demo_button = (GtkButton *)gtk_builder_get_object (builder, "demo-button");
+
+  g_signal_connect_data (demo_button,
+                         "clicked",
+                         G_CALLBACK (pressed_demo_button),
+                         demo_button_data_new (demo_dialog, driver),
+                         (GClosureNotify) demo_button_data_free,
+                         G_CONNECT_AFTER);
+
+  gtk_window_set_transient_for (GTK_WINDOW (demo_dialog),
+                                GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (page))));
+  gtk_window_set_modal (GTK_WINDOW (demo_dialog), TRUE);
+  gtk_window_present (GTK_WINDOW (demo_dialog));
+  g_signal_connect (demo_dialog, "delete-event",
+                    G_CALLBACK (gtk_widget_hide_on_delete), NULL);
+}

@@ -12,6 +12,7 @@ polkit.addRule(function(action, subject) {
     var actionMatches = (action.id === 'org.freedesktop.udisks2.filesystem-mount-system' ||
                          action.id === 'com.endlessm.Metrics.SetEnabled' ||
                          action.id === 'com.endlessm.TestMode' ||
+                         action.id === 'com.endlessm.DemoMode' ||
                          action.id.indexOf('org.freedesktop.hostname1.') === 0 ||
                          action.id.indexOf('org.freedesktop.NetworkManager.') === 0 ||
                          action.id.indexOf('org.freedesktop.locale1.') === 0 ||
@@ -21,8 +22,15 @@ polkit.addRule(function(action, subject) {
                          action.id.indexOf('org.freedesktop.realmd.') === 0 ||
                          action.id.indexOf('org.freedesktop.RealtimeKit1.') === 0);
 
+    var setupPrograms = [
+        '/usr/lib/gnome-initial-setup/eos-setup-live-user',
+        '/usr/libexec/eos-setup-demo-user',
+        '/usr/libexec/eos-note-demo-config',
+        '/usr/libexec/eos-test-mode'
+    ];
+
     if (action.id === 'org.freedesktop.policykit.exec' &&
-        action.lookup('program') === '/usr/lib/gnome-initial-setup/eos-setup-live-user') {
+        setupPrograms.indexOf(action.lookup('program')) !== -1) {
       actionMatches = true;
     }
 
