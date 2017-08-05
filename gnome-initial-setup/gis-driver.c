@@ -77,6 +77,7 @@ struct _GisDriverPrivate {
   gchar *username;
 
   gboolean is_live_session;
+  gboolean is_in_demo_mode;
 
   GisDriverMode mode;
   UmAccountMode account_mode;
@@ -178,6 +179,11 @@ gis_driver_set_user_language (GisDriver *driver, const gchar *lang_id)
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   g_free (priv->lang_id);
   priv->lang_id = g_strdup (lang_id);
+
+  /* Now, if we already have a user configured, make sure to
+   * propogate that change to the user */
+  if (priv->user_account)
+    act_user_set_language (priv->user_account, lang_id);
 }
 
 const gchar *
@@ -285,6 +291,93 @@ gis_driver_get_mode (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   return priv->mode;
+}
+
+gboolean
+gis_driver_is_in_demo_mode (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  return priv->is_in_demo_mode;
+}
+
+#define DEMO_ACCOUNT_USERNAME "demo-guest"
+#define DEMO_ACCOUNT_FULLNAME "Demo"
+
+static void
+handle_demo_mode_error (GError *error)
+{
+  GtkWidget *dialog;
+
+  g_warning ("Failed to enter demo mode: %s", error->message);
+  dialog = gtk_message_dialog_new (NULL,
+                                   GTK_DIALOG_DESTROY_WITH_PARENT,
+                                   GTK_MESSAGE_ERROR,
+                                   GTK_BUTTONS_CLOSE,
+                                   _("Failed to enter demo mode: %s"),
+                                   error->message);
+  gtk_dialog_run (GTK_DIALOG (dialog));
+  gtk_widget_destroy (dialog);
+  g_error_free (error);
+}
+
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (ActUser, g_object_unref)
+
+static gboolean
+create_demo_user (GisDriver *driver, GError **error)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  g_autoptr(ActUser) user;
+  const gchar *language;
+
+  user = act_user_manager_create_user (act_user_manager_get_default (),
+                                       DEMO_ACCOUNT_USERNAME,
+                                       DEMO_ACCOUNT_FULLNAME,
+                                       ACT_USER_ACCOUNT_TYPE_STANDARD,
+                                       error);
+  if (!user)
+    return FALSE;
+
+  act_user_set_password_mode (user, ACT_USER_PASSWORD_MODE_NONE);
+  act_user_set_automatic_login (user, TRUE);
+
+  language = gis_driver_get_user_language (driver);
+
+  if (language)
+    act_user_set_language (user, language);
+
+  gis_driver_set_user_permissions (driver, user, NULL);
+  gis_update_login_keyring_password ("");
+
+  return TRUE;
+}
+
+void
+gis_driver_enter_demo_mode (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  if (priv->is_in_demo_mode)
+    return;
+
+  GError *error = NULL;
+  if (!gis_pkexec (LIBEXECDIR "/eos-demo-mode", DEMO_ACCOUNT_USERNAME, NULL, &error))
+    {
+      handle_demo_mode_error (error);
+      return;
+    }
+
+  if (!create_demo_user (driver, &error))
+    {
+      handle_demo_mode_error (error);
+      return;
+    }
+
+  priv->is_in_demo_mode = TRUE;
+
+  /* Set up the demo user account, destroying it if necessary */
+  gis_driver_set_username (driver, DEMO_ACCOUNT_USERNAME);
+
+  rebuild_pages (driver);
 }
 
 gboolean

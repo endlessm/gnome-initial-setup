@@ -19,7 +19,10 @@ rulesdir = $(datadir)/polkit-1/rules.d
 rules_DATA = 20-gnome-initial-setup.rules
 
 actionsdir = $(datadir)/polkit-1/actions
-actions_DATA = com.endlessm.TestMode.policy
+actions_DATA = \
+	com.endlessm.TestMode.policy \
+	com.endlessm.DemoMode.policy \
+	$(NULL)
 
 sessiondir = $(datadir)/gnome-session/sessions
 session_DATA = gnome-initial-setup.session
@@ -33,8 +36,15 @@ desktop_DATA =						\
 	setup-shell.desktop				\
 	$(NULL)
 
+demovideodir = $(datadir)/eos-demo-mode
+demovideo_DATA = \
+	eos-demo-video.ogv \
+	$(NULL)
+
 EXTRA_DIST =						\
 	20-gnome-initial-setup.rules			\
+	eos-demo-video.ogv				\
+	eos-demo-video.desktop.in.in			\
 	gnome-welcome-tour				\
 	setup-shell.desktop				\
 	gnome-welcome-tour.desktop.in.in		\
@@ -45,9 +55,12 @@ EXTRA_DIST =						\
 	initial-setup.json				\
 	product_serial.conf                             \
 	com.endlessm.TestMode.policy.in			\
+	com.endlessm.DemoMode.policy.in			\
 	$(NULL)
 
 CLEANFILES =						\
+	eos-demo-video.desktop.in			\
+	eos-demo-video.desktop				\
 	gnome-initial-setup.desktop.in			\
 	gnome-initial-setup.desktop			\
 	gnome-initial-setup-copy-worker.desktop.in	\
@@ -56,6 +69,7 @@ CLEANFILES =						\
 	gnome-welcome-tour.desktop.in			\
 	gnome-welcome-tour.desktop			\
 	com.endlessm.TestMode.policy			\
+	com.endlessm.DemoMode.policy			\
 	$(NULL)
 
 autostartdir = $(sysconfdir)/xdg/autostart
@@ -63,6 +77,7 @@ autostart_DATA =					\
 	gnome-welcome-tour.desktop			\
 	gnome-initial-setup-copy-worker.desktop		\
 	gnome-initial-setup-first-login.desktop		\
+	eos-demo-video.desktop \
 	$(NULL)
 
 libexec_SCRIPTS =						\
