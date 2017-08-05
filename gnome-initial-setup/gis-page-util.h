@@ -29,6 +29,7 @@
 G_BEGIN_DECLS
 
 void gis_page_util_show_factory_dialog (GisPage *page);
+void gis_page_util_show_demo_dialog (GisPage *page);
 
 G_END_DECLS
 
