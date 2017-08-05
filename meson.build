@@ -17,6 +17,7 @@ local_state_dir = join_paths(prefix, get_option('localstatedir'))
 libexec_dir = join_paths(prefix, get_option('libexecdir'))
 source_root = join_paths(meson.source_root(), 'gnome-initial-setup')
 pkgdata_dir = join_paths(prefix, meson.project_name())
+demo_video_dir = join_paths(data_dir, 'eos-demo-mode')
 
 vendor_conf_file = get_option('vendor-conf-file')
 if vendor_conf_file == ''
@@ -33,6 +34,7 @@ conf.set_quoted('LIBEXECDIR', join_paths(prefix, get_option('libexecdir')))
 conf.set_quoted('LOCALSTATEDIR', local_state_dir)
 conf.set('SECRET_API_SUBJECT_TO_CHANGE', true)
 conf.set_quoted('G_LOG_DOMAIN', 'InitialSetup')
+conf.set_quoted('DEMOVIDEODATADIR', demo_video_dir)
 
 enable_systemd = get_option('systemd')
 if enable_systemd

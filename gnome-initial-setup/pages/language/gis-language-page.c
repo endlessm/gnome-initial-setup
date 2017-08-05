@@ -388,6 +388,9 @@ gis_language_page_constructed (GObject *object)
   closure = g_cclosure_new_swap (G_CALLBACK (gis_page_util_show_factory_dialog), page, NULL);
   gtk_accel_group_connect (priv->accel_group, GDK_KEY_f, GDK_CONTROL_MASK, 0, closure);
 
+  closure = g_cclosure_new_swap (G_CALLBACK (gis_page_util_show_demo_dialog), page, NULL);
+  gtk_accel_group_connect (priv->accel_group, GDK_KEY_d, GDK_CONTROL_MASK, 0, closure);
+
   gis_page_set_complete (GIS_PAGE (page), TRUE);
   gtk_widget_show (GTK_WIDGET (page));
 }

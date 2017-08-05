@@ -8,6 +8,8 @@ desktop_conf = configuration_data()
 desktop_conf.set('LIBEXECDIR', libexec_dir)
 desktop_conf.set('systemd_hidden', enable_systemd ? 'true' : 'false')
 
+autostart_dir = join_paths(get_option('sysconfdir'), 'xdg', 'autostart')
+
 foreach desktop_file: autostart_files
     i18n.merge_file(
         'desktop',
@@ -17,12 +19,20 @@ foreach desktop_file: autostart_files
             configuration: desktop_conf
         ),
         output: desktop_file,
-        install_dir: join_paths(get_option('sysconfdir'), 'xdg', 'autostart'),
+        install_dir: autostart_dir,
         po_dir: po_dir,
         install: true,
         type: 'desktop'
     )
 endforeach
+
+configure_file(
+    input: 'eos-demo-video.desktop.in',
+    output: 'eos-demo-video.desktop',
+    configuration: desktop_conf,
+    install: true,
+    install_dir: autostart_dir,
+)
 
 i18n.merge_file(
     'desktop',
@@ -65,7 +75,11 @@ endif
 
 
 rules_dir = join_paths(data_dir, 'polkit-1', 'rules.d')
-install_data('20-gnome-initial-setup.rules', install_dir: rules_dir)
+install_data(
+    '20-gnome-initial-setup.rules',
+    'com.endlessm.DemoMode.rules',
+    install_dir: rules_dir
+)
 
 session_dir = join_paths(data_dir, 'gnome-session', 'sessions')
 install_data('gnome-initial-setup.session', install_dir: session_dir)
@@ -75,11 +89,25 @@ install_data('initial-setup.json', install_dir: mode_dir)
 
 install_data('gnome-welcome-tour', install_dir: get_option('libexecdir'))
 
+install_data(
+    'eos-demo-video-C.webm',
+    'eos-demo-video-id.webm',
+    install_dir: demo_video_dir
+)
+
 policykit_actions_dir = policykit_dep.get_pkgconfig_variable('policydir')
 
 configure_file(
     input: 'com.endlessm.TestMode.policy.in',
     output: 'com.endlessm.TestMode.policy',
+    install: true,
+    install_dir: policykit_actions_dir,
+    configuration: desktop_conf,
+)
+
+configure_file(
+    input: 'com.endlessm.DemoMode.policy.in',
+    output: 'com.endlessm.DemoMode.policy',
     install: true,
     install_dir: policykit_actions_dir,
     configuration: desktop_conf,
