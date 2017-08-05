@@ -41,7 +41,7 @@
 #define SD_CARD_MOUNT       LOCALSTATEDIR "/endless-extra"
 
 static GtkBuilder *
-get_factory_mode_builder (void)
+get_modals_builder (void)
 {
   static GtkBuilder *builder = NULL;
   const gchar *resource_path = "/org/gnome/initial-setup/gis-page-util.ui";
@@ -377,7 +377,7 @@ gis_page_util_show_factory_dialog (GisPage *page)
   gchar *sd_text;
   gchar *product_id_text;
 
-  builder = get_factory_mode_builder ();
+  builder = get_modals_builder ();
   if (builder == NULL) {
     g_warning ("Can't get private builder object for factory mode!");
     return;
