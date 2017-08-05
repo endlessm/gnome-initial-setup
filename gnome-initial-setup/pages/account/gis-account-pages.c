@@ -26,7 +26,8 @@
 GisPage *
 gis_prepare_account_page (GisDriver *driver)
 {
-  if (gis_driver_is_live_session (driver))
+  if (gis_driver_is_live_session (driver) ||
+  	  gis_driver_is_in_demo_mode (driver))
     return NULL;
 
   return g_object_new (GIS_TYPE_ACCOUNT_PAGE,

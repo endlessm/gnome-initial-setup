@@ -464,3 +464,45 @@ gis_page_util_show_factory_dialog (GisPage *page)
 
   g_free (version);
 }
+
+static void
+response_cb (GtkDialog *dialog,
+             guint      response_id,
+             gpointer   user_data)
+{
+  GisDriver *driver = GIS_DRIVER (user_data);
+
+  if (response_id == GTK_RESPONSE_OK)
+    gis_driver_enter_demo_mode (driver);
+  gtk_widget_destroy (GTK_WIDGET (dialog));
+}
+
+void
+gis_page_util_show_demo_dialog (GisPage *page)
+{
+  GisDriver *driver = GIS_PAGE (page)->driver;
+  GtkBuilder *builder = NULL;
+  GtkDialog *demo_dialog;
+
+  if (!gis_driver_get_supports_demo_mode (driver))
+    return;
+
+  builder = get_modals_builder ();
+  if (builder == NULL) {
+    g_warning ("Can't get private builder object for demo mode!");
+    return;
+  }
+
+  demo_dialog = (GtkDialog *)gtk_builder_get_object (builder, "demo-dialog");
+
+  g_signal_connect_object (demo_dialog,
+                           "response",
+                           G_CALLBACK (response_cb),
+                           driver,
+                           G_CONNECT_AFTER);
+
+  gtk_window_set_transient_for (GTK_WINDOW (demo_dialog),
+                                GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (page))));
+  gtk_window_set_modal (GTK_WINDOW (demo_dialog), TRUE);
+  gtk_window_present (GTK_WINDOW (demo_dialog));
+}

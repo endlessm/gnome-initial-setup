@@ -67,9 +67,10 @@ typedef enum {
   PROP_PARENTAL_CONTROLS_ENABLED,
   PROP_FULL_NAME,
   PROP_AVATAR,
+  PROP_DEMO_MODE,
 } GisDriverProperty;
 
-static GParamSpec *obj_props[PROP_AVATAR + 1];
+static GParamSpec *obj_props[PROP_DEMO_MODE + 1];
 
 struct _GisDriverPrivate {
   GtkWindow *main_window;
@@ -95,6 +96,7 @@ struct _GisDriverPrivate {
   GdkPixbuf *avatar;  /* (owned) (nullable) */
 
   gboolean is_live_session;
+  gboolean is_in_demo_mode;
 
   GisDriverMode mode;
   UmAccountMode account_mode;
@@ -333,6 +335,11 @@ gis_driver_set_user_language (GisDriver *driver, const gchar *lang_id, gboolean 
 
       gis_driver_locale_changed (driver);
     }
+
+  /* Now, if we already have a user configured, make sure to
+   * propagate that change to the user */
+  if (priv->user_account)
+    act_user_set_language (priv->user_account, lang_id);
 }
 
 const gchar *
@@ -724,6 +731,124 @@ gis_driver_get_mode (GisDriver *driver)
 }
 
 gboolean
+gis_driver_is_in_demo_mode (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  return priv->is_in_demo_mode;
+}
+
+#define DEMO_ACCOUNT_USERNAME "demo-guest"
+#define DEMO_ACCOUNT_FULLNAME "Demo"
+#define DEMO_ACCOUNT_AVATAR "/usr/share/pixmaps/faces/sunflower.jpg"
+
+static void
+handle_demo_mode_error (GError *error)
+{
+  GtkWidget *dialog;
+
+  g_warning ("Failed to enter demo mode: %s", error->message);
+  dialog = gtk_message_dialog_new (NULL,
+                                   GTK_DIALOG_DESTROY_WITH_PARENT,
+                                   GTK_MESSAGE_ERROR,
+                                   GTK_BUTTONS_CLOSE,
+                                   _("Failed to enter demo mode: %s"),
+                                   error->message);
+  gtk_dialog_run (GTK_DIALOG (dialog));
+  gtk_widget_destroy (dialog);
+  g_error_free (error);
+}
+
+static gboolean
+create_demo_user (GisDriver *driver, GError **error)
+{
+  g_autoptr(ActUser) user;
+  const gchar *language;
+
+  user = act_user_manager_create_user (act_user_manager_get_default (),
+                                       DEMO_ACCOUNT_USERNAME,
+                                       DEMO_ACCOUNT_FULLNAME,
+                                       ACT_USER_ACCOUNT_TYPE_STANDARD,
+                                       error);
+  if (!user)
+    return FALSE;
+
+  act_user_set_password_mode (user, ACT_USER_PASSWORD_MODE_NONE);
+  act_user_set_automatic_login (user, TRUE);
+  act_user_set_icon_file (user, DEMO_ACCOUNT_AVATAR);
+
+  language = gis_driver_get_user_language (driver);
+
+  if (language)
+    act_user_set_language (user, language);
+
+  gis_driver_set_user_permissions (driver, user, NULL);
+  gis_update_login_keyring_password ("");
+
+  return TRUE;
+}
+
+static gboolean
+setup_demo_config (GisDriver *driver, GError **error)
+{
+  gchar *stamp_file = g_build_filename (g_get_user_config_dir (),
+                                        "eos-demo-mode",
+                                        NULL);
+
+  if (!g_file_set_contents (stamp_file, "1", sizeof(char), error))
+    {
+      g_free (stamp_file);
+      return FALSE;
+    }
+
+  g_free (stamp_file);
+  return TRUE;
+}
+
+void
+gis_driver_enter_demo_mode (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  if (priv->is_in_demo_mode)
+    return;
+
+  GError *error = NULL;
+  if (!gis_pkexec (LIBEXECDIR "/eos-demo-mode", DEMO_ACCOUNT_USERNAME, NULL, &error))
+    {
+      handle_demo_mode_error (error);
+      return;
+    }
+
+  if (!create_demo_user (driver, &error))
+    {
+      handle_demo_mode_error (error);
+      return;
+    }
+
+  if (!setup_demo_config (driver, &error))
+    {
+      handle_demo_mode_error (error);
+      return;
+    }
+
+  priv->is_in_demo_mode = TRUE;
+
+  /* Set up the demo user account, destroying it if necessary */
+  gis_driver_set_username (driver, DEMO_ACCOUNT_USERNAME);
+
+  rebuild_pages (driver);
+
+  /* Notify anyone interested that we are in demo mode now */
+  g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_DEMO_MODE]);
+}
+
+gboolean
+gis_driver_get_supports_demo_mode (GisDriver *driver)
+{
+  return !gis_driver_is_live_session (driver);
+}
+
+gboolean
 gis_driver_is_live_session (GisDriver *driver)
 {
     GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
@@ -759,6 +884,9 @@ gis_driver_get_property (GObject      *object,
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   switch ((GisDriverProperty) prop_id)
     {
+    case PROP_DEMO_MODE:
+      g_value_set_boolean (value, priv->is_in_demo_mode);
+      break;
     case PROP_LIVE_SESSION:
       g_value_set_boolean (value, priv->is_live_session);
       break;
@@ -1080,6 +1208,11 @@ gis_driver_class_init (GisDriverClass *klass)
                   G_STRUCT_OFFSET (GisDriverClass, locale_changed),
                   NULL, NULL, NULL,
                   G_TYPE_NONE, 0);
+
+  obj_props[PROP_DEMO_MODE] =
+    g_param_spec_boolean ("demo-mode", "", "",
+                          FALSE,
+                          G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
   obj_props[PROP_LIVE_SESSION] =
     g_param_spec_boolean ("live-session", "", "",

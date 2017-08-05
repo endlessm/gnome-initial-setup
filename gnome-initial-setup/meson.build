@@ -1,6 +1,7 @@
 sources = []
 
 subdir('pages')
+subdir('demo')
 
 resources = gnome.compile_resources(
     'gis-assistant-resources',
@@ -69,6 +70,12 @@ dependencies = [
     libmalcontent_dep,
     libmalcontent_ui_dep,
 ]
+
+install_data(
+    'eos-demo-mode',
+    install_dir: libexec_dir,
+    install_mode: 'rwxr-xr-x'
+)
 
 install_data(
     'eos-transient-setup',

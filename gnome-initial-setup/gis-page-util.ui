@@ -184,4 +184,42 @@
       </object>
     </child>
   </object>
+  <object class="GtkDialog" id="demo-dialog">
+    <property name="can_focus">False</property>
+    <property name="type_hint">dialog</property>
+    <property name="title" translatable="yes">Enter Store Demo</property>
+    <property name="use_header_bar">1</property>
+    <child type="action">
+      <object class="GtkButton" id="demo-button">
+        <property name="visible">True</property>
+        <property name="label" translatable="yes">OK</property>
+        <property name="can_default">True</property>
+      </object>
+    </child>
+    <child type="action">
+      <object class="GtkButton" id="cancel-button">
+        <property name="visible">True</property>
+        <property name="label" translatable="yes">Cancel</property>
+      </object>
+    </child>
+    <child internal-child="vbox">
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="width-request">480</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">This allows you to try Endless without activating an account. No changes or files will be saved, and the computer will return to a clean factory state when you power it off.</property>
+            <property name="wrap">True</property>
+            <property name="max-width-chars">50</property>
+            <property name="margin">20</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="cancel">cancel-button</action-widget>
+      <action-widget response="ok" default="true">demo-button</action-widget>
+    </action-widgets>
+  </object>
 </interface>
