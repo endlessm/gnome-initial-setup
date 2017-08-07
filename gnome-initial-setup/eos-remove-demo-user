@@ -1,0 +1,16 @@
+#!/usr/bin/gjs
+
+const AccountsService = imports.gi.AccountsService;
+const GLib = imports.gi.GLib;
+
+log('Forcibly removing the demo-guest user');
+let manager = AccountsService.UserManager.get_default();
+let loop = GLib.MainLoop.new(null, false);
+manager.connect('notify::is-loaded', function() {
+    let user = manager.get_user('demo-guest');
+    if (user.user_name)
+        manager.delete_user(user, true);
+    loop.quit();
+});
+loop.run();
+

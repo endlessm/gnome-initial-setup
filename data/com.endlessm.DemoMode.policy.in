@@ -18,4 +18,14 @@
     <annotate key="org.freedesktop.policykit.exec.path">@LIBEXECDIR@/eos-setup-demo-user</annotate>
     <annotate key="org.freedesktop.policykit.exec.path">@LIBEXECDIR@/eos-note-demo-config</annotate>
   </action>
+  <action id="com.endlessm.RemoveDemoUser">
+    <description>Remove the demo user</description>
+    <message>Removing the demo guest account</message>
+    <defaults>
+      <allow_any>yes</allow_any>
+      <allow_inactive>yes</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">@LIBEXECDIR@/eos-remove-demo-user</annotate>
+  </action>
 </policyconfig>
