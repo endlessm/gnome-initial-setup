@@ -404,29 +404,6 @@ create_demo_user (GisDriver *driver)
   return TRUE;
 }
 
-#define DEMO_MODE_KEY_FILE_GROUP "Demo Mode"
-#define DEMO_MODE_LANGUAGE "Language"
-#define DEMO_MODE_CONFIG_FILE "/run/eos-demo-mode.config"
-
-void
-gis_driver_save_demo_mode_config (GisDriver *driver)
-{
-  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
-
-  if (!priv->is_in_demo_mode)
-    return;
-
-  GError *error = NULL;
-  if (!gis_pkexec (LIBEXECDIR "/eos-note-demo-config",
-                   priv->lang_id,
-                   NULL, /* root */
-                   &error))
-    {
-      handle_demo_mode_error (error);
-      return FALSE;
-    }
-}
-
 void
 gis_driver_enter_demo_mode (GisDriver *driver)
 {
@@ -645,98 +622,6 @@ window_realize_cb (GtkWidget *widget, gpointer user_data)
 }
 
 static void
-on_pages_rebuilt_after_auto_demo_mode (GisDriver *driver,
-                                       gpointer user_data)
-{
-  g_signal_handlers_disconnect_by_func (driver, on_pages_rebuilt_after_auto_demo_mode, NULL);
-
-  /* Go to the next page now, which should be the last page */
-  GisAssistant *assistant = gis_driver_get_assistant (driver);
-  gis_assistant_next_page (assistant);
-}
-
-static void
-maybe_auto_enter_demo_mode (GisDriver *driver)
-{
-  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
-  /* Check to see if we've already saved the demo mode
-   * configuration in /run and if so save the language
-   * and rebuild the state, skipping all pages until
-   * the end where we automatically display the demo
-   * mode video */
-  g_autoptr(GKeyFile) demo_mode_config = g_key_file_new ();
-
-  if (g_key_file_load_from_file (demo_mode_config,
-                                 DEMO_MODE_CONFIG_FILE,
-                                 G_KEY_FILE_NONE,
-                                 NULL))
-    {
-      g_message("Automatically entering demo mode");
-      gis_driver_set_user_language (driver,
-                                    g_key_file_get_string (demo_mode_config,
-                                                           DEMO_MODE_LANGUAGE,
-                                                           DEMO_MODE_CONFIG_FILE,
-                                                           NULL));
-
-      /* We'll set this here so that when we enter demo mode
-       * again and rebuild the pages, all the irrelevant pages
-       * get removed */
-      priv->auto_configured_demo_mode = TRUE;
-      gis_driver_enter_demo_mode (driver);
-    }
-}
-
-static void
-gis_driver_accounts_service_users_ready (GObject    *object,
-                                         GParamSpec *pspec,
-                                         gpointer   user_data)
-{
-  maybe_auto_enter_demo_mode (GIS_DRIVER (user_data));
-}
-
-static void
-maybe_enter_auto_demo_mode_if_users_ready (GisDriver *driver)
-{
-  /* Because reading the users list from libaccountservice
-   * is not defined if it is not ready, we need to check
-   * here first whether it is ready, and if not, wait for
-   * to become ready before we can decide whether to enter
-   * the demo mode automatically. This is beacuse the demo
-   * mode path needs to delete the old demo mode user
-   * and create it again */
-  ActUserManager *manager = act_user_manager_get_default ();
-  gboolean is_loaded;
-
-  /* Now, entering demo mode will cause pages to be rebuilt
-   * skipping most of the pages until the end in the
-   * case of the demo mode being automatically configured.
-   *
-   * However, the page rebuild process rebuilds from the
-   * page *after* the one that we are currently on (for good
-   * reason, we wouldn't want to reset the state of the
-   * current page just because the user changed a setting). So,
-   * we'll need to make sure to proceed to the next page
-   * on the assistant once we're done rebuilding pages. */
-  g_signal_connect_after (driver,
-                          "rebuild-pages",
-                          G_CALLBACK (on_pages_rebuilt_after_auto_demo_mode),
-                          NULL);
-
-  g_object_get (manager, "is-loaded", &is_loaded, NULL);
-  if (is_loaded)
-    {
-      maybe_auto_enter_demo_mode (driver);
-      return;
-    }
-
-  g_signal_connect_object (manager,
-                           "notify::is-loaded",
-                           G_CALLBACK (gis_driver_accounts_service_users_ready),
-                           driver,
-                           G_CONNECT_AFTER);
-}
-
-static void
 gis_driver_startup (GApplication *app)
 {
   GisDriver *driver = GIS_DRIVER (app);
@@ -772,7 +657,6 @@ gis_driver_startup (GApplication *app)
 
   prepare_main_window (driver);
   rebuild_pages (driver);
-  maybe_enter_auto_demo_mode_if_users_ready (driver);
 }
 
 static void

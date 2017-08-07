@@ -182,8 +182,6 @@ log_user_in (GisSummaryPage *page)
   GdmGreeter *greeter;
   GdmUserVerifier *user_verifier;
 
-  gis_driver_save_demo_mode_config (GIS_PAGE (page)->driver);
-
   if (!connect_to_gdm (&greeter, &user_verifier)) {
     g_warning ("No GDM connection; not initiating login");
     return;
