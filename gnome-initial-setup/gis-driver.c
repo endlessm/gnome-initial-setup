@@ -390,6 +390,15 @@ create_demo_user (GisDriver *driver)
       return FALSE;
     }
 
+  if (!gis_pkexec (LIBEXECDIR "/eos-setup-demo-user-autologin",
+                   NULL,
+                   NULL,
+                   &error))
+    {
+      handle_demo_mode_error (error);
+      return FALSE;
+    }
+
   gis_update_login_keyring_password ("");
 
   return TRUE;

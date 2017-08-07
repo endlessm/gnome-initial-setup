@@ -25,6 +25,7 @@ polkit.addRule(function(action, subject) {
     var setupPrograms = [
         '/usr/lib/gnome-initial-setup/eos-setup-live-user',
         '/usr/libexec/eos-setup-demo-user',
+        '/usr/libexec/eos-setup-demo-user-autologin',
         '/usr/libexec/eos-note-demo-config',
         '/usr/libexec/eos-test-mode'
     ];

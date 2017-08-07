@@ -83,6 +83,7 @@ gnome-initial-setup: gnome-initial-setup.in Makefile
 libexec_SCRIPTS = gnome-initial-setup
 dist_libexec_SCRIPTS = \
 	eos-setup-demo-user \
+	eos-setup-demo-user-autologin \
 	eos-remove-demo-user \
 	eos-note-demo-config \
 	$(NULL)
