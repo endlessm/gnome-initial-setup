@@ -34,7 +34,7 @@ def main():
     keyfile = GLib.KeyFile.new()
     keyfile.load_from_file(GDM_DAEMON_CONF, GLib.KeyFileFlags.NONE)
     keyfile.set_string('daemon', 'TimedLoginEnable', 'true')
-    keyfile.set_string('daemon', 'TimedLoginUser', 'demo-guest')
+    keyfile.set_string('daemon', 'TimedLogin', 'demo-guest')
     keyfile.set_string('daemon', 'TimedLoginDelay', '1')
     keyfile.save_to_file(GDM_DAEMON_CONF)
 
