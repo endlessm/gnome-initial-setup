@@ -42,7 +42,7 @@ file_is_ours (GFile *file)
 }
 
 static void
-move_file_from_homedir (GFile       *src_base,
+copy_file_from_homedir (GFile       *src_base,
                         GFile       *dest_base,
                         const gchar *path)
 {
@@ -54,7 +54,7 @@ move_file_from_homedir (GFile       *src_base,
 
   g_file_make_directory_with_parents (dest_parent, NULL, NULL);
 
-  if (!g_file_move (src, dest, G_FILE_COPY_NONE,
+  if (!g_file_copy (src, dest, G_FILE_COPY_NONE,
                     NULL, NULL, NULL, &error)) {
     if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND)) {
       g_warning ("Unable to move %s to %s: %s",
@@ -86,7 +86,7 @@ main (int    argc,
   dest = g_file_new_for_path (g_get_home_dir ());
 
 #define FILE(path) \
-  move_file_from_homedir (src, dest, path);
+  copy_file_from_homedir (src, dest, path);
 
   FILE (".config/gnome-initial-setup-done");
   FILE (".config/run-welcome-tour");
