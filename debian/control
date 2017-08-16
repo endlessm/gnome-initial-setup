@@ -31,7 +31,7 @@ Build-Depends: debhelper-compat (= 12),
                libnm-dev (>= 1.2),
                libnma-dev (>= 1.0),
                libpango1.0-dev (>= 1.32.5),
-               libpolkit-gobject-1-dev (>= 0.103),
+               libpolkit-gobject-1-dev (>= 0.106),
                libpwquality-dev,
                librest-dev,
                libsecret-1-dev,
@@ -47,7 +47,7 @@ Homepage: https://git.gnome.org/browse/gnome-initial-setup/
 Package: gnome-initial-setup
 Architecture: linux-any
 Depends: ${shlibs:Depends},
-         policykit-1 (>= 0.103),
+         policykit-1 (>= 0.106),
          adduser,
          gnome-settings-daemon (>= 3.24),
          ${logo:Depends},
