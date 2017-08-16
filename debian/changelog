@@ -1,3 +1,17 @@
+gnome-initial-setup (3.24.2-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #869942)
+    - Adapt gnome-session file for gnome-settings-daemon 3.24
+  * debian/control.in:
+    - Update NetworkManager related Build-Depends
+    - Add explicit dependency on gnome-settings-daemon >= 3.24
+  * Add adapt-to-gsd325.patch:
+    - Don't require the orientation or xrandr plugins that will
+      be dropped in gnome-settings-daemon 3.26 to smooth that
+      transition
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Sun, 06 Aug 2017 17:41:28 -0400
+
 gnome-initial-setup (3.22.1-1) unstable; urgency=medium
 
   * New upstream release.
