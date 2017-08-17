@@ -285,13 +285,57 @@ insert_user_languages (GHashTable *ht)
         }
 }
 
-GHashTable *
-cc_common_language_get_initial_languages (void)
+#define VENDOR_LANGUAGE_GROUP "Language"
+#define VENDOR_LANGUAGE_INITIAL_LANGUAGES_KEY "initial_languages"
+
+static gboolean
+insert_vendor_languages (GHashTable *ht)
 {
-        GHashTable *ht;
+        g_autoptr(GKeyFile) keyfile = NULL;
+        g_autoptr(GError) error = NULL;
+        g_auto(GStrv) languages = NULL;
+        int idx;
 
-        ht = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
+        /* VENDOR_CONF_FILE points to a keyfile containing vendor customization
+         * options. This code will look for options under the "Language" group, and
+         * supports the following keys:
+         *   - initial_languages (optional): a string list of language codes to
+         *       pre-populate the initial list of languages
+         *
+         * For example, this is how this file would look on a vendor image defining
+         * a south-east Asian initial language list:
+         *
+         *   [Language]
+         *   initial_languages=id_ID.UTF-8;th_TH.UTF-8;vi_VN.UTF-8;hi_IN.UTF-8
+         */
+        keyfile = g_key_file_new ();
+        if (!g_key_file_load_from_file (keyfile, VENDOR_CONF_FILE, G_KEY_FILE_NONE, &error)) {
+                if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
+                        g_warning ("Could not read file %s: %s", VENDOR_CONF_FILE, error->message);
 
+                return FALSE;
+        }
+
+        languages = g_key_file_get_string_list (keyfile, VENDOR_LANGUAGE_GROUP,
+                                                VENDOR_LANGUAGE_INITIAL_LANGUAGES_KEY,
+                                                NULL, &error);
+
+        if (languages == NULL) {
+                g_debug ("Could not read initial languages list from %s: %s",
+                         VENDOR_CONF_FILE, error->message);
+                return FALSE;
+        }
+
+        for (idx = 0; languages[idx] != NULL; idx++) {
+                insert_language (ht, languages[idx]);
+        }
+
+        return TRUE;
+}
+
+static void
+insert_default_languages (GHashTable *ht)
+{
         insert_language (ht, "en_US.UTF-8");
         insert_language (ht, "pt_BR.UTF-8");
         insert_language (ht, "es_MX.UTF-8");
@@ -300,6 +344,17 @@ cc_common_language_get_initial_languages (void)
         insert_language (ht, "vi_VN.UTF-8");
         insert_language (ht, "fr_FR.UTF-8");
         insert_language (ht, "ar_AE.UTF-8");
+}
+
+GHashTable *
+cc_common_language_get_initial_languages (void)
+{
+        GHashTable *ht;
+
+        ht = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
+
+        if (!insert_vendor_languages (ht))
+                insert_default_languages (ht);
 
         insert_user_languages (ht);
 
