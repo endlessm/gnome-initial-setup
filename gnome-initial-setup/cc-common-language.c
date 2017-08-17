@@ -34,6 +34,8 @@
 
 #include "cc-common-language.h"
 
+#include "gnome-initial-setup.h"
+
 static char *get_lang_for_user_object_path (const char *path);
 
 static char *current_language;
@@ -288,13 +290,46 @@ insert_user_languages (GHashTable *ht)
         }
 }
 
-GHashTable *
-cc_common_language_get_initial_languages (void)
+#define VENDOR_LANGUAGE_GROUP "Language"
+#define VENDOR_LANGUAGE_INITIAL_LANGUAGES_KEY "initial_languages"
+
+static gboolean
+insert_vendor_languages (GHashTable *ht)
 {
-        GHashTable *ht;
+        g_autoptr(GKeyFile) keyfile = NULL;
+        g_autoptr(GError) error = NULL;
+        g_auto(GStrv) languages = NULL;
+        int idx;
+        GisDriver *driver;
 
-        ht = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
+        /* This code will look for options under the "Language" group, and
+         * supports the following keys:
+         *   - initial_languages (optional): a string list of language codes to
+         *       pre-populate the initial list of languages
+         *
+         * For example, this is how this file would look on a vendor image defining
+         * a south-east Asian initial language list:
+         *
+         *   [Language]
+         *   initial_languages=id_ID.UTF-8;th_TH.UTF-8;vi_VN.UTF-8;hi_IN.UTF-8
+         */
+        driver = GIS_DRIVER (g_application_get_default ());
+        languages = gis_driver_conf_get_string_list (driver,
+                                                     VENDOR_LANGUAGE_GROUP,
+                                                     VENDOR_LANGUAGE_INITIAL_LANGUAGES_KEY,
+                                                     NULL);
+        if (languages == NULL)
+                return FALSE;
 
+        for (idx = 0; languages[idx] != NULL; idx++)
+                insert_language (ht, languages[idx]);
+
+        return TRUE;
+}
+
+static void
+insert_default_languages (GHashTable *ht)
+{
         insert_language (ht, "en_US.UTF-8");
 #if 0
         /* Having 9 languages in the list initially makes the window
@@ -311,6 +346,17 @@ cc_common_language_get_initial_languages (void)
         insert_language (ht, "ja_JP.UTF-8");
         insert_language (ht, "ru_RU.UTF-8");
         insert_language (ht, "ar_EG.UTF-8");
+}
+
+GHashTable *
+cc_common_language_get_initial_languages (void)
+{
+        GHashTable *ht;
+
+        ht = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
+
+        if (!insert_vendor_languages (ht))
+                insert_default_languages (ht);
 
         insert_user_languages (ht);
 
