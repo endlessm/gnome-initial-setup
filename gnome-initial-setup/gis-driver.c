@@ -334,7 +334,7 @@ create_demo_user (GisDriver *driver, GError **error)
                                        DEMO_ACCOUNT_FULLNAME,
                                        ACT_USER_ACCOUNT_TYPE_STANDARD,
                                        error);
-  if (*error)
+  if (!user)
     return FALSE;
 
   act_user_set_password_mode (user, ACT_USER_PASSWORD_MODE_NONE);
@@ -360,7 +360,7 @@ gis_driver_enter_demo_mode (GisDriver *driver)
     return;
 
   GError *error = NULL;
-  if (!gis_pkexec (LIBEXECDIR "/eos-demo-mode", "demo-guest", NULL, &error))
+  if (!gis_pkexec (LIBEXECDIR "/eos-demo-mode", DEMO_ACCOUNT_USERNAME, NULL, &error))
     {
       handle_demo_mode_error (error);
       return;
