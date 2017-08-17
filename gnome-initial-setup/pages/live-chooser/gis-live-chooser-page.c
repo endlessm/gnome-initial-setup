@@ -274,7 +274,7 @@ gis_live_chooser_page_locale_changed (GisPage *page)
   gtk_button_set_label (GTK_BUTTON (priv->try_button), _("Try It"));
   gtk_button_set_label (GTK_BUTTON (priv->reformat_button), _("Reformat"));
 
-  gis_page_set_title (page, _("Endless USB Stick"));
+  gis_page_set_title (page, _("Try or Reformat"));
 }
 
 static void
