@@ -15,6 +15,7 @@ sources += [
     'gis-assistant.c',
     'gis-page.c',
     'gis-page-header.c',
+    'gis-page-util.c',
     'gis-pkexec.c',
     'gis-driver.c',
     'gis-keyring.c',
@@ -22,6 +23,7 @@ sources += [
     'gis-assistant.h',
     'gis-page.h',
     'gis-page-header.h',
+    'gis-page-util.h',
     'gis-pkexec.h',
     'gis-driver.h',
     'gis-keyring.h'
