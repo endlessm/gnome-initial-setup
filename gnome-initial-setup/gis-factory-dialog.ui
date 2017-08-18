@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="GisFactoryDialog" parent="GtkWindow">
+    <property name="focus_widget">poweroff-button</property>
+    <property name="default_widget">poweroff-button</property>
+    <property name="title"/>
+
+    <child type="titlebar">
+      <object class="GtkHeaderBar">
+        <style>
+          <class name="flat"/>
+        </style>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkBox" id="dialog-vbox1">
+        <property name="orientation">vertical</property>
+        <property name="spacing">8</property>
+        <child>
+          <object class="GtkBox" id="box1">
+            <property name="vexpand">true</property>
+            <property name="valign">center</property>
+            <property name="margin-start">16</property>
+            <property name="margin-end">16</property>
+            <property name="margin-top">16</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">8</property>
+            <child>
+              <object class="GtkLabel" id="software_version_label">
+                <property name="label">Endless 1.x.y</property>
+                <attributes>
+                  <attribute name="font-desc" value="default 32"/>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="image_version_label">
+                <property name="label">image version</property>
+                <attributes>
+                  <attribute name="font-desc" value="default 16"/>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="halign">end</property>
+            <property name="spacing">8</property>
+            <property name="margin-start">16</property>
+            <property name="margin-end">16</property>
+            <property name="margin-bottom">16</property>
+            <child>
+              <object class="GtkButton" id="testmode-button">
+                <child>
+                  <object class="GtkLabel" id="testmode-label">
+                    <property name="label" translatable="true">Test Mode</property>
+                    <attributes>
+                      <attribute name="font-desc" value="default 16"/>
+                      <attribute name="weight" value="bold"/>
+                    </attributes>
+                  </object>
+                </child>
+                <signal name="clicked" handler="testmode_clicked_cb" object="GisFactoryDialog" swapped="yes"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="poweroff-button">
+                <child>
+                  <object class="GtkLabel" id="label1">
+                    <property name="label" translatable="true">Power Off</property>
+                    <attributes>
+                      <attribute name="font-desc" value="default 16"/>
+                      <attribute name="weight" value="bold"/>
+                    </attributes>
+                  </object>
+                </child>
+                <signal name="clicked" handler="poweroff_clicked_cb" object="GisFactoryDialog" swapped="yes"/>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>
+
