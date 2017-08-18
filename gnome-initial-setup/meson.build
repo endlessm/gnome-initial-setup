@@ -8,18 +8,26 @@ resources = gnome.compile_resources(
     c_name: 'gis_assistant'
 )
 
+resources += gnome.compile_resources(
+    'gis-page-util-resources',
+    files('gis-page-util.gresource.xml'),
+    c_name: 'gis_page_util'
+)
+
 sources += [
     resources,
     'cc-common-language.c',
     'gnome-initial-setup.c',
     'gis-assistant.c',
     'gis-page.c',
+    'gis-page-util.c',
     'gis-pkexec.c',
     'gis-driver.c',
     'gis-keyring.c',
     'gnome-initial-setup.h',
     'gis-assistant.h',
     'gis-page.h',
+    'gis-page-util.h',
     'gis-pkexec.h',
     'gis-driver.h',
     'gis-keyring.h'
@@ -50,6 +58,7 @@ dependencies = [
     dependency ('libsecret-1'),
     dependency ('pwquality'),
     dependency ('webkit2gtk-4.0'),
+    cc.find_library('zint'),
     cheese_dep,
     cheese_gtk_dep,
     pkgkit_dep,
