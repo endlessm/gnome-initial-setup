@@ -6,11 +6,18 @@ resources = gnome.compile_resources(
     c_name: 'gis_assistant'
 )
 
+resources += gnome.compile_resources(
+    'gis-factory-dialog-resources',
+    files('gis-factory-dialog.gresource.xml'),
+    c_name: 'gis_factory_dialog'
+)
+
 sources += [
     resources,
     'cc-common-language.c',
     'gnome-initial-setup.c',
     'gis-assistant.c',
+    'gis-factory-dialog.c',
     'gis-page.c',
     'gis-page-header.c',
     'gis-page-util.c',
@@ -19,6 +26,7 @@ sources += [
     'gis-keyring.c',
     'gnome-initial-setup.h',
     'gis-assistant.h',
+    'gis-factory-dialog.h',
     'gis-page.h',
     'gis-page-header.h',
     'gis-page-util.h',
