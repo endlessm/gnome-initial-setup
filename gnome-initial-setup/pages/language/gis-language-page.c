@@ -33,6 +33,7 @@
 #include "language-resources.h"
 #include "gis-welcome-widget.h"
 #include "cc-language-chooser.h"
+#include "gis-page-util.h"
 #include "gis-language-page.h"
 
 #include <act/act-user-manager.h>
@@ -51,6 +52,8 @@ struct _GisLanguagePagePrivate
   const gchar *new_locale_id;
 
   GCancellable *cancellable;
+
+  GtkAccelGroup *accel_group;
 };
 typedef struct _GisLanguagePagePrivate GisLanguagePagePrivate;
 
@@ -222,6 +225,7 @@ gis_language_page_constructed (GObject *object)
   GisLanguagePage *page = GIS_LANGUAGE_PAGE (object);
   GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (page);
   GDBusConnection *bus;
+  GClosure *closure;
 
   g_type_ensure (CC_TYPE_LANGUAGE_CHOOSER);
 
@@ -252,8 +256,22 @@ gis_language_page_constructed (GObject *object)
       g_object_unref (bus);
     }
 
+  /* Use ctrl+f to show factory dialog */
+  priv->accel_group = gtk_accel_group_new ();
+  closure = g_cclosure_new_swap (G_CALLBACK (gis_page_util_show_factory_dialog), page, NULL);
+  gtk_accel_group_connect (priv->accel_group, GDK_KEY_f, GDK_CONTROL_MASK, 0, closure);
+
   gis_page_set_complete (GIS_PAGE (page), TRUE);
   gtk_widget_show (GTK_WIDGET (page));
+}
+
+static GtkAccelGroup *
+gis_language_page_get_accel_group (GisPage *page)
+{
+  GisLanguagePage *self = GIS_LANGUAGE_PAGE (page);
+  GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (self);
+
+  return priv->accel_group;
 }
 
 static void
@@ -271,6 +289,7 @@ gis_language_page_dispose (GObject *object)
   g_clear_object (&priv->permission);
   g_clear_object (&priv->localed);
   g_clear_object (&priv->cancellable);
+  g_clear_object (&priv->accel_group);
 
   G_OBJECT_CLASS (gis_language_page_parent_class)->dispose (object);
 }
@@ -289,6 +308,7 @@ gis_language_page_class_init (GisLanguagePageClass *klass)
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_language_page_locale_changed;
+  page_class->get_accel_group = gis_language_page_get_accel_group;
   object_class->constructed = gis_language_page_constructed;
   object_class->dispose = gis_language_page_dispose;
 }

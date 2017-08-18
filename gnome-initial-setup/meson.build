@@ -8,6 +8,12 @@ resources = gnome.compile_resources(
     c_name: 'gis_assistant'
 )
 
+resources += gnome.compile_resources(
+    'gis-page-util-resources',
+    files('gis-page-util.gresource.xml'),
+    c_name: 'gis_page_util'
+)
+
 sources += [
     resources,
     'cc-common-language.c',
