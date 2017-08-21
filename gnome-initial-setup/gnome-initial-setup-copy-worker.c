@@ -55,7 +55,7 @@ move_file_from_homedir (GFile       *src_base,
 
   g_file_make_directory_with_parents (dest_parent, NULL, NULL);
 
-  if (!g_file_move (src, dest, G_FILE_COPY_NONE,
+  if (!g_file_copy (src, dest, G_FILE_COPY_NONE,
                     NULL, NULL, NULL, &error)) {
     if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND)) {
       g_warning ("Unable to move %s to %s: %s",
@@ -108,6 +108,7 @@ main (int    argc,
 
   FILE (".config/gnome-initial-setup-done");
   FILE (".config/run-welcome-tour");
+  FILE (".config/eos-demo-mode");
   FILE (".config/dconf/user");
   FILE (".config/goa-1.0/accounts.conf");
   FILE (".config/monitors.xml");

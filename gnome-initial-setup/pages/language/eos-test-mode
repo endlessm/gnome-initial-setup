@@ -17,6 +17,9 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
+# Check to see if we've mounted overlays already
+[ -d /run/eos-test ] && exit 0;
+
 # The /var/endless-extra SD card filesystem needs to be unmounted before
 # adding the overlays below since the /var overlay will mask it.
 extra_unit="var-endless\x2dextra.mount"

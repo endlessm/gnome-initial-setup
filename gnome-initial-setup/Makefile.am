@@ -1,4 +1,4 @@
-SUBDIRS = pages
+SUBDIRS = pages demo
 
 BUILT_SOURCES =
 
@@ -80,6 +80,9 @@ gnome-initial-setup: gnome-initial-setup.in Makefile
 	$(AM_V_GEN) sed -e "s|@setlocale_wrapper_dir[@]|$(SETLOCALE_WRAPPER_DIR)|g;" -e "s|@libexecdir[@]|$(libexecdir)|g" $< > $@
 
 libexec_SCRIPTS = gnome-initial-setup
+dist_libexec_SCRIPTS = \
+	eos-demo-mode \
+	$(NULL)
 
 EXTRA_DIST = \
 	gis-assistant.gresource.xml \

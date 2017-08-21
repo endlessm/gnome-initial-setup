@@ -40,8 +40,18 @@
 #define DT_COMPATIBLE_FILE  "/proc/device-tree/compatible"
 #define SD_CARD_MOUNT       LOCALSTATEDIR "/endless-extra"
 
+static void
+load_css_overrides (GtkWidget *widget)
+{
+  g_autoptr(GtkCssProvider) provider = gtk_css_provider_new ();
+  gtk_css_provider_load_from_resource (provider, "/org/gnome/initial-setup/modals.css");
+  gtk_style_context_add_provider_for_screen (gtk_widget_get_screen (widget),
+                                             GTK_STYLE_PROVIDER (provider),
+                                             GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+}
+
 static GtkBuilder *
-get_factory_mode_builder (void)
+get_modals_builder (void)
 {
   static GtkBuilder *builder = NULL;
   const gchar *resource_path = "/org/gnome/initial-setup/gis-page-util.ui";
@@ -377,7 +387,7 @@ gis_page_util_show_factory_dialog (GisPage *page)
   gchar *sd_text;
   gchar *product_id_text;
 
-  builder = get_factory_mode_builder ();
+  builder = get_modals_builder ();
   if (builder == NULL) {
     g_warning ("Can't get private builder object for factory mode!");
     return;
@@ -445,4 +455,46 @@ gis_page_util_show_factory_dialog (GisPage *page)
   }
 
   g_free (version);
+}
+
+static void
+pressed_demo_button (GtkWidget *widget, gpointer user_data)
+{
+  GisDriver *driver = GIS_DRIVER (user_data);
+
+  gis_driver_enter_demo_mode (driver);
+  gtk_window_close (GTK_WINDOW (gtk_widget_get_toplevel (widget)));
+}
+
+void
+gis_page_util_show_demo_dialog (GisPage *page)
+{
+  GisDriver *driver = GIS_PAGE (page)->driver;
+  GtkBuilder *builder = NULL;
+  GtkButton *demo_button;
+  GtkDialog *demo_dialog;
+
+  builder = get_modals_builder ();
+  if (builder == NULL) {
+    g_warning ("Can't get private builder object for demo mode!");
+    return;
+  }
+
+  load_css_overrides (GTK_WIDGET (page));
+
+  demo_dialog = (GtkDialog *)gtk_builder_get_object (builder, "demo-dialog");
+  demo_button = (GtkButton *)gtk_builder_get_object (builder, "demo-button");
+
+  g_signal_connect_object (demo_button,
+                           "clicked",
+                           G_CALLBACK (pressed_demo_button),
+                           driver,
+                           G_CONNECT_AFTER);
+
+  gtk_window_set_transient_for (GTK_WINDOW (demo_dialog),
+                                GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (page))));
+  gtk_window_set_modal (GTK_WINDOW (demo_dialog), TRUE);
+  gtk_window_present (GTK_WINDOW (demo_dialog));
+  g_signal_connect (demo_dialog, "delete-event",
+                    G_CALLBACK (gtk_widget_hide_on_delete), NULL);
 }

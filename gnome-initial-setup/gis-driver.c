@@ -77,6 +77,7 @@ struct _GisDriverPrivate {
   gchar *username;
 
   gboolean is_live_session;
+  gboolean is_in_demo_mode;
 
   GisDriverMode mode;
   UmAccountMode account_mode;
@@ -178,6 +179,11 @@ gis_driver_set_user_language (GisDriver *driver, const gchar *lang_id)
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   g_free (priv->lang_id);
   priv->lang_id = g_strdup (lang_id);
+
+  /* Now, if we already have a user configured, make sure to
+   * propogate that change to the user */
+  if (priv->user_account)
+    act_user_set_language (priv->user_account, lang_id);
 }
 
 const gchar *
@@ -285,6 +291,196 @@ gis_driver_get_mode (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   return priv->mode;
+}
+
+gboolean
+gis_driver_is_in_demo_mode (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  return priv->is_in_demo_mode;
+}
+
+#define DEMO_ACCOUNT_USERNAME "demo-guest"
+#define DEMO_ACCOUNT_FULLNAME "Demo"
+
+static void
+handle_demo_mode_error (GError *error)
+{
+  GtkWidget *dialog;
+
+  g_warning ("Failed to enter demo mode: %s", error->message);
+  dialog = gtk_message_dialog_new (NULL,
+                                   GTK_DIALOG_DESTROY_WITH_PARENT,
+                                   GTK_MESSAGE_ERROR,
+                                   GTK_BUTTONS_CLOSE,
+                                   _("Failed to enter demo mode: %s"),
+                                   error->message);
+  gtk_dialog_run (GTK_DIALOG (dialog));
+  gtk_widget_destroy (dialog);
+  g_error_free (error);
+}
+
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (ActUser, g_object_unref)
+
+static gboolean
+create_demo_user (GisDriver *driver, GError **error)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  g_autoptr(ActUser) user;
+  const gchar *language;
+
+  user = act_user_manager_create_user (act_user_manager_get_default (),
+                                       DEMO_ACCOUNT_USERNAME,
+                                       DEMO_ACCOUNT_FULLNAME,
+                                       ACT_USER_ACCOUNT_TYPE_STANDARD,
+                                       error);
+  if (!user)
+    return FALSE;
+
+  act_user_set_password_mode (user, ACT_USER_PASSWORD_MODE_NONE);
+  act_user_set_automatic_login (user, TRUE);
+
+  language = gis_driver_get_user_language (driver);
+
+  if (language)
+    act_user_set_language (user, language);
+
+  gis_driver_set_user_permissions (driver, user, NULL);
+  gis_update_login_keyring_password ("");
+
+  return TRUE;
+}
+
+#define GSD_POWER_SCHEMA "org.gnome.settings-daemon.plugins.power"
+#define GSD_SLEEP_INACTIVE_AC_TYPE "sleep-inactive-ac-type"
+#define GSD_SLEEP_INACTIVE_AC_TIMEOUT "sleep-inactive-ac-timeout"
+#define GSD_SLEEP_INACTIVE_BATTERY_TYPE "sleep-inactive-battery-type"
+#define GSD_SLEEP_INACTIVE_BATTERY_TIMEOUT "sleep-inactive-battery-timeout"
+
+#define ONE_MINUTE 60
+
+static void
+configure_demo_mode_power_settings (void)
+{
+  GSettings *power_settings = g_settings_new (GSD_POWER_SCHEMA);
+
+  g_settings_set_string (power_settings, GSD_SLEEP_INACTIVE_AC_TYPE, "logout");
+  g_settings_set_int (power_settings, GSD_SLEEP_INACTIVE_AC_TIMEOUT, ONE_MINUTE);
+  g_settings_set_string (power_settings, GSD_SLEEP_INACTIVE_BATTERY_TYPE, "logout");
+  g_settings_set_int (power_settings, GSD_SLEEP_INACTIVE_BATTERY_TIMEOUT, ONE_MINUTE);
+
+  g_object_unref (power_settings);
+}
+
+#define GS_SCHEMA "org.gnome.software"
+#define GS_ALLOW_UPDATES "allow-updates"
+
+static void
+configure_demo_mode_disallow_app_center_updates (void)
+{
+  GSettings *gnome_software_settings = g_settings_new (GS_SCHEMA);
+
+  g_settings_set_boolean (gnome_software_settings, GS_ALLOW_UPDATES, FALSE);
+
+  g_object_unref (gnome_software_settings);
+}
+
+#define GNOME_SHELL_SCHEMA "org.gnome.shell"
+#define GNOME_SHELL_FAVORITE_APPS "favorite-apps"
+
+#define GOOGLE_CHROME_DESKTOP_ID "google-chrome.desktop"
+#define CHROMIUM_BROWSER_DESKTOP_ID "chromium-browser.desktop"
+
+static void
+replace_string_in_strv (GStrv       strv,
+                        const gchar *needle,
+                        const gchar *replacement)
+{
+  guint i = 0;
+
+  while (strv[i] != NULL)
+    {
+      if (g_strcmp0 (strv[i], needle) == 0)
+        {
+          g_free (strv[i]);
+          strv[i] = g_strdup (replacement);
+        }
+
+      ++i;
+    }
+}
+
+static void
+configure_demo_mode_replace_chrome_with_chromium (void)
+{
+  GSettings *gnome_shell_settings = g_settings_new (GNOME_SHELL_SCHEMA);
+  GStrv favorite_apps = g_settings_get_strv (gnome_shell_settings,
+                                             GNOME_SHELL_FAVORITE_APPS);
+  replace_string_in_strv (favorite_apps,
+                          GOOGLE_CHROME_DESKTOP_ID,
+                          CHROMIUM_BROWSER_DESKTOP_ID);
+  g_settings_set_strv (gnome_shell_settings,
+                       GNOME_SHELL_FAVORITE_APPS,
+                       (const gchar * const *) favorite_apps);
+
+  g_strfreev (favorite_apps);
+  g_object_unref (gnome_shell_settings);
+}
+
+static gboolean
+setup_demo_config (GisDriver *driver, GError **error)
+{
+  gchar *stamp_file = g_build_filename (g_get_user_config_dir (),
+                                        "eos-demo-mode",
+                                        NULL);
+
+  if (!g_file_set_contents (stamp_file, "1", sizeof(char), error))
+    {
+      g_free (stamp_file);
+      return FALSE;
+    }
+
+  configure_demo_mode_power_settings ();
+  configure_demo_mode_disallow_app_center_updates ();
+  configure_demo_mode_replace_chrome_with_chromium ();
+
+  g_free (stamp_file);
+  return TRUE;
+}
+
+void
+gis_driver_enter_demo_mode (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  if (priv->is_in_demo_mode)
+    return;
+
+  GError *error = NULL;
+  if (!gis_pkexec (LIBEXECDIR "/eos-demo-mode", DEMO_ACCOUNT_USERNAME, NULL, &error))
+    {
+      handle_demo_mode_error (error);
+      return;
+    }
+
+  if (!create_demo_user (driver, &error))
+    {
+      handle_demo_mode_error (error);
+      return;
+    }
+
+  if (!setup_demo_config (driver, &error))
+    {
+      handle_demo_mode_error (error);
+      return;
+    }
+
+  priv->is_in_demo_mode = TRUE;
+
+  /* Set up the demo user account, destroying it if necessary */
+  gis_driver_set_username (driver, DEMO_ACCOUNT_USERNAME);
+
+  rebuild_pages (driver);
 }
 
 gboolean
