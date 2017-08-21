@@ -91,15 +91,12 @@ create_demo_window (GisDemoVideo *demo_video)
                          GDK_BUTTON_PRESS_MASK); 
   gtk_window_fullscreen (priv->main_window);
 
-  /* Translators: this text appears when the user invokes
-   * some action that is blocked because the demo video
-   * is showing */
   gtk_application_inhibit (application,
                            priv->main_window,
                            GTK_APPLICATION_INHIBIT_LOGOUT |
                            GTK_APPLICATION_INHIBIT_SWITCH |
                            GTK_APPLICATION_INHIBIT_IDLE,
-                           _("Demonstration video"));
+                           "Demonstration video");
 
   gtk_container_add (GTK_CONTAINER (priv->main_window), priv->widget);
 
@@ -193,10 +190,6 @@ main (int argc, char **argv)
 
   gtk_init (&argc, &argv);
   gst_init (&argc, &argv);
-
-  bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
-  bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-  textdomain (GETTEXT_PACKAGE);
 
   demo_video_application = gis_demo_video_new ();
   status = g_application_run (G_APPLICATION (demo_video_application), argc, argv);
