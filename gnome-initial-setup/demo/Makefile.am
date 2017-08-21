@@ -6,7 +6,6 @@ eos_demo_video_SOURCES =	\
 	$(NULL)
 
 AM_CPPFLAGS = \
-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DDEMOVIDEODATADIR=\""$(datadir)/eos-demo-mode"\" \
 	$(NULL)
 
