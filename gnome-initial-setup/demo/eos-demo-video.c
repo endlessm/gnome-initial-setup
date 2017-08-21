@@ -21,7 +21,7 @@
 
 #include "config.h"
 
-#include <eos-demo-video.h>
+#include "eos-demo-video.h"
 
 typedef struct _GisDemoVideoPrivate
 {
