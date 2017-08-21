@@ -2,6 +2,7 @@ libexec_PROGRAMS = eos-demo-video
 
 eos_demo_video_SOURCES =	\
 	eos-demo-video.c	\
+	eos-demo-video.h	\
 	$(NULL)
 
 AM_CPPFLAGS = \
