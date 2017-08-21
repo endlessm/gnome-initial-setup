@@ -44,7 +44,7 @@ demovideo_DATA = \
 EXTRA_DIST =						\
 	20-gnome-initial-setup.rules			\
 	eos-demo-video.ogv				\
-	eos-demo-video.desktop.in.in			\
+	eos-demo-video.desktop				\
 	gnome-welcome-tour				\
 	setup-shell.desktop				\
 	gnome-welcome-tour.desktop.in.in		\
@@ -59,8 +59,6 @@ EXTRA_DIST =						\
 	$(NULL)
 
 CLEANFILES =						\
-	eos-demo-video.desktop.in			\
-	eos-demo-video.desktop				\
 	gnome-initial-setup.desktop.in			\
 	gnome-initial-setup.desktop			\
 	gnome-initial-setup-copy-worker.desktop.in	\
