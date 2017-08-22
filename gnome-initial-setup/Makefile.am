@@ -77,7 +77,7 @@ libsetlocale_wrapper_la_SOURCES = setlocale-wrapper.c
 libsetlocale_wrapper_la_LIBADD = -ldl
 
 gnome-initial-setup: gnome-initial-setup.in Makefile
-	$(AM_V_GEN) sed -e "s|@setlocale_wrapper_dir[@]|$(SETLOCALE_WRAPPER_DIR)|g;" -e "s|@libexecdir[@]|$(libexecdir)|g" $< > $@
+	$(AM_V_GEN) sed -e "s|@setlocale_wrapper_dir[@]|$(SETLOCALE_WRAPPER_DIR)|g;" -e "s|@libexecdir[@]|$(libexecdir)|g" $< > $@ && chmod +x $@ || (rm -f $@ && exit 1)
 
 libexec_SCRIPTS = gnome-initial-setup
 dist_libexec_SCRIPTS = \
