@@ -41,6 +41,9 @@
 struct _GisLiveChooserPagePrivate
 {
   GtkWidget *try_label;
+  GtkWidget *try_label_dvd;
+  GtkWidget *try_icon;
+  GtkWidget *try_icon_dvd;
   GtkWidget *reformat_label;
   GtkWidget *try_button;
   GtkWidget *reformat_button;
@@ -188,6 +191,7 @@ gis_live_chooser_page_constructed (GObject *object)
 {
   GisLiveChooserPage *page = GIS_LIVE_CHOOSER_PAGE (object);
   GisLiveChooserPagePrivate *priv = gis_live_chooser_page_get_instance_private (page);
+  GisDriver *driver = GIS_PAGE (page)->driver;
 
   G_OBJECT_CLASS (gis_live_chooser_page_parent_class)->constructed (object);
 
@@ -205,6 +209,10 @@ gis_live_chooser_page_constructed (GObject *object)
                             G_CALLBACK (reformat_button_clicked),
                             page);
 
+  g_object_bind_property (driver, "live-dvd", priv->try_label, "visible", G_BINDING_SYNC_CREATE | G_BINDING_INVERT_BOOLEAN);
+  g_object_bind_property (driver, "live-dvd", priv->try_icon, "visible", G_BINDING_SYNC_CREATE | G_BINDING_INVERT_BOOLEAN);
+  g_object_bind_property (driver, "live-dvd", priv->try_label_dvd, "visible", G_BINDING_SYNC_CREATE);
+  g_object_bind_property (driver, "live-dvd", priv->try_icon_dvd, "visible", G_BINDING_SYNC_CREATE);
 
   load_css_overrides (page);
 
@@ -217,6 +225,7 @@ gis_live_chooser_page_locale_changed (GisPage *page)
   GisLiveChooserPagePrivate *priv = gis_live_chooser_page_get_instance_private (GIS_LIVE_CHOOSER_PAGE (page));
 
   gtk_label_set_label (GTK_LABEL (priv->try_label), _("Try Endless OS by running it from the USB Stick."));
+  gtk_label_set_label (GTK_LABEL (priv->try_label_dvd), _("Try Endless OS by running it from the DVD."));
   gtk_label_set_label (GTK_LABEL (priv->reformat_label), _("Reformat this computer with Endless OS."));
   gtk_button_set_label (GTK_BUTTON (priv->try_button), _("Try It"));
   gtk_button_set_label (GTK_BUTTON (priv->reformat_button), _("Reformat"));
@@ -237,6 +246,9 @@ gis_live_chooser_page_class_init (GisLiveChooserPageClass *klass)
   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-live-chooser-page.ui");
 
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, try_label);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, try_label_dvd);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, try_icon);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, try_icon_dvd);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, reformat_label);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, try_button);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, reformat_button);
