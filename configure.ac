@@ -63,6 +63,7 @@ PKG_CHECK_MODULES(INITIAL_SETUP,
                   pwquality
                   evince-view-3.0
                   evince-document-3.0
+                  udisks2
                   webkit2gtk-4.0)
 
 INITIAL_SETUP_CFLAGS="$INITIAL_SETUP_CFLAGS -DNM_VERSION_MIN_REQUIRED=NM_VERSION_1_2"
