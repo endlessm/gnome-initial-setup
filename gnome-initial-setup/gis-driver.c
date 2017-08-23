@@ -63,6 +63,7 @@ enum {
   PROP_0,
   PROP_DEMO_MODE,
   PROP_LIVE_SESSION,
+  PROP_LIVE_DVD,
   PROP_MODE,
   PROP_USERNAME,
   PROP_PASSWORDLESS,
@@ -88,6 +89,7 @@ struct _GisDriverPrivate {
   gboolean passwordless;
 
   gboolean is_live_session;
+  gboolean is_live_dvd;
   gboolean is_in_demo_mode;
 
   GisDriverMode mode;
@@ -115,12 +117,11 @@ check_for_live_boot (gchar **uuid)
   g_autoptr(GRegex) reg = NULL;
   g_autoptr(GMatchInfo) info = NULL;
 
-  g_return_val_if_fail (uuid != NULL, FALSE);
-
   force = g_getenv ("EI_FORCE_LIVE_BOOT_UUID");
   if (force != NULL && *force != '\0')
     {
-      *uuid = g_strdup (force);
+      if (uuid != NULL)
+        *uuid = g_strdup (force);
       return TRUE;
     }
 
@@ -132,23 +133,34 @@ check_for_live_boot (gchar **uuid)
 
   live_boot = g_regex_match_simple ("\\bendless\\.live_boot\\b", cmdline, 0, 0);
 
-  reg = g_regex_new ("\\bendless\\.image\\.device=UUID=([^\\s]*)", 0, 0, NULL);
-  g_regex_match (reg, cmdline, 0, &info);
-  if (g_match_info_matches (info))
-    *uuid = g_match_info_fetch (info, 1);
+  if (uuid != NULL)
+    {
+      reg = g_regex_new ("\\bendless\\.image\\.device=UUID=([^\\s]*)", 0, 0, NULL);
+      g_regex_match (reg, cmdline, 0, &info);
+      if (g_match_info_matches (info))
+        *uuid = g_match_info_fetch (info, 1);
+    }
 
   return live_boot;
 }
 
-static gboolean
-running_live_session (void)
+static void
+check_live_session (GisDriver   *driver,
+                    const gchar *image_version)
 {
-  g_autofree gchar *uuid = NULL;
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
 
-  if (!check_for_live_boot (&uuid))
-    return FALSE;
-
-  return TRUE;
+  if (check_for_live_boot (NULL))
+    {
+      priv->is_live_session = TRUE;
+      priv->is_live_dvd = image_version != NULL &&
+        g_str_has_prefix (image_version, "eosdvd-");
+    }
+  else
+    {
+      priv->is_live_session = FALSE;
+      priv->is_live_dvd = FALSE;
+    }
 }
 
 #define EOS_IMAGE_VERSION_PATH "/sysroot"
@@ -704,6 +716,9 @@ gis_driver_get_property (GObject      *object,
     case PROP_LIVE_SESSION:
       g_value_set_boolean (value, priv->is_live_session);
       break;
+    case PROP_LIVE_DVD:
+      g_value_set_boolean (value, priv->is_live_dvd);
+      break;
     case PROP_MODE:
       g_value_set_enum (value, priv->mode);
       break;
@@ -943,8 +958,9 @@ gis_driver_startup (GApplication *app)
   image_version = get_image_version ();
   priv->product_name = get_product_from_image_version (image_version);
 
-  priv->is_live_session = running_live_session ();
+  check_live_session (driver, image_version);
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
+  g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_DVD]);
 
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL), FALSE);
 
@@ -1004,6 +1020,11 @@ gis_driver_class_init (GisDriverClass *klass)
 
   obj_props[PROP_LIVE_SESSION] =
     g_param_spec_boolean ("live-session", "", "",
+                          FALSE,
+                          G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
+
+  obj_props[PROP_LIVE_DVD] =
+    g_param_spec_boolean ("live-dvd", "", "",
                           FALSE,
                           G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
