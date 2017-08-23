@@ -195,7 +195,7 @@
         <child>
           <object class="GtkLabel">
             <property name="visible">True</property>
-            <property name="label" translatable="yes">Once you enter demo mode, you can continue to set up this computer as normal. However, the created user account will automatically log out and back in after one minute, its files will not be preserved and the computer will be restored to a fresh state once it restarts.</property>
+            <property name="label" translatable="yes">Once you enter demo mode, you can continue to set up this computer as normal. The created user account will be restored to a fresh state after one minute of inactivity. The computer will show this setup screen the next time it restarts.</property>
             <property name="wrap">True</property>
             <property name="max-width-chars">50</property>
             <property name="halign">center</property>
