@@ -87,33 +87,58 @@ typedef struct _GisDriverPrivate GisDriverPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE(GisDriver, gis_driver, GTK_TYPE_APPLICATION)
 
+/* Should be kept in sync with eos-installer */
 static gboolean
-running_live_session (void)
+check_for_live_boot (gchar **uuid)
 {
-  /* This is the same variable used by eos-installer. We do not care about
-   * the UUID of the image partition here, just whether the variable is set.
-   */
-  const gchar *force = g_getenv ("EI_FORCE_LIVE_BOOT_UUID");
-  gboolean has_live_boot_param;
+  const gchar *force = NULL;
   GError *error = NULL;
-  g_autofree gchar *contents = NULL;
+  g_autofree gchar *cmdline = NULL;
+  gboolean live_boot = FALSE;
+  g_autoptr(GRegex) reg = NULL;
+  g_autoptr(GMatchInfo) info = NULL;
 
+  g_return_val_if_fail (uuid != NULL, FALSE);
+
+  force = g_getenv ("EI_FORCE_LIVE_BOOT_UUID");
   if (force != NULL && *force != '\0')
     {
+      g_print ("EI_FORCE_LIVE_BOOT_UUID set to %s\n", force);
+      *uuid = g_strdup (force);
       return TRUE;
     }
 
-
-  if (!g_file_get_contents ("/proc/cmdline", &contents, NULL, &error))
+  if (!g_file_get_contents ("/proc/cmdline", &cmdline, NULL, &error))
     {
-      g_warning ("Couldn't check kernel parameters: %s", error->message);
-      g_clear_error (&error);
+      g_printerr ("unable to read /proc/cmdline: %s\n", error->message);
+      g_error_free (error);
       return FALSE;
     }
 
-  has_live_boot_param = g_strrstr (contents, "endless.live_boot") != NULL;
+  live_boot = g_regex_match_simple ("\\bendless\\.live_boot\\b", cmdline, 0, 0);
 
-  return has_live_boot_param;
+  g_print ("set live_boot to %u from /proc/cmdline: %s\n", live_boot, cmdline);
+
+  reg = g_regex_new ("\\bendless\\.image\\.device=UUID=([^\\s]*)", 0, 0, NULL);
+  g_regex_match (reg, cmdline, 0, &info);
+  if (g_match_info_matches (info))
+    {
+      *uuid = g_match_info_fetch (info, 1);
+      g_print ("set UUID to %s\n", *uuid);
+    }
+
+  return live_boot;
+}
+
+static gboolean
+running_live_session (void)
+{
+  g_autofree gchar *uuid = NULL;
+
+  if (!check_for_live_boot (&uuid))
+    return FALSE;
+
+  return TRUE;
 }
 
 static void
