@@ -40,16 +40,6 @@
 #define DT_COMPATIBLE_FILE  "/proc/device-tree/compatible"
 #define SD_CARD_MOUNT       LOCALSTATEDIR "/endless-extra"
 
-static void
-load_css_overrides (GtkWidget *widget)
-{
-  g_autoptr(GtkCssProvider) provider = gtk_css_provider_new ();
-  gtk_css_provider_load_from_resource (provider, "/org/gnome/initial-setup/modals.css");
-  gtk_style_context_add_provider_for_screen (gtk_widget_get_screen (widget),
-                                             GTK_STYLE_PROVIDER (provider),
-                                             GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-}
-
 static GtkBuilder *
 get_modals_builder (void)
 {
@@ -479,8 +469,6 @@ gis_page_util_show_demo_dialog (GisPage *page)
     g_warning ("Can't get private builder object for demo mode!");
     return;
   }
-
-  load_css_overrides (GTK_WIDGET (page));
 
   demo_dialog = (GtkDialog *)gtk_builder_get_object (builder, "demo-dialog");
   demo_button = (GtkButton *)gtk_builder_get_object (builder, "demo-button");
