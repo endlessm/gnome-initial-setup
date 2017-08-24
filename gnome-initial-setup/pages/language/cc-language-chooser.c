@@ -52,6 +52,7 @@ struct _CcLanguageChooserPrivate
 
         gboolean showing_extra;
         gchar *language;
+        gchar *initial_language;
 };
 typedef struct _CcLanguageChooserPrivate CcLanguageChooserPrivate;
 G_DEFINE_TYPE_WITH_PRIVATE (CcLanguageChooser, cc_language_chooser, GTK_TYPE_BOX);
@@ -415,6 +416,8 @@ sort_languages (GtkListBoxRow *a,
                 GtkListBoxRow *b,
                 gpointer       data)
 {
+        CcLanguageChooser *chooser = data;
+        CcLanguageChooserPrivate *priv = cc_language_chooser_get_instance_private (chooser);
         LanguageWidget *la, *lb;
         gchar *normalized_a, *normalized_b;
         gint retval;
@@ -432,6 +435,12 @@ sort_languages (GtkListBoxRow *a,
                 return 1;
 
         if (!la->is_extra && lb->is_extra)
+                return -1;
+
+        if (g_strcmp0 (la->locale_id, priv->initial_language) == 0)
+                return 1;
+
+        if (g_strcmp0 (lb->locale_id, priv->initial_language) == 0)
                 return -1;
 
         normalized_a = cc_util_normalize_casefold_and_unaccent (la->locale_name);
@@ -569,6 +578,7 @@ cc_language_chooser_constructed (GObject *object)
 
         if (priv->language == NULL)
                 priv->language = cc_common_language_get_current_language ();
+        priv->initial_language = g_strdup (priv->language);
 
         sync_all_checkmarks (chooser);
         show_more (chooser);
@@ -581,6 +591,7 @@ cc_language_chooser_finalize (GObject *object)
         CcLanguageChooserPrivate *priv = cc_language_chooser_get_instance_private (chooser);
 
         g_free (priv->language);
+        g_free (priv->initial_language);
 
 	G_OBJECT_CLASS (cc_language_chooser_parent_class)->finalize (object);
 }
