@@ -87,6 +87,9 @@ struct _GisDriverPrivate {
   GisDriverMode mode;
   UmAccountMode account_mode;
   gboolean small_screen;
+
+  /* Cancelled on shutdown */
+  GCancellable *cancellable;
 };
 typedef struct _GisDriverPrivate GisDriverPrivate;
 
@@ -170,7 +173,7 @@ udisks_client_new_cb (GObject      *source,
 
       g_list_free_full (blocks, g_object_unref);
     }
-  else
+  else if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
     {
       g_warning ("Couldn't connect to UDisks: %s %d %s",
           g_quark_to_string (error->domain), error->code, error->message);
@@ -193,7 +196,7 @@ running_live_session (GisDriver *driver)
   /* Check whether this is a DVD, without blocking FBE initialization. This is
    * likely to return before the user completes the language page.
    */
-  udisks_client_new (NULL, udisks_client_new_cb, g_object_ref (driver));
+  udisks_client_new (priv->cancellable, udisks_client_new_cb, g_object_ref (driver));
 
   return TRUE;
 }
@@ -210,6 +213,7 @@ gis_driver_finalize (GObject *object)
   g_free (priv->live_mode_uuid);
 
   g_clear_object (&priv->user_account);
+  g_clear_object (&priv->cancellable);
 
   G_OBJECT_CLASS (gis_driver_parent_class)->finalize (object);
 }
@@ -794,6 +798,17 @@ gis_driver_startup (GApplication *app)
 }
 
 static void
+gis_driver_shutdown (GApplication *app)
+{
+  GisDriver *driver = GIS_DRIVER (app);
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  g_cancellable_cancel (priv->cancellable);
+
+  G_APPLICATION_CLASS (gis_driver_parent_class)->shutdown (app);
+}
+
+static void
 gis_driver_init (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
@@ -805,6 +820,8 @@ gis_driver_init (GisDriver *driver)
 
   g_signal_connect (screen, "size-changed",
                     G_CALLBACK (screen_size_changed), driver);
+
+  priv->cancellable = g_cancellable_new ();
 }
 
 static void
@@ -818,6 +835,7 @@ gis_driver_class_init (GisDriverClass *klass)
   gobject_class->finalize = gis_driver_finalize;
   application_class->startup = gis_driver_startup;
   application_class->activate = gis_driver_activate;
+  application_class->shutdown = gis_driver_shutdown;
   klass->locale_changed = gis_driver_real_locale_changed;
 
   signals[REBUILD_PAGES] =
