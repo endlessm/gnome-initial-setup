@@ -169,9 +169,7 @@ reformatter_exited_cb (GPid     pid,
   GisLiveChooserPage *page = user_data;
   GError *error = NULL;
 
-  g_spawn_check_exit_status (status, &error);
-
-  if (error)
+  if (!g_spawn_check_exit_status (status, &error))
     {
       GtkWidget *message_dialog;
 
@@ -184,7 +182,8 @@ reformatter_exited_cb (GPid     pid,
                                                _("Error running the reformatter: %s"), error->message);
 
       gis_driver_show_window (GIS_PAGE (page)->driver);
-      gtk_widget_show (message_dialog);
+      gtk_dialog_run (GTK_DIALOG (message_dialog));
+      gtk_widget_destroy (message_dialog);
 
       g_clear_error (&error);
     }
@@ -205,7 +204,7 @@ reformat_button_clicked (GisLiveChooserPage *page)
   g_spawn_async ("/usr/lib/eos-installer",
                  (gchar**) command,
                  NULL,
-                 G_SPAWN_DEFAULT,
+                 G_SPAWN_DO_NOT_REAP_CHILD,
                  NULL,
                  NULL,
                  &pid,
