@@ -43,12 +43,9 @@
 static GtkBuilder *
 get_modals_builder (void)
 {
-  static GtkBuilder *builder = NULL;
+  GtkBuilder *builder = NULL;
   const gchar *resource_path = "/org/gnome/initial-setup/gis-page-util.ui";
   g_autoptr(GError) error = NULL;
-
-  if (builder != NULL)
-    return builder;
 
   builder = gtk_builder_new ();
   gtk_builder_add_from_resource (builder, resource_path, &error);
@@ -360,7 +357,7 @@ void
 gis_page_util_show_factory_dialog (GisPage *page)
 {
   GisDriver *driver = GIS_PAGE (page)->driver;
-  GtkBuilder *builder = NULL;
+  g_autoptr(GtkBuilder) builder = NULL;
   GtkButton *poweroff_button;
   GtkButton *testmode_button;
   GtkDialog *factory_dialog;
@@ -463,7 +460,7 @@ void
 gis_page_util_show_demo_dialog (GisPage *page)
 {
   GisDriver *driver = GIS_PAGE (page)->driver;
-  GtkBuilder *builder = NULL;
+  g_autoptr(GtkBuilder) builder = NULL;
   GtkDialog *demo_dialog;
 
   builder = get_modals_builder ();
