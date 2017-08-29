@@ -26,6 +26,8 @@
 #include <stdlib.h>
 #include <locale.h>
 
+#include <udisks/udisks.h>
+
 #include "gis-assistant.h"
 
 #define GIS_TYPE_DRIVER_MODE (gis_driver_mode_get_type ())
@@ -58,6 +60,7 @@ static guint signals[LAST_SIGNAL];
 enum {
   PROP_0,
   PROP_LIVE_SESSION,
+  PROP_LIVE_DVD,
   PROP_MODE,
   PROP_USERNAME,
   PROP_SMALL_SCREEN,
@@ -77,43 +80,125 @@ struct _GisDriverPrivate {
   gchar *username;
 
   gboolean is_live_session;
+  gchar *live_mode_uuid;
+  gboolean is_live_dvd;
   gboolean is_in_demo_mode;
 
   GisDriverMode mode;
   UmAccountMode account_mode;
   gboolean small_screen;
+
+  /* Cancelled on shutdown */
+  GCancellable *cancellable;
 };
 typedef struct _GisDriverPrivate GisDriverPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE(GisDriver, gis_driver, GTK_TYPE_APPLICATION)
 
+/* Should be kept in sync with eos-installer */
 static gboolean
-running_live_session (void)
+check_for_live_boot (gchar **uuid)
 {
-  /* This is the same variable used by eos-installer. We do not care about
-   * the UUID of the image partition here, just whether the variable is set.
-   */
-  const gchar *force = g_getenv ("EI_FORCE_LIVE_BOOT_UUID");
-  gboolean has_live_boot_param;
+  const gchar *force = NULL;
   GError *error = NULL;
-  g_autofree gchar *contents = NULL;
+  g_autofree gchar *cmdline = NULL;
+  gboolean live_boot = FALSE;
+  g_autoptr(GRegex) reg = NULL;
+  g_autoptr(GMatchInfo) info = NULL;
 
+  g_return_val_if_fail (uuid != NULL, FALSE);
+
+  force = g_getenv ("EI_FORCE_LIVE_BOOT_UUID");
   if (force != NULL && *force != '\0')
     {
+      g_print ("EI_FORCE_LIVE_BOOT_UUID set to %s\n", force);
+      *uuid = g_strdup (force);
       return TRUE;
     }
 
-
-  if (!g_file_get_contents ("/proc/cmdline", &contents, NULL, &error))
+  if (!g_file_get_contents ("/proc/cmdline", &cmdline, NULL, &error))
     {
-      g_warning ("Couldn't check kernel parameters: %s", error->message);
-      g_clear_error (&error);
+      g_printerr ("unable to read /proc/cmdline: %s\n", error->message);
+      g_error_free (error);
       return FALSE;
     }
 
-  has_live_boot_param = g_strrstr (contents, "endless.live_boot") != NULL;
+  live_boot = g_regex_match_simple ("\\bendless\\.live_boot\\b", cmdline, 0, 0);
 
-  return has_live_boot_param;
+  g_print ("set live_boot to %u from /proc/cmdline: %s\n", live_boot, cmdline);
+
+  reg = g_regex_new ("\\bendless\\.image\\.device=UUID=([^\\s]*)", 0, 0, NULL);
+  g_regex_match (reg, cmdline, 0, &info);
+  if (g_match_info_matches (info))
+    {
+      *uuid = g_match_info_fetch (info, 1);
+      g_print ("set UUID to %s\n", *uuid);
+    }
+
+  return live_boot;
+}
+
+static void
+udisks_client_new_cb (GObject      *source,
+                      GAsyncResult *result,
+                      gpointer      user_data)
+{
+  GisDriver *driver = GIS_DRIVER (user_data);
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  UDisksClient *udisks = NULL;
+  GError *error = NULL;
+
+  udisks = udisks_client_new_finish (result, &error);
+  if (udisks != NULL)
+    {
+      GList *blocks = udisks_client_get_block_for_uuid (udisks, priv->live_mode_uuid);
+      GList *l;
+
+      /* If you have the same ISO on a USB and a DVD and you insert both, it is
+       * hard to determine which is booted using UDisks, so assume it's the DVD.
+       */
+      for (l = blocks; l != NULL && !priv->is_live_dvd; l = l->next)
+        {
+          UDisksBlock *block = UDISKS_BLOCK (l->data);
+          UDisksDrive *drive = udisks_client_get_drive_for_block (udisks, block);
+
+          if (drive != NULL && udisks_drive_get_optical (drive))
+            {
+              priv->is_live_dvd = TRUE;
+              g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_DVD]);
+            }
+
+          g_clear_object (&drive);
+        }
+
+      g_list_free_full (blocks, g_object_unref);
+    }
+  else if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+    {
+      g_warning ("Couldn't connect to UDisks: %s %d %s",
+          g_quark_to_string (error->domain), error->code, error->message);
+      g_message ("Assuming live disk is not optical");
+    }
+
+  g_clear_error (&error);
+  g_clear_object (&udisks);
+  g_clear_object (&driver);
+}
+
+static gboolean
+running_live_session (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  if (!check_for_live_boot (&priv->live_mode_uuid))
+    return FALSE;
+
+  /* Check whether this is a DVD, without blocking FBE initialization. This is
+   * likely to return before the user completes the language page.
+   */
+  udisks_client_new (priv->cancellable, udisks_client_new_cb, g_object_ref (driver));
+
+  return TRUE;
 }
 
 static void
@@ -125,8 +210,10 @@ gis_driver_finalize (GObject *object)
   g_free (priv->lang_id);
   g_free (priv->username);
   g_free (priv->user_password);
+  g_free (priv->live_mode_uuid);
 
   g_clear_object (&priv->user_account);
+  g_clear_object (&priv->cancellable);
 
   G_OBJECT_CLASS (gis_driver_parent_class)->finalize (object);
 }
@@ -520,6 +607,9 @@ gis_driver_get_property (GObject      *object,
     case PROP_LIVE_SESSION:
       g_value_set_boolean (value, priv->is_live_session);
       break;
+    case PROP_LIVE_DVD:
+      g_value_set_boolean (value, priv->is_live_dvd);
+      break;
     case PROP_MODE:
       g_value_set_enum (value, priv->mode);
       break;
@@ -698,13 +788,24 @@ gis_driver_startup (GApplication *app)
 
   gtk_widget_show (GTK_WIDGET (priv->assistant));
 
-  priv->is_live_session = running_live_session ();
+  priv->is_live_session = running_live_session (driver);
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
 
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL));
 
   prepare_main_window (driver);
   rebuild_pages (driver);
+}
+
+static void
+gis_driver_shutdown (GApplication *app)
+{
+  GisDriver *driver = GIS_DRIVER (app);
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  g_cancellable_cancel (priv->cancellable);
+
+  G_APPLICATION_CLASS (gis_driver_parent_class)->shutdown (app);
 }
 
 static void
@@ -719,6 +820,8 @@ gis_driver_init (GisDriver *driver)
 
   g_signal_connect (screen, "size-changed",
                     G_CALLBACK (screen_size_changed), driver);
+
+  priv->cancellable = g_cancellable_new ();
 }
 
 static void
@@ -732,6 +835,7 @@ gis_driver_class_init (GisDriverClass *klass)
   gobject_class->finalize = gis_driver_finalize;
   application_class->startup = gis_driver_startup;
   application_class->activate = gis_driver_activate;
+  application_class->shutdown = gis_driver_shutdown;
   klass->locale_changed = gis_driver_real_locale_changed;
 
   signals[REBUILD_PAGES] =
@@ -752,6 +856,11 @@ gis_driver_class_init (GisDriverClass *klass)
 
   obj_props[PROP_LIVE_SESSION] =
     g_param_spec_boolean ("live-session", "", "",
+                          FALSE,
+                          G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
+
+  obj_props[PROP_LIVE_DVD] =
+    g_param_spec_boolean ("live-dvd", "", "",
                           FALSE,
                           G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 

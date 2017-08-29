@@ -45,9 +45,12 @@ gnome-initial-setup-*.tar.bz2
 gnome-initial-setup-*.tar.xz
 
 gnome-initial-setup/gnome-initial-setup
+gnome-initial-setup/gnome-initial-setup-exec
 gnome-initial-setup/gnome-initial-setup-copy-worker
 gnome-initial-setup/gis-assistant-resources.[ch]
 gnome-initial-setup/gis-page-util-resources.[ch]
+
+gnome-initial-setup/demo/eos-demo-video
 
 gnome-initial-setup/pages/welcome/welcome-resources.[ch]
 gnome-initial-setup/pages/language/language-resources.[ch]
@@ -75,6 +78,7 @@ gnome-initial-setup-first-login.desktop
 gnome-initial-setup.desktop
 gnome-initial-setup-copy-worker.desktop
 gnome-welcome-tour.desktop
+com.endlessm.DemoMode.policy
 com.endlessm.TestMode.policy
 
 gnome-initial-setup-0.*

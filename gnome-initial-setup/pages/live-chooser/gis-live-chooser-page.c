@@ -38,6 +38,9 @@
 struct _GisLiveChooserPagePrivate
 {
   GtkWidget *try_label;
+  GtkWidget *try_label_dvd;
+  GtkWidget *try_icon;
+  GtkWidget *try_icon_dvd;
   GtkWidget *reformat_label;
   GtkWidget *try_button;
   GtkWidget *reformat_button;
@@ -166,9 +169,7 @@ reformatter_exited_cb (GPid     pid,
   GisLiveChooserPage *page = user_data;
   GError *error = NULL;
 
-  g_spawn_check_exit_status (status, &error);
-
-  if (error)
+  if (!g_spawn_check_exit_status (status, &error))
     {
       GtkWidget *message_dialog;
 
@@ -181,7 +182,8 @@ reformatter_exited_cb (GPid     pid,
                                                _("Error running the reformatter: %s"), error->message);
 
       gis_driver_show_window (GIS_PAGE (page)->driver);
-      gtk_widget_show (message_dialog);
+      gtk_dialog_run (GTK_DIALOG (message_dialog));
+      gtk_widget_destroy (message_dialog);
 
       g_clear_error (&error);
     }
@@ -202,7 +204,7 @@ reformat_button_clicked (GisLiveChooserPage *page)
   g_spawn_async ("/usr/lib/eos-installer",
                  (gchar**) command,
                  NULL,
-                 G_SPAWN_DEFAULT,
+                 G_SPAWN_DO_NOT_REAP_CHILD,
                  NULL,
                  NULL,
                  &pid,
@@ -241,6 +243,7 @@ gis_live_chooser_page_constructed (GObject *object)
 {
   GisLiveChooserPage *page = GIS_LIVE_CHOOSER_PAGE (object);
   GisLiveChooserPagePrivate *priv = gis_live_chooser_page_get_instance_private (page);
+  GisDriver *driver = GIS_PAGE (page)->driver;
 
   g_type_ensure (CC_TYPE_LANGUAGE_CHOOSER);
 
@@ -260,6 +263,10 @@ gis_live_chooser_page_constructed (GObject *object)
                             G_CALLBACK (reformat_button_clicked),
                             page);
 
+  g_object_bind_property (driver, "live-dvd", priv->try_label, "visible", G_BINDING_SYNC_CREATE | G_BINDING_INVERT_BOOLEAN);
+  g_object_bind_property (driver, "live-dvd", priv->try_icon, "visible", G_BINDING_SYNC_CREATE | G_BINDING_INVERT_BOOLEAN);
+  g_object_bind_property (driver, "live-dvd", priv->try_label_dvd, "visible", G_BINDING_SYNC_CREATE);
+  g_object_bind_property (driver, "live-dvd", priv->try_icon_dvd, "visible", G_BINDING_SYNC_CREATE);
 
   load_css_overrides (page);
 
@@ -272,11 +279,12 @@ gis_live_chooser_page_locale_changed (GisPage *page)
   GisLiveChooserPagePrivate *priv = gis_live_chooser_page_get_instance_private (GIS_LIVE_CHOOSER_PAGE (page));
 
   gtk_label_set_label (GTK_LABEL (priv->try_label), _("Try Endless OS by running it from the USB Stick."));
+  gtk_label_set_label (GTK_LABEL (priv->try_label_dvd), _("Try Endless OS by running it from the DVD."));
   gtk_label_set_label (GTK_LABEL (priv->reformat_label), _("Reformat this computer with Endless OS."));
   gtk_button_set_label (GTK_BUTTON (priv->try_button), _("Try It"));
   gtk_button_set_label (GTK_BUTTON (priv->reformat_button), _("Reformat"));
 
-  gis_page_set_title (page, _("Endless USB Stick"));
+  gis_page_set_title (page, _("Try or Reformat"));
 }
 
 static void
@@ -291,6 +299,9 @@ gis_live_chooser_page_class_init (GisLiveChooserPageClass *klass)
   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-live-chooser-page.ui");
 
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, try_label);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, try_label_dvd);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, try_icon);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, try_icon_dvd);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, reformat_label);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, try_button);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, reformat_button);
