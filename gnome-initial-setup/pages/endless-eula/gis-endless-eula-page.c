@@ -459,6 +459,9 @@ gis_endless_eula_page_init (GisEndlessEulaPage *page)
 void
 gis_prepare_endless_eula_page (GisDriver *driver)
 {
+  if (gis_driver_is_in_demo_mode (driver))
+    return;
+
   gis_driver_add_page (driver,
                        g_object_new (GIS_TYPE_ENDLESS_EULA_PAGE,
                                      "driver", driver,
