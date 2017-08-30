@@ -94,6 +94,7 @@ gis_endless_eula_page_constructed (GObject *object)
   GisEndlessEulaPage *page = GIS_ENDLESS_EULA_PAGE (object);
   GisEndlessEulaPagePrivate *priv = gis_endless_eula_page_get_instance_private (page);
   GError *error = NULL;
+  gboolean demo_mode;
 
   G_OBJECT_CLASS (gis_endless_eula_page_parent_class)->constructed (object);
 
@@ -117,6 +118,14 @@ gis_endless_eula_page_constructed (GObject *object)
   gis_page_set_complete (GIS_PAGE (page), TRUE);
 
   gtk_container_add (GTK_CONTAINER (priv->eula_viewer_container), GTK_WIDGET (priv->eula_viewer));
+
+  /* Hide the page in demo mode; we still want to create it, since we
+   * want the save_data implementation to run at the end of the FBE.
+   * Also, make sure metrics are off in that case.
+   */
+  demo_mode = gis_driver_is_in_demo_mode (GIS_PAGE (page)->driver);
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->metrics_checkbutton), !demo_mode);
+  gtk_widget_set_visible (GTK_WIDGET (page), !demo_mode);
 }
 
 static void
