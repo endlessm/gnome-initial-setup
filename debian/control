@@ -6,7 +6,7 @@ Source: gnome-initial-setup
 Section: gnome
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: Jeremy Bicha <jbicha@ubuntu.com>, Jordi Mallach <jordi@debian.org>, Laurent Bigonville <bigon@debian.org>
+Uploaders: Jeremy Bicha <jbicha@debian.org>, Jordi Mallach <jordi@debian.org>, Laurent Bigonville <bigon@debian.org>
 Build-Depends: debhelper (>= 10),
                geoclue-2.0 (>= 2.3.1),
                gnome-common,
@@ -37,7 +37,7 @@ Build-Depends: debhelper (>= 10),
                librest-dev,
                libsecret-1-dev,
                libwebkit2gtk-4.0-dev
-Standards-Version: 3.9.8
+Standards-Version: 4.1.0
 Vcs-Svn: svn://anonscm.debian.org/pkg-gnome/desktop/unstable/gnome-initial-setup
 Vcs-Browser: https://anonscm.debian.org/viewvc/pkg-gnome/desktop/unstable/gnome-initial-setup/
 Homepage: https://git.gnome.org/browse/gnome-initial-setup/
