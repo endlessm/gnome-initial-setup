@@ -59,6 +59,7 @@ static guint signals[LAST_SIGNAL];
 
 enum {
   PROP_0,
+  PROP_DEMO_MODE,
   PROP_LIVE_SESSION,
   PROP_LIVE_DVD,
   PROP_MODE,
@@ -568,6 +569,9 @@ gis_driver_enter_demo_mode (GisDriver *driver)
   gis_driver_set_username (driver, DEMO_ACCOUNT_USERNAME);
 
   rebuild_pages (driver);
+
+  /* Notify anyone interested that we are in demo mode now */
+  g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_DEMO_MODE]);
 }
 
 gboolean
@@ -604,6 +608,9 @@ gis_driver_get_property (GObject      *object,
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   switch (prop_id)
     {
+    case PROP_DEMO_MODE:
+      g_value_set_boolean (value, priv->is_in_demo_mode);
+      break;
     case PROP_LIVE_SESSION:
       g_value_set_boolean (value, priv->is_live_session);
       break;
@@ -853,6 +860,11 @@ gis_driver_class_init (GisDriverClass *klass)
                   G_STRUCT_OFFSET (GisDriverClass, locale_changed),
                   NULL, NULL, NULL,
                   G_TYPE_NONE, 0);
+
+  obj_props[PROP_DEMO_MODE] =
+    g_param_spec_boolean ("demo-mode", "", "",
+                          FALSE,
+                          G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
   obj_props[PROP_LIVE_SESSION] =
     g_param_spec_boolean ("live-session", "", "",
