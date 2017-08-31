@@ -264,6 +264,23 @@ language_confirmed (CcLanguageChooser *chooser,
 }
 
 static void
+update_page_title (GisLanguagePage *page)
+{
+  if (gis_driver_is_in_demo_mode (GIS_PAGE (page)->driver))
+    gis_page_set_title (GIS_PAGE (page), _("Welcome to Demo Mode"));
+  else
+    gis_page_set_title (GIS_PAGE (page), _("Welcome"));
+}
+
+static void
+demo_mode_changed (GisDriver  *driver,
+                   GParamSpec *pspec,
+                   gpointer    user_data)
+{
+  update_page_title (GIS_LANGUAGE_PAGE (user_data));
+}
+
+static void
 gis_language_page_constructed (GObject *object)
 {
   GisLanguagePage *page = GIS_LANGUAGE_PAGE (object);
@@ -281,6 +298,9 @@ gis_language_page_constructed (GObject *object)
                     G_CALLBACK (language_changed), page);
   g_signal_connect (priv->language_chooser, "confirm",
                     G_CALLBACK (language_confirmed), page);
+
+  g_signal_connect (GIS_PAGE (page)->driver, "notify::demo-mode",
+                    G_CALLBACK (demo_mode_changed), page);
 
   /* If we're in new user mode then we're manipulating system settings */
   if (gis_driver_get_mode (GIS_PAGE (page)->driver) == GIS_DRIVER_MODE_NEW_USER)
@@ -324,7 +344,7 @@ gis_language_page_get_accel_group (GisPage *page)
 static void
 gis_language_page_locale_changed (GisPage *page)
 {
-  gis_page_set_title (GIS_PAGE (page), _("Welcome"));
+  update_page_title (GIS_LANGUAGE_PAGE (page));
 }
 
 static void
