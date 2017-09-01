@@ -463,6 +463,9 @@ gis_page_util_show_demo_dialog (GisPage *page)
   g_autoptr(GtkBuilder) builder = NULL;
   GtkDialog *demo_dialog;
 
+  if (gis_driver_is_live_session (driver))
+    return;
+
   builder = get_modals_builder ();
   if (builder == NULL) {
     g_warning ("Can't get private builder object for demo mode!");
