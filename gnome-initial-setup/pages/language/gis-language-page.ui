@@ -6,14 +6,12 @@
       <object class="GtkBox" id="box">
         <property name="visible">True</property>
         <property name="orientation">vertical</property>
-        <property name="halign">center</property>
         <child>
-          <object class="GtkBox">
+          <object class="GtkBox" id="language_box">
             <property name="visible">True</property>
             <property name="orientation">vertical</property>
             <property name="halign">center</property>
-            <property name="valign">center</property>
-            <property name="expand" bind-source="language_chooser" bind-property="visible" bind-flags="invert-boolean|sync-create"/>
+            <property name="valign">fill</property>
             <child>
               <object class="GtkImage" id="logo">
                 <property name="visible" bind-source="GisLanguagePage" bind-property="small-screen" bind-flags="invert-boolean|sync-create"/>
@@ -30,13 +28,28 @@
                 <property name="margin_bottom">40</property>
               </object>
             </child>
+            <child>
+              <object class="CcLanguageChooser" id="language_chooser">
+                <property name="margin_bottom">18</property>
+                <property name="width_request">400</property>
+                <property name="visible">True</property>
+              </object>
+            </child>
           </object>
         </child>
         <child>
-          <object class="CcLanguageChooser" id="language_chooser">
-            <property name="margin_bottom">18</property>
-            <property name="width_request">400</property>
+          <object class="GtkLabel" id="demo_mode_label">
             <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="use_markup">True</property>
+            <property name="halign">start</property>
+            <property name="track_visited_links">False</property>
+            <attributes>
+              <attribute name="scale" value="0.83"/>
+            </attributes>
+            <style>
+              <class name="dim-label"/>
+            </style>
           </object>
         </child>
       </object>
