@@ -57,7 +57,7 @@ typedef struct _GisPasswordPagePrivate GisPasswordPagePrivate;
 G_DEFINE_TYPE_WITH_PRIVATE (GisPasswordPage, gis_password_page, GIS_TYPE_PAGE);
 
 static void
-update_password_visibility (GisPasswordPage  *page)
+password_visibility_toggled (GisAccountPage  *page)
 {
   GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
   GtkWidget *password_entry = priv->password_entry;
@@ -66,13 +66,6 @@ update_password_visibility (GisPasswordPage  *page)
 
   gtk_entry_set_visibility (GTK_ENTRY (password_entry), is_active);
   gtk_entry_set_visibility (GTK_ENTRY (confirm_entry), is_active);
-}
-
-static void
-password_visibility_toggled (GtkToggleButton *button,
-                             GisPasswordPage  *page)
-{
-  update_password_visibility (page);
 }
 
 static gboolean
@@ -307,7 +300,6 @@ gis_password_page_constructed (GObject *object)
 
   g_signal_connect (priv->password_toggle, "toggled",
                     G_CALLBACK (password_visibility_toggled), page);
-  update_password_visibility (page);
 
   g_signal_connect (GIS_PAGE (page)->driver, "notify::username",
                     G_CALLBACK (username_changed), page);
