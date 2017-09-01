@@ -91,6 +91,7 @@ struct _GisDriverPrivate {
   gboolean is_live_session;
   gboolean is_live_dvd;
   gboolean is_in_demo_mode;
+  gboolean show_demo_mode;
 
   GisDriverMode mode;
   UmAccountMode account_mode;
@@ -185,6 +186,14 @@ get_image_version (void)
     }
 
   return image_version;
+}
+
+static gboolean
+image_supports_demo_mode (const gchar *image_version)
+{
+  return image_version != NULL && (
+      g_str_has_prefix (image_version, "eosnonfree-") ||
+      g_str_has_prefix (image_version, "eosoem-"));
 }
 
 static gchar *
@@ -675,6 +684,14 @@ gis_driver_get_supports_demo_mode (GisDriver *driver)
 }
 
 gboolean
+gis_driver_get_show_demo_mode (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  return priv->show_demo_mode && !priv->is_in_demo_mode;
+}
+
+gboolean
 gis_driver_is_live_session (GisDriver *driver)
 {
     GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
@@ -962,10 +979,14 @@ gis_driver_startup (GApplication *app)
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_DVD]);
 
+  priv->show_demo_mode = !priv->is_live_session && image_supports_demo_mode (image_version);
+
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL), FALSE);
 
   prepare_main_window (driver);
   rebuild_pages (driver);
+
+  g_clear_pointer (&image_version, g_free);
 }
 
 static void

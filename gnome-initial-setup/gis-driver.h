@@ -105,6 +105,8 @@ void gis_driver_enter_demo_mode (GisDriver *driver);
 
 gboolean gis_driver_get_supports_demo_mode (GisDriver *driver);
 
+gboolean gis_driver_get_show_demo_mode (GisDriver *driver);
+
 gboolean gis_driver_is_in_demo_mode (GisDriver *driver);
 
 gboolean gis_driver_is_live_session (GisDriver *driver);

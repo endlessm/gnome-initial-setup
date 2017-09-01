@@ -54,6 +54,7 @@ struct _GisLanguagePagePrivate
   GtkWidget *logo;
   GtkWidget *welcome_widget;
   GtkWidget *language_chooser;
+  GtkWidget *demo_mode_label;
 
   GDBusProxy *localed;
   GPermission *permission;
@@ -346,6 +347,20 @@ language_confirmed (CcLanguageChooser *chooser,
 }
 
 static void
+update_demo_mode_label (GisLanguagePage *page)
+{
+  GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (page);
+  char *text;
+
+  text = g_strdup_printf ("<a href='demo-mode-link'>%s</a>", _("Enter Store Demo…"));
+  gtk_label_set_markup (GTK_LABEL (priv->demo_mode_label), text);
+  g_free (text);
+
+  gtk_widget_set_visible (priv->demo_mode_label,
+                          gis_driver_get_show_demo_mode (GIS_PAGE (page)->driver));
+}
+
+static void
 update_page_title (GisLanguagePage *page)
 {
   if (gis_driver_is_in_demo_mode (GIS_PAGE (page)->driver))
@@ -359,7 +374,23 @@ demo_mode_changed (GisDriver  *driver,
                    GParamSpec *pspec,
                    gpointer    user_data)
 {
-  update_page_title (GIS_LANGUAGE_PAGE (user_data));
+  GisLanguagePage *self = user_data;
+  update_page_title (self);
+  update_demo_mode_label (self);
+}
+
+static gboolean
+demo_mode_link_activated (GtkLabel *label,
+                          gchar    *uri,
+                          gpointer  user_data)
+{
+  GisLanguagePage *page = user_data;
+
+  if (g_strcmp0 (uri, "demo-mode-link") != 0)
+    return FALSE;
+
+  gis_page_util_show_demo_dialog (GIS_PAGE (page));
+  return TRUE;
 }
 
 static void
@@ -382,6 +413,8 @@ gis_language_page_constructed (GObject *object)
   g_signal_connect (priv->language_chooser, "confirm",
                     G_CALLBACK (language_confirmed), page);
 
+  g_signal_connect (priv->demo_mode_label, "activate-link",
+                    G_CALLBACK (demo_mode_link_activated), page);
   g_signal_connect (GIS_PAGE (page)->driver, "notify::demo-mode",
                     G_CALLBACK (demo_mode_changed), page);
 
@@ -427,7 +460,9 @@ gis_language_page_get_accel_group (GisPage *page)
 static void
 gis_language_page_locale_changed (GisPage *page)
 {
-  update_page_title (GIS_LANGUAGE_PAGE (page));
+  GisLanguagePage *self = GIS_LANGUAGE_PAGE (page);
+  update_page_title (self);
+  update_demo_mode_label (self);
 }
 
 static gboolean
@@ -465,6 +500,7 @@ gis_language_page_class_init (GisLanguagePageClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLanguagePage, welcome_widget);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLanguagePage, language_chooser);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLanguagePage, logo);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLanguagePage, demo_mode_label);
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_language_page_locale_changed;
