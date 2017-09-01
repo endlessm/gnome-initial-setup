@@ -401,13 +401,6 @@ gis_endless_eula_page_constructed (GObject *object)
   load_css_overrides (page);
 
   gtk_widget_show (GTK_WIDGET (page));
-
-  widget = priv->metrics_checkbutton;
-
-  g_signal_connect_swapped (widget, "toggled",
-                            G_CALLBACK (sync_metrics_active_state), page);
-
-  sync_metrics_active_state (page);
   load_terms_view (page);
 
   gis_page_set_forward_text (GIS_PAGE (page), _("_Accept and Continue"));
