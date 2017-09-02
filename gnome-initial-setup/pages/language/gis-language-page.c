@@ -268,7 +268,7 @@ static void
 update_page_title (GisLanguagePage *page)
 {
   if (gis_driver_is_in_demo_mode (GIS_PAGE (page)->driver))
-    gis_page_set_title (GIS_PAGE (page), _("Welcome to Demo Mode"));
+    gis_page_set_title (GIS_PAGE (page), _("Welcome to Store Demo"));
   else
     gis_page_set_title (GIS_PAGE (page), _("Welcome"));
 }
