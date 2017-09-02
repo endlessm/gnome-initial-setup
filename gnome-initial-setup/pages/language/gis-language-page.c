@@ -46,6 +46,7 @@ struct _GisLanguagePagePrivate
   GtkWidget *logo;
   GtkWidget *welcome_widget;
   GtkWidget *language_chooser;
+  GtkWidget *demo_mode_label;
 
   GDBusProxy *localed;
   GPermission *permission;
@@ -280,6 +281,21 @@ demo_mode_changed (GisDriver  *driver,
   update_page_title (GIS_LANGUAGE_PAGE (user_data));
 }
 
+static gboolean
+demo_mode_link_activated (GtkLabel *label,
+                          gchar    *uri,
+                          gpointer  user_data)
+{
+  GisLanguagePage *page = user_data;
+  GisDriver *driver = GIS_PAGE (page)->driver;
+
+  if (g_strcmp0 (uri, "demo-mode-link") != 0)
+    return FALSE;
+
+  gis_page_util_show_demo_dialog (GIS_PAGE (page));
+  return TRUE;
+}
+
 static void
 gis_language_page_constructed (GObject *object)
 {
@@ -299,6 +315,10 @@ gis_language_page_constructed (GObject *object)
   g_signal_connect (priv->language_chooser, "confirm",
                     G_CALLBACK (language_confirmed), page);
 
+  gtk_widget_set_visible (priv->demo_mode_label,
+                          gis_driver_get_supports_demo_mode (GIS_PAGE (page)->driver));
+  g_signal_connect (priv->demo_mode_label, "activate-link",
+                    G_CALLBACK (demo_mode_link_activated), page);
   g_signal_connect (GIS_PAGE (page)->driver, "notify::demo-mode",
                     G_CALLBACK (demo_mode_changed), page);
 
@@ -372,6 +392,7 @@ gis_language_page_class_init (GisLanguagePageClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLanguagePage, welcome_widget);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLanguagePage, language_chooser);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLanguagePage, logo);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLanguagePage, demo_mode_label);
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_language_page_locale_changed;

@@ -575,6 +575,12 @@ gis_driver_enter_demo_mode (GisDriver *driver)
 }
 
 gboolean
+gis_driver_get_supports_demo_mode (GisDriver *driver)
+{
+  return !gis_driver_is_live_session (driver);
+}
+
+gboolean
 gis_driver_is_live_session (GisDriver *driver)
 {
     GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
