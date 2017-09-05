@@ -463,7 +463,7 @@ gis_page_util_show_demo_dialog (GisPage *page)
   g_autoptr(GtkBuilder) builder = NULL;
   GtkDialog *demo_dialog;
 
-  if (gis_driver_is_live_session (driver))
+  if (!gis_driver_get_supports_demo_mode (driver))
     return;
 
   builder = get_modals_builder ();
