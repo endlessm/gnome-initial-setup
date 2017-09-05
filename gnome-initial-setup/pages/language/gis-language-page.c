@@ -268,6 +268,7 @@ static void
 update_page_title (GisLanguagePage *page)
 {
   GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (page);
+  char *text;
 
   if (gis_driver_is_in_demo_mode (GIS_PAGE (page)->driver))
     {
@@ -275,7 +276,15 @@ update_page_title (GisLanguagePage *page)
       gtk_widget_set_visible (priv->demo_mode_label, FALSE);
     }
   else
-    gis_page_set_title (GIS_PAGE (page), _("Welcome"));
+    {
+      gis_page_set_title (GIS_PAGE (page), _("Welcome"));
+      if (gis_driver_get_supports_demo_mode (GIS_PAGE (page)->driver))
+        {
+          text = g_strdup_printf ("<a href='demo-mode-link'>%s</a>", _("Enter Store Demo…"));
+          gtk_label_set_markup (GTK_LABEL (priv->demo_mode_label), text);
+          g_free (text);
+        }
+    }
 }
 
 static void
