@@ -267,8 +267,13 @@ language_confirmed (CcLanguageChooser *chooser,
 static void
 update_page_title (GisLanguagePage *page)
 {
+  GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (page);
+
   if (gis_driver_is_in_demo_mode (GIS_PAGE (page)->driver))
-    gis_page_set_title (GIS_PAGE (page), _("Welcome to Store Demo"));
+    {
+      gis_page_set_title (GIS_PAGE (page), _("Welcome to Store Demo"));
+      gtk_widget_set_visible (priv->demo_mode_label, FALSE);
+    }
   else
     gis_page_set_title (GIS_PAGE (page), _("Welcome"));
 }
