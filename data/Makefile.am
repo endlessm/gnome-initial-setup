@@ -38,12 +38,12 @@ desktop_DATA =						\
 
 demovideodir = $(datadir)/eos-demo-mode
 demovideo_DATA = \
-	eos-demo-video.ogv \
+	eos-demo-video.webm \
 	$(NULL)
 
 EXTRA_DIST =						\
 	20-gnome-initial-setup.rules			\
-	eos-demo-video.ogv				\
+	eos-demo-video.webm				\
 	eos-demo-video.desktop.in.in			\
 	gnome-welcome-tour				\
 	setup-shell.desktop				\
