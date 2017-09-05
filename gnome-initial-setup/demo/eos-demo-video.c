@@ -76,7 +76,7 @@ on_video_bus_event (GstBus     *bus,
   return G_SOURCE_CONTINUE;
 }
 
-#define DEMO_VIDEO_FILE_URI "file://" DEMOVIDEODATADIR "/eos-demo-video.ogv"
+#define DEMO_VIDEO_FILE_URI "file://" DEMOVIDEODATADIR "/eos-demo-video.webm"
 
 static void
 create_demo_window (GisDemoVideo *demo_video)
