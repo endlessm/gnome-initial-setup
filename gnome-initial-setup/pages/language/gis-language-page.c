@@ -37,7 +37,6 @@
 #include "gis-language-page.h"
 
 #include <act/act-user-manager.h>
-#include <attr/xattr.h>
 #include <polkit/polkit.h>
 #include <locale.h>
 #include <gtk/gtk.h>
@@ -257,48 +256,18 @@ language_confirmed (CcLanguageChooser *chooser,
   gis_assistant_next_page (gis_driver_get_assistant (GIS_PAGE (page)->driver));
 }
 
-#define EOS_IMAGE_VERSION_XATTR "user.eos-image-version"
 #define EOS_IMAGE_VERSION_PATH "/sysroot"
 #define EOS_IMAGE_VERSION_ALT_PATH "/"
-
-static char *
-get_image_version_for_path (const char *path)
-{
-  ssize_t xattr_size = 0;
-  char *image_version = NULL;
-
-  xattr_size = getxattr (path, EOS_IMAGE_VERSION_XATTR, NULL, 0);
-
-  if (xattr_size == -1)
-    return NULL;
-
-  image_version = g_malloc0 (xattr_size + 1);
-
-  xattr_size = getxattr (path, EOS_IMAGE_VERSION_XATTR,
-                         image_version, xattr_size);
-
-  /* this check is just in case the xattr has changed in between the
-   * size checks */
-  if (xattr_size == -1)
-    {
-      g_warning ("Error when getting the 'eos-image-version' from %s",
-                 path);
-      g_free (image_version);
-      return NULL;
-    }
-
-  return image_version;
-}
 
 static char *
 get_image_version (void)
 {
   char *image_version =
-    get_image_version_for_path (EOS_IMAGE_VERSION_PATH);
+    gis_page_util_get_image_version (EOS_IMAGE_VERSION_PATH);
 
   if (!image_version)
     image_version =
-      get_image_version_for_path (EOS_IMAGE_VERSION_ALT_PATH);
+      gis_page_util_get_image_version (EOS_IMAGE_VERSION_ALT_PATH);
 
   return image_version;
 }
