@@ -64,7 +64,6 @@ PKG_CHECK_MODULES(INITIAL_SETUP,
                   pwquality
                   evince-view-3.0
                   evince-document-3.0
-                  udisks2
                   webkit2gtk-4.0)
 
 
