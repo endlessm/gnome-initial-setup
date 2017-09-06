@@ -26,8 +26,6 @@
 #include <stdlib.h>
 #include <locale.h>
 
-#include <udisks/udisks.h>
-
 #include "gis-assistant.h"
 #include "gis-page-util.h"
 
@@ -82,7 +80,6 @@ struct _GisDriverPrivate {
   gchar *username;
 
   gboolean is_live_session;
-  gchar *live_mode_uuid;
   gboolean is_live_dvd;
   gboolean is_in_demo_mode;
   gboolean show_demo_mode;
@@ -109,13 +106,12 @@ check_for_live_boot (gchar **uuid)
   g_autoptr(GRegex) reg = NULL;
   g_autoptr(GMatchInfo) info = NULL;
 
-  g_return_val_if_fail (uuid != NULL, FALSE);
-
   force = g_getenv ("EI_FORCE_LIVE_BOOT_UUID");
   if (force != NULL && *force != '\0')
     {
       g_print ("EI_FORCE_LIVE_BOOT_UUID set to %s\n", force);
-      *uuid = g_strdup (force);
+      if (uuid != NULL)
+        *uuid = g_strdup (force);
       return TRUE;
     }
 
@@ -130,78 +126,37 @@ check_for_live_boot (gchar **uuid)
 
   g_print ("set live_boot to %u from /proc/cmdline: %s\n", live_boot, cmdline);
 
-  reg = g_regex_new ("\\bendless\\.image\\.device=UUID=([^\\s]*)", 0, 0, NULL);
-  g_regex_match (reg, cmdline, 0, &info);
-  if (g_match_info_matches (info))
+  if (uuid != NULL)
     {
-      *uuid = g_match_info_fetch (info, 1);
-      g_print ("set UUID to %s\n", *uuid);
+      reg = g_regex_new ("\\bendless\\.image\\.device=UUID=([^\\s]*)", 0, 0, NULL);
+      g_regex_match (reg, cmdline, 0, &info);
+      if (g_match_info_matches (info))
+        {
+          *uuid = g_match_info_fetch (info, 1);
+          g_print ("set UUID to %s\n", *uuid);
+        }
     }
 
   return live_boot;
 }
 
 static void
-udisks_client_new_cb (GObject      *source,
-                      GAsyncResult *result,
-                      gpointer      user_data)
-{
-  GisDriver *driver = GIS_DRIVER (user_data);
-  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
-  UDisksClient *udisks = NULL;
-  GError *error = NULL;
-
-  udisks = udisks_client_new_finish (result, &error);
-  if (udisks != NULL)
-    {
-      GList *blocks = udisks_client_get_block_for_uuid (udisks, priv->live_mode_uuid);
-      GList *l;
-
-      /* If you have the same ISO on a USB and a DVD and you insert both, it is
-       * hard to determine which is booted using UDisks, so assume it's the DVD.
-       */
-      for (l = blocks; l != NULL && !priv->is_live_dvd; l = l->next)
-        {
-          UDisksBlock *block = UDISKS_BLOCK (l->data);
-          UDisksDrive *drive = udisks_client_get_drive_for_block (udisks, block);
-
-          if (drive != NULL && udisks_drive_get_optical (drive))
-            {
-              priv->is_live_dvd = TRUE;
-              g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_DVD]);
-            }
-
-          g_clear_object (&drive);
-        }
-
-      g_list_free_full (blocks, g_object_unref);
-    }
-  else if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
-    {
-      g_warning ("Couldn't connect to UDisks: %s %d %s",
-          g_quark_to_string (error->domain), error->code, error->message);
-      g_message ("Assuming live disk is not optical");
-    }
-
-  g_clear_error (&error);
-  g_clear_object (&udisks);
-  g_clear_object (&driver);
-}
-
-static gboolean
-running_live_session (GisDriver *driver)
+check_live_session (GisDriver   *driver,
+                    const gchar *image_version)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
 
-  if (!check_for_live_boot (&priv->live_mode_uuid))
-    return FALSE;
-
-  /* Check whether this is a DVD, without blocking FBE initialization. This is
-   * likely to return before the user completes the language page.
-   */
-  udisks_client_new (priv->cancellable, udisks_client_new_cb, g_object_ref (driver));
-
-  return TRUE;
+  if (check_for_live_boot (NULL))
+    {
+      priv->is_live_session = TRUE;
+      priv->is_live_dvd = image_version != NULL &&
+        g_str_has_prefix (image_version, "eosdvd-");
+    }
+  else
+    {
+      priv->is_live_session = FALSE;
+      priv->is_live_dvd = FALSE;
+    }
 }
 
 #define EOS_IMAGE_VERSION_PATH "/sysroot"
@@ -237,7 +192,6 @@ gis_driver_finalize (GObject *object)
   g_free (priv->lang_id);
   g_free (priv->username);
   g_free (priv->user_password);
-  g_free (priv->live_mode_uuid);
 
   g_clear_object (&priv->user_account);
   g_clear_object (&priv->cancellable);
@@ -838,8 +792,9 @@ gis_driver_startup (GApplication *app)
 
   image_version = get_image_version ();
 
-  priv->is_live_session = running_live_session (driver);
+  check_live_session (driver, image_version);
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
+  g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_DVD]);
 
   priv->show_demo_mode = !priv->is_live_session && image_supports_demo_mode (image_version);
 
