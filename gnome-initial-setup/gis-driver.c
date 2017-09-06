@@ -29,6 +29,7 @@
 #include <udisks/udisks.h>
 
 #include "gis-assistant.h"
+#include "gis-page-util.h"
 
 #define GIS_TYPE_DRIVER_MODE (gis_driver_mode_get_type ())
 
@@ -84,6 +85,7 @@ struct _GisDriverPrivate {
   gchar *live_mode_uuid;
   gboolean is_live_dvd;
   gboolean is_in_demo_mode;
+  gboolean show_demo_mode;
 
   GisDriverMode mode;
   UmAccountMode account_mode;
@@ -200,6 +202,30 @@ running_live_session (GisDriver *driver)
   udisks_client_new (priv->cancellable, udisks_client_new_cb, g_object_ref (driver));
 
   return TRUE;
+}
+
+#define EOS_IMAGE_VERSION_PATH "/sysroot"
+#define EOS_IMAGE_VERSION_ALT_PATH "/"
+
+static char *
+get_image_version (void)
+{
+  char *image_version =
+    gis_page_util_get_image_version (EOS_IMAGE_VERSION_PATH);
+
+  if (!image_version)
+    image_version =
+      gis_page_util_get_image_version (EOS_IMAGE_VERSION_ALT_PATH);
+
+  return image_version;
+}
+
+static gboolean
+image_supports_demo_mode (const gchar *image_version)
+{
+  return image_version != NULL && (
+      g_str_has_prefix (image_version, "eosnonfree-") ||
+      g_str_has_prefix (image_version, "eosoem-"));
 }
 
 static void
@@ -581,6 +607,14 @@ gis_driver_get_supports_demo_mode (GisDriver *driver)
 }
 
 gboolean
+gis_driver_get_show_demo_mode (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  return priv->show_demo_mode && !priv->is_in_demo_mode;
+}
+
+gboolean
 gis_driver_is_live_session (GisDriver *driver)
 {
     GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
@@ -777,6 +811,7 @@ gis_driver_startup (GApplication *app)
 {
   GisDriver *driver = GIS_DRIVER (app);
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  char *image_version = NULL;
 
   G_APPLICATION_CLASS (gis_driver_parent_class)->startup (app);
 
@@ -801,13 +836,19 @@ gis_driver_startup (GApplication *app)
 
   gtk_widget_show (GTK_WIDGET (priv->assistant));
 
+  image_version = get_image_version ();
+
   priv->is_live_session = running_live_session (driver);
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
+
+  priv->show_demo_mode = !priv->is_live_session && image_supports_demo_mode (image_version);
 
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL));
 
   prepare_main_window (driver);
   rebuild_pages (driver);
+
+  g_clear_pointer (&image_version, g_free);
 }
 
 static void
