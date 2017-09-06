@@ -257,26 +257,29 @@ language_confirmed (CcLanguageChooser *chooser,
 }
 
 static void
-update_page_title (GisLanguagePage *page)
+update_demo_mode_label (GisLanguagePage *page)
 {
   GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (page);
   char *text;
 
+  text = g_strdup_printf ("<a href='demo-mode-link'>%s</a>", _("Enter Store Demo…"));
+  gtk_label_set_markup (GTK_LABEL (priv->demo_mode_label), text);
+  g_free (text);
+
+  gtk_widget_set_visible (priv->demo_mode_label,
+                          gis_driver_get_supports_demo_mode (GIS_PAGE (page)->driver) &&
+                          !gis_driver_is_in_demo_mode (GIS_PAGE (page)->driver));
+}
+
+static void
+update_page_title (GisLanguagePage *page)
+{
+  GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (page);
+
   if (gis_driver_is_in_demo_mode (GIS_PAGE (page)->driver))
-    {
-      gis_page_set_title (GIS_PAGE (page), _("Welcome to Store Demo"));
-      gtk_widget_set_visible (priv->demo_mode_label, FALSE);
-    }
+    gis_page_set_title (GIS_PAGE (page), _("Welcome to Store Demo"));
   else
-    {
-      gis_page_set_title (GIS_PAGE (page), _("Welcome"));
-      if (gis_driver_get_supports_demo_mode (GIS_PAGE (page)->driver))
-        {
-          text = g_strdup_printf ("<a href='demo-mode-link'>%s</a>", _("Enter Store Demo…"));
-          gtk_label_set_markup (GTK_LABEL (priv->demo_mode_label), text);
-          g_free (text);
-        }
-    }
+    gis_page_set_title (GIS_PAGE (page), _("Welcome"));
 }
 
 static void
@@ -284,7 +287,9 @@ demo_mode_changed (GisDriver  *driver,
                    GParamSpec *pspec,
                    gpointer    user_data)
 {
-  update_page_title (GIS_LANGUAGE_PAGE (user_data));
+  GisLanguagePage *self = user_data;
+  update_page_title (self);
+  update_demo_mode_label (self);
 }
 
 static gboolean
@@ -321,8 +326,6 @@ gis_language_page_constructed (GObject *object)
   g_signal_connect (priv->language_chooser, "confirm",
                     G_CALLBACK (language_confirmed), page);
 
-  gtk_widget_set_visible (priv->demo_mode_label,
-                          gis_driver_get_supports_demo_mode (GIS_PAGE (page)->driver));
   g_signal_connect (priv->demo_mode_label, "activate-link",
                     G_CALLBACK (demo_mode_link_activated), page);
   g_signal_connect (GIS_PAGE (page)->driver, "notify::demo-mode",
@@ -372,7 +375,9 @@ gis_language_page_get_accel_group (GisPage *page)
 static void
 gis_language_page_locale_changed (GisPage *page)
 {
-  update_page_title (GIS_LANGUAGE_PAGE (page));
+  GisLanguagePage *self = GIS_LANGUAGE_PAGE (page);
+  update_page_title (self);
+  update_demo_mode_label (self);
 }
 
 static void
