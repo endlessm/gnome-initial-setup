@@ -37,6 +37,7 @@
 #include "gis-language-page.h"
 
 #include <act/act-user-manager.h>
+#include <attr/xattr.h>
 #include <polkit/polkit.h>
 #include <locale.h>
 #include <gtk/gtk.h>
@@ -256,27 +257,94 @@ language_confirmed (CcLanguageChooser *chooser,
   gis_assistant_next_page (gis_driver_get_assistant (GIS_PAGE (page)->driver));
 }
 
+#define EOS_IMAGE_VERSION_XATTR "user.eos-image-version"
+#define EOS_IMAGE_VERSION_PATH "/sysroot"
+#define EOS_IMAGE_VERSION_ALT_PATH "/"
+
+static char *
+get_image_version_for_path (const char *path)
+{
+  ssize_t xattr_size = 0;
+  char *image_version = NULL;
+
+  xattr_size = getxattr (path, EOS_IMAGE_VERSION_XATTR, NULL, 0);
+
+  if (xattr_size == -1)
+    return NULL;
+
+  image_version = g_malloc0 (xattr_size + 1);
+
+  xattr_size = getxattr (path, EOS_IMAGE_VERSION_XATTR,
+                         image_version, xattr_size);
+
+  /* this check is just in case the xattr has changed in between the
+   * size checks */
+  if (xattr_size == -1)
+    {
+      g_warning ("Error when getting the 'eos-image-version' from %s",
+                 path);
+      g_free (image_version);
+      return NULL;
+    }
+
+  return image_version;
+}
+
+static char *
+get_image_version (void)
+{
+  char *image_version =
+    get_image_version_for_path (EOS_IMAGE_VERSION_PATH);
+
+  if (!image_version)
+    image_version =
+      get_image_version_for_path (EOS_IMAGE_VERSION_ALT_PATH);
+
+  return image_version;
+}
+
+static gboolean
+image_supports_demo_mode (void)
+{
+  char *image_version = NULL;
+  gboolean res;
+
+  image_version = get_image_version ();
+  if (!image_version)
+    return FALSE;
+
+  res = g_str_has_prefix (image_version, "eosnonfree-") ||
+    g_str_has_prefix (image_version, "eosoem-");
+  g_free (image_version);
+
+  return res;
+}
+
 static void
-update_page_title (GisLanguagePage *page)
+update_demo_mode_label (GisLanguagePage *page)
 {
   GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (page);
   char *text;
 
+  text = g_strdup_printf ("<a href='demo-mode-link'>%s</a>", _("Enter Store Demo…"));
+  gtk_label_set_markup (GTK_LABEL (priv->demo_mode_label), text);
+  g_free (text);
+
+  gtk_widget_set_visible (priv->demo_mode_label,
+                          gis_driver_get_supports_demo_mode (GIS_PAGE (page)->driver) &&
+                          image_supports_demo_mode () &&
+                          !gis_driver_is_in_demo_mode (GIS_PAGE (page)->driver));
+}
+
+static void
+update_page_title (GisLanguagePage *page)
+{
+  GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (page);
+
   if (gis_driver_is_in_demo_mode (GIS_PAGE (page)->driver))
-    {
-      gis_page_set_title (GIS_PAGE (page), _("Welcome to Store Demo"));
-      gtk_widget_set_visible (priv->demo_mode_label, FALSE);
-    }
+    gis_page_set_title (GIS_PAGE (page), _("Welcome to Store Demo"));
   else
-    {
-      gis_page_set_title (GIS_PAGE (page), _("Welcome"));
-      if (gis_driver_get_supports_demo_mode (GIS_PAGE (page)->driver))
-        {
-          text = g_strdup_printf ("<a href='demo-mode-link'>%s</a>", _("Enter Store Demo…"));
-          gtk_label_set_markup (GTK_LABEL (priv->demo_mode_label), text);
-          g_free (text);
-        }
-    }
+    gis_page_set_title (GIS_PAGE (page), _("Welcome"));
 }
 
 static void
@@ -284,7 +352,9 @@ demo_mode_changed (GisDriver  *driver,
                    GParamSpec *pspec,
                    gpointer    user_data)
 {
-  update_page_title (GIS_LANGUAGE_PAGE (user_data));
+  GisLanguagePage *self = user_data;
+  update_page_title (self);
+  update_demo_mode_label (self);
 }
 
 static gboolean
@@ -321,8 +391,6 @@ gis_language_page_constructed (GObject *object)
   g_signal_connect (priv->language_chooser, "confirm",
                     G_CALLBACK (language_confirmed), page);
 
-  gtk_widget_set_visible (priv->demo_mode_label,
-                          gis_driver_get_supports_demo_mode (GIS_PAGE (page)->driver));
   g_signal_connect (priv->demo_mode_label, "activate-link",
                     G_CALLBACK (demo_mode_link_activated), page);
   g_signal_connect (GIS_PAGE (page)->driver, "notify::demo-mode",
@@ -372,7 +440,9 @@ gis_language_page_get_accel_group (GisPage *page)
 static void
 gis_language_page_locale_changed (GisPage *page)
 {
-  update_page_title (GIS_LANGUAGE_PAGE (page));
+  GisLanguagePage *self = GIS_LANGUAGE_PAGE (page);
+  update_page_title (self);
+  update_demo_mode_label (self);
 }
 
 static void
