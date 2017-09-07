@@ -16,7 +16,10 @@ edit = $(AM_V_GEN) sed \
 @INTLTOOL_DESKTOP_RULE@
 
 rulesdir = $(datadir)/polkit-1/rules.d
-rules_DATA = 20-gnome-initial-setup.rules
+rules_DATA = \
+	20-gnome-initial-setup.rules \
+	com.endlessm.DemoMode.rules \
+	$(NULL)
 
 actionsdir = $(datadir)/polkit-1/actions
 actions_DATA = \
@@ -56,6 +59,7 @@ EXTRA_DIST =						\
 	product_serial.conf                             \
 	com.endlessm.TestMode.policy.in			\
 	com.endlessm.DemoMode.policy.in			\
+	com.endlessm.DemoMode.rules                     \
 	$(NULL)
 
 CLEANFILES =						\

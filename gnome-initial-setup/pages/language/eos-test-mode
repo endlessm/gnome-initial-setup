@@ -29,25 +29,12 @@ systemctl -q is-active "$extra_unit" && extra_active=true || extra_active=false
 $extra_active && systemctl stop "$extra_unit"
 
 # Mount overlays over any directory that might be written to
-overlay_dirs="bin boot endless etc home lib opt ostree root sbin srv sysroot var"
-for dir in $overlay_dirs; do
-    [ -d /$dir ] || continue
-    # If the directory is a symlink, assume it's pointing to a location
-    # covered by another top level overlay
-    [ -L /$dir ] && continue
-    mkdir -p /run/eos-test/$dir /run/eos-test/$dir-workdir
-    mount -t overlay -o \
-        rw,upperdir=/run/eos-test/$dir,lowerdir=/$dir,workdir=/run/eos-test/$dir-workdir \
-        eos-test-$dir /$dir
-done
+eos-live-boot-overlayfs-setup etc
 
 # Remount the SD card and mount a scratch overlay over it
 if $extra_active; then
     systemctl start "$extra_unit"
-    mkdir -p /run/eos-test/endless-extra /run/eos-test/endless-extra-workdir
-    mount -t overlay -o \
-        rw,upperdir=/run/eos-test/endless-extra,lowerdir=/var/endless-extra,workdir=/run/eos-test/endless-extra-workdir \
-        eos-test-endless-extra /var/endless-extra
+    eos-live-boot-overlayfs-setup var/endless-extra
 fi
 
 # Disable the updater for this boot
