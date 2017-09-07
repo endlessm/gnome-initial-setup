@@ -27,6 +27,7 @@
 #include <locale.h>
 
 #include "gis-assistant.h"
+#include "gis-page-util.h"
 
 #define GIS_TYPE_DRIVER_MODE (gis_driver_mode_get_type ())
 
