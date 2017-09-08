@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-13 14:16-0700\n"
-"PO-Revision-Date: 2017-06-13 21:28+0000\n"
+"POT-Creation-Date: 2017-09-05 12:49-0700\n"
+"PO-Revision-Date: 2017-09-05 19:53+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Friulian (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/fur/)\n"
 "MIME-Version: 1.0\n"
@@ -23,33 +23,65 @@ msgstr ""
 msgid "Initial Setup"
 msgstr "Impostazions Iniziai"
 
-#: ../gnome-initial-setup/gis-assistant.c:314
+#: ../gnome-initial-setup/gis-assistant.c:310
 msgid "_Next"
 msgstr "_Indenant"
 
-#: ../gnome-initial-setup/gis-assistant.c:454
+#: ../gnome-initial-setup/gis-assistant.c:457
 msgid "_Accept"
 msgstr "_Acete"
 
-#: ../gnome-initial-setup/gis-assistant.c:455
+#: ../gnome-initial-setup/gis-assistant.c:458
 msgid "_Skip"
 msgstr "_Salte"
 
-#: ../gnome-initial-setup/gis-assistant.c:456
+#: ../gnome-initial-setup/gis-assistant.c:459
 msgid "_Previous"
 msgstr "_Precedent"
 
-#: ../gnome-initial-setup/gis-assistant.c:457
+#: ../gnome-initial-setup/gis-assistant.c:460
 msgid "_Cancel"
 msgstr "_Anule"
 
-#: ../gnome-initial-setup/gis-page-util.c:421
+#: ../gnome-initial-setup/gis-driver.c:404
+#, c-format
+msgid "Failed to enter demo mode: %s"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.c:418
 msgid "Disabled"
 msgstr ""
 
-#: ../gnome-initial-setup/gis-page-util.c:423
+#: ../gnome-initial-setup/gis-page-util.c:420
 #, c-format
 msgid "SD Card: %s"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:1
+msgid "Test Mode"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:2
+msgid "Power Off"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:3
+msgid "Enter Store Demo"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:4
+msgid "OK"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:5
+msgid "Cancel"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:6
+msgid ""
+"This allows you to try Endless without activating an account. No changes or "
+"files will be saved, and the computer will return to a clean factory state "
+"when you power it off."
 msgstr ""
 
 #: ../gnome-initial-setup/gnome-initial-setup.c:257
@@ -136,11 +168,11 @@ msgstr "_Non aministradôr"
 msgid "Administrator Password"
 msgstr "Password di aministradôr"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:208
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:210
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "Par plasê controle non e non utent. Tu puedis sielzi ancje une foto."
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:414
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:416
 msgid "We need a few details to complete setup."
 msgstr "O ven bisugne di cualchi detai par completâ la configurazion."
 
@@ -240,16 +272,16 @@ msgstr ""
 msgid "I do not see it. Shrink screen to fit TV."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:242
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:346
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:293
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:413
 msgid "Terms of Use"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:247
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:298
 msgid "Third Party Software"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:339
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:406
 msgid "_Accept and Continue"
 msgstr ""
 
@@ -307,19 +339,19 @@ msgid ""
 "Accounts can be added and removed at any time from the Settings application."
 msgstr "I account a puedin jessi zontâts e gjavâts in cualsisei moment te aplicazion Impostazions."
 
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:241
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
 msgstr "Anteprime"
 
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:300
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:290
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:291
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "Ancjemò..."
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:322
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Nissune sorzint di input cjatade"
 
@@ -357,13 +389,21 @@ msgstr ""
 msgid "_Select"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:306
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:307
 msgid "No languages found"
 msgstr "Nissune lenghe cjatade"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:322
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:267
+msgid "Welcome to Store Demo"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:272
 msgid "Welcome"
 msgstr "Benvignût"
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:275
+msgid "Enter Store Demo…"
+msgstr ""
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
@@ -372,33 +412,38 @@ msgstr "Benvignût"
 msgid "Welcome!"
 msgstr "Benvignût!"
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:183
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
 #, c-format
 msgid "Error running the reformatter: %s"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:276
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:281
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:277
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:282
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
+msgid "Try Endless OS by running it from the DVD."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:283
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat this computer with Endless OS."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:278
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:284
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Try It"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:279
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:285
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:5
 msgid "Reformat"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:281
-msgid "Endless USB Stick"
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:287
+msgid "Try or Reformat"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.c:296
@@ -690,7 +735,7 @@ msgid "You're ready to go!"
 msgstr "Tu sês pront par tacâ!"
 
 #. Translators: "city, country"
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:261
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:268
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
@@ -698,28 +743,28 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:298
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
 
 #. Translators: This is the time format used in 12-hour mode.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:309
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: This is the time format used in 24-hour mode.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:312
 msgid "%R"
 msgstr "%R"
 
 #. Translators: "timezone (utc shift)"
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:315
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:449
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:469
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:1
 msgid "Time Zone"
 msgstr "Fûs orari"
