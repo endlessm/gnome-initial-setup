@@ -415,7 +415,6 @@ sort_languages (GtkListBoxRow *a,
         CcLanguageChooser *chooser = data;
         CcLanguageChooserPrivate *priv = cc_language_chooser_get_instance_private (chooser);
         LanguageWidget *la, *lb;
-        gchar *normalized_a, *normalized_b;
         gint retval;
 
         la = get_language_widget (gtk_bin_get_child (GTK_BIN (a)));
@@ -439,15 +438,7 @@ sort_languages (GtkListBoxRow *a,
         if (g_strcmp0 (lb->locale_id, priv->initial_language) == 0)
                 return -1;
 
-        normalized_a = cc_util_normalize_casefold_and_unaccent (la->locale_name);
-        normalized_b = cc_util_normalize_casefold_and_unaccent (lb->locale_name);
-
-        retval = strcmp (normalized_a, normalized_b);
-
-        g_free (normalized_a);
-        g_free (normalized_b);
-
-        return retval;
+        return strcmp (la->sort_key, lb->sort_key);
 }
 
 static void
