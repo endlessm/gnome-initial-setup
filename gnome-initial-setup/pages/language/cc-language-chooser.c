@@ -554,6 +554,11 @@ cc_language_chooser_constructed (GObject *object)
                                       update_header_func, chooser, NULL);
         gtk_list_box_set_selection_mode (GTK_LIST_BOX (priv->language_list),
                                          GTK_SELECTION_NONE);
+
+        if (priv->language == NULL)
+                priv->language = cc_common_language_get_current_language ();
+        priv->initial_language = g_strdup (priv->language);
+
         add_all_languages (chooser);
 
         g_signal_connect (priv->filter_entry, "changed",
@@ -562,10 +567,6 @@ cc_language_chooser_constructed (GObject *object)
 
         g_signal_connect (priv->language_list, "row-activated",
                           G_CALLBACK (row_activated), chooser);
-
-        if (priv->language == NULL)
-                priv->language = cc_common_language_get_current_language ();
-        priv->initial_language = g_strdup (priv->language);
 
         sync_all_checkmarks (chooser);
         show_more (chooser);
