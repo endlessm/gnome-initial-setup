@@ -426,17 +426,18 @@ sort_languages (GtkListBoxRow *a,
         if (lb == NULL)
                 return -1;
 
+        if (g_strcmp0 (la->locale_id, priv->initial_language) == 0)
+                return -1;
+
+        if (g_strcmp0 (lb->locale_id, priv->initial_language) == 0)
+                return 1;
+
         if (la->is_extra && !lb->is_extra)
                 return 1;
 
         if (!la->is_extra && lb->is_extra)
                 return -1;
 
-        if (g_strcmp0 (la->locale_id, priv->initial_language) == 0)
-                return 1;
-
-        if (g_strcmp0 (lb->locale_id, priv->initial_language) == 0)
-                return -1;
 
         return strcmp (la->sort_key, lb->sort_key);
 }
