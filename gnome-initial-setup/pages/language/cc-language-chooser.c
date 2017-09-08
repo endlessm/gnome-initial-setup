@@ -129,7 +129,6 @@ language_widget_new (const char *locale_id,
         gchar *language_name;
         gchar *country = NULL;
         gchar *country_name = NULL;
-        gchar *sort_key;
         LanguageWidget *widget = g_new0 (LanguageWidget, 1);
 
         if (!gnome_parse_locale (locale_id, &language, &country, NULL, NULL))
@@ -176,10 +175,7 @@ language_widget_new (const char *locale_id,
         widget->locale_current_name = locale_current_name;
         widget->locale_untranslated_name = locale_untranslated_name;
         widget->is_extra = is_extra;
-
-        sort_key = g_utf8_normalize (locale_name, -1, G_NORMALIZE_DEFAULT);
-        widget->sort_key = g_utf8_casefold (sort_key, -1);
-        g_free (sort_key);
+        widget->sort_key = cc_util_normalize_casefold_and_unaccent (locale_name);
 
         g_object_set_data_full (G_OBJECT (widget->box), "language-widget", widget,
                                 language_widget_free);
@@ -419,7 +415,6 @@ sort_languages (GtkListBoxRow *a,
         CcLanguageChooser *chooser = data;
         CcLanguageChooserPrivate *priv = cc_language_chooser_get_instance_private (chooser);
         LanguageWidget *la, *lb;
-        gchar *normalized_a, *normalized_b;
         gint retval;
 
         la = get_language_widget (gtk_bin_get_child (GTK_BIN (a)));
@@ -431,27 +426,20 @@ sort_languages (GtkListBoxRow *a,
         if (lb == NULL)
                 return -1;
 
+        if (g_strcmp0 (la->locale_id, priv->initial_language) == 0)
+                return -1;
+
+        if (g_strcmp0 (lb->locale_id, priv->initial_language) == 0)
+                return 1;
+
         if (la->is_extra && !lb->is_extra)
                 return 1;
 
         if (!la->is_extra && lb->is_extra)
                 return -1;
 
-        if (g_strcmp0 (la->locale_id, priv->initial_language) == 0)
-                return 1;
 
-        if (g_strcmp0 (lb->locale_id, priv->initial_language) == 0)
-                return -1;
-
-        normalized_a = cc_util_normalize_casefold_and_unaccent (la->locale_name);
-        normalized_b = cc_util_normalize_casefold_and_unaccent (lb->locale_name);
-
-        retval = strcmp (normalized_a, normalized_b);
-
-        g_free (normalized_a);
-        g_free (normalized_b);
-
-        return retval;
+        return strcmp (la->sort_key, lb->sort_key);
 }
 
 static void
@@ -567,6 +555,11 @@ cc_language_chooser_constructed (GObject *object)
                                       update_header_func, chooser, NULL);
         gtk_list_box_set_selection_mode (GTK_LIST_BOX (priv->language_list),
                                          GTK_SELECTION_NONE);
+
+        if (priv->language == NULL)
+                priv->language = cc_common_language_get_current_language ();
+        priv->initial_language = g_strdup (priv->language);
+
         add_all_languages (chooser);
 
         g_signal_connect (priv->filter_entry, "changed",
@@ -575,10 +568,6 @@ cc_language_chooser_constructed (GObject *object)
 
         g_signal_connect (priv->language_list, "row-activated",
                           G_CALLBACK (row_activated), chooser);
-
-        if (priv->language == NULL)
-                priv->language = cc_common_language_get_current_language ();
-        priv->initial_language = g_strdup (priv->language);
 
         sync_all_checkmarks (chooser);
         show_more (chooser);
