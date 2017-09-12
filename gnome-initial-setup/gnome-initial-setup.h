@@ -36,6 +36,8 @@ typedef struct _GisPage      GisPage;
 #include "gis-pkexec.h"
 #include "gis-keyring.h"
 
+#define AVATAR_IMAGE_DEFAULT "/usr/share/pixmaps/faces/sunflower.jpg"
+
 void gis_ensure_stamp_files (void);
 
 #endif /* __GNOME_INITIAL_SETUP_H__ */
