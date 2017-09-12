@@ -44,8 +44,6 @@
 #define SHARED_ACCOUNT_USERNAME "shared"
 #define SHARED_ACCOUNT_FULLNAME "Shared Account"
 
-#define AVATAR_IMAGE_DEFAULT "/usr/share/pixmaps/faces/sunflower.jpg"
-
 struct _GisAccountPageLocalPrivate
 {
   GtkWidget *avatar_button;
