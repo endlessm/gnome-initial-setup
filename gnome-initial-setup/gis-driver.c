@@ -407,6 +407,7 @@ create_demo_user (GisDriver *driver, GError **error)
 
   act_user_set_password_mode (user, ACT_USER_PASSWORD_MODE_NONE);
   act_user_set_automatic_login (user, TRUE);
+  act_user_set_icon_file (user, AVATAR_IMAGE_DEFAULT);
 
   language = gis_driver_get_user_language (driver);
 
