@@ -45,12 +45,12 @@ Homepage: https://git.gnome.org/browse/gnome-initial-setup/
 Package: gnome-initial-setup
 Architecture: linux-any
 Depends: ${shlibs:Depends},
-         gdm3,
          policykit-1 (>= 0.103),
          adduser,
          gnome-settings-daemon (>= 3.24),
          ${misc:Depends}
 Recommends: gnome-getting-started-docs
+Suggests: gdm3
 Description: Initial GNOME system setup helper
  After acquiring or installing a new system there are a few essential things
  to set up before use. GNOME Initial Setup aims to provide a simple, easy,
