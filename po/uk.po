@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Данило Коростіль <ted.korostiled@gmail.com>, 2013-2016
+# Данило Коростіль <ted.korostiled@gmail.com>, 2013-2017
 # Данило Коростіль <ted.korostiled@gmail.com>, 2012
 # Данило Коростіль <ted.korostiled@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-05 12:49-0700\n"
-"PO-Revision-Date: 2017-09-23 03:20+0000\n"
+"POT-Creation-Date: 2017-10-11 17:05-0700\n"
+"PO-Revision-Date: 2017-10-12 00:18+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -45,16 +45,16 @@ msgstr "_Назад"
 msgid "_Cancel"
 msgstr "_Скасувати"
 
-#: ../gnome-initial-setup/gis-driver.c:404
+#: ../gnome-initial-setup/gis-driver.c:384
 #, c-format
 msgid "Failed to enter demo mode: %s"
 msgstr ""
 
-#: ../gnome-initial-setup/gis-page-util.c:418
+#: ../gnome-initial-setup/gis-page-util.c:422
 msgid "Disabled"
 msgstr ""
 
-#: ../gnome-initial-setup/gis-page-util.c:420
+#: ../gnome-initial-setup/gis-page-util.c:424
 #, c-format
 msgid "SD Card: %s"
 msgstr ""
@@ -86,11 +86,11 @@ msgid ""
 "when you power it off."
 msgstr ""
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:257
+#: ../gnome-initial-setup/gnome-initial-setup.c:239
 msgid "Force existing user mode"
 msgstr "Примусовий режим для наявного користувача"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:263
+#: ../gnome-initial-setup/gnome-initial-setup.c:245
 msgid "- GNOME initial setup"
 msgstr "— Перший запуск GNOME"
 
@@ -170,11 +170,11 @@ msgstr "_Адміністратор"
 msgid "Administrator Password"
 msgstr "Пароль адміністратора"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:210
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:208
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "Перевірте користувача. Можете також вибрати малюнок."
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:416
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:414
 msgid "We need a few details to complete setup."
 msgstr "Нам потрібно кілька дрібничок, щоб завершити."
 
@@ -203,7 +203,7 @@ msgid "Disable image"
 msgstr "Вимкнути зображення"
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:264
-msgid "Take a photo..."
+msgid "Take a photo…"
 msgstr "Зробити фотографію…"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:310
@@ -227,12 +227,12 @@ msgstr "Неправильний пароль, спробуйте ще раз"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
-msgid "Couldn't connect to the %s domain: %s"
+msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Неможливо з'єднатись з доменом %s: %s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:247
 #, c-format
-msgid "A user with the username '%s' already exists."
+msgid "A user with the username ‘%s’ already exists."
 msgstr "Користувач «%s» уже існує."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:251
@@ -241,17 +241,17 @@ msgid "The username is too long."
 msgstr "Перейменуйте користувача на меншу кількість символів."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:254
-msgid "The username cannot start with a '-'."
+msgid "The username cannot start with a ‘-’."
 msgstr "Перейменуйте користувача без використання «-» на початку."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:257
 msgid ""
 "The username should only consist of lower and upper case letters from a-z, "
-"digits and any of characters '.', '-' and '_'."
+"digits and any of characters ‘.’, ‘-’ and ‘_’."
 msgstr "Найменування користувача може містити малі й великі букви з a-z, цифри і символи «.», «-», «_»."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:261
-msgid "This will be used to name your home folder and can't be changed."
+msgid "This will be used to name your home folder and can’t be changed."
 msgstr "Так буде названо вашу домашню теку і її неможливо змінити."
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:269
@@ -275,7 +275,7 @@ msgid "I do not see it. Shrink screen to fit TV."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:293
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:413
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:422
 msgid "Terms of Use"
 msgstr ""
 
@@ -283,7 +283,7 @@ msgstr ""
 msgid "Third Party Software"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:406
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:407
 msgid "_Accept and Continue"
 msgstr ""
 
@@ -322,7 +322,7 @@ msgstr "Я по_годжуюсь з умовами в цій ліцензійн�
 msgid "Add Account"
 msgstr "Додати обліковий запис"
 
-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:336
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:338
 msgid "Online Accounts"
 msgstr "Мережевий обліковий запис"
 
@@ -346,7 +346,7 @@ msgid "Preview"
 msgstr "Попередній перегляд"
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:291
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:287
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "Ще…"
@@ -391,21 +391,21 @@ msgstr ""
 msgid "_Select"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:307
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:303
 msgid "No languages found"
 msgstr "Не знайдено жодної мови"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:267
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:265
+msgid "Enter Store Demo…"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:279
 msgid "Welcome to Store Demo"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:272
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:281
 msgid "Welcome"
 msgstr "Вітаємо"
-
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:275
-msgid "Enter Store Demo…"
-msgstr ""
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
@@ -448,20 +448,20 @@ msgstr ""
 msgid "Try or Reformat"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:296
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:291
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "Інший…"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:355
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:350
 msgid "Wireless networking is disabled"
 msgstr "Радіомережу вимкнено"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:361
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:356
 msgid "Checking for available wireless networks"
 msgstr "Перевіряння на доступність радіомереж"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:625
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:646
 msgid "Network"
 msgstr "Мережа"
 
@@ -667,13 +667,25 @@ msgid ""
 "sent anonymously and are scrubbed of personal data."
 msgstr "Надсилання звітів щодо технічних проблем допоможе нам покращити %s. Звіти надсилаються анонімно та відкидають особисті дані."
 
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:116
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:175
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:250
+#. Translators: the parameter here is the name of a distribution,
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
+#. * detect any distribution.
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:120
+#, c-format
+msgid "Problem data will be collected by %s:"
+msgstr "Проблемні дані буде збирати %s:"
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:121
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:256
 msgid "Privacy Policy"
 msgstr "Правила конфіденційності"
 
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:286
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
+msgid "Uses Mozilla Location Service:"
+msgstr "Використовується служби розташування Mozilla:"
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:292
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:1
 msgid "Privacy"
 msgstr "Конфіденційність"
@@ -713,27 +725,27 @@ msgstr "Виберіть вашу країну та регіон."
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:305
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:306
 #, c-format
-msgid "_Start using %s"
-msgstr "_Почати користування %s"
+msgid "_Start Using %s"
+msgstr "_Почати роботу з %s"
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:335
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:336
 msgid "You're ready to try Endless OS"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:337
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:338
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:347
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:348
 msgid "Ready to Go"
 msgstr "Зроблено"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:1
-msgid "You're ready to go!"
+msgid "You’re ready to go!"
 msgstr "Ви повністю зібрані!"
 
 #. Translators: "city, country"

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-05 12:49-0700\n"
-"PO-Revision-Date: 2017-09-22 22:38+0000\n"
+"POT-Creation-Date: 2017-10-11 17:05-0700\n"
+"PO-Revision-Date: 2017-10-12 00:16+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -44,16 +44,16 @@ msgstr "T_rước"
 msgid "_Cancel"
 msgstr "T_hôi"
 
-#: ../gnome-initial-setup/gis-driver.c:404
+#: ../gnome-initial-setup/gis-driver.c:384
 #, c-format
 msgid "Failed to enter demo mode: %s"
 msgstr "Không vào được chế độ chạy thử: %s"
 
-#: ../gnome-initial-setup/gis-page-util.c:418
+#: ../gnome-initial-setup/gis-page-util.c:422
 msgid "Disabled"
 msgstr "Đã vô hiệu hóa"
 
-#: ../gnome-initial-setup/gis-page-util.c:420
+#: ../gnome-initial-setup/gis-page-util.c:424
 #, c-format
 msgid "SD Card: %s"
 msgstr "Thẻ SD: %s"
@@ -85,11 +85,11 @@ msgid ""
 "when you power it off."
 msgstr "Điều này cho phép bạn dùng thử Endless mà không cần kích hoạt tài khoản. Sẽ không có thay đổi hoặc tệp tin nào được lưu, và máy tính sẽ trở lại trạng thái nhà máy nguyên bản khi bạn tắt đi."
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:257
+#: ../gnome-initial-setup/gnome-initial-setup.c:239
 msgid "Force existing user mode"
 msgstr "Ép buộc chế độ người dùng cũ"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:263
+#: ../gnome-initial-setup/gnome-initial-setup.c:245
 msgid "- GNOME initial setup"
 msgstr "- Cài đặt GNOME lần đầu"
 
@@ -169,11 +169,11 @@ msgstr "Tên _quản trị viên"
 msgid "Administrator Password"
 msgstr "Mật khẩu quản trị"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:210
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:208
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "Vui lòng kiểm tra tên và tài khoản. Bạn còn có thể chọn một ảnh chụp."
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:416
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:414
 msgid "We need a few details to complete setup."
 msgstr "Chúng tôi cần một ít thông tin chi tiết để hoàn tất việc cài đặt."
 
@@ -202,8 +202,8 @@ msgid "Disable image"
 msgstr "Tắt ảnh"
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:264
-msgid "Take a photo..."
-msgstr "Chụp ảnh…"
+msgid "Take a photo…"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
@@ -226,13 +226,13 @@ msgstr "Mật khẩu không hợp lệ, vui lòng thử lại"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
-msgid "Couldn't connect to the %s domain: %s"
-msgstr "Không thể kết nối đến miền %s: %s"
+msgid "Couldn’t connect to the %s domain: %s"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:247
 #, c-format
-msgid "A user with the username '%s' already exists."
-msgstr "Đã có người dùng mang tên “%s” rồi."
+msgid "A user with the username ‘%s’ already exists."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:251
 #, c-format
@@ -240,18 +240,18 @@ msgid "The username is too long."
 msgstr "Tài khoản quá dài."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:254
-msgid "The username cannot start with a '-'."
-msgstr "Tài khoản không thể bắt đầu bằng “-”."
+msgid "The username cannot start with a ‘-’."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:257
 msgid ""
 "The username should only consist of lower and upper case letters from a-z, "
-"digits and any of characters '.', '-' and '_'."
-msgstr "Tài khoản người dùng chỉ được chứa chữ cái latinh HOA/thường, chữ số và các ký tự “.”, “-” và “_”"
+"digits and any of characters ‘.’, ‘-’ and ‘_’."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:261
-msgid "This will be used to name your home folder and can't be changed."
-msgstr "Đây sẽ là tên thư mục cá nhân của bạn và không thể thay đổi."
+msgid "This will be used to name your home folder and can’t be changed."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:269
 msgid "Display"
@@ -274,7 +274,7 @@ msgid "I do not see it. Shrink screen to fit TV."
 msgstr "Tôi không thấy nó. Hãy co màn hình để vừa với TV."
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:293
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:413
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:422
 msgid "Terms of Use"
 msgstr "Điều khoản Sử dụng"
 
@@ -282,7 +282,7 @@ msgstr "Điều khoản Sử dụng"
 msgid "Third Party Software"
 msgstr "Phần mềm Bên Thứ Ba"
 
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:406
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:407
 msgid "_Accept and Continue"
 msgstr "_Chấp nhận và tiếp tục"
 
@@ -321,7 +321,7 @@ msgstr "Tôi đồ_ng ý với những điều khoản trong thỏa thuận gi�
 msgid "Add Account"
 msgstr "Thêm tài khoản"
 
-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:336
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:338
 msgid "Online Accounts"
 msgstr "Tài khoản trực tuyến"
 
@@ -345,7 +345,7 @@ msgid "Preview"
 msgstr "Xem trước"
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:291
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:287
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "Còn nữa…"
@@ -390,21 +390,21 @@ msgstr "Phát hiện Bố cục Bàn phím…"
 msgid "_Select"
 msgstr "_Lựa chọn"
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:307
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:303
 msgid "No languages found"
 msgstr "Không tìm thấy ngôn ngữ"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:267
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:265
+msgid "Enter Store Demo…"
+msgstr "Nhập Minh họa Cửa hàng…"
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:279
 msgid "Welcome to Store Demo"
 msgstr "Chào mừng bạn đến với Chế độ Trưng bày ở Cửa hàng"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:272
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:281
 msgid "Welcome"
 msgstr "Chào mừng bạn"
-
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:275
-msgid "Enter Store Demo…"
-msgstr "Nhập Minh họa Cửa hàng…"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
@@ -447,20 +447,20 @@ msgstr "Định dạng lại"
 msgid "Try or Reformat"
 msgstr "Dùng thử hoặc Định dạng lại"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:296
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:291
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "Khác…"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:355
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:350
 msgid "Wireless networking is disabled"
 msgstr "Mạng không dây bị tắt"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:361
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:356
 msgid "Checking for available wireless networks"
 msgstr "Đang kiểm xem có mạng không dây nào dùng được không"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:625
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:646
 msgid "Network"
 msgstr "Mạng"
 
@@ -666,13 +666,25 @@ msgid ""
 "sent anonymously and are scrubbed of personal data."
 msgstr "Gửi báo cáo các trục trặc kỹ thuật để giúp chúng tôi nâng cấp %s. Báo cáo được gửi nặc danh và được xóa các dữ liệu cá nhân."
 
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:116
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:175
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:250
+#. Translators: the parameter here is the name of a distribution,
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
+#. * detect any distribution.
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:120
+#, c-format
+msgid "Problem data will be collected by %s:"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:121
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:256
 msgid "Privacy Policy"
 msgstr "Chính sách riêng tư"
 
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:286
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
+msgid "Uses Mozilla Location Service:"
+msgstr "Dùng dịch vụ vị trí Mozilla"
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:292
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:1
 msgid "Privacy"
 msgstr "Riêng tư"
@@ -712,28 +724,28 @@ msgstr "Chọn nước hay vùng địa lý của bạn."
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:305
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:306
 #, c-format
-msgid "_Start using %s"
-msgstr "_Bắt đầu dùng %s"
+msgid "_Start Using %s"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:335
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:336
 msgid "You're ready to try Endless OS"
 msgstr "Bạn đã sẵn sàng để thử Endless OS"
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:337
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:338
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr "<b>Bất kỳ tệp nào bạn tải xuống hoặc tài liệu nào bạn tạo sẽ bị mất vĩnh viễn khi bạn khởi động lại hoặc tắt máy tính.</b>"
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:347
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:348
 msgid "Ready to Go"
 msgstr "Đã sẵn sàng lên đường"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:1
-msgid "You're ready to go!"
-msgstr "Bạn đã sẵn sàng lên đường!"
+msgid "You’re ready to go!"
+msgstr ""
 
 #. Translators: "city, country"
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:268

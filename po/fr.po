@@ -6,6 +6,7 @@
 # Abner Silva <abner@endlessm.com>, 2014
 # Alexandre Franke <alexandre.franke@gmail.com>, 2012
 # Baptiste Mille-Mathias <baptistem@gnome.org>, 2013
+# Charles Monzat <superboa@hotmail.fr>, 2016-2017
 # Christophe Fergeau <teuf@gnome.org>, 2013
 # Claude Paroz <claude@2xlibre.net>, 2016
 # Guillaume Bernard <filorin@laposte.net>, 2014
@@ -15,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-05 12:49-0700\n"
-"PO-Revision-Date: 2017-09-20 10:14+0000\n"
+"POT-Creation-Date: 2017-10-11 17:05-0700\n"
+"PO-Revision-Date: 2017-10-12 00:16+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: French (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -50,16 +51,16 @@ msgstr "_Précédent"
 msgid "_Cancel"
 msgstr "A_nnuler"
 
-#: ../gnome-initial-setup/gis-driver.c:404
+#: ../gnome-initial-setup/gis-driver.c:384
 #, c-format
 msgid "Failed to enter demo mode: %s"
 msgstr "Impossible d'entrer dans le mode démo : %s"
 
-#: ../gnome-initial-setup/gis-page-util.c:418
+#: ../gnome-initial-setup/gis-page-util.c:422
 msgid "Disabled"
 msgstr "Désactivé"
 
-#: ../gnome-initial-setup/gis-page-util.c:420
+#: ../gnome-initial-setup/gis-page-util.c:424
 #, c-format
 msgid "SD Card: %s"
 msgstr "Carte SD : %s"
@@ -91,11 +92,11 @@ msgid ""
 "when you power it off."
 msgstr "Cela vous permet d'essayer Endless sans activer de compte. Aucun changement ou fichier ne sera sauvegardé, et l'ordinateur reviendra aux réglages d'usine une fois qu'il sera éteint."
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:257
+#: ../gnome-initial-setup/gnome-initial-setup.c:239
 msgid "Force existing user mode"
 msgstr "Forcer le mode utilisateur existant"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:263
+#: ../gnome-initial-setup/gnome-initial-setup.c:245
 msgid "- GNOME initial setup"
 msgstr "- Configuration initiale de GNOME"
 
@@ -175,11 +176,11 @@ msgstr "_Nom de l'administrateur"
 msgid "Administrator Password"
 msgstr "Mot de passe de l'administrateur"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:210
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:208
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "Merci de vérifier votre nom et votre nom de compte. Vous pouvez également choisir un avatar."
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:416
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:414
 msgid "We need a few details to complete setup."
 msgstr "Il nous faut quelques détails pour terminer la configuration."
 
@@ -208,7 +209,7 @@ msgid "Disable image"
 msgstr "Désactiver l'image"
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:264
-msgid "Take a photo..."
+msgid "Take a photo…"
 msgstr "Prendre une photo…"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:310
@@ -232,12 +233,12 @@ msgstr "Mot de passe non valide, veuillez réessayer"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
-msgid "Couldn't connect to the %s domain: %s"
+msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Impossible de se connecter au domaine %s : %s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:247
 #, c-format
-msgid "A user with the username '%s' already exists."
+msgid "A user with the username ‘%s’ already exists."
 msgstr "Il y a déjà un utilisateur « %s »."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:251
@@ -246,17 +247,17 @@ msgid "The username is too long."
 msgstr "Le nom d'utilisateur est trop long."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:254
-msgid "The username cannot start with a '-'."
+msgid "The username cannot start with a ‘-’."
 msgstr "Le nom d'utilisateur ne peut pas commencer par « - »."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:257
 msgid ""
 "The username should only consist of lower and upper case letters from a-z, "
-"digits and any of characters '.', '-' and '_'."
+"digits and any of characters ‘.’, ‘-’ and ‘_’."
 msgstr "Le nom d'utilisateur doit être uniquement composé de :\n ➣ lettres de l'alphabet anglais\n ➣ nombres\n ➣ caractères parmi « . », « - » et « _ »."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:261
-msgid "This will be used to name your home folder and can't be changed."
+msgid "This will be used to name your home folder and can’t be changed."
 msgstr "Il sera utilisé pour nommer votre dossier personnel et ne pourra pas être changé."
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:269
@@ -280,7 +281,7 @@ msgid "I do not see it. Shrink screen to fit TV."
 msgstr "Je ne le vois pas. Rapetisser l'écran pour ajuster à la TV."
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:293
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:413
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:422
 msgid "Terms of Use"
 msgstr "Conditions d'utilisation"
 
@@ -288,7 +289,7 @@ msgstr "Conditions d'utilisation"
 msgid "Third Party Software"
 msgstr "Logiciel tiers"
 
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:406
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:407
 msgid "_Accept and Continue"
 msgstr "_Accepter et continuer"
 
@@ -327,7 +328,7 @@ msgstr "J'_accepte les termes et les conditions de ce contrat de licence d'utili
 msgid "Add Account"
 msgstr "Ajouter un compte"
 
-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:336
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:338
 msgid "Online Accounts"
 msgstr "Comptes en ligne"
 
@@ -351,7 +352,7 @@ msgid "Preview"
 msgstr "Aperçu"
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:291
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:287
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "Plus…"
@@ -396,21 +397,21 @@ msgstr "Détection de la disposition du clavier…"
 msgid "_Select"
 msgstr "_Sélectionner"
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:307
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:303
 msgid "No languages found"
 msgstr "Aucune langue trouvée"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:267
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:265
+msgid "Enter Store Demo…"
+msgstr "Entrer démonstration magasin…"
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:279
 msgid "Welcome to Store Demo"
 msgstr "Bienvenue dans la démo du magasin"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:272
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:281
 msgid "Welcome"
 msgstr "Bienvenue"
-
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:275
-msgid "Enter Store Demo…"
-msgstr "Entrer démonstration magasin…"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
@@ -453,20 +454,20 @@ msgstr "Reformatage"
 msgid "Try or Reformat"
 msgstr "Essayer ou reformater"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:296
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:291
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "Autre…"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:355
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:350
 msgid "Wireless networking is disabled"
 msgstr "Le réseau sans fil est désactivé"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:361
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:356
 msgid "Checking for available wireless networks"
 msgstr "Recherche de réseaux sans fil en cours"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:625
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:646
 msgid "Network"
 msgstr "Réseau"
 
@@ -672,13 +673,25 @@ msgid ""
 "sent anonymously and are scrubbed of personal data."
 msgstr "Envoyer des rapports sur des problèmes survenus nous aide à améliorer %s. Ces rapports nous parviennent anonymement et sont épurés de toute donnée personnelle vous concernant."
 
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:116
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:175
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:250
+#. Translators: the parameter here is the name of a distribution,
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
+#. * detect any distribution.
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:120
+#, c-format
+msgid "Problem data will be collected by %s:"
+msgstr "Les données des problèmes seront collectées par %s :"
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:121
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:256
 msgid "Privacy Policy"
 msgstr "Politique de confidentialité"
 
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:286
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
+msgid "Uses Mozilla Location Service:"
+msgstr "Utilise le service de géolocalisation de Mozilla"
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:292
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:1
 msgid "Privacy"
 msgstr "Confidentialité"
@@ -718,27 +731,27 @@ msgstr "Choisir un emplacement ou une région."
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:305
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:306
 #, c-format
-msgid "_Start using %s"
+msgid "_Start Using %s"
 msgstr "_Commencer à utiliser %s"
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:335
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:336
 msgid "You're ready to try Endless OS"
 msgstr "Vous êtes prêt à essayer le système d'exploitation Endless "
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:337
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:338
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr "<b>Tous les fichiers que vous téléchargez, ou tous les documents que vous créez, seront perdus à jamais lorsque vous redémarrerez ou éteindrez l'ordinateur.</b>"
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:347
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:348
 msgid "Ready to Go"
 msgstr "Prêt"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:1
-msgid "You're ready to go!"
+msgid "You’re ready to go!"
 msgstr "Votre profil est maintenant configuré !"
 
 #. Translators: "city, country"

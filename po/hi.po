@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-05 12:49-0700\n"
-"PO-Revision-Date: 2017-09-23 21:58+0000\n"
-"Last-Translator: e2f_in c7 <e2f_in_c7@outlook.com>\n"
+"POT-Creation-Date: 2017-10-11 17:05-0700\n"
+"PO-Revision-Date: 2017-10-12 00:14+0000\n"
+"Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Hindi (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/hi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,16 +46,16 @@ msgstr "पिछला (_P)"
 msgid "_Cancel"
 msgstr "रद्द करें (_C)"
 
-#: ../gnome-initial-setup/gis-driver.c:404
+#: ../gnome-initial-setup/gis-driver.c:384
 #, c-format
 msgid "Failed to enter demo mode: %s"
 msgstr "डेमो मोड में प्रवेश करने में विफल: %s"
 
-#: ../gnome-initial-setup/gis-page-util.c:418
+#: ../gnome-initial-setup/gis-page-util.c:422
 msgid "Disabled"
 msgstr "अक्षम"
 
-#: ../gnome-initial-setup/gis-page-util.c:420
+#: ../gnome-initial-setup/gis-page-util.c:424
 #, c-format
 msgid "SD Card: %s"
 msgstr "SD कार्ड: %s"
@@ -87,11 +87,11 @@ msgid ""
 "when you power it off."
 msgstr "यह आपको खाता सक्रिय किए बिना Endless को आज़माने की अनुमति देता है. कोई परिवर्तन या फ़ाइल सहेजी नहीं जाएगी और कंप्यूटर को जब आप बंद करेंगे वह साफ़ फैक्टरी स्थिति में चला जाएगा."
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:257
+#: ../gnome-initial-setup/gnome-initial-setup.c:239
 msgid "Force existing user mode"
 msgstr "मौजूदा उपयोक्ता मोड बलपूर्वक लागू करें"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:263
+#: ../gnome-initial-setup/gnome-initial-setup.c:245
 msgid "- GNOME initial setup"
 msgstr "- गनोम प्रारंभिक सेटअप"
 
@@ -171,11 +171,11 @@ msgstr "प्रशासक नाम (_N)"
 msgid "Administrator Password"
 msgstr "प्रशासक कूटशब्द"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:210
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:208
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "कृपया नाम और उपयोक्ता नाम की जाँच करें. आप एक चित्र भी चुन सकते हैं."
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:416
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:414
 msgid "We need a few details to complete setup."
 msgstr "सेटअप पूरा करने के लिए हमें कुछ विवरणों की आवश्यकता है."
 
@@ -204,8 +204,8 @@ msgid "Disable image"
 msgstr "छवि को अक्षम करें"
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:264
-msgid "Take a photo..."
-msgstr "एक फ़ोटो खींचें..."
+msgid "Take a photo…"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
@@ -228,13 +228,13 @@ msgstr "अमान्य कूटशब्द, पुनः कोशिश �
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
-msgid "Couldn't connect to the %s domain: %s"
-msgstr "%s डोमेन से कनेक्ट नहीं कर सका: %s"
+msgid "Couldn’t connect to the %s domain: %s"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:247
 #, c-format
-msgid "A user with the username '%s' already exists."
-msgstr "एक उपयोक्ता इस नाम '%s' से पहले से ही मौजूद है."
+msgid "A user with the username ‘%s’ already exists."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:251
 #, c-format
@@ -242,18 +242,18 @@ msgid "The username is too long."
 msgstr "उपयोक्ता नाम बहुत बड़ा है."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:254
-msgid "The username cannot start with a '-'."
-msgstr "उपयोक्ता नाम '-' से प्रारंभ नहीं हो सकता."
+msgid "The username cannot start with a ‘-’."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:257
 msgid ""
 "The username should only consist of lower and upper case letters from a-z, "
-"digits and any of characters '.', '-' and '_'."
-msgstr "उपयोगकर्ता नाम केवल अंग्रेज़ी के a-z के अपरकेस तथा लोअरकेस अक्षरों, अंकों तथा इन वर्णों '.', '-' and '_' में से कोई भी हो सकते हैं."
+"digits and any of characters ‘.’, ‘-’ and ‘_’."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:261
-msgid "This will be used to name your home folder and can't be changed."
-msgstr "इसे आपके होम फ़ोल्डर का नाम देने के लिए उपयोग में लिया जाएगा और बदला नहीं जा सकता."
+msgid "This will be used to name your home folder and can’t be changed."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:269
 msgid "Display"
@@ -276,7 +276,7 @@ msgid "I do not see it. Shrink screen to fit TV."
 msgstr "मुझे यह दिखाई नहीं दे रहा. टीवी में फ़ि‍ट करने के लिए स्क्रीन को श्रिंंक करें."
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:293
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:413
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:422
 msgid "Terms of Use"
 msgstr "उपयोग की शर्तें"
 
@@ -284,7 +284,7 @@ msgstr "उपयोग की शर्तें"
 msgid "Third Party Software"
 msgstr "तृतीय पक्ष सॉफ़्टवेयर"
 
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:406
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:407
 msgid "_Accept and Continue"
 msgstr "_स्वीकार करें और जारी रखें"
 
@@ -323,7 +323,7 @@ msgstr "हम इस उपयोगकर्ता लाइसेंस अ�
 msgid "Add Account"
 msgstr "खाता जोड़ें"
 
-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:336
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:338
 msgid "Online Accounts"
 msgstr "ऑनलाइन खाता"
 
@@ -347,7 +347,7 @@ msgid "Preview"
 msgstr "पूर्वावलोकन"
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:291
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:287
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "अधिक…"
@@ -392,21 +392,21 @@ msgstr "कीबोर्ड लेआउट खोजें…"
 msgid "_Select"
 msgstr "_चयन करें"
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:307
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:303
 msgid "No languages found"
 msgstr "कोई भाषा नहीं मिली"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:267
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:265
+msgid "Enter Store Demo…"
+msgstr "स्टोर डेमो में प्रवेश करें…"
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:279
 msgid "Welcome to Store Demo"
 msgstr "स्टोर डेमो में आपका स्वागत है"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:272
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:281
 msgid "Welcome"
 msgstr "सुस्वागतम"
-
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:275
-msgid "Enter Store Demo…"
-msgstr "स्टोर डेमो में प्रवेश करें…"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
@@ -449,20 +449,20 @@ msgstr "पुनः फ़ॉर्मेट करें"
 msgid "Try or Reformat"
 msgstr "आज़माएँ या पुनः फ़ॉर्मेट करें"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:296
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:291
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "अन्य... [वायरलेस ऐक्सेस पॉइंट]"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:355
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:350
 msgid "Wireless networking is disabled"
 msgstr "बेतार नेटवर्किंग अक्षम है"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:361
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:356
 msgid "Checking for available wireless networks"
 msgstr "उपलब्ध बेतार संजाल के लिए जाँच हो रही है"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:625
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:646
 msgid "Network"
 msgstr "संजाल"
 
@@ -668,13 +668,25 @@ msgid ""
 "sent anonymously and are scrubbed of personal data."
 msgstr "तकनीकी समस्याओं की रिपोर्ट भेजने से हमें सुधार करने में सहायता मिलती है%s. रिपोर्ट्स अनाम रूप से भेजी जाती हैं और व्यकितिगत डेटा से मिटा दी जाती हैं."
 
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:116
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:175
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:250
+#. Translators: the parameter here is the name of a distribution,
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
+#. * detect any distribution.
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:120
+#, c-format
+msgid "Problem data will be collected by %s:"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:121
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:256
 msgid "Privacy Policy"
 msgstr "गोपनीयता नीति"
 
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:286
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
+msgid "Uses Mozilla Location Service:"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:292
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:1
 msgid "Privacy"
 msgstr "गोपनीयता"
@@ -714,28 +726,28 @@ msgstr "अपना देश या क्षेत्र चुनें"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:305
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:306
 #, c-format
-msgid "_Start using %s"
-msgstr "%s का उपयोग कर प्रारंभ करें (_S)"
+msgid "_Start Using %s"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:335
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:336
 msgid "You're ready to try Endless OS"
 msgstr "आप एंड्लेस ओ एस का आज़माने के लिए तैयार हैं"
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:337
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:338
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr "<b>जब आप कंप्यूटर रीस्टार्ट करते हैं या शटडाउन करते हैं, तो कोई भी फ़ाइल जो आप डाउनलोड करते हैं या दस्तावेज़ जो आप बनाते हैं, हमेशा के लिए गुम हो सकतेे हैं.</b>"
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:347
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:348
 msgid "Ready to Go"
 msgstr "जारी रखने के लिए तैयार हैं"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:1
-msgid "You're ready to go!"
-msgstr "आप शुरू करने के लिए तैयार हैं!"
+msgid "You’re ready to go!"
+msgstr ""
 
 #. Translators: "city, country"
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:268

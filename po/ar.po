@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Khaled Hosny <khaledhosny@eglug.org>, 2012-2014
+# Khaled Hosny <khaledhosny@eglug.org>, 2012-2014,2017
 # Roddy Shuler <roddy@endlessm.com>, 2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-05 12:49-0700\n"
-"PO-Revision-Date: 2017-09-20 09:25+0000\n"
+"POT-Creation-Date: 2017-10-11 17:05-0700\n"
+"PO-Revision-Date: 2017-10-12 00:17+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -44,16 +44,16 @@ msgstr "ال_سابق"
 msgid "_Cancel"
 msgstr "أ_لغِ"
 
-#: ../gnome-initial-setup/gis-driver.c:404
+#: ../gnome-initial-setup/gis-driver.c:384
 #, c-format
 msgid "Failed to enter demo mode: %s"
 msgstr "تعذر الدخول في الوضع التجريبي: %s"
 
-#: ../gnome-initial-setup/gis-page-util.c:418
+#: ../gnome-initial-setup/gis-page-util.c:422
 msgid "Disabled"
 msgstr "مُعَطَلْ"
 
-#: ../gnome-initial-setup/gis-page-util.c:420
+#: ../gnome-initial-setup/gis-page-util.c:424
 #, c-format
 msgid "SD Card: %s"
 msgstr "بطاقة SD: %s"
@@ -85,11 +85,11 @@ msgid ""
 "when you power it off."
 msgstr "يتيح لك هذا الدخول إلى Endless دون حاجة لتفعيل حساب. لن يتم حفظ أي تغييرات أو ملفات وسيعود جهاز الحاسوب إلى حالة المصنع الأصلية عند إيقاف التشغيل."
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:257
+#: ../gnome-initial-setup/gnome-initial-setup.c:239
 msgid "Force existing user mode"
 msgstr "افرِض وضع المستخدم الموجود"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:263
+#: ../gnome-initial-setup/gnome-initial-setup.c:245
 msgid "- GNOME initial setup"
 msgstr "- إعداد جنوم الأولي"
 
@@ -155,7 +155,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr "لاستخدام تسجيلات دخول المؤسسة، يجب تسجيل هذا الكمبيوتر في نطاق. يرجى أن جعل مسؤول الشبكة  الخاصة بك يقوم بكتابة كلمة مرور النطاق هنا، واختيار اسم كمبيوتر فريد لجهاز الكمبيوتر الخاص بك."
+msgstr "تحتاج أن تكون مسجّلا في نطاق لاستخدام ولوج المؤسسات على هذا الحاسوب. من فضلك اطلب من مدير الشبكة أن يكتب كلمة سر النطاق هنا، و اختر اسمًا فريدًا لحاسوبك."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:10
 msgid "_Computer"
@@ -169,21 +169,21 @@ msgstr "ا_سم المدير"
 msgid "Administrator Password"
 msgstr "كلمة سر المدير"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:210
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:208
 msgid "Please check the name and username. You can choose a picture too."
-msgstr "يُرجى التحقق من الاسم واسم المستخدم. يمكنك اختيار صورة أيضاً."
+msgstr "رجاء مراجعة الاسم و اسم المستخدم. يمكنك اختيار صورة أيضًا."
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:416
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:414
 msgid "We need a few details to complete setup."
 msgstr "نحتاج لبعض البيانات لإتمام الإعداد."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:1
 msgid "Avatar image"
-msgstr "الصورة الرمزية"
+msgstr "صورة الأيقونة"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:3
 msgid "Please provide a name and username. You can choose a picture too."
-msgstr "يرجى تقديم الاسم واسم المستخدم. كما يمكنك أيضاً اختيار صورة ما."
+msgstr "رجاء أدخِل اسمًا و اسم المستخدم. يمكنك اختيار صورة أيضًا."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:4
 msgid "_Full Name"
@@ -195,15 +195,15 @@ msgstr "كلمة مرور محمية"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:1
 msgid "Set Up _Enterprise Login"
-msgstr "إعداد تسجيل _دخول المؤسسة"
+msgstr "اضبط ولوج ال_مؤسسات"
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:246
 msgid "Disable image"
 msgstr "عطّل الصورة"
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:264
-msgid "Take a photo..."
-msgstr "التقط صورة..."
+msgid "Take a photo…"
+msgstr "التقط صورة…"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
@@ -226,32 +226,32 @@ msgstr "كلمة سر خطأ، من فضلك أعد المحاولة"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
-msgid "Couldn't connect to the %s domain: %s"
+msgid "Couldn’t connect to the %s domain: %s"
 msgstr "تعذّر الاتصال بالنطاق %s:‏ %s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:247
 #, c-format
-msgid "A user with the username '%s' already exists."
-msgstr "يوجد مستخدم يحمل اسم المستخدم '%s' بالفعل."
+msgid "A user with the username ‘%s’ already exists."
+msgstr "اسم المستخدم ’%s‘ موجود بالفعل."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:251
 #, c-format
 msgid "The username is too long."
-msgstr "اسم المستخدم طويل جداً."
+msgstr "اسم المستخدم طويل جدًا."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:254
-msgid "The username cannot start with a '-'."
-msgstr "لا يمكن أن يبدأ اسم المستخدم ب '-'."
+msgid "The username cannot start with a ‘-’."
+msgstr "لا يمكن أن يبدأ اسم المستخدم بعلامة ’-‘."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:257
 msgid ""
 "The username should only consist of lower and upper case letters from a-z, "
-"digits and any of characters '.', '-' and '_'."
-msgstr "يجب أن يتكون اسم المستخدم من أحرف صغيرة وأحرف كبيرة من a-z، أو أرقام، أو أي من الرموز '.'، '-' و '_'."
+"digits and any of characters ‘.’, ‘-’ and ‘_’."
+msgstr "يجب أن لا يتعدى اسم المستخدم الحروف الإنجليزية الكبيرة و الصغيرة، و الأرقام و أي من الحروف '.' و '-' و '_'"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:261
-msgid "This will be used to name your home folder and can't be changed."
-msgstr "سيتم استخدام هذا لتسمية مجلدك الرئيسي ولا يمكن تغييره."
+msgid "This will be used to name your home folder and can’t be changed."
+msgstr "سيُستخدم هذا لتسمية مجلد المنزل ولا يمكن تغييره."
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:269
 msgid "Display"
@@ -274,7 +274,7 @@ msgid "I do not see it. Shrink screen to fit TV."
 msgstr "لا أرى ذلك. قلص حجم الشاشة لتناسب التلفزيون."
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:293
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:413
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:422
 msgid "Terms of Use"
 msgstr "شروط الاستخدام"
 
@@ -282,7 +282,7 @@ msgstr "شروط الاستخدام"
 msgid "Third Party Software"
 msgstr "برمجيات من طرف ثالث"
 
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:406
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:407
 msgid "_Accept and Continue"
 msgstr "_القبول والاستمرار"
 
@@ -321,7 +321,7 @@ msgstr "وا_فقت على بنود اتفاقية المستخدم النهائ
 msgid "Add Account"
 msgstr "أضف حسابًا"
 
-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:336
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:338
 msgid "Online Accounts"
 msgstr "حسابات الإنترنت"
 
@@ -333,19 +333,19 @@ msgstr "اتصل بحسابات الإنترنت"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr "اربط حساباتك للوصول بسهولة البريد الإلكتروني الخاص بك، والتقويم عبر الإنترنت، وجهات الاتصال، والمستندات والصور."
+msgstr "اتصل بحسابك للوصول إلى بريدك و تقويمك على الشبكة و معارفك و مستنداتك و صورك."
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:3
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr "يمكن إضافة الحسابات وإزالتها في أي وقت من تطبيق الإعدادات."
+msgstr "يمكن إضافة الحسابات أو إزالتها في أي وقت من تطبيق الإعدادات."
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
 msgstr "معاينة"
 
 #: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:291
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:287
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "المزيد…"
@@ -390,21 +390,21 @@ msgstr "اكتشاف تصميم لوحة المفاتيح…"
 msgid "_Select"
 msgstr "_اختيار"
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:307
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:303
 msgid "No languages found"
 msgstr "لا يوجد أي لغات"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:267
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:265
+msgid "Enter Store Demo…"
+msgstr "الدخول إلى Store Demo…"
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:279
 msgid "Welcome to Store Demo"
 msgstr "مرحبًا بك في Store Demo"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:272
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:281
 msgid "Welcome"
 msgstr "مرحبًا"
-
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:275
-msgid "Enter Store Demo…"
-msgstr "الدخول إلى Store Demo…"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
@@ -447,20 +447,20 @@ msgstr "إعادة التهيئة"
 msgid "Try or Reformat"
 msgstr "جرب أو أجر إعادة تهيئة"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:296
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:291
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "أخرى…"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:355
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:350
 msgid "Wireless networking is disabled"
-msgstr "تم تعطيل الشبكات اللاسلكية"
+msgstr "الشبكات اللاسلكية غير مُفعّلة"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:361
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:356
 msgid "Checking for available wireless networks"
 msgstr "يبحث عن شبكات اللاسلكي المتاحة"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:625
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:646
 msgid "Network"
 msgstr "الشبكة"
 
@@ -481,15 +481,15 @@ msgstr "لا تتوفر شبكة لاسلكية"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:4
 msgid "Turn On"
-msgstr "تشغيل"
+msgstr "فعّل"
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.c:170
 msgid "This is a weak password."
-msgstr "هذه كلمة مرور ضعيفة."
+msgstr "كلمة السر ضعيفة."
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.c:184
 msgid "The passwords do not match."
-msgstr "كلمات المرور غير متطابقة."
+msgstr "لا تتطابق كلمتا السر."
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.c:348
 msgid "Password"
@@ -505,7 +505,7 @@ msgstr "كن حريصًا على ألا تفقد كلمة السر."
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:4
 msgid "_Verify"
-msgstr "_تأكيد"
+msgstr "أ_كّد"
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:5
 msgid "Show password"
@@ -522,14 +522,14 @@ msgstr "سيتم عرض التذكير الخاص بكلمة المرور في �
 #: ../gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
 msgid "The new password needs to be different from the old one."
-msgstr "يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمة المرور القديمة."
+msgstr "لا تحتوي كلمة السر الجديدة على حروف مختلفة كفاية."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr "كلمة المرور هذه مشابهة جدا لآخر واحدة قمت باستخدامها. جرب تغيير بعض الحروف والأرقام."
+msgstr "كلمة السر تشبه كثيرا آخر كلمة سر. حاول تغيير بعض الحروف و الأرقام."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:85
 #: ../gnome-initial-setup/pages/password/pw-utils.c:93
@@ -537,124 +537,124 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr "كلمة المرور هذه مشابهة جداً لكلمة المرور الأخيرة. حاوِل تغيير كلمة المرور أكثر قليلاً."
+msgstr "كلمة السر تشبه كثيرا آخر كلمة سر. حاول تغيير كلمة السر أكثر قليلًا."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. A password without your user name would be "
 "stronger."
-msgstr "كلمة المرور ضعيفة. كلمة المرور بدون استخدام اسم المستخدم الخاص بك ستكون أقوى."
+msgstr "كلمة السر ضعيفة. كلمة السر أقوى بدون اسم المستخدم."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr " كلمة المرور ضعيفة. حاوِل تجنب استخدام اسمك في كلمة المرور."
+msgstr "كلمة السر ضعيفة. حاول تفادي وضع اسم المستخدم في كلمة السر."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr "هذه كلمة مرور ضعيفة. حاوِل تجنب بعض الكلمات المدرجة في كلمة المرور."
+msgstr "كلمة السر ضعيفة. حاول تفادي بعض الكلمات المستخدمة في كلمة السر."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr "كلمة المرور ضعيفة. حاوِل تجنب الكلمات الشائعة."
+msgstr "كلمة السر ضعيفة. حاول تفادي الكلمات الشائعة."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr "هذه كلمة مرور ضعيفة. حاول تجنب إعادة ترتيب الكلمات الحالية."
+msgstr "كلمة السر ضعيفة. حاول تفادي تغيير ترتيب كلمات معروفة."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr "هذه كلمة مرور ضعيفة. حاول استخدام المزيد من الأرقام."
+msgstr "كلمة السر ضعيفة. حاول استخدام أرقام أكثر."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr "هذه كلمة مرور ضعيفة. حاول استخدام المزيد من الأحرف الكبيرة."
+msgstr "كلمة السر ضعيفة. حاول استخدام حروف كبيرة أكثر."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr "هذه كلمة مرور ضعيفة. جرب استخدام أحرف صغيرة أخرى."
+msgstr "كلمة السر ضعيفة. حاول استخدام حروف صغيرة أكثر."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr "هذه كلمة مرور ضعيفة. جرب استخدام المزيد من الرموز الخاصة، مثل علامات الترقيم."
+msgstr "كلمة السر ضعيفة. حاول استخدام علامات خاصة أكثر، مثل علامات الترقيم."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr "هذه كلمة مرور ضعيفة. حاول استخدام مزيج من الحروف والأرقام وعلامات الترقيم."
+msgstr "كلمة السر ضعيفة. حاول استخدام خليط من الحروف و الأرقام و علامات الترقيم."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr "كلمة المرور ضعيفة. حاوِل تجنب تكرار نفس الحرف."
+msgstr "كلمة السر ضعيفة. حاول تفادي تكرار نفس الحرف."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr "كلمة المرور ضعيفة. حاوِل تجنب تكرار نفس الحرف: تحتاج إلى خلط الحروف والأرقام وعلامات الترقيم."
+msgstr "كلمة السر ضعيفة. حاول تفادي تكرار نفس النوع من الحروف: عليك الخلط بين الحروف و الأرقام و علامات الترقيم."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr " كلمة المرور ضعيفة. حاوِل تجنب استخدام التسلسل مثل 1234 أو abcd."
+msgstr "كلمة السر ضعيفة. حاول تفادي تتابعات مثل 1234 أو abcd."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid "This is a weak password. Try to add more letters, numbers and symbols."
-msgstr "هذه كلمة مرور ضعيفة. حاول إضافة المزيد من الحروف والأرقام والرموز."
+msgstr "كلمة السر ضعيفة. على كلمة السر أن تكون أطول. حاول إضافة حروف و أرقام و علامات ترقيم أكثر."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and use a number or two."
-msgstr "اخلط الحروف الكبيرة والصغيرة واستخدم رقم أو رقمين."
+msgstr "اخلط الحروف الكبيرة مع الصغيرة و جرب استخدام بضعة أرقام."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Good password! Adding more letters, numbers and punctuation will make it "
 "stronger."
-msgstr "كلمة مرور جيدة! إضافة المزيد من الحروف والأرقام وعلامات الترقيم سيجعلها أقوى."
+msgstr "كلمة سر جيدة. إضافة المزيد من الحروف و الأرقام و علامات الترقيم ستجعلها أقوى."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:141
 msgctxt "Password strength"
 msgid "Strength: Weak"
-msgstr "القوة: ضعيفة"
+msgstr "القوّة: ضعيفة"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:145
 msgctxt "Password strength"
 msgid "Strength: Low"
-msgstr "القوة: منخفضة"
+msgstr "القوّة: منخفضة"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:148
 msgctxt "Password strength"
 msgid "Strength: Medium"
-msgstr "القوة: متوسطة"
+msgstr "القوّة: متوسطة"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:151
 msgctxt "Password strength"
 msgid "Strength: Good"
-msgstr "القوة: جيدة"
+msgstr "القوّة: جيدة"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:154
 msgctxt "Password strength"
 msgid "Strength: High"
-msgstr "القوة: عالي"
+msgstr "القوّة: قوية"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -664,37 +664,49 @@ msgstr "القوة: عالي"
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr "يساعدنا إرسال تقارير المشكلات التقنية في تحسين %s. يتم إرسال التقارير بشكل مجهول ويتم مسحها من البيانات الشخصية."
+msgstr "الإبلاغ عن المشاكل التقنية يساعدنا على تحسين %s. ترسل البلاغات مُجهّلة بدون أي معلومات شخصية."
 
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:116
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:175
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:250
+#. Translators: the parameter here is the name of a distribution,
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
+#. * detect any distribution.
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:120
+#, c-format
+msgid "Problem data will be collected by %s:"
+msgstr "بيانات المشاكل ستجمعها %s:"
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:121
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:256
 msgid "Privacy Policy"
 msgstr "سياسة الخصوصية"
 
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:286
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
+msgid "Uses Mozilla Location Service:"
+msgstr "تستخدم خدمة التموضع من موزيلا:"
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:292
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:1
 msgid "Privacy"
-msgstr "الخصوصية"
+msgstr "الخصوصيّة"
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:2
 msgid "Location Services"
-msgstr "خدمات المواقع"
+msgstr "خدمات التموضع"
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:3
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr "يسمح للتطبيقات بتحديد موقعك الجغرافي. ويظهر مؤشراً عندما تكون خدمات الموقع قيد الاستخدام."
+msgstr "اسمح للتطبيقات بمعرفة موضعك الجغرافي. سيظهر مؤشر عند استخدام خدمات التموضع."
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:4
 msgid "Automatic Problem Reporting"
-msgstr "الإبلاغ التلقائي عن المشكلات"
+msgstr "الإبلاغ التلقائي عن المشاكل"
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:5
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr "يمكن تغيير عناصر التحكم في الخصوصية في أي وقت من تطبيق الإعدادات."
+msgstr "يمكن تغيير إعدادات الخصوصية في أي وقت من تطبيق الإعدادات."
 
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:228
 msgid "No regions found"
@@ -712,41 +724,41 @@ msgstr "اختر بلدك أو منطقتك."
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:305
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:306
 #, c-format
-msgid "_Start using %s"
-msgstr "اب_دأ باستخدام %s"
+msgid "_Start Using %s"
+msgstr "اب_دأ استخدام %s"
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:335
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:336
 msgid "You're ready to try Endless OS"
 msgstr "أنت على استعداد لتجربة نظام تشغيل Endless OS"
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:337
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:338
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr "<b>ستفقد أي ملفات قمت بتنزيلها أو مستندات قمت بإنشائها وذلك عندما تقوم بإعادة تشغيل جهاز الكمبيوتر أو إيقاف تشغيله.</b>"
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:347
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:348
 msgid "Ready to Go"
 msgstr "انتهينا"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:1
-msgid "You're ready to go!"
-msgstr "أنت جاهز للبدء!"
+msgid "You’re ready to go!"
+msgstr "نحن مستعدون"
 
 #. Translators: "city, country"
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:268
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
-msgstr "%s, %s"
+msgstr "%s، %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
 msgid "UTC%:::z"
-msgstr "UTC%:::z"
+msgstr "جرينتش%:::z"
 
 #. Translators: This is the time format used in 12-hour mode.
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:309
@@ -774,7 +786,7 @@ msgstr "المنطقة الزمنية"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr "سيتم تعيين المنطقة الزمنية تلقائياً إذا كان العثور على موقعك ممكناً. كما يمكنك أيضاً البحث عن مدينة ما لتعيينها كمدينتك بنفسك."
+msgstr "ستحدد المنطقة الزمنية تلقائيًا إذا كان موضعك معروفًا. يمكنك أيضًا البحث عن المدينة بنفسك."
 
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:3
 msgid "Please search for a nearby city"
@@ -789,7 +801,7 @@ msgid ""
 "Proprietary software sources provide access to additional software, "
 "including web browsers and games. This software typically has restrictions "
 "on use and access to source code, and is not provided by %s."
-msgstr "تقدم مصادر البرمجيات الامتلاكية إمكانية الوصول إلى برامج إضافية، بما في ذلك متصفحات الويب والألعاب. يحتوي هذا البرنامج عادة على قيود على الاستخدام والوصول إلى شفرة المصدر، ولا يتم توفيره بواسطة %s."
+msgstr "توفر مصادر البرمجيات الاحتكارية الوصول إلى برمجيات إضافية، بما فيها متصفحات الوب و الألعاب. عادة ما يكون لهذه البرمجيات قيود على الاستخدام و الوصول إلى الكود المصدري، و لا تأتي من %s."
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.c:245
 msgid "Software Sources"
@@ -797,25 +809,25 @@ msgstr "مصادر البرمجيات"
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:1
 msgid "Additional Software Sources"
-msgstr "مصادر برامج إضافية"
+msgstr "مصادر البرمجيات الإضافية"
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:2
 msgid "<a href=\"more\">Find out more…</a>"
-msgstr "<a href=\"more\">اكتشف المزيد…</a>"
+msgstr "<a href=\"more\">اطّلع على المزيد…</a>"
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:3
 msgid "Proprietary Software Sources"
-msgstr "مصادر البرمجيات الامتلاكية"
+msgstr "مصادر البرمجيات الاحتكارية"
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:4
 msgid ""
 "Proprietary software typically has restrictions on how it can be used and on"
 " access to source code. This prevents anyone but the software owner from "
 "inspecting, improving or learning from its code."
-msgstr "وعادة ما يكون للبرامج الخاصة قيود على كيفية استخدامها وعلى الوصول إلى كود المصدر. هذا يمنع أي شخص عدا مالك البرنامج من فحص أو تحسين أو التعلم من الكود."
+msgstr "عادة ما يكون للبرمجيات الاحتكارية قيود على الاستخدام و الوصول إلى الكود المصدري. يمنع هذا أي شخص عدا مالك البرمجية من فحصها أو تحسينها أو التعلم من كودها المصدري."
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:5
 msgid ""
 "In contrast, Free Software can be freely run, copied, distributed, studied "
 "and modified."
-msgstr "في المقابل، البرمجيات الحرة يمكن تشغيلها ونسخها وتوزيعها ودراستها وتعديلها بشكل مجاني."
+msgstr "على النقيض منها، يمكن استخدام البرمجيات الحرة و نسخها و توزيعها و دراستها و تعديلها بحرية."
