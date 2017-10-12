@@ -1,89 +1,131 @@
-# Romanian translation for gnome-initial-setup.
-# Copyright (C) 2014 gnome-initial-setup's COPYRIGHT HOLDER
-# This file is distributed under the same license as the gnome-initial-setup package.
-# Bogdan Mințoi <mintoi.bogdan@gmail.com>, 2014.
-# Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2015.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Bogdan Mințoi <mintoi.bogdan@gmail.com>, 2014
+# Bogdan Mințoi <mintoi.bogdan@gmail.com>, 2014
+# Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2015
+# georgian balan <braila222@gmail.com>, 2016-2017
+# Roddy Shuler <roddy@endlessm.com>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"initial-setup&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-05-16 20:59+0000\n"
-"PO-Revision-Date: 2015-05-18 19:29+0200\n"
-"Last-Translator: Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>\n"
-"Language-Team: Gnome Romanian Translation Team\n"
-"Language: ro\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-05 12:49-0700\n"
+"PO-Revision-Date: 2017-09-26 12:29+0000\n"
+"Last-Translator: georgian balan <braila222@gmail.com>\n"
+"Language-Team: Romanian (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2);;\n"
-"X-Generator: Virtaal 0.7.1\n"
-"X-Project-Style: gnome\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 #: ../data/gnome-initial-setup.desktop.in.in.h:1
 #: ../data/gnome-initial-setup-first-login.desktop.in.in.h:1
 msgid "Initial Setup"
 msgstr "Configurare inițială"
 
-#: ../gnome-initial-setup/gis-assistant.c:384
+#: ../gnome-initial-setup/gis-assistant.c:310
 msgid "_Next"
 msgstr "_Următorul"
 
-#: ../gnome-initial-setup/gis-assistant.c:385
+#: ../gnome-initial-setup/gis-assistant.c:457
 msgid "_Accept"
 msgstr "_Acceptă"
 
-#: ../gnome-initial-setup/gis-assistant.c:386
+#: ../gnome-initial-setup/gis-assistant.c:458
 msgid "_Skip"
 msgstr "_Omite"
 
-#: ../gnome-initial-setup/gis-assistant.c:387
+#: ../gnome-initial-setup/gis-assistant.c:459
 msgid "_Previous"
 msgstr "_Precedentul"
 
-#: ../gnome-initial-setup/gis-assistant.c:388
+#: ../gnome-initial-setup/gis-assistant.c:460
 msgid "_Cancel"
 msgstr "_Anulează"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:196
+#: ../gnome-initial-setup/gis-driver.c:404
+#, c-format
+msgid "Failed to enter demo mode: %s"
+msgstr "Nu sa reușit introducerea modului demo %s"
+
+#: ../gnome-initial-setup/gis-page-util.c:418
+msgid "Disabled"
+msgstr "Dezactivat"
+
+#: ../gnome-initial-setup/gis-page-util.c:420
+#, c-format
+msgid "SD Card: %s"
+msgstr "Card SD: %s"
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:1
+msgid "Test Mode"
+msgstr "Modul de testare"
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:2
+msgid "Power Off"
+msgstr "Stinge"
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:3
+msgid "Enter Store Demo"
+msgstr "Intra in Magazinul Demo"
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:4
+msgid "OK"
+msgstr "OK"
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:5
+msgid "Cancel"
+msgstr "Anuleaza"
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:6
+msgid ""
+"This allows you to try Endless without activating an account. No changes or "
+"files will be saved, and the computer will return to a clean factory state "
+"when you power it off."
+msgstr "Acest lucru vă permite să încercați Endless fără a activa un cont. Nu vor fi salvate modificări sau fișiere și computerul va reveni la starea de fabrică curată când îl opriți."
+
+#: ../gnome-initial-setup/gnome-initial-setup.c:257
 msgid "Force existing user mode"
-msgstr ""
+msgstr "Activați modul de utilizator existent"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:202
+#: ../gnome-initial-setup/gnome-initial-setup.c:263
 msgid "- GNOME initial setup"
-msgstr ""
+msgstr "Setari initiale -GNOME"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:231
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:284
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
 msgid "About You"
 msgstr "Despre tine"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:180
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:182
 msgid "Failed to register account"
-msgstr ""
+msgstr "Esuat in creearea contului"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:374
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:376
 msgid "No supported way to authenticate with this domain"
-msgstr ""
+msgstr "Nici un mod suportat de autentificare cu acest domeniu"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:414
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:416
 msgid "Failed to join domain"
-msgstr ""
+msgstr "Esuat in adaugarea domeniului"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:482
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:484
 msgid "Failed to log into domain"
-msgstr ""
+msgstr "Esuat de autentificare in domeniu"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:1
 msgid "Enterprise Login"
-msgstr ""
+msgstr "Conectarea la întreprinderi"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:2
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device."
-msgstr ""
+msgstr "Înregistrarea pentru întreprinderi permite utilizarea unui cont de utilizator gestionat centralizat pe acest dispozitiv."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:3
 msgid "_Domain"
@@ -101,7 +143,7 @@ msgstr "_Parolă"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:6
 msgid "Enterprise domain or realm name"
-msgstr ""
+msgstr "Domeniu Enterprise"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:7
 msgid "C_ontinue"
@@ -109,14 +151,14 @@ msgstr "C_ontinuă"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:8
 msgid "Domain Administrator Login"
-msgstr ""
+msgstr "Autentificare domeniu administrator"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:9
 msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
+msgstr "Pentru a utiliza datele de conectare ale întreprinderii, acest calculator trebuie să fie înscris într-un domeniu. Roaga administratorul de rețea sa introduca aici parola de domeniu și alege un nume de computer unic pentru calculatorul tău."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:10
 msgid "_Computer"
@@ -130,12 +172,11 @@ msgstr "_Numele administratorului"
 msgid "Administrator Password"
 msgstr "Parola administratorului"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:203
-msgid "Are these the right details? You can change them if you want."
-msgstr "Sunt aceste detalii corecte? Le puteți schimba dacă doriți."
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:210
+msgid "Please check the name and username. You can choose a picture too."
+msgstr "Verificați numele și numele de utilizator. Puteți alege și o imagine."
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:404
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:3
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:416
 msgid "We need a few details to complete setup."
 msgstr "Avem nevoie de câteva detalii pentru a finaliza configurarea."
 
@@ -143,13 +184,21 @@ msgstr "Avem nevoie de câteva detalii pentru a finaliza configurarea."
 msgid "Avatar image"
 msgstr "Imagine de avatar"
 
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:3
+msgid "Please provide a name and username. You can choose a picture too."
+msgstr "Furnizați un nume și un nume de utilizator. Puteți alege și o imagine."
+
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:4
 msgid "_Full Name"
 msgstr "_Numele complet"
 
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:6
+msgid "Password protected"
+msgstr "Protectie cu parola"
+
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:1
 msgid "Set Up _Enterprise Login"
-msgstr ""
+msgstr "Configurați _Logarea Intreprinderii"
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:246
 msgid "Disable image"
@@ -161,18 +210,18 @@ msgstr "Faceți o fotografie..."
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
-msgstr ""
+msgstr "Nu se poate asocia acestui tip de domeniu automat"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:373
 #, c-format
 msgid "No such domain or realm found"
-msgstr ""
+msgstr "Nici un domeniu gasit"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:782
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:796
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
-msgstr ""
+msgstr "Nu se poate autentifica ca %s la domeniul %s"
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:788
 msgid "Invalid password, please try again"
@@ -183,33 +232,82 @@ msgstr "Parolă nevalidă, încercați din nou"
 msgid "Couldn't connect to the %s domain: %s"
 msgstr "Nu s-a putut conecta la domeniul %s: %s"
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:245
+#: ../gnome-initial-setup/pages/account/um-utils.c:247
 #, c-format
 msgid "A user with the username '%s' already exists."
 msgstr "Există deja un alt utilizator cu numele de utilizator „%s”."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:249
+#: ../gnome-initial-setup/pages/account/um-utils.c:251
 #, c-format
 msgid "The username is too long."
 msgstr "Numele de utilizator este prea lung."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:252
+#: ../gnome-initial-setup/pages/account/um-utils.c:254
 msgid "The username cannot start with a '-'."
 msgstr "Numele de utilizator nu poate începe cu „-”."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:255
+#: ../gnome-initial-setup/pages/account/um-utils.c:257
 msgid ""
 "The username should only consist of lower and upper case letters from a-z, "
 "digits and any of characters '.', '-' and '_'."
-msgstr ""
-"Numele de utilizator ar trebui să conțină doar litere mici și majuscule de "
-"la a-z, numere și oricare dintre caracterele „.”, „-”, și „_”."
+msgstr "Numele de utilizator ar trebui să conțină doar litere mici și majuscule de la a-z, numere și oricare dintre caracterele „.”, „-”, și „_”."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:259
+#: ../gnome-initial-setup/pages/account/um-utils.c:261
 msgid "This will be used to name your home folder and can't be changed."
-msgstr ""
-"Acesta va fi folosit pentru denumirea dosarului personal și nu poate fi "
-"modificat."
+msgstr "Acesta va fi folosit pentru denumirea dosarului personal și nu poate fi modificat."
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.c:269
+msgid "Display"
+msgstr "Afisaj"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:1
+msgid "Adjust for TV screen"
+msgstr "Ajusteaza ecran pentru TV"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:2
+msgid "Do you see this at the bottom right corner of your screen?"
+msgstr "Vezi asta in coltul jos din dreapta a ecranului?"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:3
+msgid "I see it"
+msgstr "O vad"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:4
+msgid "I do not see it. Shrink screen to fit TV."
+msgstr "Nu o vad.Micsoreaza ecran pentru TV."
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:293
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:413
+msgid "Terms of Use"
+msgstr "Termeni de Utilizare"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:298
+msgid "Third Party Software"
+msgstr "Soft tertiar"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:406
+msgid "_Accept and Continue"
+msgstr "_Accepta si continua"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
+msgid "Please read the following terms of use carefully"
+msgstr "Cititi urmatorii termeni cu atentie"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
+msgid ""
+"By clicking \"Accept and continue,\" you acknowledge that you have read, "
+"understood, and agree to be bound by the following terms and conditions."
+msgstr "Daca dai click pe \"Accepta si contiuna\",iei la cunostina ca au citit,inteles si ai fost de acord cu termenii si conditiile de utilizare."
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:3
+msgid "Help make Endless better for everyone"
+msgstr "Ajuta-ne sa facem Endless mai bun."
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:4
+msgid ""
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr "Salveaza si trimite automat statistici si rapoarte de probleme catre Endless.Toate datele sunt anonime."
 
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.c:301
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.ui.h:1
@@ -220,84 +318,152 @@ msgstr "Termenii licenței"
 msgid ""
 "I have _agreed to the terms and conditions in this end user license "
 "agreement."
-msgstr ""
-"Sunt de _acord cu termenii și condițiile prezentate în acești termeni ai "
-"licenței."
+msgstr "Sunt de _acord cu termenii și condițiile prezentate în acești termeni ai licenței."
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.c:87
 msgid "Add Account"
 msgstr "Adaugă cont"
 
-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:335
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:336
 msgid "Online Accounts"
 msgstr "Conturi online"
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:1
 msgid "Connect Your Online Accounts"
-msgstr ""
+msgstr "Conectați conturile dvs. online"
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:2
 msgid ""
-"Connecting your accounts will allow you to easily access your email, online "
-"calendar, contacts, documents and photos."
-msgstr ""
-"Conectarea la conturile dumneavoastră vă permite să vă accesați cu ușurință "
-"adresa de poștă electronică, contactele, calendarul, documentele și "
-"fotografiile."
+"Connect your accounts to easily access your email, online calendar, "
+"contacts, documents and photos."
+msgstr "Conectați-vă conturile pentru a accesa cu ușurință e-mailul, calendarul online, contactele, documentele și fotografiile."
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:3
-msgid "You can review your online accounts (and add others) after setup."
-msgstr ""
-"Vă puteți inspecta conturile online (și adăuga altele) după configurare."
+msgid ""
+"Accounts can be added and removed at any time from the Settings application."
+msgstr "Conturile pot fi adăugate și eliminate în orice moment din aplicația Setări."
 
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:241
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
 msgstr "Previzualizează"
 
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:300
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:212
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:291
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "Mai mult…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:322
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
-msgstr ""
+msgstr "Nici o intrare gasita"
 
-#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:363
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
+msgid "Your keyboard layout seems to be:"
+msgstr "Structura tastaturii tale se pare ca este:"
+
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:289
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:2
+msgid "Please press one of the following keys:"
+msgstr "Apasa una din urmatoarele taste:"
+
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:290
+msgid "Is the following key present on your keyboard?"
+msgstr "Exista aceasta tasta pe tastatura ta?"
+
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:400
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:1
 msgid "Typing"
-msgstr ""
+msgstr "Scrie"
 
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
 msgid "Select your keyboard layout or an input method."
 msgstr "Selectați aranjamentul tastaturii sau o metodă de intrare."
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:228
-msgid "No languages found"
-msgstr ""
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:3
+msgid "Help Detect My Keyboard Layout"
+msgstr "Ajutor in detectarea aspectului tastaturii"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:282
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
+msgid "Detect Keyboard Layout…"
+msgstr "Detecteaza aspectul tastaturii"
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
+msgid "_Select"
+msgstr "_Selecteaza"
+
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:307
+msgid "No languages found"
+msgstr "Nici o limba gasita"
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:267
+msgid "Welcome to Store Demo"
+msgstr "Bine ați venit la Magazinul Demo"
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:272
 msgid "Welcome"
 msgstr "Bine ați venit"
 
-#: ../gnome-initial-setup/pages/language/gis-welcome-widget.c:119
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:275
+msgid "Enter Store Demo…"
+msgstr "Intrati in Magazinul Demo..."
+
+#. Translators: This is meant to be a warm, engaging welcome message,
+#. * like greeting somebody at the door. If the exclamation mark is not
+#. * suitable for this in your language you may replace it.
+#: ../gnome-initial-setup/pages/language/gis-welcome-widget.c:123
 msgid "Welcome!"
 msgstr "Bine ați venit!"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:307
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr "Eroare la pornirea reformatarii: %s"
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:281
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
+msgid "Try Endless OS by running it from the USB Stick."
+msgstr "Incearca Endless OS direct de pe un Stick USB"
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:282
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
+msgid "Try Endless OS by running it from the DVD."
+msgstr "Încercați sistemul de operare Endless rulând-ul de pe DVD."
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:283
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
+msgid "Reformat this computer with Endless OS."
+msgstr "Reformateaza acest computer cu Endless OS"
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:284
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
+msgid "Try It"
+msgstr "Incearcal"
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:285
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:5
+msgid "Reformat"
+msgstr "Reformateaza"
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:287
+msgid "Try or Reformat"
+msgstr "Încercați sau Reformați"
+
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:296
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "Altele…"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:358
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:355
+msgid "Wireless networking is disabled"
+msgstr "Rețeaua fără fir este dezactivată"
+
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:361
 msgid "Checking for available wireless networks"
 msgstr "Se verifică disponibilitatea rețelelor fără fir"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:614
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:625
 msgid "Network"
 msgstr "Rețea"
 
@@ -310,24 +476,25 @@ msgid ""
 "Connecting to the Internet will enable you to set the time, add your "
 "details, and enable you to access your email, calendar, and contacts. It is "
 "also necessary for enterprise login accounts."
-msgstr ""
-"Conectarea la internet vă permite să configurați ora, să adăugați detalii, "
-"și să vă accesați contul de poștă electronică, calendarul, și contactele. "
-"Mai este necesară și pentru autentificarea la conturi de întreprindere."
+msgstr "Conectarea la internet vă permite să configurați ora, să adăugați detalii, și să vă accesați contul de poștă electronică, calendarul, și contactele. Mai este necesară și pentru autentificarea la conturi de întreprindere."
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
 msgid "No wireless available"
 msgstr "Nicio rețea fără fir disponibilă"
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:130
+#: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:4
+msgid "Turn On"
+msgstr "Porneste"
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:170
 msgid "This is a weak password."
 msgstr "Aceasta este o parolă slabă."
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:140
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:184
 msgid "The passwords do not match."
 msgstr "Parolele nu se potrivesc."
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:260
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:348
 msgid "Password"
 msgstr "Parolă"
 
@@ -343,21 +510,29 @@ msgstr "Aveți grijă să nu pierdeți parola."
 msgid "_Verify"
 msgstr "_Verifică"
 
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:5
+msgid "Show password"
+msgstr "Arata parola"
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:6
+msgid "Password _reminder"
+msgstr "Reamintirea _parolei"
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:7
+msgid "Password reminder will be shown in case you forget your password."
+msgstr "Va fi afișată memento-ul pentru parolă în cazul în care vă uitați parola."
+
 #: ../gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
 msgid "The new password needs to be different from the old one."
 msgstr "Parola nouă trebuie să fie diferită de cea veche."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:83
-#| msgctxt "Password hint"
-#| msgid "Try changing some letters and numbers."
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
-"Această parolă este foarte asemănătoare cu cea precedentă. Încercați să "
-"modificați câteva litere și numere."
+msgstr "Această parolă este foarte asemănătoare cu cea precedentă. Încercați să modificați câteva litere și numere."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:85
 #: ../gnome-initial-setup/pages/password/pw-utils.c:93
@@ -365,31 +540,28 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
-"Această parolă este foarte asemănătoare cu cea precedentă. Încercați să "
-"modificați parola încă un pic."
+msgstr "Această parolă este foarte asemănătoare cu cea precedentă. Încercați să modificați parola încă un pic."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr ""
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr "Aceasta este o parolă slabă. O parolă fără numele dvs. de utilizator ar fi mai puternică."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr ""
+msgstr "Aceasta este o parolă slabă. Încercați să evitați utilizarea numelui dvs. în parolă."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
+msgstr "Aceasta este o parolă slabă. Încercați să evitați unele dintre cuvintele incluse în parolă."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:95
-#| msgctxt "Password hint"
-#| msgid "Try to avoid common words."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
 msgstr "Aceasta este o parolă slabă. Încercați să evitați cuvinte des folosite."
@@ -397,25 +569,19 @@ msgstr "Aceasta este o parolă slabă. Încercați să evitați cuvinte des folo
 #: ../gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr ""
+msgstr "Aceasta este o parolă slabă. Încercați să evitați reordonarea cuvintelor existente."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:99
-#| msgctxt "Password hint"
-#| msgid "Try to use more numbers."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
 msgstr "Aceasta este o parolă slabă. Încercați să folosiți mai multe numere."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:101
-#| msgctxt "Password hint"
-#| msgid "Try to use more uppercase letters."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
 msgstr "Aceasta este o parolă slabă. Încercați să folosiți mai multe majuscule."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:103
-#| msgctxt "Password hint"
-#| msgid "Try to use more uppercase letters."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
 msgstr "Aceasta este o parolă slabă. Încercați să folosiți mai multe minuscule."
@@ -425,40 +591,36 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
+msgstr "Aceasta este o parolă slabă. Încercați să utilizați mai multe caractere speciale, cum ar fi semnele de punctuație."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
+msgstr "Aceasta este o parolă slabă. Încercați să utilizați un amestec de litere, numere și semne de punctuație."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr ""
+msgstr "Aceasta este o parolă slabă. Încercați să evitați repetarea aceluiași caracter."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
+msgstr "Aceasta este o parolă slabă. Încercați să evitați repetarea aceluiași tip de caracter: trebuie să amestecați literele, numerele și semnele de punctuație."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr ""
+msgstr "Aceasta este o parolă slabă. Încercați să evitați secvențe precum 1234 sau abcd."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:115
-#| msgctxt "Password hint"
-#| msgid "Try to add more letters, numbers and symbols."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to add more letters, numbers and symbols."
-msgstr ""
-"Aceasta este o parolă slabă. Încercați să folosiți mai multe litere, numere "
-"și simboluri."
+msgstr "Aceasta este o parolă slabă. Încercați să folosiți mai multe litere, numere și simboluri."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
@@ -470,70 +632,72 @@ msgctxt "Password hint"
 msgid ""
 "Good password! Adding more letters, numbers and punctuation will make it "
 "stronger."
-msgstr ""
+msgstr "Parola buna! Adăugarea mai multor litere, numere și punctuație o va face mai puternică."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:141
 msgctxt "Password strength"
 msgid "Strength: Weak"
-msgstr ""
+msgstr "Putere: Slaba"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:145
 msgctxt "Password strength"
 msgid "Strength: Low"
-msgstr ""
+msgstr "Putere: Scazuta"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:148
 msgctxt "Password strength"
 msgid "Strength: Medium"
-msgstr ""
+msgstr "Putere: Medie"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:151
 msgctxt "Password strength"
 msgid "Strength: Good"
-msgstr ""
+msgstr "Putere: Buna"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:154
 msgctxt "Password strength"
 msgid "Strength: High"
-msgstr ""
+msgstr "Putere: Ridicata"
 
 #. Translators: the parameter here is the name of a distribution,
-#. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:109
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:110
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
+msgstr "Trimiterea rapoartelor de probleme tehnice ne ajută să îmbunătățim %s. Rapoartele sunt trimise anonim și sunt șterse de date cu caracter personal."
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:116
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:238
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:175
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:250
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Politica de confidentialitate"
 
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:286
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:1
 msgid "Privacy"
-msgstr ""
+msgstr "Confidentialitate"
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:2
-msgid "Privacy controls can be changed at any time from Settings."
-msgstr ""
+msgid "Location Services"
+msgstr "Servicii de Localizare"
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:3
-msgid "Location Services"
-msgstr ""
-
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:4
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
+msgstr "Permite aplicațiilor să vă determine locația geografică. O indicație este afișată când se utilizează serviciile de localizare."
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:4
+msgid "Automatic Problem Reporting"
+msgstr "Raportarea automată a problemelor"
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:5
-msgid "Automatic Problem Reporting"
-msgstr ""
+msgid ""
+"Privacy controls can be changed at any time from the Settings application."
+msgstr "Comenzile de confidențialitate pot fi modificate oricând din aplicația Setări."
 
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:228
 msgid "No regions found"
@@ -551,48 +715,110 @@ msgstr "Alegeți țara sau regiunea."
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:328
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:305
 #, c-format
 msgid "_Start using %s"
 msgstr "Î_ncepeți să utilizați %s"
 
-#. Translators: the parameter here is the name of a distribution,
-#. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
-#. * detect any distribution.
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.c:335
-#, c-format
-msgid ""
-"Thank you for choosing %s.\n"
-"We hope that you love it."
-msgstr ""
-"Vă mulțumim că ați ales %s.\n"
-"Sperăm să vă placă."
+msgid "You're ready to try Endless OS"
+msgstr "Sunteți gata să încercați sistemul de operare Endless"
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:361
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:337
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr "<b>Orice fisier pe care in descarci sau document creeat va fi pierdut cand restartezi sau inchizi computerul"
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:347
 msgid "Ready to Go"
 msgstr "Gata de utilizare"
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:1
-msgid "You're all set!"
-msgstr "Totul este pregătit!"
+msgid "You're ready to go!"
+msgstr "Sunteți gata să începeti"
 
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:183
+#. Translators: "city, country"
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:268
 #, c-format
-msgid ""
-"We think that your time zone is %s. Press Next to continue or search for a "
-"city to manually set the time zone."
-msgstr ""
-"Bănuim că fusul dumneavoastră orar este %s. Apăsați Următorul pentru a "
-"continua sau căutați un oraș pentru a configura manual fusul orar."
+msgctxt "timezone loc"
+msgid "%s, %s"
+msgstr "%s, %s"
 
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:489
+#. Translators: UTC here means the Coordinated Universal Time.
+#. * %:::z will be replaced by the offset from UTC e.g. UTC+02
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
+msgid "UTC%:::z"
+msgstr "UTC%:::z"
+
+#. Translators: This is the time format used in 12-hour mode.
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:309
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: This is the time format used in 24-hour mode.
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:312
+msgid "%R"
+msgstr "%R"
+
+#. Translators: "timezone (utc shift)"
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:315
+#, c-format
+msgctxt "timezone map"
+msgid "%s (%s)"
+msgstr "%s (%s)"
+
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:469
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:1
 msgid "Time Zone"
 msgstr "Fus orar"
 
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:2
+msgid ""
+"The time zone will be set automatically if your location can be found. You "
+"can also search for a city to set it yourself."
+msgstr "Fusul orar va fi setat automat dacă locația dvs. poate fi găsită. De asemenea, puteți căuta un oraș pentru a-l seta singur."
+
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:3
 msgid "Please search for a nearby city"
 msgstr "Căutați un oraș apropiat"
 
-#~ msgid "Cancel"
-#~ msgstr "Anulează"
+#. Translators: the parameter here is the name of a distribution,
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
+#. * detect any distribution.
+#: ../gnome-initial-setup/pages/software/gis-software-page.c:112
+#, c-format
+msgid ""
+"Proprietary software sources provide access to additional software, "
+"including web browsers and games. This software typically has restrictions "
+"on use and access to source code, and is not provided by %s."
+msgstr "Proprietățile sursă software oferă acces la software suplimentar, inclusiv browsere web și jocuri. Acest software are de obicei restricții privind utilizarea și accesul la codul sursă și nu este furnizat de %s."
+
+#: ../gnome-initial-setup/pages/software/gis-software-page.c:245
+msgid "Software Sources"
+msgstr "Surse Software"
+
+#: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:1
+msgid "Additional Software Sources"
+msgstr "Surse Software Aditionale"
+
+#: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:2
+msgid "<a href=\"more\">Find out more…</a>"
+msgstr "<a href=\"more\">Afla mai multe...</a>"
+
+#: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:3
+msgid "Proprietary Software Sources"
+msgstr "Proprietăți de Surse Software"
+
+#: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:4
+msgid ""
+"Proprietary software typically has restrictions on how it can be used and on"
+" access to source code. This prevents anyone but the software owner from "
+"inspecting, improving or learning from its code."
+msgstr "Software-ul proprietar are, de obicei, restricții privind modul în care poate fi utilizat și accesul la codul sursă. Acest lucru împiedică pe oricine, dar nu si proprietarul de software, să inspecteze, să îmbunătățească sau să învețe din codul său."
+
+#: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:5
+msgid ""
+"In contrast, Free Software can be freely run, copied, distributed, studied "
+"and modified."
+msgstr "În schimb, software-ul liber poate fi rulat, copiat, distribuit, studiat și modificat."
