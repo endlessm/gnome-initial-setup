@@ -258,6 +258,14 @@ main (int argc, char *argv[])
     return EXIT_SUCCESS;
   }
 
+  /* Upstream has "existing user" mode for new user accounts, but we don't
+     want that in Endless, so skip it. In the future, we should be launching
+     the tutorial right from here, once it's again available. */
+  if (get_mode () == GIS_DRIVER_MODE_EXISTING_USER) {
+    gis_ensure_stamp_files ();
+    return EXIT_SUCCESS;
+  }
+
 #ifdef HAVE_CHEESE
   cheese_gtk_init (NULL, NULL);
 #endif
