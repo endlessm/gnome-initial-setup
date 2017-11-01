@@ -288,6 +288,18 @@ main (int argc, char *argv[])
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
+  mode = get_mode ();
+  driver = gis_driver_new (mode);
+
+  /* Upstream has "existing user" mode for new user accounts, but we don't
+     want that in Endless, so skip it. In the future, we should be launching
+     the tutorial right from here, once it's again available. */
+  if (get_mode () == GIS_DRIVER_MODE_EXISTING_USER) {
+    gis_ensure_stamp_files (driver);
+    g_message ("Skipping gnome-initial-setup for existing user");
+    return EXIT_SUCCESS;
+  }
+
 #ifdef HAVE_CHEESE
   cheese_gtk_init (NULL, NULL);
 #endif
@@ -302,7 +314,6 @@ main (int argc, char *argv[])
     g_message ("Production mode: changes will be saved to disk");
 
   skipped_pages = g_ptr_array_new_with_free_func ((GDestroyNotify) gtk_widget_destroy);
-  mode = get_mode ();
 
   /* When we are running as the gnome-initial-setup user we
    * dont have a normal user session and need to initialize
@@ -311,8 +322,6 @@ main (int argc, char *argv[])
    */
   if (mode == GIS_DRIVER_MODE_NEW_USER && !gis_get_mock_mode ())
     gis_ensure_login_keyring ();
-
-  driver = gis_driver_new (mode);
 
   /* We only do this in existing-user mode, because if gdm launches us
    * in new-user mode and we just exit, gdm's special g-i-s session
