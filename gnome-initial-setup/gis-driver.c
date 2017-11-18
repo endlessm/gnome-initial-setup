@@ -420,6 +420,37 @@ create_demo_user (GisDriver *driver, GError **error)
   return TRUE;
 }
 
+static gboolean
+configure_demo_mode_reset_tracking_id (GError **error)
+{
+  g_autoptr(GDBusProxy) proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SYSTEM,
+                                                               G_DBUS_PROXY_FLAGS_NONE,
+                                                               NULL,
+                                                               "com.endlessm.Metrics",
+                                                               "/com/endlessm/Metrics",
+                                                               "com.endlessm.Metrics.EventRecorderServer",
+                                                               NULL,
+                                                               error);
+
+  g_autoptr(GVariant) rv = NULL;
+
+  if (!proxy)
+    return FALSE;
+
+  rv = g_dbus_proxy_call_sync (proxy,
+                               "ResetTrackingId",
+                               NULL,
+                               G_DBUS_CALL_FLAGS_NONE,
+                               -1,
+                               NULL,
+                               error);
+
+  if (!rv)
+    return FALSE;
+
+  return TRUE;
+}
+
 #define GSD_POWER_SCHEMA "org.gnome.settings-daemon.plugins.power"
 #define GSD_SLEEP_INACTIVE_AC_TYPE "sleep-inactive-ac-type"
 #define GSD_SLEEP_INACTIVE_AC_TIMEOUT "sleep-inactive-ac-timeout"
@@ -499,9 +530,14 @@ configure_demo_mode_replace_chrome_with_chromium (void)
 static gboolean
 setup_demo_config (GisDriver *driver, GError **error)
 {
-  gchar *stamp_file = g_build_filename (g_get_user_config_dir (),
-                                        "eos-demo-mode",
-                                        NULL);
+  gchar *stamp_file = NULL;
+
+  if (!configure_demo_mode_reset_tracking_id (error))
+    return FALSE;
+
+  stamp_file = g_build_filename (g_get_user_config_dir (),
+                                 "eos-demo-mode",
+                                 NULL);
 
   if (!g_file_set_contents (stamp_file, "1", sizeof(char), error))
     {

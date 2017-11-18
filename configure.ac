@@ -31,6 +31,7 @@ AC_SUBST(VENDOR_CONF_FILE)
 
 LIBNM_REQUIRED_VERSION=1.2
 LIBNMA_REQUIRED_VERSION=1.0
+EOSMETRICS_REQUIRED_VERSION=0.5.0
 GLIB_REQUIRED_VERSION=2.53.0
 GTK_REQUIRED_VERSION=3.11.3
 PANGO_REQUIRED_VERSION=1.32.5
@@ -49,6 +50,7 @@ PKG_CHECK_MODULES(INITIAL_SETUP,
                   gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION
                   fontconfig
                   gweather-3.0
+                  eosmetrics-0 >= $EOSMETRICS_REQUIRED_VERSION
                   goa-1.0
                   goa-backend-1.0
                   gtk+-3.0 >= $GTK_REQUIRED_VERSION
