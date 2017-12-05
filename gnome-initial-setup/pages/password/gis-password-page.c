@@ -48,6 +48,8 @@ struct _GisPasswordPagePrivate
   GtkWidget *confirm_explanation;
   GtkWidget *header;
 
+  GDBusProxy *input_source_manager;
+
   gboolean valid_confirm;
   gboolean valid_password;
   guint timeout_id;
@@ -191,10 +193,34 @@ gis_password_page_save_data (GisPage  *gis_page,
 }
 
 static void
+shell_enable_password_mode (GisPasswordPage *page, gboolean enable)
+{
+  GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
+  GError *error = NULL;
+
+  if (!priv->input_source_manager)
+    return;
+
+  g_dbus_proxy_call_sync (priv->input_source_manager,
+                          "Set",
+                          g_variant_new_parsed ("('org.gnome.Shell.InputSourceManager', 'PasswordModeEnabled', %v)",
+                                                g_variant_new_boolean (enable)),
+                          G_DBUS_CALL_FLAGS_NONE, -1,
+                          NULL, &error);
+
+  if (error != NULL) {
+    g_critical ("Unable to set PasswordMode: %s", error->message);
+    g_error_free (error);
+  }
+}
+
+static void
 gis_password_page_shown (GisPage *gis_page)
 {
   GisPasswordPage *page = GIS_PASSWORD_PAGE (gis_page);
   GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
+
+  shell_enable_password_mode (page, TRUE);
 
   gtk_widget_grab_focus (priv->password_entry);
 }
@@ -370,6 +396,14 @@ gis_password_page_constructed (GObject *object)
   validate (page);
   update_header (page);
 
+  priv->input_source_manager = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                                              G_DBUS_PROXY_FLAGS_NONE,
+                                                              NULL,
+                                                              "org.gnome.Shell.InputSourceManager",
+                                                              "/org/gnome/Shell/InputSourceManager",
+                                                              "org.freedesktop.DBus.Properties",
+                                                              NULL, NULL);
+
   /* This callback shows the page widget conditionally on if it's needed */
   username_or_passwordless_changed (page);
 }
@@ -416,8 +450,15 @@ gis_password_page_set_property (GObject      *object,
 static void
 gis_password_page_dispose (GObject *object)
 {
+  GisPasswordPage *page = GIS_PASSWORD_PAGE (object);
+  GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
+
   GtkSettings *settings = gtk_settings_get_default ();
   g_object_set (G_OBJECT (settings), "gtk-entry-password-hint-timeout", 0, NULL);
+
+  shell_enable_password_mode (page, FALSE);
+
+  g_clear_object (&priv->input_source_manager);
 
   if (GIS_PAGE (object)->driver) {
     g_signal_handlers_disconnect_by_func (GIS_PAGE (object)->driver,
