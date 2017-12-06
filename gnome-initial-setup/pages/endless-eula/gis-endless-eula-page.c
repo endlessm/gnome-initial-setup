@@ -30,6 +30,7 @@
 
 #include "endless-eula-resources.h"
 
+#include <eosmetrics/eosmetrics.h>
 #include <evince-view.h>
 #include <evince-document.h>
 #include <glib/gi18n.h>
@@ -409,10 +410,11 @@ gis_endless_eula_page_constructed (GObject *object)
 
   /* Hide the page in demo mode; we still want to create it, since we
    * want the save_data implementation to run at the end of the FBE.
-   * Also, make sure metrics are off in that case.
+   *
+   * We'll want metrics to remain on, except that the tracking-id will
+   * be reset.
    */
   demo_mode = gis_driver_is_in_demo_mode (GIS_PAGE (page)->driver);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->metrics_checkbutton), !demo_mode);
   gtk_widget_set_visible (GTK_WIDGET (page), !demo_mode);
 }
 
@@ -423,10 +425,33 @@ gis_endless_eula_page_locale_changed (GisPage *page)
   reload_terms_view (GIS_ENDLESS_EULA_PAGE (page));
 }
 
+#define DEMO_MODE_ENTERED_METRIC "c75af67f-cf2f-433d-a060-a670087d93a1"
+
+void
+report_demo_mode_metric (void)
+{
+  EmtrEventRecorder *recorder = emtr_event_recorder_get_default ();
+  GVariantDict dict;
+
+  g_variant_dict_init (&dict, NULL);
+
+  emtr_event_recorder_record_event (recorder,
+                                    DEMO_MODE_ENTERED_METRIC,
+                                    g_variant_dict_end (&dict));
+}
+
+
 static void
 gis_endless_eula_page_save_data (GisPage *page)
 {
+  gboolean demo_mode = FALSE;
+
   sync_metrics_active_state (GIS_ENDLESS_EULA_PAGE (page));
+
+  demo_mode = gis_driver_is_in_demo_mode (GIS_PAGE (page)->driver);
+
+  if (demo_mode)
+    report_demo_mode_metric ();
 }
 
 static void
