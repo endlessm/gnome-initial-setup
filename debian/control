@@ -8,6 +8,7 @@ Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
 Uploaders: Jeremy Bicha <jbicha@ubuntu.com>, Jordi Mallach <jordi@debian.org>, Laurent Bigonville <bigon@debian.org>
 Build-Depends: debhelper (>= 10),
+               eos-metrics-0-dev (>= 0.5.0),
                geoclue-2.0 (>= 2.3.1),
                gnome-common,
                gnome-pkg-tools (>= 0.13),
