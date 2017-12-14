@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <template class="GisSummaryPage" parent="GisPage">
+    <property name="margin-start">0</property>
+    <property name="margin-top">0</property>
+    <property name="margin-bottom">0</property>
+    <property name="margin-end">0</property>
+    <child>
+      <object class="GtkFrame" id="bg_frame">
+        <property name="visible">True</property>
+        <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+        <property name="shadow-type">none</property>
+        <child>
+          <object class="GtkBox" id="box">
+            <property name="visible">True</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="orientation">vertical</property>
+            <child type="center">
+              <object class="GtkImage" id="image">
+                <property name="visible">True</property>
+                <property name="resource">/org/gnome/initial-setup/ready-to-go.svg</property>
+                <property name="width_request">96</property>
+                <property name="height_request">96</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="start_button">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <style>
+                  <class name="suggested-action"/>
+                </style>
+                <child>
+                  <object class="GtkLabel" id="start_button_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="xpad">4</property>
+                    <property name="ypad">4</property>
+                    <property name="use_underline">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="pack_type">end</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="tagline">
+                <property name="visible">True</property>
+                <property name="justify">center</property>
+              </object>
+              <packing>
+                <property name="pack_type">end</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="title">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">You’re ready to go!</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                  <attribute name="scale" value="1.8"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="pack_type">end</property>
+              </packing>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>
