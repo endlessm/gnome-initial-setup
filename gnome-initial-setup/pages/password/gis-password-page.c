@@ -60,7 +60,7 @@ typedef struct _GisPasswordPagePrivate GisPasswordPagePrivate;
 G_DEFINE_TYPE_WITH_PRIVATE (GisPasswordPage, gis_password_page, GIS_TYPE_PAGE);
 
 static void
-password_visibility_toggled (GisPasswordPage  *page)
+password_visibility_toggled (GisAccountPage  *page)
 {
   GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
   GtkWidget *password_entry = priv->password_entry;
