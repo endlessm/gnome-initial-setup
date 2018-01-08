@@ -45,8 +45,6 @@ struct _GisLiveChooserPagePrivate
   GtkWidget *try_button;
   GtkWidget *reformat_button;
 
-  GCancellable     *cancellable;
-
   ActUserManager   *act_client;
 };
 
@@ -231,9 +229,6 @@ gis_live_chooser_page_finalize (GObject *object)
 {
   GisLiveChooserPage *page = (GisLiveChooserPage *)object;
   GisLiveChooserPagePrivate *priv = gis_live_chooser_page_get_instance_private (page);
-
-  g_cancellable_cancel (priv->cancellable);
-  g_clear_object (&priv->cancellable);
 
   G_OBJECT_CLASS (gis_live_chooser_page_parent_class)->finalize (object);
 }
