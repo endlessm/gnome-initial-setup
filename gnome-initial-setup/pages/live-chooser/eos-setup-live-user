@@ -36,6 +36,8 @@ DESKTOP_GRID_ID = 'desktop'
 EOS_INSTALLER = 'com.endlessm.Installer.desktop'
 GDM_APPS_DIR = '/usr/share/gdm/greeter/applications'
 EOS_INSTALLER_PATH = os.path.join(GDM_APPS_DIR, EOS_INSTALLER)
+LOCAL_APPS_DIR = '/usr/local/share/applications'
+LOCAL_DESKTOP_PATH = os.path.join(LOCAL_APPS_DIR, EOS_INSTALLER)
 
 GOOGLE_CHROME = 'google-chrome.desktop'
 CHROMIUM_BROWSER = 'chromium-browser.desktop'
@@ -91,7 +93,6 @@ class SetupLiveUser(object):
         return '\n'.join(keyfile_lines)
 
     def prepare(self):
-        self.add_symlink()
         self.update_favorite_apps()
         self.disallow_app_center_updates()
 
@@ -137,20 +138,6 @@ class SetupLiveUser(object):
         For debugging purposes only.'''
         print(self.format_keyfile())
 
-    def add_symlink(self):
-        """eos-installer is shipped in all images, but its desktop file is
-        (deliberately) only present in the GDM greeter's environment. For
-        image-booted live sessions, we symlink it into place."""
-        user_apps_dir = os.path.join(GLib.get_user_data_dir(), 'applications')
-        user_desktop_path = os.path.join(user_apps_dir, EOS_INSTALLER)
-
-        if not os.path.exists(user_desktop_path):
-            log.info('ensuring %s exists', user_apps_dir)
-            os.makedirs(user_apps_dir, exist_ok=True)
-
-            log.info('symlinking %s to %s', EOS_INSTALLER, user_desktop_path)
-            os.symlink(EOS_INSTALLER_PATH, user_desktop_path)
-
     def update_favorite_apps(self):
         updates = self.updates[SHELL_SCHEMA]
         favorite_apps = updates.get_settings().get_strv(FAVORITE_APPS_KEY)
@@ -176,6 +163,18 @@ class SetupLiveUser(object):
 
     def disallow_app_center_updates(self):
         self.update(GS_SCHEMA, ALLOW_UPDATES, GLib.Variant('b', False))
+
+
+def install_desktop_file():
+    """eos-installer is shipped in all images, but its desktop file is
+    (deliberately) only present in the GDM greeter's environment. For
+    image-booted live sessions, we symlink it into place."""
+    if not os.path.exists(LOCAL_DESKTOP_PATH):
+        log.info('ensuring %s exists', LOCAL_APPS_DIR)
+        os.makedirs(LOCAL_APPS_DIR, exist_ok=True)
+
+        log.info('symlinking %s to %s', EOS_INSTALLER, LOCAL_DESKTOP_PATH)
+        os.symlink(EOS_INSTALLER_PATH, LOCAL_DESKTOP_PATH)
 
 
 def dq(s):
@@ -277,6 +276,7 @@ def main():
         else:
             raise Exception('Unexpected --output value ' + a.output)
     elif a.mode == 'system':
+        install_desktop_file()
         remove_chrome_from_icon_grids()
         prepend_installer_to_icon_grid()
 
