@@ -35,8 +35,7 @@ ICON_GRID_DIR = '/var/lib/eos-image-defaults/icon-grid'
 DESKTOP_GRID_ID = 'desktop'
 
 EOS_INSTALLER = 'com.endlessm.Installer.desktop'
-GDM_APPS_DIR = '/usr/share/gdm/greeter/applications'
-EOS_INSTALLER_PATH = os.path.join(GDM_APPS_DIR, EOS_INSTALLER)
+EOS_INSTALLER_PATH = os.path.join('/usr/share/applications', EOS_INSTALLER)
 LOCAL_APPS_DIR = '/usr/local/share/applications'
 LOCAL_DESKTOP_PATH = os.path.join(LOCAL_APPS_DIR, EOS_INSTALLER)
 
@@ -155,19 +154,22 @@ class AdjustGSettings(object):
 
 
 def install_installer_desktop_file():
-    """Make eos-installer available to user sessions.
+    """Make eos-installer visible in user sessions.
 
-    eos-installer is shipped in all images, but its desktop file is
-    (deliberately) only present in the GDM greeter's environment. For live
-    boots, we symlink it into place so it can be added to the desktop and
-    taskbar and found via search.
+    eos-installer is shipped in all images, but its desktop file contains
+    NoDisplay=true. Make a copy with this setting removed so it can be added to
+    the desktop and taskbar and found via search.
     """
+    log.info('Copying %s to %s with NoDisplay removed',
+             EOS_INSTALLER_PATH, LOCAL_DESKTOP_PATH)
     os.makedirs(LOCAL_APPS_DIR, exist_ok=True)
-    try:
-        log.info('symlinking %s to %s', EOS_INSTALLER, LOCAL_DESKTOP_PATH)
-        os.symlink(EOS_INSTALLER_PATH, LOCAL_DESKTOP_PATH)
-    except FileExistsError:
-        pass
+
+    kf = GLib.KeyFile()
+    kf.load_from_file(EOS_INSTALLER_PATH,
+                      GLib.KeyFileFlags.KEEP_COMMENTS |
+                      GLib.KeyFileFlags.KEEP_TRANSLATIONS)
+    kf.remove_key('Desktop Entry', 'NoDisplay')
+    kf.save_to_file(LOCAL_DESKTOP_PATH)
 
 
 def disable_chrome_auto_download():
