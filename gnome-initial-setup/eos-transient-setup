@@ -17,6 +17,7 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 import argparse
+import enum
 import glob
 import json
 import logging
@@ -55,6 +56,19 @@ FAVORITE_APPS_KEY = 'favorite-apps'
 GS_SCHEMA = 'org.gnome.software'
 ALLOW_UPDATES = 'allow-updates'
 
+GSD_POWER_SCHEMA = "org.gnome.settings-daemon.plugins.power"
+GSD_SLEEP_INACTIVE_AC_TYPE = "sleep-inactive-ac-type"
+GSD_SLEEP_INACTIVE_AC_TIMEOUT = "sleep-inactive-ac-timeout"
+GSD_SLEEP_INACTIVE_BATTERY_TYPE = "sleep-inactive-battery-type"
+GSD_SLEEP_INACTIVE_BATTERY_TIMEOUT = "sleep-inactive-battery-timeout"
+
+ONE_MINUTE = 60
+
+
+class Mode(enum.Enum):
+    live = 1
+    demo = 2
+
 
 class AdjustGSettings(object):
     def __init__(self):
@@ -65,8 +79,11 @@ class AdjustGSettings(object):
         log.info('Updating %s: %s to %s', schema, key, value)
         self.keyfile.set_string(schema.replace('.', '/'), key, value)
 
-    def prepare(self):
-        self.update_favorite_apps()
+    def prepare(self, mode):
+        if mode == Mode.demo:
+            self.adjust_power_settings()
+
+        self.update_favorite_apps(mode)
         self.disallow_app_center_updates()
 
     def write_dconf_compile(self):
@@ -94,15 +111,27 @@ class AdjustGSettings(object):
         data, length = self.keyfile.to_data()
         print(data)
 
-    def update_favorite_apps(self):
+    def adjust_power_settings(self):
+        for key in (GSD_SLEEP_INACTIVE_AC_TYPE,
+                    GSD_SLEEP_INACTIVE_BATTERY_TYPE):
+            self.update(GSD_POWER_SCHEMA, key,
+                        GLib.Variant('s', 'logout'))
+
+        for key in (GSD_SLEEP_INACTIVE_AC_TIMEOUT,
+                    GSD_SLEEP_INACTIVE_BATTERY_TIMEOUT):
+            self.update(GSD_POWER_SCHEMA, key,
+                        GLib.Variant('i', ONE_MINUTE))
+
+    def update_favorite_apps(self, mode):
         settings = Gio.Settings(schema=SHELL_SCHEMA)
         favorite_apps = settings.get_strv(FAVORITE_APPS_KEY)
         changed = False
 
-        # Prepend installer icon
-        if EOS_INSTALLER not in favorite_apps:
-            favorite_apps.insert(0, EOS_INSTALLER)
-            changed = True
+        if mode == Mode.live:
+            # Prepend installer icon
+            if EOS_INSTALLER not in favorite_apps:
+                favorite_apps.insert(0, EOS_INSTALLER)
+                changed = True
 
         # Replace Chrome (downloaded on demand) with Chromium (pre-installed).
         # This effectively undoes a step taken in the image builder,
@@ -119,7 +148,7 @@ class AdjustGSettings(object):
         self.update(GS_SCHEMA, ALLOW_UPDATES, GLib.Variant('b', False))
 
 
-def install_desktop_file():
+def install_installer_desktop_file():
     """eos-installer is shipped in all images, but its desktop file is
     (deliberately) only present in the GDM greeter's environment. For
     image-booted live sessions, we symlink it into place."""
@@ -199,10 +228,13 @@ def prepend_installer_to_icon_grid():
 
 def main():
     p = argparse.ArgumentParser(
-        description='Configures system settings for live session')
+        description='Configures system settings for live or demo session')
+    p.add_argument('--mode', choices=[m.name for m in Mode], required=True,
+                   help='Whether to adjust settings for live or demo mode')
     p.add_argument('--dry-run', action='store_true',
                    help='Just print the DConf keyfile to stdout')
     a = p.parse_args()
+    mode = Mode[a.mode]
 
     logging.basicConfig(
         level=logging.INFO,
@@ -210,17 +242,19 @@ def main():
                '%(message)s')
 
     setup = AdjustGSettings()
-    setup.prepare()
+    setup.prepare(mode=mode)
 
     if a.dry_run:
         setup.write_stdout()
     else:
         setup.write_dconf_compile()
 
-        install_desktop_file()
         disable_chrome_auto_download()
         remove_chrome_from_icon_grids()
-        prepend_installer_to_icon_grid()
+
+        if mode == Mode.live:
+            install_installer_desktop_file()
+            prepend_installer_to_icon_grid()
 
 
 if __name__ == '__main__':
