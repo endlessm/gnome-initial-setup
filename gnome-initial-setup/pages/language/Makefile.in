@@ -108,6 +108,7 @@ am__objects_1 = libgislanguage_la-language-resources.lo
 am_libgislanguage_la_OBJECTS =  \
 	libgislanguage_la-cc-common-language.lo \
 	libgislanguage_la-cc-language-chooser.lo \
+	libgislanguage_la-cc-util.lo \
 	libgislanguage_la-gis-welcome-widget.lo \
 	libgislanguage_la-gis-language-page.lo $(am__objects_1)
 libgislanguage_la_OBJECTS = $(am_libgislanguage_la_OBJECTS)
@@ -362,6 +363,7 @@ resource_files = $(shell glib-compile-resources --sourcedir=$(srcdir) --generate
 libgislanguage_la_SOURCES = \
 	cc-common-language.c cc-common-language.h 	\
 	cc-language-chooser.c cc-language-chooser.h	\
+	cc-util.c cc-util.h				\
 	gis-welcome-widget.c gis-welcome-widget.h	\
 	gis-language-page.c gis-language-page.h		\
 	$(BUILT_SOURCES)
@@ -427,6 +429,7 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgislanguage_la-cc-common-language.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgislanguage_la-cc-language-chooser.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgislanguage_la-cc-util.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgislanguage_la-gis-language-page.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgislanguage_la-gis-welcome-widget.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgislanguage_la-language-resources.Plo@am__quote@
@@ -465,6 +468,13 @@ libgislanguage_la-cc-language-chooser.lo: cc-language-chooser.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='cc-language-chooser.c' object='libgislanguage_la-cc-language-chooser.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgislanguage_la_CFLAGS) $(CFLAGS) -c -o libgislanguage_la-cc-language-chooser.lo `test -f 'cc-language-chooser.c' || echo '$(srcdir)/'`cc-language-chooser.c
+
+libgislanguage_la-cc-util.lo: cc-util.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgislanguage_la_CFLAGS) $(CFLAGS) -MT libgislanguage_la-cc-util.lo -MD -MP -MF $(DEPDIR)/libgislanguage_la-cc-util.Tpo -c -o libgislanguage_la-cc-util.lo `test -f 'cc-util.c' || echo '$(srcdir)/'`cc-util.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgislanguage_la-cc-util.Tpo $(DEPDIR)/libgislanguage_la-cc-util.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='cc-util.c' object='libgislanguage_la-cc-util.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgislanguage_la_CFLAGS) $(CFLAGS) -c -o libgislanguage_la-cc-util.lo `test -f 'cc-util.c' || echo '$(srcdir)/'`cc-util.c
 
 libgislanguage_la-gis-welcome-widget.lo: gis-welcome-widget.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgislanguage_la_CFLAGS) $(CFLAGS) -MT libgislanguage_la-gis-welcome-widget.lo -MD -MP -MF $(DEPDIR)/libgislanguage_la-gis-welcome-widget.Tpo -c -o libgislanguage_la-gis-welcome-widget.lo `test -f 'gis-welcome-widget.c' || echo '$(srcdir)/'`gis-welcome-widget.c
