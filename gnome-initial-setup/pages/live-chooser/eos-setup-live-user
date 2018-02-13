@@ -42,6 +42,13 @@ LOCAL_DESKTOP_PATH = os.path.join(LOCAL_APPS_DIR, EOS_INSTALLER)
 GOOGLE_CHROME = 'google-chrome.desktop'
 CHROMIUM_BROWSER = 'chromium-browser.desktop'
 
+LIVE_SETTINGS_DB = '/var/lib/eos-image-defaults/settings.live'
+USER_PROFILE_PATH = '/usr/local/share/dconf/profile/user'
+USER_PROFILE = '''user-db:user
+file-db:/var/lib/eos-image-defaults/settings.live
+file-db:/var/lib/eos-image-defaults/settings
+'''
+
 SHELL_SCHEMA = 'org.gnome.shell'
 FAVORITE_APPS_KEY = 'favorite-apps'
 
@@ -49,7 +56,7 @@ GS_SCHEMA = 'org.gnome.software'
 ALLOW_UPDATES = 'allow-updates'
 
 
-class SetupLiveUser(object):
+class AdjustGSettings(object):
     def __init__(self):
         self.keyfile = GLib.KeyFile()
 
@@ -63,27 +70,23 @@ class SetupLiveUser(object):
         self.disallow_app_center_updates()
 
     def write_dconf_compile(self):
-        '''This is a bit roundabout, and depends on the knowledge that the user
-        database lives at $XDG_CONFIG_HOME/dconf/user, but has the advantage
-        of actually working when there's no session bus.'''
+        '''Write a new system-wide settings database with the overridden
+        settings, and adjust the user profile to use it.'''
         with tempfile.TemporaryDirectory(suffix='.d') as d:
             keyfile_path = os.path.join(d, '00-live')
             log.info('writing keyfile to %s', keyfile_path)
             self.keyfile.save_to_file(keyfile_path)
 
-            user_dconf_dir = os.path.join(GLib.get_user_config_dir(), 'dconf')
-            log.info('ensuring %s exists', user_dconf_dir)
-            os.makedirs(user_dconf_dir, exist_ok=True)
+            os.makedirs(os.path.dirname(LIVE_SETTINGS_DB), exist_ok=True)
 
-            user_dconf = os.path.join(user_dconf_dir, 'user')
-            if os.path.exists(user_dconf):
-                log.error('%s already exists, refusing to overwrite it',
-                          user_dconf)
-                raise SystemExit(1)
-
-            args = ['dconf', 'compile', user_dconf, d]
+            args = ['dconf', 'compile', LIVE_SETTINGS_DB, d]
             log.info('$ %s', ' '.join(args))
             subprocess.check_call(args)
+
+        log.info('Installing new DConf profile to %s', USER_PROFILE_PATH)
+        os.makedirs(os.path.dirname(USER_PROFILE_PATH), exist_ok=True)
+        with open(USER_PROFILE_PATH, 'w') as f:
+            f.write(USER_PROFILE)
 
     def write_stdout(self):
         '''Just write the keyfile used by `dconf compile` to stdout.
@@ -188,15 +191,15 @@ def prepend_installer_to_icon_grid():
 def main():
     p = argparse.ArgumentParser(
         description='Configures system and user settings for live session')
-    subparsers = p.add_subparsers(title='modes', dest='mode')
+    p.add_argument('--dry-run', action='store_true',
+                   help='Just print the DConf keyfile to stdout')
 
+    subparsers = p.add_subparsers(title='modes', dest='mode')
     user = subparsers.add_parser(
         'user',
         description='description',
         help='Configure a user account. '
              'Should be executed as the target user.')
-    user.add_argument('--dry-run', action='store_true',
-                      help='Just print the DConf keyfile to stdout')
 
     subparsers.add_parser(
         'system',
@@ -211,14 +214,16 @@ def main():
                '%(message)s')
 
     if a.mode == 'user':
-        setup = SetupLiveUser()
-        setup.prepare()
+        return
 
-        if a.dry_run:
-            setup.write_stdout()
-        else:
-            setup.write_dconf_compile()
-    elif a.mode == 'system':
+    setup = AdjustGSettings()
+    setup.prepare()
+
+    if a.dry_run:
+        setup.write_stdout()
+    else:
+        setup.write_dconf_compile()
+
         install_desktop_file()
         remove_chrome_from_icon_grids()
         prepend_installer_to_icon_grid()
