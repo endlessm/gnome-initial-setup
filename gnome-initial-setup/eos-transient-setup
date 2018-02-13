@@ -131,6 +131,15 @@ def install_desktop_file():
         os.symlink(EOS_INSTALLER_PATH, LOCAL_DESKTOP_PATH)
 
 
+def disable_chrome_auto_download():
+    '''This external script creates a stamp file which prevents the Chrome
+    auto-downloader from running within a user session.'''
+    cmd = os.path.join('/usr/share/eos-google-chrome-helper',
+                       'eos-google-chrome-system-helper.py')
+    log.info('$ %s', cmd)
+    subprocess.check_call([cmd])
+
+
 def replace_chrome_with_chromium(apps):
     if GOOGLE_CHROME in apps:
         apps[apps.index(GOOGLE_CHROME)] = CHROMIUM_BROWSER
@@ -209,6 +218,7 @@ def main():
         setup.write_dconf_compile()
 
         install_desktop_file()
+        disable_chrome_auto_download()
         remove_chrome_from_icon_grids()
         prepend_installer_to_icon_grid()
 
