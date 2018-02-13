@@ -125,6 +125,18 @@ else
 fi
 AC_SUBST(VENDOR_CONF_FILE)
 
+# systemd
+AC_ARG_WITH([systemdsystemunitdir],
+        AS_HELP_STRING([--with-systemdsystemunitdir=DIR], [Directory for systemd service files]),
+        [],
+        [with_systemdsystemunitdir=yes])
+if test "x$with_systemdsystemunitdir" = "xyes"; then
+    with_systemdsystemunitdir=$($PKG_CONFIG --variable=systemdsystemunitdir systemd)
+fi
+if test "x$with_systemdsystemunitdir" != "xno"; then
+    AC_SUBST([systemdsystemunitdir], [$with_systemdsystemunitdir])
+fi
+
 # Kerberos kerberos support
 AC_PATH_PROG(KRB5_CONFIG, krb5-config, no)
 if test "$KRB5_CONFIG" = "no"; then
