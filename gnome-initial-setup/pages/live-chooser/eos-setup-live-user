@@ -105,9 +105,7 @@ class SetupLiveUser(object):
         # This effectively undoes a step taken in the image builder,
         # pre-seeding /var/eos-image-defaults/settings with the opposite
         # change.
-        if GOOGLE_CHROME in favorite_apps:
-            i = favorite_apps.index(GOOGLE_CHROME)
-            favorite_apps[i] = CHROMIUM_BROWSER
+        if replace_chrome_with_chromium(favorite_apps):
             changed = True
 
         if changed:
@@ -130,8 +128,12 @@ def install_desktop_file():
         os.symlink(EOS_INSTALLER_PATH, LOCAL_DESKTOP_PATH)
 
 
-def dq(s):
-    return '"{}"'.format(s)
+def replace_chrome_with_chromium(apps):
+    if GOOGLE_CHROME in apps:
+        apps[apps.index(GOOGLE_CHROME)] = CHROMIUM_BROWSER
+        return True
+    else:
+        return False
 
 
 def remove_chrome_from_icon_grids():
@@ -142,15 +144,14 @@ def remove_chrome_from_icon_grids():
         log.info("Checking %s", path)
         try:
             with open(path, 'r') as f:
-                grid = f.read()
+                grid = json.load(fp=f)
 
-            if GOOGLE_CHROME in grid:
+            if replace_chrome_with_chromium(grid[DESKTOP_GRID_ID]):
                 log.info("Updating %s", path)
-                grid = grid.replace(dq(GOOGLE_CHROME), dq(CHROMIUM_BROWSER))
 
                 with open(path, 'w') as f:
-                    f.write(grid)
-        except:
+                    json.dump(grid, fp=f)
+        except Exception:
             log.exception("while processing %s", path)
 
 
@@ -180,7 +181,7 @@ def prepend_installer_to_icon_grid():
                 log.info("Writing %s: %s", path, json.dumps(obj=grid))
                 with open(path, 'w') as f:
                     json.dump(obj=grid, fp=f)
-        except:
+        except Exception:
             log.exception("while processing %s", path)
 
 
