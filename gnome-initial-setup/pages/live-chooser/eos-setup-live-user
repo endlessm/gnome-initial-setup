@@ -190,31 +190,15 @@ def prepend_installer_to_icon_grid():
 
 def main():
     p = argparse.ArgumentParser(
-        description='Configures system and user settings for live session')
+        description='Configures system settings for live session')
     p.add_argument('--dry-run', action='store_true',
                    help='Just print the DConf keyfile to stdout')
-
-    subparsers = p.add_subparsers(title='modes', dest='mode')
-    user = subparsers.add_parser(
-        'user',
-        description='description',
-        help='Configure a user account. '
-             'Should be executed as the target user.')
-
-    subparsers.add_parser(
-        'system',
-        help='Makes system-wide changes for live session. Should be executed '
-             'as root.')
-
     a = p.parse_args()
 
     logging.basicConfig(
         level=logging.INFO,
         format='%(name)s:%(lineno)-3s %(funcName)20s %(levelname)7s: '
                '%(message)s')
-
-    if a.mode == 'user':
-        return
 
     setup = AdjustGSettings()
     setup.prepare()
