@@ -28,5 +28,3 @@ libgislivechooser_la_LIBADD = $(INITIAL_SETUP_LIBS)
 libgislivechooser_la_LDFLAGS = -export_dynamic -avoid-version -module -no-undefined
 
 EXTRA_DIST = live-chooser.gresource.xml $(resource_files)
-
-dist_libexec_SCRIPTS = eos-setup-live-user
