@@ -83,14 +83,6 @@ create_live_user (GisLiveChooserPage *page)
     act_user_set_language (user, language);
 
   gis_driver_set_user_permissions (GIS_PAGE (page)->driver, user, NULL);
-  if (!gis_pkexec (LIBEXECDIR "/eos-transient-setup",
-                   "system",
-                   NULL, /* root */
-                   &error))
-    {
-      g_warning ("Failed to setup live system settings: %s", error->message);
-      g_clear_error (&error);
-    }
 
   gis_update_login_keyring_password ("");
 
