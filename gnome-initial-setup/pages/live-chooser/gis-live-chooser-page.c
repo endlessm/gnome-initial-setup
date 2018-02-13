@@ -53,19 +53,6 @@ typedef struct _GisLiveChooserPagePrivate GisLiveChooserPagePrivate;
 G_DEFINE_TYPE_WITH_PRIVATE (GisLiveChooserPage, gis_live_chooser_page, GIS_TYPE_PAGE);
 
 static void
-disable_chrome_auto_download (GisLiveChooserPage *page)
-{
-  GError *error = NULL;
-
-  if (!gis_pkexec (DATADIR "/eos-google-chrome-helper/eos-google-chrome-system-helper.py",
-                   NULL, NULL, &error))
-    {
-      g_warning ("Failed to disable Chrome auto-download: %s", error->message);
-      g_clear_error (&error);
-    }
-}
-
-static void
 create_live_user (GisLiveChooserPage *page)
 {
   GisLiveChooserPagePrivate *priv = gis_live_chooser_page_get_instance_private (page);
@@ -147,7 +134,6 @@ static void
 try_button_clicked (GisLiveChooserPage *page)
 {
   create_live_user (page);
-  disable_chrome_auto_download (page);
   update_assistant (page);
 }
 
