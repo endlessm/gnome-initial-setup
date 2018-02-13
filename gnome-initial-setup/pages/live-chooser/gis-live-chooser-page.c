@@ -96,7 +96,7 @@ create_live_user (GisLiveChooserPage *page)
     act_user_set_language (user, language);
 
   gis_driver_set_user_permissions (GIS_PAGE (page)->driver, user, NULL);
-  if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user",
+  if (!gis_pkexec (LIBEXECDIR "/eos-transient-setup",
                    "system",
                    NULL, /* root */
                    &error))

@@ -82,6 +82,7 @@ gnome-initial-setup: gnome-initial-setup.in Makefile
 libexec_SCRIPTS = gnome-initial-setup
 dist_libexec_SCRIPTS = \
 	eos-demo-mode \
+	eos-transient-setup \
 	$(NULL)
 
 EXTRA_DIST = \
