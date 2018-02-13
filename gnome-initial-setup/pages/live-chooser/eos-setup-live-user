@@ -49,48 +49,14 @@ GS_SCHEMA = 'org.gnome.software'
 ALLOW_UPDATES = 'allow-updates'
 
 
-class SettingsUpdates(object):
-    def __init__(self, schema):
-        self._settings = Gio.Settings(schema=schema)
-        self._updates = {}
-
-    def get_settings(self):
-        return self._settings
-
-    def set(self, key, value):
-        self._updates[key] = value
-
-    def to_keyfile_str(self):
-        schema_id = self._settings.get_property('schema-id')
-        keyfile_lines = '[{}]\n'.format(schema_id.replace('.', '/'))
-
-        for k, v in self._updates.items():
-            if k is None:
-                continue
-            keyfile_lines += '{}={}\n'.format(k, v.print_(False))
-        return keyfile_lines
-
-    def apply(self):
-        for key, value in self._updates.items():
-            self._settings.set_value(key, value)
-
-
 class SetupLiveUser(object):
     def __init__(self):
-        self.updates = {SHELL_SCHEMA: SettingsUpdates(SHELL_SCHEMA),
-                        GS_SCHEMA: SettingsUpdates(GS_SCHEMA)}
+        self.keyfile = GLib.KeyFile()
 
     def update(self, schema, key, variant):
-        log.info('Updating %s: %s to %s',
-                 schema, key, variant.print_(False))
-        self.updates[schema].set(key, variant)
-
-    def format_keyfile(self):
-        keyfile_lines = []
-        for updates in self.updates.values():
-            keyfile_lines.append(updates.to_keyfile_str())
-
-        return '\n'.join(keyfile_lines)
+        value = variant.print_(False)
+        log.info('Updating %s: %s to %s', schema, key, value)
+        self.keyfile.set_string(schema.replace('.', '/'), key, value)
 
     def prepare(self):
         self.update_favorite_apps()
@@ -100,13 +66,10 @@ class SetupLiveUser(object):
         '''This is a bit roundabout, and depends on the knowledge that the user
         database lives at $XDG_CONFIG_HOME/dconf/user, but has the advantage
         of actually working when there's no session bus.'''
-        keyfile_contents = self.format_keyfile()
-
         with tempfile.TemporaryDirectory(suffix='.d') as d:
-            keyfile = os.path.join(d, '00-live')
-            log.info('writing keyfile to %s', keyfile)
-            with open(keyfile, 'w') as f:
-                f.write(keyfile_contents)
+            keyfile_path = os.path.join(d, '00-live')
+            log.info('writing keyfile to %s', keyfile_path)
+            self.keyfile.save_to_file(keyfile_path)
 
             user_dconf_dir = os.path.join(GLib.get_user_config_dir(), 'dconf')
             log.info('ensuring %s exists', user_dconf_dir)
@@ -125,11 +88,12 @@ class SetupLiveUser(object):
     def write_stdout(self):
         '''Just write the keyfile used by `dconf compile` to stdout.
         For debugging purposes only.'''
-        print(self.format_keyfile())
+        data, length = self.keyfile.to_data()
+        print(data)
 
     def update_favorite_apps(self):
-        updates = self.updates[SHELL_SCHEMA]
-        favorite_apps = updates.get_settings().get_strv(FAVORITE_APPS_KEY)
+        settings = Gio.Settings(schema=SHELL_SCHEMA)
+        favorite_apps = settings.get_strv(FAVORITE_APPS_KEY)
         changed = False
 
         # Prepend installer icon
