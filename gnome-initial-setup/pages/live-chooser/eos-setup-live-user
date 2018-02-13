@@ -96,17 +96,6 @@ class SetupLiveUser(object):
         self.update_favorite_apps()
         self.disallow_app_center_updates()
 
-    def write_gsettings(self):
-        '''Write changed settings using GSettings. This seems like the obvious
-        thing to do, of course, but does not work when pkexec'd by g-i-s:
-        dconf writes happen in a dedicated process, which is service activated
-        over D-Bus; but the pkexec environment has no session bus, and no X11
-        connection with which to auto-launch one. Interestingly there seems to
-        be no way to get an error out of GSettings – you get nice warnings on
-        the console, but nothing here.'''
-        for updates in self.updates.values():
-            updates.apply()
-
     def write_dconf_compile(self):
         '''This is a bit roundabout, and depends on the knowledge that the user
         database lives at $XDG_CONFIG_HOME/dconf/user, but has the advantage
@@ -241,15 +230,8 @@ def main():
         description='description',
         help='Configure a user account. '
              'Should be executed as the target user.')
-    user.add_argument(
-        '-o', '--output',
-        choices=('gsettings', 'dconf-compile', 'stdout'),
-        help='Write new settings via GSettings, via `dconf compile`, or '
-             'as a keyfile to stdout (default: dconf-compile).  '
-             'Note that "--output gsettings" will fail if run outside a '
-             'user session, and "--output dconf-compile" will fail if '
-             'the user has ever logged in.',
-        default='dconf-compile')
+    user.add_argument('--dry-run', action='store_true',
+                      help='Just print the DConf keyfile to stdout')
 
     subparsers.add_parser(
         'system',
@@ -267,14 +249,10 @@ def main():
         setup = SetupLiveUser()
         setup.prepare()
 
-        if a.output == 'gsettings':
-            setup.write_gsettings()
-        elif a.output == 'dconf-compile':
-            setup.write_dconf_compile()
-        elif a.output == 'stdout':
+        if a.dry_run:
             setup.write_stdout()
         else:
-            raise Exception('Unexpected --output value ' + a.output)
+            setup.write_dconf_compile()
     elif a.mode == 'system':
         install_desktop_file()
         remove_chrome_from_icon_grids()
