@@ -108,7 +108,6 @@ am__objects_1 = libgiskeyboard_la-keyboard-resources.lo
 am_libgiskeyboard_la_OBJECTS = libgiskeyboard_la-cc-input-chooser.lo \
 	libgiskeyboard_la-cc-common-language.lo \
 	libgiskeyboard_la-cc-ibus-utils.lo \
-	libgiskeyboard_la-cc-util.lo \
 	libgiskeyboard_la-gis-keyboard-page.lo $(am__objects_1)
 libgiskeyboard_la_OBJECTS = $(am_libgiskeyboard_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
@@ -361,7 +360,6 @@ libgiskeyboard_la_SOURCES = \
 	cc-input-chooser.c cc-input-chooser.h		\
 	cc-common-language.c cc-common-language.h	\
 	cc-ibus-utils.c cc-ibus-utils.h			\
-	cc-util.c cc-util.h				\
 	gis-keyboard-page.c gis-keyboard-page.h		\
 	$(BUILT_SOURCES)
 
@@ -427,7 +425,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgiskeyboard_la-cc-common-language.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgiskeyboard_la-cc-ibus-utils.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgiskeyboard_la-cc-input-chooser.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgiskeyboard_la-cc-util.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgiskeyboard_la-gis-keyboard-page.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgiskeyboard_la-keyboard-resources.Plo@am__quote@
 
@@ -472,13 +469,6 @@ libgiskeyboard_la-cc-ibus-utils.lo: cc-ibus-utils.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='cc-ibus-utils.c' object='libgiskeyboard_la-cc-ibus-utils.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgiskeyboard_la_CFLAGS) $(CFLAGS) -c -o libgiskeyboard_la-cc-ibus-utils.lo `test -f 'cc-ibus-utils.c' || echo '$(srcdir)/'`cc-ibus-utils.c
-
-libgiskeyboard_la-cc-util.lo: cc-util.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgiskeyboard_la_CFLAGS) $(CFLAGS) -MT libgiskeyboard_la-cc-util.lo -MD -MP -MF $(DEPDIR)/libgiskeyboard_la-cc-util.Tpo -c -o libgiskeyboard_la-cc-util.lo `test -f 'cc-util.c' || echo '$(srcdir)/'`cc-util.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgiskeyboard_la-cc-util.Tpo $(DEPDIR)/libgiskeyboard_la-cc-util.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='cc-util.c' object='libgiskeyboard_la-cc-util.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgiskeyboard_la_CFLAGS) $(CFLAGS) -c -o libgiskeyboard_la-cc-util.lo `test -f 'cc-util.c' || echo '$(srcdir)/'`cc-util.c
 
 libgiskeyboard_la-gis-keyboard-page.lo: gis-keyboard-page.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgiskeyboard_la_CFLAGS) $(CFLAGS) -MT libgiskeyboard_la-gis-keyboard-page.lo -MD -MP -MF $(DEPDIR)/libgiskeyboard_la-gis-keyboard-page.Tpo -c -o libgiskeyboard_la-gis-keyboard-page.lo `test -f 'gis-keyboard-page.c' || echo '$(srcdir)/'`gis-keyboard-page.c
