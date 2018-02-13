@@ -104,15 +104,6 @@ create_live_user (GisLiveChooserPage *page)
       g_clear_error (&error);
     }
 
-  if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user",
-                   "user",
-                   LIVE_ACCOUNT_USERNAME,
-                   &error))
-    {
-      g_warning ("%s", error->message);
-      g_clear_error (&error);
-    }
-
   gis_update_login_keyring_password ("");
 
   g_object_unref (user);
