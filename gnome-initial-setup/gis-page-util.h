@@ -31,7 +31,8 @@ G_BEGIN_DECLS
 void gis_page_util_show_factory_dialog (GisPage *page);
 void gis_page_util_show_demo_dialog (GisPage *page);
 
-gchar *gis_page_util_get_image_version (const gchar *path);
+gchar *gis_page_util_get_image_version (const gchar *path,
+                                        GError     **error);
 
 G_END_DECLS
 

@@ -172,33 +172,36 @@ get_have_sdcard (void)
 }
 
 gchar *
-gis_page_util_get_image_version (const gchar *path)
+gis_page_util_get_image_version (const gchar *path,
+                                 GError     **error)
 {
   ssize_t attrsize;
-  gchar *value;
+  g_autofree gchar *value = NULL;
 
   g_return_val_if_fail (path != NULL, NULL);
 
   attrsize = getxattr (path, EOS_IMAGE_VERSION_XATTR, NULL, 0);
-  if (attrsize < 0) {
-    g_message ("Error examining " EOS_IMAGE_VERSION_XATTR " on %s: %s",
-               path, g_strerror (errno));
-    return NULL;
-  }
+  if (attrsize >= 0)
+    {
+      value = g_malloc (attrsize + 1);
+      value[attrsize] = 0;
 
-  value = g_malloc (attrsize + 1);
-  value[attrsize] = 0;
+      attrsize = getxattr (path, EOS_IMAGE_VERSION_XATTR, value,
+                           attrsize);
+    }
 
-  attrsize = getxattr (path, EOS_IMAGE_VERSION_XATTR, value,
-                       attrsize);
-  if (attrsize < 0) {
-    g_warning ("Error reading " EOS_IMAGE_VERSION_XATTR " on %s: %s",
-               path, g_strerror (errno));
-    g_free (value);
-    return NULL;
-  }
-
-  return value;
+  if (attrsize >= 0)
+    {
+      return g_steal_pointer (&value);
+    }
+  else
+    {
+      int errsv = errno;
+      g_set_error (error, G_IO_ERROR, g_io_error_from_errno (errsv),
+                   "Error examining " EOS_IMAGE_VERSION_XATTR " on %s: %s",
+                   path, g_strerror (errsv));
+      return NULL;
+    }
 }
 
 static gchar *
@@ -416,7 +419,7 @@ gis_page_util_show_factory_dialog (GisPage *page)
   }
 
   if (get_have_sdcard ())
-    sd_version = gis_page_util_get_image_version (SD_CARD_MOUNT);
+    sd_version = gis_page_util_get_image_version (SD_CARD_MOUNT, NULL);
 
   if (!sd_version)
     sd_version = g_strdup (_("Disabled"));
