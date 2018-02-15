@@ -165,12 +165,20 @@ check_live_session (GisDriver   *driver,
 static char *
 get_image_version (void)
 {
+  g_autoptr(GError) error_sysroot = NULL;
+  g_autoptr(GError) error_root = NULL;
   char *image_version =
-    gis_page_util_get_image_version (EOS_IMAGE_VERSION_PATH);
+    gis_page_util_get_image_version (EOS_IMAGE_VERSION_PATH, &error_sysroot);
 
-  if (!image_version)
+  if (image_version == NULL)
     image_version =
-      gis_page_util_get_image_version (EOS_IMAGE_VERSION_ALT_PATH);
+      gis_page_util_get_image_version (EOS_IMAGE_VERSION_ALT_PATH, &error_root);
+
+  if (image_version == NULL)
+    {
+      g_warning ("%s", error_sysroot->message);
+      g_warning ("%s", error_root->message);
+    }
 
   return image_version;
 }
