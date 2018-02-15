@@ -53,24 +53,12 @@ typedef struct _GisLiveChooserPagePrivate GisLiveChooserPagePrivate;
 G_DEFINE_TYPE_WITH_PRIVATE (GisLiveChooserPage, gis_live_chooser_page, GIS_TYPE_PAGE);
 
 static void
-disable_chrome_auto_download (GisLiveChooserPage *page)
+gis_live_chooser_page_save_data (GisPage *page)
 {
-  GError *error = NULL;
-
-  if (!gis_pkexec (DATADIR "/eos-google-chrome-helper/eos-google-chrome-system-helper.py",
-                   NULL, NULL, &error))
-    {
-      g_warning ("Failed to disable Chrome auto-download: %s", error->message);
-      g_clear_error (&error);
-    }
-}
-
-static void
-create_live_user (GisLiveChooserPage *page)
-{
-  GisLiveChooserPagePrivate *priv = gis_live_chooser_page_get_instance_private (page);
+  GisLiveChooserPage *self = GIS_LIVE_CHOOSER_PAGE (page);
+  GisLiveChooserPagePrivate *priv = gis_live_chooser_page_get_instance_private (self);
   ActUser *user;
-  GError *error = NULL;
+  g_autoptr(GError) error = NULL;
   const gchar *language;
 
   error = NULL;
@@ -82,36 +70,19 @@ create_live_user (GisLiveChooserPage *page)
   if (error)
     {
       g_warning ("Failed to create live user: %s", error->message);
-      g_clear_error (&error);
       return;
     }
 
   act_user_set_password_mode (user, ACT_USER_PASSWORD_MODE_NONE);
   act_user_set_automatic_login (user, FALSE);
+  act_user_set_icon_file (user, AVATAR_IMAGE_DEFAULT);
 
-  language = gis_driver_get_user_language (GIS_PAGE (page)->driver);
+  language = gis_driver_get_user_language (page->driver);
 
   if (language)
     act_user_set_language (user, language);
 
-  gis_driver_set_user_permissions (GIS_PAGE (page)->driver, user, NULL);
-  if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user",
-                   "system",
-                   NULL, /* root */
-                   &error))
-    {
-      g_warning ("Failed to setup live system settings: %s", error->message);
-      g_clear_error (&error);
-    }
-
-  if (!gis_pkexec (LIBEXECDIR "/eos-setup-live-user",
-                   "user",
-                   LIVE_ACCOUNT_USERNAME,
-                   &error))
-    {
-      g_warning ("%s", error->message);
-      g_clear_error (&error);
-    }
+  gis_driver_set_user_permissions (page->driver, user, NULL);
 
   gis_update_login_keyring_password ("");
 
@@ -144,19 +115,11 @@ load_css_overrides (GisLiveChooserPage *page)
 }
 
 static void
-update_assistant (GisLiveChooserPage *page)
+try_button_clicked (GisLiveChooserPage *page)
 {
   GisAssistant *assistant = gis_driver_get_assistant (GIS_PAGE (page)->driver);
 
   gis_assistant_next_page (assistant);
-}
-
-static void
-try_button_clicked (GisLiveChooserPage *page)
-{
-  create_live_user (page);
-  disable_chrome_auto_download (page);
-  update_assistant (page);
 }
 
 static void
@@ -290,6 +253,7 @@ gis_live_chooser_page_class_init (GisLiveChooserPageClass *klass)
 
   page_class->page_id = "live-chooser";
   page_class->locale_changed = gis_live_chooser_page_locale_changed;
+  page_class->save_data = gis_live_chooser_page_save_data;
 
   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-live-chooser-page.ui");
 

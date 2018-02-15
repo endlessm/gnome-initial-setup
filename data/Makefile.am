@@ -13,6 +13,9 @@ edit = $(AM_V_GEN) sed \
 %.policy: %.policy.in Makefile
 	$(edit) $< >$@
 
+%.service: %.service.in Makefile
+	$(edit) $< >$@
+
 @INTLTOOL_DESKTOP_RULE@
 
 rulesdir = $(datadir)/polkit-1/rules.d
@@ -48,6 +51,7 @@ EXTRA_DIST =						\
 	20-gnome-initial-setup.rules			\
 	eos-demo-video.webm				\
 	eos-demo-video.desktop.in.in			\
+	eos-transient-setup.service.in			\
 	gnome-welcome-tour				\
 	setup-shell.desktop				\
 	gnome-welcome-tour.desktop.in.in		\
@@ -65,6 +69,7 @@ EXTRA_DIST =						\
 CLEANFILES =						\
 	eos-demo-video.desktop.in			\
 	eos-demo-video.desktop				\
+	eos-transient-setup.service			\
 	gnome-initial-setup.desktop.in			\
 	gnome-initial-setup.desktop			\
 	gnome-initial-setup-copy-worker.desktop.in	\
@@ -86,6 +91,10 @@ autostart_DATA =					\
 
 libexec_SCRIPTS =						\
 	gnome-welcome-tour
+
+systemdsystemunit_DATA = \
+	eos-transient-setup.service \
+	$(NULL)
 
 tmpfilesdir = $(prefix)/lib/tmpfiles.d
 tmpfiles_DATA =                                         \

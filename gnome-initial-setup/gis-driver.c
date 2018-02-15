@@ -451,82 +451,6 @@ configure_demo_mode_reset_tracking_id (GError **error)
   return TRUE;
 }
 
-#define GSD_POWER_SCHEMA "org.gnome.settings-daemon.plugins.power"
-#define GSD_SLEEP_INACTIVE_AC_TYPE "sleep-inactive-ac-type"
-#define GSD_SLEEP_INACTIVE_AC_TIMEOUT "sleep-inactive-ac-timeout"
-#define GSD_SLEEP_INACTIVE_BATTERY_TYPE "sleep-inactive-battery-type"
-#define GSD_SLEEP_INACTIVE_BATTERY_TIMEOUT "sleep-inactive-battery-timeout"
-
-#define ONE_MINUTE 60
-
-static void
-configure_demo_mode_power_settings (void)
-{
-  GSettings *power_settings = g_settings_new (GSD_POWER_SCHEMA);
-
-  g_settings_set_string (power_settings, GSD_SLEEP_INACTIVE_AC_TYPE, "logout");
-  g_settings_set_int (power_settings, GSD_SLEEP_INACTIVE_AC_TIMEOUT, ONE_MINUTE);
-  g_settings_set_string (power_settings, GSD_SLEEP_INACTIVE_BATTERY_TYPE, "logout");
-  g_settings_set_int (power_settings, GSD_SLEEP_INACTIVE_BATTERY_TIMEOUT, ONE_MINUTE);
-
-  g_object_unref (power_settings);
-}
-
-#define GS_SCHEMA "org.gnome.software"
-#define GS_ALLOW_UPDATES "allow-updates"
-
-static void
-configure_demo_mode_disallow_app_center_updates (void)
-{
-  GSettings *gnome_software_settings = g_settings_new (GS_SCHEMA);
-
-  g_settings_set_boolean (gnome_software_settings, GS_ALLOW_UPDATES, FALSE);
-
-  g_object_unref (gnome_software_settings);
-}
-
-#define GNOME_SHELL_SCHEMA "org.gnome.shell"
-#define GNOME_SHELL_FAVORITE_APPS "favorite-apps"
-
-#define GOOGLE_CHROME_DESKTOP_ID "google-chrome.desktop"
-#define CHROMIUM_BROWSER_DESKTOP_ID "chromium-browser.desktop"
-
-static void
-replace_string_in_strv (GStrv       strv,
-                        const gchar *needle,
-                        const gchar *replacement)
-{
-  guint i = 0;
-
-  while (strv[i] != NULL)
-    {
-      if (g_strcmp0 (strv[i], needle) == 0)
-        {
-          g_free (strv[i]);
-          strv[i] = g_strdup (replacement);
-        }
-
-      ++i;
-    }
-}
-
-static void
-configure_demo_mode_replace_chrome_with_chromium (void)
-{
-  GSettings *gnome_shell_settings = g_settings_new (GNOME_SHELL_SCHEMA);
-  GStrv favorite_apps = g_settings_get_strv (gnome_shell_settings,
-                                             GNOME_SHELL_FAVORITE_APPS);
-  replace_string_in_strv (favorite_apps,
-                          GOOGLE_CHROME_DESKTOP_ID,
-                          CHROMIUM_BROWSER_DESKTOP_ID);
-  g_settings_set_strv (gnome_shell_settings,
-                       GNOME_SHELL_FAVORITE_APPS,
-                       (const gchar * const *) favorite_apps);
-
-  g_strfreev (favorite_apps);
-  g_object_unref (gnome_shell_settings);
-}
-
 static gboolean
 setup_demo_config (GisDriver *driver, GError **error)
 {
@@ -544,10 +468,6 @@ setup_demo_config (GisDriver *driver, GError **error)
       g_free (stamp_file);
       return FALSE;
     }
-
-  configure_demo_mode_power_settings ();
-  configure_demo_mode_disallow_app_center_updates ();
-  configure_demo_mode_replace_chrome_with_chromium ();
 
   g_free (stamp_file);
   return TRUE;
