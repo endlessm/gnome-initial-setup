@@ -75,11 +75,13 @@ class AdjustGSettings(object):
         self.keyfile = GLib.KeyFile()
 
     def update(self, schema, key, variant):
+        """Stages 'variant' as the new value for 'key' in 'schema'."""
         value = variant.print_(False)
         log.info('Updating %s: %s to %s', schema, key, value)
         self.keyfile.set_string(schema.replace('.', '/'), key, value)
 
     def prepare(self, mode):
+        """Stage all settings to be overridden."""
         if mode == Mode.demo:
             self.adjust_power_settings()
 
@@ -87,8 +89,10 @@ class AdjustGSettings(object):
         self.disallow_app_center_updates()
 
     def write_dconf_compile(self):
-        '''Write a new system-wide settings database with the overridden
-        settings, and adjust the user profile to use it.'''
+        """Write dconf database with overridden settings.
+
+        We also adjust the 'user' profile to use it.
+        """
         with tempfile.TemporaryDirectory(suffix='.d') as d:
             keyfile_path = os.path.join(d, '00-live')
             log.info('writing keyfile to %s', keyfile_path)
@@ -106,12 +110,12 @@ class AdjustGSettings(object):
             f.write(USER_PROFILE)
 
     def write_stdout(self):
-        '''Just write the keyfile used by `dconf compile` to stdout.
-        For debugging purposes only.'''
+        """Write keyfile with overridden settings to stdout, for debugging."""
         data, length = self.keyfile.to_data()
         print(data)
 
     def adjust_power_settings(self):
+        """Configure session to log out after a short period of inactivity."""
         for key in (GSD_SLEEP_INACTIVE_AC_TYPE,
                     GSD_SLEEP_INACTIVE_BATTERY_TYPE):
             self.update(GSD_POWER_SCHEMA, key,
@@ -123,6 +127,7 @@ class AdjustGSettings(object):
                         GLib.Variant('i', ONE_MINUTE))
 
     def update_favorite_apps(self, mode):
+        """Adjust default favourite apps, which are shown on the taskbar."""
         settings = Gio.Settings(schema=SHELL_SCHEMA)
         favorite_apps = settings.get_strv(FAVORITE_APPS_KEY)
         changed = False
@@ -145,13 +150,18 @@ class AdjustGSettings(object):
                         GLib.Variant('as', favorite_apps))
 
     def disallow_app_center_updates(self):
+        """Forbid installing app updates."""
         self.update(GS_SCHEMA, ALLOW_UPDATES, GLib.Variant('b', False))
 
 
 def install_installer_desktop_file():
-    """eos-installer is shipped in all images, but its desktop file is
-    (deliberately) only present in the GDM greeter's environment. For
-    image-booted live sessions, we symlink it into place."""
+    """Make eos-installer available to user sessions.
+
+    eos-installer is shipped in all images, but its desktop file is
+    (deliberately) only present in the GDM greeter's environment. For live
+    boots, we symlink it into place so it can be added to the desktop and
+    taskbar and found via search.
+    """
     if not os.path.exists(LOCAL_DESKTOP_PATH):
         log.info('ensuring %s exists', LOCAL_APPS_DIR)
         os.makedirs(LOCAL_APPS_DIR, exist_ok=True)
@@ -161,8 +171,7 @@ def install_installer_desktop_file():
 
 
 def disable_chrome_auto_download():
-    '''This external script creates a stamp file which prevents the Chrome
-    auto-downloader from running within a user session.'''
+    """Prevent Chrome auto-downloader from running."""
     cmd = os.path.join('/usr/share/eos-google-chrome-helper',
                        'eos-google-chrome-system-helper.py')
     log.info('$ %s', cmd)
@@ -170,6 +179,7 @@ def disable_chrome_auto_download():
 
 
 def replace_chrome_with_chromium(apps):
+    """Replace Chrome with Chromium in a list of .desktop file names."""
     if GOOGLE_CHROME in apps:
         apps[apps.index(GOOGLE_CHROME)] = CHROMIUM_BROWSER
         return True
@@ -178,8 +188,7 @@ def replace_chrome_with_chromium(apps):
 
 
 def remove_chrome_from_icon_grids():
-    log.info("Restoring Chromium to icon grids, if needed")
-
+    """Replace Chrome with Chromium in icon grids, if needed."""
     pattern = os.path.join(ICON_GRID_DIR, 'icon-grid-*.json')
     for path in glob.glob(pattern):
         log.info("Checking %s", path)
@@ -197,8 +206,7 @@ def remove_chrome_from_icon_grids():
 
 
 def prepend_installer_to_icon_grid():
-    log.info("Adding installer icon to the desktop")
-
+    """Prepend installer to icon grid."""
     pattern = os.path.join(ICON_GRID_DIR, 'icon-grid-prepend-*.json')
     c_path = os.path.join(ICON_GRID_DIR, 'icon-grid-prepend-C.json')
     paths = glob.glob(pattern)
@@ -212,7 +220,6 @@ def prepend_installer_to_icon_grid():
                     log.info("reading existing file %s", path)
                     grid = json.load(fp=f)
             except FileNotFoundError:
-                log.info("%s doesn't exist (as expected)", path)
                 grid = {}
 
             desktop = grid.setdefault(DESKTOP_GRID_ID, [])
@@ -227,8 +234,8 @@ def prepend_installer_to_icon_grid():
 
 
 def main():
-    p = argparse.ArgumentParser(
-        description='Configures system settings for live or demo session')
+    """Configures system settings for live or demo sessions."""
+    p = argparse.ArgumentParser(description=main.__doc__)
     p.add_argument('--mode', choices=[m.name for m in Mode], required=True,
                    help='Whether to adjust settings for live or demo mode')
     p.add_argument('--dry-run', action='store_true',
