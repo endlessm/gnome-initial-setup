@@ -162,12 +162,12 @@ def install_installer_desktop_file():
     boots, we symlink it into place so it can be added to the desktop and
     taskbar and found via search.
     """
-    if not os.path.exists(LOCAL_DESKTOP_PATH):
-        log.info('ensuring %s exists', LOCAL_APPS_DIR)
-        os.makedirs(LOCAL_APPS_DIR, exist_ok=True)
-
+    os.makedirs(LOCAL_APPS_DIR, exist_ok=True)
+    try:
         log.info('symlinking %s to %s', EOS_INSTALLER, LOCAL_DESKTOP_PATH)
         os.symlink(EOS_INSTALLER_PATH, LOCAL_DESKTOP_PATH)
+    except FileExistsError:
+        pass
 
 
 def disable_chrome_auto_download():
