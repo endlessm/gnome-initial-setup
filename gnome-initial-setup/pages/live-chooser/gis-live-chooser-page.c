@@ -123,41 +123,47 @@ try_button_clicked (GisLiveChooserPage *page)
 }
 
 static void
-reformatter_exited_cb (GPid     pid,
-                       gint     status,
-                       gpointer user_data)
+on_reformatter_exited (GisLiveChooserPage *page,
+                       const GError       *error)
 {
-  GisLiveChooserPage *page = user_data;
-  GError *error = NULL;
+  GisDriver *driver = GIS_PAGE (page)->driver;
 
-  if (!g_spawn_check_exit_status (status, &error))
+  gis_driver_show_window (driver);
+
+  if (error != NULL)
     {
+      GtkWindow *toplevel = GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (page)));
       GtkWidget *message_dialog;
 
       g_critical ("Error running the reformatter: %s", error->message);
 
-      message_dialog = gtk_message_dialog_new (GTK_WINDOW (gtk_widget_get_toplevel (user_data)),
+      message_dialog = gtk_message_dialog_new (toplevel,
                                                GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
                                                GTK_MESSAGE_ERROR,
                                                GTK_BUTTONS_CLOSE,
                                                _("Error running the reformatter: %s"), error->message);
 
-      gis_driver_show_window (GIS_PAGE (page)->driver);
       gtk_dialog_run (GTK_DIALOG (message_dialog));
       gtk_widget_destroy (message_dialog);
+    }
+}
 
-      g_clear_error (&error);
-    }
-  else
-    {
-      g_application_quit (G_APPLICATION (GIS_PAGE (page)->driver));
-    }
+static void
+reformatter_exited_cb (GPid     pid,
+                       gint     status,
+                       gpointer user_data)
+{
+  GisLiveChooserPage *page = user_data;
+  g_autoptr(GError) error = NULL;
+
+  g_spawn_check_exit_status (status, &error);
+  on_reformatter_exited (page, error);
 }
 
 static void
 reformat_button_clicked (GisLiveChooserPage *page)
 {
-  GError *error = NULL;
+  g_autoptr(GError) error = NULL;
   GPid pid;
 
   gchar* command[] = { "gnome-image-installer", NULL };
@@ -173,18 +179,13 @@ reformat_button_clicked (GisLiveChooserPage *page)
 
   if (error)
     {
-      g_critical ("Error running the reformatter: %s", error->message);
-      g_clear_error (&error);
-      return;
+      on_reformatter_exited (page, error);
     }
-
-  gis_driver_hide_window (GIS_PAGE (page)->driver);
-
-  /*
-   * Check for when the reformatter finishes running, and check
-   * if it exited smoothly.
-   */
-  g_child_watch_add (pid, reformatter_exited_cb, page);
+  else
+    {
+      gis_driver_hide_window (GIS_PAGE (page)->driver);
+      g_child_watch_add (pid, reformatter_exited_cb, page);
+    }
 }
 
 static void
