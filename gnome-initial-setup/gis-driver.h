@@ -124,6 +124,8 @@ GisDriverMode gis_driver_get_mode (GisDriver *driver);
 
 gboolean gis_driver_is_live_session (GisDriver *driver);
 
+gboolean gis_driver_is_reformatter (GisDriver *driver);
+
 gboolean gis_driver_is_small_screen (GisDriver *driver);
 
 const gchar *gis_driver_get_product_name (GisDriver *driver);
