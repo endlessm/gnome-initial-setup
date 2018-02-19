@@ -98,6 +98,7 @@ struct _GisDriver {
   GdkPixbuf *avatar;  /* (owned) (nullable) */
 
   gboolean is_live_session;
+  gboolean is_reformatter;
 
   GisDriverMode mode;
   UmAccountMode account_mode;
@@ -182,6 +183,13 @@ get_image_version (void)
     }
 
   return image_version;
+}
+
+static gboolean
+image_is_reformatter (const gchar *image_version)
+{
+  return image_version != NULL &&
+    g_str_has_prefix (image_version, "eosinstaller-");
 }
 
 static gchar *
@@ -713,6 +721,12 @@ gis_driver_is_live_session (GisDriver *driver)
 }
 
 gboolean
+gis_driver_is_reformatter (GisDriver *driver)
+{
+  return driver->is_reformatter;
+}
+
+gboolean
 gis_driver_is_small_screen (GisDriver *driver)
 {
   return driver->small_screen;
@@ -987,6 +1001,8 @@ gis_driver_startup (GApplication *app)
 
   driver->is_live_session = running_live_session ();
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
+
+  driver->is_reformatter = image_is_reformatter (image_version);
 
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL), FALSE);
 
