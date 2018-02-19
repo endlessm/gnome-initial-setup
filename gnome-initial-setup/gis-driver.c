@@ -81,6 +81,7 @@ struct _GisDriverPrivate {
 
   gboolean is_live_session;
   gboolean is_live_dvd;
+  gboolean is_reformatter;
   gboolean is_in_demo_mode;
   gboolean show_demo_mode;
 
@@ -189,6 +190,13 @@ image_supports_demo_mode (const gchar *image_version)
   return image_version != NULL && (
       g_str_has_prefix (image_version, "eosnonfree-") ||
       g_str_has_prefix (image_version, "eosoem-"));
+}
+
+static gboolean
+image_is_reformatter (const gchar *image_version)
+{
+  return image_version != NULL &&
+    g_str_has_prefix (image_version, "eosinstaller-");
 }
 
 static void
@@ -541,6 +549,13 @@ gis_driver_is_live_session (GisDriver *driver)
 }
 
 gboolean
+gis_driver_is_reformatter (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  return priv->is_reformatter;
+}
+
+gboolean
 gis_driver_is_small_screen (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
@@ -730,7 +745,7 @@ gis_driver_startup (GApplication *app)
 {
   GisDriver *driver = GIS_DRIVER (app);
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
-  char *image_version = NULL;
+  g_autofree char *image_version = NULL;
 
   G_APPLICATION_CLASS (gis_driver_parent_class)->startup (app);
 
@@ -762,13 +777,12 @@ gis_driver_startup (GApplication *app)
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_DVD]);
 
   priv->show_demo_mode = !priv->is_live_session && image_supports_demo_mode (image_version);
+  priv->is_reformatter = image_is_reformatter (image_version);
 
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL));
 
   prepare_main_window (driver);
   rebuild_pages (driver);
-
-  g_clear_pointer (&image_version, g_free);
 }
 
 static void
