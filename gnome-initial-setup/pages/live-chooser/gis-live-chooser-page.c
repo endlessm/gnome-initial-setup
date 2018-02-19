@@ -132,6 +132,9 @@ on_reformatter_exited (GisLiveChooserPage *page,
 
   gis_driver_show_window (driver);
 
+  if (gis_driver_is_reformatter (driver))
+    gis_assistant_previous_page (gis_driver_get_assistant (driver));
+
   if (error != NULL)
     {
       GtkWindow *toplevel = GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (page)));
@@ -163,7 +166,7 @@ reformatter_exited_cb (GObject      *source,
 }
 
 static void
-reformat_button_clicked (GisLiveChooserPage *page)
+gis_live_chooser_page_launch_reformatter (GisLiveChooserPage *page)
 {
   g_autoptr(GSubprocessLauncher) launcher = NULL;
   g_autoptr(GSubprocess) subprocess = NULL;
@@ -206,7 +209,7 @@ gis_live_chooser_page_constructed (GObject *object)
 
   g_signal_connect_swapped (priv->reformat_button,
                             "clicked",
-                            G_CALLBACK (reformat_button_clicked),
+                            G_CALLBACK (gis_live_chooser_page_launch_reformatter),
                             page);
 
   g_object_bind_property (driver, "live-dvd", priv->try_label, "visible", G_BINDING_SYNC_CREATE | G_BINDING_INVERT_BOOLEAN);
@@ -234,6 +237,15 @@ gis_live_chooser_page_locale_changed (GisPage *page)
 }
 
 static void
+gis_live_chooser_page_shown (GisPage *page)
+{
+  GisLiveChooserPage *self = GIS_LIVE_CHOOSER_PAGE (page);
+
+  if (gis_driver_is_reformatter (page->driver))
+    gis_live_chooser_page_launch_reformatter (self);
+}
+
+static void
 gis_live_chooser_page_class_init (GisLiveChooserPageClass *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -242,6 +254,7 @@ gis_live_chooser_page_class_init (GisLiveChooserPageClass *klass)
   page_class->page_id = "live-chooser";
   page_class->locale_changed = gis_live_chooser_page_locale_changed;
   page_class->save_data = gis_live_chooser_page_save_data;
+  page_class->shown = gis_live_chooser_page_shown;
 
   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-live-chooser-page.ui");
 
@@ -267,8 +280,11 @@ gis_live_chooser_page_init (GisLiveChooserPage *page)
 GisPage *
 gis_prepare_live_chooser_page (GisDriver *driver)
 {
-  /* Only show this page when running on a live boot session */
-  if (!gis_driver_is_live_session (driver))
+  /* Only include this page when running on live media or as a standalone
+   * reformatter.
+   */
+  if (!gis_driver_is_live_session (driver) &&
+      !gis_driver_is_reformatter (driver))
     return NULL;
 
   return g_object_new (GIS_TYPE_LIVE_CHOOSER_PAGE,
