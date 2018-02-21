@@ -152,34 +152,29 @@ on_reformatter_exited (GisLiveChooserPage *page,
 }
 
 static void
-reformatter_exited_cb (GPid     pid,
-                       gint     status,
-                       gpointer user_data)
+reformatter_exited_cb (GObject      *source,
+                       GAsyncResult *result,
+                       gpointer      user_data)
 {
-  GisLiveChooserPage *page = user_data;
+  GisLiveChooserPage *page = GIS_LIVE_CHOOSER_PAGE (user_data);
   g_autoptr(GError) error = NULL;
 
-  g_spawn_check_exit_status (status, &error);
+  g_subprocess_wait_check_finish (G_SUBPROCESS (source), result, &error);
   on_reformatter_exited (page, error);
 }
 
 static void
 gis_live_chooser_page_launch_reformatter (GisLiveChooserPage *page)
 {
+  g_autoptr(GSubprocessLauncher) launcher = NULL;
+  g_autoptr(GSubprocess) subprocess = NULL;
+  const gchar *locale = setlocale (LC_MESSAGES, NULL);
+  const gchar *command = "/usr/lib/eos-installer/gnome-image-installer";
   g_autoptr(GError) error = NULL;
-  GPid pid;
 
-  gchar* command[] = { "gnome-image-installer", NULL };
-
-  g_spawn_async ("/usr/lib/eos-installer",
-                 (gchar**) command,
-                 NULL,
-                 G_SPAWN_DO_NOT_REAP_CHILD,
-                 NULL,
-                 NULL,
-                 &pid,
-                 &error);
-
+  launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_NONE);
+  g_subprocess_launcher_setenv (launcher, "LANG", locale, TRUE);
+  subprocess = g_subprocess_launcher_spawn (launcher, &error, command, NULL);
   if (error)
     {
       on_reformatter_exited (page, error);
@@ -187,7 +182,8 @@ gis_live_chooser_page_launch_reformatter (GisLiveChooserPage *page)
   else
     {
       gis_driver_hide_window (GIS_PAGE (page)->driver);
-      g_child_watch_add (pid, reformatter_exited_cb, page);
+      g_subprocess_wait_check_async (subprocess, NULL,
+                                     reformatter_exited_cb, page);
     }
 }
 
