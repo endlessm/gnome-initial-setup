@@ -88,6 +88,7 @@ struct _GisDriverPrivate {
   GisDriverMode mode;
   UmAccountMode account_mode;
   gboolean small_screen;
+  gboolean hidden;
 
   /* Cancelled on shutdown */
   GCancellable *cancellable;
@@ -340,6 +341,7 @@ gis_driver_show_window (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
 
+  priv->hidden = FALSE;
   gtk_window_present (priv->main_window);
 }
 
@@ -348,6 +350,7 @@ gis_driver_hide_window (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
 
+  priv->hidden = TRUE;
   gtk_widget_hide (GTK_WIDGET (priv->main_window));
 }
 
@@ -637,7 +640,8 @@ gis_driver_activate (GApplication *app)
 
   G_APPLICATION_CLASS (gis_driver_parent_class)->activate (app);
 
-  gtk_window_present (GTK_WINDOW (priv->main_window));
+  if (!priv->hidden)
+    gtk_window_present (GTK_WINDOW (priv->main_window));
 }
 
 static gboolean
