@@ -103,6 +103,7 @@ struct _GisDriver {
   GisDriverMode mode;
   UmAccountMode account_mode;
   gboolean small_screen;
+  gboolean hidden;
 
   locale_t locale;
 
@@ -592,12 +593,14 @@ gis_driver_add_page (GisDriver *driver,
 void
 gis_driver_show_window (GisDriver *driver)
 {
+  driver->hidden = FALSE;
   gtk_window_present (driver->main_window);
 }
 
 void
 gis_driver_hide_window (GisDriver *driver)
 {
+  driver->hidden = TRUE;
   gtk_widget_hide (GTK_WIDGET (driver->main_window));
 }
 
@@ -826,7 +829,8 @@ gis_driver_activate (GApplication *app)
 
   G_APPLICATION_CLASS (gis_driver_parent_class)->activate (app);
 
-  gtk_window_present (GTK_WINDOW (driver->main_window));
+  if (!driver->hidden)
+    gtk_window_present (GTK_WINDOW (driver->main_window));
 }
 
 static void
