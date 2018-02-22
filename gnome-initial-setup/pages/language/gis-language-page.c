@@ -62,6 +62,8 @@ struct _GisLanguagePagePrivate
   GCancellable *cancellable;
 
   GtkAccelGroup *accel_group;
+
+  gboolean checked_unattended_config;
 };
 typedef struct _GisLanguagePagePrivate GisLanguagePagePrivate;
 
@@ -363,6 +365,111 @@ gis_language_page_locale_changed (GisPage *page)
   gis_page_set_title (GIS_PAGE (page), _("Welcome"));
 }
 
+/* See https://github.com/endlessm/eos-installer/blob/master/UNATTENDED.md for
+ * full documentation on the reformatter's unattended mode.
+ */
+
+/* On eosinstaller images, a run-mount-eosimages.mount unit is shipped which
+ * arranges for this path to be mounted.
+ */
+#define EOSIMAGES_MOUNT_POINT "/run/mount/eosimages/"
+/* Created by hand, or by hitting Ctrl+U on the last page of the reformatter.
+ * Its mere presence triggers an unattended installation; it may also specify a
+ * locale.
+ */
+#define UNATTENDED_INI_PATH EOSIMAGES_MOUNT_POINT "unattended.ini"
+/* Created by the installer for Windows when it creates a reformatter USB.
+ * Doesn't trigger unattended mode, just pre-selects a UI language.
+ */
+#define INSTALL_INI_PATH EOSIMAGES_MOUNT_POINT "install.ini"
+
+#define LOCALE_GROUP "EndlessOS"
+#define LOCALE_KEY "locale"
+
+/*
+ * check_reformatter_key_file:
+ * @locale: (out): locale specified within @path, or %NULL if none was
+ *  specified.
+ *
+ * Checks whether @path is a valid keyfile, and whether it specifies a locale.
+ *
+ * Returns: %TRUE if @path could be read.
+ */
+static gboolean
+check_reformatter_key_file (const gchar *path,
+                            gchar      **locale)
+{
+  g_autoptr(GKeyFile) key_file = g_key_file_new ();
+  g_autoptr(GError) error = NULL;
+
+  g_return_val_if_fail (locale != NULL, FALSE);
+  g_return_val_if_fail (*locale == NULL, FALSE);
+
+  if (!g_key_file_load_from_file (key_file, path, G_KEY_FILE_NONE, &error))
+    {
+      if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
+        g_warning ("Failed to read %s: %s", path, error->message);
+
+      return FALSE;
+    }
+
+  *locale = g_key_file_get_string (key_file, LOCALE_GROUP, LOCALE_KEY, &error);
+  if (error != NULL &&
+      !g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_GROUP_NOT_FOUND) &&
+      !g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_KEY_NOT_FOUND))
+    {
+      g_warning ("Failed to read locale from %s: %s", path, error->message);
+    }
+
+  return TRUE;
+}
+
+static gboolean
+assistant_next_idle_cb (gpointer user_data)
+{
+  gis_assistant_next_page (GIS_ASSISTANT (user_data));
+  return G_SOURCE_REMOVE;
+}
+
+static void
+gis_language_page_shown (GisPage *page)
+{
+  GisLanguagePage *self = GIS_LANGUAGE_PAGE (page);
+  GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (self);
+  gboolean skip_ahead = FALSE;
+  g_autofree gchar *locale = NULL;
+
+  /* For now, only support unattended mode on eosinstaller images. */
+  if (!gis_driver_is_reformatter (page->driver))
+    return;
+
+  /* Only take action once. This prevents an infinite loop if eos-installer
+   * crashes on launch.
+   */
+  if (priv->checked_unattended_config)
+    return;
+
+  priv->checked_unattended_config = TRUE;
+
+  if (check_reformatter_key_file (UNATTENDED_INI_PATH, &locale))
+    skip_ahead = TRUE;
+  else
+    check_reformatter_key_file (INSTALL_INI_PATH, &locale);
+
+  if (locale != NULL)
+    cc_language_chooser_set_language (CC_LANGUAGE_CHOOSER (priv->language_chooser),
+                                      locale);
+
+  if (skip_ahead)
+    {
+      gis_driver_hide_window (page->driver);
+      g_idle_add_full (G_PRIORITY_DEFAULT_IDLE,
+                       assistant_next_idle_cb,
+                       g_object_ref (gis_driver_get_assistant (page->driver)),
+                       g_object_unref);
+    }
+}
+
 static void
 gis_language_page_dispose (GObject *object)
 {
@@ -392,6 +499,7 @@ gis_language_page_class_init (GisLanguagePageClass *klass)
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_language_page_locale_changed;
   page_class->get_accel_group = gis_language_page_get_accel_group;
+  page_class->shown = gis_language_page_shown;
   object_class->constructed = gis_language_page_constructed;
   object_class->dispose = gis_language_page_dispose;
 }
