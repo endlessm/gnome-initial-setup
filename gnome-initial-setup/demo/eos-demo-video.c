@@ -51,16 +51,17 @@ on_demo_video_event (GtkWidget *widget,
   return FALSE;
 }
 
-static gboolean
-on_demo_video_realize (GtkWidget *widget,
-                       gpointer  user_data)
+static void
+on_demo_video_became_active (GObject    *object,
+                             GParamSpec *pspec,
+                             gpointer    user_data)
 {
+  GtkWindow    *window = GTK_WINDOW (object);
   GisDemoVideo *demo_video = GIS_DEMO_VIDEO (user_data);
   GisDemoVideoPrivate *priv = gis_demo_video_get_instance_private (demo_video);
 
-  gst_element_set_state (priv->player, GST_STATE_PLAYING);
-
-  return FALSE;
+  if (gtk_window_is_active (window))
+    gst_element_set_state (priv->player, GST_STATE_PLAYING);
 }
 
 static gboolean
@@ -118,9 +119,9 @@ create_demo_window (GisDemoVideo *demo_video)
                            demo_video,
                            G_CONNECT_AFTER);
 
-  g_signal_connect_object (GTK_WIDGET (priv->main_window),
-                           "realize",
-                           G_CALLBACK (on_demo_video_realize),
+  g_signal_connect_object (priv->main_window,
+                           "notify::is-active",
+                           G_CALLBACK (on_demo_video_became_active),
                            demo_video,
                            G_CONNECT_AFTER);
 
