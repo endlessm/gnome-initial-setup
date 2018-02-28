@@ -123,68 +123,68 @@ try_button_clicked (GisLiveChooserPage *page)
 }
 
 static void
-reformatter_exited_cb (GPid     pid,
-                       gint     status,
-                       gpointer user_data)
+on_reformatter_exited (GisLiveChooserPage *page,
+                       const GError       *error)
 {
-  GisLiveChooserPage *page = user_data;
-  GError *error = NULL;
+  GisDriver *driver = GIS_PAGE (page)->driver;
 
-  if (!g_spawn_check_exit_status (status, &error))
+  gis_driver_show_window (driver);
+
+  if (gis_driver_is_reformatter (driver))
+    gis_assistant_previous_page (gis_driver_get_assistant (driver));
+
+  if (error != NULL)
     {
+      GtkWindow *toplevel = GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (page)));
       GtkWidget *message_dialog;
 
       g_critical ("Error running the reformatter: %s", error->message);
 
-      message_dialog = gtk_message_dialog_new (GTK_WINDOW (gtk_widget_get_toplevel (user_data)),
+      message_dialog = gtk_message_dialog_new (toplevel,
                                                GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
                                                GTK_MESSAGE_ERROR,
                                                GTK_BUTTONS_CLOSE,
                                                _("Error running the reformatter: %s"), error->message);
 
-      gis_driver_show_window (GIS_PAGE (page)->driver);
       gtk_dialog_run (GTK_DIALOG (message_dialog));
       gtk_widget_destroy (message_dialog);
-
-      g_clear_error (&error);
-    }
-  else
-    {
-      g_application_quit (G_APPLICATION (GIS_PAGE (page)->driver));
     }
 }
 
 static void
-reformat_button_clicked (GisLiveChooserPage *page)
+reformatter_exited_cb (GObject      *source,
+                       GAsyncResult *result,
+                       gpointer      user_data)
 {
-  GError *error = NULL;
-  GPid pid;
+  GisLiveChooserPage *page = GIS_LIVE_CHOOSER_PAGE (user_data);
+  g_autoptr(GError) error = NULL;
 
-  gchar* command[] = { "gnome-image-installer", NULL };
+  g_subprocess_wait_check_finish (G_SUBPROCESS (source), result, &error);
+  on_reformatter_exited (page, error);
+}
 
-  g_spawn_async ("/usr/lib/eos-installer",
-                 (gchar**) command,
-                 NULL,
-                 G_SPAWN_DO_NOT_REAP_CHILD,
-                 NULL,
-                 NULL,
-                 &pid,
-                 &error);
+static void
+gis_live_chooser_page_launch_reformatter (GisLiveChooserPage *page)
+{
+  g_autoptr(GSubprocessLauncher) launcher = NULL;
+  g_autoptr(GSubprocess) subprocess = NULL;
+  const gchar *locale = setlocale (LC_MESSAGES, NULL);
+  const gchar *command = "/usr/lib/eos-installer/gnome-image-installer";
+  g_autoptr(GError) error = NULL;
 
+  launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_NONE);
+  g_subprocess_launcher_setenv (launcher, "LANG", locale, TRUE);
+  subprocess = g_subprocess_launcher_spawn (launcher, &error, command, NULL);
   if (error)
     {
-      g_critical ("Error running the reformatter: %s", error->message);
-      g_clear_error (&error);
-      return;
+      on_reformatter_exited (page, error);
     }
-
-  gis_driver_hide_window (GIS_PAGE (page)->driver);
-
-  /*
-   * Check for when the reformatter finishes running, and check
-   * if it exited smoothly.
-   */
-  g_child_watch_add (pid, reformatter_exited_cb, page);
+  else
+    {
+      gis_driver_hide_window (GIS_PAGE (page)->driver);
+      g_subprocess_wait_check_async (subprocess, NULL,
+                                     reformatter_exited_cb, page);
+    }
 }
 
 static void
@@ -218,7 +218,7 @@ gis_live_chooser_page_constructed (GObject *object)
 
   g_signal_connect_swapped (priv->reformat_button,
                             "clicked",
-                            G_CALLBACK (reformat_button_clicked),
+                            G_CALLBACK (gis_live_chooser_page_launch_reformatter),
                             page);
 
   g_object_bind_property (driver, "live-dvd", priv->try_label, "visible", G_BINDING_SYNC_CREATE | G_BINDING_INVERT_BOOLEAN);
@@ -246,6 +246,15 @@ gis_live_chooser_page_locale_changed (GisPage *page)
 }
 
 static void
+gis_live_chooser_page_shown (GisPage *page)
+{
+  GisLiveChooserPage *self = GIS_LIVE_CHOOSER_PAGE (page);
+
+  if (gis_driver_is_reformatter (page->driver))
+    gis_live_chooser_page_launch_reformatter (self);
+}
+
+static void
 gis_live_chooser_page_class_init (GisLiveChooserPageClass *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -254,6 +263,7 @@ gis_live_chooser_page_class_init (GisLiveChooserPageClass *klass)
   page_class->page_id = "live-chooser";
   page_class->locale_changed = gis_live_chooser_page_locale_changed;
   page_class->save_data = gis_live_chooser_page_save_data;
+  page_class->shown = gis_live_chooser_page_shown;
 
   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-live-chooser-page.ui");
 
@@ -280,8 +290,11 @@ gis_live_chooser_page_init (GisLiveChooserPage *page)
 void
 gis_prepare_live_chooser_page (GisDriver *driver)
 {
-  /* Only show this page when running on a live boot session */
-  if (!gis_driver_is_live_session (driver))
+  /* Only include this page when running on live media or as a standalone
+   * reformatter.
+   */
+  if (!gis_driver_is_live_session (driver) &&
+      !gis_driver_is_reformatter (driver))
     return;
 
   gis_driver_add_page (driver,

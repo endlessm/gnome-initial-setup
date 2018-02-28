@@ -81,12 +81,14 @@ struct _GisDriverPrivate {
 
   gboolean is_live_session;
   gboolean is_live_dvd;
+  gboolean is_reformatter;
   gboolean is_in_demo_mode;
   gboolean show_demo_mode;
 
   GisDriverMode mode;
   UmAccountMode account_mode;
   gboolean small_screen;
+  gboolean hidden;
 
   /* Cancelled on shutdown */
   GCancellable *cancellable;
@@ -165,12 +167,20 @@ check_live_session (GisDriver   *driver,
 static char *
 get_image_version (void)
 {
+  g_autoptr(GError) error_sysroot = NULL;
+  g_autoptr(GError) error_root = NULL;
   char *image_version =
-    gis_page_util_get_image_version (EOS_IMAGE_VERSION_PATH);
+    gis_page_util_get_image_version (EOS_IMAGE_VERSION_PATH, &error_sysroot);
 
-  if (!image_version)
+  if (image_version == NULL)
     image_version =
-      gis_page_util_get_image_version (EOS_IMAGE_VERSION_ALT_PATH);
+      gis_page_util_get_image_version (EOS_IMAGE_VERSION_ALT_PATH, &error_root);
+
+  if (image_version == NULL)
+    {
+      g_warning ("%s", error_sysroot->message);
+      g_warning ("%s", error_root->message);
+    }
 
   return image_version;
 }
@@ -181,6 +191,13 @@ image_supports_demo_mode (const gchar *image_version)
   return image_version != NULL && (
       g_str_has_prefix (image_version, "eosnonfree-") ||
       g_str_has_prefix (image_version, "eosoem-"));
+}
+
+static gboolean
+image_is_reformatter (const gchar *image_version)
+{
+  return image_version != NULL &&
+    g_str_has_prefix (image_version, "eosinstaller-");
 }
 
 static void
@@ -324,6 +341,7 @@ gis_driver_show_window (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
 
+  priv->hidden = FALSE;
   gtk_window_present (priv->main_window);
 }
 
@@ -332,6 +350,7 @@ gis_driver_hide_window (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
 
+  priv->hidden = TRUE;
   gtk_widget_hide (GTK_WIDGET (priv->main_window));
 }
 
@@ -533,6 +552,13 @@ gis_driver_is_live_session (GisDriver *driver)
 }
 
 gboolean
+gis_driver_is_reformatter (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  return priv->is_reformatter;
+}
+
+gboolean
 gis_driver_is_small_screen (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
@@ -614,7 +640,8 @@ gis_driver_activate (GApplication *app)
 
   G_APPLICATION_CLASS (gis_driver_parent_class)->activate (app);
 
-  gtk_window_present (GTK_WINDOW (priv->main_window));
+  if (!priv->hidden)
+    gtk_window_present (GTK_WINDOW (priv->main_window));
 }
 
 static gboolean
@@ -722,7 +749,7 @@ gis_driver_startup (GApplication *app)
 {
   GisDriver *driver = GIS_DRIVER (app);
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
-  char *image_version = NULL;
+  g_autofree char *image_version = NULL;
 
   G_APPLICATION_CLASS (gis_driver_parent_class)->startup (app);
 
@@ -754,13 +781,12 @@ gis_driver_startup (GApplication *app)
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_DVD]);
 
   priv->show_demo_mode = !priv->is_live_session && image_supports_demo_mode (image_version);
+  priv->is_reformatter = image_is_reformatter (image_version);
 
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL));
 
   prepare_main_window (driver);
   rebuild_pages (driver);
-
-  g_clear_pointer (&image_version, g_free);
 }
 
 static void
