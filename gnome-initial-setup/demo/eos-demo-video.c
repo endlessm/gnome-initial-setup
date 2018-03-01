@@ -52,6 +52,18 @@ on_demo_video_event (GtkWidget *widget,
 }
 
 static gboolean
+on_demo_video_realize (GtkWidget *widget,
+                       gpointer  user_data)
+{
+  GisDemoVideo *demo_video = GIS_DEMO_VIDEO (user_data);
+  GisDemoVideoPrivate *priv = gis_demo_video_get_instance_private (demo_video);
+
+  gst_element_set_state (priv->player, GST_STATE_PLAYING);
+
+  return FALSE;
+}
+
+static gboolean
 on_video_bus_event (GstBus     *bus,
                     GstMessage *msg,
                     gpointer   user_data)
@@ -106,8 +118,13 @@ create_demo_window (GisDemoVideo *demo_video)
                            demo_video,
                            G_CONNECT_AFTER);
 
+  g_signal_connect_object (GTK_WIDGET (priv->main_window),
+                           "realize",
+                           G_CALLBACK (on_demo_video_realize),
+                           demo_video,
+                           G_CONNECT_AFTER);
+
   gtk_widget_show_all (GTK_WIDGET (priv->main_window));
-  gst_element_set_state (priv->player, GST_STATE_PLAYING);
 
   gst_bus_add_watch (priv->bus, on_video_bus_event, demo_video);
 }
