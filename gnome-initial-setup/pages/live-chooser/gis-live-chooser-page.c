@@ -203,8 +203,6 @@ gis_live_chooser_page_constructed (GObject *object)
   GisLiveChooserPagePrivate *priv = gis_live_chooser_page_get_instance_private (page);
   GisDriver *driver = GIS_PAGE (page)->driver;
 
-  g_type_ensure (CC_TYPE_LANGUAGE_CHOOSER);
-
   G_OBJECT_CLASS (gis_live_chooser_page_parent_class)->constructed (object);
 
   gis_page_set_hide_forward_button (GIS_PAGE (page), TRUE);
