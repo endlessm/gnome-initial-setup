@@ -365,6 +365,34 @@ gis_language_page_locale_changed (GisPage *page)
   gis_page_set_title (GIS_PAGE (page), _("Welcome"));
 }
 
+static void
+reformatter_exited_cb (GObject      *source,
+                       GAsyncResult *result,
+                       gpointer      user_data)
+{
+  GisPage *page = GIS_PAGE (source);
+  /* We claim that the apply operation was unsuccessful so that the assistant
+   * doesn't advance to the next page.
+   */
+  gboolean valid = FALSE;
+
+  gis_page_apply_complete (page, valid);
+}
+
+static gboolean
+gis_language_page_apply (GisPage      *page,
+                         GCancellable *cancellable)
+{
+  if (!gis_driver_is_reformatter (page->driver))
+    return FALSE;
+
+  /* We abuse the "apply" hook to not actually advance to the next page when
+   * launching the reformatter.
+   */
+  gis_page_util_run_reformatter (page, reformatter_exited_cb, NULL);
+  return TRUE;
+}
+
 /* See https://github.com/endlessm/eos-installer/blob/master/UNATTENDED.md for
  * full documentation on the reformatter's unattended mode.
  */
@@ -424,19 +452,12 @@ check_reformatter_key_file (const gchar *path,
   return TRUE;
 }
 
-static gboolean
-assistant_next_idle_cb (gpointer user_data)
-{
-  gis_assistant_next_page (GIS_ASSISTANT (user_data));
-  return G_SOURCE_REMOVE;
-}
-
 static void
 gis_language_page_shown (GisPage *page)
 {
   GisLanguagePage *self = GIS_LANGUAGE_PAGE (page);
   GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (self);
-  gboolean skip_ahead = FALSE;
+  gboolean launch_immediately = FALSE;
   g_autofree gchar *locale = NULL;
 
   /* For now, only support unattended mode on eosinstaller images. */
@@ -452,7 +473,7 @@ gis_language_page_shown (GisPage *page)
   priv->checked_unattended_config = TRUE;
 
   if (check_reformatter_key_file (UNATTENDED_INI_PATH, &locale))
-    skip_ahead = TRUE;
+    launch_immediately = TRUE;
   else
     check_reformatter_key_file (INSTALL_INI_PATH, &locale);
 
@@ -460,14 +481,8 @@ gis_language_page_shown (GisPage *page)
     cc_language_chooser_set_language (CC_LANGUAGE_CHOOSER (priv->language_chooser),
                                       locale);
 
-  if (skip_ahead)
-    {
-      gis_driver_hide_window (page->driver);
-      g_idle_add_full (G_PRIORITY_DEFAULT_IDLE,
-                       assistant_next_idle_cb,
-                       g_object_ref (gis_driver_get_assistant (page->driver)),
-                       g_object_unref);
-    }
+  if (launch_immediately)
+    gis_page_util_run_reformatter (page, NULL, NULL);
 }
 
 static void
@@ -499,6 +514,7 @@ gis_language_page_class_init (GisLanguagePageClass *klass)
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_language_page_locale_changed;
   page_class->get_accel_group = gis_language_page_get_accel_group;
+  page_class->apply = gis_language_page_apply;
   page_class->shown = gis_language_page_shown;
   object_class->constructed = gis_language_page_constructed;
   object_class->dispose = gis_language_page_dispose;

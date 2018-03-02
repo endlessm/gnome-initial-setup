@@ -32,6 +32,7 @@
 #include <langinfo.h>
 #include <locale.h>
 
+#include "gis-page-util.h"
 #include "pages/language/cc-language-chooser.h"
 
 #define LIVE_ACCOUNT_AVATAR "/usr/share/pixmaps/faces/sunflower.jpg"
@@ -125,68 +126,9 @@ try_button_clicked (GisLiveChooserPage *page)
 }
 
 static void
-on_reformatter_exited (GisLiveChooserPage *page,
-                       const GError       *error)
+reformat_button_clicked (GisLiveChooserPage *page)
 {
-  GisDriver *driver = GIS_PAGE (page)->driver;
-
-  gis_driver_show_window (driver);
-
-  if (gis_driver_is_reformatter (driver))
-    gis_assistant_previous_page (gis_driver_get_assistant (driver));
-
-  if (error != NULL)
-    {
-      GtkWindow *toplevel = GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (page)));
-      GtkWidget *message_dialog;
-
-      g_critical ("Error running the reformatter: %s", error->message);
-
-      message_dialog = gtk_message_dialog_new (toplevel,
-                                               GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-                                               GTK_MESSAGE_ERROR,
-                                               GTK_BUTTONS_CLOSE,
-                                               _("Error running the reformatter: %s"), error->message);
-
-      gtk_dialog_run (GTK_DIALOG (message_dialog));
-      gtk_widget_destroy (message_dialog);
-    }
-}
-
-static void
-reformatter_exited_cb (GObject      *source,
-                       GAsyncResult *result,
-                       gpointer      user_data)
-{
-  GisLiveChooserPage *page = GIS_LIVE_CHOOSER_PAGE (user_data);
-  g_autoptr(GError) error = NULL;
-
-  g_subprocess_wait_check_finish (G_SUBPROCESS (source), result, &error);
-  on_reformatter_exited (page, error);
-}
-
-static void
-gis_live_chooser_page_launch_reformatter (GisLiveChooserPage *page)
-{
-  g_autoptr(GSubprocessLauncher) launcher = NULL;
-  g_autoptr(GSubprocess) subprocess = NULL;
-  const gchar *locale = nl_langinfo (NL_LOCALE_NAME (LC_MESSAGES));
-  const gchar *command = "/usr/lib/eos-installer/gnome-image-installer";
-  g_autoptr(GError) error = NULL;
-
-  launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_NONE);
-  g_subprocess_launcher_setenv (launcher, "LANG", locale, TRUE);
-  subprocess = g_subprocess_launcher_spawn (launcher, &error, command, NULL);
-  if (error)
-    {
-      on_reformatter_exited (page, error);
-    }
-  else
-    {
-      gis_driver_hide_window (GIS_PAGE (page)->driver);
-      g_subprocess_wait_check_async (subprocess, NULL,
-                                     reformatter_exited_cb, page);
-    }
+  gis_page_util_run_reformatter (GIS_PAGE (page), NULL, NULL);
 }
 
 static void
@@ -209,7 +151,7 @@ gis_live_chooser_page_constructed (GObject *object)
 
   g_signal_connect_swapped (priv->reformat_button,
                             "clicked",
-                            G_CALLBACK (gis_live_chooser_page_launch_reformatter),
+                            G_CALLBACK (reformat_button_clicked),
                             page);
 
   g_object_bind_property (driver, "live-dvd", priv->try_label, "visible", G_BINDING_SYNC_CREATE | G_BINDING_INVERT_BOOLEAN);
@@ -237,15 +179,6 @@ gis_live_chooser_page_locale_changed (GisPage *page)
 }
 
 static void
-gis_live_chooser_page_shown (GisPage *page)
-{
-  GisLiveChooserPage *self = GIS_LIVE_CHOOSER_PAGE (page);
-
-  if (gis_driver_is_reformatter (page->driver))
-    gis_live_chooser_page_launch_reformatter (self);
-}
-
-static void
 gis_live_chooser_page_class_init (GisLiveChooserPageClass *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -254,7 +187,6 @@ gis_live_chooser_page_class_init (GisLiveChooserPageClass *klass)
   page_class->page_id = "live-chooser";
   page_class->locale_changed = gis_live_chooser_page_locale_changed;
   page_class->save_data = gis_live_chooser_page_save_data;
-  page_class->shown = gis_live_chooser_page_shown;
 
   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-live-chooser-page.ui");
 
@@ -280,11 +212,7 @@ gis_live_chooser_page_init (GisLiveChooserPage *page)
 GisPage *
 gis_prepare_live_chooser_page (GisDriver *driver)
 {
-  /* Only include this page when running on live media or as a standalone
-   * reformatter.
-   */
-  if (!gis_driver_is_live_session (driver) &&
-      !gis_driver_is_reformatter (driver))
+  if (!gis_driver_is_live_session (driver))
     return NULL;
 
   return g_object_new (GIS_TYPE_LIVE_CHOOSER_PAGE,
