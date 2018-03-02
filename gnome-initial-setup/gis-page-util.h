@@ -1,6 +1,6 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
  *
- * Copyright (C) 2017 Endless Mobile, Inc.
+ * Copyright © 2017–2018 Endless Mobile, Inc.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -13,12 +13,11 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
- * 02110-1301, USA
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  *
  * Written by:
  *     Mario Sanchez Prada <mario@endlessm.com>
+ *     Will Thompson <wjt@endlessm.com>
  */
 
 #ifndef __GIS_PAGE_UTIL_H__
@@ -31,6 +30,10 @@
 G_BEGIN_DECLS
 
 void gis_page_util_show_factory_dialog (GisPage *page);
+
+void gis_page_util_run_reformatter (GisPage            *page,
+                                    GAsyncReadyCallback callback,
+                                    gpointer            user_data);
 
 gchar *gis_page_util_get_image_version (const gchar *path,
                                         GError     **error);

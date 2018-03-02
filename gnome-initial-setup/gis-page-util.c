@@ -1,6 +1,6 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
  *
- * Copyright (C) 2017 Endless Mobile, Inc.
+ * Copyright © 2017–2018 Endless Mobile, Inc.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -13,13 +13,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
- * 02110-1301, USA
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  *
  * Written by:
  *     Mario Sanchez Prada <mario@endlessm.com>
+ *     Will Thompson <wjt@endlessm.com>
  */
+
+#define _GNU_SOURCE 1  /* for NL_LOCALE_NAME */
 
 #include "config.h"
 
@@ -29,7 +30,10 @@
 #include <gio/gio.h>
 #include <glib.h>
 #include <glib/gstdio.h>
+#include <gio/gdesktopappinfo.h>
 #include <gtk/gtk.h>
+#include <langinfo.h>
+#include <locale.h>
 #include <polkit/polkit.h>
 #include <sys/types.h>
 #include <sys/xattr.h>
@@ -318,4 +322,119 @@ gis_page_util_show_factory_dialog (GisPage *page)
   gtk_window_present (GTK_WINDOW (factory_dialog));
   g_signal_connect (factory_dialog, "delete-event",
                     G_CALLBACK (gtk_widget_hide_on_delete), NULL);
+}
+
+static gboolean
+run_dialog_cb (gpointer user_data)
+{
+  GtkDialog *dialog = GTK_DIALOG (user_data);
+  gtk_dialog_run (dialog);
+  return G_SOURCE_REMOVE;
+}
+
+static void
+on_reformatter_exited (GTask  *task,
+                       GError *error)
+{
+  GisPage *page = GIS_PAGE (g_task_get_source_object (task));
+
+  gis_driver_show_window (page->driver);
+
+  if (error == NULL)
+    {
+      g_task_return_boolean (task, TRUE);
+      return;
+    }
+
+  GtkWindow *toplevel = GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (page)));
+  GtkWidget *message_dialog;
+
+  g_critical ("Error running the reformatter: %s", error->message);
+
+  message_dialog = gtk_message_dialog_new (toplevel,
+                                           GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+                                           GTK_MESSAGE_ERROR,
+                                           GTK_BUTTONS_CLOSE,
+                                           /* Translators: this is shown when launching the
+                                            * reformatter (an external program) fails. The
+                                            * placeholder is an error message describing what went
+                                            * wrong.
+                                            */
+                                           _("Error running the reformatter: %s"), error->message);
+  g_idle_add_full (G_PRIORITY_DEFAULT_IDLE, run_dialog_cb,
+                   message_dialog, (GDestroyNotify) gtk_widget_destroy);
+
+  g_task_return_error (task, g_steal_pointer (&error));
+}
+
+static void
+reformatter_exited_cb (GObject      *source,
+                       GAsyncResult *result,
+                       gpointer      user_data)
+{
+  g_autoptr(GTask) task = G_TASK (user_data);
+  g_autoptr(GError) error = NULL;
+
+  g_subprocess_wait_check_finish (G_SUBPROCESS (source), result, &error);
+  on_reformatter_exited (task, g_steal_pointer (&error));
+}
+
+#define EOS_INSTALLER_DESKTOP_ID "com.endlessm.Installer.desktop"
+
+/**
+ * gis_page_util_run_reformatter:
+ *
+ * Launches the reformatter, and arranges for the assistant to be hidden for
+ * the duration of its runtime. @callback will be called when the reformatter
+ * exits.
+ *
+ * There is no corresponding _finish() function because (at present) neither
+ * caller actually cares about the result.
+ */
+void
+gis_page_util_run_reformatter (GisPage            *page,
+                               GAsyncReadyCallback callback,
+                               gpointer            user_data)
+{
+  g_autoptr(GTask) task = g_task_new (page, NULL, callback, user_data);
+  g_autoptr(GSubprocessLauncher) launcher = NULL;
+  g_autoptr(GSubprocess) subprocess = NULL;
+  const gchar *locale = nl_langinfo (NL_LOCALE_NAME (LC_MESSAGES));
+  g_autoptr(GDesktopAppInfo) installer = NULL;
+  const gchar *executable = NULL;
+  g_autoptr(GError) error = NULL;
+
+  installer = g_desktop_app_info_new (EOS_INSTALLER_DESKTOP_ID);
+  if (installer == NULL)
+    {
+      g_set_error (&error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND,
+                   EOS_INSTALLER_DESKTOP_ID " not found");
+      on_reformatter_exited (task, g_steal_pointer (&error));
+    }
+
+  /* We can't just activate the GAppInfo because that API gives no way to
+   * track success or failure of the launched application, and it has proven
+   * helpful in practice to be able to show an error message on failure.
+   */
+  executable = g_app_info_get_executable (G_APP_INFO (installer));
+  if (executable == NULL)
+    {
+      g_set_error (&error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND,
+                   "No executable path for " EOS_INSTALLER_DESKTOP_ID);
+      on_reformatter_exited (task, g_steal_pointer (&error));
+    }
+
+  launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_NONE);
+  g_subprocess_launcher_setenv (launcher, "LANG", locale, TRUE);
+  subprocess = g_subprocess_launcher_spawn (launcher, &error, executable, NULL);
+
+  if (error)
+    {
+      on_reformatter_exited (task, g_steal_pointer (&error));
+      return;
+    }
+
+  gis_driver_hide_window (page->driver);
+  g_subprocess_wait_check_async (subprocess, NULL, reformatter_exited_cb,
+                                 g_steal_pointer (&task));
 }
