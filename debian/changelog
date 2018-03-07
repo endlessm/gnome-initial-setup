@@ -1,3 +1,38 @@
+gnome-initial-setup (3.26.0-2) unstable; urgency=medium
+
+  * Lower dependency on gdm3 to Suggests.
+  * Update Vcs fields for conversion to git
+  * Add debian/gbp.conf
+  * Bump Standards-Version to 4.1.2
+  * Bump debhelper compat to 11
+  * Disable the Software Sources page since there is no obvious easy way
+    to change this setting later
+
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 25 Dec 2017 09:22:53 -0500
+
+gnome-initial-setup (3.26.0-1) unstable; urgency=medium
+
+  * New upstream translations release
+
+ -- Jeremy Bicha <jbicha@debian.org>  Wed, 13 Sep 2017 21:22:37 -0400
+
+gnome-initial-setup (3.25.92-1) unstable; urgency=medium
+
+  * New upstream translations release (Closes: #862675)
+
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 04 Sep 2017 20:14:08 -0400
+
+gnome-initial-setup (3.25.4-1) unstable; urgency=medium
+
+  * New upstream release
+  * Drop all patches, applied in new release
+  * debian/links:
+    + Symlink the gdm greeter .desktop to /usr/share/applications
+      so that "Initial Setup" has a proper window title
+  * Bump Standards-Version to 4.1.0
+
+ -- Jeremy Bicha <jbicha@debian.org>  Wed, 30 Aug 2017 12:11:56 -0400
+
 gnome-initial-setup (3.24.2-1) unstable; urgency=medium
 
   * New upstream release (Closes: #869942)
