@@ -26,13 +26,17 @@ Build-Depends: debhelper (>= 11),
                libkrb5-dev,
                libnm-dev (>= 1.2),
                libnma-dev (>= 1.0),
-               libpackagekit-glib2-dev (>= 1.1.4),
                libpango1.0-dev (>= 1.32.5),
                libpolkit-gobject-1-dev (>= 0.103),
                libpwquality-dev,
                librest-dev,
                libsecret-1-dev,
-               libwebkit2gtk-4.0-dev
+               libwebkit2gtk-4.0-dev,
+               eos-metrics-0-dev (>= 0.5.0),
+               libattr1-dev,
+               libevince-dev,
+               libgnome-keyring-dev,
+               zint-devel,
 Standards-Version: 4.1.2
 Vcs-Git: https://anonscm.debian.org/git/pkg-gnome/gnome-initial-setup.git
 Vcs-Browser: https://anonscm.debian.org/git/pkg-gnome/gnome-initial-setup.git
@@ -41,6 +45,7 @@ Homepage: https://git.gnome.org/browse/gnome-initial-setup/
 Package: gnome-initial-setup
 Architecture: linux-any
 Depends: ${shlibs:Depends},
+         eos-installer,
          policykit-1 (>= 0.103),
          adduser,
          gnome-settings-daemon (>= 3.24),
