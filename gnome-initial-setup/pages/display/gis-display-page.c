@@ -30,21 +30,22 @@
 
 #include "display-resources.h"
 
+#include "cc-display-config-manager-dbus.h"
+#include "cc-display-config.h"
+
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <libgnome-desktop/gnome-rr.h>
-#include <libgnome-desktop/gnome-rr-config.h>
 
 typedef struct {
   GtkWidget *overscan_on;
   GtkWidget *overscan_off;
   GtkWidget *overscan_default_selection;
 
-  GnomeRRScreen *screen;
-  GnomeRRConfig *current_config;
-  GnomeRROutputInfo *current_output;
+  CcDisplayConfigManager *manager;
+  CcDisplayConfig *current_config;
+  CcDisplayMonitor *current_output;
 
-  guint screen_changed_id;
+  gulong screen_changed_id;
 } GisDisplayPagePrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GisDisplayPage, gis_display_page, GIS_TYPE_PAGE);
@@ -54,16 +55,13 @@ set_toggle_options_from_config (GisDisplayPage *page)
 {
   GisDisplayPagePrivate *priv = gis_display_page_get_instance_private (page);
   GtkWidget *default_toggle, *toggle;
-  gboolean is_underscanning;
 
   /* Do not set the toggle if we're on the default selection */
   default_toggle = priv->overscan_default_selection;
   if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (default_toggle)))
     return;
 
-  is_underscanning = gnome_rr_output_info_get_underscanning  (priv->current_output);
-
-  if (is_underscanning)
+  if (cc_display_monitor_get_underscanning (priv->current_output))
     toggle = priv->overscan_on;
   else
     toggle = priv->overscan_off;
@@ -72,41 +70,46 @@ set_toggle_options_from_config (GisDisplayPage *page)
 }
 
 static gboolean
+should_display_overscan (GisDisplayPage *page)
+{
+  GisDisplayPagePrivate *priv = gis_display_page_get_instance_private (page);
+
+  if (!priv->current_output)
+    return FALSE;
+
+  return cc_display_monitor_supports_underscanning (priv->current_output);
+}
+
+static gboolean
 read_screen_config (GisDisplayPage *page)
 {
   GisDisplayPagePrivate *priv = gis_display_page_get_instance_private (page);
-  GnomeRRConfig *current;
-  GnomeRROutputInfo **outputs;
-  GnomeRROutputInfo *output;
-  int i;
-
-  gnome_rr_screen_refresh (priv->screen, NULL);
+  CcDisplayConfig *current;
+  GList *outputs, *l;
 
   g_clear_object (&priv->current_config);
+  priv->current_output = NULL;
 
-  current = gnome_rr_config_new_current (priv->screen, NULL);
-  gnome_rr_config_ensure_primary (current);
-  priv->current_config = current;
-
-  outputs = gnome_rr_config_get_outputs (current);
-  output = NULL;
-
-  /* we take the primary and active display */
-  for (i = 0; outputs[i] != NULL; i++)
+  current = cc_display_config_manager_get_current (priv->manager);
+  if (!current)
     {
-      if (gnome_rr_output_info_is_active (outputs[i]) &&
-          gnome_rr_output_info_get_primary (outputs[i]))
-        {
-          output = outputs[i];
-          break;
-        }
+      g_critical ("Could not get primary output information.");
+      return FALSE;
     }
 
-  priv->current_output = output;
-  if (priv->current_output == NULL)
-    return FALSE;
+  priv->current_config = current;
 
-  set_toggle_options_from_config (page);
+  outputs = cc_display_config_get_monitors (priv->current_config);
+  for (l = outputs; l != NULL; l = l->next)
+    {
+      CcDisplayMonitor *output = l->data;
+
+      if (!cc_display_monitor_is_active (output))
+        continue;
+
+      priv->current_output = output;
+      break;
+    }
 
   return TRUE;
 }
@@ -116,42 +119,19 @@ toggle_overscan (GisDisplayPage *page,
                  gboolean value)
 {
   GisDisplayPagePrivate *priv = gis_display_page_get_instance_private (page);
-  GError *error;
+  GError *error = NULL;
 
-  if (value == gnome_rr_output_info_get_underscanning  (priv->current_output))
+  if (value == cc_display_monitor_get_underscanning (priv->current_output))
     return;
 
-  gnome_rr_output_info_set_underscanning (priv->current_output, value);
+  cc_display_monitor_set_underscanning (priv->current_output, value);
 
-  gnome_rr_config_sanitize (priv->current_config);
-  gnome_rr_config_ensure_primary (priv->current_config);
-
-  error = NULL;
-  gnome_rr_config_apply_persistent (priv->current_config, priv->screen, &error);
-
-  read_screen_config (page);
-
-  if (error != NULL)
+  if (!cc_display_config_apply (priv->current_config, &error))
     {
       g_warning ("Error applying configuration: %s", error->message);
-      g_error_free (error);
+      g_clear_error (&error);
+      return;
     }
-}
-
-static gboolean
-should_display_overscan (GisDisplayPage *page)
-{
-  GisDisplayPagePrivate *priv = gis_display_page_get_instance_private (page);
-  GnomeRROutput *output;
-  char *output_name;
-
-  output_name = gnome_rr_output_info_get_name (priv->current_output);
-  output = gnome_rr_screen_get_output_by_name (priv->screen, output_name);
-
-  if (!output)
-    return FALSE;
-
-  return gnome_rr_output_supports_underscanning (output);
 }
 
 static void
@@ -192,14 +172,41 @@ gis_display_page_dispose (GObject *gobject)
 
   if (priv->screen_changed_id != 0)
     {
-      g_signal_handler_disconnect (priv->screen, priv->screen_changed_id);
+      g_signal_handler_disconnect (priv->manager, priv->screen_changed_id);
       priv->screen_changed_id = 0;
     }
 
+  g_clear_object (&priv->manager);
   g_clear_object (&priv->current_config);
-  g_clear_object (&priv->screen);
 
   G_OBJECT_CLASS (gis_display_page_parent_class)->dispose (gobject);
+}
+
+static void
+on_screen_changed (GisDisplayPage *page)
+{
+  GisDisplayPagePrivate *priv = gis_display_page_get_instance_private (page);
+  gboolean visible = FALSE;
+
+  if (!priv->manager)
+    return;
+
+  if (!read_screen_config (page))
+    {
+      g_warning ("Could not read screen configuration. Hiding overscan page.");
+      goto out;
+    }
+
+  if (should_display_overscan (page))
+    {
+      g_debug ("Overscanning supported on primary display. Showing overscan page.");
+      visible = TRUE;
+
+      set_toggle_options_from_config (page);
+    }
+
+ out:
+  gtk_widget_set_visible (GTK_WIDGET (page), visible);
 }
 
 static void
@@ -208,40 +215,14 @@ gis_display_page_constructed (GObject *object)
   GisDisplayPage *page = GIS_DISPLAY_PAGE (object);
   GisDisplayPagePrivate *priv = gis_display_page_get_instance_private (page);
   GtkWidget *widget;
-  GError *error = NULL;
-  gboolean visible = FALSE;
 
   G_OBJECT_CLASS (gis_display_page_parent_class)->constructed (object);
 
-  gtk_widget_show (GTK_WIDGET (page));
-
-  priv->screen = gnome_rr_screen_new (gdk_screen_get_default (), &error);
-  if (priv->screen == NULL)
-    {
-      g_critical ("Could not get screen information: %s. Hiding overscan page.",
-                  error->message);
-      g_error_free (error);
-      goto out;
-    }
-
-  if (!read_screen_config (page))
-    {
-      g_critical ("Could not get primary output information. Hiding overscan page.");
-      goto out;
-    }
-
-  if (!should_display_overscan (page))
-    {
-      g_debug ("Not using an HD resolution on HDMI. Hiding overscan page.");
-      goto out;
-    }
-
-  visible = TRUE;
-  priv->screen_changed_id = g_signal_connect_swapped (priv->screen,
-                                                      "changed",
-                                                      G_CALLBACK (read_screen_config),
-                                                      page);
-
+  priv->manager = cc_display_config_manager_dbus_new ();
+  priv->screen_changed_id = g_signal_connect_object (priv->manager, "changed",
+                                                     G_CALLBACK (on_screen_changed),
+                                                     page,
+                                                     G_CONNECT_SWAPPED);
   widget = priv->overscan_on;
   g_signal_connect (widget, "toggled",
                     G_CALLBACK (overscan_radio_toggled), page);
@@ -250,8 +231,7 @@ gis_display_page_constructed (GObject *object)
   g_signal_connect (widget, "toggled",
                     G_CALLBACK (overscan_radio_toggled), page);
 
- out:
-  gtk_widget_set_visible (GTK_WIDGET (page), visible);
+  gtk_widget_show (GTK_WIDGET (page));
 }
 
 static gboolean
