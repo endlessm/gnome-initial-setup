@@ -11,3 +11,11 @@ override_dh_auto_configure:
 	dh_auto_configure -- \
 		--libexecdir=/usr/lib/gnome-initial-setup \
 		--disable-software-sources
+
+# Depend on the appropriate package for the Welcome logo
+override_dh_gencontrol:
+ifeq ($(shell dpkg-vendor --query vendor),Debian)
+	dh_gencontrol -- -Vlogo:Depends='desktop-base'
+else
+	dh_gencontrol
+endif

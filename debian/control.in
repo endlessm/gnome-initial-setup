@@ -44,6 +44,7 @@ Depends: ${shlibs:Depends},
          policykit-1 (>= 0.103),
          adduser,
          gnome-settings-daemon (>= 3.24),
+         ${logo:Depends},
          ${misc:Depends}
 Recommends: gnome-getting-started-docs
 Suggests: gdm3
