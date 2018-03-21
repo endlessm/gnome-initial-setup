@@ -2,6 +2,8 @@ gnome-initial-setup (3.28.0-2) UNRELEASED; urgency=medium
 
   * Add welcome-screen.patch from Fedora to still show Welcome screen if
     Language page is disabled
+  * Install vendor.conf on Ubuntu to skip the language settings there
+    since they don't currently work with Ubuntu's language packs
 
  -- Jeremy Bicha <jbicha@debian.org>  Tue, 20 Mar 2018 22:52:29 -0400
 

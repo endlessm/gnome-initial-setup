@@ -10,7 +10,15 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		--libexecdir=/usr/lib/gnome-initial-setup \
-		--disable-software-sources
+		--disable-software-sources \
+		--with-vendor-conf-file=/usr/lib/gnome-initial-setup/vendor.conf
+
+# Skip language chooser on Ubuntu since it doesn't work there
+override_dh_install:
+	dh_install
+ifeq (yes,$(shell dpkg-vendor --derives-from Ubuntu && echo yes))
+	dh_install debian/vendor.conf /usr/lib/gnome-initial-setup
+endif
 
 # Depend on the appropriate package for the Welcome logo
 override_dh_gencontrol:
