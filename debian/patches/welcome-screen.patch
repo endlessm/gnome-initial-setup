@@ -39,7 +39,7 @@ index 5671cae..6cca10b 100644
      page_data->prepare_page_func (driver);
    }
 diff --git a/gnome-initial-setup/pages/language/gis-language-page.c b/gnome-initial-setup/pages/language/gis-language-page.c
-index 65719c9..cc6362a 100644
+index ea94c82..2349103 100644
 --- a/gnome-initial-setup/pages/language/gis-language-page.c
 +++ b/gnome-initial-setup/pages/language/gis-language-page.c
 @@ -45,6 +45,7 @@ struct _GisLanguagePagePrivate
@@ -104,7 +104,7 @@ index 65719c9..cc6362a 100644
  static void
  set_localed_locale (GisLanguagePage *self)
  {
-@@ -263,28 +311,33 @@ gis_language_page_constructed (GObject *object)
+@@ -259,28 +307,33 @@ gis_language_page_constructed (GObject *object)
  
    update_distro_logo (page);
  
@@ -159,7 +159,7 @@ index 65719c9..cc6362a 100644
  
    gis_page_set_complete (GIS_PAGE (page), TRUE);
    gtk_widget_show (GTK_WIDGET (page));
-@@ -325,6 +378,14 @@ gis_language_page_class_init (GisLanguagePageClass *klass)
+@@ -321,6 +374,14 @@ gis_language_page_class_init (GisLanguagePageClass *klass)
    page_class->locale_changed = gis_language_page_locale_changed;
    object_class->constructed = gis_language_page_constructed;
    object_class->dispose = gis_language_page_dispose;
@@ -174,7 +174,7 @@ index 65719c9..cc6362a 100644
  }
  
  static void
-@@ -345,3 +406,13 @@ gis_prepare_language_page (GisDriver *driver)
+@@ -341,3 +402,13 @@ gis_prepare_language_page (GisDriver *driver)
                                       "driver", driver,
                                       NULL));
  }

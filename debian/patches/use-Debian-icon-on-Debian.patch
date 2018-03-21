@@ -7,10 +7,10 @@ Subject: language: Use Debian icon on Debian
  1 file changed, 5 insertions(+), 1 deletion(-)
 
 diff --git a/gnome-initial-setup/pages/language/gis-language-page.c b/gnome-initial-setup/pages/language/gis-language-page.c
-index ea94c82..65719c9 100644
+index 2349103..cc6362a 100644
 --- a/gnome-initial-setup/pages/language/gis-language-page.c
 +++ b/gnome-initial-setup/pages/language/gis-language-page.c
-@@ -231,7 +231,11 @@ update_distro_logo (GisLanguagePage *page)
+@@ -279,7 +279,11 @@ update_distro_logo (GisLanguagePage *page)
        g_free (buffer);
      }
  

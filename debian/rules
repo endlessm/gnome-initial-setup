@@ -24,6 +24,8 @@ endif
 override_dh_gencontrol:
 ifeq ($(shell dpkg-vendor --query vendor),Debian)
 	dh_gencontrol -- -Vlogo:Depends='desktop-base'
+else ifeq ($(shell dpkg-vendor --query vendor),Ubuntu)
+	dh_gencontrol -- -Vlogo:Depends='gnome-control-center-data'
 else
 	dh_gencontrol
 endif
