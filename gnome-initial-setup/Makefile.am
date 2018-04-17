@@ -57,6 +57,7 @@ gnome_initial_setup_exec_LDADD =	\
 	pages/goa/libgisgoa.la \
 	pages/account/libgisaccount.la \
 	pages/password/libgispassword.la \
+	pages/site/libgissite.la \
 	pages/software/libgissoftware.la \
 	pages/summary/libgissummary.la \
 	$(INITIAL_SETUP_LIBS) \
