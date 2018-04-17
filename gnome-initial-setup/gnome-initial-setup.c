@@ -52,6 +52,7 @@
 #include "pages/goa/gis-goa-page.h"
 #include "pages/account/gis-account-pages.h"
 #include "pages/password/gis-password-page.h"
+#include "pages/site/gis-site-page.h"
 #include "pages/summary/gis-summary-page.h"
 
 #define VENDOR_PAGES_GROUP "pages"
@@ -85,6 +86,7 @@ static PageData page_table[] = {
   PAGE (goa,      FALSE),
   PAGE (account,  TRUE),
   PAGE (password, TRUE),
+  PAGE (site, TRUE),
   PAGE (summary,  FALSE),
   { NULL },
 };
