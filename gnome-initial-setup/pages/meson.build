@@ -9,6 +9,7 @@ pages = [
    'privacy',
    'goa',
    'password',
+   'site',
    'software',
    'summary',
    'welcome',
