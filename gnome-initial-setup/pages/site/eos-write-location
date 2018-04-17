@@ -1,0 +1,16 @@
+#!/bin/bash -e
+
+LOCATION_FILENAME=/etc/metrics/location.conf
+LOCATION_DIRNAME=$(dirname $LOCATION_FILENAME)
+
+src_location_filename=$1
+
+if [ "$#" -ne 1 ]; then
+    echo "usage: $0 SRC_FILENAME" >&2
+    exit 1
+ fi
+
+mkdir -p $LOCATION_DIRNAME
+mv $src_location_filename $LOCATION_FILENAME
+chmod 644 $LOCATION_FILENAME
+chown metrics:metrics $LOCATION_FILENAME

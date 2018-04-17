@@ -46,6 +46,7 @@
 #include "pages/account/gis-account-pages.h"
 #include "pages/parental-controls/gis-parental-controls-page.h"
 #include "pages/password/gis-password-page.h"
+#include "pages/site/gis-site-page.h"
 #include "pages/summary/gis-summary-page.h"
 
 #define VENDOR_PAGES_GROUP "pages"
@@ -85,6 +86,7 @@ static PageData page_table[] = {
   PAGE (parental_controls, TRUE),
   PAGE (parent_password, TRUE),
 #endif
+  PAGE (site, TRUE),
   PAGE (summary,  FALSE),
   { NULL },
 };
