@@ -1,59 +1,109 @@
-# Hungarian translation of gnome-initial-setup
-# Copyright (C) 2012. Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-initial-setup package.
-#
-# Gabor Kelemen <kelemeng at gnome dot hu>, 2012, 2013, 2016, 2017.
-# Balázs Úr <urbalazs at gmail dot com>, 2013, 2014, 2015.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Balázs Úr <urbalazs at gmail dot com>, 2013-2015
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2012-2013,2016-2017
+# Zoltan Hoppar <hopparz@gmail.com>, 2018
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"initial-setup&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-07-21 15:24+0000\n"
-"PO-Revision-Date: 2017-08-03 09:22+0200\n"
-"Last-Translator: Meskó Balázs <meskobalazs@fedoraproject.org>\n"
-"Language-Team: Hungarian <openscope at googlegroups dot com>\n"
-"Language: hu\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-08 10:12+0000\n"
+"PO-Revision-Date: 2018-04-19 20:01+0000\n"
+"Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
+"Language-Team: Hungarian (http://www.transifex.com/endless-os/gnome-initial-setup/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.2\n"
 
 #: ../data/gnome-initial-setup.desktop.in.in.h:1
 #: ../data/gnome-initial-setup-first-login.desktop.in.in.h:1
 msgid "Initial Setup"
 msgstr "Kiinduló beállítások"
 
-#: ../gnome-initial-setup/gis-assistant.c:396
+#: ../gnome-initial-setup/gis-assistant.c:315
 msgid "_Next"
 msgstr "_Következő"
 
-#: ../gnome-initial-setup/gis-assistant.c:397
+#: ../gnome-initial-setup/gis-assistant.c:462
 msgid "_Accept"
 msgstr "Elfog_adás"
 
-#: ../gnome-initial-setup/gis-assistant.c:398
+#: ../gnome-initial-setup/gis-assistant.c:463
 msgid "_Skip"
 msgstr "_Kihagyás"
 
-#: ../gnome-initial-setup/gis-assistant.c:399
+#: ../gnome-initial-setup/gis-assistant.c:464
 msgid "_Previous"
 msgstr "_Előző"
 
-#: ../gnome-initial-setup/gis-assistant.c:400
+#: ../gnome-initial-setup/gis-assistant.c:465
 msgid "_Cancel"
 msgstr "Mé_gse"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:217
+#: ../gnome-initial-setup/gis-driver.c:403
+#, c-format
+msgid "Failed to enter demo mode: %s"
+msgstr "Demo mód indítása sikertelen: %s"
+
+#: ../gnome-initial-setup/gis-page-util.c:424
+msgid "Disabled"
+msgstr "Kikapcsolva"
+
+#: ../gnome-initial-setup/gis-page-util.c:426
+#, c-format
+msgid "SD Card: %s"
+msgstr "SD kártya: %s"
+
+#. Translators: this is shown when launching the
+#. * reformatter (an external program) fails. The
+#. * placeholder is an error message describing what went
+#. * wrong.
+#: ../gnome-initial-setup/gis-page-util.c:531
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr "Hiba az újraformázó futtatásakor: %s"
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:1
+msgid "Test Mode"
+msgstr "Teszt Mód"
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:2
+msgid "Power Off"
+msgstr "Kikapcsolás"
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:3
+msgid "Enter Store Demo"
+msgstr "Bolti demo indítása"
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:4
+msgid "OK"
+msgstr "OK"
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:5
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:6
+msgid ""
+"This allows you to try Endless without activating an account. No changes or "
+"files will be saved, and the computer will return to a clean factory state "
+"when you power it off."
+msgstr "Ez lehetővé teszi hogy kipróbálhassa Endless rendszert felhasználói azonosító létrehozása nélkül. Semmilyen változtatás nem kerül mentésre, és a gép visszatér tiszta gyári állapotra, amikor leállítja a gépet."
+
+#: ../gnome-initial-setup/gnome-initial-setup.c:239
 msgid "Force existing user mode"
 msgstr "Létező felhasználói mód kényszerítése"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:223
+#: ../gnome-initial-setup/gnome-initial-setup.c:245
 msgid "— GNOME initial setup"
 msgstr "– GNOME kiinduló beállítások"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:242
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:284
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
 msgid "About You"
 msgstr "Önről"
@@ -83,10 +133,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"A vállalati bejelentkezés lehetővé teszi egy meglévő, központilag kezelt "
-"felhasználói fiók használatát ezen az eszközön. Ezt a fiókot arra is "
-"használhatja, hogy vállalati erőforrásokat érjen el az interneten."
+msgstr "A vállalati bejelentkezés lehetővé teszi egy meglévő, központilag kezelt felhasználói fiók használatát ezen az eszközön. Ezt a fiókot arra is használhatja, hogy vállalati erőforrásokat érjen el az interneten."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:3
 msgid "_Domain"
@@ -119,10 +166,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"A vállalati bejelentkezések használatához a számítógépet be kell jegyezni "
-"egy tartományba. Kérje meg a hálózati rendszergazdát, hogy írja be itt a "
-"tartományának jelszavát, és válasszon egyedi nevet a számítógépnek."
+msgstr "A vállalati bejelentkezések használatához a számítógépet be kell jegyezni egy tartományba. Kérje meg a hálózati rendszergazdát, hogy írja be itt a tartományának jelszavát, és válasszon egyedi nevet a számítógépnek."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:10
 msgid "_Computer"
@@ -136,11 +180,11 @@ msgstr "Rendszergazda _neve"
 msgid "Administrator Password"
 msgstr "Rendszergazdai jelszó"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:203
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:209
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "Ellenőrizze a nevet és a felhasználónevet. Egy képet is választhat."
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:413
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:424
 msgid "We need a few details to complete setup."
 msgstr "Szükségünk van néhány részletre a beállítás befejezéséhez."
 
@@ -155,6 +199,10 @@ msgstr "Adjon meg egy nevet és felhasználónevet. Egy képet is választhat."
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:4
 msgid "_Full Name"
 msgstr "_Teljes név"
+
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:6
+msgid "Password protected"
+msgstr "Jelszó védett"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:1
 msgid "Set Up _Enterprise Login"
@@ -192,32 +240,81 @@ msgstr "Érvénytelen jelszó, próbálja újra"
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Nem lehet csatlakozni a(z) %s tartományhoz: %s"
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:245
+#: ../gnome-initial-setup/pages/account/um-utils.c:247
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr "Elnézést, ez a felhasználónév nem érhető el. Próbáljon egy másikat."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:248
+#: ../gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
 msgid "The username is too long."
 msgstr "A felhasználónév túl hosszú."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:251
+#: ../gnome-initial-setup/pages/account/um-utils.c:253
 msgid "The username cannot start with a “-”."
 msgstr "A felhasználónév nem kezdődhet „-” karakterrel."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:254
+#: ../gnome-initial-setup/pages/account/um-utils.c:256
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"A felhasználónév csak a-z közötti kis- és nagybetűket, számjegyeket, és a "
-"következő karaktereket tartalmazhatja: . - _"
+msgstr "A felhasználónév csak a-z közötti kis- és nagybetűket, számjegyeket, és a következő karaktereket tartalmazhatja: . - _"
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:258
+#: ../gnome-initial-setup/pages/account/um-utils.c:260
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr ""
-"Ez a saját mappájának elnevezésére lesz használva és nem lehet "
-"megváltoztatni."
+msgstr "Ez a saját mappájának elnevezésére lesz használva és nem lehet megváltoztatni."
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.c:269
+msgid "Display"
+msgstr "Kijelző"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:1
+msgid "Adjust for TV screen"
+msgstr "Beállítás TV képernyőre"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:2
+msgid "Do you see this at the bottom right corner of your screen?"
+msgstr "Látja ezt a jobb alsó sarokban a képernyőjén?"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:3
+msgid "I see it"
+msgstr "Látom"
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:4
+msgid "I do not see it. Shrink screen to fit TV."
+msgstr "Nem látom. Csökkentsd a képméretet, hogy beférjen a TV-re."
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:294
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:424
+msgid "Terms of Use"
+msgstr "Használati feltételek"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:299
+msgid "Third Party Software"
+msgstr "Harmadik féltől származó szoftverek"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:408
+msgid "_Accept and Continue"
+msgstr "Elfog_adás és folytatás"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
+msgid "Please read the following terms of use carefully"
+msgstr "Kérem olvassa el a Használati feltételeket figyelmesen"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
+msgid ""
+"By clicking \"Accept and continue,\" you acknowledge that you have read, "
+"understood, and agree to be bound by the following terms and conditions."
+msgstr "Az \"Elfogadás és folytatás\"-ra való kattintással, elismeri hogy elolvasta, megértette, és elfogadja a következő megkötéseket, és feltételeket."
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:3
+msgid "Help make Endless better for everyone"
+msgstr "Segítsen az Endless jobbátételében mindenki számára"
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:4
+msgid ""
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr "Automatikusan mentse és küldje el a statisztikákat és a problémákat az Endless számára. Az összes adat név nélküli."
 
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.c:301
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.ui.h:1
@@ -234,7 +331,7 @@ msgstr "_Elfogadom ezen végfelhasználói licencszerződés feltételeit."
 msgid "Add Account"
 msgstr "Fiók készítése"
 
-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:336
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:338
 msgid "Online Accounts"
 msgstr "Online fiókok"
 
@@ -246,34 +343,43 @@ msgstr "Kapcsolódás az online fiókjaihoz"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"Csatlakozzon fiókjaihoz a levelei, online naptára, névjegyei, dokumentumai "
-"és fényképei egyszerű eléréséhez."
+msgstr "Csatlakozzon fiókjaihoz a levelei, online naptára, névjegyei, dokumentumai és fényképei egyszerű eléréséhez."
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:3
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr ""
-"Fiókok bármikor felvehetők és eltávolíthatók a Beállítások alkalmazásban."
+msgstr "Fiókok bármikor felvehetők és eltávolíthatók a Beállítások alkalmazásban."
 
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:241
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
 msgstr "Előnézet"
 
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:300
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:225
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:287
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "Több…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:322
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Bemeneti források nem találhatók"
 
-#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:363
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
+msgid "Your keyboard layout seems to be:"
+msgstr "A billentyűzetkiosztása ennek tűnik:"
+
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:289
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:2
+msgid "Please press one of the following keys:"
+msgstr "Kérem nyomjon meg egyet a követkető gombok közül:"
+
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:290
+msgid "Is the following key present on your keyboard?"
+msgstr "A következő gomb szerepel a billentyűzetén?"
+
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:400
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:1
 msgid "Typing"
 msgstr "Gépelés"
@@ -282,36 +388,84 @@ msgstr "Gépelés"
 msgid "Select your keyboard layout or an input method."
 msgstr "Válassza ki a billentyűzetkiosztását vagy egy beviteli módot."
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:241
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:3
+msgid "Help Detect My Keyboard Layout"
+msgstr "Segítsen megtalálni a billentyűzet kiosztásom"
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
+msgid "Detect Keyboard Layout…"
+msgstr "Billentyűzetkiosztás azonosítása..."
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
+msgid "_Select"
+msgstr "Kiválasztá_s"
+
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:303
 msgid "No languages found"
 msgstr "Nyelvek nem találhatók"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:292
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:267
+msgid "Enter Store Demo…"
+msgstr "Belépés a Store Demo részbe..."
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:281
+msgid "Welcome to Store Demo"
+msgstr "Üdvözli a Store Demo"
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:283
 msgid "Welcome"
 msgstr "Üdvözlet"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: ../gnome-initial-setup/pages/language/gis-welcome-widget.c:123
 msgid "Welcome!"
 msgstr "Üdvözöljük!"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:304
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
+msgid "Try Endless OS by running it from the USB Stick."
+msgstr "Próbálja ki az Endless OS-t egy USB pendrive-ról futtatva."
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:180
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
+msgid "Try Endless OS by running it from the DVD."
+msgstr "Próbálja ki az Endless OS-t DVD-ről futtatva."
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:181
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
+msgid "Reformat this computer with Endless OS."
+msgstr "Formázza újra ezt a gépet Endless OS rendszerrel."
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
+msgid "Try It"
+msgstr "Próbálja ki"
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:183
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:5
+msgid "Reformat"
+msgstr "Újraformázás"
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:185
+msgid "Try or Reformat"
+msgstr "Próbálja ki vagy formázza újra"
+
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:291
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "Egyéb…"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:363
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:350
 msgid "Wireless networking is disabled"
 msgstr "Vezeték nélküli hálózatok letiltva"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:370
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:356
 msgid "Checking for available wireless networks"
 msgstr "Elérhető vezeték nélküli hálózatok keresése"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:662
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:646
 msgid "Network"
 msgstr "Hálózat"
 
@@ -324,11 +478,7 @@ msgid ""
 "Connecting to the Internet will enable you to set the time, add your "
 "details, and enable you to access your email, calendar, and contacts. It is "
 "also necessary for enterprise login accounts."
-msgstr ""
-"Az Internethez való csatlakozás engedélyezni fogja önnek az idő beállítását, "
-"részletek hozzáadását, valamint lehetővé teszi a leveleihez, naptárához és a "
-"névjegyeihez való hozzáférést. Szintén ez szükséges a vállalati bejelentkező "
-"fiókokhoz."
+msgstr "Az Internethez való csatlakozás engedélyezni fogja önnek az idő beállítását, részletek hozzáadását, valamint lehetővé teszi a leveleihez, naptárához és a névjegyeihez való hozzáférést. Szintén ez szükséges a vállalati bejelentkező fiókokhoz."
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
 msgid "No wireless available"
@@ -338,11 +488,11 @@ msgstr "Vezeték nélküli nem érhető el"
 msgid "Turn On"
 msgstr "Bekapcsolás"
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:142
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:205
 msgid "The passwords do not match."
 msgstr "A jelszavak nem egyeznek."
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:264
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:384
 msgid "Password"
 msgstr "Jelszó"
 
@@ -357,6 +507,18 @@ msgstr "Legyen óvatos, ne veszítse el a jelszavát."
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:4
 msgid "_Confirm"
 msgstr "_Megerősítés"
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:5
+msgid "Show password"
+msgstr "Jelszó megjelenítése"
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:6
+msgid "Password _reminder"
+msgstr "Jelszó emlékeztető"
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:7
+msgid "Password reminder will be shown in case you forget your password."
+msgstr "A jelszó emlékeztető kerül megjelenítésre, amennyiben elfelejtené jelszavát."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -434,9 +596,7 @@ msgctxt "Password hint"
 msgid ""
 "Try to avoid repeating the same type of character: you need to mix up "
 "letters, numbers and punctuation."
-msgstr ""
-"Próbálja elkerülni az azonos típusú karakterek ismétlődését: használjon "
-"felváltva betűket, számokat és írásjeleket."
+msgstr "Próbálja elkerülni az azonos típusú karakterek ismétlődését: használjon felváltva betűket, számokat és írásjeleket."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
@@ -448,9 +608,7 @@ msgctxt "Password hint"
 msgid ""
 "Password needs to be longer. Try to add more letters, numbers and "
 "punctuation."
-msgstr ""
-"A jelszónak hosszabbnak kell lennie. Próbáljon betűket, számokat és "
-"írásjeleket vegyesen használni."
+msgstr "A jelszónak hosszabbnak kell lennie. Próbáljon betűket, számokat és írásjeleket vegyesen használni."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
@@ -460,28 +618,23 @@ msgstr "Használjon vegyesen kis- és nagybetűket, illetve egy-két számot."
 #: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-"További betűk, számok és írásjelek hozzáadása még erősebbé teheti a jelszót."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
+msgstr "További betűk, számok és írásjelek hozzáadása még erősebbé teheti a jelszót."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:110
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"A technikai problémák jelentéseinek elküldése segít nekünk a(z) %s "
-"továbbfejlesztésében. A jelentések névtelenül és személyes adatoktól "
-"mentesen lesznek elküldve."
+msgstr "A technikai problémák jelentéseinek elküldése segít nekünk a(z) %s továbbfejlesztésében. A jelentések névtelenül és személyes adatoktól mentesen lesznek elküldve."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:120
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -510,10 +663,7 @@ msgstr "Helymeghatározó szolgáltatások"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Lehetővé teszi az alkalmazások számára a földrajzi helyzetének "
-"meghatározását. Egy jelzés jelenik meg, amikor a helymeghatározási "
-"szolgáltatások használatban vannak."
+msgstr "Lehetővé teszi az alkalmazások számára a földrajzi helyzetének meghatározását. Egy jelzés jelenik meg, amikor a helymeghatározási szolgáltatások használatban vannak."
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:4
 msgid "Automatic Problem Reporting"
@@ -522,9 +672,7 @@ msgstr "Automatikus hibajelentés"
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:5
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr ""
-"Az adatvédelem jellemzői bármikor megváltoztathatók a Beállítások "
-"alkalmazásban."
+msgstr "Az adatvédelem jellemzői bármikor megváltoztathatók a Beállítások alkalmazásban."
 
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:228
 msgid "No regions found"
@@ -542,12 +690,22 @@ msgstr "Válassza ki az országát vagy területét."
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:304
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:306
 #, c-format
 msgid "_Start Using %s"
 msgstr "A(z) %s használatba _vétele"
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:334
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:336
+msgid "You're ready to try Endless OS"
+msgstr "Készen áll az Endless OS kipróbálására"
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:338
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr "<b>Az összes fájl, amit letöltött, vagy dokumentum amit készített - végképp elveszik amikor újraindítja, vagy leállítja a gépet.</b>"
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:348
 msgid "Ready to Go"
 msgstr "Indulásra kész"
 
@@ -556,7 +714,7 @@ msgid "You’re ready to go!"
 msgstr "Mindent beállított!"
 
 #. Translators: "city, country"
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:236
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:268
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
@@ -564,29 +722,28 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:273
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
 
 #. Translators: This is the time format used in 12-hour mode.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:277
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:309
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: This is the time format used in 24-hour mode.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:280
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:312
 msgid "%R"
 msgstr "%R"
 
 #. Translators: "timezone (utc shift)"
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:283
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:315
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:423
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:469
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:1
 msgid "Time Zone"
 msgstr "Időzóna"
@@ -595,9 +752,7 @@ msgstr "Időzóna"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"Az időzóna automatikusan beállításra kerül, ha a tartózkodási helye "
-"megtalálható. Kereshet is a beállítandó városra."
+msgstr "Az időzóna automatikusan beállításra kerül, ha a tartózkodási helye megtalálható. Kereshet is a beállítandó városra."
 
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:3
 msgid "Please search for a nearby city"
@@ -606,18 +761,13 @@ msgstr "Keressen egy közeli várost"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: ../gnome-initial-setup/pages/software/gis-software-page.c:112
 #, c-format
 msgid ""
 "Proprietary software sources provide access to additional software, "
 "including web browsers and games. This software typically has restrictions "
 "on use and access to source code, and is not provided by %s."
-msgstr ""
-"A tulajdonosi szoftverforrások további szoftverekhez adnak hozzáférést, "
-"többek között böngészőkhöz és játékokhoz. Ezek a szoftverek többnyire "
-"korlátozzák a felhasználásukat és a forráskódhoz való hozzáférést, és nem "
-"a(z) %s biztosítja őket."
+msgstr "A tulajdonosi szoftverforrások további szoftverekhez adnak hozzáférést, többek között böngészőkhöz és játékokhoz. Ezek a szoftverek többnyire korlátozzák a felhasználásukat és a forráskódhoz való hozzáférést, és nem a(z) %s biztosítja őket."
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.c:245
 msgid "Software Sources"
@@ -637,292 +787,13 @@ msgstr "Tulajdonosi szoftverforrások"
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:4
 msgid ""
-"Proprietary software typically has restrictions on how it can be used and on "
-"access to source code. This prevents anyone but the software owner from "
+"Proprietary software typically has restrictions on how it can be used and on"
+" access to source code. This prevents anyone but the software owner from "
 "inspecting, improving or learning from its code."
-msgstr ""
-"A tulajdonosi szoftverek többnyire korlátozzák a felhasználásukat és a "
-"forráskódhoz történő hozzáférést. Ez megakadályoz a szoftver tulajdonosán "
-"kívül mindenkit abban, hogy megvizsgálja, fejlesszen a kódon vagy tanuljon "
-"belőle."
+msgstr "A tulajdonosi szoftverek többnyire korlátozzák a felhasználásukat és a forráskódhoz történő hozzáférést. Ez megakadályoz a szoftver tulajdonosán kívül mindenkit abban, hogy megvizsgálja, fejlesszen a kódon vagy tanuljon belőle."
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:5
 msgid ""
 "In contrast, Free Software can be freely run, copied, distributed, studied "
 "and modified."
-msgstr ""
-"Ezzel ellentétben, a szabad szoftverek szabadon futtathatóak, másolhatóak, "
-"terjeszthetőek, tanulmányozhatóak és módosíthatóak."
-
-#~ msgid "A user with the username ‘%s’ already exists."
-#~ msgstr "Már létezik „%s” felhasználónevű felhasználó."
-
-#~ msgid "This is a weak password."
-#~ msgstr "Ez egy gyenge jelszó."
-
-#~ msgid "_Verify"
-#~ msgstr "_Megerősítés"
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "This is a weak password. Try to add more letters, numbers and symbols."
-#~ msgstr ""
-#~ "Ez egy gyenge jelszó. Próbáljon több betűt, számot és szimbólumot "
-#~ "hozzáadni."
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "Erősség: gyenge"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "Erősség: alacsony"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "Erősség: közepes"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "Erősség: jó"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "Erősség: magas"
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "Ezek a helyes részletek? Megváltoztathatja azokat, ha szeretné."
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr ""
-#~ "Áttekintheti az online fiókjait (és továbbiakat adhat hozzá) a beállítás "
-#~ "után."
-
-#~ msgid ""
-#~ "Thank you for choosing %s.\n"
-#~ "We hope that you love it."
-#~ msgstr ""
-#~ "Köszönjük, hogy a(z) %s mellett döntött.\n"
-#~ "Reméljük, hogy imádni fogja."
-
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "Úgy gondoljuk, hogy az időzónája %s. Nyomja meg a Következő gombot a "
-#~ "folytatáshoz vagy keressen egy várost az időzóna kézi beállításához."
-
-#~ msgid "Cancel"
-#~ msgstr "Mégse"
-
-#~ msgid "Your username cannot be changed after setup."
-#~ msgstr "A felhasználónevét nem lehet megváltoztatni a beállítás után."
-
-#~ msgid ""
-#~ "In order to use enterprise logins, this computer needs to be enrolled in "
-#~ "the domain. Please have your network administrator type their domain "
-#~ "password here, and choose a unique computer name for your computer."
-#~ msgstr ""
-#~ "A vállalati bejelentkezések használatához a számítógépet be kell jegyezni "
-#~ "a tartományba. Kérje meg a hálózati rendszergazdát, hogy írja be itt a "
-#~ "tartomány jelszavát, és válasszon egyedi nevet a számítógépnek."
-
-#~ msgid "No password"
-#~ msgstr "Nincs jelszó"
-
-#~ msgctxt "Password strength"
-#~ msgid "Too short"
-#~ msgstr "Túl rövid"
-
-#~ msgctxt "Password strength"
-#~ msgid "Not good enough"
-#~ msgstr "Nem elég jó"
-
-#~ msgctxt "Password strength"
-#~ msgid "Weak"
-#~ msgstr "Gyenge"
-
-#~ msgctxt "Password strength"
-#~ msgid "Fair"
-#~ msgstr "Elfogadható"
-
-#~ msgctxt "Password strength"
-#~ msgid "Good"
-#~ msgstr "Jó"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strong"
-#~ msgstr "Erős"
-
-#~ msgid "Login"
-#~ msgstr "Bejelentkezés"
-
-#~ msgid "Create a Local Account"
-#~ msgstr "Helyi fiók létrehozása"
-
-#~ msgid "page 1"
-#~ msgstr "1. oldal"
-
-#~ msgid "Create an Enterprise Account"
-#~ msgstr "Vállalati fiók létrehozása"
-
-#~| msgid "Other"
-#~ msgctxt "Online Account"
-#~ msgid "Other"
-#~ msgstr "Egyéb"
-
-#~ msgid "Mail"
-#~ msgstr "Levél"
-
-#~ msgid "Contacts"
-#~ msgstr "Névjegyek"
-
-#~ msgid "Chat"
-#~ msgstr "Csevegés"
-
-#~ msgid "Resources"
-#~ msgstr "Erőforrások"
-
-#~ msgid "Error creating account"
-#~ msgstr "Hiba a fiók létrehozásakor"
-
-#~ msgid "Error removing account"
-#~ msgstr "Hiba a fiók eltávolításakor"
-
-#~ msgid "Are you sure you want to remove the account?"
-#~ msgstr "Biztos benne, hogy el kívánja távolítani a fiókot?"
-
-#~ msgid "This will not remove the account on the server."
-#~ msgstr "Ez nem törli a kiszolgálón a fiókot."
-
-#~ msgid "_Remove"
-#~ msgstr "_Eltávolítás"
-
-#~ msgid "Connect to your existing data in the cloud"
-#~ msgstr "Kapcsolódás a felhőben meglévő adatokhoz"
-
-#~ msgid "_Add Account"
-#~ msgstr "_Fiók hozzáadása"
-
-#~ msgid "Other"
-#~ msgstr "Egyéb"
-
-#~ msgid "Login settings are used by all users when logging into the system"
-#~ msgstr ""
-#~ "A belépési beállításokat minden felhasználó használja, amikor "
-#~ "bejelentkezik a rendszerbe"
-
-#~ msgid "Add an Input Source"
-#~ msgstr "Bemeneti forrás hozzáadása"
-
-#~ msgid "Search for a location"
-#~ msgstr "Hely keresése"
-
-#~ msgid "_Determine your location automatically"
-#~ msgstr "_Tartózkodási helyének automatikus meghatározása"
-
-#~ msgid "No network devices found."
-#~ msgstr "Nem találhatók hálózati eszközök."
-
-#~ msgid "Thank You"
-#~ msgstr "Köszönjük"
-
-#~ msgid "Your computer is ready to use."
-#~ msgstr "A számítógépe használatra kész."
-
-#~ msgid "You may change these options at any time in Settings."
-#~ msgstr "Ezen beállításokat bármikor megváltoztathatja a Beállításokban."
-
-#~ msgid "_Start using GNOME 3"
-#~ msgstr "_A GNOME 3 használatba vétele"
-
-#~ msgid "Select input sources"
-#~ msgstr "Válasszon bemeneti forrásokat"
-
-#~ msgid "_Back"
-#~ msgstr "_Vissza"
-
-#~ msgid "Sorry"
-#~ msgstr "Elnézést"
-
-#~ msgid "Input methods can't be used on the login screen"
-#~ msgstr "A beviteli módok nem használhatók a bejelentkező képernyőn"
-
-#~ msgid "No input source selected"
-#~ msgstr "Nincs kiválasztva bemeneti forrás"
-
-#~ msgid "Your session needs to be restarted for changes to take effect"
-#~ msgstr "A változtatások életbe lépéséhez újra kell indítani a munkamenetet"
-
-#~ msgid "Restart Now"
-#~ msgstr "Újraindítás most"
-
-#~ msgctxt "Language"
-#~ msgid "None"
-#~ msgstr "Nincs"
-
-#~ msgid "Select an input source"
-#~ msgstr "Válasszon egy bemeneti forrást"
-
-#~ msgid "Keyboard Layout"
-#~ msgstr "Billentyűzetkiosztás"
-
-#~ msgid "Remove Input Source"
-#~ msgstr "Bemeneti forrás eltávolítása"
-
-#~ msgid "Move Input Source Up"
-#~ msgstr "Bemeneti forrás mozgatása fel"
-
-#~ msgid "Create Local Account"
-#~ msgstr "Helyi fiók létrehozása"
-
-#~ msgid "_Done"
-#~ msgstr "_Kész"
-
-#~ msgid "_Require a password to use this account"
-#~ msgstr "_Jelszó szükséges a fiók használatához"
-
-#~ msgid "_Act as administrator of this computer"
-#~ msgstr "_Rendszergazdai jogosultság a számítógépen"
-
-#~ msgid "Choose How to Login"
-#~ msgstr "Válassza ki a bejelentkezés módját"
-
-#~ msgid "Remove"
-#~ msgstr "Eltávolítás"
-
-#~ msgid "English"
-#~ msgstr "Angol"
-
-#~ msgid "British English"
-#~ msgstr "Brit angol"
-
-#~ msgid "German"
-#~ msgstr "Német"
-
-#~ msgid "French"
-#~ msgstr "Francia"
-
-#~ msgid "Spanish"
-#~ msgstr "Spanyol"
-
-#~ msgid "Chinese (simplified)"
-#~ msgstr "Kínai (egyszerűsített)"
-
-#~ msgid "Unspecified"
-#~ msgstr "Nincs megadva"
-
-#~ msgid "Use %s"
-#~ msgstr "„%s” használata"
-
-#~ msgid "Show _all"
-#~ msgstr "Öss_zes megjelenítése"
-
-#~ msgid "Enjoy GNOME!"
-#~ msgstr "A GNOME használatra kész!"
-
-#~ msgid "New to GNOME 3 and need help finding your way around?"
-#~ msgstr "Új GNOME 3 felhasználó és segítségre van szüksége?"
-
-#~ msgid "_Take a Tour"
-#~ msgstr "_Bemutató"
+msgstr "Ezzel ellentétben, a szabad szoftverek szabadon futtathatóak, másolhatóak, terjeszthetőek, tanulmányozhatóak és módosíthatóak."

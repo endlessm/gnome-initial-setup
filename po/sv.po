@@ -1,60 +1,111 @@
-# Swedish translation for gnome-initial-setup.
-# Copyright © 2012-2017 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-initial-setup package.
-# Daniel Nylander <po@danielnylander.se>, 2012.
-# Mattias Eriksson <snaggen@gmail.com>, 2014.
-# Sebastian Rasmussen <sebras@gmail.com>, 2015.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015, 2016, 2017.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015-2017
+# Daniel Nylander <po@danielnylander.se>, 2012
+# Mattias Eriksson <snaggen@gmail.com>, 2014
+# sebras <sebras@gmail.com>, 2015
+# sebras <sebras@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"initial-setup&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-07-21 15:24+0000\n"
-"PO-Revision-Date: 2017-08-06 00:45+0200\n"
-"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
-"Language: sv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-08 10:12+0000\n"
+"PO-Revision-Date: 2018-04-19 20:01+0000\n"
+"Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
+"Language-Team: Swedish (http://www.transifex.com/endless-os/gnome-initial-setup/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.2\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/gnome-initial-setup.desktop.in.in.h:1
 #: ../data/gnome-initial-setup-first-login.desktop.in.in.h:1
 msgid "Initial Setup"
 msgstr "Initial konfiguration"
 
-#: ../gnome-initial-setup/gis-assistant.c:396
+#: ../gnome-initial-setup/gis-assistant.c:315
 msgid "_Next"
 msgstr "_Nästa"
 
-#: ../gnome-initial-setup/gis-assistant.c:397
+#: ../gnome-initial-setup/gis-assistant.c:462
 msgid "_Accept"
 msgstr "_Acceptera"
 
-#: ../gnome-initial-setup/gis-assistant.c:398
+#: ../gnome-initial-setup/gis-assistant.c:463
 msgid "_Skip"
 msgstr "Hoppa _över"
 
-#: ../gnome-initial-setup/gis-assistant.c:399
+#: ../gnome-initial-setup/gis-assistant.c:464
 msgid "_Previous"
 msgstr "_Föregående"
 
-#: ../gnome-initial-setup/gis-assistant.c:400
+#: ../gnome-initial-setup/gis-assistant.c:465
 msgid "_Cancel"
 msgstr "_Avbryt"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:217
+#: ../gnome-initial-setup/gis-driver.c:403
+#, c-format
+msgid "Failed to enter demo mode: %s"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.c:424
+msgid "Disabled"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.c:426
+#, c-format
+msgid "SD Card: %s"
+msgstr ""
+
+#. Translators: this is shown when launching the
+#. * reformatter (an external program) fails. The
+#. * placeholder is an error message describing what went
+#. * wrong.
+#: ../gnome-initial-setup/gis-page-util.c:531
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:1
+msgid "Test Mode"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:2
+msgid "Power Off"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:3
+msgid "Enter Store Demo"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:4
+msgid "OK"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:5
+msgid "Cancel"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:6
+msgid ""
+"This allows you to try Endless without activating an account. No changes or "
+"files will be saved, and the computer will return to a clean factory state "
+"when you power it off."
+msgstr ""
+
+#: ../gnome-initial-setup/gnome-initial-setup.c:239
 msgid "Force existing user mode"
 msgstr "Tvinga existerande användarläge"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:223
+#: ../gnome-initial-setup/gnome-initial-setup.c:245
 msgid "— GNOME initial setup"
 msgstr "— GNOME initial konfiguration"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:242
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:284
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
 msgid "About You"
 msgstr "Om dig"
@@ -84,10 +135,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"Företagsinloggning möjliggör att ett existerande centralt hanterat "
-"användarkonto används med den här enheten. Du kan också använda detta konto "
-"för att komma åt företagsresurser på internet."
+msgstr "Företagsinloggning möjliggör att ett existerande centralt hanterat användarkonto används med den här enheten. Du kan också använda detta konto för att komma åt företagsresurser på internet."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:3
 msgid "_Domain"
@@ -120,10 +168,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"För att använda företagsinloggning, måste denna dator anslutas till en "
-"domän. Be din nätverksadministratör ange domänlösenord här, och välj ett "
-"unikt datornamn för din dator."
+msgstr "För att använda företagsinloggning, måste denna dator anslutas till en domän. Be din nätverksadministratör ange domänlösenord här, och välj ett unikt datornamn för din dator."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:10
 msgid "_Computer"
@@ -137,11 +182,11 @@ msgstr "Administratörs_namn"
 msgid "Administrator Password"
 msgstr "Administratörslösenord"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:203
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:209
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "Kontrollera namnet och användarnamnet. Du kan välja en bild också."
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:413
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:424
 msgid "We need a few details to complete setup."
 msgstr "Vi behöver några uppgifter för att slutföra konfigurationen."
 
@@ -156,6 +201,10 @@ msgstr "Ange ett namn och ett användarnamn. Du kan välja en bild också."
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:4
 msgid "_Full Name"
 msgstr "_Fullständigt namn"
+
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:6
+msgid "Password protected"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:1
 msgid "Set Up _Enterprise Login"
@@ -193,31 +242,81 @@ msgstr "Ogiltigt lösenord, försök igen"
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Kunde inte ansluta till domänen %s: %s"
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:245
+#: ../gnome-initial-setup/pages/account/um-utils.c:247
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr "Det där användarnamnet är inte tillgängligt. Försök med ett annat."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:248
+#: ../gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
 msgid "The username is too long."
 msgstr "Användarnamnet är för långt."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:251
+#: ../gnome-initial-setup/pages/account/um-utils.c:253
 msgid "The username cannot start with a “-”."
 msgstr "Användarnamnet får inte börja med ett ”-”."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:254
+#: ../gnome-initial-setup/pages/account/um-utils.c:256
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"Användarnamnet får endast bestå av stora och små bokstäver från a-z, siffror "
-"samt följande tecken: . - _"
+msgstr "Användarnamnet får endast bestå av stora och små bokstäver från a-z, siffror samt följande tecken: . - _"
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:258
+#: ../gnome-initial-setup/pages/account/um-utils.c:260
 msgid "This will be used to name your home folder and can’t be changed."
+msgstr "Detta kommer att användas för att namnge din hemkatalog och kan inte ändras."
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.c:269
+msgid "Display"
 msgstr ""
-"Detta kommer att användas för att namnge din hemkatalog och kan inte ändras."
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:1
+msgid "Adjust for TV screen"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:2
+msgid "Do you see this at the bottom right corner of your screen?"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:3
+msgid "I see it"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:4
+msgid "I do not see it. Shrink screen to fit TV."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:294
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:424
+msgid "Terms of Use"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:299
+msgid "Third Party Software"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:408
+msgid "_Accept and Continue"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
+msgid "Please read the following terms of use carefully"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
+msgid ""
+"By clicking \"Accept and continue,\" you acknowledge that you have read, "
+"understood, and agree to be bound by the following terms and conditions."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:3
+msgid "Help make Endless better for everyone"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:4
+msgid ""
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.c:301
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.ui.h:1
@@ -234,7 +333,7 @@ msgstr "Jag _godkänner villkoren i slutanvändaravtalet."
 msgid "Add Account"
 msgstr "Lägg till konto"
 
-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:336
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:338
 msgid "Online Accounts"
 msgstr "Nätkonton"
 
@@ -246,35 +345,43 @@ msgstr "Anslut dina nätkonton"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"Anslut dina konton för att enkelt komma åt din e-post och nätkalender samt "
-"dina kontakter, dokument och foton."
+msgstr "Anslut dina konton för att enkelt komma åt din e-post och nätkalender samt dina kontakter, dokument och foton."
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:3
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr ""
-"Konton kan läggas till och tas bort när som helst från "
-"inställningsprogrammet."
+msgstr "Konton kan läggas till och tas bort när som helst från inställningsprogrammet."
 
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:241
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
 msgstr "Förhandsgranska"
 
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:300
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:225
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:287
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "Mer…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:322
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Inga inmatningsenheter hittades"
 
-#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:363
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
+msgid "Your keyboard layout seems to be:"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:289
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:2
+msgid "Please press one of the following keys:"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:290
+msgid "Is the following key present on your keyboard?"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:400
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:1
 msgid "Typing"
 msgstr "Inmatning"
@@ -283,36 +390,84 @@ msgstr "Inmatning"
 msgid "Select your keyboard layout or an input method."
 msgstr "Välj din tangentbordslayout eller en inmatningsmetod."
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:241
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:3
+msgid "Help Detect My Keyboard Layout"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
+msgid "Detect Keyboard Layout…"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
+msgid "_Select"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:303
 msgid "No languages found"
 msgstr "Inga språk hittades"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:292
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:267
+msgid "Enter Store Demo…"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:281
+msgid "Welcome to Store Demo"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:283
 msgid "Welcome"
 msgstr "Välkommen"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: ../gnome-initial-setup/pages/language/gis-welcome-widget.c:123
 msgid "Welcome!"
 msgstr "Välkommen!"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:304
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
+msgid "Try Endless OS by running it from the USB Stick."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:180
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
+msgid "Try Endless OS by running it from the DVD."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:181
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
+msgid "Reformat this computer with Endless OS."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
+msgid "Try It"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:183
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:5
+msgid "Reformat"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:185
+msgid "Try or Reformat"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:291
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "Andra…"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:363
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:350
 msgid "Wireless networking is disabled"
 msgstr "Trådlöst nätverk är inaktiverat"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:370
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:356
 msgid "Checking for available wireless networks"
 msgstr "Letar efter tillgängliga trådlösa nätverk"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:662
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:646
 msgid "Network"
 msgstr "Nätverk"
 
@@ -325,10 +480,7 @@ msgid ""
 "Connecting to the Internet will enable you to set the time, add your "
 "details, and enable you to access your email, calendar, and contacts. It is "
 "also necessary for enterprise login accounts."
-msgstr ""
-"Att ansluta till internet gör det möjligt att automatiskt ställa klockan, "
-"lägga till information om dig, samt ger åtkomst till din e-post, kalendrar "
-"och kontakter. Det är även nödvändigt för konton med företagsinloggning."
+msgstr "Att ansluta till internet gör det möjligt att automatiskt ställa klockan, lägga till information om dig, samt ger åtkomst till din e-post, kalendrar och kontakter. Det är även nödvändigt för konton med företagsinloggning."
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
 msgid "No wireless available"
@@ -338,11 +490,11 @@ msgstr "Inga trådlösa nätverk tillgängliga"
 msgid "Turn On"
 msgstr "Slå på"
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:142
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:205
 msgid "The passwords do not match."
 msgstr "Lösenorden stämmer inte överens."
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:264
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:384
 msgid "Password"
 msgstr "Lösenord"
 
@@ -357,6 +509,18 @@ msgstr "Var noga med att inte tappa bort ditt lösenord."
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:4
 msgid "_Confirm"
 msgstr "_Bekräfta"
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:5
+msgid "Show password"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:6
+msgid "Password _reminder"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:7
+msgid "Password reminder will be shown in case you forget your password."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -422,8 +586,7 @@ msgstr "Försök att använda fler specialtecken, till exempel skiljetecken."
 #: ../gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid "Try to use a mixture of letters, numbers and punctuation."
-msgstr ""
-"Försök att använda en blandning av bokstäver, siffror och skiljetecken."
+msgstr "Försök att använda en blandning av bokstäver, siffror och skiljetecken."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
@@ -435,9 +598,7 @@ msgctxt "Password hint"
 msgid ""
 "Try to avoid repeating the same type of character: you need to mix up "
 "letters, numbers and punctuation."
-msgstr ""
-"Försök att undvika att upprepa samma typ av tecken: du behöver blanda "
-"bokstäver, nummer och skiljetecken."
+msgstr "Försök att undvika att upprepa samma typ av tecken: du behöver blanda bokstäver, nummer och skiljetecken."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
@@ -449,41 +610,33 @@ msgctxt "Password hint"
 msgid ""
 "Password needs to be longer. Try to add more letters, numbers and "
 "punctuation."
-msgstr ""
-"Lösenordet behöver vara längre. Försök att lägga till fler bokstäver, "
-"siffror och skiljetecken."
+msgstr "Lösenordet behöver vara längre. Försök att lägga till fler bokstäver, siffror och skiljetecken."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
-"Blanda stora och små bokstäver samt försök använda en siffra eller två."
+msgstr "Blanda stora och små bokstäver samt försök använda en siffra eller två."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-"Att lägga till fler bokstäver, siffror och skiljetecken kommer göra "
-"lösenordet starkare."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
+msgstr "Att lägga till fler bokstäver, siffror och skiljetecken kommer göra lösenordet starkare."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:110
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"Att skicka rapporter om tekniska problem hjälper oss att förbättra %s. "
-"Rapporter skickas anonymt och rensas från personlig information."
+msgstr "Att skicka rapporter om tekniska problem hjälper oss att förbättra %s. Rapporter skickas anonymt och rensas från personlig information."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:120
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -512,9 +665,7 @@ msgstr "Platstjänster"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Låter program ta reda på din geografiska position. En indikation visas när "
-"platstjänster används."
+msgstr "Låter program ta reda på din geografiska position. En indikation visas när platstjänster används."
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:4
 msgid "Automatic Problem Reporting"
@@ -523,8 +674,7 @@ msgstr "Automatisk problemrapportering"
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:5
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr ""
-"Sekretessinställningar kan ändras när som helst från inställningsprogrammet."
+msgstr "Sekretessinställningar kan ändras när som helst från inställningsprogrammet."
 
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:228
 msgid "No regions found"
@@ -542,12 +692,22 @@ msgstr "Välj ditt land eller region."
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:304
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:306
 #, c-format
 msgid "_Start Using %s"
 msgstr "_Börja använda %s"
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:334
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:336
+msgid "You're ready to try Endless OS"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:338
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:348
 msgid "Ready to Go"
 msgstr "Klar att sätta igång"
 
@@ -556,7 +716,7 @@ msgid "You’re ready to go!"
 msgstr "Du är klar att sätta igång!"
 
 #. Translators: "city, country"
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:236
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:268
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
@@ -564,29 +724,28 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:273
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
 
 #. Translators: This is the time format used in 12-hour mode.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:277
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:309
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: This is the time format used in 24-hour mode.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:280
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:312
 msgid "%R"
 msgstr "%R"
 
 #. Translators: "timezone (utc shift)"
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:283
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:315
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:423
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:469
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:1
 msgid "Time Zone"
 msgstr "Tidszon"
@@ -595,9 +754,7 @@ msgstr "Tidszon"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"Tidszonen kommer ställas in automatiskt om din plats kan hittas. Du kan "
-"också söka efter en stad för att ställa in den manuellt."
+msgstr "Tidszonen kommer ställas in automatiskt om din plats kan hittas. Du kan också söka efter en stad för att ställa in den manuellt."
 
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:3
 msgid "Please search for a nearby city"
@@ -606,18 +763,13 @@ msgstr "Sök efter en stad i närheten"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: ../gnome-initial-setup/pages/software/gis-software-page.c:112
 #, c-format
 msgid ""
 "Proprietary software sources provide access to additional software, "
 "including web browsers and games. This software typically has restrictions "
 "on use and access to source code, and is not provided by %s."
-msgstr ""
-"Proprietära programvarukällor tillhandahåller åtkomst till ytterligare "
-"programvara som webbläsare och spel. Denna programvara har vanligtvis "
-"restriktioner på användning och åtkomst till källkod, och tillhandahålls "
-"inte av %s."
+msgstr "Proprietära programvarukällor tillhandahåller åtkomst till ytterligare programvara som webbläsare och spel. Denna programvara har vanligtvis restriktioner på användning och åtkomst till källkod, och tillhandahålls inte av %s."
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.c:245
 msgid "Software Sources"
@@ -637,76 +789,13 @@ msgstr "Proprietära programvarukällor"
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:4
 msgid ""
-"Proprietary software typically has restrictions on how it can be used and on "
-"access to source code. This prevents anyone but the software owner from "
+"Proprietary software typically has restrictions on how it can be used and on"
+" access to source code. This prevents anyone but the software owner from "
 "inspecting, improving or learning from its code."
-msgstr ""
-"Proprietär programvara har vanligtvis restriktioner på hur den kan användas "
-"och vad gäller åtkomst till källkod. Detta förhindrar alla utom "
-"programvarans ägare från att undersöka, förbättra och lära sig från dess kod."
+msgstr "Proprietär programvara har vanligtvis restriktioner på hur den kan användas och vad gäller åtkomst till källkod. Detta förhindrar alla utom programvarans ägare från att undersöka, förbättra och lära sig från dess kod."
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:5
 msgid ""
 "In contrast, Free Software can be freely run, copied, distributed, studied "
 "and modified."
-msgstr ""
-"I kontrast till detta kan fri programvara fritt köras, kopieras, "
-"distribueras, studeras och ändras."
-
-#~ msgid "A user with the username ‘%s’ already exists."
-#~ msgstr "En användare med användarnamnet ”%s” finns redan."
-
-#~ msgid "This is a weak password."
-#~ msgstr "Detta är ett svagt lösenord."
-
-#~ msgid "_Verify"
-#~ msgstr "_Verifiera"
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "This is a weak password. Try to add more letters, numbers and symbols."
-#~ msgstr ""
-#~ "Detta är ett svagt lösenord. Försök att lägga till fler bokstäver, "
-#~ "siffror och symboler."
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "Styrka: Svag"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "Styrka: Låg"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "Styrka: Medel"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "Styrka: Bra"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "Styrka: Hög"
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "Är dessa uppgifter korrekta? Du kan ändra dem om du önskar."
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr ""
-#~ "Du kan granska dina nätkonton (och lägga till fler) efter att "
-#~ "konfigurationen är klar."
-
-#~ msgid ""
-#~ "Thank you for choosing %s.\n"
-#~ "We hope that you love it."
-#~ msgstr ""
-#~ "Tack för att du väljer %s.\n"
-#~ "Vi hoppas att du gillar det."
-
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "Vi tror att din tidszon är %s. Klicka Nästa för att fortsätta eller sök "
-#~ "efter en stad för att manuellt sätta tidszonen."
+msgstr "I kontrast till detta kan fri programvara fritt köras, kopieras, distribueras, studeras och ändras."

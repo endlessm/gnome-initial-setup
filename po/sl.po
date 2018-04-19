@@ -1,61 +1,106 @@
-# Slovenian translation for gnome-initial-setup.
-# Copyright (C) 2009 accerciser COPYRIGHT HOLDER
-# This file is distributed under the same license as the gnome-initial-setup package.
-#
-# Matej Urbančič <mateju@svn.gnome.org>, 2012–2017.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"initial-setup&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-07-21 17:19+0200\n"
-"PO-Revision-Date: 2017-07-21 17:22+0200\n"
-"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
-"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
-"Language: sl_SI\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-08 10:12+0000\n"
+"PO-Revision-Date: 2018-04-19 20:01+0000\n"
+"Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
+"Language-Team: Slovenian (http://www.transifex.com/endless-os/gnome-initial-setup/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.0.1\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #: ../data/gnome-initial-setup.desktop.in.in.h:1
 #: ../data/gnome-initial-setup-first-login.desktop.in.in.h:1
 msgid "Initial Setup"
 msgstr "Začetna nastavitev"
 
-#: ../gnome-initial-setup/gis-assistant.c:396
+#: ../gnome-initial-setup/gis-assistant.c:315
 msgid "_Next"
 msgstr "_Naprej"
 
-#: ../gnome-initial-setup/gis-assistant.c:397
+#: ../gnome-initial-setup/gis-assistant.c:462
 msgid "_Accept"
 msgstr "_Sprejmi"
 
-#: ../gnome-initial-setup/gis-assistant.c:398
+#: ../gnome-initial-setup/gis-assistant.c:463
 msgid "_Skip"
 msgstr "Pre_skoči"
 
-#: ../gnome-initial-setup/gis-assistant.c:399
+#: ../gnome-initial-setup/gis-assistant.c:464
 msgid "_Previous"
 msgstr "_Predhodni"
 
-#: ../gnome-initial-setup/gis-assistant.c:400
+#: ../gnome-initial-setup/gis-assistant.c:465
 msgid "_Cancel"
 msgstr "_Prekliči"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:217
+#: ../gnome-initial-setup/gis-driver.c:403
+#, c-format
+msgid "Failed to enter demo mode: %s"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.c:424
+msgid "Disabled"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.c:426
+#, c-format
+msgid "SD Card: %s"
+msgstr ""
+
+#. Translators: this is shown when launching the
+#. * reformatter (an external program) fails. The
+#. * placeholder is an error message describing what went
+#. * wrong.
+#: ../gnome-initial-setup/gis-page-util.c:531
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:1
+msgid "Test Mode"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:2
+msgid "Power Off"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:3
+msgid "Enter Store Demo"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:4
+msgid "OK"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:5
+msgid "Cancel"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:6
+msgid ""
+"This allows you to try Endless without activating an account. No changes or "
+"files will be saved, and the computer will return to a clean factory state "
+"when you power it off."
+msgstr ""
+
+#: ../gnome-initial-setup/gnome-initial-setup.c:239
 msgid "Force existing user mode"
 msgstr "Vsili obstoječi uporabniški način"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:223
+#: ../gnome-initial-setup/gnome-initial-setup.c:245
 msgid "— GNOME initial setup"
 msgstr "– začetne nastavitve GNOME"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page.c:242
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:284
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
 msgid "About You"
 msgstr "O vas"
@@ -85,10 +130,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"Poslovna prijava omogoča prijavo na to napravo z obstoječim poslovnim "
-"uporabniškim računom. Ta račun je mogoče uporabiti tudi za dostop do "
-"poslovnih virov na internetu."
+msgstr "Poslovna prijava omogoča prijavo na to napravo z obstoječim poslovnim uporabniškim računom. Ta račun je mogoče uporabiti tudi za dostop do poslovnih virov na internetu."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:3
 msgid "_Domain"
@@ -121,10 +163,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"Za uporabo poslovnega računa mora biti računalnik prijavljen v domeno. "
-"Skrbnik omrežja mora vpisati domensko geslo in določiti enoznačno ime "
-"računalnika."
+msgstr "Za uporabo poslovnega računa mora biti računalnik prijavljen v domeno. Skrbnik omrežja mora vpisati domensko geslo in določiti enoznačno ime računalnika."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:10
 msgid "_Computer"
@@ -138,11 +177,11 @@ msgstr "Ime _skrbnika"
 msgid "Administrator Password"
 msgstr "Skrbniško geslo"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:203
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:209
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "Preverite ime in uporabniško ime. Izberete lahko tudi sličico profila."
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:413
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:424
 msgid "We need a few details to complete setup."
 msgstr "Za končanje namestitve so zahtevani še nekateri pomembni podatki."
 
@@ -152,12 +191,15 @@ msgstr "Slika podobe"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:3
 msgid "Please provide a name and username. You can choose a picture too."
-msgstr ""
-"Navesti je treba ime in uporabniško ime. Izberete lahko tudi sličico profila."
+msgstr "Navesti je treba ime in uporabniško ime. Izberete lahko tudi sličico profila."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:4
 msgid "_Full Name"
 msgstr "Polno _ime"
+
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:6
+msgid "Password protected"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:1
 msgid "Set Up _Enterprise Login"
@@ -195,32 +237,81 @@ msgstr "Geslo je neveljavno, poskusite znova."
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Ni se mogoče povezati z domeno %s: %s"
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:245
+#: ../gnome-initial-setup/pages/account/um-utils.c:247
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr "Uporabniško ime ni na voljo! Izberite drugo ime."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:248
+#: ../gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
 msgid "The username is too long."
 msgstr "Uporabniško ime je predolgo."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:251
+#: ../gnome-initial-setup/pages/account/um-utils.c:253
 msgid "The username cannot start with a “-”."
 msgstr "Uporabniškega imena ni mogoče začeti z vezajem » - «."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:254
+#: ../gnome-initial-setup/pages/account/um-utils.c:256
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"Uporabniško ime je lahko sestavljeno le iz majhnih in velikih črk od a do z, "
-"številk in znakov » . «, » - « ter » _ «."
+msgstr "Uporabniško ime je lahko sestavljeno le iz majhnih in velikih črk od a do z, številk in znakov » . «, » - « ter » _ «."
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:258
+#: ../gnome-initial-setup/pages/account/um-utils.c:260
 msgid "This will be used to name your home folder and can’t be changed."
+msgstr "S tem imenom bo poimenovana osebna mapa. Izbire kasneje ni mogoče spreminjati."
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.c:269
+msgid "Display"
 msgstr ""
-"S tem imenom bo poimenovana osebna mapa. Izbire kasneje ni mogoče "
-"spreminjati."
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:1
+msgid "Adjust for TV screen"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:2
+msgid "Do you see this at the bottom right corner of your screen?"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:3
+msgid "I see it"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/display/gis-display-page.ui.h:4
+msgid "I do not see it. Shrink screen to fit TV."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:294
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:424
+msgid "Terms of Use"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:299
+msgid "Third Party Software"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:408
+msgid "_Accept and Continue"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:1
+msgid "Please read the following terms of use carefully"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:2
+msgid ""
+"By clicking \"Accept and continue,\" you acknowledge that you have read, "
+"understood, and agree to be bound by the following terms and conditions."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:3
+msgid "Help make Endless better for everyone"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:4
+msgid ""
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.c:301
 #: ../gnome-initial-setup/pages/eulas/gis-eula-page.ui.h:1
@@ -237,7 +328,7 @@ msgstr "_Strinjam se s pogoji in določili dovoljenja uporabe."
 msgid "Add Account"
 msgstr "Dodaj račun"
 
-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:336
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:338
 msgid "Online Accounts"
 msgstr "Spletni računi"
 
@@ -249,35 +340,43 @@ msgstr "Povezava z spletnih računov"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"Poveži račune za enostaven dostop do elektronske pošte, koledarjev, stikov, "
-"dokumentov in fotografij."
+msgstr "Poveži račune za enostaven dostop do elektronske pošte, koledarjev, stikov, dokumentov in fotografij."
 
 #: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:3
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr ""
-"Račune je mogoče dodati oziroma odstraniti kadarkoli med nastavitvami "
-"programa."
+msgstr "Račune je mogoče dodati oziroma odstraniti kadarkoli med nastavitvami programa."
 
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:241
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
 msgstr "Predogled"
 
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:300
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:225
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:287
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "Več ..."
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:322
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Ni najdenih vhodnih naprav"
 
-#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:363
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
+msgid "Your keyboard layout seems to be:"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:289
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:2
+msgid "Please press one of the following keys:"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:290
+msgid "Is the following key present on your keyboard?"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:400
 #: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:1
 msgid "Typing"
 msgstr "Tipkanje"
@@ -286,36 +385,84 @@ msgstr "Tipkanje"
 msgid "Select your keyboard layout or an input method."
 msgstr "Izbor razporeditve tipkovnice ali načina vnosa."
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:241
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:3
+msgid "Help Detect My Keyboard Layout"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:1
+msgid "Detect Keyboard Layout…"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/keyboard/keyboard-detector.ui.h:3
+msgid "_Select"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:303
 msgid "No languages found"
 msgstr "Ni najdenih jezikov"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:292
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:267
+msgid "Enter Store Demo…"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:281
+msgid "Welcome to Store Demo"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:283
 msgid "Welcome"
 msgstr "Dobrodošli"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: ../gnome-initial-setup/pages/language/gis-welcome-widget.c:123
 msgid "Welcome!"
 msgstr "Dobrodošli!"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:304
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
+msgid "Try Endless OS by running it from the USB Stick."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:180
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
+msgid "Try Endless OS by running it from the DVD."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:181
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
+msgid "Reformat this computer with Endless OS."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
+msgid "Try It"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:183
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:5
+msgid "Reformat"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:185
+msgid "Try or Reformat"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:291
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "Drugo ..."
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:363
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:350
 msgid "Wireless networking is disabled"
 msgstr "Brezžično omrežje je onemogočeno."
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:370
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:356
 msgid "Checking for available wireless networks"
 msgstr "Preveri za dostopne brezžične omrežne povezave"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:662
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:646
 msgid "Network"
 msgstr "Omrežje"
 
@@ -328,10 +475,7 @@ msgid ""
 "Connecting to the Internet will enable you to set the time, add your "
 "details, and enable you to access your email, calendar, and contacts. It is "
 "also necessary for enterprise login accounts."
-msgstr ""
-"S povezovanjem v omrežje lahko nastavite čas in druge podrobnosti, omogočite "
-"dostop do elektronske pošte, koledarja in stikov. Povezava je ključna tudi "
-"za prijavo s poslovnim računom."
+msgstr "S povezovanjem v omrežje lahko nastavite čas in druge podrobnosti, omogočite dostop do elektronske pošte, koledarja in stikov. Povezava je ključna tudi za prijavo s poslovnim računom."
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
 msgid "No wireless available"
@@ -341,11 +485,11 @@ msgstr "Ni razpoložljivega brezžičnega omrežja"
 msgid "Turn On"
 msgstr "Omogoči"
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:142
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:205
 msgid "The passwords do not match."
 msgstr "Gesli se ne skladata."
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:264
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:384
 msgid "Password"
 msgstr "Geslo"
 
@@ -360,6 +504,18 @@ msgstr "Pazite, da ne izgubite gesla."
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:4
 msgid "_Confirm"
 msgstr "_Potrdi"
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:5
+msgid "Show password"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:6
+msgid "Password _reminder"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:7
+msgid "Password reminder will be shown in case you forget your password."
+msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -437,9 +593,7 @@ msgctxt "Password hint"
 msgid ""
 "Try to avoid repeating the same type of character: you need to mix up "
 "letters, numbers and punctuation."
-msgstr ""
-"Izogibati se je treba enakim znakom. Priporočljivo je uporabiti črke, "
-"številke in ločila."
+msgstr "Izogibati se je treba enakim znakom. Priporočljivo je uporabiti črke, številke in ločila."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
@@ -451,8 +605,7 @@ msgctxt "Password hint"
 msgid ""
 "Password needs to be longer. Try to add more letters, numbers and "
 "punctuation."
-msgstr ""
-"Geslo mora biti daljše. Poskusite dodati črke, številke in druge znake."
+msgstr "Geslo mora biti daljše. Poskusite dodati črke, številke in druge znake."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
@@ -462,26 +615,23 @@ msgstr "Priporočljivo je uporabiti velike in male črke ter kakšno številko."
 #: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
 msgstr "Dodajanje črk, številk in ločil poveča moč gesla."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:110
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"Pošiljanje poročil o tehničnih težavah lahko pripomore k izboljšanju "
-"delovanja %s. Poročila so poslana brezimno in brez zasebnih podatkov."
+msgstr "Pošiljanje poročil o tehničnih težavah lahko pripomore k izboljšanju delovanja %s. Poročila so poslana brezimno in brez zasebnih podatkov."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:120
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -510,9 +660,7 @@ msgstr "Storitve določanja položaja"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Omogoča programom določiti geografski položaj. Ko so storitve v rabi, je "
-"prikazan poseben kazalnik."
+msgstr "Omogoča programom določiti geografski položaj. Ko so storitve v rabi, je prikazan poseben kazalnik."
 
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:4
 msgid "Automatic Problem Reporting"
@@ -539,12 +687,22 @@ msgstr "Izberite državo ali področje."
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:304
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:306
 #, c-format
 msgid "_Start Using %s"
 msgstr "_Začni uporabljati %s"
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:334
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:336
+msgid "You're ready to try Endless OS"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:338
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:348
 msgid "Ready to Go"
 msgstr "Pripravljeno"
 
@@ -553,7 +711,7 @@ msgid "You’re ready to go!"
 msgstr "Pripravljeni ste za delo!"
 
 #. Translators: "city, country"
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:236
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:268
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
@@ -561,29 +719,28 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:273
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
 
 #. Translators: This is the time format used in 12-hour mode.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:277
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:309
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: This is the time format used in 24-hour mode.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:280
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:312
 msgid "%R"
 msgstr "%R"
 
 #. Translators: "timezone (utc shift)"
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:283
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:315
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:423
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:469
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:1
 msgid "Time Zone"
 msgstr "Časovni pas"
@@ -592,9 +749,7 @@ msgstr "Časovni pas"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"Časovno območje je nastavljeno samodejno, če je vaše trenutno mesto mogoče "
-"določiti. Mesto je mogoče izbrati tudi ročno."
+msgstr "Časovno območje je nastavljeno samodejno, če je vaše trenutno mesto mogoče določiti. Mesto je mogoče izbrati tudi ročno."
 
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:3
 msgid "Please search for a nearby city"
@@ -603,18 +758,13 @@ msgstr "Poiščite bližnje mesto"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: ../gnome-initial-setup/pages/software/gis-software-page.c:112
 #, c-format
 msgid ""
 "Proprietary software sources provide access to additional software, "
 "including web browsers and games. This software typically has restrictions "
 "on use and access to source code, and is not provided by %s."
-msgstr ""
-"Lastniška programska oprema lahko ponuja dostop do dodatnih programskih "
-"paketov, tudi brskalnikov in iger. Taka programska oprema ima običajno "
-"posebna pravila uporabe in omejitve dostopa do programske kode. Tovrstni "
-"programi niso v sklopu programov %s."
+msgstr "Lastniška programska oprema lahko ponuja dostop do dodatnih programskih paketov, tudi brskalnikov in iger. Taka programska oprema ima običajno posebna pravila uporabe in omejitve dostopa do programske kode. Tovrstni programi niso v sklopu programov %s."
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.c:245
 msgid "Software Sources"
@@ -634,394 +784,13 @@ msgstr "Lastniški programski viri"
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:4
 msgid ""
-"Proprietary software typically has restrictions on how it can be used and on "
-"access to source code. This prevents anyone but the software owner from "
+"Proprietary software typically has restrictions on how it can be used and on"
+" access to source code. This prevents anyone but the software owner from "
 "inspecting, improving or learning from its code."
-msgstr ""
-"Lastniška programska oprema je običajno vezana na omejitve uporabe in "
-"dostopa do podrobnosti delovanja in izvorne kode. To preprečuje uporabnikom "
-"pregledovanje, izboljšanje in učenje iz programske kode."
+msgstr "Lastniška programska oprema je običajno vezana na omejitve uporabe in dostopa do podrobnosti delovanja in izvorne kode. To preprečuje uporabnikom pregledovanje, izboljšanje in učenje iz programske kode."
 
 #: ../gnome-initial-setup/pages/software/gis-software-page.ui.h:5
 msgid ""
 "In contrast, Free Software can be freely run, copied, distributed, studied "
 "and modified."
-msgstr ""
-"Nasprotno pa je prosta programska oprema (free software) brez tovrstnih "
-"omejitev."
-
-#~ msgid "A user with the username ‘%s’ already exists."
-#~ msgstr "Uporabnik z uporabniškim imenom »%s« že obstaja."
-
-#~ msgid "This is a weak password."
-#~ msgstr "Vpisano geslo je šibko."
-
-#~ msgid "_Verify"
-#~ msgstr "_Preveri"
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "This password is very similar to your last one. Try changing some letters "
-#~ "and numbers."
-#~ msgstr ""
-#~ "Vpisano geslo je zelo podobno prejšnjemu geslu. Poskusite dodatki kakšno "
-#~ "številko ali dodatno črko."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "This password is very similar to your last one. Try changing the password "
-#~ "a bit more."
-#~ msgstr ""
-#~ "Vpisano geslo je zelo podobno prejšnjemu geslu. Poskusite ga še malo "
-#~ "spremeniti."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "This is a weak password. A password without your user name would be "
-#~ "stronger."
-#~ msgstr ""
-#~ "Vpisano geslo je šibko. Geslo brez uporabniškega imena bi bilo močnejše."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "This is a weak password. Try to avoid using your name in the password."
-#~ msgstr "Vpisano geslo je šibko. Ne uporabljajte imen in datumov v geslih."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "This is a weak password. Try to avoid some of the words included in the "
-#~ "password."
-#~ msgstr ""
-#~ "Vpisano geslo je šibko. Izognite se nekaterim znanim besedam v geslu."
-
-#~ msgctxt "Password hint"
-#~ msgid "This is a weak password. Try to avoid common words."
-#~ msgstr "Vpisano geslo je šibko. Izogibajte se splošnim besedam."
-
-#~ msgctxt "Password hint"
-#~ msgid "This is a weak password. Try to avoid reordering existing words."
-#~ msgstr ""
-#~ "Vpisano geslo je šibko. Izogibajte se zgolj premetavanju obstoječih besed."
-
-#~ msgctxt "Password hint"
-#~ msgid "This is a weak password. Try to use more numbers."
-#~ msgstr "Vpisano geslo je šibko. Dodajte več številk."
-
-#~ msgctxt "Password hint"
-#~ msgid "This is a weak password. Try to use more uppercase letters."
-#~ msgstr "Vpisano geslo je šibko. Dodajte več velikih črk."
-
-#~ msgctxt "Password hint"
-#~ msgid "This is a weak password. Try to use more lowercase letters."
-#~ msgstr "Vpisano geslo je šibko. Dodajte več malih črk."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "This is a weak password. Try to use more special characters, like "
-#~ "punctuation."
-#~ msgstr ""
-#~ "Vpisano geslo je šibko. Poskusite dodati več posebnih znakov, kot so na "
-#~ "primer ločila."
-
-#~ msgctxt "Password hint"
-#~ msgid "This is a weak password. Try to avoid repeating the same character."
-#~ msgstr "Vpisano geslo je šibko. Izogibajte se ponavljanju istega znaka."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "This is a weak password. Try to avoid repeating the same type of "
-#~ "character: you need to mix up letters, numbers and punctuation."
-#~ msgstr ""
-#~ "Vpisano geslo je šibko. Izogibajte se ponavljanju istih znakov; črke in "
-#~ "številke morajo biti čim bolj premešane."
-
-#~ msgctxt "Password hint"
-#~ msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-#~ msgstr ""
-#~ "Vpisano geslo je šibko. Izogibajte se logičnih zaporedjem, kot sta 1234 "
-#~ "ali abcd."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "This is a weak password. Try to add more letters, numbers and symbols."
-#~ msgstr ""
-#~ "Vpisano geslo je šibko. Poskusite dodati več črk, številke in druge znake."
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "Moč gesla: šibka"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "Moč gesla: nizka"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "Moč gesla: srednja"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "Moč gesla: dobra"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "Moč gesla: visoka"
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr ""
-#~ "Ali so podrobnosti zapisane pravilno? po potrebi jih lahko jih uredite."
-
-#~ msgid ""
-#~ "Connecting your accounts will allow you to easily access your email, "
-#~ "online calendar, contacts, documents and photos."
-#~ msgstr ""
-#~ "Z dodajanjem računov je omogočen enostaven in hiter dostop do dokumentov, "
-#~ "pošte, stikov, koledarjev, klepeta, fotografij in drugega."
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr "Po namestitvi lahko pregledate spletne račune."
-
-#~ msgid "Privacy controls can be changed at any time from Settings."
-#~ msgstr ""
-#~ "Določila zasebnosti je mogoče spremeniti kadarkoli v meniju nastavitev."
-
-#~ msgid ""
-#~ "Thank you for choosing %s.\n"
-#~ "We hope that you love it."
-#~ msgstr ""
-#~ "Zahvaljujemo se vam za izbor sistema %s.\n"
-#~ "Upamo, da vam bo delo z njim v veselje."
-
-#~ msgid "You're all set!"
-#~ msgstr "Vse je pripravljeno!"
-
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "Videti je, da je pravi časovni pas %s. Pritisnite tipko naprej ali pa "
-#~ "izberite mesto po meri."
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to add more letters, numbers and symbols."
-#~ msgstr "Poskusite dodati več črk, številk in drugih znakov."
-
-#~ msgid "Cancel"
-#~ msgstr "Prekliči"
-
-#~ msgid "Your username cannot be changed after setup."
-#~ msgstr "Po namestitvi uporabniškega imena ni mogoče spreminjati."
-
-#~ msgid "No password"
-#~ msgstr "Ni podanega gesla"
-
-#~ msgid "Choose a _password"
-#~ msgstr "Izbor _gesla"
-
-#~ msgctxt "Password strength"
-#~ msgid "Too short"
-#~ msgstr "Prekratko"
-
-#~ msgctxt "Password strength"
-#~ msgid "Not good enough"
-#~ msgstr "Ni dovolj dobro"
-
-#~ msgctxt "Password strength"
-#~ msgid "Weak"
-#~ msgstr "Šibko"
-
-#~ msgctxt "Password strength"
-#~ msgid "Fair"
-#~ msgstr "Zadovoljivo"
-
-#~ msgctxt "Password strength"
-#~ msgid "Good"
-#~ msgstr "Dobro"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strong"
-#~ msgstr "Močno"
-
-#~ msgid "Login"
-#~ msgstr "Prijava"
-
-#~ msgid "Create a Local Account"
-#~ msgstr "Ustvari nov krajevni račun"
-
-#~ msgid "page 1"
-#~ msgstr "stran 1"
-
-#~ msgid "Create an Enterprise Account"
-#~ msgstr "Ustvari nov poslovni račun"
-
-#~ msgid "Other"
-#~ msgstr "Ostalo"
-
-#~ msgid "No input source selected"
-#~ msgstr "Ni zaznanega vhodnega vira"
-
-#~ msgid "Add an Input Source"
-#~ msgstr "Dodaj vhodni vir"
-
-#~ msgid "Thank You"
-#~ msgstr "Hvala!"
-
-#~ msgid "That's it!"
-#~ msgstr "To je to!"
-
-#~ msgid "_Start using GNOME 3"
-#~ msgstr "_Želim začeti uporabljati GNOME 3"
-
-#~ msgctxt "Online Account"
-#~ msgid "Other"
-#~ msgstr "Ostalo"
-
-#~ msgid "Mail"
-#~ msgstr "Pošta"
-
-#~ msgid "Contacts"
-#~ msgstr "Stiki"
-
-#~ msgid "Chat"
-#~ msgstr "Klepet"
-
-#~ msgid "Resources"
-#~ msgstr "Viri"
-
-#~ msgid "Error creating account"
-#~ msgstr "Napaka med ustvarjanjem računa"
-
-#~ msgid "Error removing account"
-#~ msgstr "Napaka med odstranjevanjem računa"
-
-#~ msgid "Are you sure you want to remove the account?"
-#~ msgstr "Ali ste prepričani, da želite izbrisati račun?"
-
-#~ msgid "This will not remove the account on the server."
-#~ msgstr "S tem dejanjem račun s strežnika ne bo odstranjen."
-
-#~ msgid "_Remove"
-#~ msgstr "_Odstrani"
-
-#~ msgid "Connect to your existing data in the cloud"
-#~ msgstr "Poveži z obstoječim podatkovnim oblakom"
-
-#~ msgid "_Add Account"
-#~ msgstr "_Dodaj račun"
-
-#~ msgid "Login settings are used by all users when logging into the system"
-#~ msgstr "Nastavitve prijave so skupne vsem uporabnikom sistema"
-
-#~ msgid "Search for a location"
-#~ msgstr "Iskanje mesta"
-
-#~ msgid "_Determine your location automatically"
-#~ msgstr "_Mesto določi samodejno"
-
-#~ msgid "No network devices found."
-#~ msgstr "Ni mogoče najti nobene omrežne naprave."
-
-#~ msgid "Wireless Networks"
-#~ msgstr "Brezžična omrežja"
-
-#~ msgid "Your computer is ready to use."
-#~ msgstr "Računalnik je pripravljen za uporabo!"
-
-#~ msgid "You may change these options at any time in Settings."
-#~ msgstr ""
-#~ "Katerokoli izmed teh možnosti je mogoče spreminjati tudi kasneje med "
-#~ "nastavitvami."
-
-#~ msgid "_Back"
-#~ msgstr "Na_zaj"
-
-#~ msgid "Select input sources"
-#~ msgstr "Izbor vhodnih virov"
-
-#~ msgid "Sorry"
-#~ msgstr "Nedovoljeno dejanje"
-
-#~ msgid "Input methods can't be used on the login screen"
-#~ msgstr "Vhodnih načinov ni mogoče uporabiti na prijavnem oknu"
-
-#~ msgid "Your session needs to be restarted for changes to take effect"
-#~ msgstr "Za uveljavitev sprememb je treba sejo ponovno zagnati."
-
-#~ msgid "Restart Now"
-#~ msgstr "Ponovno zaženi"
-
-#~ msgctxt "Language"
-#~ msgid "None"
-#~ msgstr "Brez"
-
-#~ msgid "Select an input source"
-#~ msgstr "Izbor vhodnih virov"
-
-#~ msgid "Unspecified"
-#~ msgstr "Nedoločeno"
-
-#~ msgid "_Use Local Login"
-#~ msgstr "_Uporabi krajevno prijavo"
-
-#~ msgid "Keyboard Layout"
-#~ msgstr "Razpored tipkovnice"
-
-#~ msgid "Remove Input Source"
-#~ msgstr "Odstrani vhodni vir"
-
-#~ msgid "Move Input Source Up"
-#~ msgstr "Premakni vhodni vir navzgor"
-
-#~ msgid "English"
-#~ msgstr "angleščina"
-
-#~ msgid "British English"
-#~ msgstr "britanska angleščina"
-
-#~ msgid "German"
-#~ msgstr "nemščina"
-
-#~ msgid "French"
-#~ msgstr "francoščina"
-
-#~ msgid "Spanish"
-#~ msgstr "španščina"
-
-#~ msgid "Chinese (simplified)"
-#~ msgstr "kitajščina poenostavljena"
-
-#~ msgid "Use %s"
-#~ msgstr "Uporabi %s"
-
-#~ msgid "_Login Name"
-#~ msgstr "_Prijavno ime"
-
-#~ msgid "Link other accounts"
-#~ msgstr "Poveži z drugimi računi"
-
-#~ msgid "Choose How to Login"
-#~ msgstr "Izbor načina prijave"
-
-#~ msgid "Remove"
-#~ msgstr "Odstrani"
-
-#~ msgid "Show _all"
-#~ msgstr "Pokaži _vse"
-
-#~ msgid "Enjoy GNOME!"
-#~ msgstr "Želimo vam prijetno uporabo namizja GNOME!"
-
-#~ msgid "New to GNOME 3 and need help finding your way around?"
-#~ msgstr "Ste prvič pred namizjem GNOME 3 in bi si želeli malo pomoči?"
-
-#~ msgid "_Take a Tour"
-#~ msgstr "_Voden ogled"
-
-#~ msgid "_Require a password to use this account"
-#~ msgstr "Od uporabnika _zahtevaj geslo"
-
-#~ msgid "_Act as administrator of this computer"
-#~ msgstr "_Upravljaj računalnik s skrbniškimi dovoljenji"
-
-#~ msgid "_Done"
-#~ msgstr "_Končano"
+msgstr "Nasprotno pa je prosta programska oprema (free software) brez tovrstnih omejitev."

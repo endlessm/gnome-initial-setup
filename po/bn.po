@@ -10,10 +10,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-13 14:16-0700\n"
-"PO-Revision-Date: 2017-06-13 21:21+0000\n"
+"POT-Creation-Date: 2018-03-08 10:12+0000\n"
+"PO-Revision-Date: 2018-04-19 19:47+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
-"Language-Team: Bengali (http://www.transifex.com/endless-mobile-inc/gnome-initial-setup/language/bn/)\n"
+"Language-Team: Bengali (http://www.transifex.com/endless-os/gnome-initial-setup/language/bn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,42 +25,83 @@ msgstr ""
 msgid "Initial Setup"
 msgstr "প্রাথমিক সেটআপ"
 
-#: ../gnome-initial-setup/gis-assistant.c:314
+#: ../gnome-initial-setup/gis-assistant.c:315
 msgid "_Next"
 msgstr "_পরবর্তী"
 
-#: ../gnome-initial-setup/gis-assistant.c:454
+#: ../gnome-initial-setup/gis-assistant.c:462
 msgid "_Accept"
 msgstr ""
 
-#: ../gnome-initial-setup/gis-assistant.c:455
+#: ../gnome-initial-setup/gis-assistant.c:463
 msgid "_Skip"
 msgstr ""
 
-#: ../gnome-initial-setup/gis-assistant.c:456
+#: ../gnome-initial-setup/gis-assistant.c:464
 msgid "_Previous"
 msgstr "_পূর্ববর্তী"
 
-#: ../gnome-initial-setup/gis-assistant.c:457
+#: ../gnome-initial-setup/gis-assistant.c:465
 msgid "_Cancel"
 msgstr "_বাতিল"
 
-#: ../gnome-initial-setup/gis-page-util.c:421
+#: ../gnome-initial-setup/gis-driver.c:403
+#, c-format
+msgid "Failed to enter demo mode: %s"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.c:424
 msgid "Disabled"
 msgstr "নিষ্ক্রিয় "
 
-#: ../gnome-initial-setup/gis-page-util.c:423
+#: ../gnome-initial-setup/gis-page-util.c:426
 #, c-format
 msgid "SD Card: %s"
 msgstr "SD কার্ড: %s"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:257
+#. Translators: this is shown when launching the
+#. * reformatter (an external program) fails. The
+#. * placeholder is an error message describing what went
+#. * wrong.
+#: ../gnome-initial-setup/gis-page-util.c:531
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr "পুনঃ ফর্ম্যাটকারী চালাতে ত্রুটি:  %s"
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:1
+msgid "Test Mode"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:2
+msgid "Power Off"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:3
+msgid "Enter Store Demo"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:4
+msgid "OK"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:5
+msgid "Cancel"
+msgstr ""
+
+#: ../gnome-initial-setup/gis-page-util.ui.h:6
+msgid ""
+"This allows you to try Endless without activating an account. No changes or "
+"files will be saved, and the computer will return to a clean factory state "
+"when you power it off."
+msgstr ""
+
+#: ../gnome-initial-setup/gnome-initial-setup.c:239
 msgid "Force existing user mode"
 msgstr ""
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:263
-msgid "- GNOME initial setup"
-msgstr "- GNOME প্রাথমিক সেটআপ"
+#: ../gnome-initial-setup/gnome-initial-setup.c:245
+msgid "— GNOME initial setup"
+msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:284
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
@@ -90,7 +131,8 @@ msgstr ""
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:2
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
-"used on this device."
+"used on this device. You can also use this account to access company "
+"resources on the internet."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:3
@@ -138,11 +180,11 @@ msgstr "প্রশাসক_নাম"
 msgid "Administrator Password"
 msgstr "প্রশাসক পাসওয়ার্ড"
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:208
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:209
 msgid "Please check the name and username. You can choose a picture too."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:414
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:424
 msgid "We need a few details to complete setup."
 msgstr ""
 
@@ -171,7 +213,7 @@ msgid "Disable image"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-photo-dialog.c:264
-msgid "Take a photo..."
+msgid "Take a photo…"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:310
@@ -195,31 +237,30 @@ msgstr "সঠিক পাসওয়ার্ড নয়, আবার চেষ�
 
 #: ../gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
-msgid "Couldn't connect to the %s domain: %s"
+msgid "Couldn’t connect to the %s domain: %s"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:247
-#, c-format
-msgid "A user with the username '%s' already exists."
+msgid "Sorry, that user name isn’t available. Please try another."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:251
+#: ../gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
 msgid "The username is too long."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:254
-msgid "The username cannot start with a '-'."
+#: ../gnome-initial-setup/pages/account/um-utils.c:253
+msgid "The username cannot start with a “-”."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:257
+#: ../gnome-initial-setup/pages/account/um-utils.c:256
 msgid ""
-"The username should only consist of lower and upper case letters from a-z, "
-"digits and any of characters '.', '-' and '_'."
+"The username should only consist of upper and lower case letters from a-z, "
+"digits and the following characters: . - _"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/account/um-utils.c:261
-msgid "This will be used to name your home folder and can't be changed."
+#: ../gnome-initial-setup/pages/account/um-utils.c:260
+msgid "This will be used to name your home folder and can’t be changed."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/display/gis-display-page.c:269
@@ -242,16 +283,16 @@ msgstr "আমি দেখতে পাচ্ছি"
 msgid "I do not see it. Shrink screen to fit TV."
 msgstr "আমি এটি দেখতে পাচ্ছি না। টিভির সাথে মানানসই হতে পর্দা ছোট করুন।"
 
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:242
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:346
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:294
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:424
 msgid "Terms of Use"
 msgstr "ব্যবহারের শর্তাবলী"
 
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:247
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:299
 msgid "Third Party Software"
 msgstr "তৃতীয় পক্ষ সফটওয়্যার"
 
-#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:339
+#: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:408
 msgid "_Accept and Continue"
 msgstr "_মেনে নিন এবং চালিয়ে যান"
 
@@ -263,7 +304,7 @@ msgstr "অনুগ্রহ করে নিম্নোক্ত শর্ত
 msgid ""
 "By clicking \"Accept and continue,\" you acknowledge that you have read, "
 "understood, and agree to be bound by the following terms and conditions."
-msgstr ""
+msgstr "\"মেনে নিন এবং চালিয়ে যান\" চাপার মাধ্যমে আপনি স্বীকার করে নিলেন যে আপনি নিম্নোক্ত নিয়ম ও শর্তাবলী পড়েছেন, বুঝেছেন এবং মানতে রাজি হয়েছেন।"
 
 #: ../gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui.h:3
 msgid "Help make Endless better for everyone"
@@ -290,7 +331,7 @@ msgstr "আমি _এই ব্যবহারকারী লাইসেন�
 msgid "Add Account"
 msgstr "একাউন্ট সংযুক্তি"
 
-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:336
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:338
 msgid "Online Accounts"
 msgstr "অনলাইন একাউন্টসমূহ"
 
@@ -309,19 +350,19 @@ msgid ""
 "Accounts can be added and removed at any time from the Settings application."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:241
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
 msgstr "আবার দেখুন"
 
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:300
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:290
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:287
 #: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "আরো…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:322
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "কোন তথ্য পাওয়া যায়নি"
 
@@ -359,11 +400,19 @@ msgstr "কিবোর্ড ধরন শণাক্ত করুন…"
 msgid "_Select"
 msgstr "_নির্বাচন করুন"
 
-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:306
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:303
 msgid "No languages found"
 msgstr "কোনো ভাষা পাওয়া যায়নি"
 
-#: ../gnome-initial-setup/pages/language/gis-language-page.c:322
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:267
+msgid "Enter Store Demo…"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:281
+msgid "Welcome to Store Demo"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:283
 msgid "Welcome"
 msgstr "স্বাগতম"
 
@@ -374,49 +423,49 @@ msgstr "স্বাগতম"
 msgid "Welcome!"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:183
-#, c-format
-msgid "Error running the reformatter: %s"
-msgstr "পুনঃ ফর্ম্যাটকারী চালাতে ত্রুটি:  %s"
-
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:276
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
 #: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:1
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr "ইউএসবি স্টিক থেকে এন্ডলেস ওএস চালাতে চেষ্টা করুন। "
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:277
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:180
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
+msgid "Try Endless OS by running it from the DVD."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:181
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
 msgid "Reformat this computer with Endless OS."
 msgstr "এন্ডলেস ওএস দিয়ে এই কম্পিউটারটি পুনঃ ফর্ম্যাট করুন। "
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:278
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:2
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:3
 msgid "Try It"
 msgstr "চেষ্টা করুন "
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:279
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:4
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:183
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui.h:5
 msgid "Reformat"
 msgstr "পুনঃ ফর্ম্যাট "
 
-#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:281
-msgid "Endless USB Stick"
-msgstr "এন্ডলেস ইউএসবি স্টিক "
+#: ../gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:185
+msgid "Try or Reformat"
+msgstr ""
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:296
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:291
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "অন্যকিছু…"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:355
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:350
 msgid "Wireless networking is disabled"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:361
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:356
 msgid "Checking for available wireless networks"
 msgstr "ওয়্যারলেস নেটওয়ার্ক খোঁজ করা হচ্ছে"
 
-#: ../gnome-initial-setup/pages/network/gis-network-page.c:625
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:646
 msgid "Network"
 msgstr "নেটওয়ার্ক"
 
@@ -439,15 +488,11 @@ msgstr "কোন ওয়্যারলেস পাওয়া যায়নি"
 msgid "Turn On"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:170
-msgid "This is a weak password."
-msgstr ""
-
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:184
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:205
 msgid "The passwords do not match."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:348
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:384
 msgid "Password"
 msgstr ""
 
@@ -460,7 +505,7 @@ msgid "Be careful not to lose your password."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:4
-msgid "_Verify"
+msgid "_Confirm"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:5
@@ -469,7 +514,7 @@ msgstr "পাসওয়ার্ড প্রদর্শন"
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:6
 msgid "Password _reminder"
-msgstr ""
+msgstr "পাসওয়ার্ড_স্মরণকারী চিহ্ন"
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:7
 msgid "Password reminder will be shown in case you forget your password."
@@ -482,134 +527,99 @@ msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
-msgid ""
-"This password is very similar to your last one. Try changing some letters "
-"and numbers."
+msgid "Try changing some letters and numbers."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:85
 #: ../gnome-initial-setup/pages/password/pw-utils.c:93
 msgctxt "Password hint"
-msgid ""
-"This password is very similar to your last one. Try changing the password a "
-"bit more."
+msgid "Try changing the password a bit more."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. A password without your user name would be "
-"stronger."
+msgid "A password without your user name would be stronger."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
-msgid "This is a weak password. Try to avoid using your name in the password."
+msgid "Try to avoid using your name in the password."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid some of the words included in the "
-"password."
+msgid "Try to avoid some of the words included in the password."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
-msgid "This is a weak password. Try to avoid common words."
+msgid "Try to avoid common words."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
-msgid "This is a weak password. Try to avoid reordering existing words."
+msgid "Try to avoid reordering existing words."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
-msgid "This is a weak password. Try to use more numbers."
+msgid "Try to use more numbers."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
-msgid "This is a weak password. Try to use more uppercase letters."
+msgid "Try to use more uppercase letters."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
-msgid "This is a weak password. Try to use more lowercase letters."
+msgid "Try to use more lowercase letters."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to use more special characters, like "
-"punctuation."
+msgid "Try to use more special characters, like punctuation."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to use a mixture of letters, numbers and "
-"punctuation."
+msgid "Try to use a mixture of letters, numbers and punctuation."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
-msgid "This is a weak password. Try to avoid repeating the same character."
+msgid "Try to avoid repeating the same character."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. Try to avoid repeating the same type of character: "
-"you need to mix up letters, numbers and punctuation."
+"Try to avoid repeating the same type of character: you need to mix up "
+"letters, numbers and punctuation."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
-msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
+msgid "Try to avoid sequences like 1234 or abcd."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
-msgid "This is a weak password. Try to add more letters, numbers and symbols."
+msgid ""
+"Password needs to be longer. Try to add more letters, numbers and "
+"punctuation."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
-msgid "Mix uppercase and lowercase and use a number or two."
+msgid "Mix uppercase and lowercase and try to use a number or two."
 msgstr ""
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Good password! Adding more letters, numbers and punctuation will make it "
+"Adding more letters, numbers and punctuation will make the password "
 "stronger."
-msgstr ""
-
-#: ../gnome-initial-setup/pages/password/pw-utils.c:141
-msgctxt "Password strength"
-msgid "Strength: Weak"
-msgstr ""
-
-#: ../gnome-initial-setup/pages/password/pw-utils.c:145
-msgctxt "Password strength"
-msgid "Strength: Low"
-msgstr ""
-
-#: ../gnome-initial-setup/pages/password/pw-utils.c:148
-msgctxt "Password strength"
-msgid "Strength: Medium"
-msgstr ""
-
-#: ../gnome-initial-setup/pages/password/pw-utils.c:151
-msgctxt "Password strength"
-msgid "Strength: Good"
-msgstr ""
-
-#: ../gnome-initial-setup/pages/password/pw-utils.c:154
-msgctxt "Password strength"
-msgid "Strength: High"
 msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
@@ -622,13 +632,25 @@ msgid ""
 "sent anonymously and are scrubbed of personal data."
 msgstr ""
 
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:116
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:175
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:250
+#. Translators: the parameter here is the name of a distribution,
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
+#. * detect any distribution.
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:120
+#, c-format
+msgid "Problem data will be collected by %s:"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:121
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:256
 msgid "Privacy Policy"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:286
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
+msgid "Uses Mozilla Location Service:"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/privacy/gis-privacy-page.c:292
 #: ../gnome-initial-setup/pages/privacy/gis-privacy-page.ui.h:1
 msgid "Privacy"
 msgstr ""
@@ -668,31 +690,31 @@ msgstr ""
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:305
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:306
 #, c-format
-msgid "_Start using %s"
+msgid "_Start Using %s"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:335
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:336
 msgid "You're ready to try Endless OS"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:337
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:338
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr "<b>আপনি যদি কম্পিউটার বন্ধ বা পুনঃচালু করেন তাহলে আপনি যেসব ফাইল নামিয়েছেন বা তৈরি করেছেন তা চিরতরে হারিয়ে যাবে। </b> "
 
-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:347
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:348
 msgid "Ready to Go"
 msgstr ""
 
 #: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:1
-msgid "You're ready to go!"
+msgid "You’re ready to go!"
 msgstr ""
 
 #. Translators: "city, country"
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:261
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:268
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
@@ -700,28 +722,28 @@ msgstr ""
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:298
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
 msgid "UTC%:::z"
 msgstr ""
 
 #. Translators: This is the time format used in 12-hour mode.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:309
 msgid "%l:%M %p"
 msgstr ""
 
 #. Translators: This is the time format used in 24-hour mode.
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:312
 msgid "%R"
 msgstr ""
 
 #. Translators: "timezone (utc shift)"
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:315
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
 msgstr ""
 
-#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:449
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:469
 #: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:1
 msgid "Time Zone"
 msgstr "সময় অঞ্চল"
