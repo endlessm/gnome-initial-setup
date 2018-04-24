@@ -17,6 +17,14 @@ BUILT_SOURCES += display-resources.c display-resources.h
 
 libgisdisplay_la_SOURCES =			\
 	gis-display-page.c gis-display-page.h	\
+	cc-display-config.c	\
+	cc-display-config.h	\
+	cc-display-config-dbus.c	\
+	cc-display-config-dbus.h	\
+	cc-display-config-manager.c	\
+	cc-display-config-manager.h	\
+	cc-display-config-manager-dbus.c	\
+	cc-display-config-manager-dbus.h	\
 	$(BUILT_SOURCES)
 
 libgisdisplay_la_CFLAGS = $(INITIAL_SETUP_CFLAGS) -I "$(srcdir)/../.."
