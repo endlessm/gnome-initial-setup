@@ -276,6 +276,31 @@ validate (GisPasswordPage *page)
   return G_SOURCE_REMOVE;
 }
 
+static void
+page_visibility_changed (GtkWidget  *w,
+                         GParamSpec *pspec,
+                         gpointer    unused)
+{
+  /* Make sure to reset the password page in this case, to prevent situations
+   * where a previously introduced password, that is no longer required, would
+   * end up being used anyway when creating the user's account.
+   */
+  if (!gtk_widget_get_visible (w)) {
+    GisPasswordPage *page = GIS_PASSWORD_PAGE (w);
+    GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
+
+    gtk_entry_set_text (GTK_ENTRY (priv->password_entry), "");
+    gtk_entry_set_text (GTK_ENTRY (priv->confirm_entry), "");
+    gtk_entry_set_visibility (GTK_ENTRY (priv->password_entry), FALSE);
+    gtk_entry_set_icon_from_icon_name (GTK_ENTRY (priv->password_entry),
+                                       GTK_ENTRY_ICON_PRIMARY,
+                                       "eye-open-negative-filled-symbolic");
+    gtk_entry_set_icon_tooltip_text (GTK_ENTRY (priv->password_entry),
+                                     GTK_ENTRY_ICON_PRIMARY,
+                                     _("Show password"));
+  }
+}
+
 static gboolean
 on_focusout (GisPasswordPage *page)
 {
@@ -362,6 +387,9 @@ gis_password_page_constructed (GObject *object)
   GtkSettings *settings;
 
   G_OBJECT_CLASS (gis_password_page_parent_class)->constructed (object);
+
+  g_signal_connect (page, "notify::visible",
+                    G_CALLBACK (page_visibility_changed), NULL);
 
   g_signal_connect (priv->password_entry, "notify::text",
                     G_CALLBACK (password_changed), page);
