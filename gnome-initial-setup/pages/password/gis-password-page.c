@@ -51,7 +51,6 @@ struct _GisPasswordPagePrivate
   GDBusProxy *input_source_manager;
 
   gboolean valid_confirm;
-  gboolean valid_password;
   guint timeout_id;
   const gchar *username;
 };
@@ -84,7 +83,7 @@ page_validate (GisPasswordPage *page)
   GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
   gboolean has_reminder = (gtk_entry_get_text_length (GTK_ENTRY (priv->reminder_entry)) > 0);
 
-  return priv->valid_confirm && priv->valid_password && has_reminder;
+  return priv->valid_confirm && has_reminder;
 }
 
 static void
@@ -187,8 +186,7 @@ validate (GisPasswordPage *page)
   gtk_label_set_label (GTK_LABEL (priv->confirm_explanation), "");
   priv->valid_confirm = FALSE;
 
-  priv->valid_password = (strength_level > 1);
-  if (priv->valid_password)
+  if (strlen (password) > 0)
     set_entry_validation_checkmark (GTK_ENTRY (priv->password_entry));
 
   if (strlen (password) > 0 && strlen (verify) > 0) {
@@ -252,7 +250,6 @@ password_changed (GtkWidget      *w,
   clear_entry_validation_error (GTK_ENTRY (w));
   clear_entry_validation_error (GTK_ENTRY (priv->confirm_entry));
 
-  priv->valid_password = FALSE;
   update_page_validation (page);
 
   if (priv->timeout_id != 0)
