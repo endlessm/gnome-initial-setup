@@ -707,8 +707,8 @@ update_screen_size (GisDriver *driver)
                                       GTK_POLICY_NEVER,
                                       GTK_POLICY_NEVER);
 
-      size_hints.min_width = size_hints.max_width = 747;
-      size_hints.min_height = size_hints.max_height = 539;
+      size_hints.min_width = size_hints.max_width = 800;
+      size_hints.min_height = size_hints.max_height = 600;
       size_hints.win_gravity = GDK_GRAVITY_CENTER;
 
       gtk_window_set_geometry_hints (priv->main_window,
