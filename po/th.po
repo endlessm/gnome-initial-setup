@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-08 10:12+0000\n"
-"PO-Revision-Date: 2018-04-19 19:47+0000\n"
+"POT-Creation-Date: 2018-04-27 23:16-0700\n"
+"PO-Revision-Date: 2018-04-30 06:16+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Thai (http://www.transifex.com/endless-os/gnome-initial-setup/language/th/)\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,7 @@ msgstr "บังคับใช้โหมดผู้ใช้ที่มี
 
 #: ../gnome-initial-setup/gnome-initial-setup.c:245
 msgid "— GNOME initial setup"
-msgstr ""
+msgstr "— การตั้งค่า GNOME เริ่มต้น"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:284
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
@@ -132,7 +132,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
+msgstr "การเข้าสู่ระบบขององค์กรจะทำให้คุณสามารถใช้งานบัญชีที่มีผู้ใช้บริหารจัดการอยู่ในส่วนกลางได้บนอุปกรณ์นี้ และยังสามารถใช้บัญชีนี้เพื่อเข้าถึงทรัพยากรของบริษัทบนอินเตอร์เน็ตได้"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:3
 msgid "_Domain"
@@ -241,7 +241,7 @@ msgstr "ไม่สามารถเชื่อมต่อกับโดเ
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:247
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr ""
+msgstr "ขออภัย ไม่สามารถใช้ชื่อผู้ใช้ดังกล่าวได้ โปรดลองชื่ออื่น"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
@@ -250,19 +250,19 @@ msgstr "ชื่อผู้ใช้ยาวเกินไป"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:253
 msgid "The username cannot start with a “-”."
-msgstr ""
+msgstr "ชื่อผู้ใช้ไม่สามารถเริ่มต้นด้วย “-”"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:256
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
+msgstr "ชื่อผู้ใช้ควรประกอบด้วยอักษรตัวพิมพ์ใหญ่และพิมพ์เล็กตั้ง a-z ตัวเลข และอักขระต่อไปนี้เท่านั้น: . - _"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:260
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr "ชื่อนี้จะเป็นชื่อโฟลเดอร์โฮมของคุณและไม่สามารถแก้ไขได้"
 
-#: ../gnome-initial-setup/pages/display/gis-display-page.c:269
+#: ../gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
 msgstr "แสดง"
 
@@ -474,10 +474,9 @@ msgstr "Wi-Fi"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:2
 msgid ""
-"Connecting to the Internet will enable you to set the time, add your "
-"details, and enable you to access your email, calendar, and contacts. It is "
-"also necessary for enterprise login accounts."
-msgstr "การเชื่อมต่ออินเตอร์เน็ตจะทำให้คุณสามารถตั้งค่าเวลา เพิ่มรายละเอียด และทำให้สามารถเข้าถึงอีเมล ปฏิทิน และรายชื่อผู้ติดต่อของคุณได้ อีกทั้งยังจำเป็นต่อบัญชีที่ใช้เข้าสู่ระบบองค์กร"
+"Connecting to the internet helps you get new apps, information, and other "
+"upgrades. It also helps set the time and your location automatically."
+msgstr "การเชื่อมต่อกับอินเทอร์เน็ตจะช่วยให้คุณรับแอปใหม่ ๆ ข้อมูลข่าวสาร และการอัปเกรดอื่น ๆ ได้ นอกจากนี้ยังช่วยตั้งเวลาและตำแหน่งที่ตั้งของคุณโดยอัตโนมัติ"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
 msgid "No wireless available"
@@ -487,11 +486,11 @@ msgstr "ไม่มีบริการไร้สาย"
 msgid "Turn On"
 msgstr "เปิด"
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:205
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:195
 msgid "The passwords do not match."
 msgstr "รหัสผ่านไม่ตรงกัน"
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:384
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:373
 msgid "Password"
 msgstr "รหัสผ่าน"
 
@@ -505,7 +504,7 @@ msgstr "โปรดระวังอย่าให้รหัสผ่าน
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:4
 msgid "_Confirm"
-msgstr ""
+msgstr "_ยืนยัน"
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:5
 msgid "Show password"
@@ -527,99 +526,99 @@ msgstr "รหัสผ่านใหม่ต้องแตกต่างจ
 #: ../gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
 msgid "Try changing some letters and numbers."
-msgstr ""
+msgstr "ลองเปลี่ยนตัวอักษรหรือเลขบางตัว"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:85
 #: ../gnome-initial-setup/pages/password/pw-utils.c:93
 msgctxt "Password hint"
 msgid "Try changing the password a bit more."
-msgstr ""
+msgstr "ลองปรับรหัสผ่านอีกเล็กน้อย"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid "A password without your user name would be stronger."
-msgstr ""
+msgstr "รหัสผ่านที่ไม่มีชื่อผู้ใช้ประกอบจะคาดเดาได้ยากกว่า"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "Try to avoid using your name in the password."
-msgstr ""
+msgstr "พยายามหลีกเลี่ยงการใช้ชื่อของคุณในรหัสผ่าน"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid "Try to avoid some of the words included in the password."
-msgstr ""
+msgstr "พยายามหลีกเลี่ยงคำบางคำที่มีอยู่ในรหัสผ่าน"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "Try to avoid common words."
-msgstr ""
+msgstr "พยายามหลีกเลี่ยงคำที่ใช้บ่อย"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "Try to avoid reordering existing words."
-msgstr ""
+msgstr "พยายามหลีกเลี่ยงการสลับตำแหน่งคำที่มีอยู่"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "Try to use more numbers."
-msgstr ""
+msgstr "พยายามใช้ตัวเลขเพิ่มเติม"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "Try to use more uppercase letters."
-msgstr ""
+msgstr "พยายามใช้ตัวอักษรพิมพ์ใหญ่มากกว่านี้"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "Try to use more lowercase letters."
-msgstr ""
+msgstr "พยายามใช้ตัวอักษรพิมพ์เล็กเพิ่ม"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid "Try to use more special characters, like punctuation."
-msgstr ""
+msgstr "พยายามใช้อักขระพิเศษ เช่น เครื่องหมายวรรคตอน เพิ่มเติม"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid "Try to use a mixture of letters, numbers and punctuation."
-msgstr ""
+msgstr "พยายามใช้ตัวอักษร ตัวเลข และเครื่องหมายวรรคตอนผสมกัน"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "Try to avoid repeating the same character."
-msgstr ""
+msgstr "พยายามหลีกเลี่ยงการใช้อักขระตัวเดิมซ้ำ"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "Try to avoid repeating the same type of character: you need to mix up "
 "letters, numbers and punctuation."
-msgstr ""
+msgstr "พยายามหลีกเลี่ยงการใช้ซ้ำอักขระประเภทเดียวกัน: คุณต้องใช้ตัวอักษร ตัวเลข และเครื่องหมายวรรคตอนผสมกัน"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "Try to avoid sequences like 1234 or abcd."
-msgstr ""
+msgstr "พยายามหลีกเลี่ยงลำดับที่ต่อเนื่องกัน เช่น 1234 หรือ abcd"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "Password needs to be longer. Try to add more letters, numbers and "
 "punctuation."
-msgstr ""
+msgstr "รหัสผ่านจำเป็นต้องยาวกว่านี้ ลองเพิ่มตัวอักษร ตัวเลข และเครื่องหมายวรรคตอน"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
+msgstr "ใช้ตัวพิมพ์ใหญ่และตัวพิมพ์เล็กผสมกัน และพยายามใช้ตัวเลขหนึ่งหรือสองตัว"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password "
 "stronger."
-msgstr ""
+msgstr "การเพิ่มตัวอักษร ตัวเลข และเครื่องหมายวรรคตอนจะทำให้รหัสผ่านแข็งแรงขึ้น"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't

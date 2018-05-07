@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-08 10:12+0000\n"
-"PO-Revision-Date: 2018-04-19 20:01+0000\n"
+"POT-Creation-Date: 2018-04-27 23:16-0700\n"
+"PO-Revision-Date: 2018-04-28 21:57+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Hindi (http://www.transifex.com/endless-os/gnome-initial-setup/language/hi/)\n"
 "MIME-Version: 1.0\n"
@@ -102,7 +102,7 @@ msgstr "मौजूदा उपयोक्ता मोड बलपूर्
 
 #: ../gnome-initial-setup/gnome-initial-setup.c:245
 msgid "— GNOME initial setup"
-msgstr ""
+msgstr "- GNOME प्रारंभिक सेटअप"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:284
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
@@ -134,7 +134,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
+msgstr "एंटरप्राइज़ लॉगिन एक मौजूदा केंद्रीय प्रबंधित उपयोगकर्ता खाते का उपयोग इस डिवाइस पर करने की अनुमति देता है. आप इंटरनेट पर कंपनी संसाधनों तक पहुंचने के लिए भी इस खाते का उपयोग कर सकते हैं."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:3
 msgid "_Domain"
@@ -243,7 +243,7 @@ msgstr "%s डोमेन से कनेक्ट नहीं कर सक�
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:247
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr ""
+msgstr "क्षमा करें, वह यूज़रनेम उपलब्ध नहीं है. कृपया दूसरा प्रयास करें."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
@@ -252,19 +252,19 @@ msgstr "उपयोक्ता नाम बहुत बड़ा है."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:253
 msgid "The username cannot start with a “-”."
-msgstr ""
+msgstr "उपयोगकर्ता नाम \"-\" से शुरू नहीं हो सकता है."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:256
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
+msgstr "यूज़रनेम में केवल a-z तक ऊपरी और निचले केस के अक्षर, अंकऔर नीचे दिए गए चिह्न होने चाहिए: . - _"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:260
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr "इसका उपयोग आपके होम फ़ोल्डर के नामकरण में किया जाएगा और इसे बदला नहीं जा सकता."
 
-#: ../gnome-initial-setup/pages/display/gis-display-page.c:269
+#: ../gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
 msgstr "प्रदर्श‍ित करें"
 
@@ -476,10 +476,9 @@ msgstr "वाई-फ़ाई"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:2
 msgid ""
-"Connecting to the Internet will enable you to set the time, add your "
-"details, and enable you to access your email, calendar, and contacts. It is "
-"also necessary for enterprise login accounts."
-msgstr "इंटरनेट से कनेक्ट करने पर आप समय सेट कर सकते हैं, अपने विवरण जोड़ सकते हैं तथा अपने ईमेल, कैलेंडर और संपर्कों का उपयोग कर सकते हैं. यह एंटरप्राइज़ लॉगिन के लिए भी आवश्यक है."
+"Connecting to the internet helps you get new apps, information, and other "
+"upgrades. It also helps set the time and your location automatically."
+msgstr "इंटरनेट से कनेक्ट करने से आपको नए ऐप्स, जानकारी और अन्य अपग्रेड मिल सकते हैं. यह समय और आपके स्थान को स्वचालित रूप से सेट करने में भी मदद करता है."
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
 msgid "No wireless available"
@@ -489,11 +488,11 @@ msgstr "कोई बेतार उपलब्ध नहीं है"
 msgid "Turn On"
 msgstr "चालू करें"
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:205
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:195
 msgid "The passwords do not match."
 msgstr "शब्दकूट समान नहीं हैं."
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:384
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:373
 msgid "Password"
 msgstr "शब्दकूट"
 
@@ -507,7 +506,7 @@ msgstr "सावधानी पूर्वक अपना कूटशब्
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:4
 msgid "_Confirm"
-msgstr ""
+msgstr "_की पुष्टि करें"
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:5
 msgid "Show password"
@@ -609,19 +608,19 @@ msgctxt "Password hint"
 msgid ""
 "Password needs to be longer. Try to add more letters, numbers and "
 "punctuation."
-msgstr ""
+msgstr "पासवर्ड लंबा होना चाहिए. अधिक अक्षरों, संख्याओं और विराम चिह्न जोड़ने की कोशिश करें."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
+msgstr "अपरकेस और लोअरकेस मिलाएं और एक या दो संख्याओं का उपयोग करने का प्रयास करें."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password "
 "stronger."
-msgstr ""
+msgstr "अधिक अक्षर, संख्याएं और विराम चिह्न जोड़ना पासवर्ड को और मजबूत बना देगा."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't

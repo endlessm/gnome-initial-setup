@@ -11,6 +11,7 @@
 # Dz Chen <wsxy162@gmail.com>, 2016
 # e2f_cn c5 <jarvisn@ecinnovations.com>, 2017
 # e2f_cn c5 <jarvisn@ecinnovations.com>, 2017
+# e2f_cn c9 <e2f_cn_c9@outlook.com>, 2018
 # liuxuejiao <liuxuejiao_endless@126.com>, 2016
 # Roddy Shuler <roddy@endlessm.com>, 2017
 # tanyuanxing <tanyuanxingendless@126.com>, 2016
@@ -22,9 +23,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-08 10:12+0000\n"
-"PO-Revision-Date: 2018-04-19 19:47+0000\n"
-"Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
+"POT-Creation-Date: 2018-04-27 23:16-0700\n"
+"PO-Revision-Date: 2018-05-02 09:51+0000\n"
+"Last-Translator: e2f_cn c9 <e2f_cn_c9@outlook.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/endless-os/gnome-initial-setup/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -113,7 +114,7 @@ msgstr "强制新建用户模式"
 
 #: ../gnome-initial-setup/gnome-initial-setup.c:245
 msgid "— GNOME initial setup"
-msgstr ""
+msgstr "- GNOME 初始配置"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:284
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
@@ -145,7 +146,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
+msgstr "企业登录允许在本机上使用已有的、集中式管理的用户账号。您也可以使用此账号访问公司在互联网上的资源。"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:3
 msgid "_Domain"
@@ -254,7 +255,7 @@ msgstr "无法连接到 %s 域：%s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:247
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr ""
+msgstr "抱歉，该用户名不可用。请尝试其他用户名。"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
@@ -263,19 +264,19 @@ msgstr "用户名太长"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:253
 msgid "The username cannot start with a “-”."
-msgstr ""
+msgstr "用户名不能以“-”开头。"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:256
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
+msgstr "用户名只能包含大小写英文字母（a 至 z）、数字和“.”“-”“_”符号"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:260
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr "这将用于命名主文件夹，不能更改。"
 
-#: ../gnome-initial-setup/pages/display/gis-display-page.c:269
+#: ../gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
 msgstr "显示"
 
@@ -487,10 +488,9 @@ msgstr "Wi-Fi"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:2
 msgid ""
-"Connecting to the Internet will enable you to set the time, add your "
-"details, and enable you to access your email, calendar, and contacts. It is "
-"also necessary for enterprise login accounts."
-msgstr "连接到互联网后，您可以设置时间，添加详细个人资料，访问您的邮件、日历和联系人。企业登录帐号也需要联网。"
+"Connecting to the internet helps you get new apps, information, and other "
+"upgrades. It also helps set the time and your location automatically."
+msgstr "连接到互联网有助于您获取新的应用程序、信息和其他升级。同时有助于自动设置时间和您的位置。"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
 msgid "No wireless available"
@@ -500,11 +500,11 @@ msgstr "无线不可用"
 msgid "Turn On"
 msgstr "打开"
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:205
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:195
 msgid "The passwords do not match."
 msgstr "密码不匹配"
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:384
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:373
 msgid "Password"
 msgstr "密码"
 
@@ -518,7 +518,7 @@ msgstr "请记好您的密码。"
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:4
 msgid "_Confirm"
-msgstr ""
+msgstr "_确认"
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:5
 msgid "Show password"
@@ -540,99 +540,99 @@ msgstr "新密码需要跟旧密码不相同。"
 #: ../gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
 msgid "Try changing some letters and numbers."
-msgstr ""
+msgstr "请更改一些字母和数字。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:85
 #: ../gnome-initial-setup/pages/password/pw-utils.c:93
 msgctxt "Password hint"
 msgid "Try changing the password a bit more."
-msgstr ""
+msgstr "请进一步更改密码。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid "A password without your user name would be stronger."
-msgstr ""
+msgstr "不包含用户名的密码更安全。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "Try to avoid using your name in the password."
-msgstr ""
+msgstr "请勿在密码中使用您的名字。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid "Try to avoid some of the words included in the password."
-msgstr ""
+msgstr "请勿在密码中使用单词。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "Try to avoid common words."
-msgstr ""
+msgstr "请勿使用常用单词。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "Try to avoid reordering existing words."
-msgstr ""
+msgstr "请勿仅更改现有单词顺序。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "Try to use more numbers."
-msgstr ""
+msgstr "请多使用数字。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "Try to use more uppercase letters."
-msgstr ""
+msgstr "请使用更多大写字母。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "Try to use more lowercase letters."
-msgstr ""
+msgstr "请使用更多小写字母。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid "Try to use more special characters, like punctuation."
-msgstr ""
+msgstr "请使用更多特殊字符，如标点符号。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid "Try to use a mixture of letters, numbers and punctuation."
-msgstr ""
+msgstr "请混用字母、数字和标点符号。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "Try to avoid repeating the same character."
-msgstr ""
+msgstr "请避免重复相同字符。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "Try to avoid repeating the same type of character: you need to mix up "
 "letters, numbers and punctuation."
-msgstr ""
+msgstr "请避免重复相同类型字符：您需要混合字母、数字和标点符号。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "Try to avoid sequences like 1234 or abcd."
-msgstr ""
+msgstr "请避免使用如 1234 或 abcd 等有规律序列。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "Password needs to be longer. Try to add more letters, numbers and "
 "punctuation."
-msgstr ""
+msgstr "密码需要加长。尝试添加更多的字母、数字和标点符号。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
+msgstr "密码需要大小写字母混用并尝试使用一到两个数字。"
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password "
 "stronger."
-msgstr ""
+msgstr "添加更多字母、数字和标点符号将使密码更加强大。"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't

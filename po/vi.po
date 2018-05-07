@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-08 10:12+0000\n"
-"PO-Revision-Date: 2018-04-19 19:47+0000\n"
+"POT-Creation-Date: 2018-04-27 23:16-0700\n"
+"PO-Revision-Date: 2018-04-28 13:27+0000\n"
 "Last-Translator: Roddy Shuler <roddy@endlessm.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/endless-os/gnome-initial-setup/language/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,7 @@ msgstr "Ép buộc chế độ người dùng cũ"
 
 #: ../gnome-initial-setup/gnome-initial-setup.c:245
 msgid "— GNOME initial setup"
-msgstr ""
+msgstr "— Cài đặt ban đầu GNOME"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:284
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
@@ -132,7 +132,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
+msgstr "Thông tin đăng nhập doanh nghiệp cho phép tài khoản người dùng được quản lý tập trung hiện có được sử dụng trên thiết bị này. Bạn cũng có thể sử dụng tài khoản này để truy cập tài nguyên của công ty trên internet."
 
 #: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:3
 msgid "_Domain"
@@ -241,7 +241,7 @@ msgstr "Không thể kết nối vào tên miền %s: %s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:247
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr ""
+msgstr "Rất tiếc, tên người dùng đó không có sẵn. Vui lòng thử một tên khác."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
@@ -250,19 +250,19 @@ msgstr "Tài khoản quá dài."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:253
 msgid "The username cannot start with a “-”."
-msgstr ""
+msgstr "Tên người dùng không thể bắt đầu bằng dấu \"-\"."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:256
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
+msgstr "Tên người dùng chỉ nên bao gồm chữ hoa và chữ thường từ a-z, chữ số và các ký tự sau: . - _"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:260
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr "Mục này sẽ được sử dụng để đặt tên thư mục chính của bạn và không thể thay đổi."
 
-#: ../gnome-initial-setup/pages/display/gis-display-page.c:269
+#: ../gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
 msgstr "Hiển thị"
 
@@ -474,10 +474,9 @@ msgstr "Wi-Fi"
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:2
 msgid ""
-"Connecting to the Internet will enable you to set the time, add your "
-"details, and enable you to access your email, calendar, and contacts. It is "
-"also necessary for enterprise login accounts."
-msgstr "Việc kết nối vào mạng Internet sẽ giúp bạn đặt giờ, thêm chi tiết của bạn, và cho phép bạn truy cập thư điện tử, lịch và liên lạc. Nó cũng cần thiết cho việc đăng nhập bằng tài khoản kiểu công ty."
+"Connecting to the internet helps you get new apps, information, and other "
+"upgrades. It also helps set the time and your location automatically."
+msgstr "Kết nối internet sẽ giúp bạn có được các ứng dụng, thông tin mới và các nâng cấp khác. Nó cũng giúp cài đặt tự động thời gian và vị trí của bạn."
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
 msgid "No wireless available"
@@ -487,11 +486,11 @@ msgstr "Không có mạng không dây dùng được"
 msgid "Turn On"
 msgstr "Bật lên"
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:205
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:195
 msgid "The passwords do not match."
 msgstr "Mật khẩu không khớp nhau."
 
-#: ../gnome-initial-setup/pages/password/gis-password-page.c:384
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:373
 msgid "Password"
 msgstr "Mật khẩu"
 
@@ -505,7 +504,7 @@ msgstr "Hãy cẩn thận đừng quên mật khẩu của mình."
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:4
 msgid "_Confirm"
-msgstr ""
+msgstr "_Xác nhận"
 
 #: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:5
 msgid "Show password"
@@ -527,99 +526,99 @@ msgstr "Mật khẩu mới cần phải khác với mật khẩu cũ."
 #: ../gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
 msgid "Try changing some letters and numbers."
-msgstr ""
+msgstr "Thử thay đổi một vài chữ cái và con số."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:85
 #: ../gnome-initial-setup/pages/password/pw-utils.c:93
 msgctxt "Password hint"
 msgid "Try changing the password a bit more."
-msgstr ""
+msgstr "Thử thay đổi mật khẩu một chút nữa."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid "A password without your user name would be stronger."
-msgstr ""
+msgstr "Mật khẩu không chứa tên người dùng của bạn sẽ mạnh hơn."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "Try to avoid using your name in the password."
-msgstr ""
+msgstr "Cố gắng tránh dùng tên của bạn trong mật khẩu."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid "Try to avoid some of the words included in the password."
-msgstr ""
+msgstr "Cố gắng tránh một số từ có trong mật khẩu."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "Try to avoid common words."
-msgstr ""
+msgstr "Cố gắng tránh các từ thông dụng."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "Try to avoid reordering existing words."
-msgstr ""
+msgstr "Cố gắng tránh sắp xếp lại các từ đang có."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "Try to use more numbers."
-msgstr ""
+msgstr "Cố gắng dùng nhiều số hơn."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "Try to use more uppercase letters."
-msgstr ""
+msgstr "Hãy cố dùng thêm chữ cái hoa."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "Try to use more lowercase letters."
-msgstr ""
+msgstr "Cố gắng dùng nhiều chữ cái thường hơn."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid "Try to use more special characters, like punctuation."
-msgstr ""
+msgstr "Cố gắng sử dụng các ký tự đặc biẹt, chẳng hạn như dấu chấm câu."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid "Try to use a mixture of letters, numbers and punctuation."
-msgstr ""
+msgstr "Cố gắng pha trộn các chữ cái, con số và dấu chấm câu."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "Try to avoid repeating the same character."
-msgstr ""
+msgstr "Cố gắng tránh dùng lặp lại các ký tự giống nhau. "
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "Try to avoid repeating the same type of character: you need to mix up "
 "letters, numbers and punctuation."
-msgstr ""
+msgstr "Cố gắng tránh lặp lại cùng một loại ký tự: bạn cần trộn các chữ cái, số và dấu chấm câu."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "Try to avoid sequences like 1234 or abcd."
-msgstr ""
+msgstr "Cố gắng tránh các chuỗi như 1234 hoặc abcd."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "Password needs to be longer. Try to add more letters, numbers and "
 "punctuation."
-msgstr ""
+msgstr "Mật khẩu cần phải dài hơn. Cố gắng thêm nhiều chữ cái, số và dấu câu."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
+msgstr "Trộn chữ hoa và chữ thường và cố gắng sử dụng một hoặc hai số."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password "
 "stronger."
-msgstr ""
+msgstr "Việc thêm vào nhiều chữ cái, con số và dấu câu hơn sẽ giúp cho mật khẩu của bạn mạnh hơn."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
