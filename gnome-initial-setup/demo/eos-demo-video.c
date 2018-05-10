@@ -23,6 +23,11 @@
 
 #include "eos-demo-video.h"
 
+#include <glib/gi18n.h>
+#include <limits.h>
+#include <locale.h>
+#include <string.h>
+
 typedef struct _GisDemoVideoPrivate
 {
   GtkWindow *main_window;
@@ -76,7 +81,8 @@ on_video_bus_event (GstBus     *bus,
   return G_SOURCE_CONTINUE;
 }
 
-#define DEMO_VIDEO_FILE_URI "file://" DEMOVIDEODATADIR "/eos-demo-video.webm"
+#define FILE_URI_PREFIX "file://"
+#define DEMO_VIDEO_FILE_URI FILE_URI_PREFIX DEMOVIDEODATADIR "/eos-demo-video-%s.webm"
 
 static void
 create_demo_window (GisDemoVideo *demo_video)
@@ -132,6 +138,10 @@ gis_demo_video_init (GisDemoVideo *demo_video)
   GisDemoVideoPrivate *priv = gis_demo_video_get_instance_private (demo_video);
   GstBus *bus = NULL;
 
+  const gchar * const *languages;
+  gchar file_uri[PATH_MAX] = { 0 };
+  int i;
+  
   priv->element = gst_element_factory_make ("gtksink", NULL);
   g_object_get (&priv->element->object, "widget", &priv->widget, NULL);
 
@@ -139,7 +149,20 @@ gis_demo_video_init (GisDemoVideo *demo_video)
   priv->bus = gst_pipeline_get_bus (GST_PIPELINE (priv->player));
 
   g_object_set (priv->player, "video-sink", g_object_ref_sink (priv->element), NULL);
-  g_object_set (priv->player, "uri", DEMO_VIDEO_FILE_URI, NULL);
+
+  /* Find the video file that best matches the current locale,
+     falling back to "C" if no other locale is set or if there
+     is no video for the preferred locale */
+  languages = g_get_language_names ();
+  for (i = 0; languages[i] != NULL; i++)
+    {
+      g_snprintf(file_uri, PATH_MAX, DEMO_VIDEO_FILE_URI, languages[i]);
+      /* Skip over the "file://" prefix when testing the file path */
+      if (g_file_test (file_uri + strlen(FILE_URI_PREFIX), G_FILE_TEST_EXISTS))
+        break;
+    }
+
+  g_object_set (priv->player, "uri", file_uri, NULL);
 }
 
 static void
