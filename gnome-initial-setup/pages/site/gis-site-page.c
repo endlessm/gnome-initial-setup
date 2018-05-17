@@ -139,13 +139,14 @@ ini_string_append_safe (GString     *string,
 static gchar*
 ini_file_content_from_site (GisSite *site)
 {
-  GString *builder = g_string_new ("");
+  GString *builder = g_string_new ("[Label]\n");
 
+  /* Note the field names aren't 1:1 between GisSite and the file format */
   ini_string_append_safe (builder, "id", gis_site_get_id (site));
   ini_string_append_safe (builder, "facility", gis_site_get_facility (site));
   ini_string_append_safe (builder, "street", gis_site_get_street (site));
-  ini_string_append_safe (builder, "locality", gis_site_get_locality (site));
-  ini_string_append_safe (builder, "region", gis_site_get_region (site));
+  ini_string_append_safe (builder, "city", gis_site_get_locality (site));
+  ini_string_append_safe (builder, "state", gis_site_get_region (site));
   ini_string_append_safe (builder, "country", gis_site_get_country (site));
 
   return g_string_free (builder, FALSE);
