@@ -222,6 +222,10 @@ manual_check_toggled (GtkToggleButton *manual_check, GisSitePage *page)
   GisSitePagePrivate *priv = gis_site_page_get_instance_private (page);
   gboolean active = gtk_toggle_button_get_active (manual_check);
 
+  /* clear the search entry and field GtkEntrys */
+  gtk_entry_set_text (GTK_ENTRY (priv->search_entry), "");
+
+  gtk_widget_set_can_focus (priv->search_entry, !active);
   gtk_widget_set_can_focus (priv->id_entry, active);
   gtk_widget_set_can_focus (priv->facility_entry, active);
   gtk_widget_set_can_focus (priv->street_entry, active);
@@ -229,12 +233,19 @@ manual_check_toggled (GtkToggleButton *manual_check, GisSitePage *page)
   gtk_widget_set_can_focus (priv->region_entry, active);
   gtk_widget_set_can_focus (priv->country_entry, active);
 
+  gtk_widget_set_sensitive (priv->search_entry, !active);
   gtk_widget_set_sensitive (priv->id_entry, active);
   gtk_widget_set_sensitive (priv->facility_entry, active);
   gtk_widget_set_sensitive (priv->street_entry, active);
   gtk_widget_set_sensitive (priv->locality_entry, active);
   gtk_widget_set_sensitive (priv->region_entry, active);
   gtk_widget_set_sensitive (priv->country_entry, active);
+
+  /* focus the first sensible widget for entry */
+  if (active)
+    gtk_widget_grab_focus (priv->id_entry);
+  else
+    gtk_widget_grab_focus (priv->search_entry);
 }
 
 static void
