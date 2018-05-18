@@ -225,8 +225,10 @@ manual_check_toggled (GtkToggleButton *manual_check, GisSitePage *page)
   /* clear the search entry and field GtkEntrys */
   gtk_entry_set_text (GTK_ENTRY (priv->search_entry), "");
 
+  /* make the search active and all the "field" GtkEntrys inactive or vice versa
+   * with the exception of the ID field which always stays inactive/unfocusable
+   */
   gtk_widget_set_can_focus (priv->search_entry, !active);
-  gtk_widget_set_can_focus (priv->id_entry, active);
   gtk_widget_set_can_focus (priv->facility_entry, active);
   gtk_widget_set_can_focus (priv->street_entry, active);
   gtk_widget_set_can_focus (priv->locality_entry, active);
@@ -234,7 +236,6 @@ manual_check_toggled (GtkToggleButton *manual_check, GisSitePage *page)
   gtk_widget_set_can_focus (priv->country_entry, active);
 
   gtk_widget_set_sensitive (priv->search_entry, !active);
-  gtk_widget_set_sensitive (priv->id_entry, active);
   gtk_widget_set_sensitive (priv->facility_entry, active);
   gtk_widget_set_sensitive (priv->street_entry, active);
   gtk_widget_set_sensitive (priv->locality_entry, active);
@@ -243,7 +244,7 @@ manual_check_toggled (GtkToggleButton *manual_check, GisSitePage *page)
 
   /* focus the first sensible widget for entry */
   if (active)
-    gtk_widget_grab_focus (priv->id_entry);
+    gtk_widget_grab_focus (priv->facility_entry);
   else
     gtk_widget_grab_focus (priv->search_entry);
 }
@@ -377,16 +378,18 @@ gis_site_page_constructed (GObject *object)
   /* make all the fields insensitive to start */
   manual_check_toggled (GTK_TOGGLE_BUTTON (priv->manual_check), page);
 
+  /* let the ID field show its current value (if populated based on a matched
+   * pre-defined site) but don't let the user set it when editing manually
+   */
+  gtk_widget_set_can_focus (priv->id_entry, FALSE);
+  gtk_widget_set_sensitive (priv->id_entry, FALSE);
+
   g_signal_connect (priv->search_entry,
                     "notify::" GIS_SITE_SEARCH_ENTRY_PROP_SITE,
                     G_CALLBACK (entry_site_changed), page);
 
   g_signal_connect (priv->manual_check, "toggled",
                     G_CALLBACK (manual_check_toggled), page);
-
-  g_signal_connect (priv->id_entry,
-                    "notify::text-length",
-                    G_CALLBACK (update_page_validation), page);
 
   g_signal_connect (priv->facility_entry,
                     "notify::text-length",
