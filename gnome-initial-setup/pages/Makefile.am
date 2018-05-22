@@ -15,4 +15,5 @@ SUBDIRS = \
 	account \
 	password \
 	summary \
-	software
+	software \
+	site
