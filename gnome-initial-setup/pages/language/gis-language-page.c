@@ -474,8 +474,8 @@ gis_language_page_shown (GisPage *page)
   gboolean launch_immediately = FALSE;
   g_autofree gchar *locale = NULL;
 
-  /* For now, only support unattended mode on eosinstaller images. */
-  if (!gis_driver_is_reformatter (page->driver))
+  if (!gis_driver_is_reformatter (page->driver) &&
+      !gis_driver_is_live_session (page->driver))
     return;
 
   /* Only take action once. This prevents an infinite loop if eos-installer
