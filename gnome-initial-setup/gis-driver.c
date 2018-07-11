@@ -79,6 +79,7 @@ struct _GisDriverPrivate {
   gchar *lang_id;
   gchar *username;
 
+  gboolean is_minimalist;
   gboolean is_live_session;
   gboolean is_live_dvd;
   gboolean is_reformatter;
@@ -552,6 +553,13 @@ gis_driver_is_live_session (GisDriver *driver)
 }
 
 gboolean
+gis_driver_is_minimalist (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  return priv->is_minimalist;
+}
+
+gboolean
 gis_driver_is_reformatter (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
@@ -794,6 +802,8 @@ gis_driver_startup (GApplication *app)
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_DVD]);
 
+  /* fixme: Set the minimalist state from the image's name */
+  priv->is_minimalist = g_getenv ("GIS_MINIMALIST") != 0;
   priv->show_demo_mode = !priv->is_live_session && image_supports_demo_mode (image_version);
   priv->is_reformatter = image_is_reformatter (image_version);
 

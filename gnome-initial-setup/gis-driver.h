@@ -105,6 +105,8 @@ gboolean gis_driver_is_reformatter (GisDriver *driver);
 
 gboolean gis_driver_is_small_screen (GisDriver *driver);
 
+gboolean gis_driver_is_minimalist (GisDriver *driver);
+
 void gis_driver_add_page (GisDriver *driver,
                           GisPage   *page);
 
