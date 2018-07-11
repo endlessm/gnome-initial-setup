@@ -53,6 +53,8 @@ struct _GisNetworkPagePrivate {
   GtkSizeGroup *icons;
 
   guint refresh_timeout_id;
+
+  gboolean show_if_no_devices;
 };
 typedef struct _GisNetworkPagePrivate GisNetworkPagePrivate;
 
@@ -559,6 +561,8 @@ gis_network_page_constructed (GObject *object)
 
   G_OBJECT_CLASS (gis_network_page_parent_class)->constructed (object);
 
+  priv->show_if_no_devices = g_getenv ("GIS_SHOW_NETWORK") != NULL;
+
   priv->icons = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
 
   priv->nm_client = nm_client_new (NULL, &error);
@@ -587,6 +591,12 @@ gis_network_page_constructed (GObject *object)
         break;
       }
     }
+  }
+
+  /* FIXME: Just a temporary switch for debugging ATM */
+  if (priv->show_if_no_devices) {
+    gis_page_set_complete (GIS_PAGE (page), TRUE);
+    visible = TRUE;
   }
 
   if (priv->nm_device == NULL) {
