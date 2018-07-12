@@ -91,6 +91,8 @@ struct _GisDriverPrivate {
   gboolean small_screen;
   gboolean hidden;
 
+  GKeyFile *vendor_conf_file;
+
   /* Cancelled on shutdown */
   GCancellable *cancellable;
 };
@@ -213,6 +215,7 @@ gis_driver_finalize (GObject *object)
 
   g_clear_object (&priv->user_account);
   g_clear_object (&priv->cancellable);
+  g_clear_pointer (&priv->vendor_conf_file, g_key_file_free);
 
   G_OBJECT_CLASS (gis_driver_parent_class)->finalize (object);
 }
@@ -372,6 +375,31 @@ void
 gis_driver_locale_changed (GisDriver *driver)
 {
   g_signal_emit (G_OBJECT (driver), signals[LOCALE_CHANGED], 0);
+}
+
+static void
+load_vendor_conf_file (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  g_autoptr(GError) error = NULL;
+  g_autoptr(GKeyFile) vendor_conf_file = g_key_file_new ();
+
+  if(!g_key_file_load_from_file (vendor_conf_file, VENDOR_CONF_FILE,
+                                 G_KEY_FILE_NONE, &error))
+    {
+      if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND))
+        g_debug ("Could not read file %s: %s", VENDOR_CONF_FILE, error->message);
+      return;
+    }
+
+  priv->vendor_conf_file = g_steal_pointer (&vendor_conf_file);
+}
+
+GKeyFile *
+gis_driver_get_vendor_conf_file (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  return priv->vendor_conf_file;
 }
 
 GisDriverMode
@@ -833,6 +861,8 @@ gis_driver_init (GisDriver *driver)
   screen = gdk_screen_get_default ();
 
   priv->small_screen = screen_is_small (screen);
+
+  load_vendor_conf_file (driver);
 
   g_signal_connect (screen, "size-changed",
                     G_CALLBACK (screen_size_changed), driver);

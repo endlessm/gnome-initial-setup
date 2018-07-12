@@ -112,11 +112,10 @@ should_skip_page (GisDriver    *driver,
 }
 
 static gchar **
-pages_to_skip_from_file (void)
+pages_to_skip_from_file (GisDriver *driver)
 {
-  GKeyFile *skip_pages_file;
+  GKeyFile *vendor_conf_file = gis_driver_get_vendor_conf_file (driver);
   gchar **skip_pages = NULL;
-  GError *error = NULL;
 
   /* VENDOR_CONF_FILE points to a keyfile containing vendor customization
    * options. This code will look for options under the "pages" group, and
@@ -128,21 +127,12 @@ pages_to_skip_from_file (void)
    *   [pages]
    *   skip=language
    */
-  skip_pages_file = g_key_file_new ();
-  if (!g_key_file_load_from_file (skip_pages_file, VENDOR_CONF_FILE,
-                                  G_KEY_FILE_NONE, &error)) {
-    if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
-      g_warning ("Could not read file %s: %s", VENDOR_CONF_FILE, error->message);
 
-    g_error_free (error);
-    goto out;
-  }
+  if (vendor_conf_file == NULL)
+    return NULL;
 
-  skip_pages = g_key_file_get_string_list (skip_pages_file, VENDOR_PAGES_GROUP,
+  skip_pages = g_key_file_get_string_list (vendor_conf_file, VENDOR_PAGES_GROUP,
                                            VENDOR_PAGES_SKIP_KEY, NULL, NULL);
-
- out:
-  g_key_file_free (skip_pages_file);
 
   return skip_pages;
 }
