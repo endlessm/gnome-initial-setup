@@ -85,13 +85,9 @@ read_config_file (GisBrandingWelcomePage *page)
    *     branded edition is about.
    *   logo=/path/to/the/image/with/the/logo.png
    */
-  keyfile = g_key_file_new ();
-  if (!g_key_file_load_from_file (keyfile, VENDOR_CONF_FILE, G_KEY_FILE_NONE, &error)) {
-    if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
-      g_warning ("Could not read file %s: %s", VENDOR_CONF_FILE, error->message);
-
+  keyfile = gis_driver_get_vendor_conf_file (GIS_PAGE (page)->driver);
+  if (keyfile == NULL)
     return;
-  }
 
   priv = gis_branding_welcome_page_get_instance_private (page);
 
