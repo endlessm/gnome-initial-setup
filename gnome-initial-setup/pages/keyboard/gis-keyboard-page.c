@@ -112,6 +112,24 @@ set_input_settings (GisKeyboardPage *self)
 }
 
 static void
+set_layouts_and_variants (GisKeyboardPage *self,
+			  const gchar *layouts,
+			  const gchar *variants)
+{
+        GisKeyboardPagePrivate *priv = gis_keyboard_page_get_instance_private (self);
+
+        if (!priv->localed)
+                return;
+
+        g_dbus_proxy_call (priv->localed,
+                           "SetX11Keyboard",
+                           g_variant_new ("(ssssbb)",
+                                          layouts, "", variants, "",
+                                          TRUE, TRUE),
+                           G_DBUS_CALL_FLAGS_NONE, -1, NULL, NULL, NULL);
+}
+
+static void
 set_localed_input (GisKeyboardPage *self)
 {
 	GisKeyboardPagePrivate *priv = gis_keyboard_page_get_instance_private (self);
@@ -152,11 +170,7 @@ set_localed_input (GisKeyboardPage *self)
 #undef LAYOUT
 #undef VARIANT
 
-        g_dbus_proxy_call (priv->localed,
-                           "SetX11Keyboard",
-                           g_variant_new ("(ssssbb)", layouts->str, "", variants->str, "", TRUE, TRUE),
-                           G_DBUS_CALL_FLAGS_NONE,
-                           -1, NULL, NULL, NULL);
+        set_layouts_and_variants (self, layouts->str, variants->str);
         g_string_free (layouts, TRUE);
         g_string_free (variants, TRUE);
 }
@@ -281,6 +295,56 @@ update_page_complete (GisKeyboardPage *self)
         gis_page_set_complete (GIS_PAGE (self), complete);
 }
 
+static gboolean
+setup_from_vendor_conf_file (GisKeyboardPage *self)
+{
+	g_autoptr(GError) error = NULL;
+	g_autofree gchar *layouts = NULL;
+	g_autofree gchar *variants = NULL;
+	GKeyFile *conf_file =
+		gis_driver_get_vendor_conf_file (GIS_PAGE (self)->driver);
+
+	if (conf_file == NULL)
+		return FALSE;
+
+	layouts = g_key_file_get_string (conf_file, "page.keyboard",
+					 "layouts", &error);
+	if (layouts == NULL) {
+		if (!g_error_matches (error, G_KEY_FILE_ERROR,
+				      G_KEY_FILE_ERROR_GROUP_NOT_FOUND) &&
+		    !g_error_matches (error, G_KEY_FILE_ERROR,
+				      G_KEY_FILE_ERROR_KEY_NOT_FOUND)) {
+			g_debug ("Couldn't read the 'layouts' key from the "
+				 "page.keyboard group in the vendor config "
+				 "file!");
+			return FALSE;
+		}
+		return FALSE;
+	}
+
+	variants = g_key_file_get_string (conf_file, "page.keyboard",
+					  "variants", &error);
+	if (variants == NULL) {
+		if (!g_error_matches (error, G_KEY_FILE_ERROR,
+				      G_KEY_FILE_ERROR_GROUP_NOT_FOUND) &&
+		    !g_error_matches (error, G_KEY_FILE_ERROR,
+				      G_KEY_FILE_ERROR_KEY_NOT_FOUND)) {
+			g_debug ("Couldn't read the 'variants' key from the "
+				 "page.keyboard group in the vendor config "
+				 "file!");
+			return FALSE;
+		}
+	}
+
+	if (layouts == NULL)
+		return FALSE;
+
+	set_layouts_and_variants (self, layouts,
+				  (variants != NULL ? variants : ""));
+
+	return TRUE;
+}
+
 static void
 localed_proxy_ready (GObject      *source,
 		     GAsyncResult *res,
@@ -302,6 +366,7 @@ localed_proxy_ready (GObject      *source,
 
 	priv->localed = proxy;
 
+	setup_from_vendor_conf_file (self);
         load_localed_input (self);
         update_page_complete (self);
 }
