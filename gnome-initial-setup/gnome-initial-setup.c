@@ -91,6 +91,17 @@ static PageData page_table[] = {
   { NULL },
 };
 
+static PageData minimalist_page_table[] = {
+  PAGE (language, FALSE),
+  PAGE (network,  FALSE),
+  PAGE (keyboard, FALSE),
+  PAGE (endless_eula, TRUE),
+  PAGE (timezone, TRUE),
+  PAGE (account,  TRUE),
+  PAGE (summary,  FALSE),
+  { NULL },
+};
+
 #undef PAGE
 
 static gboolean
@@ -168,14 +179,17 @@ rebuild_pages_cb (GisDriver *driver)
   assistant = gis_driver_get_assistant (driver);
   current_page = gis_assistant_get_current_page (assistant);
 
-  skip_pages = pages_to_skip_from_file ();
+  skip_pages = pages_to_skip_from_file (driver);
 
-  page_data = page_table;
+  if (gis_driver_is_minimalist (driver))
+    page_data = minimalist_page_table;
+  else
+    page_data = page_table;
 
   if (current_page != NULL) {
     destroy_pages_after (assistant, current_page);
 
-    for (page_data = page_table; page_data->page_id != NULL; ++page_data)
+    for (; page_data->page_id != NULL; ++page_data)
       if (g_str_equal (page_data->page_id, GIS_PAGE_GET_CLASS (current_page)->page_id))
         break;
 
