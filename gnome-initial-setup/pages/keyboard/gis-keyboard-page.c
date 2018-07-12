@@ -366,7 +366,10 @@ localed_proxy_ready (GObject      *source,
 
 	priv->localed = proxy;
 
-	setup_from_vendor_conf_file (self);
+	if (setup_from_vendor_conf_file (self) &&
+	    gis_driver_is_minimalist (GIS_PAGE (self)->driver))
+		gtk_widget_hide (GTK_WIDGET (self));
+
         load_localed_input (self);
         update_page_complete (self);
 }
