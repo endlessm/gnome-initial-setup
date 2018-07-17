@@ -23,9 +23,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-27 23:16-0700\n"
-"PO-Revision-Date: 2018-05-02 09:51+0000\n"
-"Last-Translator: e2f_cn c9 <e2f_cn_c9@outlook.com>\n"
+"POT-Creation-Date: 2018-07-17 12:06-0700\n"
+"PO-Revision-Date: 2018-07-17 20:14+0000\n"
+"Last-Translator: Philip Chimento <philip.chimento@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/endless-os/gnome-initial-setup/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -108,11 +108,11 @@ msgid ""
 "when you power it off."
 msgstr "这可让您试用 Endless，而无需激活帐户。不会保存更改或文件，并且在关闭电源后电脑将恢复为空白出厂状态。"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:239
+#: ../gnome-initial-setup/gnome-initial-setup.c:241
 msgid "Force existing user mode"
 msgstr "强制新建用户模式"
 
-#: ../gnome-initial-setup/gnome-initial-setup.c:245
+#: ../gnome-initial-setup/gnome-initial-setup.c:247
 msgid "— GNOME initial setup"
 msgstr "- GNOME 初始配置"
 
@@ -698,6 +698,44 @@ msgstr "地区"
 #: ../gnome-initial-setup/pages/region/gis-region-page.ui.h:2
 msgid "Choose your country or region."
 msgstr "选择您的国家或地区。"
+
+#: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:1
+msgid "Site"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:2
+msgid ""
+"At which site is this computer located? Search for your site here. You may "
+"enter manually if there is no match."
+msgstr ""
+
+#: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:3
+msgid "enter manually"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:4
+msgid "ID"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:5
+msgid "Facility"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:6
+msgid "Street address"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:7
+msgid "City"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:8
+msgid "State"
+msgstr ""
+
+#: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:9
+msgid "Country"
+msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
