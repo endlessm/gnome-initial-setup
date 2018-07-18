@@ -58,6 +58,8 @@
 #define VENDOR_PAGES_GROUP "pages"
 #define VENDOR_PAGES_SKIP_KEY "skip"
 
+#define PAGES_DEFAULT_SORT_WEIGHT 100
+
 static gboolean force_existing_user_mode;
 
 typedef void (*PreparePage) (GisDriver *driver);
@@ -153,6 +155,81 @@ destroy_pages_after (GisAssistant *assistant,
   for (; l != NULL; l = next) {
     next = l->next;
     gtk_widget_destroy (GTK_WIDGET (l->data));
+  }
+}
+
+static gint
+compare_pages_order (gconstpointer a,
+                     gconstpointer b,
+                     gpointer data)
+{
+  GHashTable *sort_table = data;
+  const gchar *id_a = ((PageData *) a)->page_id;
+  const gchar *id_b = ((PageData *) b)->page_id;
+  gint order_a = (gint) GPOINTER_TO_UINT (g_hash_table_lookup (sort_table, id_a));
+  gint order_b = (gint) GPOINTER_TO_UINT (g_hash_table_lookup (sort_table, id_b));
+
+  return order_a - order_b;
+}
+
+static void
+reorder_pages (GisDriver *driver)
+{
+  gint num_pages;
+  GKeyFile *key_file = gis_driver_get_vendor_conf_file (driver);
+  g_auto(GStrv) conf_pages_order = NULL;
+  g_autoptr(GHashTable) sort_table = NULL; /* (owned) (element-type utf8 uint) */
+  g_autoptr(GError) error = NULL;
+
+  if (key_file == NULL)
+    return;
+
+  conf_pages_order = g_key_file_get_string_list (key_file, "pages", "order",
+                                                 NULL, &error);
+  if (conf_pages_order == NULL) {
+    /* if we have the pages order key but there was an issue getting it */
+    if (!g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_KEY_NOT_FOUND) &&
+        !g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_GROUP_NOT_FOUND))
+      g_debug ("Couldn't get pages order from the conf file: %s", error->message);
+
+    return;
+  }
+
+  if (*conf_pages_order == NULL) {
+    g_debug ("No pages defined in the pages order from the conf file");
+    return;
+  }
+
+  /* assign the same sort weight to every page (this will make sure) that any
+   * page to be sorted differently will show up before pages that aren't in the
+   * custom sorting list */
+  sort_table = g_hash_table_new (g_str_hash, g_str_equal);
+
+  for (num_pages = 0; page_table[num_pages].page_id != NULL; ++num_pages) {
+    g_hash_table_insert (sort_table, (gchar *) page_table[num_pages].page_id,
+                         GUINT_TO_POINTER (PAGES_DEFAULT_SORT_WEIGHT));
+  }
+
+  /* assign the new sort weights from the conf file */
+  for (guint i = 0; conf_pages_order[i] != NULL; ++i) {
+    gchar *page_id = conf_pages_order[i];
+    if (g_hash_table_lookup (sort_table, page_id) == NULL) {
+      g_debug ("No page with id '%s' found while sorting the pages!", page_id);
+      continue;
+    }
+
+    g_hash_table_insert (sort_table, page_id, GUINT_TO_POINTER (i));
+  }
+
+  g_qsort_with_data (page_table,
+                     num_pages,
+                     sizeof (PageData),
+                     compare_pages_order,
+                     sort_table);
+
+  g_debug ("Pages have been reordered: ");
+  for (guint i = 0; i < num_pages; ++i) {
+    g_debug (" - %s", page_table[i].page_id);
   }
 }
 
@@ -283,6 +360,9 @@ main (int argc, char *argv[])
     gis_ensure_login_keyring ();
 
   driver = gis_driver_new (mode);
+
+  reorder_pages (driver);
+
   g_signal_connect (driver, "rebuild-pages", G_CALLBACK (rebuild_pages_cb), NULL);
   status = g_application_run (G_APPLICATION (driver), argc, argv);
 
