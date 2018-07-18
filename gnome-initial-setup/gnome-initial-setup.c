@@ -156,6 +156,91 @@ destroy_pages_after (GisAssistant *assistant,
   }
 }
 
+static gint
+compare_pages_order (gconstpointer a,
+                     gconstpointer b,
+                     gpointer data)
+{
+  GHashTable *sort_table = data;
+  const gchar *id_a = ((PageData *) a)->page_id;
+  const gchar *id_b = ((PageData *) b)->page_id;
+  gint order_a = GPOINTER_TO_INT (g_hash_table_lookup (sort_table, id_a));
+  gint order_b = GPOINTER_TO_INT (g_hash_table_lookup (sort_table, id_b));
+
+  return order_a - order_b;
+}
+
+static void
+reorder_pages (GisDriver *driver)
+{
+  gint num_pages;
+  GKeyFile *key_file = gis_driver_get_vendor_conf_file (driver);
+  gsize num_ordered_pages = 0;
+  g_auto(GStrv) conf_pages_order = NULL;
+  g_autoptr(GHashTable) sort_table = NULL; /* (owned) (element-type utf8 uint) */
+  g_autoptr(GError) error = NULL;
+
+  if (key_file == NULL)
+    return;
+
+  conf_pages_order = g_key_file_get_string_list (key_file, "pages", "order",
+                                                 &num_ordered_pages, &error);
+  if (conf_pages_order == NULL) {
+    /* if we have the pages order key but there was an issue getting it */
+    if (!g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_KEY_NOT_FOUND) &&
+        !g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_GROUP_NOT_FOUND))
+      g_warning ("Couldn't get pages order from the conf file: %s", error->message);
+
+    return;
+  }
+
+  if (*conf_pages_order == NULL) {
+    g_warning ("No pages defined in the pages order from the conf file");
+    return;
+  }
+
+  /* sanitize the number of pages to be reordered; this should not be frequently
+   * reached as it's extremely unlikely to have that many pages */
+  if (num_ordered_pages > G_MAXINT) {
+    g_warning ("Too many pages to be reordered from the conf file... skipping!");
+    return;
+  }
+
+  /* assign the same sort weight to every page (this will make sure) that any
+   * page to be sorted differently will show up before pages that aren't in the
+   * custom sorting list */
+  sort_table = g_hash_table_new (g_str_hash, g_str_equal);
+
+  for (num_pages = 0; page_table[num_pages].page_id != NULL; ++num_pages) {
+    g_hash_table_insert (sort_table, (gchar *) page_table[num_pages].page_id,
+                         GINT_TO_POINTER (G_MAXINT));
+  }
+
+  /* assign the new sort weights from the conf file */
+  for (guint i = 0; conf_pages_order[i] != NULL; ++i) {
+    gchar *page_id = conf_pages_order[i];
+    if (!g_hash_table_contains (sort_table, page_id)) {
+      g_warning ("No page with id '%s' found while sorting the pages!", page_id);
+      continue;
+    }
+
+    g_hash_table_insert (sort_table, page_id, GINT_TO_POINTER (i));
+  }
+
+  /* use a stable sort algorithm (this implementation is stable since
+   * glib 2.32) */
+  g_qsort_with_data (page_table,
+                     num_pages,
+                     sizeof (PageData),
+                     compare_pages_order,
+                     sort_table);
+
+  g_debug ("Pages have been reordered: ");
+  for (guint i = 0; i < num_pages; ++i) {
+    g_debug (" - %s", page_table[i].page_id);
+  }
+}
+
 static void
 rebuild_pages_cb (GisDriver *driver)
 {
@@ -283,6 +368,9 @@ main (int argc, char *argv[])
     gis_ensure_login_keyring ();
 
   driver = gis_driver_new (mode);
+
+  reorder_pages (driver);
+
   g_signal_connect (driver, "rebuild-pages", G_CALLBACK (rebuild_pages_cb), NULL);
   status = g_application_run (G_APPLICATION (driver), argc, argv);
 
