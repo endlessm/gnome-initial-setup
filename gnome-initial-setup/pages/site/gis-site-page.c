@@ -226,9 +226,9 @@ manual_check_toggled (GtkToggleButton *manual_check, GisSitePage *page)
   gtk_entry_set_text (GTK_ENTRY (priv->search_entry), "");
 
   /* make the search active and all the "field" GtkEntrys inactive or vice versa
-   * with the exception of the ID field which always stays inactive/unfocusable
    */
   gtk_widget_set_can_focus (priv->search_entry, !active);
+  gtk_widget_set_can_focus (priv->id_entry, active);
   gtk_widget_set_can_focus (priv->facility_entry, active);
   gtk_widget_set_can_focus (priv->street_entry, active);
   gtk_widget_set_can_focus (priv->locality_entry, active);
@@ -236,6 +236,7 @@ manual_check_toggled (GtkToggleButton *manual_check, GisSitePage *page)
   gtk_widget_set_can_focus (priv->country_entry, active);
 
   gtk_widget_set_sensitive (priv->search_entry, !active);
+  gtk_widget_set_sensitive (priv->id_entry, active);
   gtk_widget_set_sensitive (priv->facility_entry, active);
   gtk_widget_set_sensitive (priv->street_entry, active);
   gtk_widget_set_sensitive (priv->locality_entry, active);
@@ -244,7 +245,7 @@ manual_check_toggled (GtkToggleButton *manual_check, GisSitePage *page)
 
   /* focus the first sensible widget for entry */
   if (active)
-    gtk_widget_grab_focus (priv->facility_entry);
+    gtk_widget_grab_focus (priv->id_entry);
   else
     gtk_widget_grab_focus (priv->search_entry);
 }
@@ -390,6 +391,10 @@ gis_site_page_constructed (GObject *object)
 
   g_signal_connect (priv->manual_check, "toggled",
                     G_CALLBACK (manual_check_toggled), page);
+
+  g_signal_connect (priv->id_entry,
+                    "notify::text-length",
+                    G_CALLBACK (update_page_validation), page);
 
   g_signal_connect (priv->facility_entry,
                     "notify::text-length",
