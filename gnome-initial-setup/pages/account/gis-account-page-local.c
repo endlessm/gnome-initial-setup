@@ -763,3 +763,11 @@ gis_account_page_local_shown (GisAccountPageLocal *local)
   GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (local);
   gtk_widget_grab_focus (priv->fullname_entry);
 }
+
+void
+gis_account_page_local_show_password_toggle (GisAccountPageLocal *local,
+                                             gboolean show_password_toggle)
+{
+  GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (local);
+  gtk_widget_set_visible (priv->password_toggle, show_password_toggle);
+}
