@@ -141,7 +141,7 @@
             </child>
             <child>
               <object class="GtkLabel">
-                <property name="visible">True</property>
+                <property name="visible" bind-source="password_switch" bind-property="visible">True</property>
                 <property name="halign">end</property>
                 <property name="label" translatable="yes">Password protected</property>
               </object>
