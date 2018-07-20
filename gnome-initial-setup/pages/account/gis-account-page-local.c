@@ -640,3 +640,13 @@ gis_account_page_local_is_passwordless (GisAccountPageLocal *local)
   GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (local);
   return priv->passwordless;
 }
+
+void
+gis_account_page_local_show_password_switch (GisAccountPageLocal *local,
+                                             gboolean show_password_switch)
+{
+  GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (local);
+  /* this hides the label for the password switch too, since their "visible"
+   * properties are bound */
+  gtk_widget_set_visible (priv->password_switch, show_password_switch);
+}

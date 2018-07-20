@@ -53,6 +53,8 @@ gboolean gis_account_page_local_apply (GisAccountPageLocal *local, GisPage *page
 void gis_account_page_local_create_user (GisAccountPageLocal *local);
 void gis_account_page_local_shown (GisAccountPageLocal *local);
 gboolean gis_account_page_local_is_passwordless (GisAccountPageLocal *local);
+void gis_account_page_local_show_password_switch (GisAccountPageLocal *local,
+                                                  gboolean show_password_switch);
 
 G_END_DECLS
 
