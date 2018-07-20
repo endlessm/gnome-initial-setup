@@ -74,7 +74,9 @@ static PageData page_table[] = {
   PAGE (branding_welcome, TRUE),
   PAGE (language, FALSE),
   PAGE (live_chooser, TRUE),
-  /* PAGE (region,   FALSE), */
+#ifdef ENABLE_REGION_PAGE
+  PAGE (region,   FALSE),
+#endif /* ENABLE_REGION_PAGE */
   PAGE (keyboard, FALSE),
   PAGE (display, TRUE),
   PAGE (eula,     FALSE),
