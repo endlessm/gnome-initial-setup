@@ -29,10 +29,6 @@
 #include <glib/gi18n.h>
 #include <evince-document.h>
 
-#ifdef HAVE_CLUTTER
-#include <clutter-gtk/clutter-gtk.h>
-#endif
-
 #ifdef HAVE_CHEESE
 #include <cheese-gtk.h>
 #endif
@@ -351,13 +347,6 @@ main (int argc, char *argv[])
 
   gtk_init (&argc, &argv);
   ev_init ();
-
-#if HAVE_CLUTTER
-  if (gtk_clutter_init (NULL, NULL) != CLUTTER_INIT_SUCCESS) {
-    g_critical ("Clutter-GTK init failed");
-    exit (1);
-  }
-#endif
 
   mode = get_mode ();
 
