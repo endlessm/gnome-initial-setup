@@ -10,13 +10,14 @@ edit = $(AM_V_GEN) sed \
 %.desktop.in: %.desktop.in.in Makefile
 	$(edit) $< >$@
 
+%.desktop: %.desktop.in
+	$(AM_V_GEN) msgfmt --desktop -d $(top_srcdir)/po --template $< -o $@
+
 %.policy: %.policy.in Makefile
 	$(edit) $< >$@
 
 %.service: %.service.in Makefile
 	$(edit) $< >$@
-
-@INTLTOOL_DESKTOP_RULE@
 
 rulesdir = $(datadir)/polkit-1/rules.d
 rules_DATA = \
