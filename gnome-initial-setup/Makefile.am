@@ -90,9 +90,12 @@ EXTRA_DIST = \
 	gis-assistant.gresource.xml \
 	gis-page-util.gresource.xml \
 	gnome-initial-setup.in \
+	meson.build			\
 	$(assistant_resource_files) \
 	$(libexec_SCRIPTS)		\
-	$(page_util_resource_files)
+	$(page_util_resource_files)	\
+	$(resource_files)		\
+	$(NULL)
 
 CLEANFILES = \
 	gnome-initial-setup \

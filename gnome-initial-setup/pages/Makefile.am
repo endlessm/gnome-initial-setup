@@ -17,3 +17,7 @@ SUBDIRS = \
 	summary \
 	software \
 	site
+
+EXTRA_DIST =		\
+	meson.build	\
+	$(NULL)

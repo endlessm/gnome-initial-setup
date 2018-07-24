@@ -67,6 +67,7 @@ EXTRA_DIST =						\
 	com.endlessm.TestMode.policy.in			\
 	com.endlessm.DemoMode.policy.in			\
 	com.endlessm.DemoMode.rules                     \
+	meson.build					\
 	$(NULL)
 
 CLEANFILES =						\

@@ -9,7 +9,11 @@ EXTRA_DIST = \
     COPYING \
     AUTHORS \
     NEWS \
-    gnome-initial-setup.doap
+    gnome-initial-setup.doap \
+    meson.build \
+    meson_options.txt \
+    po/meson.build \
+    $(NULL)
 
 DISTCHECK_CONFIGURE_FLAGS = \
         --with-systemdsystemunitdir=$$dc_install_base/$(systemdsystemunitdir)
