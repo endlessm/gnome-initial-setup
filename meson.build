@@ -13,6 +13,7 @@ prefix = get_option('prefix')
 po_dir = join_paths(meson.source_root(), 'po')
 data_dir = join_paths(prefix, get_option('datadir'))
 locale_dir = join_paths(prefix, get_option('localedir'))
+local_state_dir = join_paths(prefix, get_option('localstatedir'))
 libexec_dir = join_paths(prefix, get_option('libexecdir'))
 source_root = join_paths(meson.source_root(), 'gnome-initial-setup')
 pkgdata_dir = join_paths(prefix, meson.project_name())
@@ -29,6 +30,9 @@ conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 conf.set_quoted('GNOMELOCALEDIR', locale_dir)
 conf.set_quoted('PKGDATADIR', pkgdata_dir)
 conf.set('ENABLE_REGION_PAGE', get_option('region-page'))
+conf.set_quoted('LIBEXECDIR', join_paths(prefix, get_option('libexecdir')))
+conf.set_quoted('LOCALSTATEDIR', local_state_dir)
+conf.set_quoted('DEMOVIDEODATADIR', join_paths(data_dir, 'eos-demo-mode'))
 
 # Needed for the 'account' page
 cheese_dep = dependency ('cheese',
