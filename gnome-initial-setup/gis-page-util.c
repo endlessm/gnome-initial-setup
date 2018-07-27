@@ -29,6 +29,7 @@
 #include <glib.h>
 #include <glib/gstdio.h>
 #include <gtk/gtk.h>
+#include <locale.h>
 #include <polkit/polkit.h>
 #include <sys/types.h>
 #include <zint.h>

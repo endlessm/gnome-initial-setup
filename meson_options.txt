@@ -26,3 +26,8 @@ option('ibus',
        type: 'feature',
        value: 'auto'
 )
+
+option('systemd-system-unit-dir',
+       description: 'the directory to install systemd system units',
+       type: 'string'
+)

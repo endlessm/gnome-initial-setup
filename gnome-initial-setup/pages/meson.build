@@ -1,13 +1,18 @@
 pages = [
    'account',
+   'branding-welcome',
+   'display',
    'language',
+   'live-chooser',
    'keyboard',
+   'endless-eula',
    'eulas',
    'network',
    'timezone',
    'privacy',
    'goa',
    'password',
+   'site',
    'summary',
    'software'
 ]
