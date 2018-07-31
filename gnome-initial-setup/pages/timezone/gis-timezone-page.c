@@ -82,6 +82,8 @@ struct _GisTimezonePagePrivate
   GSettings *clock_settings;
   gboolean in_search;
 
+  gboolean show_if_detected;
+
   gulong search_entry_text_changed_id;
 };
 typedef struct _GisTimezonePagePrivate GisTimezonePagePrivate;
@@ -142,6 +144,11 @@ set_location (GisTimezonePage  *page,
       tzid = gweather_timezone_get_tzid (zone);
 
       cc_timezone_map_set_timezone (CC_TIMEZONE_MAP (priv->map), tzid);
+
+      /* If the page hasn't yet been shown and we found the timezone
+       * automatically, then don't show the page */
+      if (!priv->show_if_detected)
+        gtk_widget_hide (GTK_WIDGET (page));
 
       /* If this location is manually set, stop waiting for geolocation. */
       if (!priv->in_geoclue_callback)
@@ -488,6 +495,17 @@ gis_timezone_page_locale_changed (GisPage *page)
   gis_page_set_title (GIS_PAGE (page), _("Time Zone"));
 }
 
+static void
+gis_timezone_page_shown (GisPage *page)
+{
+  GisTimezonePage *tz_page = GIS_TIMEZONE_PAGE (page);
+  GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (tz_page);
+
+  /* After the page has been shown already, don't hide it even if the location
+   * is detected */
+  priv->show_if_detected = TRUE;
+}
+
 static gboolean
 gis_timezone_page_apply (GisPage      *page,
                          GCancellable *cancellable)
@@ -514,6 +532,7 @@ gis_timezone_page_class_init (GisTimezonePageClass *klass)
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_timezone_page_locale_changed;
+  page_class->shown = gis_timezone_page_shown;
   page_class->apply = gis_timezone_page_apply;
   object_class->constructed = gis_timezone_page_constructed;
   object_class->dispose = gis_timezone_page_dispose;
