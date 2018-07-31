@@ -57,6 +57,9 @@
 #define CLOCK_SCHEMA "org.gnome.desktop.interface"
 #define CLOCK_FORMAT_KEY "clock-format"
 
+#define CONFIG_TIMEZONE_GROUP "page.timezone"
+#define CONFIG_TIMEZONE_SHOW_IF_DETECTED_KEY "show-if-detected"
+
 struct _GisTimezonePagePrivate
 {
   GtkWidget *map;
@@ -75,6 +78,8 @@ struct _GisTimezonePagePrivate
 
   gulong map_location_changed_id;
   gulong network_monitor_handler_id;
+
+  gboolean show_if_detected;
 };
 typedef struct _GisTimezonePagePrivate GisTimezonePagePrivate;
 
@@ -169,6 +174,11 @@ set_location (GisTimezonePage  *page,
       tzid = gweather_timezone_get_tzid (zone);
 
       cc_timezone_map_set_timezone (CC_TIMEZONE_MAP (priv->map), tzid);
+
+      /* if the page hasn't yet been shown and we found the timezone
+       * automatically, then don't show the page */
+      if (!priv->show_if_detected)
+        gtk_widget_hide (GTK_WIDGET (page));
     }
 }
 
@@ -460,6 +470,12 @@ gis_timezone_page_constructed (GObject *object)
     exit (1);
   }
 
+  priv->show_if_detected =
+    gis_driver_conf_get_boolean (GIS_PAGE (page)->driver,
+                                 CONFIG_TIMEZONE_GROUP,
+                                 CONFIG_TIMEZONE_SHOW_IF_DETECTED_KEY,
+                                 TRUE);
+
   priv->clock = g_object_new (GNOME_TYPE_WALL_CLOCK, NULL);
   g_signal_connect (priv->clock, "notify::clock", G_CALLBACK (on_clock_changed), page);
 
@@ -516,6 +532,15 @@ gis_timezone_page_locale_changed (GisPage *page)
 }
 
 static void
+gis_timezone_page_shown (GisPage *page)
+{
+  GisTimezonePage *tz_page = GIS_TIMEZONE_PAGE (page);
+  GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (tz_page);
+
+  priv->show_if_detected = TRUE;
+}
+
+static void
 gis_timezone_page_class_init (GisTimezonePageClass *klass)
 {
   GisPageClass *page_class = GIS_PAGE_CLASS (klass);
@@ -529,6 +554,7 @@ gis_timezone_page_class_init (GisTimezonePageClass *klass)
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_timezone_page_locale_changed;
+  page_class->shown = gis_timezone_page_shown;
   object_class->constructed = gis_timezone_page_constructed;
   object_class->dispose = gis_timezone_page_dispose;
 }
