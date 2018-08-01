@@ -1,3 +1,12 @@
+gnome-initial-setup (3.29.1-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+  * d/p/welcome-screen.patch: Drop, this is already upstream
+  * d/p/use-Debian-icon-on-Debian.patch: Drop, this is already upstream
+  * d/p/use-Ubuntu-icon-on-Ubuntu.patch: Drop, this is already upstream
+
+ -- Andrea Azzarone <andrea.azzarone@canonical>  Wed, 01 Aug 2018 13:52:58 +0200
+
 gnome-initial-setup (3.28.0-2) unstable; urgency=medium
 
   * Add welcome-screen.patch from Fedora to still show Welcome screen if
