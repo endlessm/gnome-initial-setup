@@ -60,6 +60,7 @@ struct _GisPageClass
                          GCancellable *cancellable);
   void         (*save_data) (GisPage *page);
   void         (*shown) (GisPage *page);
+  gboolean     (*skip) (GisPage *page);
 };
 
 GType gis_page_get_type (void);
@@ -72,7 +73,6 @@ gboolean     gis_page_get_skippable (GisPage *page);
 void         gis_page_set_skippable (GisPage *page, gboolean skippable);
 gboolean     gis_page_get_needs_accept (GisPage *page);
 void         gis_page_set_needs_accept (GisPage *page, gboolean needs_accept);
-GtkWidget *  gis_page_get_action_widget (GisPage *page);
 void         gis_page_locale_changed (GisPage *page);
 void         gis_page_apply_begin (GisPage *page, GisPageApplyCallback callback, gpointer user_data);
 void         gis_page_apply_cancel (GisPage *page);
@@ -80,6 +80,7 @@ void         gis_page_apply_complete (GisPage *page, gboolean valid);
 gboolean     gis_page_get_applying (GisPage *page);
 void         gis_page_save_data (GisPage *page);
 void         gis_page_shown (GisPage *page);
+gboolean     gis_page_skip (GisPage *page);
 
 G_END_DECLS
 
