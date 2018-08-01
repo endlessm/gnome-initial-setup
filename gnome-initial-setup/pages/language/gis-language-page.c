@@ -231,9 +231,17 @@ update_distro_logo (GisLanguagePage *page)
       g_free (buffer);
     }
 
-  if (g_strcmp0 (id, "fedora") == 0)
+  if (g_strcmp0 (id, "debian") == 0)
+    {
+      g_object_set (priv->logo, "icon-name", "emblem-debian", NULL);
+    }
+  else if (g_strcmp0 (id, "fedora") == 0)
     {
       g_object_set (priv->logo, "icon-name", "fedora-logo-icon", NULL);
+    }
+  else if (g_strcmp0 (id, "ubuntu") == 0)
+    {
+      g_object_set (priv->logo, "icon-name", "ubuntu-logo-icon", NULL);
     }
 
   g_free (id);
@@ -280,7 +288,7 @@ gis_language_page_constructed (GObject *object)
                         (GAsyncReadyCallback) localed_proxy_ready,
                         object);
       g_object_unref (bus);
-  }
+    }
 
   gis_page_set_complete (GIS_PAGE (page), TRUE);
   gtk_widget_show (GTK_WIDGET (page));
@@ -290,6 +298,16 @@ static void
 gis_language_page_locale_changed (GisPage *page)
 {
   gis_page_set_title (GIS_PAGE (page), _("Welcome"));
+}
+
+static gboolean
+gis_language_page_skip (GisPage *page)
+{
+  GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (GIS_LANGUAGE_PAGE (page));
+
+  gtk_widget_hide (priv->language_chooser);
+
+  return FALSE;
 }
 
 static void
@@ -319,6 +337,7 @@ gis_language_page_class_init (GisLanguagePageClass *klass)
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_language_page_locale_changed;
+  page_class->skip = gis_language_page_skip;
   object_class->constructed = gis_language_page_constructed;
   object_class->dispose = gis_language_page_dispose;
 }
@@ -333,11 +352,10 @@ gis_language_page_init (GisLanguagePage *page)
   gtk_widget_init_template (GTK_WIDGET (page));
 }
 
-void
+GisPage *
 gis_prepare_language_page (GisDriver *driver)
 {
-  gis_driver_add_page (driver,
-                       g_object_new (GIS_TYPE_LANGUAGE_PAGE,
-                                     "driver", driver,
-                                     NULL));
+  return g_object_new (GIS_TYPE_LANGUAGE_PAGE,
+                       "driver", driver,
+                       NULL);
 }

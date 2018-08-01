@@ -1,4 +1,4 @@
-AC_INIT([gnome-initial-setup],[3.28.0])
+AC_INIT([gnome-initial-setup],[3.29.1])
 AC_CONFIG_MACRO_DIR([m4])
 
 AM_INIT_AUTOMAKE([dist-xz no-dist-gzip foreign tar-ustar])
@@ -10,13 +10,11 @@ AC_PROG_CC
 
 LT_INIT
 
-IT_PROG_INTLTOOL([0.40])
-
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION([0.19.8])
 GETTEXT_PACKAGE=gnome-initial-setup
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [gettext package])
-
-AM_GLIB_GNU_GETTEXT
 
 AC_ARG_WITH(vendor-conf-file,
             AS_HELP_STRING([--with-vendor-conf-file=<file>],
@@ -25,7 +23,7 @@ AC_ARG_WITH(vendor-conf-file,
 if ! test -z "$with_vendor_conf_file"; then
    VENDOR_CONF_FILE=$with_vendor_conf_file
 else
-   VENDOR_CONF_FILE=${localstatedir}/lib/gnome-initial-setup/vendor.conf
+   VENDOR_CONF_FILE=${datadir}/gnome-initial-setup/vendor.conf
 fi
 AC_SUBST(VENDOR_CONF_FILE)
 
@@ -123,12 +121,6 @@ AC_SUBST(KRB5_LIBS)
 
 INITIAL_SETUP_CFLAGS="$INITIAL_SETUP_CFLAGS $KRB5_CFLAGS"
 INITIAL_SETUP_LIBS="$INITIAL_SETUP_LIBS $KRB5_LIBS"
-
-# This is a hard-dependency for the region and user-accounts panels
-PKG_CHECK_MODULES(ISOCODES, iso-codes)
-
-AC_DEFINE_UNQUOTED([ISO_CODES_PREFIX],["`$PKG_CONFIG --variable=prefix iso-codes`"],[ISO codes prefix])
-ISO_CODES=iso-codes
 
 AC_SUBST(INITIAL_SETUP_CFLAGS)
 AC_SUBST(INITIAL_SETUP_LIBS)

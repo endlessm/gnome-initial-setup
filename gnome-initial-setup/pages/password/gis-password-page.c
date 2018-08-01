@@ -29,9 +29,8 @@
 
 #include "gis-keyring.h"
 
-#include "um-utils.h"
 #include "pw-utils.h"
-#include "um-utils.h"
+#include "../account/um-utils.h"
 
 #include <glib/gi18n.h>
 #include <gio/gio.h>
@@ -59,7 +58,7 @@ page_validate (GisPasswordPage *page)
 {
   GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
 
-  return priv->valid_confirm && priv->valid_password;
+  return priv->valid_confirm;
 }
 
 static void
@@ -75,17 +74,20 @@ gis_password_page_save_data (GisPage *gis_page)
   GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
   ActUser *act_user;
   UmAccountMode account_mode;
-  const gchar *password;
+  const gchar *password = NULL;
 
   if (gis_page->driver == NULL)
     return;
 
   account_mode = gis_driver_get_account_mode (gis_page->driver);
 
-  if (account_mode == UM_ENTERPRISE)
-    return;
-
   gis_driver_get_user_permissions (gis_page->driver, &act_user, &password);
+
+  if (account_mode == UM_ENTERPRISE) {
+    if (password != NULL)
+      gis_update_login_keyring_password (password);
+    return;
+  }
 
   password = gtk_entry_get_text (GTK_ENTRY (priv->password_entry));
 
@@ -132,9 +134,13 @@ validate (GisPasswordPage *page)
   gtk_label_set_label (GTK_LABEL (priv->confirm_explanation), "");
   priv->valid_confirm = FALSE;
 
-  priv->valid_password = (strength_level > 1);
-  if (priv->valid_password)
+  priv->valid_password = (strlen (password) && strength_level > 1);
+  if (priv->valid_password) {
     set_entry_validation_checkmark (GTK_ENTRY (priv->password_entry));
+    clear_entry_validation_error (GTK_ENTRY (priv->password_entry));
+  } else {
+    set_entry_validation_error (GTK_ENTRY (priv->password_entry), _("This is a weak password."));
+  }
 
   if (strlen (password) > 0 && strlen (verify) > 0) {
     priv->valid_confirm = (strcmp (password, verify) == 0);
@@ -304,12 +310,11 @@ gis_password_page_init (GisPasswordPage *page)
   gtk_widget_init_template (GTK_WIDGET (page));
 }
 
-void
+GisPage *
 gis_prepare_password_page (GisDriver *driver)
 {
-  gis_driver_add_page (driver,
-                       g_object_new (GIS_TYPE_PASSWORD_PAGE,
-                                     "driver", driver,
-                                     NULL));
+  return g_object_new (GIS_TYPE_PASSWORD_PAGE,
+                       "driver", driver,
+                       NULL);
 }
 
