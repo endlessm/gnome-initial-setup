@@ -65,7 +65,7 @@ static void
 read_config_file (GisBrandingWelcomePage *page)
 {
   GisBrandingWelcomePagePrivate *priv = NULL;
-  g_autoptr(GKeyFile) keyfile = NULL;
+  GKeyFile *keyfile = NULL;
   g_autoptr(GError) error = NULL;
 
   /* VENDOR_CONF_FILE points to a keyfile containing vendor customization
