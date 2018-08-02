@@ -65,8 +65,6 @@ static void
 read_config_file (GisBrandingWelcomePage *page)
 {
   GisBrandingWelcomePagePrivate *priv = NULL;
-  GKeyFile *keyfile = NULL;
-  g_autoptr(GError) error = NULL;
 
   /* VENDOR_CONF_FILE points to a keyfile containing vendor customization
    * options. This code will look for options under the "Welcome" group, and
@@ -85,35 +83,22 @@ read_config_file (GisBrandingWelcomePage *page)
    *     branded edition is about.
    *   logo=/path/to/the/image/with/the/logo.png
    */
-  keyfile = gis_driver_get_vendor_conf_file (GIS_PAGE (page)->driver);
-  if (keyfile == NULL)
-    return;
 
   priv = gis_branding_welcome_page_get_instance_private (page);
 
-  priv->title = g_key_file_get_string (keyfile, VENDOR_BRANDING_WELCOME_GROUP,
-                                       VENDOR_BRANDING_WELCOME_TITLE_KEY, &error);
-  if (priv->title == NULL) {
-    g_warning ("Could not read title for 'Welcome' branding page from %s: %s",
-               VENDOR_CONF_FILE, error->message);
+  priv->title = gis_driver_conf_get_string (GIS_PAGE (page)->driver,
+                                            VENDOR_BRANDING_WELCOME_GROUP,
+                                            VENDOR_BRANDING_WELCOME_TITLE_KEY);
+  if (priv->title == NULL)
     return;
-  }
 
-  priv->description = g_key_file_get_string (keyfile, VENDOR_BRANDING_WELCOME_GROUP,
-                                             VENDOR_BRANDING_WELCOME_DESC_KEY, &error);
-  if (priv->description == NULL) {
-    g_debug ("Could not read description for 'Welcome' branding page from %s: %s",
-             VENDOR_CONF_FILE, error->message);
-    g_clear_error (&error);
-  }
+  priv->description = gis_driver_conf_get_string (GIS_PAGE (page)->driver,
+                                                  VENDOR_BRANDING_WELCOME_GROUP,
+                                                  VENDOR_BRANDING_WELCOME_DESC_KEY);
 
-  priv->logo_path = g_key_file_get_string (keyfile, VENDOR_BRANDING_WELCOME_GROUP,
-                                           VENDOR_BRANDING_WELCOME_LOGO_KEY, &error);
-  if (priv->logo_path == NULL) {
-    g_debug ("Could not read logo path for 'Welcome' branding page from %s: %s",
-             VENDOR_CONF_FILE, error->message);
-    g_clear_error (&error);
-  }
+  priv->logo_path = gis_driver_conf_get_string (GIS_PAGE (page)->driver,
+                                                VENDOR_BRANDING_WELCOME_GROUP,
+                                                VENDOR_BRANDING_WELCOME_LOGO_KEY);
 }
 
 static void
