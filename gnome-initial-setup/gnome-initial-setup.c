@@ -112,8 +112,7 @@ should_skip_page (GisDriver    *driver,
 static gchar **
 pages_to_skip_from_file (GisDriver *driver)
 {
-  GKeyFile *vendor_conf_file = gis_driver_get_vendor_conf_file (driver);
-  gchar **skip_pages = NULL;
+  GStrv skip_pages = NULL;
 
   /* VENDOR_CONF_FILE points to a keyfile containing vendor customization
    * options. This code will look for options under the "pages" group, and
@@ -126,11 +125,8 @@ pages_to_skip_from_file (GisDriver *driver)
    *   skip=language
    */
 
-  if (vendor_conf_file == NULL)
-    return NULL;
-
-  skip_pages = g_key_file_get_string_list (vendor_conf_file, VENDOR_PAGES_GROUP,
-                                           VENDOR_PAGES_SKIP_KEY, NULL, NULL);
+  skip_pages = gis_driver_conf_get_string_list (driver, VENDOR_PAGES_GROUP,
+                                                VENDOR_PAGES_SKIP_KEY, NULL);
 
   return skip_pages;
 }
@@ -172,25 +168,14 @@ static void
 reorder_pages (GisDriver *driver)
 {
   gint num_pages;
-  GKeyFile *key_file = gis_driver_get_vendor_conf_file (driver);
   gsize num_ordered_pages = 0;
   g_auto(GStrv) conf_pages_order = NULL;
   g_autoptr(GHashTable) sort_table = NULL; /* (owned) (element-type utf8 uint) */
-  g_autoptr(GError) error = NULL;
 
-  if (key_file == NULL)
+  conf_pages_order = gis_driver_conf_get_string_list (driver, "pages", "order",
+                                                      &num_ordered_pages);
+  if (conf_pages_order == NULL)
     return;
-
-  conf_pages_order = g_key_file_get_string_list (key_file, "pages", "order",
-                                                 &num_ordered_pages, &error);
-  if (conf_pages_order == NULL) {
-    /* if we have the pages order key but there was an issue getting it */
-    if (!g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_KEY_NOT_FOUND) &&
-        !g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_GROUP_NOT_FOUND))
-      g_warning ("Couldn't get pages order from the conf file: %s", error->message);
-
-    return;
-  }
 
   if (*conf_pages_order == NULL) {
     g_warning ("No pages defined in the pages order from the conf file");

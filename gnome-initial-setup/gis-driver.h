@@ -116,6 +116,20 @@ void gis_driver_hide_window (GisDriver *driver);
 
 void gis_driver_save_data (GisDriver *driver);
 
+gboolean gis_driver_conf_get_boolean (GisDriver *driver,
+                                      const gchar *group,
+                                      const gchar *key,
+                                      gboolean default_value);
+
+GStrv gis_driver_conf_get_string_list (GisDriver *driver,
+                                       const gchar *group,
+                                       const gchar *key,
+                                       gsize *out_length);
+
+gchar *gis_driver_conf_get_string (GisDriver *driver,
+                                   const gchar *group,
+                                   const gchar *key);
+
 GisDriver *gis_driver_new (GisDriverMode mode);
 
 G_END_DECLS

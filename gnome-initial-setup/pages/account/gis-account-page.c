@@ -109,30 +109,16 @@ on_validation_changed (gpointer        page_area,
 static void
 hide_password_switch_if_needed (GisAccountPage *page)
 {
-  GKeyFile *conf_file = gis_driver_get_vendor_conf_file (GIS_PAGE (page)->driver);
   GisAccountPagePrivate *priv = gis_account_page_get_instance_private (page);
-  g_autoptr(GError) error = NULL;
   gboolean show_password_switch;
 
-  /* do nothing if the configuration file doesn't exist */
-  if (conf_file == NULL)
-    return;
-
   /* check the conf file to see if the password switch should be shown/hidden */
-  show_password_switch = g_key_file_get_boolean (conf_file, CONFIG_ACCOUNT_GROUP,
-                                                 CONFIG_ACCOUNT_SHOW_PASSWORD_SWITCH_KEY,
-                                                 &error);
-  if (error == NULL) {
-    gis_account_page_local_show_password_switch (GIS_ACCOUNT_PAGE_LOCAL (priv->page_local),
-                                                 show_password_switch);
-    return;
-  }
-
-  if (!g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_KEY_NOT_FOUND) &&
-      !g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_GROUP_NOT_FOUND))
-    g_warning ("Couldn't get the value for key '%s' in group [%s]: %s",
-               CONFIG_ACCOUNT_SHOW_PASSWORD_SWITCH_KEY, CONFIG_ACCOUNT_GROUP,
-               error->message);
+  show_password_switch = gis_driver_conf_get_boolean (GIS_PAGE (page)->driver,
+                                                      CONFIG_ACCOUNT_GROUP,
+                                                      CONFIG_ACCOUNT_SHOW_PASSWORD_SWITCH_KEY,
+                                                      TRUE);
+  gis_account_page_local_show_password_switch (GIS_ACCOUNT_PAGE_LOCAL (priv->page_local),
+                                               show_password_switch);
 }
 
 static void

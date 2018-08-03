@@ -394,11 +394,77 @@ load_vendor_conf_file (GisDriver *driver)
   priv->vendor_conf_file = g_steal_pointer (&vendor_conf_file);
 }
 
-GKeyFile *
-gis_driver_get_vendor_conf_file (GisDriver *driver)
+static void
+report_conf_error_if_needed (const gchar *group,
+                             const gchar *key,
+                             const GError *error)
+{
+  if (!g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_KEY_NOT_FOUND) &&
+      !g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_GROUP_NOT_FOUND))
+    g_warning ("Error getting the value for key '%s' of group [%s] in "
+               "%s: %s", group, key, VENDOR_CONF_FILE, error->message);
+}
+
+gboolean
+gis_driver_conf_get_boolean (GisDriver *driver,
+                             const gchar *group,
+                             const gchar *key,
+                             gboolean default_value)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
-  return priv->vendor_conf_file;
+
+  if (priv->vendor_conf_file) {
+    g_autoptr(GError) error = NULL;
+    gboolean new_value = g_key_file_get_boolean (priv->vendor_conf_file, group,
+                                                 key, &error);
+    if (error == NULL)
+      return new_value;
+
+    report_conf_error_if_needed (group, key, error);
+  }
+
+  return default_value;
+}
+
+GStrv
+gis_driver_conf_get_string_list (GisDriver *driver,
+                                 const gchar *group,
+                                 const gchar *key,
+                                 gsize *out_length)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  if (priv->vendor_conf_file) {
+    g_autoptr(GError) error = NULL;
+    GStrv new_value = g_key_file_get_string_list (priv->vendor_conf_file, group,
+                                                  key, out_length, &error);
+    if (error == NULL)
+      return new_value;
+
+    report_conf_error_if_needed (group, key, error);
+  }
+
+  return NULL;
+}
+
+gchar *
+gis_driver_conf_get_string (GisDriver *driver,
+                            const gchar *group,
+                            const gchar *key)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  if (priv->vendor_conf_file) {
+    g_autoptr(GError) error = NULL;
+    gchar *new_value = g_key_file_get_string (priv->vendor_conf_file, group,
+                                              key, &error);
+    if (error == NULL)
+      return new_value;
+
+    report_conf_error_if_needed (group, key, error);
+  }
+
+  return NULL;
 }
 
 GisDriverMode
