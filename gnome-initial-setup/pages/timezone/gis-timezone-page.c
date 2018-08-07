@@ -224,6 +224,10 @@ get_location_from_geoclue_async (GisTimezonePage *page)
 {
   GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
 
+  /* cancel any on-going requests, and set up a new cancellable */
+  stop_geolocation_if_needed (page);
+  g_set_object (&priv->geoclue_cancellable, g_cancellable_new ());
+
   gclue_simple_new (DESKTOP_ID,
                     GCLUE_ACCURACY_LEVEL_CITY,
                     priv->geoclue_cancellable,
@@ -463,8 +467,6 @@ gis_timezone_page_constructed (GObject *object)
   priv->clock_format = get_default_time_format ();
   g_settings_set_enum (settings, CLOCK_FORMAT_KEY, priv->clock_format);
   g_object_unref (settings);
-
-  priv->geoclue_cancellable = g_cancellable_new ();
 
   set_location (page, NULL);
 
