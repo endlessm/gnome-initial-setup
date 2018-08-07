@@ -4,94 +4,142 @@
   <!-- interface-requires gtk+ 3.0 -->
   <template class="GisTimezonePage" parent="GisPage">
     <child>
-      <object class="GtkBox" id="box">
+      <object class="GtkStack" id="stack">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <property name="halign">center</property>
-        <property name="valign">fill</property>
+        <property name="valign">start</property>
+        <property name="vexpand">True</property>
         <child>
-          <object class="GtkImage" id="image">
-            <property name="visible" bind-source="GisTimezonePage" bind-property="small-screen" bind-flags="invert-boolean|sync-create"/>
-            <property name="can_focus">False</property>
-            <property name="margin_top">24</property>
-            <property name="pixel_size">96</property>
-            <property name="icon_name">find-location-symbolic</property>
-            <style>
-              <class name="dim-label" />
-            </style>
-          </object>
-        </child>
-        <child>
-          <object class="GtkLabel" id="title">
-            <property name="visible" bind-source="GisTimezonePage" bind-property="small-screen" bind-flags="invert-boolean|sync-create"/>
+          <object class="GtkBox" id="wait_for_location_box">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_top">18</property>
-            <property name="halign">center</property>
-            <property name="valign">start</property>
-            <property name="vexpand">True</property>
-            <property name="label" translatable="yes">Time Zone</property>
-            <attributes>
-              <attribute name="weight" value="bold"/>
-              <attribute name="scale" value="1.8"/>
-            </attributes>
-          </object>
-        </child>
-        <child>
-          <object class="GtkBox" id="page_box">
-            <property name="visible">True</property>
-            <property name="margin_top">18</property>
-            <property name="valign">center</property>
             <property name="orientation">vertical</property>
-            <property name="spacing">14</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
             <child>
-              <object class="GtkLabel">
-                <property name="visible">True</property>
-                <property name="xalign">0</property>
-                <property name="halign">center</property>
-                <property name="wrap">True</property>
-                <property name="label" translatable="yes">The time zone will be set automatically if your location can be found. You can also search for a city to set it yourself.</property>
-              </object>
-            </child>
-            <child>
-              <object class="GWeatherLocationEntry" id="search_entry">
-                <property name="visible">True</property>
-                <property name="halign">center</property>
-                <property name="max-width-chars">55</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkFrame" id="map_frame">
+              <object class="GtkLabel" id="wait_for_location_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_bottom">18</property>
-                <property name="hexpand">True</property>
-                <property name="label_xalign">0</property>
-                <child>
-                  <object class="GtkOverlay" id="map_overlay">
-                    <property name="visible">True</property>
-                    <child>
-                      <object class="CcTimezoneMap" id="map">
-                        <property name="visible">True</property>
-                        <property name="hexpand">True</property>
-                      </object>
-                    </child>
-                    <child type="overlay">
-                      <object class="GisBubbleWidget" id="search_overlay">
-                        <property name="visible">True</property>
-                        <property name="label" translatable="yes">Please search for a nearby city</property>
-                        <property name="icon-name">edit-find-symbolic</property>
-                        <property name="halign">center</property>
-                        <property name="valign">center</property>
-                      </object>
-                    </child>
-                  </object>
-                </child>
+                <property name="margin_top">18</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="vexpand">False</property>
+                <property name="label" translatable="yes">Getting time zone information. Please wait…</property>
+                <style>
+                  <class name="dim-label"/>
+                </style>
+                <attributes>
+                  <attribute name="scale" value="1.5"/>
+                </attributes>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSpinner" id="wait_for_location_spinner">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="margin_start">6</property>
+                <property name="margin_end">6</property>
+                <property name="active">True</property>
+                <property name="width_request">32</property>
+                <property name="height_request">32</property>
+                <property name="vexpand">True</property>
+                <property name="vexpand">True</property>
               </object>
             </child>
           </object>
         </child>
+        <child>
+	  <object class="GtkBox" id="full_page_box">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="orientation">vertical</property>
+            <property name="halign">center</property>
+            <property name="valign">fill</property>
+            <child>
+              <object class="GtkImage" id="image">
+		<property name="visible" bind-source="GisTimezonePage" bind-property="small-screen" bind-flags="invert-boolean|sync-create"/>
+		<property name="can_focus">False</property>
+		<property name="margin_top">24</property>
+		<property name="pixel_size">96</property>
+		<property name="icon_name">find-location-symbolic</property>
+		<style>
+		  <class name="dim-label" />
+		</style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="title">
+		<property name="visible" bind-source="GisTimezonePage" bind-property="small-screen" bind-flags="invert-boolean|sync-create"/>
+		<property name="visible">True</property>
+		<property name="can_focus">False</property>
+		<property name="margin_top">18</property>
+		<property name="halign">center</property>
+		<property name="valign">start</property>
+		<property name="vexpand">True</property>
+		<property name="label" translatable="yes">Time Zone</property>
+		<attributes>
+		  <attribute name="weight" value="bold"/>
+		  <attribute name="scale" value="1.8"/>
+		</attributes>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="page_box">
+		<property name="visible">True</property>
+		<property name="margin_top">18</property>
+		<property name="valign">center</property>
+		<property name="orientation">vertical</property>
+		<property name="spacing">14</property>
+		<child>
+		  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="xalign">0</property>
+                    <property name="halign">center</property>
+                    <property name="wrap">True</property>
+                    <property name="label" translatable="yes">The time zone will be set automatically if your location can be found. You can also search for a city to set it yourself.</property>
+		  </object>
+		</child>
+		<child>
+		  <object class="GWeatherLocationEntry" id="search_entry">
+                    <property name="visible">True</property>
+                    <property name="halign">center</property>
+                    <property name="max-width-chars">55</property>
+		  </object>
+		</child>
+		<child>
+		  <object class="GtkFrame" id="map_frame">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="margin_bottom">18</property>
+                    <property name="hexpand">True</property>
+                    <property name="label_xalign">0</property>
+                    <child>
+                      <object class="GtkOverlay" id="map_overlay">
+			<property name="visible">True</property>
+			<child>
+			  <object class="CcTimezoneMap" id="map">
+                            <property name="visible">True</property>
+                            <property name="hexpand">True</property>
+			  </object>
+			</child>
+			<child type="overlay">
+			  <object class="GisBubbleWidget" id="search_overlay">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">Please search for a nearby city</property>
+                            <property name="icon-name">edit-find-symbolic</property>
+                            <property name="halign">center</property>
+                            <property name="valign">center</property>
+			  </object>
+			</child>
+                      </object>
+                    </child>
+		  </object>
+		</child>
+              </object>
+            </child>
+	  </object>
+	</child>
       </object>
     </child>
   </template>

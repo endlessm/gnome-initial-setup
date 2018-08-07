@@ -60,11 +60,17 @@
 #define CONFIG_TIMEZONE_GROUP "page.timezone"
 #define CONFIG_TIMEZONE_SHOW_IF_DETECTED_KEY "show-if-detected"
 
+#define LOCATION_MAX_WAIT_TIMEOUT_MS 3000
+
 struct _GisTimezonePagePrivate
 {
   GtkWidget *map;
   GtkWidget *search_entry;
   GtkWidget *search_overlay;
+  GtkWidget *stack;
+  GtkWidget *wait_for_location_box;
+  GtkWidget *full_page_box;
+  GtkWidget *wait_for_location_spinner;
 
   GCancellable *geoclue_cancellable;
   GClueClient *geoclue_client;
@@ -80,6 +86,7 @@ struct _GisTimezonePagePrivate
   gulong network_monitor_handler_id;
 
   gboolean show_if_detected;
+  guint show_wait_page_source_id;
 };
 typedef struct _GisTimezonePagePrivate GisTimezonePagePrivate;
 
@@ -88,6 +95,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (GisTimezonePage, gis_timezone_page, GIS_TYPE_PAGE);
 G_DEFINE_AUTO_CLEANUP_FREE_FUNC(locale_t, freelocale, NULL)
 
 static void stop_geolocation_if_needed (GisTimezonePage *page);
+static void show_full_timezone_page (GisTimezonePage *page);
 
 static GDesktopClockFormat
 get_default_time_format (void)
@@ -168,6 +176,8 @@ set_location (GisTimezonePage  *page,
       GWeatherTimezone *zone;
       const char *tzid;
 
+      g_debug ("Location for timezone found");
+
       priv->current_location = gweather_location_ref (location);
 
       zone = gweather_location_get_timezone (location);
@@ -175,10 +185,30 @@ set_location (GisTimezonePage  *page,
 
       cc_timezone_map_set_timezone (CC_TIMEZONE_MAP (priv->map), tzid);
 
+      /* remove the wait-page timeout */
+      if (priv->show_wait_page_source_id > 0)
+        {
+          g_source_remove (priv->show_wait_page_source_id);
+          priv->show_wait_page_source_id = 0;
+        }
+
       /* if the page hasn't yet been shown and we found the timezone
        * automatically, then don't show the page */
-      if (!priv->show_if_detected)
+      if (!priv->show_if_detected) {
+        g_debug ("Hiding timezone page since it's been found automatically "
+                 "before shown");
+
+        /* TODO: Pages shouldn't really have to call the assistant directly in
+         * order to be skipped, so this should be e.g. replaced with a signal
+         * emission that the assistant takes care of */
+        GisAssistant *assistant = gis_driver_get_assistant (GIS_PAGE (page)->driver);
+        if (gis_assistant_get_current_page (assistant) == GIS_PAGE (page))
+          gis_assistant_next_page (assistant);
+
         gtk_widget_hide (GTK_WIDGET (page));
+      } else {
+        show_full_timezone_page (page);
+      }
     }
 }
 
@@ -531,13 +561,70 @@ gis_timezone_page_locale_changed (GisPage *page)
   gis_page_set_title (GIS_PAGE (page), _("Time Zone"));
 }
 
+static gboolean
+may_find_location (GisTimezonePage *page)
+{
+  GNetworkMonitor *monitor = g_network_monitor_get_default ();
+
+  return g_network_monitor_get_network_available (monitor);
+}
+
+static void
+show_full_timezone_page (GisTimezonePage *page)
+{
+  GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
+
+  /* ensure the page will not get hidden even if the timezone is automatically
+   * detected (because the full page should now be shown) */
+  priv->show_if_detected = TRUE;
+
+  g_debug ("Showing full timezone page");
+  gtk_stack_set_visible_child (GTK_STACK (priv->stack), priv->full_page_box);
+}
+
+static void
+show_wait_for_location_page (GisTimezonePage *page)
+{
+  GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
+
+  g_debug ("Showing 'wait for timezone' page");
+  gtk_stack_set_visible_child (GTK_STACK (priv->stack), priv->wait_for_location_box);
+}
+
+static gboolean
+check_wait_page_timeout (gpointer data)
+{
+  GisTimezonePage *page = data;
+  GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
+
+  show_full_timezone_page (page);
+  priv->show_wait_page_source_id = 0;
+
+  return G_SOURCE_REMOVE;
+}
+
 static void
 gis_timezone_page_shown (GisPage *page)
 {
   GisTimezonePage *tz_page = GIS_TIMEZONE_PAGE (page);
   GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (tz_page);
 
-  priv->show_if_detected = TRUE;
+  if (priv->show_if_detected || !may_find_location (tz_page)) {
+    show_full_timezone_page (tz_page);
+    return;
+  }
+
+  show_wait_for_location_page (tz_page);
+
+  if (priv->geoclue_client == NULL)
+    {
+      g_debug ("Getting location now that the page is to be shown");
+      get_location_from_geoclue_async (tz_page);
+    }
+
+  priv->show_wait_page_source_id = g_timeout_add (LOCATION_MAX_WAIT_TIMEOUT_MS,
+                                                  check_wait_page_timeout,
+                                                  tz_page);
 }
 
 static void
@@ -551,6 +638,10 @@ gis_timezone_page_class_init (GisTimezonePageClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisTimezonePage, map);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisTimezonePage, search_entry);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisTimezonePage, search_overlay);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisTimezonePage, stack);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisTimezonePage, wait_for_location_box);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisTimezonePage, full_page_box);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisTimezonePage, wait_for_location_spinner);
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_timezone_page_locale_changed;
