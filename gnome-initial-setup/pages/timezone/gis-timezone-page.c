@@ -494,14 +494,14 @@ gis_timezone_page_dispose (GObject *object)
 {
   GisTimezonePage *page = GIS_TIMEZONE_PAGE (object);
   GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
-  GNetworkMonitor *monitor = g_network_monitor_get_default ();
 
   stop_geolocation_if_needed (page);
 
   g_clear_object (&priv->dtm);
   g_clear_object (&priv->clock);
 
-  if (monitor != NULL && priv->network_monitor_handler_id > 0) {
+  if (priv->network_monitor_handler_id > 0) {
+    GNetworkMonitor *monitor = g_network_monitor_get_default ();
     g_signal_handler_disconnect (monitor, priv->network_monitor_handler_id);
     priv->network_monitor_handler_id = 0;
   }
