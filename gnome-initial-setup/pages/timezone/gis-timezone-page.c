@@ -74,12 +74,15 @@ struct _GisTimezonePagePrivate
   gboolean in_search;
 
   gulong map_location_changed_id;
+  gulong network_monitor_handler_id;
 };
 typedef struct _GisTimezonePagePrivate GisTimezonePagePrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GisTimezonePage, gis_timezone_page, GIS_TYPE_PAGE);
 
 G_DEFINE_AUTO_CLEANUP_FREE_FUNC(locale_t, freelocale, NULL)
+
+static void stop_geolocation_if_needed (GisTimezonePage *page);
 
 static GDesktopClockFormat
 get_default_time_format (void)
@@ -150,6 +153,8 @@ set_location (GisTimezonePage  *page,
 
   g_clear_pointer (&priv->current_location, gweather_location_unref);
 
+  stop_geolocation_if_needed (page);
+
   gtk_widget_set_visible (priv->search_overlay, (location == NULL));
   gis_page_set_complete (GIS_PAGE (page), (location != NULL));
 
@@ -218,6 +223,10 @@ static void
 get_location_from_geoclue_async (GisTimezonePage *page)
 {
   GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
+
+  /* cancel any on-going requests, and set up a new cancellable */
+  stop_geolocation_if_needed (page);
+  g_set_object (&priv->geoclue_cancellable, g_cancellable_new ());
 
   gclue_simple_new (DESKTOP_ID,
                     GCLUE_ACCURACY_LEVEL_CITY,
@@ -385,7 +394,7 @@ entry_mapped (GtkWidget *widget,
 }
 
 static void
-stop_geolocation (GisTimezonePage *page)
+stop_geolocation_if_needed (GisTimezonePage *page)
 {
   GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
 
@@ -404,12 +413,38 @@ stop_geolocation (GisTimezonePage *page)
 }
 
 static void
+network_changed_cb (GNetworkMonitor *monitor,
+                    gboolean network_available,
+                    gpointer data)
+{
+  GisTimezonePage *page = GIS_TIMEZONE_PAGE (data);
+  GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
+
+  if (!network_available)
+    return;
+
+  if (priv->current_location != NULL) {
+    g_signal_handler_disconnect (monitor, priv->network_monitor_handler_id);
+    priv->network_monitor_handler_id = 0;
+    return;
+  }
+
+  /* if we don't have a geoclue client yet, try to get it and the location,
+   * if we already do, then let's just get the location */
+  if (priv->geoclue_client == NULL)
+    get_location_from_geoclue_async (page);
+  else
+    on_location_notify (priv->geoclue_simple, NULL, page);
+}
+
+static void
 gis_timezone_page_constructed (GObject *object)
 {
   GisTimezonePage *page = GIS_TIMEZONE_PAGE (object);
   GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
   GError *error;
   GSettings *settings;
+  GNetworkMonitor *monitor = g_network_monitor_get_default ();
 
   G_OBJECT_CLASS (gis_timezone_page_parent_class)->constructed (object);
 
@@ -433,10 +468,7 @@ gis_timezone_page_constructed (GObject *object)
   g_settings_set_enum (settings, CLOCK_FORMAT_KEY, priv->clock_format);
   g_object_unref (settings);
 
-  priv->geoclue_cancellable = g_cancellable_new ();
-
   set_location (page, NULL);
-  get_location_from_geoclue_async (page);
 
   g_signal_connect (priv->search_entry, "notify::location",
                     G_CALLBACK (entry_location_changed), page);
@@ -445,6 +477,14 @@ gis_timezone_page_constructed (GObject *object)
   priv->map_location_changed_id =
     g_signal_connect (priv->map, "location-changed",
                       G_CALLBACK (map_location_changed), page);
+  priv->network_monitor_handler_id =
+    g_signal_connect (monitor, "network-changed",
+                      G_CALLBACK (network_changed_cb), page);
+
+  /* if there's no network available, there's no point in trying to get the
+   * location yet */
+  if (g_network_monitor_get_network_available (monitor))
+      get_location_from_geoclue_async (page);
 
   gtk_widget_show (GTK_WIDGET (page));
 }
@@ -455,10 +495,16 @@ gis_timezone_page_dispose (GObject *object)
   GisTimezonePage *page = GIS_TIMEZONE_PAGE (object);
   GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
 
-  stop_geolocation (page);
+  stop_geolocation_if_needed (page);
 
   g_clear_object (&priv->dtm);
   g_clear_object (&priv->clock);
+
+  if (priv->network_monitor_handler_id > 0) {
+    GNetworkMonitor *monitor = g_network_monitor_get_default ();
+    g_signal_handler_disconnect (monitor, priv->network_monitor_handler_id);
+    priv->network_monitor_handler_id = 0;
+  }
 
   G_OBJECT_CLASS (gis_timezone_page_parent_class)->dispose (object);
 }
@@ -467,15 +513,6 @@ static void
 gis_timezone_page_locale_changed (GisPage *page)
 {
   gis_page_set_title (GIS_PAGE (page), _("Time Zone"));
-}
-
-static void
-gis_timezone_page_shown (GisPage *page)
-{
-  GisTimezonePage *tz_page = GIS_TIMEZONE_PAGE (page);
-
-  /* Stop timezone geolocation if it hasn't finished by the time we get here */
-  stop_geolocation (tz_page);
 }
 
 static void
@@ -492,7 +529,6 @@ gis_timezone_page_class_init (GisTimezonePageClass *klass)
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_timezone_page_locale_changed;
-  page_class->shown = gis_timezone_page_shown;
   object_class->constructed = gis_timezone_page_constructed;
   object_class->dispose = gis_timezone_page_dispose;
 }
