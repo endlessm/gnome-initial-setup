@@ -30,9 +30,14 @@
 #include <gtk/gtk.h>
 #include <polkit/polkit.h>
 
+#define GNOME_DESKTOP_USE_UNSTABLE_API
+#include <libgnome-desktop/gnome-languages.h>
+
 #include "gis-keyboard-page.h"
 #include "keyboard-resources.h"
 #include "cc-input-chooser.h"
+
+#include "cc-common-language.h"
 
 #define GNOME_DESKTOP_INPUT_SOURCES_DIR "org.gnome.desktop.input-sources"
 #define KEY_CURRENT_INPUT_SOURCE "current"
@@ -208,10 +213,9 @@ gis_keyboard_page_apply (GisPage      *page,
         return FALSE;
 }
 
-static void
-load_localed_input (GisKeyboardPage *self)
+static GSList *
+get_localed_input (GDBusProxy *proxy)
 {
-	GisKeyboardPagePrivate *priv = gis_keyboard_page_get_instance_private (self);
         GVariant *v;
         const gchar *s;
         gchar *id;
@@ -220,17 +224,14 @@ load_localed_input (GisKeyboardPage *self)
         gchar **variants = NULL;
         GSList *sources = NULL;
 
-        if (!priv->localed)
-                return;
-
-        v = g_dbus_proxy_get_cached_property (priv->localed, "X11Layout");
+        v = g_dbus_proxy_get_cached_property (proxy, "X11Layout");
         if (v) {
                 s = g_variant_get_string (v, NULL);
                 layouts = g_strsplit (s, ",", -1);
                 g_variant_unref (v);
         }
 
-        v = g_dbus_proxy_get_cached_property (priv->localed, "X11Variant");
+        v = g_dbus_proxy_get_cached_property (proxy, "X11Variant");
         if (v) {
                 s = g_variant_get_string (v, NULL);
                 if (s && *s)
@@ -256,16 +257,132 @@ load_localed_input (GisKeyboardPage *self)
         g_strfreev (variants);
         g_strfreev (layouts);
 
+	return sources;
+}
+
+static void
+add_default_keyboard_layout (GDBusProxy      *proxy,
+                             GVariantBuilder *builder)
+{
+	GSList *sources = get_localed_input (proxy);
+	sources = g_slist_reverse (sources);
+
+	for (; sources; sources = sources->next)
+		g_variant_builder_add (builder, "(ss)", "xkb",
+				       (const gchar *) sources->data);
+
+	g_slist_free_full (sources, g_free);
+}
+
+static void
+add_default_input_sources (GisKeyboardPage *self,
+                           GDBusProxy      *proxy)
+{
+	const gchar *type;
+	const gchar *id;
+	gchar *language;
+	GVariantBuilder builder;
+	GSettings *input_settings;
+
+	input_settings = g_settings_new (GNOME_DESKTOP_INPUT_SOURCES_DIR);
+	g_variant_builder_init (&builder, G_VARIANT_TYPE ("a(ss)"));
+
+	add_default_keyboard_layout (proxy, &builder);
+
+	/* add other input sources */
+	language = cc_common_language_get_current_language ();
+	if (gnome_get_input_source_from_locale (language, &type, &id)) {
+		if (!g_str_equal (type, "xkb"))
+			g_variant_builder_add (&builder, "(ss)", type, id);
+	}
+	g_free (language);
+
+	g_settings_delay (input_settings);
+	g_settings_set_value (input_settings, KEY_INPUT_SOURCES, g_variant_builder_end (&builder));
+	g_settings_set_uint (input_settings, KEY_CURRENT_INPUT_SOURCE, 0);
+	g_settings_apply (input_settings);
+
+	g_object_unref (input_settings);
+}
+
+static void
+skip_proxy_ready (GObject      *source,
+                  GAsyncResult *res,
+                  gpointer      data)
+{
+	GisKeyboardPage *self = data;
+	GDBusProxy *proxy;
+	GError *error = NULL;
+
+	proxy = g_dbus_proxy_new_finish (res, &error);
+
+	if (!proxy) {
+		if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+			g_warning ("Failed to contact localed: %s", error->message);
+		g_error_free (error);
+		return;
+	}
+
+	add_default_input_sources (self, proxy);
+
+	g_object_unref (proxy);
+}
+
+static gboolean
+gis_keyboard_page_skip (GisPage *page)
+{
+	GisKeyboardPage *self = GIS_KEYBOARD_PAGE (page);
+	GisKeyboardPagePrivate *priv = gis_keyboard_page_get_instance_private (self);
+
+	g_dbus_proxy_new_for_bus (G_BUS_TYPE_SYSTEM,
+				  G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES,
+				  NULL,
+				  "org.freedesktop.locale1",
+				  "/org/freedesktop/locale1",
+				  "org.freedesktop.locale1",
+				  priv->cancellable,
+				  (GAsyncReadyCallback) skip_proxy_ready,
+				  self);
+	return TRUE;
+}
+
+static void
+preselect_input_source (GisKeyboardPage *self)
+{
+        const gchar *type;
+        const gchar *id;
+        gchar *language;
+
+        GisKeyboardPagePrivate *priv = gis_keyboard_page_get_instance_private (self);
+        GSList *sources = get_localed_input (priv->localed);
+
         /* These will be added silently after the user selection when
          * writing out the settings. */
         g_slist_free_full (priv->system_sources, g_free);
         priv->system_sources = g_slist_reverse (sources);
 
-        /* We only pre-select the first system layout. */
-        if (priv->system_sources)
+        /* For languages that use an input method, we will add both
+         * system keyboard layout and the ibus input method. For
+         * languages that use keyboard layout only, we will add only
+         * system keyboard layout. Because the keyboard layout
+         * information from gnome-desktop is not as accurate as system
+         * keyboard layout, if gnome-desktop returns keyboard layout,
+         * we ignore it and use system keyboard layout instead. If
+         * gnome-desktop instead returns an ibus input method, we will
+         * add both system keyboard layout and the ibus input method. */
+        language = cc_common_language_get_current_language ();
+
+        if (!priv->system_sources ||
+            (gnome_get_input_source_from_locale (language, &type, &id) && g_strcmp0 (type, "xkb") != 0)) {
+                cc_input_chooser_set_input (CC_INPUT_CHOOSER (priv->input_chooser),
+                                            id, type);
+        } else {
                 cc_input_chooser_set_input (CC_INPUT_CHOOSER (priv->input_chooser),
                                             (const gchar *) priv->system_sources->data,
                                             "xkb");
+        }
+
+        g_free (language);
 }
 
 static void
@@ -300,7 +417,7 @@ localed_proxy_ready (GObject      *source,
 
 	priv->localed = proxy;
 
-        load_localed_input (self);
+        preselect_input_source (self);
         update_page_complete (self);
 }
 
@@ -375,6 +492,7 @@ gis_keyboard_page_class_init (GisKeyboardPageClass * klass)
 
         page_class->page_id = PAGE_ID;
         page_class->apply = gis_keyboard_page_apply;
+        page_class->skip = gis_keyboard_page_skip;
         page_class->locale_changed = gis_keyboard_page_locale_changed;
         object_class->constructed = gis_keyboard_page_constructed;
 	object_class->finalize = gis_keyboard_page_finalize;
@@ -389,11 +507,10 @@ gis_keyboard_page_init (GisKeyboardPage *self)
         gtk_widget_init_template (GTK_WIDGET (self));
 }
 
-void
+GisPage *
 gis_prepare_keyboard_page (GisDriver *driver)
 {
-  gis_driver_add_page (driver,
-                       g_object_new (GIS_TYPE_KEYBOARD_PAGE,
-                                     "driver", driver,
-                                     NULL));
+  return g_object_new (GIS_TYPE_KEYBOARD_PAGE,
+                       "driver", driver,
+                       NULL);
 }
