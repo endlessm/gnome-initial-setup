@@ -26,7 +26,9 @@ import subprocess
 import sys
 import tempfile
 
-from gi.repository import GLib, Gio
+import gi
+gi.require_version('OSTree', '1.0')
+from gi.repository import GLib, Gio, OSTree  # noqa: E402
 
 log = logging.getLogger(sys.argv[0])
 
@@ -235,6 +237,19 @@ def prepend_installer_to_icon_grid():
             log.exception("while processing %s", path)
 
 
+def reduce_ostree_min_free_space():
+    '''Don't require any free space on disk when installing apps. On live
+    systems, free space is at most half of physical RAM, and running out is not
+    a big deal.'''
+    repo = OSTree.Repo.new_default()
+    repo.open()
+    config = repo.copy_config()
+    # -size alone takes precedence but set both for clarity.
+    config.set_string('core', 'min-free-space-size', '0MB')
+    config.set_integer('core', 'min-free-space-percent', 0)
+    repo.write_config(config)
+
+
 def main():
     """Configures system settings for live or demo sessions."""
     p = argparse.ArgumentParser(description=main.__doc__)
@@ -260,6 +275,7 @@ def main():
 
         disable_chrome_auto_download()
         remove_chrome_from_icon_grids()
+        reduce_ostree_min_free_space()
 
         if mode == Mode.live:
             install_installer_desktop_file()
