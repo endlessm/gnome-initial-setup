@@ -44,6 +44,7 @@ struct _GisNetworkPagePrivate {
   GtkWidget *network_list;
   GtkWidget *scrolled_window;
   GtkWidget *no_network_label;
+  GtkWidget *no_network_spinner;
   GtkWidget *turn_on_label;
   GtkWidget *turn_on_switch;
 
@@ -243,6 +244,18 @@ add_access_point (GisNetworkPage *page, NMAccessPoint *ap, NMAccessPoint *active
     gtk_box_pack_start (GTK_BOX (row), widget, FALSE, FALSE, 0);
   }
 
+  widget = gtk_spinner_new ();
+  gtk_widget_set_no_show_all (widget, TRUE);
+  if (activating) {
+    gtk_widget_show (widget);
+    gtk_spinner_start (GTK_SPINNER (widget));
+  }
+  gtk_widget_set_halign (widget, GTK_ALIGN_CENTER);
+  gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
+  gtk_box_pack_start (GTK_BOX (row), widget, FALSE, FALSE, 0);
+
+  gtk_box_pack_start (GTK_BOX (row), gtk_label_new (""), TRUE, FALSE, 0);
+
   box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
   gtk_box_set_homogeneous (GTK_BOX (box), TRUE);
   gtk_size_group_add_widget (priv->icons, box);
@@ -349,11 +362,13 @@ refresh_wireless_list (GisNetworkPage *page)
     if (!enabled || !hw_enabled) {
       gtk_label_set_text (GTK_LABEL (priv->no_network_label), _("Wireless networking is disabled"));
       gtk_widget_show (priv->no_network_label);
+      gtk_widget_hide (priv->no_network_spinner);
 
       gtk_widget_set_visible (priv->turn_on_label, hw_enabled);
       gtk_widget_set_visible (priv->turn_on_switch, hw_enabled);
     } else {
       gtk_label_set_text (GTK_LABEL (priv->no_network_label), _("Checking for available wireless networks"));
+      gtk_widget_show (priv->no_network_spinner);
       gtk_widget_show (priv->no_network_label);
       gtk_widget_hide (priv->turn_on_label);
       gtk_widget_hide (priv->turn_on_switch);
@@ -364,6 +379,7 @@ refresh_wireless_list (GisNetworkPage *page)
     goto out;
 
   } else {
+    gtk_widget_hide (priv->no_network_spinner);
     gtk_widget_hide (priv->no_network_label);
     gtk_widget_hide (priv->turn_on_label);
     gtk_widget_hide (priv->turn_on_switch);
@@ -657,6 +673,7 @@ gis_network_page_class_init (GisNetworkPageClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisNetworkPage, network_list);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisNetworkPage, scrolled_window);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisNetworkPage, no_network_label);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisNetworkPage, no_network_spinner);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisNetworkPage, turn_on_label);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisNetworkPage, turn_on_switch);
 
