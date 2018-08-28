@@ -44,6 +44,7 @@ struct _GisNetworkPagePrivate {
   GtkWidget *network_list;
   GtkWidget *scrolled_window;
   GtkWidget *no_network_label;
+  GtkWidget *no_network_spinner;
   GtkWidget *turn_on_label;
   GtkWidget *turn_on_switch;
 
@@ -82,13 +83,17 @@ get_strongest_unique_aps (const GPtrArray *aps)
     ssid = nm_access_point_get_ssid (ap);
     add_ap = TRUE;
 
+    if (!ssid)
+      continue;
+
     /* get already added list */
     for (j = 0; j < unique->len; j++) {
       ap_tmp = NM_ACCESS_POINT (g_ptr_array_index (unique, j));
       ssid_tmp = nm_access_point_get_ssid (ap_tmp);
 
       /* is this the same type and data? */
-      if (nm_utils_same_ssid (g_bytes_get_data (ssid, NULL), g_bytes_get_size (ssid),
+      if (ssid_tmp &&
+          nm_utils_same_ssid (g_bytes_get_data (ssid, NULL), g_bytes_get_size (ssid),
                               g_bytes_get_data (ssid_tmp, NULL), g_bytes_get_size (ssid_tmp), TRUE)) {
         /* the new access point is stronger */
         if (nm_access_point_get_strength (ap) >
@@ -188,7 +193,8 @@ add_access_point (GisNetworkPage *page, NMAccessPoint *ap, NMAccessPoint *active
   const gchar *icon_name;
   GtkWidget *row;
   GtkWidget *widget;
-  GtkWidget *box;
+  GtkWidget *grid;
+  GtkWidget *state_widget = NULL;
 
   ssid = nm_access_point_get_ssid (ap);
   object_path = nm_object_get_path (NM_OBJECT (ap));
@@ -237,24 +243,31 @@ add_access_point (GisNetworkPage *page, NMAccessPoint *ap, NMAccessPoint *active
   gtk_box_pack_start (GTK_BOX (row), widget, FALSE, FALSE, 0);
 
   if (activated) {
-    widget = gtk_image_new_from_icon_name ("object-select-symbolic", GTK_ICON_SIZE_MENU);
-    gtk_widget_set_halign (widget, GTK_ALIGN_CENTER);
-    gtk_widget_set_valign (widget, GTK_ALIGN_CENTER);
-    gtk_box_pack_start (GTK_BOX (row), widget, FALSE, FALSE, 0);
+    state_widget = gtk_image_new_from_icon_name ("object-select-symbolic", GTK_ICON_SIZE_MENU);
+  } else if (activating) {
+    state_widget = gtk_spinner_new ();
+    gtk_widget_show (state_widget);
+    gtk_spinner_start (GTK_SPINNER (state_widget));
   }
 
-  box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-  gtk_box_set_homogeneous (GTK_BOX (box), TRUE);
-  gtk_size_group_add_widget (priv->icons, box);
-  gtk_box_pack_start (GTK_BOX (row), box, FALSE, FALSE, 0);
+  if (state_widget) {
+    gtk_widget_set_halign (state_widget, GTK_ALIGN_CENTER);
+    gtk_widget_set_valign (state_widget, GTK_ALIGN_CENTER);
+    gtk_box_pack_start (GTK_BOX (row), state_widget, FALSE, FALSE, 0);
+  }
+
+  grid = gtk_grid_new ();
+  gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
+  gtk_grid_set_column_homogeneous (GTK_GRID (grid), TRUE);
+  gtk_widget_set_valign (grid, GTK_ALIGN_CENTER);
+  gtk_size_group_add_widget (priv->icons, grid);
+  gtk_box_pack_end (GTK_BOX (row), grid, FALSE, FALSE, 0);
 
   if (security != NM_AP_SEC_UNKNOWN &&
       security != NM_AP_SEC_NONE) {
     widget = gtk_image_new_from_icon_name ("network-wireless-encrypted-symbolic", GTK_ICON_SIZE_MENU);
-  } else {
-    widget = gtk_label_new ("");
+    gtk_grid_attach (GTK_GRID (grid), widget, 0, 0, 1, 1);
   }
-  gtk_box_pack_start (GTK_BOX (box), widget, FALSE, FALSE, 0);
 
   if (strength < 20)
     icon_name = "network-wireless-signal-none-symbolic";
@@ -267,15 +280,24 @@ add_access_point (GisNetworkPage *page, NMAccessPoint *ap, NMAccessPoint *active
   else
     icon_name = "network-wireless-signal-excellent-symbolic";
   widget = gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_MENU);
-  gtk_box_pack_start (GTK_BOX (box), widget, FALSE, FALSE, 0);
+  gtk_widget_set_halign (widget, GTK_ALIGN_END);
+  gtk_grid_attach (GTK_GRID (grid), widget, 1, 0, 1, 1);
 
   gtk_widget_show_all (row);
+
+  /* if this connection is the active one or is being activated, then make sure
+   * it's sorted before all others */
+  if (activating || activated)
+    strength = G_MAXUINT;
 
   g_object_set_data (G_OBJECT (row), "object-path", (gpointer) object_path);
   g_object_set_data (G_OBJECT (row), "ssid", (gpointer) ssid);
   g_object_set_data (G_OBJECT (row), "strength", GUINT_TO_POINTER (strength));
 
-  gtk_container_add (GTK_CONTAINER (priv->network_list), row);
+  widget = gtk_list_box_row_new ();
+  gtk_container_add (GTK_CONTAINER (widget), row);
+  gtk_widget_show (widget);
+  gtk_container_add (GTK_CONTAINER (priv->network_list), widget);
 }
 
 static void
@@ -300,7 +322,20 @@ add_access_point_other (GisNetworkPage *page)
   gtk_container_add (GTK_CONTAINER (priv->network_list), row);
 }
 
-static void refresh_wireless_list (GisNetworkPage *page);
+static gboolean refresh_wireless_list (GisNetworkPage *page);
+
+static void
+cancel_periodic_refresh (GisNetworkPage *page)
+{
+  GisNetworkPagePrivate *priv = gis_network_page_get_instance_private (page);
+
+  if (priv->refresh_timeout_id == 0)
+    return;
+
+  g_debug ("Stopping periodic/scheduled Wi-Fi list refresh");
+
+  g_clear_handle_id (&priv->refresh_timeout_id, g_source_remove);
+}
 
 static gboolean
 refresh_again (gpointer user_data)
@@ -311,6 +346,20 @@ refresh_again (gpointer user_data)
 }
 
 static void
+start_periodic_refresh (GisNetworkPage *page)
+{
+  GisNetworkPagePrivate *priv = gis_network_page_get_instance_private (page);
+  static const guint periodic_wifi_refresh_timeout_sec = 10;
+
+  cancel_periodic_refresh (page);
+
+  g_debug ("Starting periodic Wi-Fi list refresh (every %u secs)",
+           periodic_wifi_refresh_timeout_sec);
+  priv->refresh_timeout_id = g_timeout_add_seconds (periodic_wifi_refresh_timeout_sec,
+                                                    refresh_again, page);
+}
+
+static gboolean
 refresh_wireless_list (GisNetworkPage *page)
 {
   GisNetworkPagePrivate *priv = gis_network_page_get_instance_private (page);
@@ -320,16 +369,15 @@ refresh_wireless_list (GisNetworkPage *page)
   GPtrArray *unique_aps;
   guint i;
   GList *children, *l;
+  gboolean enabled;
+
+  g_debug ("Refreshing Wi-Fi networks list");
 
   priv->refreshing = TRUE;
 
   g_assert (NM_IS_DEVICE_WIFI (priv->nm_device));
 
-  if (priv->refresh_timeout_id != 0)
-    {
-      g_source_remove (priv->refresh_timeout_id);
-      priv->refresh_timeout_id = 0;
-    }
+  cancel_periodic_refresh (page);
 
   active_ap = nm_device_wifi_get_active_access_point (NM_DEVICE_WIFI (priv->nm_device));
 
@@ -339,31 +387,33 @@ refresh_wireless_list (GisNetworkPage *page)
   g_list_free (children);
 
   aps = nm_device_wifi_get_access_points (NM_DEVICE_WIFI (priv->nm_device));
+  enabled = nm_client_wireless_get_enabled (priv->nm_client);
 
   if (aps == NULL || aps->len == 0) {
-    gboolean enabled, hw_enabled;
+    gboolean hw_enabled;
 
-    enabled = nm_client_wireless_get_enabled (priv->nm_client);
     hw_enabled = nm_client_wireless_hardware_get_enabled (priv->nm_client);
 
     if (!enabled || !hw_enabled) {
       gtk_label_set_text (GTK_LABEL (priv->no_network_label), _("Wireless networking is disabled"));
       gtk_widget_show (priv->no_network_label);
+      gtk_widget_hide (priv->no_network_spinner);
 
       gtk_widget_set_visible (priv->turn_on_label, hw_enabled);
       gtk_widget_set_visible (priv->turn_on_switch, hw_enabled);
     } else {
       gtk_label_set_text (GTK_LABEL (priv->no_network_label), _("Checking for available wireless networks"));
+      gtk_widget_show (priv->no_network_spinner);
       gtk_widget_show (priv->no_network_label);
       gtk_widget_hide (priv->turn_on_label);
       gtk_widget_hide (priv->turn_on_switch);
     }
 
     gtk_widget_hide (priv->scrolled_window);
-    priv->refresh_timeout_id = g_timeout_add_seconds (1, refresh_again, page);
     goto out;
 
   } else {
+    gtk_widget_hide (priv->no_network_spinner);
     gtk_widget_hide (priv->no_network_label);
     gtk_widget_hide (priv->turn_on_label);
     gtk_widget_hide (priv->turn_on_switch);
@@ -379,7 +429,31 @@ refresh_wireless_list (GisNetworkPage *page)
   add_access_point_other (page);
 
  out:
+
+  if (enabled)
+    start_periodic_refresh (page);
+
   priv->refreshing = FALSE;
+
+  return G_SOURCE_REMOVE;
+}
+
+/* Avoid repeated calls to refreshing the wireless list by making it refresh at
+ * most once per second */
+static void
+schedule_refresh_wireless_list (GisNetworkPage *page)
+{
+  static const guint refresh_wireless_list_timeout_sec = 1;
+  GisNetworkPagePrivate *priv = gis_network_page_get_instance_private (page);
+
+  cancel_periodic_refresh (page);
+
+  g_debug ("Delaying Wi-Fi list refresh (for %u sec)",
+           refresh_wireless_list_timeout_sec);
+
+  priv->refresh_timeout_id = g_timeout_add_seconds (refresh_wireless_list_timeout_sec,
+                                                    (GSourceFunc) refresh_wireless_list,
+                                                    page);
 }
 
 static void
@@ -388,7 +462,6 @@ connection_activate_cb (GObject *object,
                         gpointer user_data)
 {
   NMClient *client = NM_CLIENT (object);
-  GisNetworkPage *page = GIS_NETWORK_PAGE (user_data);
   NMActiveConnection *connection;
   GError *error = NULL;
 
@@ -399,7 +472,6 @@ connection_activate_cb (GObject *object,
     /* failed to activate */
     g_warning ("Failed to activate a connection: %s", error->message);
     g_error_free (error);
-    refresh_wireless_list (page);
   }
 }
 
@@ -409,7 +481,6 @@ connection_add_activate_cb (GObject *object,
                             gpointer user_data)
 {
   NMClient *client = NM_CLIENT (object);
-  GisNetworkPage *page = GIS_NETWORK_PAGE (user_data);
   NMActiveConnection *connection;
   GError *error = NULL;
 
@@ -420,7 +491,6 @@ connection_add_activate_cb (GObject *object,
     /* failed to activate */
     g_warning ("Failed to add and activate a connection: %s", error->message);
     g_error_free (error);
-    refresh_wireless_list (page);
   }
 }
 
@@ -490,7 +560,7 @@ row_activated (GtkListBox *box,
                                          priv->nm_device, NULL,
                                          NULL,
                                          connection_activate_cb, page);
-    goto out;
+    return;
   }
 
   nm_client_add_and_activate_connection_async (priv->nm_client,
@@ -500,13 +570,13 @@ row_activated (GtkListBox *box,
                                                connection_add_activate_cb, page);
 
  out:
-  refresh_wireless_list (page);
+  schedule_refresh_wireless_list (page);
 }
 
 static void
 connection_state_changed (NMActiveConnection *c, GParamSpec *pspec, GisNetworkPage *page)
 {
-  refresh_wireless_list (page);
+  schedule_refresh_wireless_list (page);
 }
 
 static void
@@ -526,8 +596,6 @@ active_connections_changed (NMClient *client, GParamSpec *pspec, GisNetworkPage 
       g_object_set_data (G_OBJECT (connection), "has-state-changed-handler", GINT_TO_POINTER (1));
     }
   }
-
-  refresh_wireless_list (page);
 }
 
 static void
@@ -538,6 +606,7 @@ sync_complete (GisNetworkPage *page)
 
   activated = (nm_device_get_state (priv->nm_device) == NM_DEVICE_STATE_ACTIVATED);
   gis_page_set_complete (GIS_PAGE (page), activated);
+  schedule_refresh_wireless_list (page);
 }
 
 static void
@@ -594,7 +663,10 @@ gis_network_page_constructed (GObject *object)
     goto out;
   }
 
-  if (nm_device_get_state (priv->nm_device) == NM_DEVICE_STATE_ACTIVATED) {
+  /* Allow to always show the network, even if there's an active connection, for
+   * debugging purposes */
+  if (g_getenv ("GIS_ALWAYS_SHOW_NETWORK_PAGE") == NULL &&
+      nm_device_get_state (priv->nm_device) == NM_DEVICE_STATE_ACTIVATED) {
     g_debug ("Activated network device found, hiding network page");
     goto out;
   }
@@ -612,7 +684,6 @@ gis_network_page_constructed (GObject *object)
   g_signal_connect (priv->network_list, "row-activated",
                     G_CALLBACK (row_activated), page);
 
-  refresh_wireless_list (page);
   sync_complete (page);
 
   gis_page_set_skippable (GIS_PAGE (page), TRUE);
@@ -631,11 +702,7 @@ gis_network_page_dispose (GObject *object)
   g_clear_object (&priv->nm_device);
   g_clear_object (&priv->icons);
 
-  if (priv->refresh_timeout_id != 0)
-    {
-      g_source_remove (priv->refresh_timeout_id);
-      priv->refresh_timeout_id = 0;
-    }
+  cancel_periodic_refresh (page);
 
   G_OBJECT_CLASS (gis_network_page_parent_class)->dispose (object);
 }
@@ -657,6 +724,7 @@ gis_network_page_class_init (GisNetworkPageClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisNetworkPage, network_list);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisNetworkPage, scrolled_window);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisNetworkPage, no_network_label);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisNetworkPage, no_network_spinner);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisNetworkPage, turn_on_label);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisNetworkPage, turn_on_switch);
 
