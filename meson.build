@@ -1,6 +1,6 @@
 project('gnome-initial-setup',
         ['c'],
-        version: '3.29.1',
+        version: '3.29.92',
         license: 'GPLv2',
         meson_version: '>= 0.47.0',
 )
@@ -17,9 +17,8 @@ libexec_dir = join_paths(prefix, get_option('libexecdir'))
 source_root = join_paths(meson.source_root(), 'gnome-initial-setup')
 pkgdata_dir = join_paths(prefix, meson.project_name())
 
-if get_option('vendor-conf-file') == ''
-    vendor_conf_file = get_option('vendor-conf-file')
-else
+vendor_conf_file = get_option('vendor-conf-file')
+if vendor_conf_file == ''
     vendor_conf_file = join_paths(data_dir, 'gnome-initial-setup', 'vendor.conf')
 endif
 
@@ -29,6 +28,7 @@ conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 conf.set_quoted('GNOMELOCALEDIR', locale_dir)
 conf.set_quoted('PKGDATADIR', pkgdata_dir)
 conf.set('ENABLE_REGION_PAGE', get_option('region-page'))
+conf.set('SECRET_API_SUBJECT_TO_CHANGE', true)
 
 # Needed for the 'account' page
 cheese_dep = dependency ('cheese',
