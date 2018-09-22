@@ -307,6 +307,9 @@ map_location_changed (CcTimezoneMap   *map,
 {
   GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
 
+  gtk_widget_set_visible (priv->search_overlay, (location == NULL));
+  gis_page_set_complete (GIS_PAGE (page), (location != NULL));
+
   if (!priv->in_search)
     gtk_entry_set_text (GTK_ENTRY (priv->search_entry), "");
 
@@ -462,11 +465,10 @@ gis_timezone_page_init (GisTimezonePage *page)
   gtk_widget_init_template (GTK_WIDGET (page));
 }
 
-void
+GisPage *
 gis_prepare_timezone_page (GisDriver *driver)
 {
-  gis_driver_add_page (driver,
-                       g_object_new (GIS_TYPE_TIMEZONE_PAGE,
-                                     "driver", driver,
-                                     NULL));
+  return g_object_new (GIS_TYPE_TIMEZONE_PAGE,
+                       "driver", driver,
+                       NULL);
 }

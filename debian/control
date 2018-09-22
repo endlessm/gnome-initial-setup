@@ -36,10 +36,12 @@ Build-Depends: debhelper (>= 11),
                libpwquality-dev,
                librest-dev,
                libsecret-1-dev,
-               libwebkit2gtk-4.0-dev
-Standards-Version: 4.1.2
+               libwebkit2gtk-4.0-dev,
+               meson (>= 0.47.0)
+Rules-Requires-Root: no
+Standards-Version: 4.1.5
 Vcs-Browser: https://salsa.debian.org/gnome-team/gnome-initial-setup
-Vcs-Git: https://salsa.debian.org/gnome-team/gnome-initial-setup.git
+Vcs-Git: https://salsa.debian.org/gnome-team/gnome-initial-setup.git -b debian/experimental
 Homepage: https://git.gnome.org/browse/gnome-initial-setup/
 
 Package: gnome-initial-setup
