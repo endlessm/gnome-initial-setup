@@ -1,8 +1,10 @@
-gnome-initial-setup (3.30.0-1) UNRELEASED; urgency=medium
+gnome-initial-setup (3.30.0-1) unstable; urgency=medium
 
   * New upstream release
+  * Bump Standards-Version to 4.2.1
+  * Release to unstable
 
- -- Jeremy Bicha <jbicha@debian.org>  Sat, 22 Sep 2018 19:06:32 -0400
+ -- Jeremy Bicha <jbicha@debian.org>  Sat, 22 Sep 2018 19:09:38 -0400
 
 gnome-initial-setup (3.29.92-1) experimental; urgency=medium
 
@@ -18,7 +20,7 @@ gnome-initial-setup (3.29.1-1) experimental; urgency=medium
   * d/p/use-Ubuntu-icon-on-Ubuntu.patch: Drop, this is already upstream
   * Standards-Version: 4.1.5 (no changes required)
   * Set Rules-Requires-Root to no
-  * Build with meson 
+  * Build with meson
 
  -- Andrea Azzarone <andrea.azzarone@canonical.com>  Wed, 01 Aug 2018 16:09:43 +0200
 
