@@ -4,16 +4,17 @@
 # 
 # Translators:
 # Andika Triwidada <andika@gmail.com>, 2012-2015
+# Harry Suryapambagya <harsxv@gmail.com>, 2018
 # Kukuh Syafaat <syafaatkukuh@gmail.com>, 2017
-# Roddy Shuler <roddy@endlessm.com>, 2017-2018
+# Roddy Shuler <roddy@stanfordalumni.org>, 2017-2018
 # Septira Taruna <septira@endlessm.com>, 2017-2018
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-17 12:06-0700\n"
-"PO-Revision-Date: 2018-07-17 20:14+0000\n"
-"Last-Translator: Philip Chimento <philip.chimento@gmail.com>\n"
+"PO-Revision-Date: 2018-09-11 18:08+0000\n"
+"Last-Translator: Harry Suryapambagya <harsxv@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/endless-os/gnome-initial-setup/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +41,7 @@ msgstr "Lewa_ti"
 
 #: ../gnome-initial-setup/gis-assistant.c:464
 msgid "_Previous"
-msgstr "Se_belumnya"
+msgstr "_Sebelumnya"
 
 #: ../gnome-initial-setup/gis-assistant.c:465
 msgid "_Cancel"
@@ -102,7 +103,7 @@ msgstr "Paksakan mode pengguna yang ada"
 
 #: ../gnome-initial-setup/gnome-initial-setup.c:247
 msgid "— GNOME initial setup"
-msgstr "— GNOME penyiapan awal"
+msgstr "— penyiapan awal GNOME"
 
 #: ../gnome-initial-setup/pages/account/gis-account-page.c:284
 #: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
@@ -243,7 +244,7 @@ msgstr "Tak bisa menyambung ke domain %s: %s"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:247
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr "Maaf, nama pengguna itu tidak tersedia. Silakan coba yang lain."
+msgstr "Maaf, nama pengguna tersebut tidak tersedia. Silakan coba yang lain."
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
@@ -258,7 +259,7 @@ msgstr "Nama pengguna tidak boleh diawali dengan “-”."
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr "Nama pengguna mesti hanya terdiri dari huruf besar dan kecil dari a-z, dijit, dan karakter berikut: . - _"
+msgstr "Nama pengguna hanya bisa terdiri dari huruf kecil dan besar a-z, angka, dan karakter: . - _"
 
 #: ../gnome-initial-setup/pages/account/um-utils.c:260
 msgid "This will be used to name your home folder and can’t be changed."
@@ -478,7 +479,7 @@ msgstr "Wi-Fi"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr "Terhubung ke internet membantu Anda mendapatkan aplikasi baru, informasi, serta upgrade lainnya. Juga membantu mengatur waktu dan lokasi Anda secara otomatis."
+msgstr "Terhubung ke internet membantu Anda mendapatkan aplikasi baru, informasi, serta pembaruan lainnya. Juga membantu mengatur waktu dan lokasi Anda secara otomatis."
 
 #: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
 msgid "No wireless available"
@@ -544,83 +545,83 @@ msgstr "Sandi tanpa nama pengguna Anda akan lebih kuat."
 #: ../gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "Try to avoid using your name in the password."
-msgstr "Try to avoid using your name in the password."
+msgstr "Cobalah untuk menghindari penggunaan nama Anda dalam kata sandi."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid "Try to avoid some of the words included in the password."
-msgstr "Cobalah menghindari beberapa kata yang disertakan dalam sandi."
+msgstr "Cobalah untuk menghindari beberapa kata yang disertakan dalam kata sandi."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "Try to avoid common words."
-msgstr "Cobalah menghindari kata-kata umum."
+msgstr "Cobalah untuk menghindari kata-kata umum."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "Try to avoid reordering existing words."
-msgstr "Cobalah menghindari menata ulang kata yang ada."
+msgstr "Cobalah untuk menghindari menata ulang kata-kata yang sama."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "Try to use more numbers."
-msgstr "Cobalah memakai lebih banyak angka."
+msgstr "Cobalah untuk memakai lebih banyak angka."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "Try to use more uppercase letters."
-msgstr "Cobalah memakai lebih banyak huruf besar."
+msgstr "Cobalah untuk memakai lebih banyak huruf besar."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "Try to use more lowercase letters."
-msgstr "Cobalah memakai lebih banyak huruf kecil."
+msgstr "Cobalah untuk memakai lebih banyak huruf kecil."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid "Try to use more special characters, like punctuation."
-msgstr "Cobalah memakai lebih banyak karakter khusus, seperti tanda seru."
+msgstr "Cobalah untuk memakai lebih banyak karakter spesial, seperti tanda seru."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid "Try to use a mixture of letters, numbers and punctuation."
-msgstr "Cobalah memakai campuran huruf, angka, dan tanda baca."
+msgstr "Cobalah untuk memakai campuran huruf, angka, dan tanda baca."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "Try to avoid repeating the same character."
-msgstr "Cobalah menghindari pengulangan karakter yang sama."
+msgstr "Cobalah untuk menghindari pengulangan karakter yang sama."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "Try to avoid repeating the same type of character: you need to mix up "
 "letters, numbers and punctuation."
-msgstr "Cobalah menghindari pengulangan tipe karakter yang sama: Anda perlu mencampur huruf, angka, dan tanda baca."
+msgstr "Cobalah untuk menghindari pengulangan tipe karakter yang sama: Anda perlu mencampur huruf, angka, dan tanda baca."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "Try to avoid sequences like 1234 or abcd."
-msgstr "Cobalah menghindari urutan seperti 1234 atau abcd."
+msgstr "Cobalah untuk menghindari urutan seperti 1234 atau abcd."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "Password needs to be longer. Try to add more letters, numbers and "
 "punctuation."
-msgstr "Password harus lebih panjang. Cobalah memakai campuran huruf, angka, dan tanda baca."
+msgstr "Password harus lebih panjang. Cobalah untuk memakai campuran huruf, angka, dan tanda baca."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr "Campurkan huruf besar dan kecil dan pakailah satu atau dua angka."
+msgstr "Campurkan huruf besar dan kecil dan cobalah untuk memakai satu atau dua angka."
 
 #: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password "
 "stronger."
-msgstr "Menambah lebih banyak huruf, angka, dan tanda baca akan membuatnya lebih kuat."
+msgstr "Menambah lebih banyak huruf, angka, dan tanda baca akan membuat kata sandi lebih kuat."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -689,41 +690,41 @@ msgstr "Pilih wilayah atau negara Anda."
 
 #: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:1
 msgid "Site"
-msgstr ""
+msgstr "Situs"
 
 #: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:2
 msgid ""
 "At which site is this computer located? Search for your site here. You may "
 "enter manually if there is no match."
-msgstr ""
+msgstr "Pada situs mana komputer ini berada? Cari situs Anda disini. Anda dapat memasukkannya secara manual jika tidak ada kecocokan."
 
 #: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:3
 msgid "enter manually"
-msgstr ""
+msgstr "masukkan secara manual"
 
 #: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:4
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:5
 msgid "Facility"
-msgstr ""
+msgstr "Fasilitas"
 
 #: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:6
 msgid "Street address"
-msgstr ""
+msgstr "Alamat jalan"
 
 #: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:7
 msgid "City"
-msgstr ""
+msgstr "Kota"
 
 #: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:8
 msgid "State"
-msgstr ""
+msgstr "Wilayah"
 
 #: ../gnome-initial-setup/pages/site/gis-site-page.ui.h:9
 msgid "Country"
-msgstr ""
+msgstr "Negara"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
