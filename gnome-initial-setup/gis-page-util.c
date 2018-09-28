@@ -38,6 +38,7 @@
 #define OSRELEASE_FILE      "/etc/os-release"
 #define SERIAL_VERSION_FILE "/sys/devices/virtual/dmi/id/product_uuid"
 #define DT_COMPATIBLE_FILE  "/proc/device-tree/compatible"
+#define SYSROOT_MOUNT       "/sysroot"
 #define SD_CARD_MOUNT       LOCALSTATEDIR "/endless-extra"
 
 static GtkBuilder *
@@ -369,6 +370,7 @@ gis_page_util_show_factory_dialog (GisPage *page)
   GtkButton *testmode_button;
   GtkDialog *factory_dialog;
   GtkImage *serial_image;
+  GtkLabel *image_version_label;
   GtkLabel *sdcard_label;
   GtkLabel *serial_label;
   GtkLabel *product_id_label;
@@ -377,7 +379,9 @@ gis_page_util_show_factory_dialog (GisPage *page)
   gchar *barcode;
   gchar *barcode_serial, *display_serial;
   gchar *version;
+  gchar *image_version;
   gchar *sd_version = NULL;
+  gchar *image_version_text;
   gchar *sd_text;
   gchar *product_id_text;
 
@@ -390,6 +394,7 @@ gis_page_util_show_factory_dialog (GisPage *page)
   factory_dialog = (GtkDialog *)gtk_builder_get_object (builder, "factory-dialog");
   version_label = (GtkLabel *)gtk_builder_get_object (builder, "software-version");
   product_id_label = (GtkLabel *)gtk_builder_get_object (builder, "product-id");
+  image_version_label = (GtkLabel *)gtk_builder_get_object (builder, "image-version");
   sdcard_label = (GtkLabel *)gtk_builder_get_object (builder, "sd-card");
   serial_label = (GtkLabel *)gtk_builder_get_object (builder, "serial-text");
   serial_image = (GtkImage *)gtk_builder_get_object (builder, "serial-barcode");
@@ -417,6 +422,15 @@ gis_page_util_show_factory_dialog (GisPage *page)
     gtk_widget_set_visible (GTK_WIDGET (serial_label), FALSE);
     gtk_widget_set_visible (GTK_WIDGET (serial_image), FALSE);
   }
+
+  image_version = gis_page_util_get_image_version (SYSROOT_MOUNT, NULL);
+  if (!image_version)
+    sd_version = g_strdup (_("Unknown"));
+
+  image_version_text = g_strdup_printf (_("Image: %s"), image_version);
+  gtk_label_set_text (image_version_label, image_version_text);
+  g_free (image_version);
+  g_free (image_version_text);
 
   if (get_have_sdcard ())
     sd_version = gis_page_util_get_image_version (SD_CARD_MOUNT, NULL);
