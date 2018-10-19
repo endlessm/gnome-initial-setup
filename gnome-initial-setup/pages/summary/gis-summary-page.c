@@ -39,9 +39,12 @@
 
 #define SERVICE_NAME "gdm-password"
 
+#define HACK_PRODUCT_NAME "hack"
+
 struct _GisSummaryPagePrivate {
   GtkWidget *start_button;
   GtkWidget *start_button_label;
+  GtkWidget *hack_box;
   GtkWidget *tagline;
   GtkWidget *title;
   GtkWidget *warning_box;
@@ -339,6 +342,10 @@ gis_summary_page_constructed (GObject *object)
                             "lost forever when you restart or shutdown the computer.</b>"));
   }
 
+  /* Show the right contents for Hack images */
+  if (gis_driver_is_product (GIS_PAGE (page)->driver, HACK_PRODUCT_NAME))
+    gtk_widget_show_all (priv->hack_box);
+
   gtk_widget_show (GTK_WIDGET (page));
 }
 
@@ -362,6 +369,7 @@ gis_summary_page_class_init (GisSummaryPageClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, tagline);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, title);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, warning_box);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, hack_box);
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_summary_page_locale_changed;
