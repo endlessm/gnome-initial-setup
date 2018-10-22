@@ -92,6 +92,8 @@ struct _GisDriverPrivate {
 
   GKeyFile *vendor_conf_file;
 
+  gchar *product_name;
+
   /* Cancelled on shutdown */
   GCancellable *cancellable;
 };
@@ -187,6 +189,28 @@ get_image_version (void)
   return image_version;
 }
 
+static gchar *
+get_product_from_image_version (const gchar *image_version)
+{
+  gchar *hyphen_index = NULL;
+
+  if (image_version == NULL)
+    return NULL;
+
+  hyphen_index = index (image_version, '-');
+  if (hyphen_index == NULL)
+    return NULL;
+
+  return g_strndup (image_version, hyphen_index - image_version);
+}
+
+gboolean
+gis_driver_is_product (GisDriver *driver, const gchar *product_name)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  return g_strcmp0 (priv->product_name, product_name) == 0;
+}
+
 static gboolean
 image_supports_demo_mode (const gchar *image_version)
 {
@@ -208,6 +232,7 @@ gis_driver_finalize (GObject *object)
   GisDriver *driver = GIS_DRIVER (object);
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
 
+  g_free (priv->product_name);
   g_free (priv->lang_id);
   g_free (priv->username);
   g_free (priv->user_password);
@@ -869,6 +894,8 @@ gis_driver_startup (GApplication *app)
   gtk_widget_show (GTK_WIDGET (priv->assistant));
 
   image_version = get_image_version ();
+
+  priv->product_name = get_product_from_image_version (image_version);
 
   check_live_session (driver, image_version);
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
