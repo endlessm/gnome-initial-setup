@@ -51,6 +51,10 @@ struct _GisSummaryPagePrivate {
 
   ActUser *user_account;
   const gchar *user_password;
+
+  GDBusProxy *clippy_proxy;
+  gulong clippy_proxy_signal_id;
+  guint clippy_timeout_id;
 };
 typedef struct _GisSummaryPagePrivate GisSummaryPagePrivate;
 
@@ -219,7 +223,7 @@ log_user_in (GisSummaryPage *page)
 }
 
 static void
-done_cb (GtkButton *button, GisSummaryPage *page)
+finish_fbe (GisSummaryPage *page)
 {
   gis_ensure_stamp_files ();
 
@@ -234,6 +238,123 @@ done_cb (GtkButton *button, GisSummaryPage *page)
     default:
       break;
     }
+}
+
+static void
+initial_contact_app_signal (GDBusProxy *proxy,
+                            gchar *sender,
+                            gchar *signal_name,
+                            GVariant *parameters,
+                            gpointer user_data)
+{
+  GisSummaryPage *page = user_data;
+  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
+  const gchar *object, *property;
+  g_autoptr(GVariant) value = NULL;
+
+  if (g_strcmp0 (signal_name, "ObjectNotify") != 0)
+    return;
+
+  g_return_if_fail (g_variant_is_of_type (parameters, G_VARIANT_TYPE ("(ssv)")));
+
+  g_variant_get (parameters, "(&s&sv)", &object, &property, &value);
+
+  if (g_strcmp0 (object, "view.JSContext.globalParameters") != 0)
+    return;
+
+  if (g_strcmp0 (property, "unlocked") != 0)
+    return;
+
+  g_return_if_fail (g_variant_is_of_type (value, G_VARIANT_TYPE_BOOLEAN));
+
+  if (g_variant_get_boolean (value))
+    {
+      g_signal_handler_disconnect (priv->clippy_proxy,
+                                   priv->clippy_proxy_signal_id);
+      finish_fbe (page);
+    }
+}
+
+static void
+initial_contact_connect_to_clippy (GisSummaryPage *page)
+{
+  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
+  g_autoptr(GError) error = NULL;
+
+  g_dbus_proxy_call_sync (priv->clippy_proxy,
+                          "Connect",
+                          g_variant_new ("(sss)",
+                                         "view.JSContext.globalParameters",
+                                         "notify",
+                                         "unlocked"),
+                          G_DBUS_CALL_FLAGS_NONE,
+                          G_MAXINT,
+                          NULL,
+                          &error);
+
+  if (error != NULL)
+    {
+      g_critical ("Could not call Connect on DBus proxy for HackUnlock App: %s", error->message);
+
+      finish_fbe (page);
+      return;
+    }
+
+  priv->clippy_proxy_signal_id =
+    g_signal_connect (priv->clippy_proxy, "g-signal",
+                      G_CALLBACK (initial_contact_app_signal), page);
+}
+
+static gboolean
+initial_contact_connect_to_clippy_timeout (gpointer data)
+{
+  GisSummaryPage *page = data;
+  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
+
+  priv->clippy_timeout_id = 0;
+  initial_contact_connect_to_clippy (page);
+
+  return G_SOURCE_REMOVE;
+}
+
+static void
+run_initial_contact_app (GisSummaryPage *page)
+{
+  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
+  g_autoptr(GError) error = NULL;
+
+  priv->clippy_proxy =
+    g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                   G_DBUS_PROXY_FLAGS_NONE,
+                                   NULL,
+                                   "com.endlessm.HackUnlock",
+                                   "/com/endlessm/HackUnlock",
+                                   "com.endlessm.Clippy",
+                                   NULL,
+                                   &error);
+
+  if (error != NULL)
+    {
+      g_critical ("Could not get DBus proxy for HackUnlock App: %s", error->message);
+
+      finish_fbe (page);
+      return;
+    }
+
+  /* FIXME: we need to add a timeout because the Clippy interface is not available
+   * yet... See https://phabricator.endlessm.com/T24047 */
+  priv->clippy_timeout_id =
+    g_timeout_add_seconds (1, initial_contact_connect_to_clippy_timeout, page);
+}
+
+static void
+done_cb (GtkButton *button, GisSummaryPage *page)
+{
+  if (gis_driver_is_product (GIS_PAGE (page)->driver, HACK_PRODUCT_NAME) ||
+      g_getenv ("HACK_DEBUG_INITIAL_CONTACT") != NULL)
+    run_initial_contact_app (page);
+  else
+    finish_fbe (page);
 }
 
 static void
@@ -350,6 +471,30 @@ gis_summary_page_constructed (GObject *object)
 }
 
 static void
+gis_summary_page_finalize (GObject *object)
+{
+  GisSummaryPage *page = GIS_SUMMARY_PAGE (object);
+  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
+
+  if (priv->clippy_proxy_signal_id)
+    {
+      g_signal_handler_disconnect (priv->clippy_proxy,
+                                   priv->clippy_proxy_signal_id);
+      priv->clippy_proxy_signal_id = 0;
+    }
+
+  if (priv->clippy_timeout_id)
+    {
+      g_source_remove (priv->clippy_timeout_id);
+      priv->clippy_timeout_id = 0;
+    }
+
+  g_clear_object (&priv->clippy_proxy);
+
+  G_OBJECT_CLASS (gis_summary_page_parent_class)->finalize (object);
+}
+
+static void
 gis_summary_page_locale_changed (GisPage *page)
 {
   gis_page_set_title (page, _("Ready to Go"));
@@ -375,6 +520,7 @@ gis_summary_page_class_init (GisSummaryPageClass *klass)
   page_class->locale_changed = gis_summary_page_locale_changed;
   page_class->shown = gis_summary_page_shown;
   object_class->constructed = gis_summary_page_constructed;
+  object_class->finalize = gis_summary_page_finalize;
 }
 
 static void
