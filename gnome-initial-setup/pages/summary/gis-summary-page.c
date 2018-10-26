@@ -328,7 +328,7 @@ run_initial_contact_app (GisSummaryPage *page)
                                    G_DBUS_PROXY_FLAGS_NONE,
                                    NULL,
                                    "com.endlessm.HackUnlock",
-                                   "/com/endlessm/HackUnlock",
+                                   "/com/endlessm/Clippy",
                                    "com.endlessm.Clippy",
                                    NULL,
                                    &error);
