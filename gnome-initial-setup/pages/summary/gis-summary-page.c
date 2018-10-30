@@ -54,7 +54,6 @@ struct _GisSummaryPagePrivate {
 
   GDBusProxy *clippy_proxy;
   gulong clippy_proxy_signal_id;
-  guint clippy_timeout_id;
 };
 typedef struct _GisSummaryPagePrivate GisSummaryPagePrivate;
 
@@ -305,18 +304,6 @@ initial_contact_connect_to_clippy (GisSummaryPage *page)
                       G_CALLBACK (initial_contact_app_signal), page);
 }
 
-static gboolean
-initial_contact_connect_to_clippy_timeout (gpointer data)
-{
-  GisSummaryPage *page = data;
-  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
-
-  priv->clippy_timeout_id = 0;
-  initial_contact_connect_to_clippy (page);
-
-  return G_SOURCE_REMOVE;
-}
-
 static void
 run_initial_contact_app (GisSummaryPage *page)
 {
@@ -328,7 +315,7 @@ run_initial_contact_app (GisSummaryPage *page)
                                    G_DBUS_PROXY_FLAGS_NONE,
                                    NULL,
                                    "com.endlessm.HackUnlock",
-                                   "/com/endlessm/HackUnlock",
+                                   "/com/endlessm/Clippy",
                                    "com.endlessm.Clippy",
                                    NULL,
                                    &error);
@@ -341,10 +328,7 @@ run_initial_contact_app (GisSummaryPage *page)
       return;
     }
 
-  /* FIXME: we need to add a timeout because the Clippy interface is not available
-   * yet... See https://phabricator.endlessm.com/T24047 */
-  priv->clippy_timeout_id =
-    g_timeout_add_seconds (1, initial_contact_connect_to_clippy_timeout, page);
+  initial_contact_connect_to_clippy (page);
 }
 
 static void
@@ -481,12 +465,6 @@ gis_summary_page_finalize (GObject *object)
       g_signal_handler_disconnect (priv->clippy_proxy,
                                    priv->clippy_proxy_signal_id);
       priv->clippy_proxy_signal_id = 0;
-    }
-
-  if (priv->clippy_timeout_id)
-    {
-      g_source_remove (priv->clippy_timeout_id);
-      priv->clippy_timeout_id = 0;
     }
 
   g_clear_object (&priv->clippy_proxy);
