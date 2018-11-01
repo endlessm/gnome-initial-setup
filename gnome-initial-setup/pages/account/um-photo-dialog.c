@@ -37,8 +37,13 @@
 #include "um-photo-dialog.h"
 #include "um-utils.h"
 
+#include "gnome-initial-setup.h"
+
 #define ROW_SPAN 5
 #define AVATAR_PIXEL_SIZE 72
+
+#define CONFIG_ACCOUNT_GROUP "page.account"
+#define CONFIG_ACCOUNT_FACESDIR_KEY "faces"
 
 struct _UmPhotoDialog {
         GtkPopover parent;
@@ -189,13 +194,53 @@ create_face_widget (gpointer item,
         return image;
 }
 
+static GSList *
+get_facesdirs (void)
+{
+        GSList *facesdirs = NULL;
+        const gchar * const * data_dirs;
+        int i;
+        const char *facesdir_env;
+        GisDriver *driver;
+
+        facesdir_env = g_getenv ("GIS_ACCOUNT_PAGE_FACESDIR");
+        if (facesdir_env != NULL && g_strcmp0 (facesdir_env, "") != 0) {
+                facesdirs = g_slist_prepend (facesdirs,
+                                             g_strdup (facesdir_env));
+        }
+
+        /* This code will look for options under the "account" group, and
+         * supports the following keys:
+         *   - faces: directory to scan for avatar faces.
+         *
+         * This is how this file would look on a vendor image:
+         *
+         *   [account]
+         *   faces=/path/to/faces/dir
+         */
+        driver = GIS_DRIVER (g_application_get_default ());
+        char *path = gis_driver_conf_get_string (driver,
+                                                 CONFIG_ACCOUNT_GROUP,
+                                                 CONFIG_ACCOUNT_FACESDIR_KEY);
+        if (path)
+                facesdirs = g_slist_prepend (facesdirs, path);
+
+
+        data_dirs = g_get_system_data_dirs ();
+        for (i = 0; data_dirs[i] != NULL; i++) {
+                char *path = g_build_filename (data_dirs[i], "pixmaps", "faces", NULL);
+                facesdirs = g_slist_prepend (facesdirs, path);
+        }
+
+        return g_slist_reverse (facesdirs);
+}
+
 static void
 setup_photo_popup (UmPhotoDialog *um)
 {
         GFileType type;
         const gchar *target;
-        const gchar * const * dirs;
-        guint i;
+        GSList *facesdirs, *facesdir_it;
         gboolean added_faces;
 
         um->faces = g_list_store_new (G_TYPE_FILE);
@@ -218,14 +263,13 @@ setup_photo_popup (UmPhotoDialog *um)
                           G_CALLBACK (generated_avatar_activated), um);
         um->custom_avatar_was_chosen = FALSE;
 
-        dirs = g_get_system_data_dirs ();
-        for (i = 0; dirs[i] != NULL; i++) {
+        facesdirs = get_facesdirs ();
+        for (facesdir_it = facesdirs; facesdir_it; facesdir_it = facesdir_it->next) {
                 g_autoptr(GFileEnumerator) enumerator = NULL;
                 g_autoptr(GFile) dir = NULL;
-                g_autofree gchar *path = NULL;
                 gpointer infoptr;
+                const char *path = facesdir_it->data;
 
-                path = g_build_filename (dirs[i], "pixmaps", "faces", NULL);
                 dir = g_file_new_for_path (path);
 
                 enumerator = g_file_enumerate_children (dir,
@@ -259,6 +303,8 @@ setup_photo_popup (UmPhotoDialog *um)
                 if (added_faces)
                         break;
         }
+
+        g_slist_free_full (facesdirs, g_free);
 
 #ifdef HAVE_CHEESE
         gtk_widget_set_visible (um->take_picture_button, TRUE);
