@@ -32,6 +32,7 @@ conf.set('ENABLE_REGION_PAGE', get_option('region-page'))
 conf.set_quoted('LIBEXECDIR', join_paths(prefix, get_option('libexecdir')))
 conf.set_quoted('LOCALSTATEDIR', local_state_dir)
 conf.set_quoted('DEMOVIDEODATADIR', join_paths(data_dir, 'eos-demo-mode'))
+conf.set_quoted('ACCOUNT_PAGE_FACESDIR', get_option('account-page-faces-dir'))
 conf.set('SECRET_API_SUBJECT_TO_CHANGE', true)
 
 # Needed for the 'account' page
