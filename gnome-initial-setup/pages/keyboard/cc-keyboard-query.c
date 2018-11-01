@@ -197,41 +197,6 @@ cc_keyboard_query_layout_result (CcKeyboardQuery *self,
   g_free (result_message);
 }
 
-static gboolean
-is_event_on_title (CcKeyboardQuery *self,
-                   GdkEventButton *event)
-{
-  GtkAllocation allocation;
-  GtkWidget *titlebar, *src;
-  gint x, y;
-
-  titlebar = gtk_dialog_get_header_bar (GTK_DIALOG (self));
-
-  gdk_window_get_user_data (event->window, (gpointer *)&src);
-  if (src && src != GTK_WIDGET (self))
-    {
-      gtk_widget_translate_coordinates (src, GTK_WIDGET (self),
-                                        event->x, event->y, &x, &y);
-    }
-  else
-    {
-      x = event->x;
-      y = event->y;
-    }
-
-  if (titlebar != NULL &&
-      gtk_widget_get_visible (titlebar) &&
-      gtk_widget_get_child_visible (titlebar))
-    {
-      gtk_widget_get_allocation (titlebar, &allocation);
-      if (allocation.x <= x && allocation.x + allocation.width > x &&
-          allocation.y <= y && allocation.y + allocation.height > y)
-        return TRUE;
-    }
-
-  return FALSE;
-}
-
 static void
 cc_keyboard_query_realize (GtkWidget *widget)
 {

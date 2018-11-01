@@ -363,36 +363,6 @@ no_results_widget_new (void)
         return widget;
 }
 
-static void
-choose_non_extras_foreach (GtkWidget *row,
-                           gpointer   user_data)
-{
-        GtkWidget *child;
-        InputWidget *widget;
-        guint *count = user_data;
-
-        *count += 1;
-        if (*count > MIN_ROWS)
-                return;
-
-        child = gtk_bin_get_child (GTK_BIN (row));
-        widget = get_input_widget (child);
-        if (widget == NULL)
-                return;
-
-        widget->is_extra = FALSE;
-}
-
-static void
-choose_non_extras (CcInputChooser *chooser)
-{
-        CcInputChooserPrivate *priv = cc_input_chooser_get_instance_private (chooser);
-        guint count = 0;
-
-        gtk_container_foreach (GTK_CONTAINER (priv->input_list),
-                               choose_non_extras_foreach, &count);
-}
-
 static int
 add_rows_to_list (CcInputChooser  *chooser,
 	          GList            *list,
