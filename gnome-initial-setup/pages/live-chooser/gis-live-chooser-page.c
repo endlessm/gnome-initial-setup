@@ -130,15 +130,6 @@ reformat_button_clicked (GisLiveChooserPage *page)
 }
 
 static void
-gis_live_chooser_page_finalize (GObject *object)
-{
-  GisLiveChooserPage *page = (GisLiveChooserPage *)object;
-  GisLiveChooserPagePrivate *priv = gis_live_chooser_page_get_instance_private (page);
-
-  G_OBJECT_CLASS (gis_live_chooser_page_parent_class)->finalize (object);
-}
-
-static void
 gis_live_chooser_page_constructed (GObject *object)
 {
   GisLiveChooserPage *page = GIS_LIVE_CHOOSER_PAGE (object);
@@ -205,7 +196,6 @@ gis_live_chooser_page_class_init (GisLiveChooserPageClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, try_button);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisLiveChooserPage, reformat_button);
 
-  object_class->finalize = gis_live_chooser_page_finalize;
   object_class->constructed = gis_live_chooser_page_constructed;
 }
 

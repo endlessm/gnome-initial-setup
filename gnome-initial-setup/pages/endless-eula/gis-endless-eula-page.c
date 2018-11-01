@@ -172,7 +172,6 @@ find_terms_document_for_languages (const gchar * const *languages)
 static GFile *
 get_terms_document (void)
 {
-  const gchar * const *languages;
   gchar **locale_variants;
   const gchar *language;
   gchar *path = NULL;
@@ -381,7 +380,6 @@ gis_endless_eula_page_constructed (GObject *object)
   GisEndlessEulaPage *page = GIS_ENDLESS_EULA_PAGE (object);
   GisEndlessEulaPagePrivate *priv = gis_endless_eula_page_get_instance_private (page);
   GError *error = NULL;
-  GtkWidget *widget;
   gboolean demo_mode;
 
   G_OBJECT_CLASS (gis_endless_eula_page_parent_class)->constructed (object);

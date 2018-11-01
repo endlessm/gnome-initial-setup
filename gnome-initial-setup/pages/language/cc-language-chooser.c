@@ -415,7 +415,6 @@ sort_languages (GtkListBoxRow *a,
         CcLanguageChooser *chooser = data;
         CcLanguageChooserPrivate *priv = cc_language_chooser_get_instance_private (chooser);
         LanguageWidget *la, *lb;
-        gint retval;
 
         la = get_language_widget (gtk_bin_get_child (GTK_BIN (a)));
         lb = get_language_widget (gtk_bin_get_child (GTK_BIN (b)));

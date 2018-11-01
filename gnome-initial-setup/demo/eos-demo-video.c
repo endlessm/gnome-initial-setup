@@ -136,8 +136,6 @@ static void
 gis_demo_video_init (GisDemoVideo *demo_video)
 {
   GisDemoVideoPrivate *priv = gis_demo_video_get_instance_private (demo_video);
-  GstBus *bus = NULL;
-
   const gchar * const *languages;
   gchar file_uri[PATH_MAX] = { 0 };
   int i;
