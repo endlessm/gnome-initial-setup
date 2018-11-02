@@ -531,7 +531,6 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC (ActUser, g_object_unref)
 static gboolean
 create_demo_user (GisDriver *driver, GError **error)
 {
-  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   g_autoptr(ActUser) user;
   const gchar *language;
 

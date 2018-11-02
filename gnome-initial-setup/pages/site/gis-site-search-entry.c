@@ -82,8 +82,6 @@ static void
 gis_site_search_entry_init (GisSiteSearchEntry *entry)
 {
   GtkEntryCompletion *completion;
-  GisSiteSearchEntryPrivate *priv =
-      gis_site_search_entry_get_instance_private (entry);
 
   completion = gtk_entry_completion_new ();
 
@@ -207,8 +205,6 @@ get_property (GObject *object, guint prop_id,
 static void
 entry_changed (GisSiteSearchEntry *entry)
 {
-  GisSiteSearchEntryPrivate *priv =
-      gis_site_search_entry_get_instance_private (entry);
   const gchar *text = gtk_entry_get_text (GTK_ENTRY (entry));
 
   if (!text || text[0] == '\0')
@@ -269,13 +265,7 @@ void
 gis_site_search_entry_set_site (GisSiteSearchEntry *entry,
                                 GisSite            *site)
 {
-  GtkEntryCompletion *completion;
-  GtkTreeModel *model;
-
   g_return_if_fail (GIS_IS_SITE_SEARCH_ENTRY (entry));
-
-  completion = gtk_entry_get_completion (GTK_ENTRY (entry));
-  model = gtk_entry_completion_get_model (completion);
 
   set_site_internal (entry, NULL, site);
 }

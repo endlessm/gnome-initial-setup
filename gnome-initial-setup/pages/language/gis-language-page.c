@@ -283,8 +283,6 @@ update_demo_mode_label (GisLanguagePage *page)
 static void
 update_page_title (GisLanguagePage *page)
 {
-  GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (page);
-
   if (gis_driver_is_in_demo_mode (GIS_PAGE (page)->driver))
     gis_page_set_title (GIS_PAGE (page), _("Welcome to Store Demo"));
   else
@@ -307,7 +305,6 @@ demo_mode_link_activated (GtkLabel *label,
                           gpointer  user_data)
 {
   GisLanguagePage *page = user_data;
-  GisDriver *driver = GIS_PAGE (page)->driver;
 
   if (g_strcmp0 (uri, "demo-mode-link") != 0)
     return FALSE;

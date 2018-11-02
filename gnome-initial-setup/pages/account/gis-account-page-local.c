@@ -509,7 +509,6 @@ create_shared_user (GisAccountPageLocal *page)
   GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (page);
   GError *error = NULL;
   ActUser *shared_user;
-  const gchar *language;
 
   shared_user = act_user_manager_create_user (priv->act_client,
                                               SHARED_ACCOUNT_USERNAME,

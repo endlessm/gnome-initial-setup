@@ -208,7 +208,6 @@ out:
 static void
 entry_site_changed (GObject *object, GParamSpec *param, GisSitePage *page)
 {
-  GisSitePagePrivate *priv = gis_site_page_get_instance_private (page);
   GisSiteSearchEntry *entry = GIS_SITE_SEARCH_ENTRY (object);
   GisSite *site;
 

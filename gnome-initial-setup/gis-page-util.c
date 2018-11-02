@@ -364,7 +364,6 @@ system_testmode (GtkButton *button, gpointer data)
 void
 gis_page_util_show_factory_dialog (GisPage *page)
 {
-  GisDriver *driver = GIS_PAGE (page)->driver;
   g_autoptr(GtkBuilder) builder = NULL;
   GtkButton *poweroff_button;
   GtkButton *testmode_button;
