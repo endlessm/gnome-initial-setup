@@ -31,8 +31,3 @@ option('systemd-system-unit-dir',
        description: 'the directory to install systemd system units',
        type: 'string'
 )
-
-option('account-page-faces-dir',
-       description: 'an alternative directory to look for user images',
-       type: 'string'
-)

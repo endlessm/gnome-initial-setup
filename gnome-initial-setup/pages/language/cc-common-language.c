@@ -34,6 +34,8 @@
 
 #include "cc-common-language.h"
 
+#include "gnome-initial-setup.h"
+
 static char *get_lang_for_user_object_path (const char *path);
 
 gboolean
@@ -295,9 +297,9 @@ insert_vendor_languages (GHashTable *ht)
         g_autoptr(GError) error = NULL;
         g_auto(GStrv) languages = NULL;
         int idx;
+        GisDriver *driver;
 
-        /* VENDOR_CONF_FILE points to a keyfile containing vendor customization
-         * options. This code will look for options under the "Language" group, and
+        /* This code will look for options under the "Language" group, and
          * supports the following keys:
          *   - initial_languages (optional): a string list of language codes to
          *       pre-populate the initial list of languages
@@ -308,27 +310,16 @@ insert_vendor_languages (GHashTable *ht)
          *   [Language]
          *   initial_languages=id_ID.UTF-8;th_TH.UTF-8;vi_VN.UTF-8;hi_IN.UTF-8
          */
-        keyfile = g_key_file_new ();
-        if (!g_key_file_load_from_file (keyfile, VENDOR_CONF_FILE, G_KEY_FILE_NONE, &error)) {
-                if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
-                        g_warning ("Could not read file %s: %s", VENDOR_CONF_FILE, error->message);
-
+        driver = GIS_DRIVER (g_application_get_default ());
+        languages = gis_driver_conf_get_string_list (driver,
+                                                     VENDOR_LANGUAGE_GROUP,
+                                                     VENDOR_LANGUAGE_INITIAL_LANGUAGES_KEY,
+                                                     NULL);
+        if (languages == NULL)
                 return FALSE;
-        }
 
-        languages = g_key_file_get_string_list (keyfile, VENDOR_LANGUAGE_GROUP,
-                                                VENDOR_LANGUAGE_INITIAL_LANGUAGES_KEY,
-                                                NULL, &error);
-
-        if (languages == NULL) {
-                g_debug ("Could not read initial languages list from %s: %s",
-                         VENDOR_CONF_FILE, error->message);
-                return FALSE;
-        }
-
-        for (idx = 0; languages[idx] != NULL; idx++) {
+        for (idx = 0; languages[idx] != NULL; idx++)
                 insert_language (ht, languages[idx]);
-        }
 
         return TRUE;
 }

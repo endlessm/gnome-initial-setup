@@ -37,7 +37,12 @@
 #include "um-photo-dialog.h"
 #include "um-utils.h"
 
+#include "gnome-initial-setup.h"
+
 #define ROW_SPAN 6
+
+#define VENDOR_ACCOUNT_GROUP "Account"
+#define VENDOR_ACCOUNT_FACESDIR_KEY "Faces"
 
 struct _UmPhotoDialog {
         GtkWidget *photo_popup;
@@ -176,6 +181,7 @@ get_facesdirs (void)
         const gchar * const * data_dirs;
         int i;
         const char *facesdir_env;
+        GisDriver *driver;
 
         facesdir_env = g_getenv ("GIS_ACCOUNT_PAGE_FACESDIR");
         if (facesdir_env != NULL && g_strcmp0 (facesdir_env, "") != 0) {
@@ -183,10 +189,21 @@ get_facesdirs (void)
                                              g_strdup (facesdir_env));
         }
 
-        if (g_strcmp0 (ACCOUNT_PAGE_FACESDIR, "") != 0) {
-                facesdirs = g_slist_prepend (facesdirs,
-                                             g_strdup (ACCOUNT_PAGE_FACESDIR));
-        }
+        /* This code will look for options under the "Account" group, and
+         * supports the following keys:
+         *   - Faces: directory to scan for avatar faces.
+         *
+         * This is how this file would look on a vendor image:
+         *
+         *   [Account]
+         *   Faces=/path/to/faces/dir
+         */
+        driver = GIS_DRIVER (g_application_get_default ());
+        char *path = gis_driver_conf_get_string (driver,
+                                                 VENDOR_ACCOUNT_GROUP,
+                                                 VENDOR_ACCOUNT_FACESDIR_KEY);
+        if (path)
+                facesdirs = g_slist_prepend (facesdirs, path);
 
         data_dirs = g_get_system_data_dirs ();
         for (i = 0; data_dirs[i] != NULL; i++) {
