@@ -13,7 +13,7 @@ polkit.addRule(function(action, subject) {
                          action.id === 'com.endlessm.Metrics.SetEnabled' ||
                          action.id === 'com.endlessm.Metrics.ResetTrackingId' ||
                          action.id === 'com.endlessm.TestMode' ||
-                         action.id.indexOf('com.endlessm.DemoMode.' === 0) ||
+                         action.id.indexOf('com.endlessm.DemoMode.') === 0 ||
                          action.id.indexOf('org.freedesktop.hostname1.') === 0 ||
                          action.id.indexOf('org.freedesktop.NetworkManager.') === 0 ||
                          action.id.indexOf('org.freedesktop.locale1.') === 0 ||
