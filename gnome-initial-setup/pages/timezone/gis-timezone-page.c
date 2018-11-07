@@ -439,7 +439,7 @@ gis_timezone_page_constructed (GObject *object)
     gis_driver_conf_get_boolean (GIS_PAGE (page)->driver,
                                  CONFIG_TIMEZONE_GROUP,
                                  CONFIG_TIMEZONE_SHOW_IF_DETECTED_KEY,
-                                 TRUE);
+                                 FALSE);
 
   priv->clock = g_object_new (GNOME_TYPE_WALL_CLOCK, NULL);
   g_signal_connect (priv->clock, "notify::clock", G_CALLBACK (on_clock_changed), page);
