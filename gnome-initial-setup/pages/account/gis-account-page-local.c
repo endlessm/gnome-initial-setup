@@ -44,6 +44,9 @@
 #define SHARED_ACCOUNT_USERNAME "shared"
 #define SHARED_ACCOUNT_FULLNAME "Shared Account"
 
+#define CONFIG_ACCOUNT_GROUP "page.account"
+#define CONFIG_ACCOUNT_DEFAULT_AVATAR_KEY "default-avatar"
+
 struct _GisAccountPageLocalPrivate
 {
   GtkWidget *avatar_button;
@@ -388,11 +391,32 @@ confirm (GisAccountPageLocal *page)
     g_signal_emit (page, signals[CONFIRM], 0);
 }
 
+static gchar *
+get_default_avatar_image (void)
+{
+  GisDriver *driver;
+  gchar *default_avatar;
+
+  driver = GIS_DRIVER (g_application_get_default ());
+  default_avatar = gis_driver_conf_get_string (driver,
+                                               CONFIG_ACCOUNT_GROUP,
+                                               CONFIG_ACCOUNT_DEFAULT_AVATAR_KEY);
+
+  if (default_avatar && !g_file_test (default_avatar, G_FILE_TEST_EXISTS))
+    g_clear_pointer (&default_avatar, g_free);
+
+  if (!default_avatar)
+    default_avatar = g_strdup (AVATAR_IMAGE_DEFAULT);
+
+  return default_avatar;
+}
+
 static void
 gis_account_page_local_constructed (GObject *object)
 {
   GisAccountPageLocal *page = GIS_ACCOUNT_PAGE_LOCAL (object);
   GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (page);
+  g_autofree gchar *default_avatar = NULL;
 
   G_OBJECT_CLASS (gis_account_page_local_parent_class)->constructed (object);
 
@@ -442,7 +466,8 @@ gis_account_page_local_constructed (GObject *object)
                                             avatar_callback,
                                             page);
 
-  avatar_callback (NULL, AVATAR_IMAGE_DEFAULT, page);
+  default_avatar = get_default_avatar_image ();
+  avatar_callback (NULL, default_avatar, page);
 
   validate (page);
 }
