@@ -54,6 +54,16 @@ struct _GisNetworkPagePrivate {
   GtkSizeGroup *icons;
 
   guint refresh_timeout_id;
+
+  /* If nm_device is in state ACTIVATED, but nm_client's connectivity is not
+   * yet FULL, the event source ID for a timeout. 0 otherwise, or after the
+   * timeout fires.
+   */
+  guint wait_connected_timeout_id;
+  /* If TRUE, we waited a few seconds after the device moved to state ACTIVATED
+   * but connectivity did not become FULL.
+   */
+  gboolean wait_connected_timed_out;
 };
 typedef struct _GisNetworkPagePrivate GisNetworkPagePrivate;
 
@@ -598,19 +608,79 @@ active_connections_changed (NMClient *client, GParamSpec *pspec, GisNetworkPage 
   }
 }
 
+static gboolean wait_connected_timeout_cb (gpointer);
+
 static void
 sync_complete (GisNetworkPage *page)
 {
   GisNetworkPagePrivate *priv = gis_network_page_get_instance_private (page);
-  gboolean activated;
+  NMDeviceState device_state;
+  NMConnectivityState connectivity;
+  gboolean activated, connectivity_check_complete;
 
-  activated = (nm_device_get_state (priv->nm_device) == NM_DEVICE_STATE_ACTIVATED);
-  gis_page_set_complete (GIS_PAGE (page), activated);
+  device_state = nm_device_get_state (priv->nm_device);
+  connectivity = nm_client_get_connectivity (priv->nm_client);
+  activated = device_state == NM_DEVICE_STATE_ACTIVATED;
+  connectivity_check_complete = connectivity != NM_CONNECTIVITY_NONE;
+  g_debug ("device_state: %u, connectivity: %u, wait_connected_timed_out: %u",
+           device_state, connectivity, priv->wait_connected_timed_out);
+
+  /* Only consider the page complete when a network interface is activated,
+   * and the connectivity check is completed or has timed out. This improves the
+   * chance that GeoClue will have a chance to detect our location before we
+   * reach the timezone page.
+   */
+  gis_page_set_complete (GIS_PAGE (page),
+                         activated && (connectivity_check_complete ||
+                                       priv->wait_connected_timed_out));
+
+  if (activated && /* link is up */
+      !connectivity_check_complete && /* connectivity check is pending */
+      !priv->wait_connected_timed_out && /* we haven't already waited */
+      priv->wait_connected_timeout_id == 0 /* we aren't already waiting */
+      ) {
+    static const guint wait_for_connectivity_sec = 3;
+    g_debug ("Device activated; waiting %u seconds for connectivity check",
+             wait_for_connectivity_sec);
+    priv->wait_connected_timeout_id =
+        g_timeout_add_seconds (wait_for_connectivity_sec,
+                               wait_connected_timeout_cb,
+                               page);
+  } else if (!activated || connectivity_check_complete) {
+    g_debug ("%s; clearing connectivity check timeout & flag",
+             activated ? "Connectivity check complete"
+                       : "Device deactivated");
+    g_clear_handle_id (&priv->wait_connected_timeout_id, g_source_remove);
+    priv->wait_connected_timed_out = FALSE;
+  }
+
   schedule_refresh_wireless_list (page);
+}
+
+static gboolean
+wait_connected_timeout_cb (gpointer data)
+{
+  GisNetworkPage *page = GIS_NETWORK_PAGE (data);
+  GisNetworkPagePrivate *priv = gis_network_page_get_instance_private (page);
+
+  g_debug ("Timed out waiting for connectivity check");
+
+  priv->wait_connected_timeout_id = 0;
+  priv->wait_connected_timed_out = TRUE;
+
+  sync_complete (page);
+
+  return G_SOURCE_REMOVE;
 }
 
 static void
 device_state_changed (GObject *object, GParamSpec *param, GisNetworkPage *page)
+{
+  sync_complete (page);
+}
+
+static void
+connectivity_changed (GObject *object, GParamSpec *param, GisNetworkPage *page)
 {
   sync_complete (page);
 }
@@ -677,6 +747,8 @@ gis_network_page_constructed (GObject *object)
                     G_CALLBACK (device_state_changed), page);
   g_signal_connect (priv->nm_client, "notify::active-connections",
                     G_CALLBACK (active_connections_changed), page);
+  g_signal_connect (priv->nm_client, "notify::connectivity",
+                    G_CALLBACK (connectivity_changed), page);
 
   gtk_list_box_set_selection_mode (GTK_LIST_BOX (priv->network_list), GTK_SELECTION_NONE);
   gtk_list_box_set_header_func (GTK_LIST_BOX (priv->network_list), update_header_func, NULL, NULL);
@@ -703,6 +775,7 @@ gis_network_page_dispose (GObject *object)
   g_clear_object (&priv->icons);
 
   cancel_periodic_refresh (page);
+  g_clear_handle_id (&priv->wait_connected_timeout_id, g_source_remove);
 
   G_OBJECT_CLASS (gis_network_page_parent_class)->dispose (object);
 }

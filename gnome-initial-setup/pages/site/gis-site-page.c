@@ -288,7 +288,8 @@ parse_sites_file (const gchar *filename)
   json_parser_load_from_file (parser, filename, &error);
   if (error)
     {
-      g_warning ("Unable to parse `%s': %s", filename, error->message);
+      if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
+        g_warning ("Unable to parse ‘%s’: %s", filename, error->message);
       g_error_free (error);
       goto out;
     }
