@@ -41,8 +41,8 @@
 
 #define ROW_SPAN 6
 
-#define VENDOR_ACCOUNT_GROUP "Account"
-#define VENDOR_ACCOUNT_FACESDIR_KEY "Faces"
+#define CONFIG_ACCOUNT_GROUP "page.account"
+#define CONFIG_ACCOUNT_FACESDIR_KEY "faces"
 
 struct _UmPhotoDialog {
         GtkWidget *photo_popup;
@@ -200,8 +200,8 @@ get_facesdirs (void)
          */
         driver = GIS_DRIVER (g_application_get_default ());
         char *path = gis_driver_conf_get_string (driver,
-                                                 VENDOR_ACCOUNT_GROUP,
-                                                 VENDOR_ACCOUNT_FACESDIR_KEY);
+                                                 CONFIG_ACCOUNT_GROUP,
+                                                 CONFIG_ACCOUNT_FACESDIR_KEY);
         if (path)
                 facesdirs = g_slist_prepend (facesdirs, path);
 
