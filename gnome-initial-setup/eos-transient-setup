@@ -49,6 +49,7 @@ USER_PROFILE_PATH = '/usr/local/share/dconf/profile/user'
 USER_PROFILE = '''user-db:user
 file-db:/var/lib/eos-image-defaults/settings.live
 file-db:/var/lib/eos-image-defaults/settings
+file-db:/usr/share/eos-default-settings/settings
 '''
 
 SHELL_SCHEMA = 'org.gnome.shell'
