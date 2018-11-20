@@ -69,9 +69,11 @@ read_config_file (GisBrandingWelcomePage *page)
   /* VENDOR_CONF_FILE points to a keyfile containing vendor customization
    * options. This code will look for options under the "Welcome" group, and
    * supports the following keys:
-   *   - title (required): short string to show as title.
+   *   - title (optional): short string to show as title.
    *   - description (optional): string containing long text, likely to be wrapped.
    *   - logo (optional): absolute path to the file with a logo for the brand.
+   *
+   * Note that one key between "title" and "logo" must be set.
    *
    * For example, this is how this file would look on a vendor image defining a title,
    * a description an a logo:
@@ -89,8 +91,6 @@ read_config_file (GisBrandingWelcomePage *page)
   priv->title = gis_driver_conf_get_string (GIS_PAGE (page)->driver,
                                             VENDOR_BRANDING_WELCOME_GROUP,
                                             VENDOR_BRANDING_WELCOME_TITLE_KEY);
-  if (priv->title == NULL)
-    return;
 
   priv->description = gis_driver_conf_get_string (GIS_PAGE (page)->driver,
                                                   VENDOR_BRANDING_WELCOME_GROUP,
@@ -109,12 +109,11 @@ update_branding_specific_info (GisBrandingWelcomePage *page)
 
   read_config_file (page);
 
-  if (priv->title == NULL) {
-    g_debug ("No branding configuration found");
-    return;
+  if (priv->title != NULL) {
+    opt_widget = priv->branding_title;
+    gtk_label_set_label (GTK_LABEL (opt_widget), priv->title);
+    gtk_widget_show (opt_widget);
   }
-
-  gtk_label_set_label (GTK_LABEL (priv->branding_title), priv->title);
 
   if (priv->description != NULL) {
     opt_widget = priv->branding_text;
@@ -210,8 +209,8 @@ gis_prepare_branding_welcome_page (GisDriver *driver)
   page = GIS_PAGE (g_object_new (GIS_TYPE_BRANDING_WELCOME_PAGE, "driver", driver, NULL));
   priv = gis_branding_welcome_page_get_instance_private (GIS_BRANDING_WELCOME_PAGE (page));
 
-  /* We don't actually add the page unless we have the only required field */
-  if (priv->title == NULL) {
+  /* We don't actually add the page unless we have either the title or a logo */
+  if (priv->title == NULL && priv->logo_path == NULL) {
     g_object_ref_sink (page);
     g_object_unref (page);
     return;
