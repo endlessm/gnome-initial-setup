@@ -475,7 +475,13 @@ gis_summary_page_constructed (GObject *object)
 
   /* Show the right contents for Hack images */
   if (gis_driver_is_product (GIS_PAGE (page)->driver, HACK_PRODUCT_NAME))
-    gtk_widget_show_all (priv->hack_box);
+    {
+      gtk_widget_show_all (priv->hack_box);
+      gtk_widget_hide (priv->title);
+      gtk_label_set_label (GTK_LABEL (priv->start_button_label), _("Let's Go!"));
+      gtk_widget_set_margin_start (priv->start_button_label, 12);
+      gtk_widget_set_margin_end (priv->start_button_label, 12);
+    }
 
   gtk_widget_show (GTK_WIDGET (page));
 }
