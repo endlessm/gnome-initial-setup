@@ -126,6 +126,11 @@ update_branding_specific_info (GisBrandingWelcomePage *page)
     gtk_image_set_from_file (GTK_IMAGE (opt_widget), priv->logo_path);
     gtk_widget_show (opt_widget);
   }
+
+  if (priv->title == NULL && priv->description == NULL &&
+      priv->logo_path != NULL)
+    /* Logo-only mode: give it all the page real estate. */
+    gtk_widget_set_vexpand (priv->branding_logo, TRUE);
 }
 
 static GtkAccelGroup *
