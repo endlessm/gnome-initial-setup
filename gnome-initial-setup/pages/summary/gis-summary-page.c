@@ -39,8 +39,6 @@
 
 #define SERVICE_NAME "gdm-password"
 
-#define HACK_PRODUCT_NAME "hack"
-
 struct _GisSummaryPagePrivate {
   GtkWidget *start_button;
   GtkWidget *start_button_label;
@@ -360,7 +358,7 @@ run_initial_contact_app (GisSummaryPage *page)
 static void
 done_cb (GtkButton *button, GisSummaryPage *page)
 {
-  if (gis_driver_is_product (GIS_PAGE (page)->driver, HACK_PRODUCT_NAME) ||
+  if (gis_driver_is_hack (GIS_PAGE (page)->driver) ||
       g_getenv ("HACK_DEBUG_INITIAL_CONTACT") != NULL)
     run_initial_contact_app (page);
   else
@@ -474,7 +472,7 @@ gis_summary_page_constructed (GObject *object)
   }
 
   /* Show the right contents for Hack images */
-  if (gis_driver_is_product (GIS_PAGE (page)->driver, HACK_PRODUCT_NAME))
+  if (gis_driver_is_hack (GIS_PAGE (page)->driver))
     {
       gtk_widget_show_all (priv->hack_box);
       gtk_widget_hide (priv->title);

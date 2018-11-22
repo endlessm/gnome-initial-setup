@@ -31,6 +31,8 @@
 
 #define GIS_TYPE_DRIVER_MODE (gis_driver_mode_get_type ())
 
+#define HACK_PRODUCT_NAME "hack"
+
 /* Statically include this for now. Maybe later
  * we'll generate this from glib-mkenums. */
 GType
@@ -210,6 +212,13 @@ gis_driver_is_product (GisDriver *driver, const gchar *product_name)
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   return g_strcmp0 (priv->product_name, product_name) == 0;
 }
+
+gboolean
+gis_driver_is_hack (GisDriver *driver)
+{
+  return gis_driver_is_product (driver, HACK_PRODUCT_NAME);
+}
+
 
 static gboolean
 image_supports_demo_mode (const gchar *image_version)
@@ -863,6 +872,34 @@ window_realize_cb (GtkWidget *widget, gpointer user_data)
 }
 
 static void
+emit_startup_sound (GApplication * app, gpointer user_data)
+{
+  g_autoptr(GDBusProxy) proxy = NULL;
+  g_autoptr(GError) error = NULL;
+  const GDBusProxyFlags proxy_flags =
+    G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES |
+    G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS;
+
+  proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                         proxy_flags,
+                                         NULL,
+                                         "com.endlessm.HackSoundServer",
+                                         "/com/endlessm/HackSoundServer",
+                                         "com.endlessm.HackSoundServer",
+                                         NULL, &error);
+  if (error)
+    {
+      g_printerr ("Cannot create proxy for 'com.endlessm.HackSoundServer': %s",
+          error->message);
+      return;
+    }
+
+  g_dbus_proxy_call (proxy,
+                     "PlaySound", g_variant_new ("(s)", "FBE/startup"),
+                     G_DBUS_CALL_FLAGS_NONE, -1, NULL, NULL, NULL);
+}
+
+static void
 gis_driver_startup (GApplication *app)
 {
   GisDriver *driver = GIS_DRIVER (app);
@@ -895,6 +932,9 @@ gis_driver_startup (GApplication *app)
   image_version = get_image_version ();
 
   priv->product_name = get_product_from_image_version (image_version);
+  if (gis_driver_is_hack (driver))
+    g_signal_connect (driver, "activate", G_CALLBACK (emit_startup_sound),
+                      NULL);
 
   check_live_session (driver, image_version);
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
