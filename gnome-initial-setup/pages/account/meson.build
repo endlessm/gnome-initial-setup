@@ -19,6 +19,8 @@ sources += files(
     'gis-account-page.h',
     'gis-account-pages.c',
     'gis-account-pages.h',
+    'gis-account-page-eula-dialog.c',
+    'gis-account-page-eula-dialog.h',
     'gis-account-page-local.c',
     'gis-account-page-local.h',
     'gis-account-page-enterprise.c',

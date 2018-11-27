@@ -24,6 +24,7 @@
 #define PAGE_ID "account"
 
 #include "config.h"
+#include "gis-page-util.h"
 #include "account-resources.h"
 #include "gis-account-page.h"
 #include "gis-account-page-local.h"
@@ -168,6 +169,9 @@ gis_account_page_apply (GisPage *gis_page,
   GisAccountPage *page = GIS_ACCOUNT_PAGE (gis_page);
   GisAccountPagePrivate *priv = gis_account_page_get_instance_private (page);
 
+  if (gis_driver_is_hack (gis_page->driver))
+    gis_page_util_set_endlessm_metrics (TRUE);
+
   switch (priv->mode) {
   case UM_LOCAL:
     return gis_account_page_local_apply (GIS_ACCOUNT_PAGE_LOCAL (priv->page_local), gis_page);
@@ -301,6 +305,8 @@ gis_account_page_constructed (GObject *object)
 static void
 gis_account_page_locale_changed (GisPage *page)
 {
+  if (gis_driver_is_hack (page->driver))
+    gis_page_set_forward_text (GIS_PAGE (page), _("_Accept and Continue"));
   gis_page_set_title (GIS_PAGE (page), _("About You"));
 }
 

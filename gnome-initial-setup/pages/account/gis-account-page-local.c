@@ -22,7 +22,9 @@
 #include "config.h"
 
 #include "gis-page.h"
+#include "gis-account-page.h"
 #include "gis-account-page-local.h"
+#include "gis-account-page-eula-dialog.h"
 #include "gnome-initial-setup.h"
 
 #include <glib/gi18n.h>
@@ -57,6 +59,7 @@ struct _GisAccountPageLocalPrivate
   gboolean   has_custom_username;
   GtkWidget *username_explanation;
   GtkWidget *password_switch;
+  GtkWidget *eulanote_label;
   gboolean passwordless;
   UmPhotoDialog *photo_dialog;
 
@@ -417,11 +420,27 @@ get_default_avatar_image (void)
   return default_avatar;
 }
 
+static gboolean
+show_eula_dialog (GtkLabel    *label,
+                  const gchar *uri,
+                  gpointer     user_data)
+{
+  GtkWindow *toplevel = GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (label)));
+  GisAccountPageEulaDialog *dialog = g_object_new (GIS_TYPE_ACCOUNT_PAGE_EULA_DIALOG,
+                                                   "use-header-bar", TRUE,
+                                                   "transient-for", toplevel,
+                                                   NULL);
+  g_signal_connect (dialog, "response",
+                    G_CALLBACK (gtk_widget_destroy), NULL);
+  return TRUE;
+}
+
 static void
 gis_account_page_local_constructed (GObject *object)
 {
   GisAccountPageLocal *page = GIS_ACCOUNT_PAGE_LOCAL (object);
   GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (page);
+  GisDriver *driver;
   g_autofree gchar *default_avatar = NULL;
 
   G_OBJECT_CLASS (gis_account_page_local_parent_class)->constructed (object);
@@ -444,6 +463,8 @@ gis_account_page_local_constructed (GObject *object)
                             G_CALLBACK (confirm), page);
   g_signal_connect_swapped (priv->password_switch, "notify::active",
                             G_CALLBACK (validate), page);
+  g_signal_connect (priv->eulanote_label, "activate-link",
+                    G_CALLBACK (show_eula_dialog), page);
 
   priv->valid_name = FALSE;
   priv->valid_username = FALSE;
@@ -476,6 +497,10 @@ gis_account_page_local_constructed (GObject *object)
   avatar_callback (NULL, default_avatar, page);
 
   validate (page);
+
+  driver = GIS_DRIVER (g_application_get_default ());
+  if (gis_driver_is_hack (driver))
+    gtk_widget_show (priv->eulanote_label);
 }
 
 static void
@@ -604,6 +629,7 @@ gis_account_page_local_class_init (GisAccountPageLocalClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, username_combo);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, username_explanation);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, password_switch);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, eulanote_label);
 
   object_class->constructed = gis_account_page_local_constructed;
   object_class->dispose = gis_account_page_local_dispose;
