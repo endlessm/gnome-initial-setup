@@ -361,26 +361,32 @@ avatar_callback (GdkPixbuf   *pixbuf,
   GisAccountPageLocal *page = user_data;
   GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (page);
   GdkPixbuf *tmp;
+  GtkStyleContext *style;
 
   g_clear_object (&priv->avatar_pixbuf);
   g_free (priv->avatar_filename);
   priv->avatar_filename = NULL;
 
+  style = gtk_widget_get_style_context (priv->avatar_image);
+
   if (pixbuf) {
     priv->avatar_pixbuf = g_object_ref (pixbuf);
     tmp = gdk_pixbuf_scale_simple (pixbuf, 96, 96, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf (GTK_IMAGE (priv->avatar_image), tmp);
+    gtk_style_context_remove_class (style, GTK_STYLE_CLASS_DIM_LABEL);
     g_object_unref (tmp);
   }
   else if (filename) {
     priv->avatar_filename = g_strdup (filename);
     tmp = gdk_pixbuf_new_from_file_at_size (filename, 96, 96, NULL);
     gtk_image_set_from_pixbuf (GTK_IMAGE (priv->avatar_image), tmp);
+    gtk_style_context_remove_class (style, GTK_STYLE_CLASS_DIM_LABEL);
     g_object_unref (tmp);
   }
   else {
     gtk_image_set_pixel_size (GTK_IMAGE (priv->avatar_image), 96);
     gtk_image_set_from_icon_name (GTK_IMAGE (priv->avatar_image), "avatar-default-symbolic", 1);
+    gtk_style_context_add_class (style, GTK_STYLE_CLASS_DIM_LABEL);
   }
 }
 
