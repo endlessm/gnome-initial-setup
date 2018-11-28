@@ -107,6 +107,8 @@ gboolean gis_driver_is_small_screen (GisDriver *driver);
 
 gboolean gis_driver_is_product (GisDriver *driver, const gchar *product_name);
 
+gboolean gis_driver_is_hack (GisDriver *driver);
+
 GKeyFile *gis_driver_get_vendor_conf_file (GisDriver *driver);
 
 void gis_driver_add_page (GisDriver *driver,
