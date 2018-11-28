@@ -325,6 +325,7 @@ initial_contact_connect_to_clippy (GisSummaryPage *page)
     g_signal_connect (priv->clippy_proxy, "g-signal",
                       G_CALLBACK (initial_contact_app_signal), page);
 
+  gis_driver_hide_window (GIS_PAGE (page)->driver);
   run_initial_contact_quest (page);
 }
 
