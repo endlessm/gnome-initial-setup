@@ -661,7 +661,7 @@ void
 gis_account_page_local_shown (GisAccountPageLocal *local)
 {
   GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (local);
-  gtk_widget_grab_focus (priv->fullname_entry); 
+  gtk_widget_grab_focus (priv->fullname_entry);
 }
 
 gboolean
