@@ -6,4 +6,5 @@ sources += gnome.compile_resources(
 
 sources += files(
     'gis-endless-eula-page.c',
+    'gis-endless-eula-viewer.c',
 )
