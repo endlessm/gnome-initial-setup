@@ -73,7 +73,8 @@ present_view_in_modal (GisEndlessEulaViewer *viewer,
 }
 
 static char *
-find_terms_document_for_language (const gchar *language)
+find_terms_document_for_language (const gchar *product_name,
+                                  const gchar *language)
 {
   const gchar * const * data_dirs;
   gchar *path = NULL;
@@ -86,8 +87,9 @@ find_terms_document_for_language (const gchar *language)
       path = g_build_filename (data_dirs[i],
                                "eos-license-service",
                                "terms",
+                               product_name,
                                language,
-                               "Endless-Terms-of-Use.pdf",
+                               "Terms-of-Use.pdf",
                                NULL);
 
       if (g_file_test (path, G_FILE_TEST_EXISTS))
@@ -100,26 +102,33 @@ find_terms_document_for_language (const gchar *language)
 }
 
 static char *
-find_terms_document_for_languages (const gchar * const *languages)
+find_terms_document_for_languages (const gchar *product_name,
+                                   const gchar * const *languages)
 {
   int i;
-  gchar *path;
+  gchar *path = NULL;
+
+  if (product_name == NULL)
+    return NULL;
 
   for (i = 0; languages[i] != NULL; i++)
     {
-      path = find_terms_document_for_language (languages[i]);
+      path = find_terms_document_for_language (product_name, languages[i]);
 
       if (path != NULL)
         return path;
     }
 
-  return NULL;
+  /* Use "C" as a fallback. */
+  return find_terms_document_for_language (product_name, "C");
 }
 
 static GFile *
 get_terms_document (void)
 {
+  GisDriver *driver;
   gchar **locale_variants;
+  const gchar *product_name;
   const gchar *language;
   gchar *path = NULL;
   GFile *file;
@@ -142,14 +151,14 @@ get_terms_document (void)
    */
   language = setlocale (LC_MESSAGES, NULL);
   locale_variants = g_get_locale_variants (language);
-  path = find_terms_document_for_languages ((const gchar * const *)locale_variants);
-  g_strfreev (locale_variants);
+  driver = GIS_DRIVER (g_application_get_default ());
+  product_name = gis_driver_get_product_name (driver);
 
+  path = find_terms_document_for_languages (product_name, (const gchar * const *)locale_variants);
   if (path == NULL)
-    {
-      /* Now use "C" as a fallback. */
-      path = find_terms_document_for_language ("C");
-    }
+    path = find_terms_document_for_languages ("eos", (const gchar * const *)locale_variants);
+
+  g_strfreev (locale_variants);
 
   if (path == NULL)
     {

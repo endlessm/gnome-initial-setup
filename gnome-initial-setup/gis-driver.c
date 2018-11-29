@@ -209,8 +209,7 @@ get_product_from_image_version (const gchar *image_version)
 gboolean
 gis_driver_is_product (GisDriver *driver, const gchar *product_name)
 {
-  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
-  return g_strcmp0 (priv->product_name, product_name) == 0;
+  return g_strcmp0 (gis_driver_get_product_name (driver), product_name) == 0;
 }
 
 gboolean
@@ -219,6 +218,12 @@ gis_driver_is_hack (GisDriver *driver)
   return gis_driver_is_product (driver, HACK_PRODUCT_NAME);
 }
 
+const gchar *
+gis_driver_get_product_name (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  return priv->product_name;
+}
 
 static gboolean
 image_supports_demo_mode (const gchar *image_version)
