@@ -26,6 +26,7 @@
 #define PAGE_ID "endless-eula"
 
 #include "config.h"
+#include "gis-page-util.h"
 #include "gis-endless-eula-page.h"
 #include "gis-endless-eula-viewer.h"
 
@@ -42,72 +43,18 @@ typedef struct {
   GtkWidget *metrics_privacy_label;
 
   GisEndlessEulaViewer *eula_viewer;
-  GDBusProxy *metrics_proxy;
 } GisEndlessEulaPagePrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GisEndlessEulaPage, gis_endless_eula_page, GIS_TYPE_PAGE);
-
-static void
-sync_metrics_active_state (GisEndlessEulaPage *page)
-{
-  GisEndlessEulaPagePrivate *priv = gis_endless_eula_page_get_instance_private (page);
-  GError *error = NULL;
-  GtkWidget *widget;
-  gboolean metrics_active;
-
-  widget = priv->metrics_checkbutton;
-  metrics_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
-
-  if (!priv->metrics_proxy)
-    return;
-
-  g_dbus_proxy_call_sync (priv->metrics_proxy,
-                          "SetEnabled",
-                          g_variant_new ("(b)", metrics_active),
-                          G_DBUS_CALL_FLAGS_NONE, -1,
-                          NULL, &error);
-
-  if (error != NULL)
-    {
-      g_critical ("Unable to set the enabled state of metrics daemon: %s", error->message);
-      g_error_free (error);
-    }
-}
-
-static void
-gis_endless_eula_page_finalize (GObject *object)
-{
-  GisEndlessEulaPage *page = GIS_ENDLESS_EULA_PAGE (object);
-  GisEndlessEulaPagePrivate *priv = gis_endless_eula_page_get_instance_private (page);
-
-  g_clear_object (&priv->metrics_proxy);
-
-  G_OBJECT_CLASS (gis_endless_eula_page_parent_class)->finalize (object);
-}
 
 static void
 gis_endless_eula_page_constructed (GObject *object)
 {
   GisEndlessEulaPage *page = GIS_ENDLESS_EULA_PAGE (object);
   GisEndlessEulaPagePrivate *priv = gis_endless_eula_page_get_instance_private (page);
-  GError *error = NULL;
   gboolean demo_mode;
 
   G_OBJECT_CLASS (gis_endless_eula_page_parent_class)->constructed (object);
-
-  priv->metrics_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SYSTEM,
-                                                       G_DBUS_PROXY_FLAGS_NONE,
-                                                       NULL,
-                                                       "com.endlessm.Metrics",
-                                                       "/com/endlessm/Metrics",
-                                                       "com.endlessm.Metrics.EventRecorderServer",
-                                                       NULL, &error);
-
-  if (error != NULL)
-    {
-      g_critical ("Unable to create a DBus proxy for the metrics daemon: %s", error->message);
-      g_error_free (error);
-    }
 
   gtk_widget_show (GTK_WIDGET (page));
 
@@ -155,9 +102,12 @@ report_demo_mode_metric (void)
 static void
 gis_endless_eula_page_save_data (GisPage *page)
 {
-  gboolean demo_mode = FALSE;
+  GisEndlessEulaPage *self = GIS_ENDLESS_EULA_PAGE (page);
+  GisEndlessEulaPagePrivate *priv = gis_endless_eula_page_get_instance_private (self);
+  gboolean metrics_active, demo_mode = FALSE;
 
-  sync_metrics_active_state (GIS_ENDLESS_EULA_PAGE (page));
+  metrics_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (priv->metrics_checkbutton));
+  gis_page_util_set_endlessm_metrics (metrics_active);
 
   demo_mode = gis_driver_is_in_demo_mode (GIS_PAGE (page)->driver);
 
@@ -183,7 +133,6 @@ gis_endless_eula_page_class_init (GisEndlessEulaPageClass *klass)
   page_class->locale_changed = gis_endless_eula_page_locale_changed;
   page_class->save_data = gis_endless_eula_page_save_data;
   object_class->constructed = gis_endless_eula_page_constructed;
-  object_class->finalize = gis_endless_eula_page_finalize;
 }
 
 static void
