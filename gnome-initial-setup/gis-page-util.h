@@ -37,6 +37,8 @@ void gis_page_util_run_reformatter (GisPage            *page,
 gchar *gis_page_util_get_image_version (const gchar *path,
                                         GError     **error);
 
+void gis_page_util_set_endlessm_metrics (gboolean enabled);
+
 G_END_DECLS
 
 #endif

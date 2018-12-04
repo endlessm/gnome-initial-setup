@@ -597,3 +597,38 @@ gis_page_util_run_reformatter (GisPage            *page,
   g_subprocess_wait_check_async (subprocess, NULL, reformatter_exited_cb,
                                  g_steal_pointer (&task));
 }
+
+void
+gis_page_util_set_endlessm_metrics (gboolean enabled)
+{
+  GDBusProxy *metrics_proxy;
+  GError *error = NULL;
+
+  metrics_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SYSTEM,
+                                                 G_DBUS_PROXY_FLAGS_NONE,
+                                                 NULL,
+                                                 "com.endlessm.Metrics",
+                                                 "/com/endlessm/Metrics",
+                                                 "com.endlessm.Metrics.EventRecorderServer",
+                                                 NULL, &error);
+
+  if (error != NULL)
+    {
+      g_critical ("Unable to create a DBus proxy for the metrics daemon: %s", error->message);
+      g_clear_error (&error);
+      return;
+    }
+
+  g_dbus_proxy_call_sync (metrics_proxy,
+                          "SetEnabled",
+                          g_variant_new ("(b)", enabled),
+                          G_DBUS_CALL_FLAGS_NONE, -1,
+                          NULL, &error);
+  g_clear_object (&metrics_proxy);
+
+  if (error != NULL)
+    {
+      g_critical ("Unable to set the enabled state of metrics daemon: %s", error->message);
+      g_clear_error (&error);
+    }
+}

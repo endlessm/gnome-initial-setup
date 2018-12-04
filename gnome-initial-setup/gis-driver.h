@@ -109,6 +109,8 @@ gboolean gis_driver_is_product (GisDriver *driver, const gchar *product_name);
 
 gboolean gis_driver_is_hack (GisDriver *driver);
 
+const gchar *gis_driver_get_product_name (GisDriver *driver);
+
 GKeyFile *gis_driver_get_vendor_conf_file (GisDriver *driver);
 
 void gis_driver_add_page (GisDriver *driver,
