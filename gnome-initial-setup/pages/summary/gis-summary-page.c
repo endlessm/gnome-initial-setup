@@ -50,9 +50,6 @@ struct _GisSummaryPagePrivate {
   ActUser *user_account;
   const gchar *user_password;
 
-  GdmGreeter *greeter;
-  GdmUserVerifier *user_verifier;
-
   GDBusProxy *clippy_proxy;
   gulong clippy_proxy_signal_id;
 };
@@ -60,26 +57,35 @@ typedef struct _GisSummaryPagePrivate GisSummaryPagePrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GisSummaryPage, gis_summary_page, GIS_TYPE_PAGE);
 
-static void
+static gboolean
 connect_to_gdm (GdmGreeter      **greeter,
                 GdmUserVerifier **user_verifier)
 {
   GdmClient *client;
+
   GError *error = NULL;
+  gboolean res = FALSE;
 
   client = gdm_client_new ();
 
   *greeter = gdm_client_get_greeter_sync (client, NULL, &error);
-  if (error == NULL)
-    *user_verifier = gdm_client_get_user_verifier_sync (client, NULL, &error);
+  if (error != NULL)
+    goto out;
 
+  *user_verifier = gdm_client_get_user_verifier_sync (client, NULL, &error);
+  if (error != NULL)
+    goto out;
+
+  res = TRUE;
+
+ out:
   if (error != NULL) {
     g_warning ("Failed to open connection to GDM: %s", error->message);
     g_error_free (error);
   }
 
   g_clear_object (&client);
-  return;
+  return res;
 }
 
 static void
@@ -178,22 +184,24 @@ log_user_in (GisSummaryPage *page)
 {
   GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
   g_autoptr(GError) error = NULL;
+  GdmGreeter *greeter;
+  GdmUserVerifier *user_verifier;
 
-  if (!priv->greeter || !priv->user_verifier) {
+  if (!connect_to_gdm (&greeter, &user_verifier)) {
     g_warning ("No GDM connection; not initiating login");
     return;
   }
 
-  g_signal_connect (priv->user_verifier, "info",
+  g_signal_connect (user_verifier, "info",
                     G_CALLBACK (on_info), page);
-  g_signal_connect (priv->user_verifier, "problem",
+  g_signal_connect (user_verifier, "problem",
                     G_CALLBACK (on_problem), page);
-  g_signal_connect (priv->user_verifier, "info-query",
+  g_signal_connect (user_verifier, "info-query",
                     G_CALLBACK (on_info_query), page);
-  g_signal_connect (priv->user_verifier, "secret-info-query",
+  g_signal_connect (user_verifier, "secret-info-query",
                     G_CALLBACK (on_secret_info_query), page);
 
-  g_signal_connect (priv->greeter, "session-opened",
+  g_signal_connect (greeter, "session-opened",
                     G_CALLBACK (on_session_opened), page);
 
   /* We are in NEW_USER mode and we want to make it possible for third
@@ -201,7 +209,7 @@ log_user_in (GisSummaryPage *page)
    */
   add_uid_file (act_user_get_uid (priv->user_account));
 
-  gdm_user_verifier_call_begin_verification_for_user_sync (priv->user_verifier,
+  gdm_user_verifier_call_begin_verification_for_user_sync (user_verifier,
                                                            SERVICE_NAME,
                                                            act_user_get_user_name (priv->user_account),
                                                            NULL, &error);
@@ -475,8 +483,6 @@ gis_summary_page_constructed (GObject *object)
       gtk_widget_set_margin_end (priv->start_button_label, 12);
     }
 
-  connect_to_gdm (&priv->greeter, &priv->user_verifier);
-
   gtk_widget_show (GTK_WIDGET (page));
 }
 
@@ -496,18 +502,6 @@ gis_summary_page_finalize (GObject *object)
   g_clear_object (&priv->clippy_proxy);
 
   G_OBJECT_CLASS (gis_summary_page_parent_class)->finalize (object);
-}
-
-static void
-gis_summary_page_dispose (GObject *object)
-{
-  GisSummaryPage *page = GIS_SUMMARY_PAGE (object);
-  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
-
-  g_clear_object (&priv->greeter);
-  g_clear_object (&priv->user_verifier);
-
-  G_OBJECT_CLASS (gis_summary_page_parent_class)->dispose (object);
 }
 
 static void
@@ -537,7 +531,6 @@ gis_summary_page_class_init (GisSummaryPageClass *klass)
   page_class->shown = gis_summary_page_shown;
   object_class->constructed = gis_summary_page_constructed;
   object_class->finalize = gis_summary_page_finalize;
-  object_class->dispose = gis_summary_page_dispose;
 }
 
 static void
