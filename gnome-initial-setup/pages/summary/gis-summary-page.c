@@ -191,9 +191,23 @@ log_user_in (GisSummaryPage *page)
 }
 
 static void
+set_busy (GisSummaryPage *page,
+          gboolean        busy)
+{
+  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
+  GdkWindow *window = gtk_widget_get_window (GTK_WIDGET (page));
+  GdkDisplay *display = gdk_window_get_display (window);
+  GdkCursor *cursor = gdk_cursor_new_from_name (display, busy ? "wait" : "default");
+
+  gtk_widget_set_sensitive (priv->start_button, !busy);
+  gdk_window_set_cursor (window, cursor);
+}
+
+static void
 finish_fbe (GisSummaryPage *page)
 {
   gis_ensure_stamp_files ();
+  set_busy (page, FALSE);
 
   switch (gis_driver_get_mode (GIS_PAGE (page)->driver))
     {
@@ -268,21 +282,15 @@ run_initial_contact_quest (GisSummaryPage *page)
 }
 
 static void
-initial_contact_connect_to_clippy (GisSummaryPage *page)
+clippy_connect_called_cb (GObject      *proxy,
+                          GAsyncResult *res,
+                          gpointer      user_data)
 {
+  GisSummaryPage *page = GIS_SUMMARY_PAGE (user_data);
   GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
   g_autoptr(GError) error = NULL;
 
-  g_dbus_proxy_call_sync (priv->clippy_proxy,
-                          "Connect",
-                          g_variant_new ("(sss)",
-                                         "view.JSContext.globalParameters",
-                                         "notify",
-                                         "unlocked"),
-                          G_DBUS_CALL_FLAGS_NONE,
-                          G_MAXINT,
-                          NULL,
-                          &error);
+  g_dbus_proxy_call_finish (G_DBUS_PROXY (proxy), res, &error);
 
   if (error != NULL)
     {
@@ -301,20 +309,15 @@ initial_contact_connect_to_clippy (GisSummaryPage *page)
 }
 
 static void
-run_initial_contact_app (GisSummaryPage *page)
+clippy_proxy_created_cb (GObject      *source_object,
+                         GAsyncResult *res,
+                         gpointer      user_data)
 {
+  GisSummaryPage *page = GIS_SUMMARY_PAGE (user_data);
   GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
   g_autoptr(GError) error = NULL;
 
-  priv->clippy_proxy =
-    g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
-                                   G_DBUS_PROXY_FLAGS_NONE,
-                                   NULL,
-                                   "com.endlessm.HackUnlock",
-                                   "/com/endlessm/Clippy",
-                                   "com.endlessm.Clippy",
-                                   NULL,
-                                   &error);
+  priv->clippy_proxy = g_dbus_proxy_new_for_bus_finish (res, &error);
 
   if (error != NULL)
     {
@@ -324,7 +327,33 @@ run_initial_contact_app (GisSummaryPage *page)
       return;
     }
 
-  initial_contact_connect_to_clippy (page);
+  g_dbus_proxy_call (priv->clippy_proxy,
+                     "Connect",
+                     g_variant_new ("(sss)",
+                                    "view.JSContext.globalParameters",
+                                    "notify",
+                                    "unlocked"),
+                     G_DBUS_CALL_FLAGS_NONE,
+                     G_MAXINT,
+                     NULL,
+                     clippy_connect_called_cb,
+                     page);
+}
+
+static void
+run_initial_contact_app (GisSummaryPage *page)
+{
+  set_busy (page, TRUE);
+
+  g_dbus_proxy_new_for_bus (G_BUS_TYPE_SESSION,
+                            G_DBUS_PROXY_FLAGS_NONE,
+                            NULL,
+                            "com.endlessm.HackUnlock",
+                            "/com/endlessm/Clippy",
+                            "com.endlessm.Clippy",
+                            NULL,
+                            clippy_proxy_created_cb,
+                            page);
 }
 
 static void
