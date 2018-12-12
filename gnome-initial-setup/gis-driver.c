@@ -947,7 +947,7 @@ connect_to_gdm (GisDriver *driver)
   priv->client = gdm_client_new ();
 
   priv->greeter = gdm_client_get_greeter_sync (priv->client, NULL, &error);
-  if (error != NULL)
+  if (error == NULL)
     priv->user_verifier = gdm_client_get_user_verifier_sync (priv->client, NULL, &error);
 
   if (error != NULL) {
