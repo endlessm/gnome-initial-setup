@@ -588,6 +588,7 @@ static void
 local_create_user (GisAccountPageLocal *page)
 {
   GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (page);
+  GisDriver *driver;
   const gchar *username;
   const gchar *fullname;
   GError *error = NULL;
@@ -611,6 +612,10 @@ local_create_user (GisAccountPageLocal *page)
 
   if (priv->passwordless)
     act_user_set_password_mode (priv->act_user, ACT_USER_PASSWORD_MODE_NONE);
+
+  driver = GIS_DRIVER (g_application_get_default ());
+  if (gis_driver_is_hack (driver))
+    act_user_set_automatic_login (priv->act_user, TRUE);
 
   g_signal_emit (page, signals[USER_CREATED], 0, priv->act_user, "");
 }
