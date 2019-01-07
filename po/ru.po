@@ -6,7 +6,7 @@
 # Alexsey Nadtochey <irbis4lan@yandex.com>, 2012
 # Julia <juliette.tux@gmail.com>, 2013
 # Julia <juliette.tux@gmail.com>, 2013
-# Stas Solovey <whats_up@tut.by>, 2015-2016
+# Stas Solovey <whats_up@tut.by>, 2015-2018
 # Valery Kirichenko <valera5505@gmail.com>, 2014
 # Yuri Myasoedov <omerta13@yandex.ru>, 2012-2013
 # Yuri Myasoedov <ymyasoedov@yandex.ru>, 2012-2013,2015
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 15:00+0000\n"
-"PO-Revision-Date: 2019-01-07 16:53+0000\n"
+"PO-Revision-Date: 2019-01-07 17:09+0000\n"
 "Last-Translator: Will Thompson <wjt@endlessm.com>\n"
 "Language-Team: Russian (http://www.transifex.com/endless-os/gnome-initial-setup/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -119,7 +119,7 @@ msgstr "Принудительно использовать режим суще�
 
 #: gnome-initial-setup/gnome-initial-setup.c:305
 msgid "— GNOME initial setup"
-msgstr ""
+msgstr "— Первоначальная настройка GNOME"
 
 #: gnome-initial-setup/pages/account/gis-account-page.c:309
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:61
@@ -156,7 +156,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
+msgstr "Корпоративная учётная запись позволяет использовать на этом устройстве существующее централизованное средство управления учётными записями. Вы также можете использовать эту учётную запись для доступа к ресурсам компании в Интернете."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:65
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:316
@@ -272,7 +272,7 @@ msgstr "Не удалось подключиться к домену %s: %s"
 
 #: gnome-initial-setup/pages/account/um-utils.c:247
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr ""
+msgstr "Данное имя пользователя недоступно. Попробуйте ввести другое."
 
 #: gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
@@ -281,13 +281,13 @@ msgstr "Имя пользователя слишком длинное."
 
 #: gnome-initial-setup/pages/account/um-utils.c:253
 msgid "The username cannot start with a “-”."
-msgstr ""
+msgstr "Имя пользователя не может начинаться с символа «-»."
 
 #: gnome-initial-setup/pages/account/um-utils.c:256
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
+msgstr "Имя пользователя может состоять только из букв латинского алфавита в верхнем и нижнем регистре, цифр и следующих символов: . - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:260
 msgid "This will be used to name your home folder and can’t be changed."
@@ -526,7 +526,7 @@ msgstr "Будьте внимательны, не потеряйте парол�
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:99
 msgid "_Confirm"
-msgstr ""
+msgstr "_Подтвердить"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:203
 msgid "Show password"
@@ -548,99 +548,99 @@ msgstr "Новый пароль должен отличаться от стар�
 #: gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
 msgid "Try changing some letters and numbers."
-msgstr ""
+msgstr "Попробуйте изменить некоторые буквы и цифры."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
 msgctxt "Password hint"
 msgid "Try changing the password a bit more."
-msgstr ""
+msgstr "Попробуйте изменить пароль немного больше."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid "A password without your user name would be stronger."
-msgstr ""
+msgstr "Пароль не содержащий имя пользователя будет надёжнее."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "Try to avoid using your name in the password."
-msgstr ""
+msgstr "Старайтесь избегать использования вашего имени в пароле."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid "Try to avoid some of the words included in the password."
-msgstr ""
+msgstr "Старайтесь избегать слов из которых состоит пароль."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "Try to avoid common words."
-msgstr ""
+msgstr "Старайтесь избегать общих слов."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "Try to avoid reordering existing words."
-msgstr ""
+msgstr "Старайтесь избегать перестановки существующих слов."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "Try to use more numbers."
-msgstr ""
+msgstr "Попробуйте использовать больше чисел."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "Try to use more uppercase letters."
-msgstr ""
+msgstr "Попробуйте использовать больше заглавных букв."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "Try to use more lowercase letters."
-msgstr ""
+msgstr "Попробуйте использовать больше строчных букв."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid "Try to use more special characters, like punctuation."
-msgstr ""
+msgstr "Попробуйте использовать больше специальных символов, например знаки препинания."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid "Try to use a mixture of letters, numbers and punctuation."
-msgstr ""
+msgstr "Попробуйте использовать вперемешку буквы, цифры и знаки препинания."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "Try to avoid repeating the same character."
-msgstr ""
+msgstr "Старайтесь избегать повторения одного и того же символа."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "Try to avoid repeating the same type of character: you need to mix up "
 "letters, numbers and punctuation."
-msgstr ""
+msgstr "Старайтесь избегать повторения одного и того же символа: используйте вперемешку буквы, цифры и знаки препинания."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "Try to avoid sequences like 1234 or abcd."
-msgstr ""
+msgstr "Старайтесь избегать последовательностей, например 1234 или abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "Password needs to be longer. Try to add more letters, numbers and "
 "punctuation."
-msgstr ""
+msgstr "Пароль должен быть длиннее. Попробуйте добавить больше букв, цифр и знаков препинания."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
+msgstr "Смешайте заглавные и строчные буквы несколько раз."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password "
 "stronger."
-msgstr ""
+msgstr "Добавление большего количества букв, цифр и знаков препинания сделает пароль надёжнее."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -673,7 +673,7 @@ msgstr "Использует службы определения местопо�
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:292
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:32
 msgid "Privacy"
-msgstr "конфиденциальность"
+msgstr "Конфиденциальность"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:49
 msgid "Location Services"
@@ -769,7 +769,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:509
 msgid "Ready to Go"
-msgstr "Готово к работе."
+msgstr "Готово к работе"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.ui:109
 msgid "You’re ready to go!"
@@ -822,23 +822,23 @@ msgstr "Найдите ближайший город"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:184
 msgid "Software Repositories"
-msgstr ""
+msgstr "Источники программного обеспечения"
 
 #. TRANSLATORS: this is the third party repositories info bar.
 #: gnome-initial-setup/pages/software/gis-software-page.c:188
 msgid "Access additional software from selected third party sources."
-msgstr ""
+msgstr "Доступ к дополнительному программному обеспечению из выбранных сторонних источников."
 
 #. TRANSLATORS: this is the third party repositories info bar.
 #: gnome-initial-setup/pages/software/gis-software-page.c:192
 msgid ""
 "Some of this software is proprietary and therefore has restrictions on use, "
 "sharing, and access to source code."
-msgstr ""
+msgstr "Некоторые из этих программ являются проприетарными и поэтому имеют ограничения на использование, совместное использование и доступ к исходному коду."
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:31
 msgid "Additional Software Repositories"
-msgstr ""
+msgstr "Дополнительные источники программного обеспечения"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:55
 msgid "<a href=\"more\">Find out more…</a>"
@@ -846,7 +846,7 @@ msgstr "<a href=\"more\">Узнать больше…</a>"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:69
 msgid "Third Party Repositories"
-msgstr ""
+msgstr "Сторонние репозитории"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:165
 msgid ""

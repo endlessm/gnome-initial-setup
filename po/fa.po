@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Arash Mousavi <mousavi.arash@gmail.com>, 2012-2013
+# Arash Mousavi <mousavi.arash@gmail.com>, 2017
 # Danial Behzadi <dani.behzi@ubuntu.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 15:00+0000\n"
-"PO-Revision-Date: 2019-01-07 16:53+0000\n"
+"PO-Revision-Date: 2019-01-07 17:09+0000\n"
 "Last-Translator: Will Thompson <wjt@endlessm.com>\n"
 "Language-Team: Persian (http://www.transifex.com/endless-os/gnome-initial-setup/language/fa/)\n"
 "MIME-Version: 1.0\n"
@@ -114,7 +115,7 @@ msgstr "اجبار به حالت کاربر موجود"
 
 #: gnome-initial-setup/gnome-initial-setup.c:305
 msgid "— GNOME initial setup"
-msgstr ""
+msgstr "— راه‌اندازی اولیه گنوم"
 
 #: gnome-initial-setup/pages/account/gis-account-page.c:309
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:61
@@ -151,7 +152,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
+msgstr "ورود تجاری اجازه می‌دهد از یک حساب کاربری مدیریت‌شده‌ی مرکزی موجود برای این دستگاه استفاده شود. شما همچنین از این حساب می‌توانید برای دسترسی به منابع شرکت در اینترنت استفاده کنید."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:65
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:316
@@ -239,7 +240,7 @@ msgstr "غیرفعال‌کردن عکس"
 
 #: gnome-initial-setup/pages/account/um-photo-dialog.c:307
 msgid "Take a photo…"
-msgstr ""
+msgstr "یک عکس بگیرید…"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
@@ -263,11 +264,11 @@ msgstr "گذرواژه نامعتبر، لطفا دوباره تلاش کنید"
 #: gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
 msgid "Couldn’t connect to the %s domain: %s"
-msgstr ""
+msgstr "نمی‌توان به دامنه %s متصل شد: %s"
 
 #: gnome-initial-setup/pages/account/um-utils.c:247
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr ""
+msgstr "متاسفیم، این نام کاربری موجود نیست. لطفاً یک مورد دیگر را امتحان کنید."
 
 #: gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
@@ -276,17 +277,17 @@ msgstr "نام‌کاربری خیلی طولانی است."
 
 #: gnome-initial-setup/pages/account/um-utils.c:253
 msgid "The username cannot start with a “-”."
-msgstr ""
+msgstr "نام‌کاربری نمی‌توان به یک «-» شروع شود."
 
 #: gnome-initial-setup/pages/account/um-utils.c:256
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
+msgstr "نام‌کاربری باید فقط حاوی حروف بزرگ و کوچک از بازه‌ی a-z، اعداد و هر کدام از نویسه‌های مقابل باشد: . - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:260
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr ""
+msgstr "این جهت نام‌گذاری پوشهٔ خانگی شما استفاده خواهد شد و قابل تغییر نخواهد بود."
 
 #: gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
@@ -402,7 +403,7 @@ msgstr "تایپ"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:43
 msgid "Select your keyboard layout or an input method."
-msgstr "چیدمان صفحه‌کلید خود یا یک روش ورودی را انتخاب کنید"
+msgstr "چیدمان صفحه‌کلید خود یا یک روش ورودی را انتخاب کنید."
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:61
 msgid "Help Detect My Keyboard Layout"
@@ -479,7 +480,7 @@ msgstr "شبکه‌های بی‌سیم غیرفعال شده‌اند"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:415
 msgid "Checking for available wireless networks"
-msgstr "درحال بررسی برای شبکه‌های بی‌سیم موجود."
+msgstr "درحال بررسی برای شبکه‌های بی‌سیم موجود"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:786
 msgid "Network"
@@ -521,7 +522,7 @@ msgstr "مراقب باشید گذرواژه‌ی خود را گم نکنید."
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:99
 msgid "_Confirm"
-msgstr ""
+msgstr "_تأیید"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:203
 msgid "Show password"
@@ -543,99 +544,99 @@ msgstr "گذرواژه جدید باید با گذرواژه‌ی قبلی تف�
 #: gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
 msgid "Try changing some letters and numbers."
-msgstr ""
+msgstr "سعی کنید تعدادی از حروف و اعداد را تغییر دهید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
 msgctxt "Password hint"
 msgid "Try changing the password a bit more."
-msgstr ""
+msgstr "سعی کنید گذرواژه را کمی بیشتر تغییر دهید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid "A password without your user name would be stronger."
-msgstr ""
+msgstr "یک گذرواژه بدون نام‌کاربری شما قوی‌تر خواهد بود."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "Try to avoid using your name in the password."
-msgstr ""
+msgstr "سعی کنید از استفاده از نام خود در گذرواژه بپرهیزید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid "Try to avoid some of the words included in the password."
-msgstr ""
+msgstr "سعی کنید از تعدادی از کلمات استفاده شده در گذرواژه پرهیز کنید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "Try to avoid common words."
-msgstr ""
+msgstr "سعی کنید از کلمات معمول استفاده نکنید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "Try to avoid reordering existing words."
-msgstr ""
+msgstr "سعی کنید از تغییر چینش حروف موجود پرهیز کنید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "Try to use more numbers."
-msgstr ""
+msgstr "سعی کنید از اعداد بیشتری استفاده کنید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "Try to use more uppercase letters."
-msgstr ""
+msgstr "سعی کنید از حروف بزرگ بیشتری استفاده کنید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "Try to use more lowercase letters."
-msgstr ""
+msgstr "سعی کنید از حروف کوچک بیشتری استفاده کنید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid "Try to use more special characters, like punctuation."
-msgstr ""
+msgstr "سعی کنید از نویسه‌های خاص بیشتری، مثل نشانه‌ها، استفاده کنید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid "Try to use a mixture of letters, numbers and punctuation."
-msgstr ""
+msgstr "سعی کنید از تلفیقی از حروف، اعداد و نشانه‌ها استفاده کنید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "Try to avoid repeating the same character."
-msgstr ""
+msgstr "سعی کنید از تکرار یک نوع نویسه خودداری کنید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "Try to avoid repeating the same type of character: you need to mix up "
 "letters, numbers and punctuation."
-msgstr ""
+msgstr "سعی کنید از تکرار یک نوع نویسه خودداری کنید: شما لازم است حروف، اعداد و نشانه‌ها را با هم تلفیق کنید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "Try to avoid sequences like 1234 or abcd."
-msgstr ""
+msgstr "سعی کنید از رشته‌هایی مثل ۱۲۳۴ و abcd اجتناب کنید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "Password needs to be longer. Try to add more letters, numbers and "
 "punctuation."
-msgstr ""
+msgstr "سعی کنید از تلفیقی از حروف، اعداد و نشانه‌ها استفاده کنید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
+msgstr "حروف بزرگ و کوچک، همراه با یک یا دو عدد را با هم تلفیق کنید."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password "
 "stronger."
-msgstr ""
+msgstr "اضافه کردن حروف بیشتر، اعداد و نشانه‌ها آن را قوی‌تر می‌کند."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -653,7 +654,7 @@ msgstr "ارسال گزارشات از مشکلات تکنیکی به ما بر�
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:120
 #, c-format
 msgid "Problem data will be collected by %s:"
-msgstr ""
+msgstr "اطلاعات مربوط به اشکالات توسط %s جمع‌آوری می‌شود:"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:121
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
@@ -663,7 +664,7 @@ msgstr "سیاست حریم‌خصوصی"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
 msgid "Uses Mozilla Location Service:"
-msgstr "استفاده از سرویس مکانی موزیلا"
+msgstr "استفاده از سرویس مکانی موزیلا:"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:292
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:32
@@ -746,7 +747,7 @@ msgstr ""
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:439
 #, c-format
 msgid "_Start Using %s"
-msgstr ""
+msgstr "_استفاده از %s را شروع کنید"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:469
 msgid "You're ready to try Endless OS"
@@ -768,7 +769,7 @@ msgstr "آماده برای حرکت"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.ui:109
 msgid "You’re ready to go!"
-msgstr ""
+msgstr "شما آماده‌اید!"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:302

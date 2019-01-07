@@ -7,6 +7,7 @@
 # tyfjoh, 2013
 # Hannie Dumoleyn <hannie@ubuntu-nl.org>, 2014-2015
 # Heimen Stoffels <vistausss@outlook.com>, 2018
+# Justin van Steijn <jvs@fsfe.org>, 2018
 # Nathan Follens <nthn@unseen.is>, 2015
 # Reinout van Schouwen <reinouts@gnome.org>, 2013-2014
 # tyfjoh, 2013
@@ -16,7 +17,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 15:00+0000\n"
-"PO-Revision-Date: 2019-01-07 16:53+0000\n"
+"PO-Revision-Date: 2019-01-07 17:09+0000\n"
 "Last-Translator: Will Thompson <wjt@endlessm.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/endless-os/gnome-initial-setup/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +38,7 @@ msgstr ""
 
 #: gnome-initial-setup/gis-assistant.c:311
 msgid "_Next"
-msgstr "V_olgende"
+msgstr "Volge_nde"
 
 #: gnome-initial-setup/gis-assistant.c:458
 msgid "_Accept"
@@ -45,7 +46,7 @@ msgstr "_Accepteren"
 
 #: gnome-initial-setup/gis-assistant.c:459
 msgid "_Skip"
-msgstr "_Overslaan"
+msgstr "Over_slaan"
 
 #: gnome-initial-setup/gis-assistant.c:460
 msgid "_Previous"
@@ -130,34 +131,34 @@ msgstr "_Accepteren en doorgaan"
 #: gnome-initial-setup/pages/account/gis-account-page.c:310
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:41
 msgid "About You"
-msgstr "Over mij"
+msgstr "Over u"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:182
 msgid "Failed to register account"
-msgstr "Kan account niet registreren"
+msgstr "Registreren van account is mislukt"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:376
 msgid "No supported way to authenticate with this domain"
-msgstr "Authenticatie met dit domein wordt niet ondersteund"
+msgstr "Authenticatie met dit domein is niet ondersteund"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:416
 msgid "Failed to join domain"
-msgstr "Kan geen lid worden van domein"
+msgstr "Lid worden van domein is mislukt"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:484
 msgid "Failed to log into domain"
-msgstr "Kan niet inloggen op domein"
+msgstr "Aanmelden bij domein is mislukt"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:31
 msgid "Enterprise Login"
-msgstr "Bedrijfsinlog"
+msgstr "Bedrijfsaanmelding"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:45
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr "Met Bedrijfsinlog kun je een bestaand, centraal beheerd gebruikersaccount gebruiken op dit apparaat. Je kunt dit ook gebruiken om toegang te krijgen tot middelen van het bedrijf op het internet."
+msgstr "Met Bedrijfsaanmelding kunt u een bestaande, centraal beheerde gebruikersaccount gebruiken op dit apparaat. U kan deze account ook gebruiken om toegang te krijgen tot middelen van het bedrijf op het internet."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:65
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:316
@@ -167,7 +168,7 @@ msgstr "_Domein"
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:82
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:102
 msgid "_Username"
-msgstr "_Gebruikersnaam"
+msgstr "Gebr_uikersnaam"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:99
 #: gnome-initial-setup/pages/password/gis-password-page.ui:67
@@ -180,18 +181,18 @@ msgstr "Bedrijfsdomein– of realmnaam"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:240
 msgid "C_ontinue"
-msgstr "D_oorgaan"
+msgstr "_Verder"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:275
 msgid "Domain Administrator Login"
-msgstr "Inloggen domeinbeheerder"
+msgstr "Aanmelden domeinbeheerder"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:295
 msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr "Om bedrijfsinloggen te gebruiken moet deze computer ingeschreven zijn bij een domein. Laat je netwerkbeheerder het domeinwachtwoord invoeren en kies een unieke naam voor je computer."
+msgstr "Om bedrijfsaanmeldingen te gebruiken moet deze computer ingeschreven zijn bij een domein. Laat uw netwerkbeheerder het domeinwachtwoord invoeren en kies een unieke naam voor uw computer."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:350
 msgid "_Computer"
@@ -199,15 +200,15 @@ msgstr "_Computer"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:382
 msgid "Administrator _Name"
-msgstr "_Naam van beheerder"
+msgstr "_Naam beheerder"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:416
 msgid "Administrator Password"
-msgstr "_Wachtwoord van beheerder"
+msgstr "_Wachtwoord beheerder"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:215
 msgid "Please check the name and username. You can choose a picture too."
-msgstr "Controleer de naam en gebruikersnaam. Je kunt ook een afbeelding kiezen."
+msgstr "Controleer de naam en gebruikersnaam. U kan ook een afbeelding kiezen."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:475
 msgid "We need a few details to complete setup."
@@ -219,7 +220,7 @@ msgstr "Gebruikersafbeelding"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:53
 msgid "Please provide a name and username. You can choose a picture too."
-msgstr "Voer een naam en gebruikersnaam in. Je kunt ook een afbeelding kiezen."
+msgstr "Voer een naam en gebruikersnaam in. U kan ook een afbeelding kiezen."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:71
 msgid "_Full Name"
@@ -237,7 +238,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:37
 msgid "Set Up _Enterprise Login"
-msgstr "B_edrijfsinlog instellen"
+msgstr "Bedrijfsaanmelding instellen"
 
 #: gnome-initial-setup/pages/account/um-photo-dialog.c:289
 msgid "Disable image"
@@ -245,11 +246,11 @@ msgstr "Afbeelding uitschakelen"
 
 #: gnome-initial-setup/pages/account/um-photo-dialog.c:307
 msgid "Take a photo…"
-msgstr "Maak een foto…"
+msgstr "Neem een foto…"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
-msgstr "Automatisch inloggen op dit type domein is niet mogelijk"
+msgstr "Automatisch aanmelden bij dit type domein is niet mogelijk"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:373
 #, c-format
@@ -260,16 +261,16 @@ msgstr "Dergelijk domein of realm niet gevonden"
 #: gnome-initial-setup/pages/account/um-realm-manager.c:796
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
-msgstr "Kan niet inloggen bij %s bij domein %s"
+msgstr "Aanmelden als %s bij domein %s is mislukt"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:788
 msgid "Invalid password, please try again"
-msgstr "Ongeldig wachtwoord; probeer het opnieuw"
+msgstr "Ongeldig wachtwoord, probeer het opnieuw"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
 msgid "Couldn’t connect to the %s domain: %s"
-msgstr "Kan geen verbinding maken met het %s domein: %s"
+msgstr "Verbinding maken met het domein %s is mislukt: %s"
 
 #: gnome-initial-setup/pages/account/um-utils.c:247
 msgid "Sorry, that user name isn’t available. Please try another."
@@ -282,17 +283,17 @@ msgstr "De gebruikersnaam is te lang."
 
 #: gnome-initial-setup/pages/account/um-utils.c:253
 msgid "The username cannot start with a “-”."
-msgstr "De gebruikersnaam mag niet beginnen met een “-”."
+msgstr "De gebruikersnaam kan niet beginnen met een ‘-’."
 
 #: gnome-initial-setup/pages/account/um-utils.c:256
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr "De gebruikersnaam mag alleen bestaan uit hoofdletters en kleine letters van a t/m z, cijfers, en de volgende tekens: . - _"
+msgstr "De gebruikersnaam mag alleen maar bestaan uit hoofdletters en kleine letters van a t/m z, cijfers, en volgende tekens: . - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:260
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr "Dit wordt gebruikt als naam van je persoonlijke map en kan niet worden gewijzigd."
+msgstr "Dit zal worden gebruikt als naam van uw thuismap en kan niet worden gewijzigd."
 
 #: gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
@@ -341,13 +342,13 @@ msgstr "Automatisch gebruiksstatistieken en probleemrapportages versturen naar E
 #: gnome-initial-setup/pages/eulas/gis-eula-page.c:301
 #: gnome-initial-setup/pages/eulas/gis-eula-page.ui:21
 msgid "License Agreements"
-msgstr "Licentie-overeenkomsten"
+msgstr "Licentieovereenkomsten"
 
 #: gnome-initial-setup/pages/eulas/gis-eula-page.ui:50
 msgid ""
 "I have _agreed to the terms and conditions in this end user license "
 "agreement."
-msgstr "Ik ga _akkoord met de voorwaarden en bepalingen in deze licentie-overeenkomst voor eindgebruikers."
+msgstr "Ik ga akkoord met de voorwaarden en bepalingen in deze licentieovereenkomst voor eindgebruikers."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:87
 msgid "Add Account"
@@ -355,22 +356,22 @@ msgstr "Account toevoegen"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:339
 msgid "Online Accounts"
-msgstr "Online accounts"
+msgstr "Online-accounts"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:40
 msgid "Connect Your Online Accounts"
-msgstr "Koppel je online accounts"
+msgstr "Uw online-accounts koppelen"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:59
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr "Door accounts te koppelen kun je eenvoudig toegang krijgen tot je e-mail, online agenda, contactpersonen en foto's."
+msgstr "Door accounts te koppelen kun u eenvoudig verbinding maken met uw e-mail, online agenda, contactpersonen en fotoboeken."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:96
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr "Accounts kunnen altijd toegevoegd en verwijderd worden via de Instellingen-app."
+msgstr "Accounts kunnen altijd toegevoegd en verwijderd worden via Instellingen."
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:279
 msgid "Preview"
@@ -408,7 +409,7 @@ msgstr "Typen"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:43
 msgid "Select your keyboard layout or an input method."
-msgstr "Kies je toetsenbordindeling of een invoermethode."
+msgstr "Selecteer uw toetsenbordindeling of een invoermethode."
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:61
 msgid "Help Detect My Keyboard Layout"
@@ -481,11 +482,11 @@ msgstr "Overige…"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:408
 msgid "Wireless networking is disabled"
-msgstr "Draadloos internet is uitgeschakeld"
+msgstr "Draadloze netwerken zijn uitgeschakeld"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:415
 msgid "Checking for available wireless networks"
-msgstr "Bezig met zoeken naar beschikbare draadloze netwerken"
+msgstr "Zoeken naar beschikbare draadloze netwerken"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:786
 msgid "Network"
@@ -493,7 +494,7 @@ msgstr "Netwerk"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:33
 msgid "Wi-Fi"
-msgstr "Wi-Fi"
+msgstr "Wifi"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:45
 msgid ""
@@ -511,7 +512,7 @@ msgstr "Inschakelen"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:194
 msgid "The passwords do not match."
-msgstr "De wachtwoorden komen niet overeen."
+msgstr "Wachtwoorden komen niet overeen."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:372
 msgid "Password"
@@ -523,7 +524,7 @@ msgstr "Wachtwoord instellen"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:48
 msgid "Be careful not to lose your password."
-msgstr "Zorg ervoor dat je je wachtwoord niet kwijtraakt."
+msgstr "Zorg ervoor dat u uw wachtwoord niet verliest."
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:99
 msgid "_Confirm"
@@ -560,12 +561,12 @@ msgstr "Probeer het wachtwoord wat meer te wijzigen."
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid "A password without your user name would be stronger."
-msgstr "Een wachtwoord zonder je gebruikersnaam zou sterker zijn."
+msgstr "Een wachtwoord zonder uw gebruikersnaam zou sterker zijn."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "Try to avoid using your name in the password."
-msgstr "Probeer het gebruik van je naam in het wachtwoord te vermijden."
+msgstr "Probeer het gebruik van uw naam in het wachtwoord te vermijden."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
@@ -617,7 +618,7 @@ msgctxt "Password hint"
 msgid ""
 "Try to avoid repeating the same type of character: you need to mix up "
 "letters, numbers and punctuation."
-msgstr "Probeer herhaling van hetzelfde soort teken te vermijden: je moet letters, cijfers en leestekens met elkaar combineren."
+msgstr "Probeer herhaling van hetzelfde soort teken te vermijden: u dient letters, cijfers en leestekens met elkaar te combineren."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
@@ -634,14 +635,14 @@ msgstr "Probeer een combinatie van letters, cijfers en leestekens te gebruiken."
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr "Gebruik zowel hoofdletters als kleine letters en gebruik een paar cijfers."
+msgstr "Meng hoofdletters en kleine letters en gebruik een paar cijfers."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password "
 "stronger."
-msgstr "Het toevoegen van meer letters, cijfers en leestekens zal het wachtwoord nóg sterker maken."
+msgstr "Het toevoegen van meer letters, cijfers en leestekens zal het wachtwoord nog sterker maken."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -651,7 +652,7 @@ msgstr "Het toevoegen van meer letters, cijfers en leestekens zal het wachtwoord
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr "Het melden van technische problemen helpt ons %s te verbeteren. Meldingen worden anoniem verstuurd en persoonlijke gegevens worden eruitgehaald."
+msgstr "Het melden van technische problemen helpt ons %s te verbeteren. Meldingen worden anoniem verzonden en persoonlijke gegevens worden eruit gewist."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -659,7 +660,7 @@ msgstr "Het melden van technische problemen helpt ons %s te verbeteren. Meldinge
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:120
 #, c-format
 msgid "Problem data will be collected by %s:"
-msgstr "Probleemgegevens worden verzameld door %s:"
+msgstr "Probleemgegevens zullen worden verzameld door %s:"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:121
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
@@ -684,7 +685,7 @@ msgstr "Locatiediensten"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr "Stelt applicaties in staat je geografische locatie bepalen. Als locatiediensten in gebruik zijn, wordt dit aangegeven."
+msgstr "Laat toepassingen toe uw geografische locatie te bepalen. Wanneer locatiediensten in gebruik zijn, wordt dit aangegeven."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:92
 msgid "Automatic Problem Reporting"
@@ -693,11 +694,11 @@ msgstr "Automatische probleemrapportage"
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:128
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr "Privacyvoorkeuren kunnen altijd gewijzigd worden via de Instellingen-app."
+msgstr "Privacyvoorkeuren kunnen altijd gewijzigd worden via Instellingen."
 
 #: gnome-initial-setup/pages/region/cc-region-chooser.c:228
 msgid "No regions found"
-msgstr "Geen regio's gevonden"
+msgstr "Geen regio’s gevonden"
 
 #: gnome-initial-setup/pages/region/gis-region-page.c:226
 #: gnome-initial-setup/pages/region/gis-region-page.ui:32
@@ -706,7 +707,7 @@ msgstr "Regio"
 
 #: gnome-initial-setup/pages/region/gis-region-page.ui:45
 msgid "Choose your country or region."
-msgstr "Kies je land of regio."
+msgstr "Kies uw land of regio."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
@@ -770,11 +771,11 @@ msgstr ""
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:509
 msgid "Ready to Go"
-msgstr "Klaar om door te gaan"
+msgstr "Klaar om verder te gaan"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.ui:109
 msgid "You’re ready to go!"
-msgstr "Je bent klaar om te beginnen!"
+msgstr "U bent klaar om te beginnen!"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
@@ -815,7 +816,7 @@ msgstr "Tijdzone"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr "Als je locatie niet kan worden gevonden, dan wordt de tijdzone automatisch ingesteld. Je kunt ook zelf een stad zoeken en deze instellen."
+msgstr "Indien uw locatie niet gevonden kan worden, wordt de tijdzone automatisch ingesteld. U kan ook zelf een stad zoeken en deze instellen."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:83
 msgid "Please search for a nearby city"
@@ -823,41 +824,41 @@ msgstr "Zoek de dichtstbijgelegen stad"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:184
 msgid "Software Repositories"
-msgstr ""
+msgstr "Softwarebronnen"
 
 #. TRANSLATORS: this is the third party repositories info bar.
 #: gnome-initial-setup/pages/software/gis-software-page.c:188
 msgid "Access additional software from selected third party sources."
-msgstr ""
+msgstr "Toegang krijgen tot aanvullende software van geselecteerde derde partijen."
 
 #. TRANSLATORS: this is the third party repositories info bar.
 #: gnome-initial-setup/pages/software/gis-software-page.c:192
 msgid ""
 "Some of this software is proprietary and therefore has restrictions on use, "
 "sharing, and access to source code."
-msgstr ""
+msgstr "Deze software is niet-vrij en er heeft daarom beperkingen met betrekking tot het gebruik, verspreiding, en toegang tot de broncode."
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:31
 msgid "Additional Software Repositories"
-msgstr ""
+msgstr "Aanvullende softwarebronnen"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:55
 msgid "<a href=\"more\">Find out more…</a>"
-msgstr "<a href=\"more\">Lees meer hierover…</a>"
+msgstr "<a href=\"more\">Lees meer…</a>"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:69
 msgid "Third Party Repositories"
-msgstr ""
+msgstr "Softwarebronnen van derden"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:165
 msgid ""
 "Proprietary software typically has restrictions on how it can be used and on"
 " access to source code. This prevents anyone but the software owner from "
 "inspecting, improving or learning from its code."
-msgstr "Propriëtaire software heeft doorgaans beperkingen op het gebruik van en de toegang tot broncode. Dit verhindert iedereen behalve de eigenaar van de software deze code te kunnen controleren, verbeteren of er uit te leren."
+msgstr "Niet-vrije software heeft doorgaans beperkingen op het gebruik van en de toegang tot broncode. Dit verhindert iedereen behalve de eigenaar van de software deze code te kunnen controleren, verbeteren of er van te leren."
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:177
 msgid ""
 "In contrast, Free Software can be freely run, copied, distributed, studied "
 "and modified."
-msgstr "Vrije software, daarentegen, kan vrij worden uitgevoerd, gedistribueerd, bestudeerd en aangepast."
+msgstr "Vrije software daarentegen kan vrij uitgevoerd, verspreid, bestudeerd en aangepast worden."

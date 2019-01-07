@@ -5,13 +5,13 @@
 # Translators:
 # Cédric Valmary <cvalmary@yahoo.fr>, 2015-2016
 # Cédric Valmary <cvalmary@yahoo.fr>, 2015
-# Cédric Valmary <cvalmary@yahoo.fr>, 2016
+# Cédric Valmary <cvalmary@yahoo.fr>, 2016,2018
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 15:00+0000\n"
-"PO-Revision-Date: 2019-01-07 16:53+0000\n"
+"PO-Revision-Date: 2019-01-07 17:11+0000\n"
 "Last-Translator: Will Thompson <wjt@endlessm.com>\n"
 "Language-Team: Occitan (post 1500) (http://www.transifex.com/endless-os/gnome-initial-setup/language/oc/)\n"
 "MIME-Version: 1.0\n"
@@ -115,7 +115,7 @@ msgstr "Forçar lo mòde utilizaire existent"
 
 #: gnome-initial-setup/gnome-initial-setup.c:305
 msgid "— GNOME initial setup"
-msgstr ""
+msgstr "— Configuracion iniciala de GNOME"
 
 #: gnome-initial-setup/pages/account/gis-account-page.c:309
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:61
@@ -152,7 +152,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
+msgstr "Una connexion d'entrepresa autoriza l'utilizacion sus aqueste periferic d'un compte utilizaire global centralizat. Podètz tanben utilizar aqueste compte per accedir a de ressorsas d'entrepresa sus Internet."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:65
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:316
@@ -186,7 +186,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr "Per fin d'utilizar des connexions d'entrepresa, aqueste ordenador deu èsser enregistrat dins un domeni. Demandatz a vòstre administrator ret de picar aicí lo senhal del domeni e causissètz un nom unic per vòstre ordenador."
+msgstr "Per fin d'utilizar de connexions d'entrepresa, aqueste ordenador deu èsser enregistrat dins un domeni. Demandatz a vòstre administrator ret de picar aicí lo senhal del domeni e causissètz un nom unic per vòstre ordenador."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:350
 msgid "_Computer"
@@ -202,7 +202,7 @@ msgstr "Senhal de l'administrator"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:215
 msgid "Please check the name and username. You can choose a picture too."
-msgstr ""
+msgstr "Mercé de verificar vòstre nom e vòstre nom de compte. Podètz tanben causir un avatar."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:475
 msgid "We need a few details to complete setup."
@@ -214,7 +214,7 @@ msgstr "Imatge d'avatar"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:53
 msgid "Please provide a name and username. You can choose a picture too."
-msgstr ""
+msgstr "Mercé d'indicar vòstre nom e vòstre nom de compte. Podètz tanben causir un avatar."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:71
 msgid "_Full Name"
@@ -240,7 +240,7 @@ msgstr "Desactivar l'imatge"
 
 #: gnome-initial-setup/pages/account/um-photo-dialog.c:307
 msgid "Take a photo…"
-msgstr ""
+msgstr "Prene una fòto…"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
@@ -264,11 +264,11 @@ msgstr "Senhal invalid, ensajatz tornamai"
 #: gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
 msgid "Couldn’t connect to the %s domain: %s"
-msgstr ""
+msgstr "Impossible de se connectar al domeni %s : %s"
 
 #: gnome-initial-setup/pages/account/um-utils.c:247
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr ""
+msgstr "O planhèm, aqueste nom d'utilizaire es pas disponible. Ensajatz-en un autre."
 
 #: gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
@@ -277,17 +277,17 @@ msgstr "Lo nom d'utilizaire es tròp long."
 
 #: gnome-initial-setup/pages/account/um-utils.c:253
 msgid "The username cannot start with a “-”."
-msgstr ""
+msgstr "Lo nom d'utilizaire pòt pas començar per « - »."
 
 #: gnome-initial-setup/pages/account/um-utils.c:256
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
+msgstr "Lo nom d'utilizaire deu èsser unicament compausat de letras majusculas e minusculas de a a z, de nombres e dels caractèrs seguents : . - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:260
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr ""
+msgstr "Serà utilizat per nomenar vòstre dorsièr personal e poirà pas èsser cambiat."
 
 #: gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
@@ -360,7 +360,7 @@ msgstr "Connectar vòstres comptes en linha"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr "La connexion de vòstres comptes vos permet d'accedir facilement a vos corrièrs electronics, vòstre agenda en linha, vos contacts, documents e photos."
+msgstr "La connexion de vòstres comptes vos permet d'accedir aisidament a vòstres corrièrs electronics, vòstre agenda en linha, vòstres contactes, documents e fòtos."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:96
 msgid ""
@@ -381,7 +381,7 @@ msgstr "Mai..."
 #. * did not yield any results
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:360
 msgid "No inputs found"
-msgstr "Aucune metòde de picada trobada"
+msgstr "Cap de metòde de picada pas trobat"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
 msgid "Your keyboard layout seems to be:"
@@ -476,7 +476,7 @@ msgstr "Autre…"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:408
 msgid "Wireless networking is disabled"
-msgstr ""
+msgstr "La ret sens fial es desactivada"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:415
 msgid "Checking for available wireless networks"
@@ -502,11 +502,11 @@ msgstr "Cap de ret sens fial pas disponibla"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:118
 msgid "Turn On"
-msgstr ""
+msgstr "Activar"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:194
 msgid "The passwords do not match."
-msgstr "Los senhala correspondon pas."
+msgstr "Los senhals correspondon pas."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:372
 msgid "Password"
@@ -522,7 +522,7 @@ msgstr "Atencion de pèrdre pas vòstre senhal."
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:99
 msgid "_Confirm"
-msgstr ""
+msgstr "_Confirmar"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:203
 msgid "Show password"
@@ -544,99 +544,99 @@ msgstr "Lo novèl senhal deu èsser diferent de l'ancian."
 #: gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
 msgid "Try changing some letters and numbers."
-msgstr ""
+msgstr "Ensajatz de cambiar de letras e de chifras."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
 msgctxt "Password hint"
 msgid "Try changing the password a bit more."
-msgstr ""
+msgstr "Ensajatz de lo modificar un pauc mai."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid "A password without your user name would be stronger."
-msgstr ""
+msgstr "Un senhal sens vòstre nom d'utilizaire seriá mai robuste."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "Try to avoid using your name in the password."
-msgstr ""
+msgstr "Evitatz d'utilizar vòstre nom dins lo senhal."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid "Try to avoid some of the words included in the password."
-msgstr ""
+msgstr "Evitatz certans mots contenguts dins lo senhal."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "Try to avoid common words."
-msgstr ""
+msgstr "Evitatz d'utilizar de mots usuals."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "Try to avoid reordering existing words."
-msgstr ""
+msgstr "Evitatz de rearrengar de mots existents."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "Try to use more numbers."
-msgstr ""
+msgstr "Utilizatz mai de chifras."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "Try to use more uppercase letters."
-msgstr ""
+msgstr "Utilizatz mai de letras majusculas."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "Try to use more lowercase letters."
-msgstr ""
+msgstr "Utilizatz mai de letras minusculas."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid "Try to use more special characters, like punctuation."
-msgstr ""
+msgstr "Utilizatz mai de caractèrs especials, coma de pontuacion."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid "Try to use a mixture of letters, numbers and punctuation."
-msgstr ""
+msgstr "Utilizatz una mescla de letras, de chifras e de pontuacion."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "Try to avoid repeating the same character."
-msgstr ""
+msgstr "Evitatz de repetir lo meteis caractèr."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "Try to avoid repeating the same type of character: you need to mix up "
 "letters, numbers and punctuation."
-msgstr ""
+msgstr "Evitatz de repetir los meteisses tipes de caractèrs : mesclatz de letras, de chifras e de pontuacion."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "Try to avoid sequences like 1234 or abcd."
-msgstr ""
+msgstr "Evitatz de seguidas coma 1234 o abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "Password needs to be longer. Try to add more letters, numbers and "
 "punctuation."
-msgstr ""
+msgstr "Lo senhal deu èsser mai long. Apondètz mai de letras, de chifras o de pontuacion."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
+msgstr "Mesclatz majusculas e minusculas e apondètz-i una chifra o doas."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password "
 "stronger."
-msgstr ""
+msgstr "L'apondon de mai de letras, de chifras o de pontuacion rendrà lo senhal encara mai fòrt."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -654,7 +654,7 @@ msgstr "Mandar de rapòrts sus de problèmas arribats nos ajuda a melhorar %s. A
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:120
 #, c-format
 msgid "Problem data will be collected by %s:"
-msgstr ""
+msgstr "Las donadas dels problèmas seràn collectadas per %s :"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:121
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
@@ -679,7 +679,7 @@ msgstr "Servicis de geolocalizacion"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr "Autoriza las aplicacions a geolocalizar vòstra posicion actuala. Un vesent s'aficha quand aquestes servicis son actius."
+msgstr "Autoriza las aplicacions a geolocalizar vòstra posicion actuala. Un lum s'aficha quand aquestes servicis son actius."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:92
 msgid "Automatic Problem Reporting"
@@ -747,7 +747,7 @@ msgstr ""
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:439
 #, c-format
 msgid "_Start Using %s"
-msgstr ""
+msgstr "_Començar d'utilizar %s"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:469
 msgid "You're ready to try Endless OS"
@@ -769,7 +769,7 @@ msgstr "Prèst"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.ui:109
 msgid "You’re ready to go!"
-msgstr ""
+msgstr "Vòstre perfil es ara configurat !"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
@@ -810,7 +810,7 @@ msgstr "Fus orari"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
+msgstr "Lo fus orari serà automaticament parametrat se vòstra posicion es detectada. Podètz tanben recercar una vila per lo parametrar vos-meteis."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:83
 msgid "Please search for a nearby city"
@@ -838,7 +838,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:55
 msgid "<a href=\"more\">Find out more…</a>"
-msgstr ""
+msgstr "<a href=\"more\">Ne saber mai…</a>"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:69
 msgid "Third Party Repositories"
@@ -849,10 +849,10 @@ msgid ""
 "Proprietary software typically has restrictions on how it can be used and on"
 " access to source code. This prevents anyone but the software owner from "
 "inspecting, improving or learning from its code."
-msgstr ""
+msgstr "Los logicials proprietaris compòrtan generalament de restriccions quant a lor utilizacion e a l'accès a lor còdi font. Aquò empacha tota persona autra que son proprietari d'inspectar, de melhorar o d'aprene a partir de son còdi."
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:177
 msgid ""
 "In contrast, Free Software can be freely run, copied, distributed, studied "
 "and modified."
-msgstr ""
+msgstr "Al contrari, los logicials liures pòdon èsser executats, copiats, distribuits, estudiats e modificats d'un biais totalament liure."

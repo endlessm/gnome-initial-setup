@@ -13,6 +13,7 @@
 # e2f_cn c5 <jarvisn@ecinnovations.com>, 2017
 # e2f_cn c9 <e2f_cn_c9@outlook.com>, 2018
 # liuxuejiao <liuxuejiao_endless@126.com>, 2016
+# Mingcong Bai <jeffbai@aosc.xyz>, 2017-2018
 # Roddy Shuler <roddy@stanfordalumni.org>, 2017
 # tanyuanxing <tanyuanxingendless@126.com>, 2016
 # Tong Hui <tonghuix@gmail.com>, 2013,2015
@@ -24,7 +25,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 15:00+0000\n"
-"PO-Revision-Date: 2019-01-07 16:53+0000\n"
+"PO-Revision-Date: 2019-01-07 17:10+0000\n"
 "Last-Translator: Will Thompson <wjt@endlessm.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/endless-os/gnome-initial-setup/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -124,11 +125,11 @@ msgstr "这可让您试用 Endless，而无需激活帐户。不会保存更改�
 
 #: gnome-initial-setup/gnome-initial-setup.c:299
 msgid "Force existing user mode"
-msgstr "强制新建用户模式"
+msgstr "强制现有用户模式"
 
 #: gnome-initial-setup/gnome-initial-setup.c:305
 msgid "— GNOME initial setup"
-msgstr "- GNOME 初始配置"
+msgstr "— GNOME 初始配置"
 
 #: gnome-initial-setup/pages/account/gis-account-page.c:309
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:61
@@ -165,7 +166,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr "企业登录允许在本机上使用已有的、集中式管理的用户账号。您也可以使用此账号访问公司在互联网上的资源。"
+msgstr "企业登录允许在本机上使用已有的、集中式管理的用户帐号。您也可以使用此帐号访问互联网上公司所有的资源。"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:65
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:316
@@ -249,11 +250,11 @@ msgstr "设置企业登录(_E)"
 
 #: gnome-initial-setup/pages/account/um-photo-dialog.c:289
 msgid "Disable image"
-msgstr "禁用图片"
+msgstr "禁用图像"
 
 #: gnome-initial-setup/pages/account/um-photo-dialog.c:307
 msgid "Take a photo…"
-msgstr "拍照…"
+msgstr "拍张照片…"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
@@ -281,12 +282,12 @@ msgstr "无法连接到 %s 域：%s"
 
 #: gnome-initial-setup/pages/account/um-utils.c:247
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr "抱歉，该用户名不可用。请尝试其他用户名。"
+msgstr "抱歉，此用户名不可用。请尝试换一个用户名。"
 
 #: gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
 msgid "The username is too long."
-msgstr "用户名太长"
+msgstr "用户名太长。"
 
 #: gnome-initial-setup/pages/account/um-utils.c:253
 msgid "The username cannot start with a “-”."
@@ -296,11 +297,11 @@ msgstr "用户名不能以“-”开头。"
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr "用户名只能包含大小写英文字母（a 至 z）、数字和“.”“-”“_”符号"
+msgstr "用户名只能包含从 a-z 的大小写字母、数字和“.”“-”“_”几种字符"
 
 #: gnome-initial-setup/pages/account/um-utils.c:260
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr "这将用于命名主文件夹，不能更改。"
+msgstr "这将用于创建您的主目录且无法更改。"
 
 #: gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
@@ -388,7 +389,7 @@ msgstr "预览"
 #: gnome-initial-setup/pages/language/cc-language-chooser.c:287
 #: gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
-msgstr "更多..."
+msgstr "更多…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
@@ -416,7 +417,7 @@ msgstr "输入"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:43
 msgid "Select your keyboard layout or an input method."
-msgstr "选择您的键盘布局或者其他输入方式"
+msgstr "选择您的键盘布局或者其他输入方式。"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:61
 msgid "Help Detect My Keyboard Layout"
@@ -485,7 +486,7 @@ msgstr "试一试或重新格式化"
 #: gnome-initial-setup/pages/network/gis-network-page.c:323
 msgctxt "Wireless access point"
 msgid "Other…"
-msgstr "其他..."
+msgstr "其他…"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:408
 msgid "Wireless networking is disabled"
@@ -519,7 +520,7 @@ msgstr "打开"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:194
 msgid "The passwords do not match."
-msgstr "密码不匹配"
+msgstr "密码不匹配。"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:372
 msgid "Password"
@@ -535,7 +536,7 @@ msgstr "请记好您的密码。"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:99
 msgid "_Confirm"
-msgstr "_确认"
+msgstr "确认(_C)"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:203
 msgid "Show password"
@@ -557,99 +558,99 @@ msgstr "新密码需要跟旧密码不相同。"
 #: gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
 msgid "Try changing some letters and numbers."
-msgstr "请更改一些字母和数字。"
+msgstr "尝试在密码中修改一些字母和数字。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
 msgctxt "Password hint"
 msgid "Try changing the password a bit more."
-msgstr "请进一步更改密码。"
+msgstr "尝试进一步在密码中修改一些字母和数字。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid "A password without your user name would be stronger."
-msgstr "不包含用户名的密码更安全。"
+msgstr "不包含您用户名的密码强度更好。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "Try to avoid using your name in the password."
-msgstr "请勿在密码中使用您的名字。"
+msgstr "请避免在密码中使用您的名字。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid "Try to avoid some of the words included in the password."
-msgstr "请勿在密码中使用单词。"
+msgstr "请避免一些在密码中已经包含了的词。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "Try to avoid common words."
-msgstr "请勿使用常用单词。"
+msgstr "请避免在密码中使用常用的词。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "Try to avoid reordering existing words."
-msgstr "请勿仅更改现有单词顺序。"
+msgstr "请避免在密码中重新排列已有单词。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "Try to use more numbers."
-msgstr "请多使用数字。"
+msgstr "尝试在密码中使用更多的数字。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "Try to use more uppercase letters."
-msgstr "请使用更多大写字母。"
+msgstr "尝试在密码中使用更多大写字母。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "Try to use more lowercase letters."
-msgstr "请使用更多小写字母。"
+msgstr "尝试在密码中使用更多小写字母。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid "Try to use more special characters, like punctuation."
-msgstr "请使用更多特殊字符，如标点符号。"
+msgstr "尝试在密码中使用更多的特殊字符，比如标点符号。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid "Try to use a mixture of letters, numbers and punctuation."
-msgstr "请混用字母、数字和标点符号。"
+msgstr "尝试在密码中混合使用字母，数字和标点符号。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "Try to avoid repeating the same character."
-msgstr "请避免重复相同字符。"
+msgstr "请避免在密码中重复使用同样的字符。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "Try to avoid repeating the same type of character: you need to mix up "
 "letters, numbers and punctuation."
-msgstr "请避免重复相同类型字符：您需要混合字母、数字和标点符号。"
+msgstr "请避免在密码中重复使用同样类型的字符：你需要混用字母、数字和标点符号。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "Try to avoid sequences like 1234 or abcd."
-msgstr "请避免使用如 1234 或 abcd 等有规律序列。"
+msgstr "请避免在密码中使用类似 1234 或者 abcd 的序列。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "Password needs to be longer. Try to add more letters, numbers and "
 "punctuation."
-msgstr "密码需要加长。尝试添加更多的字母、数字和标点符号。"
+msgstr "尝试在密码中混合使用字母，数字和标点符号。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr "密码需要大小写字母混用并尝试使用一到两个数字。"
+msgstr "密码需要大小写字母混用并使用一到两个数字。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password "
 "stronger."
-msgstr "添加更多字母、数字和标点符号将使密码更加强大。"
+msgstr "加上更多字母，数字和标点符号可改善密码强度。"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -667,7 +668,7 @@ msgstr "发送技术问题的报告来帮助我们改进 %s 。报告以匿名�
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:120
 #, c-format
 msgid "Problem data will be collected by %s:"
-msgstr "将由 %s 收集问题数据："
+msgstr "问题数据将被 %s 收集："
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:121
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
@@ -677,7 +678,7 @@ msgstr "隐私政策"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
 msgid "Uses Mozilla Location Service:"
-msgstr "使用 Mozilla 定位服务："
+msgstr "使用 Mozilla 位置服务："
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:292
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:32
@@ -782,7 +783,7 @@ msgstr "准备好了"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.ui:109
 msgid "You’re ready to go!"
-msgstr "您准备好了！"
+msgstr "一切就续，开始用吧！"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
@@ -831,23 +832,23 @@ msgstr "请搜索就近的城市"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:184
 msgid "Software Repositories"
-msgstr ""
+msgstr "软件源"
 
 #. TRANSLATORS: this is the third party repositories info bar.
 #: gnome-initial-setup/pages/software/gis-software-page.c:188
 msgid "Access additional software from selected third party sources."
-msgstr ""
+msgstr "从选中的第三方源获取附加软件。"
 
 #. TRANSLATORS: this is the third party repositories info bar.
 #: gnome-initial-setup/pages/software/gis-software-page.c:192
 msgid ""
 "Some of this software is proprietary and therefore has restrictions on use, "
 "sharing, and access to source code."
-msgstr ""
+msgstr "此软件包含专利部件，所以在使用、分享和获取源码上有限制。"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:31
 msgid "Additional Software Repositories"
-msgstr ""
+msgstr "附加软件源"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:55
 msgid "<a href=\"more\">Find out more…</a>"
@@ -855,7 +856,7 @@ msgstr "<a href=\"more\">查找更多…</a>"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:69
 msgid "Third Party Repositories"
-msgstr ""
+msgstr "第三方软件源"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:165
 msgid ""

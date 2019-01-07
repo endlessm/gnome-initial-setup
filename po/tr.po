@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the gnome-initial-setup package.
 # 
 # Translators:
-# Emin Tufan <etcetin@gmail.com>, 2013,2017
+# Emin Tufan <etcetin@gmail.com>, 2013,2017-2018
 # Emin Tufan <etcetin@gmail.com>, 2013
 # Muhammet Kara <muhammetk@gmail.com>, 2012-2016
 # Necdet Yücel <necdetyucel@gmail.com>, 2015
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 15:00+0000\n"
-"PO-Revision-Date: 2019-01-07 16:53+0000\n"
+"PO-Revision-Date: 2019-01-07 17:10+0000\n"
 "Last-Translator: Will Thompson <wjt@endlessm.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/endless-os/gnome-initial-setup/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -187,7 +187,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr "Kurumsal girişleri kullanmak için, bu bilgisayarın bir etki alanına kaydedilmesi gerekir. Lütfen ağ yöneticinizin etki alanı parolasını buraya yazmasını sağlayın ve bilgisayarınız için eşsiz bir isim seçin."
+msgstr "Kurumsal girişleri kullanmak için bu bilgisayarın bir etki alanına kaydedilmesi gerekir. Lütfen ağ yöneticinizin etki alanı parolasını buraya yazmasını sağlayın ve bilgisayarınız için eşsiz bir ad seçin."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:350
 msgid "_Computer"
@@ -207,7 +207,7 @@ msgstr "Lütfen adı ve kullanıcı adını denetleyin. Ayrıca bir resim de se�
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:475
 msgid "We need a few details to complete setup."
-msgstr "Kurulumu tamamlamak için birkaç ayrıntıya gereksinimimiz var."
+msgstr "Kurulumu tamamlamak için birkaç ayrıntıya gereksiniyoruz."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:18
 msgid "Avatar image"
@@ -245,7 +245,7 @@ msgstr "Fotoğraf çek…"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
-msgstr "Bu etki alanı türüne otomatik katılım yapılamaz"
+msgstr "Bu etki alanı türüne kendiliğinden katılamaz"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:373
 #, c-format
@@ -274,7 +274,7 @@ msgstr "Üzgünüz, o kullanıcı adı kullanılabilir değil. Lütfen başka de
 #: gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
 msgid "The username is too long."
-msgstr "Kullanıcı adı fazlasıyla uzun."
+msgstr "Kullanıcı adı çok uzun."
 
 #: gnome-initial-setup/pages/account/um-utils.c:253
 msgid "The username cannot start with a “-”."
@@ -684,7 +684,7 @@ msgstr "Uygulamaların coğrafi konumunuzu belirlemesine olanak tanır. Konum hi
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:92
 msgid "Automatic Problem Reporting"
-msgstr "Otomatik Sorun Bildirimi"
+msgstr "Kendiliğinden Sorun Bildirimi"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:128
 msgid ""
@@ -819,23 +819,23 @@ msgstr "Lütfen yakındaki bir şehir için arama yapın"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:184
 msgid "Software Repositories"
-msgstr ""
+msgstr "Yazılım Depoları"
 
 #. TRANSLATORS: this is the third party repositories info bar.
 #: gnome-initial-setup/pages/software/gis-software-page.c:188
 msgid "Access additional software from selected third party sources."
-msgstr ""
+msgstr "Seçili üçüncü taraf kaynaklardan ek yazılımlara erişin."
 
 #. TRANSLATORS: this is the third party repositories info bar.
 #: gnome-initial-setup/pages/software/gis-software-page.c:192
 msgid ""
 "Some of this software is proprietary and therefore has restrictions on use, "
 "sharing, and access to source code."
-msgstr ""
+msgstr "Bu yazılımların bir bölümü sahiplidir ve bu nedenle kullanım, paylaşım, kaynak koda erişim üzerinde kısıtlamaları vardır."
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:31
 msgid "Additional Software Repositories"
-msgstr ""
+msgstr "Ek Yazılım Depoları"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:55
 msgid "<a href=\"more\">Find out more…</a>"
@@ -843,7 +843,7 @@ msgstr "<a href=\"more\">Daha çoğunu keşfedin…</a>"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:69
 msgid "Third Party Repositories"
-msgstr ""
+msgstr "Üçüncü Taraf Depolar"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:165
 msgid ""
