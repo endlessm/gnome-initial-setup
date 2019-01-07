@@ -8,12 +8,13 @@
 # Kukuh Syafaat <syafaatkukuh@gmail.com>, 2017
 # Roddy Shuler <roddy@stanfordalumni.org>, 2017-2018
 # Septira Taruna <septira@endlessm.com>, 2017-2018
+# Will Thompson <wjt@endlessm.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 15:00+0000\n"
-"PO-Revision-Date: 2019-01-07 17:11+0000\n"
+"PO-Revision-Date: 2019-01-07 17:35+0000\n"
 "Last-Translator: Will Thompson <wjt@endlessm.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/endless-os/gnome-initial-setup/language/id/)\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +47,7 @@ msgstr "Lewa_ti"
 
 #: gnome-initial-setup/gis-assistant.c:460
 msgid "_Previous"
-msgstr "Se_belumya"
+msgstr "Se_belumnya"
 
 #: gnome-initial-setup/gis-assistant.c:461
 msgid "_Cancel"
@@ -117,7 +118,7 @@ msgstr "Paksakan mode pengguna yang ada"
 
 #: gnome-initial-setup/gnome-initial-setup.c:305
 msgid "— GNOME initial setup"
-msgstr "— GNOME penyiapan awal"
+msgstr "— penyiapan awal GNOME"
 
 #: gnome-initial-setup/pages/account/gis-account-page.c:309
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:61
@@ -270,7 +271,7 @@ msgstr "Tak bisa menyambung ke domain %s: %s"
 
 #: gnome-initial-setup/pages/account/um-utils.c:247
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr "Maaf, nama pengguna itu tidak tersedia. Silakan coba yang lain."
+msgstr "Maaf, nama pengguna tersebut tidak tersedia. Silakan coba yang lain."
 
 #: gnome-initial-setup/pages/account/um-utils.c:250
 #, c-format
@@ -285,7 +286,7 @@ msgstr "Nama pengguna tidak boleh diawali dengan “-”."
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr "Nama pengguna mesti hanya terdiri dari huruf besar dan kecil dari a-z, dijit, dan karakter berikut: . - _"
+msgstr "Nama pengguna hanya bisa terdiri dari huruf kecil dan besar a-z, angka, dan karakter: . - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:260
 msgid "This will be used to name your home folder and can’t be changed."
@@ -562,83 +563,83 @@ msgstr "Sandi tanpa nama pengguna Anda akan lebih kuat."
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "Try to avoid using your name in the password."
-msgstr "Try to avoid using your name in the password."
+msgstr "Cobalah untuk menghindari penggunaan nama Anda dalam kata sandi."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid "Try to avoid some of the words included in the password."
-msgstr "Cobalah menghindari beberapa kata yang disertakan dalam sandi."
+msgstr "Cobalah untuk menghindari beberapa kata yang disertakan dalam kata sandi."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "Try to avoid common words."
-msgstr "Cobalah menghindari kata-kata umum."
+msgstr "Cobalah untuk menghindari kata-kata umum."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "Try to avoid reordering existing words."
-msgstr "Cobalah menghindari menata ulang kata yang ada."
+msgstr "Cobalah untuk menghindari menata ulang kata-kata yang sama."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "Try to use more numbers."
-msgstr "Cobalah memakai lebih banyak angka."
+msgstr "Cobalah untuk memakai lebih banyak angka."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "Try to use more uppercase letters."
-msgstr "Cobalah memakai lebih banyak huruf besar."
+msgstr "Cobalah untuk memakai lebih banyak huruf besar."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "Try to use more lowercase letters."
-msgstr "Cobalah memakai lebih banyak huruf kecil."
+msgstr "Cobalah untuk memakai lebih banyak huruf kecil."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid "Try to use more special characters, like punctuation."
-msgstr "Cobalah memakai lebih banyak karakter khusus, seperti tanda seru."
+msgstr "Cobalah untuk memakai lebih banyak karakter spesial, seperti tanda seru."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid "Try to use a mixture of letters, numbers and punctuation."
-msgstr "Cobalah memakai campuran huruf, angka, dan tanda baca."
+msgstr "Cobalah untuk memakai campuran huruf, angka, dan tanda baca."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "Try to avoid repeating the same character."
-msgstr "Cobalah menghindari pengulangan karakter yang sama."
+msgstr "Cobalah untuk menghindari pengulangan karakter yang sama."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "Try to avoid repeating the same type of character: you need to mix up "
 "letters, numbers and punctuation."
-msgstr "Cobalah menghindari pengulangan tipe karakter yang sama: Anda perlu mencampur huruf, angka, dan tanda baca."
+msgstr "Cobalah untuk menghindari pengulangan tipe karakter yang sama: Anda perlu mencampur huruf, angka, dan tanda baca."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "Try to avoid sequences like 1234 or abcd."
-msgstr "Cobalah menghindari urutan seperti 1234 atau abcd."
+msgstr "Cobalah untuk menghindari urutan seperti 1234 atau abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "Password needs to be longer. Try to add more letters, numbers and "
 "punctuation."
-msgstr "Password harus lebih panjang. Cobalah memakai campuran huruf, angka, dan tanda baca."
+msgstr "Password harus lebih panjang. Cobalah untuk memakai campuran huruf, angka, dan tanda baca."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr "Campurkan huruf besar dan kecil dan pakailah satu atau dua angka."
+msgstr "Campurkan huruf besar dan kecil dan cobalah untuk memakai satu atau dua angka."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password "
 "stronger."
-msgstr "Menambah lebih banyak huruf, angka, dan tanda baca akan membuatnya lebih kuat."
+msgstr "Menambah lebih banyak huruf, angka, dan tanda baca akan membuat kata sandi lebih kuat."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
