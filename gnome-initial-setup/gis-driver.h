@@ -113,6 +113,7 @@ gboolean gis_driver_is_small_screen (GisDriver *driver);
 gboolean gis_driver_is_product (GisDriver *driver, const gchar *product_name);
 
 gboolean gis_driver_is_hack (GisDriver *driver);
+void gis_driver_stop_startup_sound (GisDriver *driver);
 
 const gchar *gis_driver_get_product_name (GisDriver *driver);
 
