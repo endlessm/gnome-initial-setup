@@ -35,6 +35,8 @@
 
 #define HACK_PRODUCT_NAME "hack"
 
+static void emit_page_changed_sound (GisAssistant *assistant, GisDriver *driver);
+
 /* Statically include this for now. Maybe later
  * we'll generate this from glib-mkenums. */
 GType
@@ -322,6 +324,11 @@ prepare_main_window (GisDriver *driver)
                             "page-changed",
                             G_CALLBACK (assistant_page_changed),
                             sw);
+  if (gis_driver_is_hack (driver))
+    g_signal_connect (priv->assistant,
+                      "page-changed",
+                      G_CALLBACK (emit_page_changed_sound),
+                      driver);
 
   gtk_window_set_titlebar (priv->main_window,
                            gis_assistant_get_titlebar (priv->assistant));
@@ -953,6 +960,18 @@ emit_startup_sound (GApplication * app, gpointer user_data)
   eos_hack_sound_client_play (priv->sound_client, "FBE/startup",
                               (GAsyncReadyCallback) startup_sound_cb,
                               GIS_DRIVER (app));
+}
+
+static void
+emit_page_changed_sound (GisAssistant *assistant, GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
+  /* This check avoids the FBE/page-changed sound being emitted when the
+   * first page is loaded for the first time. */
+  if (gis_assistant_get_current_page (assistant) != NULL)
+    eos_hack_sound_client_play (priv->sound_client, "FBE/page-changed",
+                                NULL, NULL);
 }
 
 static void
