@@ -258,8 +258,6 @@ on_shared_user_created (GtkWidget       *page_local,
     language = gis_driver_get_user_language (GIS_PAGE (page)->driver);
     if (language)
         act_user_set_language (user, language);
-
-    gis_driver_set_user_permissions (GIS_PAGE (page)->driver, user, password);
 }
 
 static void
