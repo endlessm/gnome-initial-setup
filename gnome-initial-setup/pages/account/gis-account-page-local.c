@@ -585,11 +585,10 @@ static void
 local_create_user (GisAccountPageLocal *page)
 {
   GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (page);
-  GisDriver *driver;
+  GisDriver *driver = GIS_DRIVER (g_application_get_default ());
   const gchar *username;
   const gchar *fullname;
   GError *error = NULL;
-
 
   username = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (priv->username_combo));
   fullname = gtk_entry_get_text (GTK_ENTRY (priv->fullname_entry));
@@ -614,7 +613,6 @@ local_create_user (GisAccountPageLocal *page)
 
   g_signal_emit (page, signals[USER_CREATED], 0, priv->act_user, "");
 
-  driver = GIS_DRIVER (g_application_get_default ());
 
   if (!gis_driver_is_hack (driver))
     create_shared_user (page);
