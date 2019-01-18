@@ -43,9 +43,6 @@
 
 #define VALIDATION_TIMEOUT 600
 
-#define SHARED_ACCOUNT_USERNAME "shared"
-#define SHARED_ACCOUNT_FULLNAME "Shared Account"
-
 #define CONFIG_ACCOUNT_GROUP "page.account"
 #define CONFIG_ACCOUNT_DEFAULT_AVATAR_KEY "default-avatar"
 
