@@ -170,6 +170,10 @@ is_username_used (const gchar *username)
                 return FALSE;
         }
 
+        if (strcmp (username, SHARED_ACCOUNT_USERNAME) == 0) {
+                return TRUE;
+        }
+
         pwent = getpwnam (username);
 
         return pwent != NULL;
