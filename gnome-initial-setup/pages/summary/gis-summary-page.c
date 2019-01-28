@@ -26,6 +26,7 @@
 #include "config.h"
 #include "summary-resources.h"
 #include "gis-summary-page.h"
+#include "eos/hack-sound-client/eos-hack-sound-client.h"
 
 #include <glib/gstdio.h>
 #include <glib/gi18n.h>
@@ -360,9 +361,10 @@ static void
 done_cb (GtkButton *button, GisSummaryPage *page)
 {
   if (gis_driver_is_hack (GIS_PAGE (page)->driver) ||
-      g_getenv ("HACK_DEBUG_INITIAL_CONTACT") != NULL)
+      g_getenv ("HACK_DEBUG_INITIAL_CONTACT") != NULL) {
+    gis_driver_stop_startup_sound (GIS_PAGE (page)->driver);
     run_initial_contact_app (page);
-  else
+  } else
     finish_fbe (page);
 }
 

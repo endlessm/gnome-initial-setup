@@ -1,5 +1,6 @@
 sources = []
 
+subdir('eos')
 subdir('pages')
 subdir('demo')
 

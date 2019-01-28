@@ -29,10 +29,13 @@
 
 #include "gis-assistant.h"
 #include "gis-page-util.h"
+#include "eos/hack-sound-client/eos-hack-sound-client.h"
 
 #define GIS_TYPE_DRIVER_MODE (gis_driver_mode_get_type ())
 
 #define HACK_PRODUCT_NAME "hack"
+
+static void emit_page_changed_sound (GisAssistant *assistant, GisDriver *driver);
 
 /* Statically include this for now. Maybe later
  * we'll generate this from glib-mkenums. */
@@ -100,6 +103,9 @@ struct _GisDriverPrivate {
   GKeyFile *vendor_conf_file;
 
   gchar *product_name;
+
+  EOSHackSoundClient *sound_client;
+  gchar *startup_sound_uuid;
 
   /* Cancelled on shutdown */
   GCancellable *cancellable;
@@ -223,6 +229,21 @@ gis_driver_is_hack (GisDriver *driver)
   return gis_driver_is_product (driver, HACK_PRODUCT_NAME);
 }
 
+void
+gis_driver_stop_startup_sound (GisDriver *driver)
+{
+  GisDriverPrivate *priv;
+  g_return_if_fail (gis_driver_is_hack (driver));
+
+  priv = gis_driver_get_instance_private (driver);
+  g_return_if_fail (priv->sound_client != NULL);
+  g_return_if_fail (priv->startup_sound_uuid != NULL);
+
+  eos_hack_sound_client_stop (priv->sound_client, priv->startup_sound_uuid,
+                              NULL, NULL);
+  g_clear_pointer (&priv->startup_sound_uuid, g_free);
+}
+
 const gchar *
 gis_driver_get_product_name (GisDriver *driver)
 {
@@ -269,6 +290,9 @@ gis_driver_finalize (GObject *object)
   g_free (priv->username);
   g_free (priv->user_password);
 
+  g_clear_object (&priv->sound_client);
+  g_clear_pointer (&priv->startup_sound_uuid, g_free);
+
   g_clear_object (&priv->user_account);
   g_clear_object (&priv->cancellable);
   g_clear_pointer (&priv->vendor_conf_file, g_key_file_free);
@@ -300,6 +324,11 @@ prepare_main_window (GisDriver *driver)
                             "page-changed",
                             G_CALLBACK (assistant_page_changed),
                             sw);
+  if (gis_driver_is_hack (driver))
+    g_signal_connect (priv->assistant,
+                      "page-changed",
+                      G_CALLBACK (emit_page_changed_sound),
+                      driver);
 
   gtk_window_set_titlebar (priv->main_window,
                            gis_assistant_get_titlebar (priv->assistant));
@@ -911,31 +940,38 @@ window_realize_cb (GtkWidget *widget, gpointer user_data)
 }
 
 static void
+startup_sound_cb (EOSHackSoundClient *client, GAsyncResult *res,
+    GisDriver *driver)
+{
+  g_autoptr(GError) error = NULL;
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  g_return_if_fail (priv->sound_client != NULL);
+
+  priv->startup_sound_uuid =
+      eos_hack_sound_client_play_finish (priv->sound_client, res, &error);
+  if (error)
+    g_printerr ("Cannot get the startup sound UUID: %s", error->message);
+}
+
+static void
 emit_startup_sound (GApplication * app, gpointer user_data)
 {
-  g_autoptr(GDBusProxy) proxy = NULL;
-  g_autoptr(GError) error = NULL;
-  const GDBusProxyFlags proxy_flags =
-    G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES |
-    G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS;
+  GisDriverPrivate *priv = gis_driver_get_instance_private (GIS_DRIVER (app));
+  eos_hack_sound_client_play (priv->sound_client, "FBE/startup",
+                              (GAsyncReadyCallback) startup_sound_cb,
+                              GIS_DRIVER (app));
+}
 
-  proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
-                                         proxy_flags,
-                                         NULL,
-                                         "com.endlessm.HackSoundServer",
-                                         "/com/endlessm/HackSoundServer",
-                                         "com.endlessm.HackSoundServer",
-                                         NULL, &error);
-  if (error)
-    {
-      g_printerr ("Cannot create proxy for 'com.endlessm.HackSoundServer': %s",
-          error->message);
-      return;
-    }
+static void
+emit_page_changed_sound (GisAssistant *assistant, GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
 
-  g_dbus_proxy_call (proxy,
-                     "PlaySound", g_variant_new ("(s)", "FBE/startup"),
-                     G_DBUS_CALL_FLAGS_NONE, -1, NULL, NULL, NULL);
+  /* This check avoids the FBE/page-changed sound being emitted when the
+   * first page is loaded for the first time. */
+  if (gis_assistant_get_current_page (assistant) != NULL)
+    eos_hack_sound_client_play (priv->sound_client, "FBE/page-changed",
+                                NULL, NULL);
 }
 
 static void
@@ -1025,6 +1061,7 @@ gis_driver_shutdown (GApplication *app)
 static void
 gis_driver_init (GisDriver *driver)
 {
+  g_autoptr(GError) error = NULL;
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   GdkScreen *screen;
 
@@ -1038,6 +1075,10 @@ gis_driver_init (GisDriver *driver)
                     G_CALLBACK (screen_size_changed), driver);
 
   priv->cancellable = g_cancellable_new ();
+
+  priv->sound_client = eos_hack_sound_client_new (&error);
+  if (error)
+    g_printerr ("Cannot get HackSoundServer client: %s", error->message);
 }
 
 static void
