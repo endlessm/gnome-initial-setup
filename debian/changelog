@@ -1,8 +1,13 @@
-gnome-initial-setup (3.31.90-1) UNRELEASED; urgency=medium
+gnome-initial-setup (3.31.90-1) experimental; urgency=medium
 
-  * New upstream release
+  * New upstream development release
+  * Build-Depend on debhelper-compat 12 and drop debian/compat
+  * Build-Depend on dh-sequence-gnome
+  * Stop overriding libexecdir
+  * debian/rules: Update build flags
+  * Bump Standards-Version to 4.3.0
 
- -- Jeremy Bicha <jbicha@debian.org>  Thu, 07 Feb 2019 20:14:14 -0500
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 07 Feb 2019 20:25:00 -0500
 
 gnome-initial-setup (3.30.0-1) unstable; urgency=medium
 
