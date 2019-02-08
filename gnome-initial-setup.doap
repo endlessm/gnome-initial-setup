@@ -9,7 +9,7 @@
   <description xml:lang="en">gnome-initial-setup helps you set up your OS when you boot or log in for the first time.</description>
 
   <download-page rdf:resource="http://download.gnome.org/sources/gnome-initial-setup/" />
-  <bug-database rdf:resource="https://bugzilla.gnome.org/browse.cgi?product=gnome-initial-setup" />
+  <bug-database rdf:resource="https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues/" />
   <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
   <programming-language>C</programming-language>
 
@@ -26,6 +26,14 @@
       <foaf:name>Matthias Clasen</foaf:name>
       <foaf:mbox rdf:resource="mailto:mclasen@redhat.com" />
       <gnome:userid>matthiasc</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Will Thompson</foaf:name>
+      <foaf:mbox rdf:resource="mailto:wjt@gnome.org" />
+      <gnome:userid>wjt</gnome:userid>
     </foaf:Person>
   </maintainer>
 </Project>
