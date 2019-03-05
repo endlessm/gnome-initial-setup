@@ -318,14 +318,6 @@ main (int argc, char *argv[])
     return EXIT_SUCCESS;
   }
 
-  /* Upstream has "existing user" mode for new user accounts, but we don't
-     want that in Endless, so skip it. In the future, we should be launching
-     the tutorial right from here, once it's again available. */
-  if (get_mode () == GIS_DRIVER_MODE_EXISTING_USER) {
-    gis_ensure_stamp_files ();
-    return EXIT_SUCCESS;
-  }
-
 #ifdef HAVE_CHEESE
   cheese_gtk_init (NULL, NULL);
 #endif
@@ -344,6 +336,23 @@ main (int argc, char *argv[])
     gis_ensure_login_keyring ();
 
   driver = gis_driver_new (mode);
+
+  /* Upstream has "existing user" mode for new user accounts, but we don't
+     want that in Endless, so skip it. In the future, we should be launching
+     the tutorial right from here, once it's again available. */
+  if (get_mode () == GIS_DRIVER_MODE_EXISTING_USER) {
+    if (gis_driver_is_hack (driver)) {
+      g_autoptr(GError) error = NULL;
+      if (!g_application_register (G_APPLICATION (driver), NULL, &error))
+        g_warning("Cannot run Welcome quest due to failed g-i-s register: %s",
+                  error->message);
+      else
+        gis_driver_run_clubhouse_quest (driver, "AdaQuestSet.Welcome");
+    }
+
+    gis_ensure_stamp_files ();
+    return EXIT_SUCCESS;
+  }
 
   reorder_pages (driver);
 
