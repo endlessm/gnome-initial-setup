@@ -102,6 +102,7 @@ struct _GisDriverPrivate {
 
   GKeyFile *vendor_conf_file;
 
+  gchar *image_version;
   gchar *product_name;
 
   EOSHackSoundClient *sound_client;
@@ -285,6 +286,7 @@ gis_driver_finalize (GObject *object)
   GisDriver *driver = GIS_DRIVER (object);
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
 
+  g_free (priv->image_version);
   g_free (priv->product_name);
   g_free (priv->lang_id);
   g_free (priv->username);
@@ -999,7 +1001,6 @@ gis_driver_startup (GApplication *app)
 {
   GisDriver *driver = GIS_DRIVER (app);
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
-  g_autofree char *image_version = NULL;
 
   G_APPLICATION_CLASS (gis_driver_parent_class)->startup (app);
 
@@ -1027,19 +1028,16 @@ gis_driver_startup (GApplication *app)
 
   gtk_widget_show (GTK_WIDGET (priv->assistant));
 
-  image_version = get_image_version ();
-
-  priv->product_name = get_product_from_image_version (image_version);
   if (gis_driver_is_hack (driver))
     g_signal_connect (driver, "activate", G_CALLBACK (emit_startup_sound),
                       NULL);
 
-  check_live_session (driver, image_version);
+  check_live_session (driver, priv->image_version);
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_DVD]);
 
-  priv->show_demo_mode = !priv->is_live_session && image_supports_demo_mode (image_version);
-  priv->is_reformatter = image_is_reformatter (image_version);
+  priv->show_demo_mode = !priv->is_live_session && image_supports_demo_mode (priv->image_version);
+  priv->is_reformatter = image_is_reformatter (priv->image_version);
 
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL));
 
@@ -1064,6 +1062,9 @@ gis_driver_init (GisDriver *driver)
   g_autoptr(GError) error = NULL;
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   GdkScreen *screen;
+
+  priv->image_version = get_image_version ();
+  priv->product_name = get_product_from_image_version (priv->image_version);
 
   screen = gdk_screen_get_default ();
 
