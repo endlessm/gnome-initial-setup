@@ -259,30 +259,6 @@ initial_contact_app_signal (GDBusProxy *proxy,
 }
 
 static void
-run_initial_contact_quest (GisSummaryPage *page)
-{
-  GDBusConnection *bus;
-  g_autoptr(GDBusActionGroup) clubhouse_action_group = NULL;
-  g_auto(GStrv) clubhouse_actions = NULL;
-
-  bus = g_application_get_dbus_connection (G_APPLICATION (GIS_PAGE (page)->driver));
-  clubhouse_action_group = g_dbus_action_group_get (bus,
-                                                    "com.endlessm.Clubhouse",
-                                                    "/com/endlessm/Clubhouse");
-
-  /* GDBusActionGroup has a weird API and needs to be initialized like this before
-   * its first use.
-   */
-  clubhouse_actions = g_action_group_list_actions (G_ACTION_GROUP (clubhouse_action_group));
-
-  g_action_group_activate_action (G_ACTION_GROUP (clubhouse_action_group),
-                                  "run-quest",
-                                  g_variant_new ("(sb)",
-                                                 "AdaQuestSet.FirstContact", /* quest name */
-                                                 TRUE));                     /* run in shell */
-}
-
-static void
 clippy_connect_called_cb (GObject      *proxy,
                           GAsyncResult *res,
                           gpointer      user_data)
@@ -306,7 +282,7 @@ clippy_connect_called_cb (GObject      *proxy,
                       G_CALLBACK (initial_contact_app_signal), page);
 
   gis_driver_hide_window (GIS_PAGE (page)->driver);
-  run_initial_contact_quest (page);
+  gis_driver_run_clubhouse_quest (GIS_PAGE (page)->driver, "AdaQuestSet.FirstContact");
 }
 
 static void

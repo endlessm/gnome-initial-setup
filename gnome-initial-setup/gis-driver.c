@@ -1162,3 +1162,27 @@ gis_driver_new (GisDriverMode mode)
                        "mode", mode,
                        NULL);
 }
+
+void
+gis_driver_run_clubhouse_quest (GisDriver *driver, const gchar *quest_name)
+{
+  GDBusConnection *bus;
+  g_autoptr(GDBusActionGroup) clubhouse_action_group = NULL;
+  g_auto(GStrv) clubhouse_actions = NULL;
+
+  bus = g_application_get_dbus_connection (G_APPLICATION (driver));
+  clubhouse_action_group = g_dbus_action_group_get (bus,
+                                                    "com.endlessm.Clubhouse",
+                                                    "/com/endlessm/Clubhouse");
+
+  /* GDBusActionGroup has a weird API and needs to be initialized like this before
+   * its first use.
+   */
+  clubhouse_actions = g_action_group_list_actions (G_ACTION_GROUP (clubhouse_action_group));
+
+  g_action_group_activate_action (G_ACTION_GROUP (clubhouse_action_group),
+                                  "run-quest",
+                                  g_variant_new ("(sb)",
+                                                 quest_name, /* quest name */
+                                                 TRUE));     /* run in shell */
+}

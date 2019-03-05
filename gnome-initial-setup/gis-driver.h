@@ -144,6 +144,8 @@ gchar *gis_driver_conf_get_string (GisDriver *driver,
 
 GisDriver *gis_driver_new (GisDriverMode mode);
 
+void gis_driver_run_clubhouse_quest (GisDriver *driver, const gchar *quest_name);
+
 G_END_DECLS
 
 #endif /* __GIS_DRIVER_H__ */
