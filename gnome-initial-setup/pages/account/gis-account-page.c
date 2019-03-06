@@ -36,9 +36,11 @@ struct _GisAccountPagePrivate
 {
   GtkWidget *page_local;
   GtkWidget *page_enterprise;
+  GtkWidget *stack;
 
   GtkWidget *page_toggle;
-  GtkWidget *stack;
+  GtkWidget *offline_label;
+  GtkWidget *offline_stack;
 
   UmAccountMode mode;
 };
@@ -204,10 +206,25 @@ on_local_user_cached (GtkWidget      *page_local,
 }
 
 static void
+on_network_changed (GNetworkMonitor *monitor,
+                    gboolean         available,
+                    GisAccountPage  *page)
+{
+  GisAccountPagePrivate *priv = gis_account_page_get_instance_private (page);
+
+  if (!available && priv->mode != UM_ENTERPRISE)
+    gtk_stack_set_visible_child (GTK_STACK (priv->offline_stack), priv->offline_label);
+  else
+    gtk_stack_set_visible_child (GTK_STACK (priv->offline_stack), priv->page_toggle);
+}
+
+static void
 gis_account_page_constructed (GObject *object)
 {
   GisAccountPage *page = GIS_ACCOUNT_PAGE (object);
   GisAccountPagePrivate *priv = gis_account_page_get_instance_private (page);
+  GNetworkMonitor *monitor;
+  gboolean available;
 
   G_OBJECT_CLASS (gis_account_page_parent_class)->constructed (object);
 
@@ -227,11 +244,16 @@ gis_account_page_constructed (GObject *object)
 
   g_signal_connect (priv->page_toggle, "toggled", G_CALLBACK (toggle_mode), page);
   g_object_bind_property (page, "applying", priv->page_toggle, "sensitive", G_BINDING_INVERT_BOOLEAN);
-  g_object_bind_property (priv->page_enterprise, "visible", priv->page_toggle, "visible", G_BINDING_DEFAULT | G_BINDING_SYNC_CREATE);
+  g_object_bind_property (priv->page_enterprise, "visible", priv->offline_stack, "visible", G_BINDING_DEFAULT | G_BINDING_SYNC_CREATE);
 
   /* force a refresh by setting to an invalid value */
   priv->mode = NUM_MODES;
   set_mode (page, UM_LOCAL);
+
+  monitor = g_network_monitor_get_default ();
+  available = g_network_monitor_get_network_available (monitor);
+  on_network_changed (monitor, available, page);
+  g_signal_connect_object (monitor, "network-changed", G_CALLBACK (on_network_changed), page, 0);
 
   gtk_widget_show (GTK_WIDGET (page));
 }
@@ -252,9 +274,11 @@ gis_account_page_class_init (GisAccountPageClass *klass)
 
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPage, page_local);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPage, page_enterprise);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPage, stack);
 
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPage, page_toggle);
-  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPage, stack);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPage, offline_label);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPage, offline_stack);
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_account_page_locale_changed;
