@@ -2,11 +2,14 @@
 
 /* Copies settings installed from gnome-initial-setup and
  * sticks them in the user's profile */
+#include "config.h"
 
 #include <pwd.h>
 #include <string.h>
+#include <glib/gstdio.h>
 #include <gio/gio.h>
 #include <stdlib.h>
+#include <libsecret/secret.h>
 
 static char *
 get_gnome_initial_setup_home_dir (void)
@@ -65,6 +68,52 @@ move_file_from_homedir (GFile       *src_base,
   }
 }
 
+static void
+unlock_keyring (const gchar *initial_setup_homedir)
+{
+  g_autofree gchar *file = g_build_filename (initial_setup_homedir, ".config/password", NULL);
+  gsize password_size;
+  g_autofree gchar *password = NULL;
+  SecretValue *secret = NULL;
+  SecretService *service = NULL;
+  g_autoptr(GError) error = NULL;
+
+  if (!g_file_get_contents (file, &password, &password_size, &error)) {
+    g_warning ("Unable to read user password file: %s", error->message);
+    goto out;
+  }
+
+  service = secret_service_get_sync (SECRET_SERVICE_OPEN_SESSION, NULL, &error);
+  if (service == NULL) {
+    g_warning ("Failed to get secret service: %s", error->message);
+    goto out;
+  }
+
+  secret = secret_value_new (password, password_size, "text/plain");
+
+  g_dbus_connection_call_sync (g_dbus_proxy_get_connection (G_DBUS_PROXY (service)),
+                               "org.gnome.keyring",
+                               "/org/freedesktop/secrets",
+                               "org.gnome.keyring.InternalUnsupportedGuiltRiddenInterface",
+                               "UnlockWithMasterPassword",
+                               g_variant_new ("(o@(oayays))",
+                                              "/org/freedesktop/secrets/collection/login",
+                                              secret_service_encode_dbus_secret (service, secret)),
+                               NULL,
+                               0,
+                               G_MAXINT,
+                               NULL, &error);
+
+  if (error != NULL) {
+    g_warning ("Failed to unlock login keyring: %s", error->message);
+  }
+
+out:
+  g_clear_pointer (&secret, secret_value_unref);
+  g_clear_object (&service);
+  g_remove (file);
+}
+
 int
 main (int    argc,
       char **argv)
@@ -94,6 +143,8 @@ main (int    argc,
   FILE (".config/goa-1.0/accounts.conf");
   FILE (".config/monitors.xml");
   FILE (".local/share/keyrings/login.keyring");
+
+  unlock_keyring (initial_setup_homedir);
 
   return EXIT_SUCCESS;
 }
