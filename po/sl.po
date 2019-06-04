@@ -3,12 +3,14 @@
 # This file is distributed under the same license as the gnome-initial-setup package.
 # 
 # Translators:
+# Will Thompson <wjt@endlessm.com>, 2019
+# Shaddai, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 15:00+0000\n"
-"PO-Revision-Date: 2019-01-07 17:09+0000\n"
+"PO-Revision-Date: 2019-06-04 10:07+0000\n"
 "Last-Translator: Will Thompson <wjt@endlessm.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/endless-os/gnome-initial-setup/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -50,25 +52,25 @@ msgstr "_Prekliči"
 #: gnome-initial-setup/gis-driver.c:570
 #, c-format
 msgid "Failed to enter demo mode: %s"
-msgstr ""
+msgstr "Vstopa v demo način ni uspelo: %s"
 
 #: gnome-initial-setup/gis-page-util.c:427
 msgid "Unknown"
-msgstr ""
+msgstr "Neznano"
 
 #: gnome-initial-setup/gis-page-util.c:429
 #, c-format
 msgid "Image: %s"
-msgstr ""
+msgstr "Slika: %s"
 
 #: gnome-initial-setup/gis-page-util.c:438
 msgid "Disabled"
-msgstr ""
+msgstr "Onemogočeno"
 
 #: gnome-initial-setup/gis-page-util.c:440
 #, c-format
 msgid "SD Card: %s"
-msgstr ""
+msgstr "SD kartica: %s"
 
 #. Translators: this is shown when launching the
 #. * reformatter (an external program) fails. The
@@ -77,34 +79,34 @@ msgstr ""
 #: gnome-initial-setup/gis-page-util.c:545
 #, c-format
 msgid "Error running the reformatter: %s"
-msgstr ""
+msgstr "Napaka pri zagonu formatiranja: %s"
 
 #: gnome-initial-setup/gis-page-util.ui:28
 msgid "Test Mode"
-msgstr ""
+msgstr "Preizkuševalni Način"
 
 #: gnome-initial-setup/gis-page-util.ui:54
 msgid "Power Off"
-msgstr ""
+msgstr "Ugasniti"
 
 #: gnome-initial-setup/gis-page-util.ui:189
 msgid "Enter Store Demo"
-msgstr ""
+msgstr "Vnesite predstavitev trgovine"
 
 #: gnome-initial-setup/gis-page-util.ui:194
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: gnome-initial-setup/gis-page-util.ui:201
 msgid "Cancel"
-msgstr ""
+msgstr "Prekliči"
 
 #: gnome-initial-setup/gis-page-util.ui:211
 msgid ""
 "This allows you to try Endless without activating an account. No changes or "
 "files will be saved, and the computer will return to a clean factory state "
 "when you power it off."
-msgstr ""
+msgstr "To vam omogoča, da poskusite Endless brez aktiviranja računa. Nobene spremembe ali datoteke ne bodo shranjene in računalnik se bo vrnil v čisto tovarniško stanje, ko ga izključite."
 
 #: gnome-initial-setup/gnome-initial-setup.c:299
 msgid "Force existing user mode"
@@ -117,7 +119,7 @@ msgstr "– začetne nastavitve GNOME"
 #: gnome-initial-setup/pages/account/gis-account-page.c:309
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:61
 msgid "_Accept and Continue"
-msgstr ""
+msgstr "_Sprejemi in Nadaljuj"
 
 #: gnome-initial-setup/pages/account/gis-account-page.c:310
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:41
@@ -219,13 +221,13 @@ msgstr "Polno _ime"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:164
 msgid "Password protected"
-msgstr ""
+msgstr "Zaščiteno geslo"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:198
 msgid ""
 "By creating this account you agree to accept the <a href=\"#\">Endless Terms"
 " of Use</a>."
-msgstr ""
+msgstr "Če ustvarite ta račun, se strinjate s sprejemom <a href=\"#\">pogojev uporabe Endless</a>."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:37
 msgid "Set Up _Enterprise Login"
@@ -288,47 +290,47 @@ msgstr "S tem imenom bo poimenovana osebna mapa. Izbire kasneje ni mogoče sprem
 
 #: gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
-msgstr ""
+msgstr "Zaslon"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:39
 msgid "Adjust for TV screen"
-msgstr ""
+msgstr "Prilagodite za televizijski zaslon"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:57
 msgid "Do you see this at the bottom right corner of your screen?"
-msgstr ""
+msgstr "Ali vidite to v spodnjem desnem kotu zaslona?"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:105
 msgid "I see it"
-msgstr ""
+msgstr "Vidim"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:121
 msgid "I do not see it. Shrink screen to fit TV."
-msgstr ""
+msgstr "Ne vidim ga. Skrči zaslon, da se prilega TV-ju."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:82
 msgid "Terms of Use"
-msgstr ""
+msgstr "Pogoji Uporabe"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
 msgid "Please read the following terms of use carefully"
-msgstr ""
+msgstr "Prosim natančno preberite naslednje pogoje uporabe"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
 msgid ""
 "By clicking \"Accept and continue,\" you acknowledge that you have read, "
 "understood, and agree to be bound by the following terms and conditions."
-msgstr ""
+msgstr "S klikom na \"Sprejmi in nadaljuj\" potrjujete, da ste prebrali, razumeli in se strinjate z Pogoji in Pravili."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
-msgstr ""
+msgstr "Pomagaj narediti Endless OS boljši za vsakogar"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
 "Automatically save and send usage statistics and problem reports to Endless."
 " All data is anonymous."
-msgstr ""
+msgstr "Samodejno shranjuje in pošilja statistične podatke o uporabi in poročila o težavah k Endless. Vsi podatki so anonimni."
 
 #: gnome-initial-setup/pages/eulas/gis-eula-page.c:301
 #: gnome-initial-setup/pages/eulas/gis-eula-page.ui:21
@@ -382,16 +384,16 @@ msgstr "Ni najdenih vhodnih naprav"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
 msgid "Your keyboard layout seems to be:"
-msgstr ""
+msgstr "Tvoja razporeditev tipkovnice zgleda, da je:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
 msgid "Please press one of the following keys:"
-msgstr ""
+msgstr "Prosim pritisni eno od naslednjih tipk:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
 msgid "Is the following key present on your keyboard?"
-msgstr ""
+msgstr "Ali je naslednja tipka prisotna na tvoji tipkovnici?"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:400
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:31
@@ -404,15 +406,15 @@ msgstr "Izbor razporeditve tipkovnice ali načina vnosa."
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:61
 msgid "Help Detect My Keyboard Layout"
-msgstr ""
+msgstr "Pomagaj zaznati razporeditev moje tipkovnice"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
 msgid "Detect Keyboard Layout…"
-msgstr ""
+msgstr "Odkrivanje razporeditve tipkovnice ..."
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
 msgid "_Select"
-msgstr ""
+msgstr "_Izberi"
 
 #: gnome-initial-setup/pages/language/cc-language-chooser.c:303
 msgid "No languages found"
@@ -420,11 +422,11 @@ msgstr "Ni najdenih jezikov"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:275
 msgid "Enter Store Demo…"
-msgstr ""
+msgstr "Vstopite v Predstavitveno Trgovino ..."
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:287
 msgid "Welcome to Store Demo"
-msgstr ""
+msgstr "Dobrodošli v Predstavitveni Trgovini"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:289
 msgid "Welcome"
@@ -440,31 +442,31 @@ msgstr "Dobrodošli!"
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:170
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
+msgstr "Poskusite Endless OS s tem, da ga zaženete z USB ključa."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:171
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
 msgid "Try Endless OS by running it from the DVD."
-msgstr ""
+msgstr "Poskusite Endless OS, tako da ga zaženete z DVD-ja."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:172
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
 msgid "Reformat this computer with Endless OS."
-msgstr ""
+msgstr "Preoblikujte ta računalnik z Endless OS."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:173
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
 msgid "Try It"
-msgstr ""
+msgstr "Preizkusi"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:174
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
 msgid "Reformat"
-msgstr ""
+msgstr "Formatiraj"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
 msgid "Try or Reformat"
-msgstr ""
+msgstr "Poizkusi formatirati"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:323
 msgctxt "Wireless access point"
@@ -491,7 +493,7 @@ msgstr "Wi-Fi"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr ""
+msgstr "Povezovanje z internetom vam pomaga pridobiti nove aplikacije, informacije in druge nadgradnje. Prav tako pomaga samodejno nastaviti čas in lokacijo."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:103
 msgid "No wireless available"
@@ -523,15 +525,15 @@ msgstr "_Potrdi"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:203
 msgid "Show password"
-msgstr ""
+msgstr "Pokaži geslo"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:228
 msgid "Password _reminder"
-msgstr ""
+msgstr "Geslo_opomnik"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:243
 msgid "Password reminder will be shown in case you forget your password."
-msgstr ""
+msgstr "Opomnik za geslo bo bil prikazano v slučaju, da ste pozabili geslo."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -702,41 +704,41 @@ msgstr "Izberite državo ali področje."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
-msgstr ""
+msgstr "Stran"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:54
 msgid ""
 "At which site is this computer located? Search for your site here. You may "
 "enter manually if there is no match."
-msgstr ""
+msgstr "V katerem mestu se nahaja ta računalnik? Tukaj poiščite svoje mesto. Če ni ujemanja, lahko vnesete ročno."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:78
 msgid "enter manually"
-msgstr ""
+msgstr "vnesite ročno"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:102
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:131
 msgid "Facility"
-msgstr ""
+msgstr "Objekt"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:160
 msgid "Street address"
-msgstr ""
+msgstr "Naslov ulice"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:189
 msgid "City"
-msgstr ""
+msgstr "Mesto"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:218
 msgid "State"
-msgstr ""
+msgstr "Provinca"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:247
 msgid "Country"
-msgstr ""
+msgstr "Država"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
@@ -748,17 +750,17 @@ msgstr "_Začni uporabljati %s"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:469
 msgid "You're ready to try Endless OS"
-msgstr ""
+msgstr "Pripravljeni ste za uporabo Endless OS"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:471
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
-msgstr ""
+msgstr "<b>Datoteke, ki jih prenesete, ali dokumenti, ki jih ustvarite, bodo izgubljeni za vedno, ko znova zaženete ali zaustavite računalnik.</b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:480
 msgid "Let's Go!"
-msgstr ""
+msgstr "Pojdimo!"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:509
 msgid "Ready to Go"
