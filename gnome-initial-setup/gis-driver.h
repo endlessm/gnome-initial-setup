@@ -90,6 +90,11 @@ void gis_driver_set_avatar (GisDriver *driver,
                             GdkPixbuf *avatar);
 GdkPixbuf *gis_driver_get_avatar (GisDriver *driver);
 
+void gis_driver_set_passwordless (GisDriver *self,
+                                  gboolean   passwordless);
+
+gboolean gis_driver_get_passwordless (GisDriver *self);
+
 gboolean gis_driver_get_gdm_objects (GisDriver        *driver,
                                      GdmGreeter      **greeter,
                                      GdmUserVerifier **user_verifier);
