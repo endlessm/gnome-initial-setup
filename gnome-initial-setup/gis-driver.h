@@ -95,6 +95,11 @@ void gis_driver_set_has_default_avatar (GisDriver  *driver,
                                         gboolean    has_default_avatar);
 gboolean gis_driver_get_has_default_avatar (GisDriver  *driver);
 
+void gis_driver_set_passwordless (GisDriver *self,
+                                  gboolean   passwordless);
+
+gboolean gis_driver_get_passwordless (GisDriver *self);
+
 gboolean gis_driver_get_gdm_objects (GisDriver        *driver,
                                      GdmGreeter      **greeter,
                                      GdmUserVerifier **user_verifier);
