@@ -26,10 +26,7 @@
 #include <string.h>
 #include "tz.h"
 
-G_DEFINE_TYPE (CcTimezoneMap, cc_timezone_map, GTK_TYPE_WIDGET)
-
-#define TIMEZONE_MAP_PRIVATE(o) \
-  (G_TYPE_INSTANCE_GET_PRIVATE ((o), CC_TYPE_TIMEZONE_MAP, CcTimezoneMapPrivate))
+#define TIMEZONE_MAP_PRIVATE(o) (cc_timezone_map_get_instance_private (o))
 
 #define PIN_HOT_POINT_X 8
 #define PIN_HOT_POINT_Y 15
@@ -74,6 +71,7 @@ enum
 
 static guint signals[LAST_SIGNAL];
 
+G_DEFINE_TYPE_WITH_PRIVATE (CcTimezoneMap, cc_timezone_map, GTK_TYPE_WIDGET)
 
 static CcTimezoneMapOffset color_codes[] =
 {
@@ -478,8 +476,6 @@ cc_timezone_map_class_init (CcTimezoneMapClass *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
-
-  g_type_class_add_private (klass, sizeof (CcTimezoneMapPrivate));
 
   object_class->dispose = cc_timezone_map_dispose;
   object_class->finalize = cc_timezone_map_finalize;
