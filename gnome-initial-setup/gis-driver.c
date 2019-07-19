@@ -64,6 +64,7 @@ enum {
   PROP_LIVE_SESSION,
   PROP_MODE,
   PROP_USERNAME,
+  PROP_PASSWORDLESS,
   PROP_SMALL_SCREEN,
   PROP_LAST,
 };
@@ -83,6 +84,7 @@ struct _GisDriverPrivate {
 
   gchar *lang_id;
   gchar *username;
+  gboolean passwordless;
 
   gboolean is_live_session;
 
@@ -341,6 +343,25 @@ gis_driver_get_username (GisDriver *driver)
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   return priv->username;
 }
+
+void
+gis_driver_set_passwordless (GisDriver *self,
+                             gboolean   passwordless)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (self);
+  gboolean should_notify = (priv->passwordless != passwordless);
+  priv->passwordless = passwordless;
+  if (should_notify)
+    g_object_notify (G_OBJECT (self), "passwordless");
+}
+
+gboolean
+gis_driver_get_passwordless (GisDriver *self)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (self);
+  return priv->passwordless;
+}
+
 void
 gis_driver_set_user_permissions (GisDriver   *driver,
                                  ActUser     *user,
@@ -559,6 +580,9 @@ gis_driver_get_property (GObject      *object,
     case PROP_USERNAME:
       g_value_set_string (value, priv->username);
       break;
+    case PROP_PASSWORDLESS:
+      g_value_set_boolean (value, priv->passwordless);
+      break;
     case PROP_SMALL_SCREEN:
       g_value_set_boolean (value, priv->small_screen);
       break;
@@ -584,6 +608,9 @@ gis_driver_set_property (GObject      *object,
     case PROP_USERNAME:
       g_free (priv->username);
       priv->username = g_value_dup_string (value);
+      break;
+    case PROP_PASSWORDLESS:
+      priv->passwordless = g_value_get_boolean (value);
       break;
    default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -851,6 +878,11 @@ gis_driver_class_init (GisDriverClass *klass)
     g_param_spec_string ("username", "", "",
                          NULL,
                          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+
+  obj_props[PROP_PASSWORDLESS] =
+    g_param_spec_boolean ("passwordless", "", "User account is passwordless",
+                          FALSE,
+                          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
 
   obj_props[PROP_SMALL_SCREEN] =
     g_param_spec_boolean ("small-screen", "", "",

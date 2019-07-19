@@ -239,12 +239,15 @@ confirm_changed (GtkWidget      *w,
 }
 
 static void
-username_changed (GObject *obj, GParamSpec *pspec, GisPasswordPage *page)
+username_or_passwordless_changed (GObject         *obj,
+                                  GParamSpec      *pspec,
+                                  GisPasswordPage *page)
 {
   GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
   priv->username = gis_driver_get_username (GIS_DRIVER (obj));
+  gboolean passwordless = gis_driver_get_passwordless (GIS_DRIVER (obj));
 
-  if (priv->username)
+  if (priv->username && !passwordless)
     gtk_widget_show (GTK_WIDGET (page));
   else
     gtk_widget_hide (GTK_WIDGET (page));  
@@ -292,7 +295,9 @@ gis_password_page_constructed (GObject *object)
   update_password_visibility (page);
 
   g_signal_connect (GIS_PAGE (page)->driver, "notify::username",
-                    G_CALLBACK (username_changed), page);
+                    G_CALLBACK (username_or_passwordless_changed), page);
+  g_signal_connect (GIS_PAGE (page)->driver, "notify::passwordless",
+                    G_CALLBACK (username_or_passwordless_changed), page);
 
   /* show the last character from the password; 600 is the recommended value
    * in the gtk-entry-password-hint-timeout documentation
@@ -312,8 +317,8 @@ gis_password_page_dispose (GObject *object)
   g_object_set (G_OBJECT (settings), "gtk-entry-password-hint-timeout", 0, NULL);
 
   if (GIS_PAGE (object)->driver)
-  g_signal_handlers_disconnect_by_func (GIS_PAGE (object)->driver,
-                                        username_changed, object);
+    g_signal_handlers_disconnect_by_func (GIS_PAGE (object)->driver,
+                                          username_or_passwordless_changed, object);
 
   G_OBJECT_CLASS (gis_password_page_parent_class)->dispose (object);
 }

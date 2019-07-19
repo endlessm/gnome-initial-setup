@@ -90,6 +90,11 @@ void gis_driver_set_username (GisDriver   *driver,
                               const gchar *username);
 const gchar *gis_driver_get_username (GisDriver *driver);
 
+void gis_driver_set_passwordless (GisDriver *self,
+                                  gboolean   passwordless);
+
+gboolean gis_driver_get_passwordless (GisDriver *self);
+
 gboolean gis_driver_get_gdm_objects (GisDriver        *driver,
                                      GdmGreeter      **greeter,
                                      GdmUserVerifier **user_verifier);
