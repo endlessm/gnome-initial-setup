@@ -661,6 +661,7 @@ gis_account_page_local_apply (GisAccountPageLocal *local, GisPage *page)
 
   username = gtk_editable_get_text (GTK_EDITABLE (local->username_row));
   gis_driver_set_username (driver, username);
+  gis_driver_set_passwordless (driver, local->passwordless);
 
   full_name = gtk_editable_get_text (GTK_EDITABLE (local->fullname_row));
   gis_driver_set_full_name (driver, full_name);
