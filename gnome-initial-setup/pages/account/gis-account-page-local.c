@@ -691,6 +691,7 @@ gis_account_page_local_apply (GisAccountPageLocal *local, GisPage *page)
 
   username = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (local->username_combo));
   gis_driver_set_username (GIS_PAGE (page)->driver, username);
+  gis_driver_set_passwordless (page->driver, local->passwordless);
 
   full_name = gtk_editable_get_text (GTK_EDITABLE (local->fullname_entry));
   gis_driver_set_full_name (GIS_PAGE (page)->driver, full_name);
