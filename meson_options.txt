@@ -32,3 +32,8 @@ option('systemd',
   value: true,
   description: 'Enable systemd integration'
 )
+
+option('systemd-system-unit-dir',
+       description: 'the directory to install systemd system units',
+       type: 'string'
+)
