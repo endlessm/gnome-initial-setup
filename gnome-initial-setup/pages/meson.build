@@ -1,6 +1,7 @@
 pages = [
    'account',
    'language',
+   'live-chooser',
    'keyboard',
    'network',
    'timezone',
