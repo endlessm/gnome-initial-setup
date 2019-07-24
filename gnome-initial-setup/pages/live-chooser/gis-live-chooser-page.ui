@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="GisLiveChooserPage" parent="GisPage">
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="valign">center</property>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <child>
+              <object class="GtkCenterBox">
+                <property name="orientation">horizontal</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <child type="start">
+                  <object class="GtkBox" id="try_box">
+                    <property name="hexpand">True</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">24</property>
+                    <child>
+                      <object class="GtkLabel" id="try_label">
+                        <property name="justify">center</property>
+                        <property name="label" translatable="yes">Try Endless OS by running it from the USB Stick.</property>
+                        <property name="max-width-chars">30</property>
+                        <property name="wrap">True</property>
+                        <property name="yalign">0</property>
+                        <style>
+                          <class name="live-chooser-title"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkPicture" id="try_icon">
+                        <property name="file">resource:///org/gnome/initial-setup/try-endless.png</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <property name="hexpand">False</property>
+                        <property name="vexpand">True</property>
+                        <property name="can-shrink">False</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="try_button">
+                        <property name="label" translatable="yes">Try It</property>
+                        <property name="receives-default">True</property>
+                        <style>
+                          <class name="suggested-action"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child type="center">
+                  <object class="GtkSeparator">
+                    <property name="orientation">vertical</property>
+                    <property name="margin-start">24</property>
+                    <property name="margin-end">24</property>
+                  </object>
+                </child>
+                <child type="end">
+                  <object class="GtkBox" id="reformat_box">
+                    <property name="hexpand">True</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">24</property>
+                    <child>
+                      <object class="GtkLabel" id="reformat_label">
+                        <property name="justify">center</property>
+                        <property name="label" translatable="yes">Reformat this computer with Endless OS.</property>
+                        <property name="max-width-chars">30</property>
+                        <property name="wrap">True</property>
+                        <property name="yalign">0</property>
+                        <style>
+                          <class name="live-chooser-title"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkPicture" id="reformat_icon">
+                        <property name="file">resource:///org/gnome/initial-setup/install-endless.png</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <property name="hexpand">False</property>
+                        <property name="vexpand">True</property>
+                        <property name="can-shrink">False</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="reformat_button">
+                        <property name="label" translatable="yes">Reformat</property>
+                        <property name="receives-default">True</property>
+                        <style>
+                          <class name="suggested-action"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+  <object class="GtkSizeGroup">
+    <property name="mode">vertical</property>
+    <widgets>
+      <widget name="reformat_label"/>
+      <widget name="try_label"/>
+    </widgets>
+  </object>
+  <object class="GtkSizeGroup">
+    <property name="mode">both</property>
+    <widgets>
+      <widget name="reformat_box"/>
+      <widget name="try_box"/>
+    </widgets>
+  </object>
+</interface>
