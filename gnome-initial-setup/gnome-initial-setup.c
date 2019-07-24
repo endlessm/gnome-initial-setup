@@ -40,6 +40,7 @@
 #include "pages/network/gis-network-page.h"
 #include "pages/timezone/gis-timezone-page.h"
 #include "pages/privacy/gis-privacy-page.h"
+#include "pages/live-chooser/gis-live-chooser-page.h"
 #include "pages/goa/gis-goa-page.h"
 #include "pages/account/gis-account-pages.h"
 #include "pages/parental-controls/gis-parental-controls-page.h"
@@ -69,6 +70,7 @@ typedef struct {
 static PageData page_table[] = {
   PAGE (welcome, FALSE),
   PAGE (language, FALSE),
+  PAGE (live_chooser, TRUE),
   PAGE (keyboard, FALSE),
   PAGE (endless_eula, TRUE),
   PAGE (network,  FALSE),
