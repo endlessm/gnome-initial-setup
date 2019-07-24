@@ -2,6 +2,7 @@ pages = [
    'account',
    'display',
    'language',
+   'live-chooser',
    'keyboard',
    'endless-eula',
    'network',
