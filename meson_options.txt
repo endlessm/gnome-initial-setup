@@ -21,6 +21,11 @@ option('systemd',
   description: 'Enable systemd integration'
 )
 
+option('systemd-system-unit-dir',
+       description: 'the directory to install systemd system units',
+       type: 'string'
+)
+
 option('parental_controls',
   type: 'feature',
   value: 'auto',
