@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 "issues\n"
-"POT-Creation-Date: 2019-09-09 14:36-0700\n"
+"POT-Creation-Date: 2019-09-09 14:38-0700\n"
 "PO-Revision-Date: 2019-02-23 13:04+0100\n"
 "Last-Translator: Bernd Homuth <dev@hmt.im>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
@@ -35,7 +35,8 @@ msgstr "Ersteinrichtung"
 msgid "preferences-system"
 msgstr "preferences-system"
 
-# Das ist bei assistentbasierten Dialogen besser als irgendeine Form von »nächstes«
+# Das ist bei assistentbasierten Dialogen besser als irgendeine Form von
+# »nächstes«
 #: gnome-initial-setup/gis-assistant.c:440
 msgid "_Next"
 msgstr "_Weiter"
@@ -73,12 +74,12 @@ msgstr ""
 
 #: gnome-initial-setup/gis-page-util.c:442
 msgid "Disabled"
-msgstr ""
+msgstr "Abgeschaltet"
 
 #: gnome-initial-setup/gis-page-util.c:444
 #, c-format
 msgid "SD Card: %s"
-msgstr ""
+msgstr "SD-Karte: %s"
 
 #. Translators: this is shown when launching the
 #. * reformatter (an external program) fails. The
@@ -88,7 +89,7 @@ msgstr ""
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
-msgstr ""
+msgstr "Beim Formatieren ist ein Fehler aufgetreten: %s"
 
 #: gnome-initial-setup/gis-page-util.ui:29
 msgid "Test Mode"
@@ -291,7 +292,9 @@ msgstr "Der Benutzername ist zu lang."
 msgid "The username cannot start with a “-”."
 msgstr "Der Benutzername darf nicht mit einem »-« beginnen."
 
-# "kann" drückt mMn eher aus, dass die Gruppen [a-z] [0-9] und [._-] möglich sind, aber nicht aus allen Gruppen Zeichen verwendet werden müssen ([a-z] alleine geht ja auch)
+# "kann" drückt mMn eher aus, dass die Gruppen [a-z] [0-9] und [._-] möglich
+# sind, aber nicht aus allen Gruppen Zeichen verwendet werden müssen ([a-z]
+# alleine geht ja auch)
 #: gnome-initial-setup/pages/account/um-utils.c:260
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
@@ -308,32 +311,32 @@ msgstr ""
 
 #: gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
-msgstr ""
+msgstr "Anzeige"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:39
 msgid "Adjust for TV screen"
-msgstr ""
+msgstr "An TV-Bildschirm anpassen"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:57
 msgid "Do you see this at the bottom right corner of your screen?"
-msgstr ""
+msgstr "Siehst du die rechte untere Ecke des Bildschirms?"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:105
 msgid "I see it"
-msgstr ""
+msgstr "Ja, ich sehe sie"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:121
 msgid "I do not see it. Shrink screen to fit TV."
-msgstr ""
+msgstr "Nein, ich sehe sie nicht. Verkleinern."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:138
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
 msgid "Terms of Use"
-msgstr ""
+msgstr "Nutzungsbedingungen"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
 msgid "Please read the following terms of use carefully"
-msgstr ""
+msgstr "Bitte lese die folgenden Bedingungen sorgfältig"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
 msgid ""
@@ -343,13 +346,15 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
-msgstr ""
+msgstr "Hilf uns Endless für alle zu verbessern"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
 "Automatically save and send usage statistics and problem reports to Endless. "
 "All data is anonymous."
 msgstr ""
+"Automatisches Speichern und versenden von Statistiken und Problemberichten "
+"an Endless. Alle Daten sind anonym."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
 #, fuzzy
@@ -415,18 +420,17 @@ msgid "No inputs found"
 msgstr "Es wurden keine Eingabemethoden gefunden"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
-#, fuzzy
 msgid "Your keyboard layout seems to be:"
-msgstr "Wählen Sie Ihre Tastaturbelegung oder eine Eingabemethode."
+msgstr "Dein Tastaturlayout scheint dies zu sein:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
 msgid "Please press one of the following keys:"
-msgstr ""
+msgstr "Bitte drücken eine der folgenden Tasten:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
 msgid "Is the following key present on your keyboard?"
-msgstr ""
+msgstr "Gibt es auf deiner Tastatur diese Taste?"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:519
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
@@ -439,15 +443,15 @@ msgstr "Wählen Sie Ihre Tastaturbelegung oder eine Eingabemethode."
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
 msgid "Help Detect My Keyboard Layout"
-msgstr ""
+msgstr "Hilfe bei der Tastaturauswahl"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
 msgid "Detect Keyboard Layout…"
-msgstr ""
+msgstr "Tastaturbelegung ermitteln "
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
 msgid "_Select"
-msgstr ""
+msgstr "_Auswählen"
 
 #: gnome-initial-setup/pages/language/cc-language-chooser.c:302
 msgid "No languages found"
@@ -476,7 +480,7 @@ msgstr "Willkommen!"
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:173
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
+msgstr "Endless-OS vom USB-Stick ausprobieren"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:174
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
@@ -486,17 +490,17 @@ msgstr ""
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
 msgid "Reformat this computer with Endless OS."
-msgstr ""
+msgstr "Formatieren mit Endless-OS"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
 msgid "Try It"
-msgstr ""
+msgstr "Ausprobieren"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
 msgid "Reformat"
-msgstr ""
+msgstr "Formatieren"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
 msgid "Try or Reformat"
@@ -544,9 +548,8 @@ msgstr "Passwörter stimmen nicht überein."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:218
 #: gnome-initial-setup/pages/password/gis-password-page.c:245
-#, fuzzy
 msgid "Show password"
-msgstr "Passwort"
+msgstr "Passwort anzeigen"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:253
 #, fuzzy
@@ -570,9 +573,8 @@ msgid "_Confirm"
 msgstr "_Bestätigen"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:203
-#, fuzzy
 msgid "Password _reminder"
-msgstr "Passwort"
+msgstr "_Erinnerungstext"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:218
 msgid "Password reminder will be shown in case you forget your password."
@@ -905,6 +907,8 @@ msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr ""
+"<b>Alle angelegten Dateien und Dokumente werden beim Neustart oder Beenden "
+"des Computers gelöscht.</b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:315
 msgid "Ready to Go"

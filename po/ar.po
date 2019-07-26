@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 "issues\n"
-"POT-Creation-Date: 2019-09-09 14:36-0700\n"
+"POT-Creation-Date: 2019-09-09 14:38-0700\n"
 "PO-Revision-Date: 2017-06-19 01:28+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -51,9 +51,9 @@ msgid "_Cancel"
 msgstr "أ_لغِ"
 
 #: gnome-initial-setup/gis-driver.c:598
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to enter demo mode: %s"
-msgstr "فشل الانضمام إلى النطاق"
+msgstr "تعذر الدخول في الوضع التجريبي: %s"
 
 #: gnome-initial-setup/gis-page-util.c:431
 msgid "Unknown"
@@ -65,14 +65,13 @@ msgid "Image: %s"
 msgstr ""
 
 #: gnome-initial-setup/gis-page-util.c:442
-#, fuzzy
 msgid "Disabled"
-msgstr "عطّل الصورة"
+msgstr "مُعَطَلْ"
 
 #: gnome-initial-setup/gis-page-util.c:444
 #, c-format
 msgid "SD Card: %s"
-msgstr ""
+msgstr "بطاقة SD: %s"
 
 #. Translators: this is shown when launching the
 #. * reformatter (an external program) fails. The
@@ -82,27 +81,27 @@ msgstr ""
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
-msgstr ""
+msgstr "خطأ في تشغيل برنامج إعادة التهيئة: %s"
 
 #: gnome-initial-setup/gis-page-util.ui:29
 msgid "Test Mode"
-msgstr ""
+msgstr "وضع الاختبار"
 
 #: gnome-initial-setup/gis-page-util.ui:55
 msgid "Power Off"
-msgstr ""
+msgstr "إيقاف التشغيل"
 
 #: gnome-initial-setup/gis-page-util.ui:190
 msgid "Enter Store Demo"
-msgstr ""
+msgstr "الدخول إلى Store Demo"
 
 #: gnome-initial-setup/gis-page-util.ui:195
 msgid "OK"
-msgstr ""
+msgstr "موافق"
 
 #: gnome-initial-setup/gis-page-util.ui:202
 msgid "Cancel"
-msgstr "ألغِ"
+msgstr "إلغاء"
 
 #: gnome-initial-setup/gis-page-util.ui:212
 msgid ""
@@ -110,15 +109,16 @@ msgid ""
 "files will be saved, and the computer will return to a clean factory state "
 "when you power it off."
 msgstr ""
+"يتيح لك هذا الدخول إلى Endless دون حاجة لتفعيل حساب. لن يتم حفظ أي تغييرات "
+"أو ملفات وسيعود جهاز الحاسوب إلى حالة المصنع الأصلية عند إيقاف التشغيل."
 
 #: gnome-initial-setup/gnome-initial-setup.c:343
 msgid "Force existing user mode"
 msgstr "افرِض وضع المستخدم الموجود"
 
 #: gnome-initial-setup/gnome-initial-setup.c:349
-#, fuzzy
 msgid "— GNOME initial setup"
-msgstr "- إعداد جنوم الأولي"
+msgstr "الإعداد الأولي لـGNOME — "
 
 #: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:36
 #, fuzzy
@@ -275,9 +275,8 @@ msgid "The username is too long."
 msgstr "اسم المستخدم طويل جدًا."
 
 #: gnome-initial-setup/pages/account/um-utils.c:257
-#, fuzzy
 msgid "The username cannot start with a “-”."
-msgstr "لا يمكن أن يبدأ اسم المستخدم بعلامة ’-‘."
+msgstr "لا يمكن لاسم المستخدم أن يبدأ بـ  “-”."
 
 #: gnome-initial-setup/pages/account/um-utils.c:260
 msgid ""
@@ -292,32 +291,32 @@ msgstr "سيُستخدم هذا لتسمية مجلد المنزل ولا يمك
 
 #: gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
-msgstr ""
+msgstr "عرض"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:39
 msgid "Adjust for TV screen"
-msgstr ""
+msgstr "الضبط لشاشة التلفزيون"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:57
 msgid "Do you see this at the bottom right corner of your screen?"
-msgstr ""
+msgstr "هل ترى هذا في الركن الأيمن السفلي من الشاشة؟"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:105
 msgid "I see it"
-msgstr ""
+msgstr "أراها"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:121
 msgid "I do not see it. Shrink screen to fit TV."
-msgstr ""
+msgstr "لا أرى ذلك. قلص حجم الشاشة لتناسب التلفزيون."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:138
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
 msgid "Terms of Use"
-msgstr ""
+msgstr "شروط الاستخدام"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
 msgid "Please read the following terms of use carefully"
-msgstr ""
+msgstr "الرجاء قراءة شروط الاستخدام التالية بعناية"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
 msgid ""
@@ -327,13 +326,15 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
-msgstr ""
+msgstr "المساعدة في تحسين Endless لمصلحة الجميع"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
 "Automatically save and send usage statistics and problem reports to Endless. "
 "All data is anonymous."
 msgstr ""
+"تخزين وإرسال تلقائي لإحصائيات الاستخدام وتقارير المشاكل إلى Endless. يتم "
+"التعامل مع كافة البيانات بدون الكشف عن هوية الشخص المرسل."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
 msgid "Third Party Software"
@@ -392,18 +393,17 @@ msgid "No inputs found"
 msgstr "لا يوجد أي مصادر إدخال"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
-#, fuzzy
 msgid "Your keyboard layout seems to be:"
-msgstr "اختر تخطيط لوحة المفاتيح و طريقة الإدخال."
+msgstr "يبدو أن تصميم لوحة المفاتيح الخاصة بك هو:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
 msgid "Please press one of the following keys:"
-msgstr ""
+msgstr "الرجاء الضغط على أحد المفاتيح التالية:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
 msgid "Is the following key present on your keyboard?"
-msgstr ""
+msgstr "هل المفتاح التالي متوفر على لوحة المفاتيح الخاصة بك؟"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:519
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
@@ -416,15 +416,15 @@ msgstr "اختر تخطيط لوحة المفاتيح و طريقة الإدخ�
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
 msgid "Help Detect My Keyboard Layout"
-msgstr ""
+msgstr "المساعدة في معرفة تصميم لوحة المفاتيح الخاصة بي"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
 msgid "Detect Keyboard Layout…"
-msgstr ""
+msgstr "اكتشاف تصميم لوحة المفاتيح…"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
 msgid "_Select"
-msgstr ""
+msgstr "_اختيار"
 
 #: gnome-initial-setup/pages/language/cc-language-chooser.c:302
 msgid "No languages found"
@@ -432,11 +432,11 @@ msgstr "لا يوجد أي لغات"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:357
 msgid "Enter Store Demo…"
-msgstr ""
+msgstr "الدخول إلى Store Demo…"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:369
 msgid "Welcome to Store Demo"
-msgstr ""
+msgstr "مرحبًا بك في Store Demo"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:371
 msgid "Welcome"
@@ -453,31 +453,31 @@ msgstr "مرحبًا"
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:173
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
+msgstr "جرب Endless OS وذلك بتشغيله من وحدة تخزين USB Stick."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:174
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
 msgid "Try Endless OS by running it from the DVD."
-msgstr ""
+msgstr "جرب Endless OS من خلال تشغيله من دي في دي."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
 msgid "Reformat this computer with Endless OS."
-msgstr ""
+msgstr "أعد تهيئة هذا الكمبيوتر باستخدام Endless OS."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
 msgid "Try It"
-msgstr ""
+msgstr "جربه"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
 msgid "Reformat"
-msgstr ""
+msgstr "إعادة التهيئة"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
 msgid "Try or Reformat"
-msgstr ""
+msgstr "جرب أو أجر إعادة تهيئة"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:325
 msgctxt "Wireless access point"
@@ -505,6 +505,8 @@ msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
 msgstr ""
+"يساعدك الاتصال بالإنترنت على الحصول على تطبيقات ومعلومات جديدة وترقيات أخرى. "
+"كما أنه يساعد على ضبط الوقت والمكان الخاص بك تلقائياً."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -520,9 +522,8 @@ msgstr "لا تتطابق كلمتا السر."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:218
 #: gnome-initial-setup/pages/password/gis-password-page.c:245
-#, fuzzy
 msgid "Show password"
-msgstr "بلا كلمة السر"
+msgstr "إظهار كلمة السر"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:253
 #, fuzzy
@@ -546,13 +547,12 @@ msgid "_Confirm"
 msgstr "أكّ_د"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:203
-#, fuzzy
 msgid "Password _reminder"
-msgstr "كلمة السر"
+msgstr "تذكير_كلمة المرور"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:218
 msgid "Password reminder will be shown in case you forget your password."
-msgstr ""
+msgstr "سيتم عرض التذكير الخاص بكلمة المرور في حالة نسيان كلمة المرور."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -850,13 +850,15 @@ msgstr "اب_دأ استخدام %s"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:303
 msgid "You're ready to try Endless OS"
-msgstr ""
+msgstr "أنت على استعداد لتجربة نظام تشغيل Endless OS"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:305
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr ""
+"<b>ستفقد أي ملفات قمت بتنزيلها أو مستندات قمت بإنشائها وذلك عندما تقوم "
+"بإعادة تشغيل جهاز الكمبيوتر أو إيقاف تشغيله.</b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:315
 msgid "Ready to Go"

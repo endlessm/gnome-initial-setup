@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 "issues\n"
-"POT-Creation-Date: 2019-09-09 14:36-0700\n"
+"POT-Creation-Date: 2019-09-09 14:38-0700\n"
 "PO-Revision-Date: 2019-02-07 19:47+0100\n"
 "Last-Translator: Meskó Balázs <mesko.balazs@fsf.hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
@@ -52,9 +52,9 @@ msgid "_Cancel"
 msgstr "Mé_gse"
 
 #: gnome-initial-setup/gis-driver.c:598
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to enter demo mode: %s"
-msgstr "Nem sikerült a tartományhoz csatlakozni"
+msgstr "Demo mód indítása sikertelen: %s"
 
 #: gnome-initial-setup/gis-page-util.c:431
 msgid "Unknown"
@@ -67,12 +67,12 @@ msgstr ""
 
 #: gnome-initial-setup/gis-page-util.c:442
 msgid "Disabled"
-msgstr ""
+msgstr "Kikapcsolva"
 
 #: gnome-initial-setup/gis-page-util.c:444
 #, c-format
 msgid "SD Card: %s"
-msgstr ""
+msgstr "SD kártya: %s"
 
 #. Translators: this is shown when launching the
 #. * reformatter (an external program) fails. The
@@ -82,28 +82,27 @@ msgstr ""
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
-msgstr ""
+msgstr "Hiba az újraformázó futtatásakor: %s"
 
 #: gnome-initial-setup/gis-page-util.ui:29
 msgid "Test Mode"
-msgstr ""
+msgstr "Teszt Mód"
 
 #: gnome-initial-setup/gis-page-util.ui:55
 msgid "Power Off"
-msgstr ""
+msgstr "Kikapcsolás"
 
 #: gnome-initial-setup/gis-page-util.ui:190
 msgid "Enter Store Demo"
-msgstr ""
+msgstr "Bolti demo indítása"
 
 #: gnome-initial-setup/gis-page-util.ui:195
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: gnome-initial-setup/gis-page-util.ui:202
-#, fuzzy
 msgid "Cancel"
-msgstr "Mé_gse"
+msgstr "Mégsem"
 
 #: gnome-initial-setup/gis-page-util.ui:212
 msgid ""
@@ -111,6 +110,9 @@ msgid ""
 "files will be saved, and the computer will return to a clean factory state "
 "when you power it off."
 msgstr ""
+"Ez lehetővé teszi hogy kipróbálhassa Endless rendszert felhasználói "
+"azonosító létrehozása nélkül. Semmilyen változtatás nem kerül mentésre, és a "
+"gép visszatér tiszta gyári állapotra, amikor leállítja a gépet."
 
 #: gnome-initial-setup/gnome-initial-setup.c:343
 msgid "Force existing user mode"
@@ -293,32 +295,32 @@ msgstr ""
 
 #: gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
-msgstr ""
+msgstr "Kijelző"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:39
 msgid "Adjust for TV screen"
-msgstr ""
+msgstr "Beállítás TV képernyőre"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:57
 msgid "Do you see this at the bottom right corner of your screen?"
-msgstr ""
+msgstr "Látja ezt a jobb alsó sarokban a képernyőjén?"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:105
 msgid "I see it"
-msgstr ""
+msgstr "Látom"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:121
 msgid "I do not see it. Shrink screen to fit TV."
-msgstr ""
+msgstr "Nem látom. Csökkentsd a képméretet, hogy beférjen a TV-re."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:138
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
 msgid "Terms of Use"
-msgstr ""
+msgstr "Használati feltételek"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
 msgid "Please read the following terms of use carefully"
-msgstr ""
+msgstr "Kérem olvassa el a Használati feltételeket figyelmesen"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
 msgid ""
@@ -328,13 +330,15 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
-msgstr ""
+msgstr "Segítsen az Endless jobbátételében mindenki számára"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
 "Automatically save and send usage statistics and problem reports to Endless. "
 "All data is anonymous."
 msgstr ""
+"Automatikusan mentse és küldje el a statisztikákat és a problémákat az "
+"Endless számára. Az összes adat név nélküli."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
 #, fuzzy
@@ -396,18 +400,17 @@ msgid "No inputs found"
 msgstr "Bemeneti források nem találhatók"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
-#, fuzzy
 msgid "Your keyboard layout seems to be:"
-msgstr "Válassza ki a billentyűzetkiosztását vagy egy beviteli módot."
+msgstr "A billentyűzetkiosztása ennek tűnik:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
 msgid "Please press one of the following keys:"
-msgstr ""
+msgstr "Kérem nyomjon meg egyet a követkető gombok közül:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
 msgid "Is the following key present on your keyboard?"
-msgstr ""
+msgstr "A következő gomb szerepel a billentyűzetén?"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:519
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
@@ -420,15 +423,15 @@ msgstr "Válassza ki a billentyűzetkiosztását vagy egy beviteli módot."
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
 msgid "Help Detect My Keyboard Layout"
-msgstr ""
+msgstr "Segítsen megtalálni a billentyűzet kiosztásom"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
 msgid "Detect Keyboard Layout…"
-msgstr ""
+msgstr "Billentyűzetkiosztás azonosítása..."
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
 msgid "_Select"
-msgstr ""
+msgstr "Kiválasztá_s"
 
 #: gnome-initial-setup/pages/language/cc-language-chooser.c:302
 msgid "No languages found"
@@ -436,11 +439,11 @@ msgstr "Nyelvek nem találhatók"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:357
 msgid "Enter Store Demo…"
-msgstr ""
+msgstr "Belépés a Store Demo részbe..."
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:369
 msgid "Welcome to Store Demo"
-msgstr ""
+msgstr "Üdvözli a Store Demo"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:371
 msgid "Welcome"
@@ -457,31 +460,31 @@ msgstr "Üdvözöljük!"
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:173
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
+msgstr "Próbálja ki az Endless OS-t egy USB pendrive-ról futtatva."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:174
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
 msgid "Try Endless OS by running it from the DVD."
-msgstr ""
+msgstr "Próbálja ki az Endless OS-t DVD-ről futtatva."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
 msgid "Reformat this computer with Endless OS."
-msgstr ""
+msgstr "Formázza újra ezt a gépet Endless OS rendszerrel."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
 msgid "Try It"
-msgstr ""
+msgstr "Próbálja ki"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
 msgid "Reformat"
-msgstr ""
+msgstr "Újraformázás"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
 msgid "Try or Reformat"
-msgstr ""
+msgstr "Próbálja ki vagy formázza újra"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:325
 msgctxt "Wireless access point"
@@ -509,6 +512,9 @@ msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
 msgstr ""
+"Az internethez való csatlakozás segít új alkalmazások, információk és egyéb "
+"frissítések megszerzésében. Továbbá automatikusan beállítja az időt és a "
+"tartózkodási helyet."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -524,9 +530,8 @@ msgstr "A jelszavak nem egyeznek."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:218
 #: gnome-initial-setup/pages/password/gis-password-page.c:245
-#, fuzzy
 msgid "Show password"
-msgstr "Jelszó"
+msgstr "Jelszó megjelenítése"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:253
 #, fuzzy
@@ -550,13 +555,13 @@ msgid "_Confirm"
 msgstr "_Megerősítés"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:203
-#, fuzzy
 msgid "Password _reminder"
-msgstr "Jelszó"
+msgstr "Jelszó emlékeztető"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:218
 msgid "Password reminder will be shown in case you forget your password."
 msgstr ""
+"A jelszó emlékeztető kerül megjelenítésre, amennyiben elfelejtené jelszavát."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -767,41 +772,43 @@ msgstr "Válassza ki az országát vagy területét."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
-msgstr ""
+msgstr "Webhely"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:54
 msgid ""
 "At which site is this computer located? Search for your site here. You may "
 "enter manually if there is no match."
 msgstr ""
+"Hol található meg ez a hely a számítógépen? Keresse meg itt. Be is írhatja, "
+"amennyiben nincs találat."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:78
 msgid "enter manually"
-msgstr ""
+msgstr "megadás sajátkezüleg"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:102
 msgid "ID"
-msgstr ""
+msgstr "Azonosító"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:131
 msgid "Facility"
-msgstr ""
+msgstr "Létesítmény"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:160
 msgid "Street address"
-msgstr ""
+msgstr "Cím"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:189
 msgid "City"
-msgstr ""
+msgstr "Város"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:218
 msgid "State"
-msgstr ""
+msgstr "Állam"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:247
 msgid "Country"
-msgstr ""
+msgstr "Ország"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:186
 msgid "Software Repositories"
@@ -864,13 +871,15 @@ msgstr "A(z) %s használatba _vétele"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:303
 msgid "You're ready to try Endless OS"
-msgstr ""
+msgstr "Készen áll az Endless OS kipróbálására"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:305
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr ""
+"<b>Az összes fájl, amit letöltött, vagy dokumentum amit készített - végképp "
+"elveszik amikor újraindítja, vagy leállítja a gépet.</b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:315
 msgid "Ready to Go"

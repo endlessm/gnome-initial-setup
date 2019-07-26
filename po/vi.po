@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 "issues\n"
-"POT-Creation-Date: 2019-09-09 14:36-0700\n"
+"POT-Creation-Date: 2019-09-09 14:38-0700\n"
 "PO-Revision-Date: 2017-09-17 07:33+0700\n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <gnome-vi-list@gnome.org>\n"
@@ -53,9 +53,9 @@ msgid "_Cancel"
 msgstr "T_hôi"
 
 #: gnome-initial-setup/gis-driver.c:598
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to enter demo mode: %s"
-msgstr "Gặp lỗi khi gia nhập vào miền"
+msgstr "Không vào được chế độ chạy thử: %s"
 
 #: gnome-initial-setup/gis-page-util.c:431
 msgid "Unknown"
@@ -67,14 +67,13 @@ msgid "Image: %s"
 msgstr ""
 
 #: gnome-initial-setup/gis-page-util.c:442
-#, fuzzy
 msgid "Disabled"
-msgstr "Tắt ảnh"
+msgstr "Đã vô hiệu hóa"
 
 #: gnome-initial-setup/gis-page-util.c:444
 #, c-format
 msgid "SD Card: %s"
-msgstr ""
+msgstr "Thẻ SD: %s"
 
 #. Translators: this is shown when launching the
 #. * reformatter (an external program) fails. The
@@ -84,27 +83,27 @@ msgstr ""
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
-msgstr ""
+msgstr "Có lỗi khi chạy trình định dạng lại: %s"
 
 #: gnome-initial-setup/gis-page-util.ui:29
 msgid "Test Mode"
-msgstr ""
+msgstr "Chế độ Kiểm tra"
 
 #: gnome-initial-setup/gis-page-util.ui:55
 msgid "Power Off"
-msgstr ""
+msgstr "Tắt"
 
 #: gnome-initial-setup/gis-page-util.ui:190
 msgid "Enter Store Demo"
-msgstr ""
+msgstr "Nhập Minh họa Cửa hàng"
 
 #: gnome-initial-setup/gis-page-util.ui:195
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: gnome-initial-setup/gis-page-util.ui:202
 msgid "Cancel"
-msgstr "Thôi"
+msgstr "Hủy"
 
 #: gnome-initial-setup/gis-page-util.ui:212
 msgid ""
@@ -112,6 +111,9 @@ msgid ""
 "files will be saved, and the computer will return to a clean factory state "
 "when you power it off."
 msgstr ""
+"Điều này cho phép bạn dùng thử Endless mà không cần kích hoạt tài khoản. Sẽ "
+"không có thay đổi hoặc tệp tin nào được lưu, và máy tính sẽ trở lại trạng "
+"thái nhà máy nguyên bản khi bạn tắt đi."
 
 #: gnome-initial-setup/gnome-initial-setup.c:343
 msgid "Force existing user mode"
@@ -295,32 +297,33 @@ msgstr "Đây sẽ là tên thư mục cá nhân của bạn và không thể th
 
 #: gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
-msgstr ""
+msgstr "Hiển thị"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:39
 msgid "Adjust for TV screen"
-msgstr ""
+msgstr "Điều chỉnh cho màn hình TV"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:57
 msgid "Do you see this at the bottom right corner of your screen?"
 msgstr ""
+"Bạn có thấy lời nhắc này ở góc dưới cùng bên phải màn hình của mình không?"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:105
 msgid "I see it"
-msgstr ""
+msgstr "Tôi thấy nó"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:121
 msgid "I do not see it. Shrink screen to fit TV."
-msgstr ""
+msgstr "Tôi không thấy nó. Hãy co màn hình để vừa với TV."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:138
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
 msgid "Terms of Use"
-msgstr ""
+msgstr "Điều khoản Sử dụng"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
 msgid "Please read the following terms of use carefully"
-msgstr ""
+msgstr "Vui lòng đọc kỹ các điều khoản sử dụng sau đây"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
 msgid ""
@@ -330,13 +333,15 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
-msgstr ""
+msgstr "Giúp khiến Endless tốt hơn cho mọi người"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
 "Automatically save and send usage statistics and problem reports to Endless. "
 "All data is anonymous."
 msgstr ""
+"Tự động lưu và gửi thống kê sử dụng và báo cáo vấn đề đến Endless. Mọi dữ "
+"liệu đều vô danh."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
 msgid "Third Party Software"
@@ -398,18 +403,17 @@ msgid "No inputs found"
 msgstr "Không tìm đầu vào nào"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
-#, fuzzy
 msgid "Your keyboard layout seems to be:"
-msgstr "Chọn bố cục bàn phím hay phương thức nhập liệu."
+msgstr "Bố cục bàn phím của bạn dường như:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
 msgid "Please press one of the following keys:"
-msgstr ""
+msgstr "Vui lòng nhấn một trong các phím sau:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
 msgid "Is the following key present on your keyboard?"
-msgstr ""
+msgstr "Phím sau đây có trên bàn phím của bạn không?"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:519
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
@@ -421,18 +425,16 @@ msgid "Select your keyboard layout or an input method."
 msgstr "Chọn bố cục bàn phím hay phương thức nhập liệu."
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
-#, fuzzy
 msgid "Help Detect My Keyboard Layout"
-msgstr "Bố trí bàn phím"
+msgstr "Hỗ trợ dò tìm bố cục bàn phím của tôi"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
-#, fuzzy
 msgid "Detect Keyboard Layout…"
-msgstr "Bố trí bàn phím"
+msgstr "Phát hiện Bố cục Bàn phím…"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
 msgid "_Select"
-msgstr ""
+msgstr "_Lựa chọn"
 
 #: gnome-initial-setup/pages/language/cc-language-chooser.c:302
 msgid "No languages found"
@@ -440,11 +442,11 @@ msgstr "Không tìm thấy ngôn ngữ"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:357
 msgid "Enter Store Demo…"
-msgstr ""
+msgstr "Nhập Minh họa Cửa hàng…"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:369
 msgid "Welcome to Store Demo"
-msgstr ""
+msgstr "Chào mừng bạn đến với Chế độ Trưng bày ở Cửa hàng"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:371
 msgid "Welcome"
@@ -461,31 +463,31 @@ msgstr "Chào mừng bạn!"
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:173
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
+msgstr "Dùng thử HĐH Endless bằng cách chạy hệ điều hành này từ Thanh USB."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:174
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
 msgid "Try Endless OS by running it from the DVD."
-msgstr ""
+msgstr "Dùng thử HĐH Endless bằng cách chạy HĐH này từ DVD."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
 msgid "Reformat this computer with Endless OS."
-msgstr ""
+msgstr "Định dạng lại máy tính này với HĐH Endless."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
 msgid "Try It"
-msgstr ""
+msgstr "Dùng thử nó"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
 msgid "Reformat"
-msgstr ""
+msgstr "Định dạng lại"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
 msgid "Try or Reformat"
-msgstr ""
+msgstr "Dùng thử hoặc Định dạng lại"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:325
 msgctxt "Wireless access point"
@@ -513,6 +515,8 @@ msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
 msgstr ""
+"Kết nối internet sẽ giúp bạn có được các ứng dụng, thông tin mới và các nâng "
+"cấp khác. Nó cũng giúp cài đặt tự động thời gian và vị trí của bạn."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -528,9 +532,8 @@ msgstr "Mật khẩu không khớp nhau."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:218
 #: gnome-initial-setup/pages/password/gis-password-page.c:245
-#, fuzzy
 msgid "Show password"
-msgstr "Mật khẩu"
+msgstr "Hiển thị mật khẩu"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:253
 #, fuzzy
@@ -554,13 +557,12 @@ msgid "_Confirm"
 msgstr "Xá_c nhận"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:203
-#, fuzzy
 msgid "Password _reminder"
-msgstr "Mật khẩu"
+msgstr "Lời_nhắc_mật_khẩu"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:218
 msgid "Password reminder will be shown in case you forget your password."
-msgstr ""
+msgstr "Lời nhắc mật khẩu sẽ hiển thị trong trường hợp bạn quên mật khẩu."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -858,13 +860,15 @@ msgstr "_Bắt đầu dùng %s"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:303
 msgid "You're ready to try Endless OS"
-msgstr ""
+msgstr "Bạn đã sẵn sàng để thử Endless OS"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:305
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr ""
+"<b>Bất kỳ tệp nào bạn tải xuống hoặc tài liệu nào bạn tạo sẽ bị mất vĩnh "
+"viễn khi bạn khởi động lại hoặc tắt máy tính.</b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:315
 msgid "Ready to Go"

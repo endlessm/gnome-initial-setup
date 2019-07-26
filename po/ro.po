@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 "issues\n"
-"POT-Creation-Date: 2019-09-09 14:36-0700\n"
+"POT-Creation-Date: 2019-09-09 14:38-0700\n"
 "PO-Revision-Date: 2019-02-10 09:31+0100\n"
 "Last-Translator: Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
@@ -53,9 +53,9 @@ msgid "_Cancel"
 msgstr "_Anulează"
 
 #: gnome-initial-setup/gis-driver.c:598
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to enter demo mode: %s"
-msgstr "Eșec la alăturarea la domeniu"
+msgstr "Nu sa reușit introducerea modului demo %s"
 
 #: gnome-initial-setup/gis-page-util.c:431
 msgid "Unknown"
@@ -67,14 +67,13 @@ msgid "Image: %s"
 msgstr ""
 
 #: gnome-initial-setup/gis-page-util.c:442
-#, fuzzy
 msgid "Disabled"
-msgstr "Dezactivează imaginea"
+msgstr "Dezactivat"
 
 #: gnome-initial-setup/gis-page-util.c:444
 #, c-format
 msgid "SD Card: %s"
-msgstr ""
+msgstr "Card SD: %s"
 
 #. Translators: this is shown when launching the
 #. * reformatter (an external program) fails. The
@@ -84,27 +83,27 @@ msgstr ""
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
-msgstr ""
+msgstr "Eroare la pornirea reformatarii: %s"
 
 #: gnome-initial-setup/gis-page-util.ui:29
 msgid "Test Mode"
-msgstr ""
+msgstr "Modul de testare"
 
 #: gnome-initial-setup/gis-page-util.ui:55
 msgid "Power Off"
-msgstr ""
+msgstr "Stinge"
 
 #: gnome-initial-setup/gis-page-util.ui:190
 msgid "Enter Store Demo"
-msgstr ""
+msgstr "Intra in Magazinul Demo"
 
 #: gnome-initial-setup/gis-page-util.ui:195
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: gnome-initial-setup/gis-page-util.ui:202
 msgid "Cancel"
-msgstr "Anulează"
+msgstr "Anuleaza"
 
 #: gnome-initial-setup/gis-page-util.ui:212
 msgid ""
@@ -112,6 +111,9 @@ msgid ""
 "files will be saved, and the computer will return to a clean factory state "
 "when you power it off."
 msgstr ""
+"Acest lucru vă permite să încercați Endless fără a activa un cont. Nu vor fi "
+"salvate modificări sau fișiere și computerul va reveni la starea de fabrică "
+"curată când îl opriți."
 
 #: gnome-initial-setup/gnome-initial-setup.c:343
 msgid "Force existing user mode"
@@ -297,32 +299,32 @@ msgstr ""
 
 #: gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
-msgstr ""
+msgstr "Afisaj"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:39
 msgid "Adjust for TV screen"
-msgstr ""
+msgstr "Ajusteaza ecran pentru TV"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:57
 msgid "Do you see this at the bottom right corner of your screen?"
-msgstr ""
+msgstr "Vezi asta in coltul jos din dreapta a ecranului?"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:105
 msgid "I see it"
-msgstr ""
+msgstr "O vad"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:121
 msgid "I do not see it. Shrink screen to fit TV."
-msgstr ""
+msgstr "Nu o vad.Micsoreaza ecran pentru TV."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:138
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
 msgid "Terms of Use"
-msgstr ""
+msgstr "Termeni de Utilizare"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
 msgid "Please read the following terms of use carefully"
-msgstr ""
+msgstr "Cititi urmatorii termeni cu atentie"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
 msgid ""
@@ -332,13 +334,15 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
-msgstr ""
+msgstr "Ajuta-ne sa facem Endless mai bun."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
 "Automatically save and send usage statistics and problem reports to Endless. "
 "All data is anonymous."
 msgstr ""
+"Salveaza si trimite automat statistici si rapoarte de probleme catre Endless."
+"Toate datele sunt anonime."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
 #, fuzzy
@@ -402,18 +406,17 @@ msgid "No inputs found"
 msgstr "Niciun aranjament găsit"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
-#, fuzzy
 msgid "Your keyboard layout seems to be:"
-msgstr "Selectați aranjamentul tastaturii sau o metodă de intrare."
+msgstr "Structura tastaturii tale se pare ca este:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
 msgid "Please press one of the following keys:"
-msgstr ""
+msgstr "Apasa una din urmatoarele taste:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
 msgid "Is the following key present on your keyboard?"
-msgstr ""
+msgstr "Exista aceasta tasta pe tastatura ta?"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:519
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
@@ -426,15 +429,15 @@ msgstr "Selectați aranjamentul tastaturii sau o metodă de intrare."
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
 msgid "Help Detect My Keyboard Layout"
-msgstr ""
+msgstr "Ajutor in detectarea aspectului tastaturii"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
 msgid "Detect Keyboard Layout…"
-msgstr ""
+msgstr "Detecteaza aspectul tastaturii"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
 msgid "_Select"
-msgstr ""
+msgstr "_Selecteaza"
 
 #: gnome-initial-setup/pages/language/cc-language-chooser.c:302
 msgid "No languages found"
@@ -442,11 +445,11 @@ msgstr "Nu s-au găsit limbi"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:357
 msgid "Enter Store Demo…"
-msgstr ""
+msgstr "Intrati in Magazinul Demo..."
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:369
 msgid "Welcome to Store Demo"
-msgstr ""
+msgstr "Bine ați venit la Magazinul Demo"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:371
 msgid "Welcome"
@@ -463,31 +466,31 @@ msgstr "Bine ați venit!"
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:173
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
+msgstr "Incearca Endless OS direct de pe un Stick USB"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:174
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
 msgid "Try Endless OS by running it from the DVD."
-msgstr ""
+msgstr "Încercați sistemul de operare Endless rulând-ul de pe DVD."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
 msgid "Reformat this computer with Endless OS."
-msgstr ""
+msgstr "Reformateaza acest computer cu Endless OS"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
 msgid "Try It"
-msgstr ""
+msgstr "Incearcal"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
 msgid "Reformat"
-msgstr ""
+msgstr "Reformateaza"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
 msgid "Try or Reformat"
-msgstr ""
+msgstr "Încercați sau Reformați"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:325
 msgctxt "Wireless access point"
@@ -530,9 +533,8 @@ msgstr "Parolele nu se potrivesc."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:218
 #: gnome-initial-setup/pages/password/gis-password-page.c:245
-#, fuzzy
 msgid "Show password"
-msgstr "Parolă"
+msgstr "Arata parola"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:253
 #, fuzzy
@@ -556,13 +558,13 @@ msgid "_Confirm"
 msgstr "_Confirmă"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:203
-#, fuzzy
 msgid "Password _reminder"
-msgstr "Parolă"
+msgstr "Reamintirea _parolei"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:218
 msgid "Password reminder will be shown in case you forget your password."
 msgstr ""
+"Va fi afișată memento-ul pentru parolă în cazul în care vă uitați parola."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -871,13 +873,15 @@ msgstr "Începeți _să utilizați %s"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:303
 msgid "You're ready to try Endless OS"
-msgstr ""
+msgstr "Sunteți gata să încercați sistemul de operare Endless"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:305
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr ""
+"<b>Orice fisier pe care in descarci sau document creeat va fi pierdut cand "
+"restartezi sau inchizi computerul"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:315
 msgid "Ready to Go"
