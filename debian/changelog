@@ -1,14 +1,89 @@
-gnome-initial-setup (3.28.0-0endless2) unstable; urgency=medium
+gnome-initial-setup (3.32.1-1) experimental; urgency=medium
 
-  * Drop libgnome-keyring dependency (T26274).
+  * New upstream release
 
- -- Will Thompson <wjt@endlessm.com>  Thu, 25 Apr 2019 13:52:13 +0100
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 09 Apr 2019 10:41:17 +0200
 
-gnome-initial-setup (3.28.0-0endless1) unstable; urgency=medium
+gnome-initial-setup (3.32.0-1) experimental; urgency=medium
 
-  * New version rebased on upstream stable
+  * New upstream release
 
- -- Joaquim Rocha <jrocha@endlessm.com>  Wed, 25 Jul 2018 17:54:32 +0200
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 12 Mar 2019 10:11:00 +0100
+
+gnome-initial-setup (3.31.92-1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 06 Mar 2019 14:43:25 +0100
+
+gnome-initial-setup (3.31.90-1) experimental; urgency=medium
+
+  * New upstream development release
+  * Build-Depend on debhelper-compat 12 and drop debian/compat
+  * Build-Depend on dh-sequence-gnome
+  * Stop overriding libexecdir
+  * debian/rules: Update build flags
+  * Bump Standards-Version to 4.3.0
+
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 07 Feb 2019 20:25:00 -0500
+
+gnome-initial-setup (3.30.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Bump Standards-Version to 4.2.1
+  * Release to unstable
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sat, 22 Sep 2018 19:09:38 -0400
+
+gnome-initial-setup (3.29.92-1) experimental; urgency=medium
+
+  * New upstream version
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 29 Aug 2018 10:50:01 +0200
+
+gnome-initial-setup (3.29.1-1) experimental; urgency=medium
+
+  * New upstream release
+  * d/p/welcome-screen.patch: Drop, this is already upstream
+  * d/p/use-Debian-icon-on-Debian.patch: Drop, this is already upstream
+  * d/p/use-Ubuntu-icon-on-Ubuntu.patch: Drop, this is already upstream
+  * Standards-Version: 4.1.5 (no changes required)
+  * Set Rules-Requires-Root to no
+  * Build with meson
+
+ -- Andrea Azzarone <andrea.azzarone@canonical.com>  Wed, 01 Aug 2018 16:09:43 +0200
+
+gnome-initial-setup (3.28.0-2) unstable; urgency=medium
+
+  * Add welcome-screen.patch from Fedora to still show Welcome screen if
+    Language page is disabled
+  * Install vendor.conf on Ubuntu to skip the language settings there
+    since they don't currently work with Ubuntu's language packs
+  * Cherry-pick use-Ubuntu-icon-on-Ubuntu.patch
+
+ -- Jeremy Bicha <jbicha@debian.org>  Tue, 20 Mar 2018 23:09:30 -0400
+
+gnome-initial-setup (3.28.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Cherry-pick use-Debian-icon-on-Debian.patch:
+    - Use the Debian logo instead of GNOME logo on the Welcome screen
+  * Depend on desktop-base on Debian for that feature
+
+ -- Jeremy Bicha <jbicha@debian.org>  Tue, 20 Mar 2018 19:29:29 -0400
+
+gnome-initial-setup (3.27.90-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sat, 10 Mar 2018 20:59:32 -0500
+
+gnome-initial-setup (3.27.90-1) experimental; urgency=medium
+
+  * New upstream development release
+  * Update Vcs fields for migration to https://salsa.debian.org/
+
+ -- Jeremy Bicha <jbicha@debian.org>  Tue, 13 Feb 2018 13:55:27 -0500
 
 gnome-initial-setup (3.26.0-2) unstable; urgency=medium
 
