@@ -1,3 +1,16 @@
+gnome-initial-setup (3.34.0-0endless1) unstable; urgency=medium
+
+  * Upgrade to upstream release 3.34.0
+  * Reapply "Remove iso-codes package dependency"
+  * Reapply "debian/control: Adapted dependencies"
+  * Reapply "Specify location for our vendor overrides"
+  * Reapply "Remove gnome-initial-setup.pkla, only needed for policykit-1 <
+    0.106"
+  * Revert Debian's "Stop overriding libexecdir"
+  * https://phabricator.endlessm.com/T25162
+
+ -- Philip Chimento <philip@endlessm.com>  Mon, 09 Sep 2019 15:25:04 -0700
+
 gnome-initial-setup (3.32.1-1) experimental; urgency=medium
 
   * New upstream release
