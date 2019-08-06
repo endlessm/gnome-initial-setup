@@ -46,6 +46,7 @@ struct _GisPasswordPagePrivate
   GtkWidget *password_strength;
   GtkWidget *password_explanation;
   GtkWidget *confirm_explanation;
+  GtkWidget *confirm_checkmark;
   GtkWidget *header;
 
   GDBusProxy *input_source_manager;
@@ -247,20 +248,18 @@ validate (GisPasswordPage *page)
   priv->valid_confirm = FALSE;
 
   priv->valid_password = (strlen (password) && strength_level > 1);
-  if (priv->valid_password) {
-    set_entry_validation_checkmark (GTK_ENTRY (priv->password_entry));
-    clear_entry_validation_error (GTK_ENTRY (priv->password_entry));
-  } else {
-    set_entry_validation_error (GTK_ENTRY (priv->password_entry), _("This is a weak password."));
-  }
 
   if (strlen (password) > 0 && strlen (verify) > 0) {
     priv->valid_confirm = (strcmp (password, verify) == 0);
     if (!priv->valid_confirm) {
       gtk_label_set_label (GTK_LABEL (priv->confirm_explanation), _("The passwords do not match."));
+      gtk_image_set_from_icon_name (GTK_IMAGE (priv->confirm_checkmark), NULL,
+                                    GTK_ICON_SIZE_BUTTON);
     }
     else {
-      set_entry_validation_checkmark (GTK_ENTRY (priv->confirm_entry));
+      gtk_image_set_from_icon_name (GTK_IMAGE (priv->confirm_checkmark),
+                                    "object-select-symbolic",
+                                    GTK_ICON_SIZE_BUTTON);
     }
   }
 
@@ -310,14 +309,42 @@ on_focusout (GisPasswordPage *page)
 }
 
 static void
+on_entry_icon_press (GtkEntry            *entry,
+                     GtkEntryIconPosition icon_pos,
+                     GdkEvent            *event G_GNUC_UNUSED,
+                     gpointer             data G_GNUC_UNUSED)
+{
+  if (icon_pos != GTK_ENTRY_ICON_SECONDARY)
+    return;
+
+  /* We show the eye icon with a slash through it when the password is not
+   * visible, which is consistent with how gnome-shell works in
+   * StPasswordEntry.
+   */
+  if (gtk_entry_get_visibility (entry))
+    {
+      gtk_entry_set_visibility (entry, FALSE);
+      gtk_entry_set_icon_from_icon_name (entry, GTK_ENTRY_ICON_SECONDARY,
+                                         "eye-not-looking-symbolic");
+      gtk_entry_set_icon_tooltip_text (entry, GTK_ENTRY_ICON_SECONDARY,
+                                       _("Show password"));
+    }
+  else
+    {
+      gtk_entry_set_visibility (entry, TRUE);
+      gtk_entry_set_icon_from_icon_name (entry, GTK_ENTRY_ICON_SECONDARY,
+                                         "eye-open-negative-filled-symbolic");
+      gtk_entry_set_icon_tooltip_text (entry, GTK_ENTRY_ICON_SECONDARY,
+                                       _("Hide password"));
+    }
+}
+
+static void
 password_changed (GtkWidget      *w,
                   GParamSpec     *pspec,
                   GisPasswordPage *page)
 {
   GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
-
-  clear_entry_validation_error (GTK_ENTRY (w));
-  clear_entry_validation_error (GTK_ENTRY (priv->confirm_entry));
 
   priv->valid_password = FALSE;
   update_page_validation (page);
@@ -333,8 +360,6 @@ confirm_changed (GtkWidget      *w,
                  GisPasswordPage *page)
 {
   GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
-
-  clear_entry_validation_error (GTK_ENTRY (w));
 
   priv->valid_confirm = FALSE;
   update_page_validation (page);
@@ -354,10 +379,7 @@ username_or_passwordless_changed (GisPasswordPage *page)
   if (priv->parent_mode || (priv->username && !passwordless))
     gtk_widget_show (GTK_WIDGET (page));
   else
-    gtk_widget_hide (GTK_WIDGET (page));  
-
-  clear_entry_validation_error (GTK_ENTRY (priv->password_entry));
-  clear_entry_validation_error (GTK_ENTRY (priv->confirm_entry));
+    gtk_widget_hide (GTK_WIDGET (page));
 
   validate (page);
 }
@@ -398,12 +420,17 @@ gis_password_page_constructed (GObject *object)
   g_signal_connect_swapped (priv->password_entry, "activate",
                             G_CALLBACK (confirm), page);
 
+  g_signal_connect (priv->password_entry, "icon-press",
+                    G_CALLBACK (on_entry_icon_press), NULL);
+
   g_signal_connect (priv->confirm_entry, "notify::text",
                     G_CALLBACK (confirm_changed), page);
   g_signal_connect_swapped (priv->confirm_entry, "focus-out-event",
                             G_CALLBACK (on_focusout), page);
   g_signal_connect_swapped (priv->confirm_entry, "activate",
                             G_CALLBACK (confirm), page);
+  g_signal_connect (priv->confirm_entry, "icon-press",
+                    G_CALLBACK (on_entry_icon_press), NULL);
 
   g_signal_connect_swapped (GIS_PAGE (page)->driver, "notify::username",
                             G_CALLBACK (username_or_passwordless_changed), page);
@@ -517,6 +544,7 @@ gis_password_page_class_init (GisPasswordPageClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPasswordPage, password_strength);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPasswordPage, password_explanation);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPasswordPage, confirm_explanation);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPasswordPage, confirm_checkmark);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPasswordPage, header);
 
   page_class->page_id = PAGE_ID;
