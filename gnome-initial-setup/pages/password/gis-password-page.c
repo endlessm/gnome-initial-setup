@@ -209,6 +209,13 @@ page_visibility_changed (GtkWidget  *w,
     gtk_entry_set_text (GTK_ENTRY (priv->password_entry), "");
     gtk_entry_set_text (GTK_ENTRY (priv->confirm_entry), "");
     gtk_entry_set_text (GTK_ENTRY (priv->reminder_entry), "");
+    gtk_entry_set_visibility (GTK_ENTRY (priv->password_entry), FALSE);
+    gtk_entry_set_icon_from_icon_name (GTK_ENTRY (priv->password_entry),
+                                       GTK_ENTRY_ICON_PRIMARY,
+                                       "eye-open-negative-filled-symbolic");
+    gtk_entry_set_icon_tooltip_text (GTK_ENTRY (priv->password_entry),
+                                     GTK_ENTRY_ICON_PRIMARY,
+                                     _("Show password"));
   }
 }
 
