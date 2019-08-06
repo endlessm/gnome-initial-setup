@@ -614,7 +614,7 @@ get_color_for_name (const gchar *name)
         gint idx;
 
         if (name == NULL || name[0] == '\0') {
-                idx = 5;
+                idx = 14; /* Orange 4 */
         } else {
                 hash = g_str_hash (name);
                 number_of_colors = G_N_ELEMENTS (gnome_color_palette);
