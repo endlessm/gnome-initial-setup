@@ -46,7 +46,6 @@ struct _GisPasswordPagePrivate
   GtkWidget *password_strength;
   GtkWidget *password_explanation;
   GtkWidget *confirm_explanation;
-  GtkWidget *password_toggle;
   GtkWidget *reminder_entry;
 
   GDBusProxy *input_source_manager;
@@ -59,25 +58,6 @@ struct _GisPasswordPagePrivate
 typedef struct _GisPasswordPagePrivate GisPasswordPagePrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GisPasswordPage, gis_password_page, GIS_TYPE_PAGE);
-
-static void
-update_password_visibility (GisPasswordPage  *page)
-{
-  GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
-  GtkWidget *password_entry = priv->password_entry;
-  GtkWidget *confirm_entry = priv->confirm_entry;
-  gboolean is_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (priv->password_toggle));
-
-  gtk_entry_set_visibility (GTK_ENTRY (password_entry), is_active);
-  gtk_entry_set_visibility (GTK_ENTRY (confirm_entry), is_active);
-}
-
-static void
-password_visibility_toggled (GtkToggleButton *button,
-                             GisPasswordPage  *page)
-{
-  update_password_visibility (page);
-}
 
 static gboolean
 page_validate (GisPasswordPage *page)
@@ -230,7 +210,6 @@ page_visibility_changed (GtkWidget  *w,
     gtk_entry_set_text (GTK_ENTRY (priv->password_entry), "");
     gtk_entry_set_text (GTK_ENTRY (priv->confirm_entry), "");
     gtk_entry_set_text (GTK_ENTRY (priv->reminder_entry), "");
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->password_toggle), FALSE);
   }
 }
 
@@ -340,10 +319,6 @@ gis_password_page_constructed (GObject *object)
   g_signal_connect_swapped (priv->confirm_entry, "activate",
                             G_CALLBACK (confirm), page);
 
-  g_signal_connect (priv->password_toggle, "toggled",
-                    G_CALLBACK (password_visibility_toggled), page);
-  update_password_visibility (page);
-
   g_signal_connect (GIS_PAGE (page)->driver, "notify::username",
                     G_CALLBACK (username_or_passwordless_changed), page);
   g_signal_connect (GIS_PAGE (page)->driver, "notify::passwordless",
@@ -407,7 +382,6 @@ gis_password_page_class_init (GisPasswordPageClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPasswordPage, password_strength);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPasswordPage, password_explanation);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPasswordPage, confirm_explanation);
-  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPasswordPage, password_toggle);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPasswordPage, reminder_entry);
 
   page_class->page_id = PAGE_ID;
