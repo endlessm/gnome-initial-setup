@@ -91,18 +91,18 @@ on_validation_changed (gpointer        page_area,
 
 
 static void
-hide_password_switch_if_needed (GisAccountPage *page)
+hide_password_toggle_if_needed (GisAccountPage *page)
 {
   GisAccountPagePrivate *priv = gis_account_page_get_instance_private (page);
-  gboolean show_password_switch;
+  gboolean show_password_toggle;
 
-  /* check the conf file to see if the password switch should be shown/hidden */
-  show_password_switch = gis_driver_conf_get_boolean (GIS_PAGE (page)->driver,
+  /* check the conf file to see if the password toggle should be shown/hidden */
+  show_password_toggle = gis_driver_conf_get_boolean (GIS_PAGE (page)->driver,
                                                       CONFIG_ACCOUNT_GROUP,
                                                       CONFIG_ACCOUNT_SHOW_PASSWORD_SWITCH_KEY,
                                                       TRUE);
-  gis_account_page_local_show_password_switch (GIS_ACCOUNT_PAGE_LOCAL (priv->page_local),
-                                               show_password_switch);
+  gis_account_page_local_show_password_toggle (GIS_ACCOUNT_PAGE_LOCAL (priv->page_local),
+                                               show_password_toggle);
 }
 
 static void
@@ -122,7 +122,7 @@ set_mode (GisAccountPage *page,
     case UM_LOCAL:
       gtk_stack_set_visible_child (GTK_STACK (priv->stack), priv->page_local);
       gis_account_page_local_shown (GIS_ACCOUNT_PAGE_LOCAL (priv->page_local));
-      hide_password_switch_if_needed (page);
+      hide_password_toggle_if_needed (page);
       break;
     case UM_ENTERPRISE:
       gtk_stack_set_visible_child (GTK_STACK (priv->stack), priv->page_enterprise);

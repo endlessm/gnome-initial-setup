@@ -52,7 +52,7 @@ struct _GisAccountPageLocalPrivate
   GtkWidget *username_combo;
   gboolean   has_custom_username;
   GtkWidget *username_explanation;
-  GtkWidget *password_switch;
+  GtkWidget *password_toggle;
   gboolean passwordless;
   UmPhotoDialog *photo_dialog;
 
@@ -279,7 +279,7 @@ validate (GisAccountPageLocal *page)
 
   um_photo_dialog_generate_avatar (priv->photo_dialog, name);
 
-  priv->passwordless = !gtk_switch_get_active (GTK_SWITCH (priv->password_switch));
+  priv->passwordless = !gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (priv->password_toggle));
 
   validation_changed (page);
 
@@ -420,7 +420,7 @@ gis_account_page_local_constructed (GObject *object)
                             "activate", G_CALLBACK (confirm), page);
   g_signal_connect_swapped (priv->fullname_entry, "activate",
                             G_CALLBACK (confirm), page);
-  g_signal_connect_swapped (priv->password_switch, "notify::active",
+  g_signal_connect_swapped (priv->password_toggle, "notify::active",
                             G_CALLBACK (validate), page);
 
   priv->valid_name = FALSE;
@@ -585,7 +585,7 @@ gis_account_page_local_class_init (GisAccountPageLocalClass *klass)
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, fullname_entry);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, username_combo);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, username_explanation);
-  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, password_switch);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, password_toggle);
 
   object_class->constructed = gis_account_page_local_constructed;
   object_class->dispose = gis_account_page_local_dispose;
@@ -649,11 +649,9 @@ gis_account_page_local_shown (GisAccountPageLocal *local)
 }
 
 void
-gis_account_page_local_show_password_switch (GisAccountPageLocal *local,
-                                             gboolean show_password_switch)
+gis_account_page_local_show_password_toggle (GisAccountPageLocal *local,
+                                             gboolean show_password_toggle)
 {
   GisAccountPageLocalPrivate *priv = gis_account_page_local_get_instance_private (local);
-  /* this hides the label for the password switch too, since their "visible"
-   * properties are bound */
-  gtk_widget_set_visible (priv->password_switch, show_password_switch);
+  gtk_widget_set_visible (priv->password_toggle, show_password_toggle);
 }
