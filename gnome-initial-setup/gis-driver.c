@@ -23,10 +23,12 @@
 
 #include "gnome-initial-setup.h"
 
-#include <stdlib.h>
+#include <errno.h>
 #include <locale.h>
+#include <stdlib.h>
 #include <gdm/gdm-client.h>
 
+#include "cc-common-language.h"
 #include "gis-assistant.h"
 
 #define GIS_TYPE_DRIVER_MODE (gis_driver_mode_get_type ())
@@ -83,6 +85,8 @@ struct _GisDriverPrivate {
   GisDriverMode mode;
   UmAccountMode account_mode;
   gboolean small_screen;
+
+  locale_t locale;
 };
 typedef struct _GisDriverPrivate GisDriverPrivate;
 
@@ -112,6 +116,12 @@ gis_driver_finalize (GObject *object)
   g_free (priv->user_password);
 
   g_clear_object (&priv->user_account);
+
+  if (priv->locale != (locale_t) 0)
+    {
+      uselocale (LC_GLOBAL_LOCALE);
+      freelocale (priv->locale);
+    }
 
   G_OBJECT_CLASS (gis_driver_parent_class)->finalize (object);
 }
@@ -158,12 +168,52 @@ gis_driver_get_assistant (GisDriver *driver)
   return priv->assistant;
 }
 
-void
-gis_driver_set_user_language (GisDriver *driver, const gchar *lang_id)
+static void
+gis_driver_real_locale_changed (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  GtkTextDirection direction;
+
+  direction = gtk_get_locale_direction ();
+  gtk_widget_set_default_direction (direction);
+
+  rebuild_pages (driver);
+  gis_assistant_locale_changed (priv->assistant);
+}
+
+static void
+gis_driver_locale_changed (GisDriver *driver)
+{
+  g_signal_emit (G_OBJECT (driver), signals[LOCALE_CHANGED], 0);
+}
+
+void
+gis_driver_set_user_language (GisDriver *driver, const gchar *lang_id, gboolean update_locale)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
   g_free (priv->lang_id);
   priv->lang_id = g_strdup (lang_id);
+
+  cc_common_language_set_current_language (lang_id);
+
+  if (update_locale)
+    {
+      locale_t locale = newlocale (LC_MESSAGES_MASK, lang_id, (locale_t) 0);
+      if (locale == (locale_t) 0)
+        {
+          g_warning ("Failed to create locale %s: %s", lang_id, g_strerror (errno));
+          return;
+        }
+
+      uselocale (locale);
+
+      if (priv->locale != (locale_t) 0 && priv->locale != LC_GLOBAL_LOCALE)
+        freelocale (priv->locale);
+      priv->locale = locale;
+
+      gis_driver_locale_changed (driver);
+    }
 }
 
 const gchar *
@@ -255,25 +305,6 @@ gis_driver_hide_window (GisDriver *driver)
   gtk_widget_hide (GTK_WIDGET (priv->main_window));
 }
 
-static void
-gis_driver_real_locale_changed (GisDriver *driver)
-{
-  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
-  GtkTextDirection direction;
-
-  direction = gtk_get_locale_direction ();
-  gtk_widget_set_default_direction (direction);
-
-  rebuild_pages (driver);
-  gis_assistant_locale_changed (priv->assistant);
-}
-
-void
-gis_driver_locale_changed (GisDriver *driver)
-{
-  g_signal_emit (G_OBJECT (driver), signals[LOCALE_CHANGED], 0);
-}
-
 GisDriverMode
 gis_driver_get_mode (GisDriver *driver)
 {
@@ -289,12 +320,15 @@ gis_driver_is_small_screen (GisDriver *driver)
 }
 
 static gboolean
-screen_is_small (GdkScreen *screen)
+monitor_is_small (GdkMonitor *monitor)
 {
+  GdkRectangle geom;
+
   if (g_getenv ("GIS_SMALL_SCREEN"))
     return TRUE;
 
-  return gdk_screen_get_height (screen) < 800;
+  gdk_monitor_get_geometry (monitor, &geom);
+  return geom.height < 800;
 }
 
 static void
@@ -379,12 +413,50 @@ unmaximize (gpointer data)
 }
 
 static void
+set_small_screen_based_on_primary_monitor (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  GdkDisplay *default_display = gdk_display_get_default ();
+  GdkMonitor *primary_monitor = gdk_display_get_primary_monitor (default_display);
+
+  priv->small_screen = monitor_is_small (primary_monitor);
+}
+
+/* Recompute priv->small_screen based on the monitor where the window is
+ * located, if the window is actually realized. If not, recompute it based on
+ * the primary monitor of the default display. */
+static void
+recompute_small_screen (GisDriver *driver) {
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  GdkWindow *window;
+  GdkDisplay *default_display = gdk_display_get_default ();
+  GdkMonitor *active_monitor;
+  gboolean old_value = priv->small_screen;
+
+  if (!gtk_widget_get_realized (GTK_WIDGET (priv->main_window)))
+    {
+      set_small_screen_based_on_primary_monitor (driver);
+    }
+  else
+    {
+      window = gtk_widget_get_window (GTK_WIDGET (priv->main_window));
+      active_monitor = gdk_display_get_monitor_at_window (default_display, window);
+      priv->small_screen = monitor_is_small (active_monitor);
+    }
+
+  if (priv->small_screen != old_value)
+    g_object_notify (G_OBJECT (driver), "small-screen");
+}
+
+static void
 update_screen_size (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   GdkWindow *window;
   GdkGeometry size_hints;
   GtkWidget *sw;
+
+  recompute_small_screen (driver);
 
   if (!gtk_widget_get_realized (GTK_WIDGET (priv->main_window)))
     return;
@@ -437,17 +509,7 @@ update_screen_size (GisDriver *driver)
 static void
 screen_size_changed (GdkScreen *screen, GisDriver *driver)
 {
-  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
-  gboolean small_screen;
-
-  small_screen = screen_is_small (screen);
-
-  if (priv->small_screen != small_screen)
-    {
-      priv->small_screen = small_screen;
-      update_screen_size (driver);
-      g_object_notify (G_OBJECT (driver), "small-screen");
-    }
+  update_screen_size (driver);
 }
 
 static void
@@ -504,7 +566,7 @@ gis_driver_startup (GApplication *app)
 
   gtk_widget_show (GTK_WIDGET (priv->assistant));
 
-  gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL));
+  gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL), FALSE);
 
   prepare_main_window (driver);
   rebuild_pages (driver);
@@ -513,12 +575,11 @@ gis_driver_startup (GApplication *app)
 static void
 gis_driver_init (GisDriver *driver)
 {
-  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   GdkScreen *screen;
 
   screen = gdk_screen_get_default ();
 
-  priv->small_screen = screen_is_small (screen);
+  set_small_screen_based_on_primary_monitor (driver);
 
   g_signal_connect (screen, "size-changed",
                     G_CALLBACK (screen_size_changed), driver);

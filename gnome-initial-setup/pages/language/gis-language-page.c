@@ -123,7 +123,7 @@ language_changed (CcLanguageChooser  *chooser,
   priv->new_locale_id = cc_language_chooser_get_language (chooser);
   driver = GIS_PAGE (page)->driver;
 
-  setlocale (LC_MESSAGES, priv->new_locale_id);
+  gis_driver_set_user_language (driver, priv->new_locale_id, TRUE);
   gtk_widget_set_default_direction (gtk_get_locale_direction ());
 
   if (gis_driver_get_mode (driver) == GIS_DRIVER_MODE_NEW_USER) {
@@ -153,12 +153,8 @@ language_changed (CcLanguageChooser  *chooser,
                       G_CALLBACK (user_loaded),
                       g_strdup (priv->new_locale_id));
 
-  gis_driver_set_user_language (driver, priv->new_locale_id);
-
   gis_welcome_widget_show_locale (GIS_WELCOME_WIDGET (priv->welcome_widget),
                                   priv->new_locale_id);
-
-  gis_driver_locale_changed (driver);
 }
 
 static void
@@ -222,6 +218,20 @@ update_distro_logo (GisLanguagePage *page)
   GisLanguagePagePrivate *priv = gis_language_page_get_instance_private (page);
   char *buffer;
   char *id;
+  gsize i;
+
+  static const struct {
+    const char *id;
+    const char *logo;
+  } id_to_logo[] = {
+    { "debian",                         "emblem-debian" },
+    { "fedora",                         "fedora-logo-icon" },
+    { "ubuntu",                         "ubuntu-logo-icon" },
+    { "openSUSE Tumbleweed",            "opensuse-logo-icon" },
+    { "openSUSE Leap",                  "opensuse-logo-icon" },
+    { "SLED",                           "suse-logo-icon" },
+    { "SLES",                           "suse-logo-icon" },
+  };
 
   id = NULL;
 
@@ -231,25 +241,13 @@ update_distro_logo (GisLanguagePage *page)
       g_free (buffer);
     }
 
-  if (g_strcmp0 (id, "debian") == 0)
+  for (i = 0; i < G_N_ELEMENTS (id_to_logo); i++)
     {
-      g_object_set (priv->logo, "icon-name", "emblem-debian", NULL);
-    }
-  else if (g_strcmp0 (id, "fedora") == 0)
-    {
-      g_object_set (priv->logo, "icon-name", "fedora-logo-icon", NULL);
-    }
-  else if (g_strcmp0 (id, "ubuntu") == 0)
-    {
-      g_object_set (priv->logo, "icon-name", "ubuntu-logo-icon", NULL);
-    }
-  else if ((g_strcmp0 (id, "openSUSE Tumbleweed") == 0) || (g_strcmp0 (id, "openSUSE Leap") == 0))
-    {
-      g_object_set (priv->logo, "icon-name", "opensuse-logo-icon", NULL);
-    }
-  else if ((g_strcmp0 (id, "SLED") == 0) || (g_strcmp0 (id, "SLES") == 0))
-    {
-      g_object_set (priv->logo, "icon-name", "suse-logo-icon", NULL);
+      if (g_strcmp0 (id, id_to_logo[i].id) == 0)
+        {
+          g_object_set (priv->logo, "icon-name", id_to_logo[i].logo, NULL);
+          break;
+        }
     }
 
   g_free (id);

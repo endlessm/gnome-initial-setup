@@ -1,6 +1,6 @@
 project('gnome-initial-setup',
         ['c'],
-        version: '3.32.1',
+        version: '3.33.91',
         license: 'GPLv2',
         meson_version: '>= 0.47.0',
 )
@@ -29,6 +29,19 @@ conf.set_quoted('GNOMELOCALEDIR', locale_dir)
 conf.set_quoted('PKGDATADIR', pkgdata_dir)
 conf.set('ENABLE_REGION_PAGE', get_option('region-page'))
 conf.set('SECRET_API_SUBJECT_TO_CHANGE', true)
+conf.set_quoted('G_LOG_DOMAIN', 'InitialSetup')
+
+enable_systemd = get_option('systemd')
+if enable_systemd
+    systemd_dep = dependency('systemd', required: false)
+    assert(systemd_dep.found(), 'Systemd support explicitly required, but systemd not found')
+
+    # XXX: Once https://github.com/systemd/systemd/issues/9595 is fixed and we can
+    # depend on this version, replace with something like:
+    #  systemduserunitdir = systemd_dep.get_pkgconfig_variable('systemduserunitdir')
+    # and uncomment systemd_dep below
+    systemd_userunitdir = join_paths(prefix, 'lib', 'systemd', 'user')
+endif
 
 # Needed for the 'account' page
 cheese_dep = dependency ('cheese',
