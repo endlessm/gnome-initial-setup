@@ -1,3 +1,50 @@
+3.33.91
+
+* !54 build: Add a log domain
+
+* Translation updates:
+ - Japanese
+
+3.33.90
+
+* !38 systemd user instance support. This is inert without corresponding
+  changes in other GNOME modules, and can be disabled entirely with
+  `-Dsystemd=false` at build time.
+
+* Other improvements and bug fixes:
+ - !37 summary: don't free borrowed password string
+ - !41 data: use a11y menu in initial-setup session
+ - !42 driver: Account for multi monitor when checking for small screen
+ - !44 language: Refactor the logo selection
+ - !45 language: Fix the visibility of the placeholder
+ - !46 summary: Make the page fit narrow screens
+ - !49 Drop the headers for the first rows
+ - !50 account: Drop the avatar button padding
+ - !51 Refactor page headers
+ - !52 data: Update required gnome-settings-daemon plugins
+
+* Translation updates:
+ - Basque
+ - Karbi
+
+3.33.4
+
+* Bugs fixed:
+ - !39 Check for errors from newlocale()
+
+* Translation updates
+ - Indonesian
+
+3.33.2
+
+* Bugs fixed:
+ - #53 setlocale() usage is not threadsafe
+ - !33 Include bug report URL in .pot file
+
+* Translation updates:
+ - Chinese (China)
+ - Esperanto
+
 3.32.1
 
 * Translation updates:

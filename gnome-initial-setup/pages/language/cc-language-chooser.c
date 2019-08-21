@@ -237,6 +237,7 @@ no_results_widget_new (void)
 
         widget = padded_label_new (_("No languages found"));
         gtk_widget_set_sensitive (widget, FALSE);
+        gtk_widget_show_all (widget);
         return widget;
 }
 
@@ -453,8 +454,10 @@ update_header_func (GtkListBoxRow *child,
 {
         GtkWidget *header;
 
-        if (before == NULL)
+        if (before == NULL) {
+                gtk_list_box_row_set_header (child, NULL);
                 return;
+        }
 
         header = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
         gtk_list_box_row_set_header (child, header);
