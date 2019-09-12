@@ -1,33 +1,34 @@
-# Turkish translation for gnome-initial-setup.
-# Copyright (C) 2012 gnome-initial-setup's COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-# Necdet Yücel <necdetyucel@gmail.com>, 2015.
-# Muhammet Kara <muhammetk@gmail.com>, 2012, 2013, 2014, 2015, 2016.
-# Emin Tufan Çetin <etcetin@gmail.com>, 2013-2019.
-#
+# 
+# Translators:
+# Emin Tufan <etcetin@gmail.com>, 2013,2017-2018
+# Emin Tufan <etcetin@gmail.com>, 2013
+# Muha Aliss <muhaaliss@gmail.com>, 2019
+# Muhammet Kara <muhammetk@gmail.com>, 2012-2016
+# Necdet Yücel <necdetyucel@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
 "POT-Creation-Date: 2019-09-09 14:38-0700\n"
-"PO-Revision-Date: 2019-02-09 16:24+0300\n"
-"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
-"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
-"Language: tr\n"
+"PO-Revision-Date: 2019-09-12 18:59+0000\n"
+"Last-Translator: Philip Chimento <philip.chimento@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/endless-os/gnome-initial-setup/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 3.30.1\n"
-"X-POOTLE-MTIME: 1433282659.000000\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
 msgid "Initial Setup"
 msgstr "İlk Kurulum"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
 #: data/gnome-initial-setup-first-login.desktop.in.in:5
 #: data/gnome-initial-setup.desktop.in.in:5
 msgid "preferences-system"
@@ -54,34 +55,32 @@ msgid "_Cancel"
 msgstr "_Vazgeç"
 
 #: gnome-initial-setup/gis-driver.c:598
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to enter demo mode: %s"
-msgstr "Etki alanına katılma başarısız"
+msgstr "Demo moduna girilemedi: %s"
 
 #: gnome-initial-setup/gis-page-util.c:431
 msgid "Unknown"
-msgstr ""
+msgstr "Bilinmeyen"
 
 #: gnome-initial-setup/gis-page-util.c:433
 #, c-format
 msgid "Image: %s"
-msgstr ""
+msgstr "Görüntü: %s"
 
 #: gnome-initial-setup/gis-page-util.c:442
-#, fuzzy
 msgid "Disabled"
-msgstr "Resmi etkisizleştir"
+msgstr "Devre dışı"
 
 #: gnome-initial-setup/gis-page-util.c:444
 #, c-format
 msgid "SD Card: %s"
-msgstr ""
+msgstr "SD Kart: %s"
 
 #. Translators: this is shown when launching the
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -89,11 +88,11 @@ msgstr ""
 
 #: gnome-initial-setup/gis-page-util.ui:29
 msgid "Test Mode"
-msgstr ""
+msgstr "Test modu"
 
 #: gnome-initial-setup/gis-page-util.ui:55
 msgid "Power Off"
-msgstr ""
+msgstr "Kapat"
 
 #: gnome-initial-setup/gis-page-util.ui:190
 msgid "Enter Store Demo"
@@ -101,7 +100,7 @@ msgstr ""
 
 #: gnome-initial-setup/gis-page-util.ui:195
 msgid "OK"
-msgstr ""
+msgstr "Tamam"
 
 #: gnome-initial-setup/gis-page-util.ui:202
 msgid "Cancel"
@@ -112,7 +111,7 @@ msgid ""
 "This allows you to try Endless without activating an account. No changes or "
 "files will be saved, and the computer will return to a clean factory state "
 "when you power it off."
-msgstr ""
+msgstr "Bu, bir hesabı etkinleştirmeden Endless'i denemenizi sağlar. Hiçbir değişiklik veya dosya kaydedilmez ve bilgisayarı kapattığınızda bilgisayar fabrika durumuna geri döner."
 
 #: gnome-initial-setup/gnome-initial-setup.c:343
 msgid "Force existing user mode"
@@ -151,10 +150,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"Kurumsal giriş, var olan bir merkezi yönetimli kullanıcı hesabının bu "
-"aygıtta kullanılmasına olanak tanır. Ayrıca bu hesabı internetteki şirket "
-"kaynaklarına erişmek için kullanabilirsiniz."
+msgstr "Kurumsal giriş, var olan bir merkezi yönetimli kullanıcı hesabının bu aygıtta kullanılmasına olanak tanır. Ayrıca bu hesabı internetteki şirket kaynaklarına erişmek için kullanabilirsiniz."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -188,10 +184,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"Kurumsal girişleri kullanmak için bu bilgisayarın bir etki alanına "
-"kaydedilmesi gerekir. Lütfen ağ yöneticinizin etki alanı parolasını buraya "
-"yazmasını sağlayın ve bilgisayarınız için eşsiz bir ad seçin."
+msgstr "Kurumsal girişleri kullanmak için bu bilgisayarın bir etki alanına kaydedilmesi gerekir. Lütfen ağ yöneticinizin etki alanı parolasını buraya yazmasını sağlayın ve bilgisayarınız için eşsiz bir ad seçin."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -207,9 +200,7 @@ msgstr "Yönetici Parolası"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:208
 msgid "Please check the name and username. You can choose a picture too."
-msgstr ""
-"Lütfen adı ve kullanıcı adını gözden geçirin. Ayrıca fotoğraf da "
-"seçebilirsiniz."
+msgstr "Lütfen adı ve kullanıcı adını gözden geçirin. Ayrıca fotoğraf da seçebilirsiniz."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:432
 msgid "We need a few details to complete setup."
@@ -233,9 +224,8 @@ msgid "_Full Name"
 msgstr "_Tam Ad"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
-#, fuzzy
 msgid "Set a password"
-msgstr "Parola Belirle"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
 msgid "_Enterprise Login"
@@ -285,15 +275,11 @@ msgstr "Kullanıcı adı “-” ile başlayamaz."
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"Kullanıcı adı yalnızca a’dan z’ye küçük ve büyük harfler, rakamlar ve şu "
-"karakterlerden oluşmalıdır: . - _"
+msgstr "Kullanıcı adı yalnızca a’dan z’ye küçük ve büyük harfler, rakamlar ve şu karakterlerden oluşmalıdır: . - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr ""
-"Başlangıç klasörünüzün adlandırılmasında kullanılacaktır ve sonradan "
-"değiştirilemez."
+msgstr "Başlangıç klasörünüzün adlandırılmasında kullanılacaktır ve sonradan değiştirilemez."
 
 #: gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
@@ -301,28 +287,28 @@ msgstr ""
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:39
 msgid "Adjust for TV screen"
-msgstr ""
+msgstr "TV ekranı için ayarla"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:57
 msgid "Do you see this at the bottom right corner of your screen?"
-msgstr ""
+msgstr "Bunu ekranınızın sağ alt köşesinde görüyor musunuz?"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:105
 msgid "I see it"
-msgstr ""
+msgstr "Görüyorum"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:121
 msgid "I do not see it. Shrink screen to fit TV."
-msgstr ""
+msgstr "Göremiyorum. TV ekranına sığacak şekilde küçültün."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:138
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
 msgid "Terms of Use"
-msgstr ""
+msgstr "Kullanım Koşulları"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
 msgid "Please read the following terms of use carefully"
-msgstr ""
+msgstr "Lütfen aşağıdaki kullanım koşullarını dikkatlice okuyunuz"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
 msgid ""
@@ -332,18 +318,17 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
-msgstr ""
+msgstr "Endless'i herkes için daha iyi hale getirmeye yardımcı olun"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
-msgstr ""
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr "Kullanım istatistiklerini ve sorun raporlarını Endless'e otomatik olarak kaydedin ve gönderin. Tüm veriler anonimdir."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
-#, fuzzy
 msgid "Third Party Software"
-msgstr "Üçüncü Taraf Depolar"
+msgstr ""
 
 #: gnome-initial-setup/pages/eulas/gis-eula-page.c:301
 #: gnome-initial-setup/pages/eulas/gis-eula-page.ui:21
@@ -354,8 +339,7 @@ msgstr "Lisans Sözleşmeleri"
 msgid ""
 "I have _agreed to the terms and conditions in this end user license "
 "agreement."
-msgstr ""
-"Bu son kullanıcı lisans sözleşmesindeki hüküm ve koşulları _kabul ediyorum."
+msgstr "Bu son kullanıcı lisans sözleşmesindeki hüküm ve koşulları _kabul ediyorum."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:89
 msgid "Add Account"
@@ -373,16 +357,12 @@ msgstr "Çevrim İçi Hesaplarınıza Bağlanın"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"Hesaplarınıza bağlanarak e-postalarınıza, çevrim içi takviminize, "
-"kişilerinize, belgelerinize ve fotoğraflarınıza kolayca erişebilirsiniz."
+msgstr "Hesaplarınıza bağlanarak e-postalarınıza, çevrim içi takviminize, kişilerinize, belgelerinize ve fotoğraflarınıza kolayca erişebilirsiniz."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr ""
-"İstediğiniz zaman Ayarlar uygulamasından hesap ekleyebilir ya da "
-"kaldırabilirsiniz."
+msgstr "İstediğiniz zaman Ayarlar uygulamasından hesap ekleyebilir ya da kaldırabilirsiniz."
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
@@ -396,24 +376,22 @@ msgstr "Daha…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Hiçbir girdi bulunamadı"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
-#, fuzzy
 msgid "Your keyboard layout seems to be:"
-msgstr "Klavye düzeninizi ya da bir giriş yöntemi seçin."
+msgstr "Klavye düzeniniz şöyle görünüyor:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
 msgid "Please press one of the following keys:"
-msgstr ""
+msgstr "Lütfen aşağıdaki tuşlardan birine basın:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
 msgid "Is the following key present on your keyboard?"
-msgstr ""
+msgstr "Klavyenizde aşağıdaki tuş var mı?"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:519
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
@@ -426,15 +404,15 @@ msgstr "Klavye düzeninizi ya da bir giriş yöntemi seçin."
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
 msgid "Help Detect My Keyboard Layout"
-msgstr ""
+msgstr "Klavye Düzenimi Algılamaya Yardımcı Ol"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
 msgid "Detect Keyboard Layout…"
-msgstr ""
+msgstr "Klavye Düzenini Algıla…"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
 msgid "_Select"
-msgstr ""
+msgstr "_Seç"
 
 #: gnome-initial-setup/pages/language/cc-language-chooser.c:302
 msgid "No languages found"
@@ -455,7 +433,6 @@ msgstr "Hoş Geldiniz"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "Hoş Geldiniz!"
@@ -463,31 +440,31 @@ msgstr "Hoş Geldiniz!"
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:173
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
+msgstr "Endless OS'u USB Bellek'ten çalıştırarak deneyin."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:174
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
 msgid "Try Endless OS by running it from the DVD."
-msgstr ""
+msgstr "Endless OS'u DVD'den çalıştırarak deneyin."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
 msgid "Reformat this computer with Endless OS."
-msgstr ""
+msgstr "Bu bilgisayarı Endless OS ile yeniden biçimlendirin."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
 msgid "Try It"
-msgstr ""
+msgstr "Dene"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
 msgid "Reformat"
-msgstr ""
+msgstr "Yeniden biçimlendir"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
 msgid "Try or Reformat"
-msgstr ""
+msgstr "Dene veya Yeniden Biçimlendir"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:325
 msgctxt "Wireless access point"
@@ -514,7 +491,7 @@ msgstr "Kablosuz"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr ""
+msgstr "İnternete bağlanmak, yeni uygulamalar, bilgiler ve diğer güncellemeler almanıza yardımcı olur. Ayrıca, saatin ve konumunuzun otomatik olarak ayarlanmasına yardımcı olur."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -530,14 +507,12 @@ msgstr "Parolalar eşleşmiyor."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:218
 #: gnome-initial-setup/pages/password/gis-password-page.c:245
-#, fuzzy
 msgid "Show password"
-msgstr "Parola"
+msgstr "Parolayı göster"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:253
-#, fuzzy
 msgid "Hide password"
-msgstr "Parola"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:399
 msgid "Password"
@@ -556,13 +531,12 @@ msgid "_Confirm"
 msgstr "_Onayla"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:203
-#, fuzzy
 msgid "Password _reminder"
-msgstr "Parola"
+msgstr "Parola _hatırlatıcı"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:218
 msgid "Password reminder will be shown in case you forget your password."
-msgstr ""
+msgstr "Parolanızı unutmanız durumunda parola hatırlatıcı gösterilecektir."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -574,9 +548,7 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
-"Bu parola, son parolanıza epey benziyor. Bazı harfleri ve rakamları "
-"değiştirmeyi deneyin."
+msgstr "Bu parola, son parolanıza epey benziyor. Bazı harfleri ve rakamları değiştirmeyi deneyin."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -589,10 +561,9 @@ msgstr "Bu zayıf bir paroladır. Parolanızı biraz daha değiştirmeyi deneyin
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr ""
-"Bu zayıf bir paroladır. Kullanıcı adınızı içermeyen bir parola daha güçlü "
-"olacaktır."
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr "Bu zayıf bir paroladır. Kullanıcı adınızı içermeyen bir parola daha güçlü olacaktır."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
@@ -636,18 +607,14 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
-"Bu zayıf bir paroladır. Noktalama işaretleri gibi daha çok özel karakter "
-"kullanmayı deneyin."
+msgstr "Bu zayıf bir paroladır. Noktalama işaretleri gibi daha çok özel karakter kullanmayı deneyin."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
-"Bu zayıf bir paroladır. Harf, sayı ve noktalama işareti karışımı kullanmayı "
-"deneyin."
+msgstr "Bu zayıf bir paroladır. Harf, sayı ve noktalama işareti karışımı kullanmayı deneyin."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
@@ -659,9 +626,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"Bu zayıf bir paroladır. Aynı türdeki karakterleri yinelemekten kaçının: "
-"harfleri, sayıları ve noktalama işaretlerini karıştırmalısınız."
+msgstr "Bu zayıf bir paroladır. Aynı türdeki karakterleri yinelemekten kaçının: harfleri, sayıları ve noktalama işaretlerini karıştırmalısınız."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
@@ -672,9 +637,7 @@ msgstr "Bu zayıf bir paroladır. 1234 veya abcd gibi sıralamalardan kaçının
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr ""
-"Bu zayıf bir paroladır. Daha çok harf, sayı ve noktalama işareti eklemeyi "
-"deneyin."
+msgstr "Bu zayıf bir paroladır. Daha çok harf, sayı ve noktalama işareti eklemeyi deneyin."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
@@ -684,29 +647,23 @@ msgstr "Büyük, küçük karakter karıştırın ve bir iki de sayı kullanın.
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-"Daha çok harf, sayı ve noktalama işareti kullanmak şifrenizi daha güçlü "
-"yapacaktır."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
+msgstr "Daha çok harf, sayı ve noktalama işareti kullanmak şifrenizi daha güçlü yapacaktır."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:112
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"Teknik sorunları bize bildirmeniz, %s’i geliştirmemize yardımcı olmaktadır. "
-"Bu bildirimler anonim olarak gönderilir ve kişisel verilerden "
-"arındırılmıştır."
+msgstr "Teknik sorunları bize bildirmeniz, %s’i geliştirmemize yardımcı olmaktadır. Bu bildirimler anonim olarak gönderilir ve kişisel verilerden arındırılmıştır."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:122
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -735,9 +692,7 @@ msgstr "Konum Hizmetleri"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Uygulamaların coğrafi konumunuzu belirlemesine olanak tanır. Konum "
-"hizmetleri kulanımda olduğunda, size bildirilir."
+msgstr "Uygulamaların coğrafi konumunuzu belirlemesine olanak tanır. Konum hizmetleri kulanımda olduğunda, size bildirilir."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -746,9 +701,7 @@ msgstr "Kendiliğinden Sorun Bildirimi"
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:110
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr ""
-"Gizlilik denetimlerini istediğiniz zaman Ayarlar uygulamasından "
-"değiştirebilirsiniz."
+msgstr "Gizlilik denetimlerini istediğiniz zaman Ayarlar uygulamasından değiştirebilirsiniz."
 
 #: gnome-initial-setup/pages/region/cc-region-chooser.c:227
 msgid "No regions found"
@@ -775,7 +728,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:78
 msgid "enter manually"
-msgstr ""
+msgstr "elle giriniz"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:102
 msgid "ID"
@@ -791,15 +744,15 @@ msgstr ""
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:189
 msgid "City"
-msgstr ""
+msgstr "Şehir"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:218
 msgid "State"
-msgstr ""
+msgstr "Eyalet"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:247
 msgid "Country"
-msgstr ""
+msgstr "Ülke"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:186
 msgid "Software Repositories"
@@ -815,9 +768,7 @@ msgstr "Seçili üçüncü taraf kaynaklardan ek yazılımlara erişin."
 msgid ""
 "Some of this software is proprietary and therefore has restrictions on use, "
 "sharing, and access to source code."
-msgstr ""
-"Bu yazılımların bir bölümü sahiplidir ve bu nedenle kullanım, paylaşım, "
-"kaynak koda erişim üzerinde kısıtlamaları vardır."
+msgstr "Bu yazılımların bir bölümü sahiplidir ve bu nedenle kullanım, paylaşım, kaynak koda erişim üzerinde kısıtlamaları vardır."
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:16
 msgid "Additional Software Repositories"
@@ -833,21 +784,16 @@ msgstr "Üçüncü Taraf Depolar"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:138
 msgid ""
-"Proprietary software typically has restrictions on how it can be used and on "
-"access to source code. This prevents anyone but the software owner from "
+"Proprietary software typically has restrictions on how it can be used and on"
+" access to source code. This prevents anyone but the software owner from "
 "inspecting, improving or learning from its code."
-msgstr ""
-"Sahipli yazılımların genellikle nasıl kullanılacağı ve kaynak koda erişimle "
-"ilgili kısıtları vardır. Bu; yazılımın sahibi dışındakilerin kaynak kodları "
-"incelemesini, geliştirmesini ve bunlardan birşeyler öğrenmesini engeller."
+msgstr "Sahipli yazılımların genellikle nasıl kullanılacağı ve kaynak koda erişimle ilgili kısıtları vardır. Bu; yazılımın sahibi dışındakilerin kaynak kodları incelemesini, geliştirmesini ve bunlardan birşeyler öğrenmesini engeller."
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:150
 msgid ""
 "In contrast, Free Software can be freely run, copied, distributed, studied "
 "and modified."
-msgstr ""
-"Buna karşın Özgür Yazılımlar; özgürce çalıştırılabilir, kopyalanabilir, "
-"dağıtılabilir, üzerinde çalışma yapılabilir ve değiştirilebilirdir."
+msgstr "Buna karşın Özgür Yazılımlar; özgürce çalıştırılabilir, kopyalanabilir, dağıtılabilir, üzerinde çalışma yapılabilir ve değiştirilebilirdir."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
@@ -859,13 +805,13 @@ msgstr "%s Kullanmaya _Başla"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:303
 msgid "You're ready to try Endless OS"
-msgstr ""
+msgstr "Endless'i denemeye hazırsınız"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:305
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
-msgstr ""
+msgstr "<b>İndirdiğiniz dosyalar veya oluşturduğunuz belgeler bilgisayarı yeniden başlattığınızda veya kapattığınızda sonsuza dek kaybolur.</b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:315
 msgid "Ready to Go"
@@ -884,7 +830,6 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:310
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -915,99 +860,8 @@ msgstr "Saat Dilimi"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"Eğer konumunuz bulunabilirse saat dilimi kendiliğinden ayarlanacak. Ayrıca "
-"kendiniz ayarlamak için şehir araması yapabilirsiniz."
+msgstr "Eğer konumunuz bulunabilirse saat dilimi kendiliğinden ayarlanacak. Ayrıca kendiniz ayarlamak için şehir araması yapabilirsiniz."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
 msgstr "Lütfen yakındaki şehir için arama yapın"
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "İnternete bağlanmak saati ayarlamanızı, kişisel ayrıntılarınızı "
-#~ "eklemenizi, e-postalarınıza, takminize ve kişilerinize erişmenizi sağlar. "
-#~ "Ayrıca kurumsal hesaplara giriş için gereklidir."
-
-#~ msgid "This is a weak password."
-#~ msgstr "Bu zayıf bir paroladır."
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to avoid common words."
-#~ msgstr "Yaygın sözcüklerden kaçınmayı deneyin."
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to use more numbers."
-#~ msgstr "Daha çok rakam kullanmayı deneyin."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "Password needs to be longer. Try to add more letters, numbers and "
-#~ "punctuation."
-#~ msgstr ""
-#~ "Parola daha uzun olmalıdır. Harf, sayı ve noktalama işareti karışımı "
-#~ "kullanmayı deneyin."
-
-#~ msgid ""
-#~ "Proprietary software sources provide access to additional software, "
-#~ "including web browsers and games. This software typically has "
-#~ "restrictions on use and access to source code, and is not provided by %s."
-#~ msgstr ""
-#~ "Sahipli yazılım kaynakları; web tarayıcıları ve oyunlar da dahil olmak "
-#~ "üzere, ek yazılımlara erişim sağlar. Bu yazılımların genellikle kullanım "
-#~ "ve kaynak koda erişim kısıtları vardır ve sağlayıcısı %s değildir."
-
-#~ msgid "Proprietary Software Sources"
-#~ msgstr "Sahipli Yazılım Kaynakları"
-
-#~| msgid "A user with the username '%s' already exists."
-#~ msgid "A user with the username ‘%s’ already exists."
-#~ msgstr "‘%s’ adlı bir kullanıcı zaten var"
-
-#~ msgid "_Verify"
-#~ msgstr "_Doğrula"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "Güç: Zayıf"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "Güç: Düşük"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "Güç: Orta"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "Güç: İyi"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "Güç: Yüksek"
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "Bu ayrıntılar doğru mu? İsterseniz bunları değiştirebilirsiniz."
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr ""
-#~ "Çevrimiçi hesaplarınızı kurulumdan sonra gözden geçirebilir (ve "
-#~ "diğerlerini ekleyebilirsiniz.)"
-
-#~ msgid ""
-#~ "Thank you for choosing %s.\n"
-#~ "We hope that you love it."
-#~ msgstr ""
-#~ "%s dağıtımını seçtiğiniz için teşekkür ederiz.\n"
-#~ "Seveceğinizi ümit ediyoruz."
-
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "Saat diliminizi %s olarak belirledik. Devam etmek için İleri'ye tıklayın "
-#~ "ya da saat dilimini elle ayarlamak için şehir arayın."

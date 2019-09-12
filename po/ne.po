@@ -1,31 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# This file is distributed under the same license as the gnome-initial-setup package.
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: Gnome Nepali Translation Project\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
 "POT-Creation-Date: 2019-09-09 14:38-0700\n"
-"PO-Revision-Date: 2017-09-01 16:58+0545\n"
-"Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
-"Language-Team: Nepali Translation Team <chautari@gmail.com>\n"
-"Language: ne\n"
+"PO-Revision-Date: 2019-09-12 18:54+0000\n"
+"Last-Translator: Philip Chimento <philip.chimento@gmail.com>\n"
+"Language-Team: Nepali (http://www.transifex.com/endless-os/gnome-initial-setup/language/ne/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.3\n"
+"Language: ne\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
 msgid "Initial Setup"
 msgstr "सुरुको सेटअप"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
 #: data/gnome-initial-setup-first-login.desktop.in.in:5
 #: data/gnome-initial-setup.desktop.in.in:5
 msgid "preferences-system"
@@ -52,9 +50,9 @@ msgid "_Cancel"
 msgstr "_रद्द"
 
 #: gnome-initial-setup/gis-driver.c:598
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to enter demo mode: %s"
-msgstr "डोमेन जडान गर्न असफल"
+msgstr ""
 
 #: gnome-initial-setup/gis-page-util.c:431
 msgid "Unknown"
@@ -66,9 +64,8 @@ msgid "Image: %s"
 msgstr ""
 
 #: gnome-initial-setup/gis-page-util.c:442
-#, fuzzy
 msgid "Disabled"
-msgstr "छवि अक्षम पार्नुहोस्"
+msgstr ""
 
 #: gnome-initial-setup/gis-page-util.c:444
 #, c-format
@@ -79,7 +76,6 @@ msgstr ""
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -113,18 +109,16 @@ msgid ""
 msgstr ""
 
 #: gnome-initial-setup/gnome-initial-setup.c:343
-#, fuzzy
 msgid "Force existing user mode"
-msgstr "भै राखेको लै ध्यान नदिएर  बल पुर्बक retracing"
+msgstr ""
 
 #: gnome-initial-setup/gnome-initial-setup.c:349
 msgid "— GNOME initial setup"
 msgstr "—  जिनोम सुरुको सेटअप"
 
 #: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:36
-#, fuzzy
 msgid "Take a Picture…"
-msgstr "फोटो लिनुहोस्…"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:184
 msgid "Failed to register account"
@@ -225,19 +219,16 @@ msgid "_Full Name"
 msgstr "पूरा नाम"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
-#, fuzzy
 msgid "Set a password"
-msgstr "पासवर्ड : राख्नुहोस्"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
-#, fuzzy
 msgid "_Enterprise Login"
-msgstr "इन्टरप्राइज लगइन"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:53
-#, fuzzy
 msgid "Go online to set up Enterprise Login."
-msgstr "इन्टरप्राइज लगइन"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
@@ -258,9 +249,9 @@ msgid "Invalid password, please try again"
 msgstr "अवैध पासवर्ड  पुन: प्रयास गर्नुहोस्"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:742
-#, fuzzy, c-format
+#, c-format
 msgid "Couldn’t connect to the %s domain: %s"
-msgstr "ठेगाना पुस्तिका '%s' खोल्न असफल : %s"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:251
 msgid "Sorry, that user name isn’t available. Please try another."
@@ -326,8 +317,8 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
@@ -354,9 +345,8 @@ msgid "Online Accounts"
 msgstr "अनलाईन खाताहरू"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:17
-#, fuzzy
 msgid "Connect Your Online Accounts"
-msgstr "अनलाईन खाताहरु..."
+msgstr ""
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:18
 msgid ""
@@ -381,15 +371,13 @@ msgstr "अरू…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "निर्गत फेला परेन "
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
-#, fuzzy
 msgid "Your keyboard layout seems to be:"
-msgstr "भाषा;खाका;किबोर्ड;इनपुट विधि;पाठ प्रवेश;"
+msgstr ""
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
@@ -406,9 +394,8 @@ msgid "Typing"
 msgstr " टाइप गर्दै "
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
-#, fuzzy
 msgid "Select your keyboard layout or an input method."
-msgstr "भाषा;खाका;किबोर्ड;इनपुट विधि;पाठ प्रवेश;"
+msgstr ""
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
 msgid "Help Detect My Keyboard Layout"
@@ -441,7 +428,6 @@ msgstr "स्वागतम"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "स्वागतम!"
@@ -481,9 +467,8 @@ msgid "Other…"
 msgstr "_अन्य..."
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:410
-#, fuzzy
 msgid "Wireless networking is disabled"
-msgstr "सञ्जालीकरण अक्षम गरियो"
+msgstr ""
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:417
 msgid "Checking for available wireless networks"
@@ -504,9 +489,8 @@ msgid ""
 msgstr ""
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
-#, fuzzy
 msgid "No wireless available"
-msgstr "ताररहित"
+msgstr ""
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:91
 msgid "Turn On"
@@ -518,14 +502,12 @@ msgstr "पासवर्ड "
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:218
 #: gnome-initial-setup/pages/password/gis-password-page.c:245
-#, fuzzy
 msgid "Show password"
-msgstr "पासवर्ड :"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:253
-#, fuzzy
 msgid "Hide password"
-msgstr "पासवर्ड :"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:399
 msgid "Password"
@@ -544,9 +526,8 @@ msgid "_Confirm"
 msgstr "यकिन"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:203
-#, fuzzy
 msgid "Password _reminder"
-msgstr "पासवर्ड :"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:218
 msgid "Password reminder will be shown in case you forget your password."
@@ -558,26 +539,25 @@ msgid "The new password needs to be different from the old one."
 msgstr "नया पासवर्ड पुरानो भन्दा फरक हुनु पर्छ"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:83
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr "केहि संख्या र अक्षर परिवर्तन गरि प्रयास गर्नुहोस्"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr "अलि धेरै पटक पासवर्ड परिवर्तन गर्नुहोस्"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
+"This is a weak password. A password without your user name would be "
+"stronger."
 msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
@@ -603,22 +583,19 @@ msgid "This is a weak password. Try to avoid reordering existing words."
 msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr "वढि अंक प्रयोग गर्नुहोस्"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr "वढि अक्षर  प्रयोग गर्नुहोस् ।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr "वढि अक्षर  प्रयोग गर्नुहोस् ।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
@@ -665,13 +642,13 @@ msgstr ""
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
 msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:112
 #, c-format
 msgid ""
@@ -682,11 +659,10 @@ msgstr ""
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "Problem data will be collected by %s:"
-msgstr "%s मा समस्या"
+msgstr ""
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:183
@@ -695,9 +671,8 @@ msgid "Privacy Policy"
 msgstr "गोपनीयता नीति"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:183
-#, fuzzy
 msgid "Uses Mozilla Location Service:"
-msgstr "स्थान सेवा जडान असफल"
+msgstr ""
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:294
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:16
@@ -715,9 +690,8 @@ msgid ""
 msgstr ""
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
-#, fuzzy
 msgid "Automatic Problem Reporting"
-msgstr "समस्या प्रतिवेदन"
+msgstr ""
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:110
 msgid ""
@@ -734,9 +708,8 @@ msgid "Region"
 msgstr "क्षेत्र"
 
 #: gnome-initial-setup/pages/region/gis-region-page.ui:16
-#, fuzzy
 msgid "Choose your country or region."
-msgstr "तपाईँको देश छान्नुहोस्"
+msgstr ""
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
@@ -777,9 +750,8 @@ msgid "Country"
 msgstr ""
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:186
-#, fuzzy
 msgid "Software Repositories"
-msgstr "सफ्टवेयर स्रोतहरू"
+msgstr ""
 
 #. TRANSLATORS: this is the third party repositories info bar.
 #: gnome-initial-setup/pages/software/gis-software-page.c:190
@@ -794,9 +766,8 @@ msgid ""
 msgstr ""
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:16
-#, fuzzy
 msgid "Additional Software Repositories"
-msgstr "थप सफ्टवेयर स्रोतहरू"
+msgstr ""
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:28
 msgid "<a href=\"more\">Find out more…</a>"
@@ -808,8 +779,8 @@ msgstr ""
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:138
 msgid ""
-"Proprietary software typically has restrictions on how it can be used and on "
-"access to source code. This prevents anyone but the software owner from "
+"Proprietary software typically has restrictions on how it can be used and on"
+" access to source code. This prevents anyone but the software owner from "
 "inspecting, improving or learning from its code."
 msgstr ""
 
@@ -842,20 +813,18 @@ msgid "Ready to Go"
 msgstr "सेवा तयार छ"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.ui:89
-#, fuzzy
 msgid "You’re ready to go!"
-msgstr "सेवा तयार छ"
+msgstr ""
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:270
-#, fuzzy, c-format
+#, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
-msgstr "%s %s, %s %s"
+msgstr ""
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:310
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -891,43 +860,3 @@ msgstr ""
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
 msgstr "नजिकको शहर खोज्नुहोस्"
-
-#, fuzzy
-#~ msgid "Proprietary Software Sources"
-#~ msgstr "सफ्टवेयर स्थापना गर्न कुनै स्रोत छैनन्"
-
-#, fuzzy
-#~ msgid "A user with the username '%s' already exists."
-#~ msgstr "प्रयोगकर्ता '%s' पहिले नै अवस्थित छ"
-
-#~ msgid "_Verify"
-#~ msgstr "रूजु गर्नुहोस्"
-
-#, fuzzy
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "बल"
-
-#, fuzzy
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "बल"
-
-#, fuzzy
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "बल"
-
-#, fuzzy
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "बल"
-
-#, fuzzy
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "बल"
-
-#, fuzzy
-#~ msgid "You're all set!"
-#~ msgstr "चिन्ह तह सबै मा कायम गरियो ।"

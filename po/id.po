@@ -1,30 +1,36 @@
-# Indonesian translation for gnome-initial-setup.
-# Copyright (C) 2012 gnome-initial-setup's COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-# Andika Triwidada <andika@gmail.com>, 2012, 2013, 2014, 2015.
-# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2018, 2019.
+# 
+# Translators:
+# Andika Triwidada <andika@gmail.com>, 2012-2015
+# Harry Suryapambagya <harsxv@gmail.com>, 2018
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017-2019
+# Kukuh Syafaat <syafaatkukuh@gmail.com>, 2017
+# Roddy Shuler <roddy@stanfordalumni.org>, 2017-2018
+# Septira Taruna <septira@endlessm.com>, 2017-2018
+# Will Thompson <wjt@endlessm.com>, 2019
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup gnome-3-30\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
 "POT-Creation-Date: 2019-09-09 14:38-0700\n"
-"PO-Revision-Date: 2019-05-22 14:10+0700\n"
-"Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
-"Language-Team: Indonesian <gnome@i15n.org>\n"
-"Language: id\n"
+"PO-Revision-Date: 2019-09-12 18:54+0000\n"
+"Last-Translator: Philip Chimento <philip.chimento@gmail.com>\n"
+"Language-Team: Indonesian (http://www.transifex.com/endless-os/gnome-initial-setup/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural= n!=1;\n"
-"X-Generator: Poedit 2.2.1\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
 msgid "Initial Setup"
 msgstr "Penyiapan Awal"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
 #: data/gnome-initial-setup-first-login.desktop.in.in:5
 #: data/gnome-initial-setup.desktop.in.in:5
 msgid "preferences-system"
@@ -77,7 +83,6 @@ msgstr "Kartu SD: %s"
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -108,10 +113,7 @@ msgid ""
 "This allows you to try Endless without activating an account. No changes or "
 "files will be saved, and the computer will return to a clean factory state "
 "when you power it off."
-msgstr ""
-"Mode ini memperbolehkan Anda mencoba Endless tanpa membuat akun pengguna. "
-"Tidak ada perubahan atau berkas apapun yang akan disimpan, dan komputer akan "
-"kembali ke mode bawaan pabrik saat dimatikan."
+msgstr "Mode ini memperbolehkan Anda mencoba Endless tanpa membuat akun pengguna. Tidak ada perubahan atau berkas apapun yang akan disimpan, dan komputer akan kembali ke mode bawaan pabrik saat dimatikan."
 
 #: gnome-initial-setup/gnome-initial-setup.c:343
 msgid "Force existing user mode"
@@ -150,10 +152,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"Log masuk enterprise memungkinkan akun pengguna yang telah ada dan dikelola "
-"secara terpusat dipakai pada perangkat ini. Anda juga dapat menggunakan akun "
-"ini untuk mengakses sumber daya perusahaan di internet."
+msgstr "Log masuk enterprise memungkinkan akun pengguna yang telah ada dan dikelola secara terpusat dipakai pada perangkat ini. Anda juga dapat menggunakan akun ini untuk mengakses sumber daya perusahaan di internet."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -187,11 +186,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"Untuk memakai log masuk enterprise, komputer ini perlu didaftarkan ke dalam "
-"domain. Mintalah administrator jaringan Anda mengetikkan kata sandi "
-"domainnya di sini, dan pilih suatu nama komputer yang unik bagi komputer "
-"Anda."
+msgstr "Untuk memakai log masuk enterprise, komputer ini perlu didaftarkan ke dalam domain. Mintalah administrator jaringan Anda mengetikkan kata sandi domainnya di sini, dan pilih suatu nama komputer yang unik bagi komputer Anda."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -231,9 +226,8 @@ msgid "_Full Name"
 msgstr "Nama _Lengkap"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
-#, fuzzy
 msgid "Set a password"
-msgstr "Atur Kata Sandi"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
 msgid "_Enterprise Login"
@@ -283,9 +277,7 @@ msgstr "Nama pengguna tidak boleh diawali dengan “-”."
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"Nama pengguna hanya bisa terdiri dari huruf kecil dan besar a-z, angka, dan "
-"karakter: . - _"
+msgstr "Nama pengguna hanya bisa terdiri dari huruf kecil dan besar a-z, angka, dan karakter: . - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "This will be used to name your home folder and can’t be changed."
@@ -332,16 +324,13 @@ msgstr "Bantu membuat Endless menjadi lebih baik untuk semua orang"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
-msgstr ""
-"Secara otomatis menyimpan dan mengirimkan statistik penggunaan dan laporan "
-"masalah ke Endless. Semua data anonim."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr "Secara otomatis menyimpan dan mengirimkan statistik penggunaan dan laporan masalah ke Endless. Semua data anonim."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
-#, fuzzy
 msgid "Third Party Software"
-msgstr "Repositori Pihak Ketiga"
+msgstr ""
 
 #: gnome-initial-setup/pages/eulas/gis-eula-page.c:301
 #: gnome-initial-setup/pages/eulas/gis-eula-page.ui:21
@@ -352,9 +341,7 @@ msgstr "Persetujuan Lisensi"
 msgid ""
 "I have _agreed to the terms and conditions in this end user license "
 "agreement."
-msgstr ""
-"Saya telah setuj_u dengan syarat dan kondisi dalam perjanjian lisensi "
-"pengguna akhir ini."
+msgstr "Saya telah setuj_u dengan syarat dan kondisi dalam perjanjian lisensi pengguna akhir ini."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:89
 msgid "Add Account"
@@ -372,9 +359,7 @@ msgstr "Sambung Akun Daring Anda"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"Sambungkan akun Anda untuk dengan mudah mengakses surel, kalender daring, "
-"kontak, dokumen, dan foto Anda."
+msgstr "Sambungkan akun Anda untuk dengan mudah mengakses surel, kalender daring, kontak, dokumen, dan foto Anda."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
@@ -393,7 +378,6 @@ msgstr "Lebih banyak…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Tak ditemukan masukan"
@@ -451,7 +435,6 @@ msgstr "Selamat Datang"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "Selamat Datang!"
@@ -510,10 +493,7 @@ msgstr "Wi-Fi"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr ""
-"Terhubung ke internet membantu Anda mendapatkan aplikasi baru, informasi, "
-"serta pembaruan lainnya. Juga membantu mengatur waktu dan lokasi Anda secara "
-"otomatis."
+msgstr "Terhubung ke internet membantu Anda mendapatkan aplikasi baru, informasi, serta pembaruan lainnya. Juga membantu mengatur waktu dan lokasi Anda secara otomatis."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -533,9 +513,8 @@ msgid "Show password"
 msgstr "Perlihatkan kata sandi"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:253
-#, fuzzy
 msgid "Hide password"
-msgstr "Kata Sandi"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:399
 msgid "Password"
@@ -559,9 +538,7 @@ msgstr "Pe_tunjuk kata sandi"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:218
 msgid "Password reminder will be shown in case you forget your password."
-msgstr ""
-"Petunjuk kata sandi akan diperlihatkan apabila Anda lupa dengan kata sandi "
-"Anda."
+msgstr "Petunjuk kata sandi akan diperlihatkan apabila Anda lupa dengan kata sandi Anda."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -573,9 +550,7 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
-"Kata sandi ini sangat mirip dengan yang terakhir. Cobalah mengubah beberapa "
-"huruf dan angka."
+msgstr "Kata sandi ini sangat mirip dengan yang terakhir. Cobalah mengubah beberapa huruf dan angka."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -583,148 +558,114 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
-"Kata sandi ini sangat mirip dengan yang terakhir. Cobalah mengubah kata "
-"sandi sedikit lagi."
+msgstr "Kata sandi ini sangat mirip dengan yang terakhir. Cobalah mengubah kata sandi sedikit lagi."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr ""
-"Ini adalah kata sandi yang lemah. Kata sandi tanpa nama pengguna Anda akan "
-"lebih kuat."
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr "Ini adalah kata sandi yang lemah. Kata sandi tanpa nama pengguna Anda akan lebih kuat."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr ""
-"Ini adalah kata sandi yang lemah. Cobalah untuk menghindari penggunaan nama "
-"Anda dalam kata sandi."
+msgstr "Ini adalah kata sandi yang lemah. Cobalah untuk menghindari penggunaan nama Anda dalam kata sandi."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
-"Ini adalah kata sandi yang lemah. Cobalah untuk menghindari beberapa kata "
-"yang disertakan dalam kata sandi."
+msgstr "Ini adalah kata sandi yang lemah. Cobalah untuk menghindari beberapa kata yang disertakan dalam kata sandi."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr "Ini adalah kata sandi yang lemah. Cobalah untuk menghindari kata-kata "
-"umum."
+msgstr "Ini adalah kata sandi yang lemah. Cobalah untuk menghindari kata-kata umum."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr ""
-"Ini adalah kata sandi yang lemah. Cobalah untuk menghindari menata ulang "
-"kata-kata yang sama."
+msgstr "Ini adalah kata sandi yang lemah. Cobalah untuk menghindari menata ulang kata-kata yang sama."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr ""
-"Ini adalah kata sandi yang lemah. Cobalah untuk memakai lebih banyak angka."
+msgstr "Ini adalah kata sandi yang lemah. Cobalah untuk memakai lebih banyak angka."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr ""
-"Ini adalah kata sandi yang lemah. Cobalah untuk memakai lebih banyak huruf "
-"besar."
+msgstr "Ini adalah kata sandi yang lemah. Cobalah untuk memakai lebih banyak huruf besar."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr ""
-"Ini adalah kata sandi yang lemah. Cobalah untuk memakai lebih banyak huruf "
-"kecil."
+msgstr "Ini adalah kata sandi yang lemah. Cobalah untuk memakai lebih banyak huruf kecil."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
-"Ini adalah kata sandi yang lemah. Cobalah untuk memakai lebih banyak karakter "
-"spesial, seperti tanda seru."
+msgstr "Ini adalah kata sandi yang lemah. Cobalah untuk memakai lebih banyak karakter spesial, seperti tanda seru."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
-"Ini adalah kata sandi yang lemah. Cobalah untuk memakai campuran huruf, "
-"angka, dan tanda baca."
+msgstr "Ini adalah kata sandi yang lemah. Cobalah untuk memakai campuran huruf, angka, dan tanda baca."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr ""
-"Ini adalah kata sandi yang lemah. Cobalah untuk menghindari pengulangan "
-"karakter yang sama."
+msgstr "Ini adalah kata sandi yang lemah. Cobalah untuk menghindari pengulangan karakter yang sama."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"Ini adalah kata sandi yang lemah. Cobalah untuk menghindari pengulangan tipe "
-"karakter yang sama: Anda perlu mencampur huruf, angka, dan tanda baca."
+msgstr "Ini adalah kata sandi yang lemah. Cobalah untuk menghindari pengulangan tipe karakter yang sama: Anda perlu mencampur huruf, angka, dan tanda baca."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr ""
-"Ini adalah kata sandi yang lemah. Cobalah untuk menghindari urutan seperti "
-"1234 atau abcd."
+msgstr "Ini adalah kata sandi yang lemah. Cobalah untuk menghindari urutan seperti 1234 atau abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr ""
-"Ini adalah kata sandi yang lemah. Cobalah untuk memakai campuran huruf, "
-"angka, dan tanda baca."
+msgstr "Ini adalah kata sandi yang lemah. Cobalah untuk memakai campuran huruf, angka, dan tanda baca."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
-"Campurkan huruf besar dan kecil dan cobalah untuk memakai satu atau dua "
-"angka."
+msgstr "Campurkan huruf besar dan kecil dan cobalah untuk memakai satu atau dua angka."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-"Menambah lebih banyak huruf, angka, dan tanda baca akan membuat kata sandi "
-"lebih kuat."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
+msgstr "Menambah lebih banyak huruf, angka, dan tanda baca akan membuat kata sandi lebih kuat."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:112
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"Mengirim laporan masalah teknis membantu kami memperbaiki %s. Laporan "
-"dikirim secara anonim dan dibersihkan dari data pribadi."
+msgstr "Mengirim laporan masalah teknis membantu kami memperbaiki %s. Laporan dikirim secara anonim dan dibersihkan dari data pribadi."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:122
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -753,9 +694,7 @@ msgstr "Layanan Lokasi"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Memungkinkan aplikasi menentukan lokasi geografis Anda. Suatu indikasi "
-"ditampilkan ketika layanan lokasi sedang dipakai."
+msgstr "Memungkinkan aplikasi menentukan lokasi geografis Anda. Suatu indikasi ditampilkan ketika layanan lokasi sedang dipakai."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -787,9 +726,7 @@ msgstr "Situs"
 msgid ""
 "At which site is this computer located? Search for your site here. You may "
 "enter manually if there is no match."
-msgstr ""
-"Pada situs mana komputer ini berada? Cari situs Anda disini. Anda dapat "
-"memasukkannya secara manual jika tidak ada kecocokan."
+msgstr "Pada situs mana komputer ini berada? Cari situs Anda disini. Anda dapat memasukkannya secara manual jika tidak ada kecocokan."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:78
 msgid "enter manually"
@@ -833,9 +770,7 @@ msgstr "Akses perangkat lunak tambahan dari sumber pihak ketiga yang dipilih."
 msgid ""
 "Some of this software is proprietary and therefore has restrictions on use, "
 "sharing, and access to source code."
-msgstr ""
-"Beberapa perangkat lunak ini bersifat proprietary dan oleh karena itu "
-"memiliki batasan penggunaan, berbagi, dan akses ke kode sumber."
+msgstr "Beberapa perangkat lunak ini bersifat proprietary dan oleh karena itu memiliki batasan penggunaan, berbagi, dan akses ke kode sumber."
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:16
 msgid "Additional Software Repositories"
@@ -851,22 +786,16 @@ msgstr "Repositori Pihak Ketiga"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:138
 msgid ""
-"Proprietary software typically has restrictions on how it can be used and on "
-"access to source code. This prevents anyone but the software owner from "
+"Proprietary software typically has restrictions on how it can be used and on"
+" access to source code. This prevents anyone but the software owner from "
 "inspecting, improving or learning from its code."
-msgstr ""
-"Perangkat lunak proprietari biasanya punya pembatasan atas bagaimana itu "
-"dapat dipakai dan atas akses ke kode sumber. Ini mencegah siapapun selain "
-"pemilik perangkat lunak untuk memeriksa, memperbaiki, atau belajar dari kode "
-"tersebut."
+msgstr "Perangkat lunak proprietari biasanya punya pembatasan atas bagaimana itu dapat dipakai dan atas akses ke kode sumber. Ini mencegah siapapun selain pemilik perangkat lunak untuk memeriksa, memperbaiki, atau belajar dari kode tersebut."
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:150
 msgid ""
 "In contrast, Free Software can be freely run, copied, distributed, studied "
 "and modified."
-msgstr ""
-"Sebaliknya, Perangkat Lunak Bebas dapat dijalankan, disalin, "
-"didistribusikan, dipelajari, dan diubah secara bebas."
+msgstr "Sebaliknya, Perangkat Lunak Bebas dapat dijalankan, disalin, didistribusikan, dipelajari, dan diubah secara bebas."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
@@ -884,9 +813,7 @@ msgstr "Anda telah siap untuk mencoba Endless OS"
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
-msgstr ""
-"<b>Setiap file yang Anda unduh atau dokumen yang Anda buat akan hilang "
-"selamanya ketika Anda menyalakan ulang atau mematikan komputer.</b>"
+msgstr "<b>Setiap file yang Anda unduh atau dokumen yang Anda buat akan hilang selamanya ketika Anda menyalakan ulang atau mematikan komputer.</b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:315
 msgid "Ready to Go"
@@ -905,7 +832,6 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:310
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -936,22 +862,8 @@ msgstr "Zona Waktu"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"Zona waktu akan ditata secara otomatis bila lokasi Anda dapat ditemukan. "
-"Anda juga dapat mencari sebuah kota untuk Anda tata sendiri."
+msgstr "Zona waktu akan ditata secara otomatis bila lokasi Anda dapat ditemukan. Anda juga dapat mencari sebuah kota untuk Anda tata sendiri."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
 msgstr "Harap cari kota yang berdekatan"
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "Menyambung ke Internet akan memungkinkan Anda menata waktu, menambah "
-#~ "rincian Anda, dan mengakses surel, kalender, dan kontak Anda. Ini juga "
-#~ "perlu bagi akun log masuk enterprise."
-
-#~ msgid "This is a weak password."
-#~ msgstr "Ini adalah kata sandi yang lemah."
