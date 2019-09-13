@@ -23,6 +23,11 @@ polkit.addRule(function(action, subject) {
                          action.id.indexOf('org.freedesktop.realmd.') === 0 ||
                          action.id.indexOf('org.freedesktop.RealtimeKit1.') === 0);
 
+    if (action.id === 'org.freedesktop.policykit.exec' &&
+            action.lookup('program') === '/usr/lib/gnome-initial-setup/eos-write-location') {
+        actionMatches = true;
+    }
+
     if (actionMatches) {
         if (subject.local)
             return 'yes';
