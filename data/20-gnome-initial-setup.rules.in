@@ -20,6 +20,11 @@ polkit.addRule(function(action, subject) {
                          action.id.indexOf('com.endlessm.ParentalControls.') === 0 ||
                          action.id.indexOf('org.fedoraproject.thirdparty.') === 0);
 
+    if (action.id === 'org.freedesktop.policykit.exec' &&
+            action.lookup('program') === '@libexecdir@/eos-write-location') {
+        actionMatches = true;
+    }
+
     if (actionMatches) {
         if (subject.local)
             return 'yes';
