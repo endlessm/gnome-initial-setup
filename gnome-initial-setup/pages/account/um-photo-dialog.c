@@ -42,9 +42,6 @@
 #define ROW_SPAN 5
 #define AVATAR_PIXEL_SIZE 72
 
-#define CONFIG_ACCOUNT_GROUP "page.account"
-#define CONFIG_ACCOUNT_FACESDIR_KEY "faces"
-
 struct _UmPhotoDialog {
         GtkPopover parent;
 
@@ -195,36 +192,49 @@ create_face_widget (gpointer item,
 }
 
 static GSList *
-get_facesdirs (void)
+get_settings_facesdirs (void)
 {
-        GSList *facesdirs = NULL;
-        const gchar * const * data_dirs;
-        int i;
-        const char *facesdir_env;
-        GisDriver *driver;
+        g_autoptr(GSettings) settings = NULL;
+        g_autoptr(GSettingsSchema) schema = NULL;
 
-        facesdir_env = g_getenv ("GIS_ACCOUNT_PAGE_FACESDIR");
-        if (facesdir_env != NULL && g_strcmp0 (facesdir_env, "") != 0) {
-                facesdirs = g_slist_prepend (facesdirs,
-                                             g_strdup (facesdir_env));
+        GSList *facesdirs = NULL;
+        char **settings_dirs;
+        int i;
+
+        GSettingsSchemaSource *source = g_settings_schema_source_get_default ();
+
+        if (!source)
+                return facesdirs;
+
+        schema = g_settings_schema_source_lookup (source,
+                                                  "org.gnome.ControlCenter",
+                                                  FALSE);
+
+        if (!g_settings_schema_has_key (schema, "facesdirs"))
+                return facesdirs;
+
+        settings = g_settings_new_with_path ("org.gnome.ControlCenter",
+                                             "/org/gnome/control-center/");
+
+        settings_dirs = g_settings_get_strv (settings, "facesdirs");
+        if (settings_dirs != NULL) {
+                for (i = 0; settings_dirs[i] != NULL; i++) {
+                        char *path = settings_dirs[i];
+                        if (path != NULL && g_strcmp0 (path, "") != 0)
+                                facesdirs = g_slist_prepend (facesdirs, g_strdup (path));
+                }
+                g_strfreev (settings_dirs);
         }
 
-        /* This code will look for options under the "account" group, and
-         * supports the following keys:
-         *   - faces: directory to scan for avatar faces.
-         *
-         * This is how this file would look on a vendor image:
-         *
-         *   [account]
-         *   faces=/path/to/faces/dir
-         */
-        driver = GIS_DRIVER (g_application_get_default ());
-        char *path = gis_driver_conf_get_string (driver,
-                                                 CONFIG_ACCOUNT_GROUP,
-                                                 CONFIG_ACCOUNT_FACESDIR_KEY);
-        if (path)
-                facesdirs = g_slist_prepend (facesdirs, path);
+        return g_slist_reverse (facesdirs);
+}
 
+static GSList *
+get_system_facesdirs (void)
+{
+        GSList *facesdirs = NULL;
+        const char * const * data_dirs;
+        int i;
 
         data_dirs = g_get_system_data_dirs ();
         for (i = 0; data_dirs[i] != NULL; i++) {
@@ -235,13 +245,62 @@ get_facesdirs (void)
         return g_slist_reverse (facesdirs);
 }
 
+static gboolean
+add_faces_from_dirs (GListStore *faces, GSList *facesdirs, gboolean add_all)
+{
+        GSList *facesdir_it;
+        gboolean added_faces = FALSE;
+        const gchar *target;
+        GFileType type;
+
+        for (facesdir_it = facesdirs; facesdir_it; facesdir_it = facesdir_it->next) {
+                g_autoptr(GFileEnumerator) enumerator = NULL;
+                g_autoptr(GFile) dir = NULL;
+                gpointer infoptr;
+                const char *path = facesdir_it->data;
+
+                dir = g_file_new_for_path (path);
+                enumerator = g_file_enumerate_children (dir,
+                                                        G_FILE_ATTRIBUTE_STANDARD_NAME ","
+                                                        G_FILE_ATTRIBUTE_STANDARD_TYPE ","
+                                                        G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK ","
+                                                        G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET,
+                                                        G_FILE_QUERY_INFO_NONE,
+                                                        NULL, NULL);
+                if (enumerator == NULL)
+                        continue;
+
+                while ((infoptr = g_file_enumerator_next_file (enumerator, NULL, NULL)) != NULL) {
+                        g_autoptr (GFileInfo) info = infoptr;
+                        g_autoptr (GFile) face_file = NULL;
+
+                        type = g_file_info_get_file_type (info);
+                        if (type != G_FILE_TYPE_REGULAR && type != G_FILE_TYPE_SYMBOLIC_LINK)
+                                continue;
+
+                        target = g_file_info_get_symlink_target (info);
+                        if (target != NULL && g_str_has_prefix (target , "legacy/"))
+                                continue;
+
+                        face_file = g_file_get_child (dir, g_file_info_get_name (info));
+                        g_list_store_append (faces, face_file);
+                        added_faces = TRUE;
+                }
+
+                g_file_enumerator_close (enumerator, NULL, NULL);
+
+                if (added_faces && !add_all)
+                        break;
+        }
+
+        return added_faces;
+}
+
 static void
 setup_photo_popup (UmPhotoDialog *um)
 {
-        GFileType type;
-        const gchar *target;
-        GSList *facesdirs, *facesdir_it;
-        gboolean added_faces;
+        GSList *facesdirs;
+        gboolean added_faces = FALSE;
 
         um->faces = g_list_store_new (G_TYPE_FILE);
         gtk_flow_box_bind_model (GTK_FLOW_BOX (um->flowbox),
@@ -263,48 +322,15 @@ setup_photo_popup (UmPhotoDialog *um)
                           G_CALLBACK (generated_avatar_activated), um);
         um->custom_avatar_was_chosen = FALSE;
 
-        facesdirs = get_facesdirs ();
-        for (facesdir_it = facesdirs; facesdir_it; facesdir_it = facesdir_it->next) {
-                g_autoptr(GFileEnumerator) enumerator = NULL;
-                g_autoptr(GFile) dir = NULL;
-                gpointer infoptr;
-                const char *path = facesdir_it->data;
-
-                dir = g_file_new_for_path (path);
-
-                enumerator = g_file_enumerate_children (dir,
-                                                        G_FILE_ATTRIBUTE_STANDARD_NAME ","
-                                                        G_FILE_ATTRIBUTE_STANDARD_TYPE ","
-                                                        G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK ","
-                                                        G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET,
-                                                        G_FILE_QUERY_INFO_NONE,
-                                                        NULL, NULL);
-                if (enumerator == NULL)
-                        continue;
-
-                while ((infoptr = g_file_enumerator_next_file (enumerator, NULL, NULL)) != NULL) {
-                        g_autoptr (GFileInfo) info = infoptr;
-                        g_autoptr (GFile) face_file = NULL;
-
-                        added_faces = TRUE;
-
-                        type = g_file_info_get_file_type (info);
-                        if (type != G_FILE_TYPE_REGULAR && type != G_FILE_TYPE_SYMBOLIC_LINK)
-                                continue;
-
-                        target = g_file_info_get_symlink_target (info);
-                        if (target != NULL && g_str_has_prefix (target , "legacy/"))
-                                continue;
-
-                        face_file = g_file_get_child (dir, g_file_info_get_name (info));
-                        g_list_store_append (um->faces, face_file);
-                }
-
-                if (added_faces)
-                        break;
-        }
-
+        facesdirs = get_settings_facesdirs ();
+        added_faces = add_faces_from_dirs (um->faces, facesdirs, TRUE);
         g_slist_free_full (facesdirs, g_free);
+
+        if (!added_faces) {
+                facesdirs = get_system_facesdirs ();
+                add_faces_from_dirs (um->faces, facesdirs, FALSE);
+                g_slist_free_full (facesdirs, g_free);
+        }
 
 #ifdef HAVE_CHEESE
         gtk_widget_set_visible (um->take_picture_button, TRUE);
