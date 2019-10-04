@@ -615,7 +615,8 @@ gis_password_page_init (GisPasswordPage *page)
 GisPage *
 gis_prepare_password_page (GisDriver *driver)
 {
-  if (gis_driver_is_live_session (driver) ||
+  if ((gis_driver_is_live_session (driver) &&
+       !gis_driver_has_live_persistence (driver)) ||
   	  gis_driver_is_in_demo_mode (driver))
     return NULL;
 
