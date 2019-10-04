@@ -264,9 +264,14 @@ gis_summary_page_constructed (GObject *object)
   {
     gtk_label_set_label (GTK_LABEL (priv->title),
                          _("You're ready to try Endless OS"));
-    gtk_label_set_markup (GTK_LABEL (priv->tagline),
-                          _("<b>Any files you download or documents you create will be "
-                            "lost forever when you restart or shutdown the computer.</b>"));
+    if (gis_driver_has_live_persistence (GIS_PAGE (object)->driver))
+      gtk_label_set_markup (GTK_LABEL (priv->tagline),
+                            _("<b>System software updates are unavailable when running from "
+                              "evaluation media. Please install Endless if you like it!</b>"));
+    else
+      gtk_label_set_markup (GTK_LABEL (priv->tagline),
+                            _("<b>Any files you download or documents you create will be "
+                              "lost forever when you restart or shutdown the computer.</b>"));
   }
 
   gtk_widget_show (GTK_WIDGET (page));
