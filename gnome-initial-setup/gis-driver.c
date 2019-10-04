@@ -26,6 +26,7 @@
 #include <errno.h>
 #include <locale.h>
 #include <stdlib.h>
+#include <gio/gunixmounts.h>
 
 #include "cc-common-language.h"
 #include "gis-assistant.h"
@@ -62,6 +63,7 @@ typedef enum {
   PROP_MODE = 1,
   PROP_LIVE_SESSION,
   PROP_LIVE_DVD,
+  PROP_LIVE_PERSISTENCE,
   PROP_USERNAME,
   PROP_PASSWORDLESS,
   PROP_SMALL_SCREEN,
@@ -101,6 +103,7 @@ struct _GisDriverPrivate {
   gboolean is_reformatter;
   gboolean is_in_demo_mode;
   gboolean show_demo_mode;
+  gboolean has_live_persistence;
 
   GisDriverMode mode;
   UmAccountMode account_mode;
@@ -171,6 +174,23 @@ check_live_session (GisDriver   *driver,
     {
       priv->is_live_session = FALSE;
       priv->is_live_dvd = FALSE;
+    }
+}
+
+static void
+check_live_persistence (GisDriver *driver)
+{
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  g_autoptr(GUnixMountEntry) entry = NULL;
+
+  if (priv->is_live_session)
+    {
+      entry = g_unix_mount_at ("/run/eos-live", NULL);
+      priv->has_live_persistence = entry != NULL;
+    }
+  else
+    {
+      priv->has_live_persistence = FALSE;
     }
 }
 
@@ -932,6 +952,13 @@ gis_driver_is_live_session (GisDriver *driver)
 }
 
 gboolean
+gis_driver_has_live_persistence (GisDriver *driver)
+{
+    GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+    return priv->has_live_persistence;
+}
+
+gboolean
 gis_driver_is_reformatter (GisDriver *driver)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
@@ -981,6 +1008,9 @@ gis_driver_get_property (GObject      *object,
       break;
     case PROP_LIVE_SESSION:
       g_value_set_boolean (value, priv->is_live_session);
+      break;
+    case PROP_LIVE_PERSISTENCE:
+      g_value_set_boolean (value, priv->has_live_persistence);
       break;
     case PROP_LIVE_DVD:
       g_value_set_boolean (value, priv->is_live_dvd);
@@ -1252,8 +1282,10 @@ gis_driver_startup (GApplication *app)
   priv->product_name = get_product_from_image_version (image_version);
 
   check_live_session (driver, image_version);
+  check_live_persistence (driver);
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_SESSION]);
   g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_DVD]);
+  g_object_notify_by_pspec (G_OBJECT (driver), obj_props[PROP_LIVE_PERSISTENCE]);
 
   priv->show_demo_mode = !priv->is_live_session && image_supports_demo_mode (image_version);
   priv->is_reformatter = image_is_reformatter (image_version);
@@ -1317,6 +1349,11 @@ gis_driver_class_init (GisDriverClass *klass)
 
   obj_props[PROP_LIVE_SESSION] =
     g_param_spec_boolean ("live-session", "", "",
+                          FALSE,
+                          G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
+
+  obj_props[PROP_LIVE_PERSISTENCE] =
+    g_param_spec_boolean ("live-persistence", "", "",
                           FALSE,
                           G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
