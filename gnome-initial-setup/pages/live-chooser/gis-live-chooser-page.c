@@ -65,6 +65,9 @@ gis_live_chooser_page_save_data (GisPage *page)
   g_autoptr(GError) error = NULL;
   const gchar *language;
 
+  if (gis_driver_has_live_persistence (page->driver))
+    return;
+
   error = NULL;
   user = act_user_manager_create_user (priv->act_client,
                                        LIVE_ACCOUNT_USERNAME,
