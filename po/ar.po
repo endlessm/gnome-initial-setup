@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
 "POT-Creation-Date: 2019-09-09 14:38-0700\n"
-"PO-Revision-Date: 2019-09-12 18:53+0000\n"
-"Last-Translator: Philip Chimento <philip.chimento@gmail.com>\n"
+"PO-Revision-Date: 2019-10-06 01:05+0000\n"
+"Last-Translator: Will Thompson <wjt@endlessm.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/endless-os/gnome-initial-setup/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +29,7 @@ msgstr "الإعداد الأولي"
 #: data/gnome-initial-setup-first-login.desktop.in.in:5
 #: data/gnome-initial-setup.desktop.in.in:5
 msgid "preferences-system"
-msgstr ""
+msgstr "تفضيلات النظام"
 
 #: gnome-initial-setup/gis-assistant.c:440
 msgid "_Next"
@@ -58,12 +58,12 @@ msgstr "تعذر الدخول في الوضع التجريبي: %s"
 
 #: gnome-initial-setup/gis-page-util.c:431
 msgid "Unknown"
-msgstr ""
+msgstr "غير معروف"
 
 #: gnome-initial-setup/gis-page-util.c:433
 #, c-format
 msgid "Image: %s"
-msgstr ""
+msgstr "الصورة: %s"
 
 #: gnome-initial-setup/gis-page-util.c:442
 msgid "Disabled"
@@ -120,7 +120,7 @@ msgstr "الإعداد الأولي لـGNOME — "
 
 #: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:36
 msgid "Take a Picture…"
-msgstr ""
+msgstr "التقط صورة..."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:184
 msgid "Failed to register account"
@@ -222,15 +222,15 @@ msgstr "الاسم بال_كامل"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
 msgid "Set a password"
-msgstr ""
+msgstr "تعيين كلمة مرور"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
 msgid "_Enterprise Login"
-msgstr ""
+msgstr "_ تسجيل دخول المؤسسة"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:53
 msgid "Go online to set up Enterprise Login."
-msgstr ""
+msgstr "اتصل بالإنترنت لإعداد تسجيل دخول المؤسسة."
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
@@ -311,7 +311,7 @@ msgstr "الرجاء قراءة شروط الاستخدام التالية بع�
 msgid ""
 "By clicking \"Accept,\" you acknowledge that you have read, understood, and "
 "agree to be bound by the following terms and conditions."
-msgstr ""
+msgstr "بالنقر فوق \"قبول\" ، فإنك تقر بأنك قد قرأت وفهمت وتوافق على الالتزام بالشروط والأحكام التالية."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
@@ -325,7 +325,7 @@ msgstr "تخزين وإرسال تلقائي لإحصائيات الاستخدا
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
 msgid "Third Party Software"
-msgstr ""
+msgstr "برنامج الطرف الثالث"
 
 #: gnome-initial-setup/pages/eulas/gis-eula-page.c:301
 #: gnome-initial-setup/pages/eulas/gis-eula-page.ui:21
@@ -509,7 +509,7 @@ msgstr "إظهار كلمة السر"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:253
 msgid "Hide password"
-msgstr ""
+msgstr "إخفاء كلمة المرور"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:399
 msgid "Password"
@@ -545,7 +545,7 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
+msgstr "كلمة المرور هذه تشبه كلمة المرور السابقة. حاول تغيير بعض الحروف والأرقام."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -553,88 +553,88 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
+msgstr "تشبه كلمة المرور هذه كلمة المرور الأخيرة. حاول تغيير كلمة المرور بشكلٍ أكثر قليلاً."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. A password without your user name would be "
 "stronger."
-msgstr ""
+msgstr "هذه كلمة مرور ضعيفة. ستكون كلمة المرور أقوى بدون اسم المستخدم الخاص بك."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr ""
+msgstr "هذه كلمة مرور ضعيفة. حاول تجنب استخدام اسمك في كلمة المرور."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
+msgstr "هذه كلمة المرور ضعيفة. حاول تجنب بعض الكلمات المدرجة في كلمة المرور."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr ""
+msgstr "هذه كلمة مرور ضعيفة. حاول تجنب الكلمات الشائعة."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr ""
+msgstr "هذه كلمة مرور ضعيفة. حاول تجنب إعادة ترتيب الكلمات الموجودة."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr ""
+msgstr "هذه كلمة مرور ضعيفة. حاول استخدام المزيد من الأرقام."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr ""
+msgstr "هذه كلمة مرور ضعيفة. حاول استخدام المزيد من الأحرف الكبيرة."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr ""
+msgstr "هذه كلمة مرور ضعيفة. حاول استخدام المزيد من الحروف الصغيرة."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
+msgstr "هذه كلمة مرور ضعيفة. حاول استخدام المزيد من الأحرف الخاصة، مثل علامات الترقيم."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
+msgstr "هذه كلمة مرور ضعيفة. حاول استخدام مزيج من الحروف والأرقام وعلامات الترقيم."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr ""
+msgstr "هذه كلمة مرور ضعيفة. حاول تجنب تكرار نفس الحروف."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
+msgstr "هذه كلمة مرور ضعيفة. حاول تجنب تكرار نفس النوع من الحروف: تحتاج إلى خلط الحروف والأرقام وعلامات الترقيم."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr ""
+msgstr "هذه كلمة مرور ضعيفة. حاول تجنب التسلسلات مثل 1234 أو abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr ""
+msgstr "هذه كلمة مرور ضعيفة. حاول إضافة المزيد من الحروف والأرقام وعلامات الترقيم."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
@@ -715,61 +715,61 @@ msgstr "اختر بلدك أو منطقتك."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
-msgstr ""
+msgstr "موقع"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:54
 msgid ""
 "At which site is this computer located? Search for your site here. You may "
 "enter manually if there is no match."
-msgstr ""
+msgstr "في أي موقع يقع هذا الكمبيوتر؟ ابحث عن موقعك هنا. يمكنك إدخاله يدوياً إذا لم يكن هناك تطابق."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:78
 msgid "enter manually"
-msgstr ""
+msgstr "أدخل يدوياً"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:102
 msgid "ID"
-msgstr ""
+msgstr "الهوية الشخصية"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:131
 msgid "Facility"
-msgstr ""
+msgstr "منشأة"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:160
 msgid "Street address"
-msgstr ""
+msgstr "عنوان الشارع"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:189
 msgid "City"
-msgstr ""
+msgstr "المدينة"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:218
 msgid "State"
-msgstr ""
+msgstr "الولاية"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:247
 msgid "Country"
-msgstr ""
+msgstr "البلد"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:186
 msgid "Software Repositories"
-msgstr ""
+msgstr "مستودعات البرمجيات"
 
 #. TRANSLATORS: this is the third party repositories info bar.
 #: gnome-initial-setup/pages/software/gis-software-page.c:190
 msgid "Access additional software from selected third party sources."
-msgstr ""
+msgstr "الوصول إلى برامج إضافية من مصادر خارجية محددة."
 
 #. TRANSLATORS: this is the third party repositories info bar.
 #: gnome-initial-setup/pages/software/gis-software-page.c:194
 msgid ""
 "Some of this software is proprietary and therefore has restrictions on use, "
 "sharing, and access to source code."
-msgstr ""
+msgstr "بعض هذه البرمجيات مملوكة وبالتالي لها قيود على الاستخدام والمشاركة والوصول إلى شفرة المصدر."
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:16
 msgid "Additional Software Repositories"
-msgstr ""
+msgstr "مستودعات البرامج الإضافية"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:28
 msgid "<a href=\"more\">Find out more…</a>"
@@ -777,7 +777,7 @@ msgstr "<a href=\"more\">اطّلع على المزيد…</a>"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:42
 msgid "Third Party Repositories"
-msgstr ""
+msgstr "مستودعات الطرف الثالث"
 
 #: gnome-initial-setup/pages/software/gis-software-page.ui:138
 msgid ""
