@@ -622,8 +622,6 @@ handle_demo_mode_error (GError *error)
   g_error_free (error);
 }
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC (ActUser, g_object_unref)
-
 static gboolean
 create_demo_user (GisDriver *driver, GError **error)
 {
