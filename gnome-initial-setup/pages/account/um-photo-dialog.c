@@ -210,7 +210,7 @@ get_settings_facesdirs (void)
                                                   "org.gnome.ControlCenter",
                                                   FALSE);
 
-        if (!g_settings_schema_has_key (schema, "facesdirs"))
+        if (!schema || !g_settings_schema_has_key (schema, "facesdirs"))
                 return facesdirs;
 
         settings = g_settings_new_with_path ("org.gnome.ControlCenter",
