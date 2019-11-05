@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2019-09-09 14:38-0700\n"
-"PO-Revision-Date: 2019-09-12 18:57+0000\n"
-"Last-Translator: Philip Chimento <philip.chimento@gmail.com>\n"
+"POT-Creation-Date: 2019-10-25 15:14+0100\n"
+"PO-Revision-Date: 2019-10-25 14:14+0000\n"
+"Last-Translator: Will Thompson <wjt@endlessm.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/endless-os/gnome-initial-setup/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,13 +22,6 @@ msgstr ""
 #: data/gnome-initial-setup.desktop.in.in:3
 msgid "Initial Setup"
 msgstr "Esialgne seadistus"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/gnome-initial-setup-first-login.desktop.in.in:5
-#: data/gnome-initial-setup.desktop.in.in:5
-msgid "preferences-system"
-msgstr ""
 
 #: gnome-initial-setup/gis-assistant.c:440
 msgid "_Next"
@@ -50,7 +43,7 @@ msgstr "_Eelmine"
 msgid "_Cancel"
 msgstr "_Loobu"
 
-#: gnome-initial-setup/gis-driver.c:598
+#: gnome-initial-setup/gis-driver.c:618
 #, c-format
 msgid "Failed to enter demo mode: %s"
 msgstr ""
@@ -433,32 +426,32 @@ msgstr "Tere tulemast"
 msgid "Welcome!"
 msgstr ""
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:173
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr ""
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:174
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
 msgid "Try Endless OS by running it from the DVD."
 msgstr ""
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
 msgid "Reformat this computer with Endless OS."
 msgstr ""
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
 msgid "Try It"
 msgstr ""
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:180
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
 msgid "Reformat"
 msgstr ""
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
 msgid "Try or Reformat"
 msgstr ""
 
@@ -803,13 +796,19 @@ msgstr ""
 msgid "You're ready to try Endless OS"
 msgstr ""
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:305
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:306
+msgid ""
+"<b>System software updates are unavailable when running from evaluation "
+"media. Please install Endless if you like it!</b>"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:310
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr ""
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:315
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:320
 msgid "Ready to Go"
 msgstr ""
 

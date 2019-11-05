@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2019-09-09 14:38-0700\n"
-"PO-Revision-Date: 2019-09-20 14:35+0000\n"
+"POT-Creation-Date: 2019-10-25 15:14+0100\n"
+"PO-Revision-Date: 2019-11-03 10:05+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/endless-os/gnome-initial-setup/language/ms/)\n"
 "MIME-Version: 1.0\n"
@@ -22,13 +22,6 @@ msgstr ""
 #: data/gnome-initial-setup.desktop.in.in:3
 msgid "Initial Setup"
 msgstr "Persediaan Awal"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/gnome-initial-setup-first-login.desktop.in.in:5
-#: data/gnome-initial-setup.desktop.in.in:5
-msgid "preferences-system"
-msgstr "preferences-system"
 
 #: gnome-initial-setup/gis-assistant.c:440
 msgid "_Next"
@@ -50,7 +43,7 @@ msgstr "_Terdahulu"
 msgid "_Cancel"
 msgstr "B_atal"
 
-#: gnome-initial-setup/gis-driver.c:598
+#: gnome-initial-setup/gis-driver.c:618
 #, c-format
 msgid "Failed to enter demo mode: %s"
 msgstr "Gagal masukkan mod demo: %s"
@@ -433,32 +426,32 @@ msgstr "Selamat Datang"
 msgid "Welcome!"
 msgstr "Selamat Datang!"
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:173
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr "Cubalah Endless OS dengan menjalankannya melalui Pena USB."
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:174
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
 msgid "Try Endless OS by running it from the DVD."
 msgstr "Cubalah Endless OS dengan menjalankannya melalui DVD."
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
 msgid "Reformat this computer with Endless OS."
 msgstr "Format semula komputer ini dengan Endless OS."
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
 msgid "Try It"
 msgstr "Cuba Lagi"
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:180
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
 msgid "Reformat"
 msgstr "Format Semula"
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
 msgid "Try or Reformat"
 msgstr "Cuba atau Format Semula"
 
@@ -803,13 +796,19 @@ msgstr "_Mula Menggunakan %s"
 msgid "You're ready to try Endless OS"
 msgstr "Anda kini sudah sedia mencuba Endless OS"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:305
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:306
+msgid ""
+"<b>System software updates are unavailable when running from evaluation "
+"media. Please install Endless if you like it!</b>"
+msgstr "<b>Kemaskini perisian sistem tidak tersedia ketika dijalankan melalui media penilaian. Sila pasang Endless jika anda menyukainya!</b>"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:310
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr "<b>Apa jua fail yang anda muat turun atau dokumen yang anda hasilkan akan hilang secara kekal setelah anda mula semula atau matikan komputer.</b>"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:315
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:320
 msgid "Ready to Go"
 msgstr "Sedia"
 

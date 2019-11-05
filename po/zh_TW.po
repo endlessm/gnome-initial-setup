@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2019-09-09 14:38-0700\n"
-"PO-Revision-Date: 2019-10-05 21:04+0000\n"
+"POT-Creation-Date: 2019-10-25 15:14+0100\n"
+"PO-Revision-Date: 2019-10-25 14:14+0000\n"
 "Last-Translator: Will Thompson <wjt@endlessm.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/endless-os/gnome-initial-setup/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -23,13 +23,6 @@ msgstr ""
 #: data/gnome-initial-setup.desktop.in.in:3
 msgid "Initial Setup"
 msgstr "初始設定"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/gnome-initial-setup-first-login.desktop.in.in:5
-#: data/gnome-initial-setup.desktop.in.in:5
-msgid "preferences-system"
-msgstr "preferences-system"
 
 #: gnome-initial-setup/gis-assistant.c:440
 msgid "_Next"
@@ -51,7 +44,7 @@ msgstr "上一個(_P)"
 msgid "_Cancel"
 msgstr "取消(_C)"
 
-#: gnome-initial-setup/gis-driver.c:598
+#: gnome-initial-setup/gis-driver.c:618
 #, c-format
 msgid "Failed to enter demo mode: %s"
 msgstr "無法進入 demo 模式：%s"
@@ -434,32 +427,32 @@ msgstr "歡迎使用"
 msgid "Welcome!"
 msgstr "歡迎使用！"
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:173
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr "在 USD 隨身碟上試用 Endless OS。"
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:174
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
 msgid "Try Endless OS by running it from the DVD."
 msgstr "從 DVD 運行以嘗試 Endless OS。"
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
 msgid "Reformat this computer with Endless OS."
 msgstr "將 Endless 作業系統安裝在這臺電腦上。"
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
 msgid "Try It"
 msgstr "試試看"
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:180
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
 msgid "Reformat"
 msgstr "格式化"
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
 msgid "Try or Reformat"
 msgstr "嘗試或重新格式化"
 
@@ -804,13 +797,19 @@ msgstr "開始使用 %s (_S)"
 msgid "You're ready to try Endless OS"
 msgstr "你已準備好試用 Endless OS"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:305
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:306
+msgid ""
+"<b>System software updates are unavailable when running from evaluation "
+"media. Please install Endless if you like it!</b>"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:310
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr "<b>一旦重新啟動或關閉電腦，您下載的檔案或建立的文件都將會永遠遺失。</b>"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:315
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:320
 msgid "Ready to Go"
 msgstr "準備出發"
 
