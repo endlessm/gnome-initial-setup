@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the gnome-initial-setup package.
 # 
 # Translators:
+# Abner Chay <chay@endlessm.com>, 2019
 # c.sanchez <cassandra@endlessm.com>, 2014-2015
 # c.sanchez <cassandra@endlessm.com>, 2014
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2012-2018
@@ -20,9 +21,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2019-09-09 14:38-0700\n"
-"PO-Revision-Date: 2019-09-24 23:27+0000\n"
-"Last-Translator: Travis Reitter <travis.reitter@endlessm.com>\n"
+"POT-Creation-Date: 2019-10-25 15:14+0100\n"
+"PO-Revision-Date: 2019-10-25 14:14+0000\n"
+"Last-Translator: Will Thompson <wjt@endlessm.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/endless-os/gnome-initial-setup/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,13 +35,6 @@ msgstr ""
 #: data/gnome-initial-setup.desktop.in.in:3
 msgid "Initial Setup"
 msgstr "Configuración inicial"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/gnome-initial-setup-first-login.desktop.in.in:5
-#: data/gnome-initial-setup.desktop.in.in:5
-msgid "preferences-system"
-msgstr "preferences-system"
 
 #: gnome-initial-setup/gis-assistant.c:440
 msgid "_Next"
@@ -62,14 +56,14 @@ msgstr "_Anterior"
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: gnome-initial-setup/gis-driver.c:598
+#: gnome-initial-setup/gis-driver.c:618
 #, c-format
 msgid "Failed to enter demo mode: %s"
 msgstr "Error al entrar al modo de demostración: %s"
 
 #: gnome-initial-setup/gis-page-util.c:431
 msgid "Unknown"
-msgstr ""
+msgstr "Desconocido"
 
 #: gnome-initial-setup/gis-page-util.c:433
 #, c-format
@@ -233,7 +227,7 @@ msgstr "_Nombre completo"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
 msgid "Set a password"
-msgstr ""
+msgstr "Escribe una contraseña"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
 msgid "_Enterprise Login"
@@ -322,7 +316,7 @@ msgstr "Por favor lee los siguientes términos de uso cuidadosamente"
 msgid ""
 "By clicking \"Accept,\" you acknowledge that you have read, understood, and "
 "agree to be bound by the following terms and conditions."
-msgstr ""
+msgstr "Al hacer clic en \"Aceptar\", usted comprende que ha leído, entendido y acepta estar sujeto a los siguientes términos y condiciones."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
@@ -336,7 +330,7 @@ msgstr "Automáticamente guarda y envía estadísticas de uso e informes de prob
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
 msgid "Third Party Software"
-msgstr ""
+msgstr "Software de terceros"
 
 #: gnome-initial-setup/pages/eulas/gis-eula-page.c:301
 #: gnome-initial-setup/pages/eulas/gis-eula-page.ui:21
@@ -445,32 +439,32 @@ msgstr "Bienvenido"
 msgid "Welcome!"
 msgstr "Bienvenido."
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:173
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
 msgstr "Prueba Endless OS con un dispositivo USB."
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:174
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
 msgid "Try Endless OS by running it from the DVD."
 msgstr "Prueba Endless OS ejecutándolo desde este DVD."
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
 msgid "Reformat this computer with Endless OS."
 msgstr "Formatear esta computadora con Endless OS."
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
 msgid "Try It"
 msgstr "Pruébalo"
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:180
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
 msgid "Reformat"
 msgstr "Formatear"
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
 msgid "Try or Reformat"
 msgstr "Probar o formatear"
 
@@ -520,7 +514,7 @@ msgstr "Ver contraseña"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:253
 msgid "Hide password"
-msgstr ""
+msgstr "Esconder contraseña"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:399
 msgid "Password"
@@ -815,13 +809,19 @@ msgstr "_Empezar a usar %s"
 msgid "You're ready to try Endless OS"
 msgstr "Estás listo para probar Endless OS"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:305
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:306
+msgid ""
+"<b>System software updates are unavailable when running from evaluation "
+"media. Please install Endless if you like it!</b>"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:310
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr "<b>Los archivos que descargues y los documentos que crees serán perdidos al reiniciar o apagar tu computadora.</b>"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:315
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:320
 msgid "Ready to Go"
 msgstr "Listo para empezar"
 
