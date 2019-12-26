@@ -179,8 +179,9 @@ def disable_chrome_auto_download():
     """Prevent Chrome auto-downloader from running."""
     cmd = os.path.join('/usr/share/eos-google-chrome-helper',
                        'eos-google-chrome-system-helper.py')
-    log.info('$ %s', cmd)
-    subprocess.check_call([cmd])
+    if os.path.exists(cmd):
+        log.info('$ %s', cmd)
+        subprocess.check_call([cmd])
 
 
 def replace_chrome_with_chromium(apps):
