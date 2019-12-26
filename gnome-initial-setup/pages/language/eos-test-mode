@@ -33,8 +33,9 @@ eos-live-boot-overlayfs-setup etc
 
 # Allow xattrs in the user namespace on /run, and by extension in the ostree
 # repo, where they are used to record permissions when run as an unprivileged
-# user.
-mount -o remount,user_xattr /run
+# user.  This mount option is an Endless-specific patch to tmpfs and is not
+# present in the EC-100 kernel, so allow this step to fail.
+mount -o remount,user_xattr /run || :
 
 # /sysroot/ostree needs special handling:
 setup_ostree_flatpak_overlay() {
