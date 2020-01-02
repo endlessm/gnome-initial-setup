@@ -9,14 +9,16 @@
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2012,2016
 # Roddy Shuler <roddy@stanfordalumni.org>, 2017
 # Stefan Schroeder <ondekoza@gmail.com>, 2016
+# Thomas Siegele <tsiegele@gmx.at>, 2019
 # Tobias Endrigkeit <tobiasendrigkeit@googlemail.com>, 2012
+# Will Thompson <wjt@endlessm.com>, 2020
 # Wolfgang Stöggl <c72578@yahoo.de>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
 "POT-Creation-Date: 2019-10-25 15:14+0100\n"
-"PO-Revision-Date: 2019-10-25 14:14+0000\n"
+"PO-Revision-Date: 2020-01-02 13:17+0000\n"
 "Last-Translator: Will Thompson <wjt@endlessm.com>\n"
 "Language-Team: German (http://www.transifex.com/endless-os/gnome-initial-setup/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -53,16 +55,16 @@ msgstr "_Abbrechen"
 #: gnome-initial-setup/gis-driver.c:618
 #, c-format
 msgid "Failed to enter demo mode: %s"
-msgstr ""
+msgstr "Starten des Demomodus fehlgeschlagen: %s"
 
 #: gnome-initial-setup/gis-page-util.c:431
 msgid "Unknown"
-msgstr ""
+msgstr "Unbekannt"
 
 #: gnome-initial-setup/gis-page-util.c:433
 #, c-format
 msgid "Image: %s"
-msgstr ""
+msgstr "Bild: %s"
 
 #: gnome-initial-setup/gis-page-util.c:442
 msgid "Disabled"
@@ -84,30 +86,30 @@ msgstr "Beim Formatieren ist ein Fehler aufgetreten: %s"
 
 #: gnome-initial-setup/gis-page-util.ui:29
 msgid "Test Mode"
-msgstr ""
+msgstr "Testmodus"
 
 #: gnome-initial-setup/gis-page-util.ui:55
 msgid "Power Off"
-msgstr ""
+msgstr "Ausschalten"
 
 #: gnome-initial-setup/gis-page-util.ui:190
 msgid "Enter Store Demo"
-msgstr ""
+msgstr "Demomodus starten"
 
 #: gnome-initial-setup/gis-page-util.ui:195
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: gnome-initial-setup/gis-page-util.ui:202
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: gnome-initial-setup/gis-page-util.ui:212
 msgid ""
 "This allows you to try Endless without activating an account. No changes or "
 "files will be saved, and the computer will return to a clean factory state "
 "when you power it off."
-msgstr ""
+msgstr "Dies ermöglicht es Ihnen Endless ohne Anmeldung auszuprobieren. Es werden keine Änderungen oder Dateien gespeichert, und der Computer wird auf Werkseinstellungen zurück gesetzt, wenn Sie ihn ausschalten."
 
 #: gnome-initial-setup/gnome-initial-setup.c:343
 msgid "Force existing user mode"
@@ -221,7 +223,7 @@ msgstr "_Vollständiger Name"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
 msgid "Set a password"
-msgstr ""
+msgstr "Vergeben Sie ein Passwort"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
 msgid "_Enterprise Login"
@@ -310,7 +312,7 @@ msgstr "Bitte lese die folgenden Bedingungen sorgfältig"
 msgid ""
 "By clicking \"Accept,\" you acknowledge that you have read, understood, and "
 "agree to be bound by the following terms and conditions."
-msgstr ""
+msgstr "Wenn Sie auf \"Akzeptieren\" klicken, bestätigen Sie, dass Sie die nachstehenden Nutzungsbedingungen gelesen und verstanden haben und stimmen zu, dass sie für Sie verbindlich sind."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
@@ -324,7 +326,7 @@ msgstr "Automatisches Speichern und versenden von Statistiken und Problembericht
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
 msgid "Third Party Software"
-msgstr ""
+msgstr "Software anderer Anbieter"
 
 #: gnome-initial-setup/pages/eulas/gis-eula-page.c:301
 #: gnome-initial-setup/pages/eulas/gis-eula-page.ui:21
@@ -441,7 +443,7 @@ msgstr "Endless-OS vom USB-Stick ausprobieren"
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
 msgid "Try Endless OS by running it from the DVD."
-msgstr ""
+msgstr "Probieren Sie Endless OS aus, indem Sie von der DVD starten."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
@@ -508,7 +510,7 @@ msgstr "Passwort anzeigen"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:253
 msgid "Hide password"
-msgstr ""
+msgstr "Passwort nicht anzeigen"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:399
 msgid "Password"
@@ -724,7 +726,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:78
 msgid "enter manually"
-msgstr ""
+msgstr "manuell eingeben"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:102
 msgid "ID"
@@ -740,15 +742,15 @@ msgstr ""
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:189
 msgid "City"
-msgstr ""
+msgstr "Stadt"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:218
 msgid "State"
-msgstr ""
+msgstr "Bundesland"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:247
 msgid "Country"
-msgstr ""
+msgstr "Land"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:186
 msgid "Software Repositories"
@@ -801,7 +803,7 @@ msgstr "%s _starten"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:303
 msgid "You're ready to try Endless OS"
-msgstr ""
+msgstr "Endless OS kann nun installiert werden"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:306
 msgid ""
