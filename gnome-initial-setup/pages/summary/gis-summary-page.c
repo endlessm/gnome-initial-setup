@@ -35,8 +35,6 @@
 
 #include <act/act-user-manager.h>
 
-#include <gdm/gdm-client.h>
-
 #define SERVICE_NAME "gdm-password"
 
 struct _GisSummaryPagePrivate {
@@ -275,6 +273,9 @@ update_distro_name (GisSummaryPage *page)
   /* Translators: the parameter here is the name of a distribution,
    * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
    * detect any distribution. */
+  text = g_strdup_printf (_("%s is ready to be used. We hope that you love it!"), name);
+  gtk_label_set_label (GTK_LABEL (priv->tagline), text);
+  g_free (text);
 
   g_free (name);
 }
@@ -298,7 +299,7 @@ gis_summary_page_constructed (GObject *object)
 static void
 gis_summary_page_locale_changed (GisPage *page)
 {
-  gis_page_set_title (page, _("Ready to Go"));
+  gis_page_set_title (page, _("Setup Complete"));
   update_distro_name (GIS_SUMMARY_PAGE (page));
 }
 

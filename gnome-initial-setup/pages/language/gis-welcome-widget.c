@@ -119,7 +119,11 @@ welcome (const char *locale_id)
   locale = newlocale (LC_MESSAGES_MASK, locale_id, (locale_t) 0);
   if (locale == (locale_t) 0)
     {
-      g_warning ("Failed to create locale %s: %s", locale_id, g_strerror (errno));
+      if (errno == ENOENT)
+        g_debug ("Failed to create locale %s: %s", locale_id, g_strerror (errno));
+      else
+        g_warning ("Failed to create locale %s: %s", locale_id, g_strerror (errno));
+
       return "Welcome!";
     }
 
@@ -140,16 +144,9 @@ welcome (const char *locale_id)
 static GtkWidget *
 big_label (const char *text)
 {
-  GtkWidget *label;
-  PangoAttrList *attrs;
+  GtkWidget *label = gtk_label_new (text);
 
-  label = gtk_label_new (text);
-
-  attrs = pango_attr_list_new ();
-  pango_attr_list_insert (attrs, pango_attr_scale_new (2));
-  pango_attr_list_insert (attrs, pango_attr_weight_new (PANGO_WEIGHT_BOLD));
-  gtk_label_set_attributes (GTK_LABEL (label), attrs);
-  pango_attr_list_unref (attrs);
+  gtk_style_context_add_class (gtk_widget_get_style_context (label), "title-1");
 
   return label;
 }

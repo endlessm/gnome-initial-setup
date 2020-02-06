@@ -1,6 +1,6 @@
 project('gnome-initial-setup',
         ['c'],
-        version: '3.34.1',
+        version: '3.35.90',
         license: 'GPLv2',
         meson_version: '>= 0.47.0',
 )
@@ -27,7 +27,6 @@ conf.set_quoted('VENDOR_CONF_FILE', vendor_conf_file)
 conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 conf.set_quoted('GNOMELOCALEDIR', locale_dir)
 conf.set_quoted('PKGDATADIR', pkgdata_dir)
-conf.set('ENABLE_REGION_PAGE', get_option('region-page'))
 conf.set('SECRET_API_SUBJECT_TO_CHANGE', true)
 conf.set_quoted('G_LOG_DOMAIN', 'InitialSetup')
 
@@ -45,18 +44,12 @@ endif
 
 # Needed for the 'account' page
 cheese_dep = dependency ('cheese',
-                         version: '>= 3.3.5',
+                         version: '>= 3.28',
                          required: get_option('cheese'))
 cheese_gtk_dep = dependency ('cheese-gtk',
                          version: '>= 3.3.5',
                          required: get_option('cheese'))
 conf.set('HAVE_CHEESE', cheese_dep.found() and cheese_gtk_dep.found())
-
-# Needed for the 'software' page
-pkgkit_dep = dependency ('packagekit-glib2',
-                         version: '>= 1.1.4',
-                         required: get_option('software-sources'))
-conf.set('ENABLE_SOFTWARE_SOURCES', pkgkit_dep.found())
 
 # Needed for the 'keyboard' page
 ibus_dep = dependency ('ibus-1.0',
