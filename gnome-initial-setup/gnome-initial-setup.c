@@ -33,13 +33,10 @@
 #endif
 
 #include "pages/language/gis-language-page.h"
-#include "pages/region/gis-region-page.h"
 #include "pages/keyboard/gis-keyboard-page.h"
-#include "pages/eulas/gis-eula-pages.h"
 #include "pages/network/gis-network-page.h"
 #include "pages/timezone/gis-timezone-page.h"
 #include "pages/privacy/gis-privacy-page.h"
-#include "pages/software/gis-software-page.h"
 #include "pages/goa/gis-goa-page.h"
 #include "pages/account/gis-account-pages.h"
 #include "pages/password/gis-password-page.h"
@@ -66,15 +63,10 @@ typedef struct {
 
 static PageData page_table[] = {
   PAGE (language, FALSE),
-#ifdef ENABLE_REGION_PAGE
-  PAGE (region,   FALSE),
-#endif /* ENABLE_REGION_PAGE */
   PAGE (keyboard, FALSE),
-  PAGE (eula,     FALSE),
   PAGE (network,  FALSE),
   PAGE (privacy,  FALSE),
   PAGE (timezone, TRUE),
-  PAGE (software, TRUE),
   PAGE (goa,      FALSE),
   PAGE (account,  TRUE),
   PAGE (password, TRUE),
@@ -117,16 +109,14 @@ strv_append (gchar **a,
 }
 
 static gchar **
-pages_to_skip_from_file (gboolean is_new_user)
+pages_to_skip_from_file (GisDriver *driver,
+                         gboolean   is_new_user)
 {
-  GKeyFile *skip_pages_file;
-  gchar **skip_pages = NULL;
-  gchar **additional_skip_pages = NULL;
-  GError *error = NULL;
+  GStrv skip_pages = NULL;
+  GStrv additional_skip_pages = NULL;
 
-  /* VENDOR_CONF_FILE points to a keyfile containing vendor customization
-   * options. This code will look for options under the "pages" group, and
-   * supports the following keys:
+  /* This code will read the keyfile containing vendor customization options and
+   * look for options under the "pages" group, and supports the following keys:
    *   - skip (optional): list of pages to be skipped always
    *   - new_user_only (optional): list of pages to be skipped in existing user mode
    *   - existing_user_only (optional): list of pages to be skipped in new user mode
@@ -137,23 +127,13 @@ pages_to_skip_from_file (gboolean is_new_user)
    *   skip=timezone
    *   existing_user_only=language;keyboard
    */
-  skip_pages_file = g_key_file_new ();
-  if (!g_key_file_load_from_file (skip_pages_file, VENDOR_CONF_FILE,
-                                  G_KEY_FILE_NONE, &error)) {
-    if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
-      g_warning ("Could not read file %s: %s", VENDOR_CONF_FILE, error->message);
 
-    g_error_free (error);
-    goto out;
-  }
-
-  skip_pages = g_key_file_get_string_list (skip_pages_file,
-                                           VENDOR_PAGES_GROUP,
-                                           VENDOR_SKIP_KEY, NULL, NULL);
-  additional_skip_pages = g_key_file_get_string_list (skip_pages_file,
-                                                      VENDOR_PAGES_GROUP,
-                                                      is_new_user ? VENDOR_EXISTING_USER_ONLY_KEY : VENDOR_NEW_USER_ONLY_KEY,
-                                                      NULL, NULL);
+  skip_pages = gis_driver_conf_get_string_list (driver, VENDOR_PAGES_GROUP,
+                                                VENDOR_SKIP_KEY, NULL);
+  additional_skip_pages =
+  	gis_driver_conf_get_string_list (driver, VENDOR_PAGES_GROUP,
+                                     is_new_user ? VENDOR_EXISTING_USER_ONLY_KEY : VENDOR_NEW_USER_ONLY_KEY,
+                                     NULL);
 
   if (!skip_pages && additional_skip_pages) {
     skip_pages = additional_skip_pages;
@@ -161,9 +141,6 @@ pages_to_skip_from_file (gboolean is_new_user)
     skip_pages = strv_append (skip_pages, additional_skip_pages);
     g_strfreev (additional_skip_pages);
   }
-
- out:
-  g_key_file_free (skip_pages_file);
 
   return skip_pages;
 }
@@ -215,7 +192,7 @@ rebuild_pages_cb (GisDriver *driver)
   }
 
   is_new_user = (gis_driver_get_mode (driver) == GIS_DRIVER_MODE_NEW_USER);
-  skip_pages = pages_to_skip_from_file (is_new_user);
+  skip_pages = pages_to_skip_from_file (driver, is_new_user);
 
   for (; page_data->page_id != NULL; ++page_data) {
     skipped = FALSE;
@@ -276,6 +253,8 @@ main (int argc, char *argv[])
 #endif
 
   gtk_init (&argc, &argv);
+
+  g_message ("Starting gnome-initial-setup");
 
   skipped_pages = g_ptr_array_new_with_free_func ((GDestroyNotify) gtk_widget_destroy);
   mode = get_mode ();
