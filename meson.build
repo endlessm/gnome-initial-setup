@@ -1,6 +1,6 @@
 project('gnome-initial-setup',
         ['c'],
-        version: '3.35.91',
+        version: '3.35.92',
         license: 'GPLv2',
         meson_version: '>= 0.47.0',
 )
@@ -70,10 +70,10 @@ conf.set('HAVE_IBUS', ibus_dep.found())
 
 # Needed for the parental controls pages
 libmalcontent_dep = dependency ('malcontent-0',
-                                version: '>= 0.5.0',
+                                version: '>= 0.6.0',
                                 required: get_option('parental_controls'))
 libmalcontent_ui_dep = dependency ('malcontent-ui-0',
-                                   version: '>= 0.5.0',
+                                   version: '>= 0.6.0',
                                    required: get_option('parental_controls'))
 conf.set('HAVE_PARENTAL_CONTROLS', libmalcontent_dep.found() and libmalcontent_ui_dep.found())
 
@@ -84,3 +84,4 @@ config_h_dir = include_directories('.')
 subdir('data')
 subdir('gnome-initial-setup')
 subdir('po')
+subdir('build-aux')
