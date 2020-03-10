@@ -1,8 +1,23 @@
-gnome-initial-setup (3.36.0-1) UNRELEASED; urgency=medium
+gnome-initial-setup (3.36.0-0endless1) master; urgency=medium
 
-  * New upstream release
+  * Update to upstream version 3.36.0
+  * Enable parental controls
+  * Make our packaging branch use the debian/master branch in the Debian git
+    repo rather than tarballs
+    (https://salsa.debian.org/gnome-team/gnome-initial-setup)
+  * Re-apply downstream packaging changes:
+      - Add libexecdir back to dh_auto_configure args
+      - Remove Remove gnome-initial-setup.pkla and update polkit dep
+      - Use Endless specific location for vendor conf file
+      - Adapt dependencies for our downstream changes
+  * Drop "Build Debian package using Meson" (it's upstream except for the
+    --buildsystem=meson arg for dh which is apparently not needed)
+  * Drop "Remove iso-codes package dependency" (it's upstream)
+  * Drop "Drop libgnome-keyring dependency" (that dep is no longer added by
+    "debian/control: Adapted dependencies")
+  * https://phabricator.endlessm.com/T28787
 
- -- Will Thompson <wjt@endlessm.com>  Tue, 10 Mar 2020 16:46:31 +0000
+ -- Matthew Leeds <matthew.leeds@endlessm.com>  Tue, 10 Mar 2020 12:48:23 -0700
 
 gnome-initial-setup (3.35.91-1) experimental; urgency=medium
 
