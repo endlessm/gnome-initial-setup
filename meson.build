@@ -74,7 +74,7 @@ conf.set('HAVE_IBUS', ibus_dep.found())
 
 # Needed for the parental controls pages
 libmalcontent_dep = dependency ('malcontent-0',
-                                version: '>= 0.6.0',
+                                version: '>= 0.7.0',
                                 required: get_option('parental_controls'))
 libmalcontent_ui_dep = dependency ('malcontent-ui-0',
                                    version: '>= 0.6.0',
