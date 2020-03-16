@@ -384,13 +384,11 @@ confirm_changed (GtkWidget      *w,
 }
 
 static void
-username_or_passwordless_changed (GObject         *obj,
-                                  GParamSpec      *pspec,
-                                  GisPasswordPage *page)
+username_or_passwordless_changed (GisPasswordPage *page)
 {
   GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
-  priv->username = gis_driver_get_username (GIS_DRIVER (obj));
-  gboolean passwordless = gis_driver_get_passwordless (GIS_DRIVER (obj));
+  priv->username = gis_driver_get_username (GIS_PAGE (page)->driver);
+  gboolean passwordless = gis_driver_get_passwordless (GIS_PAGE (page)->driver);
 
   if (priv->username && !passwordless)
     gtk_widget_show (GTK_WIDGET (page));
@@ -450,10 +448,10 @@ gis_password_page_constructed (GObject *object)
   g_signal_connect (priv->confirm_entry, "icon-press",
                     G_CALLBACK (on_entry_icon_press), NULL);
 
-  g_signal_connect (GIS_PAGE (page)->driver, "notify::username",
-                    G_CALLBACK (username_or_passwordless_changed), page);
-  g_signal_connect (GIS_PAGE (page)->driver, "notify::passwordless",
-                    G_CALLBACK (username_or_passwordless_changed), page);
+  g_signal_connect_swapped (GIS_PAGE (page)->driver, "notify::username",
+                            G_CALLBACK (username_or_passwordless_changed), page);
+  g_signal_connect_swapped (GIS_PAGE (page)->driver, "notify::passwordless",
+                            G_CALLBACK (username_or_passwordless_changed), page);
 
   g_signal_connect (GIS_PAGE (page)->driver, "notify::full-name",
                     G_CALLBACK (full_name_or_avatar_changed), page);
@@ -477,7 +475,8 @@ gis_password_page_constructed (GObject *object)
                                                               "org.freedesktop.DBus.Properties",
                                                               NULL, NULL);
 
-  gtk_widget_show (GTK_WIDGET (page));
+  /* This callback shows the page widget conditionally on if it's needed */
+  username_or_passwordless_changed (page);
 }
 
 static void
