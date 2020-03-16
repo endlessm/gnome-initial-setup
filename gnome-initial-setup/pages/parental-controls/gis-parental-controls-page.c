@@ -25,6 +25,7 @@
 
 #include "config.h"
 
+#include <eosmetrics/eosmetrics.h>
 #include <glib.h>
 #include <glib-object.h>
 #include <glib/gi18n.h>
@@ -45,6 +46,35 @@ struct _GisParentalControlsPage
 };
 
 G_DEFINE_TYPE (GisParentalControlsPage, gis_parental_controls_page, GIS_TYPE_PAGE)
+
+/* This is the same event as submitted in malcontent-control */
+#define MCT_PARENTAL_CONTROLS_EVENT "449ec188-cb7b-45d3-a0ed-291d943b9aa6"
+
+static void
+report_parental_controls_metric (GisParentalControlsPage *page,
+                                 MctAppFilter            *filter)
+{
+  EmtrEventRecorder *recorder;
+  g_autoptr(GVariant) serialised_filter = NULL;
+  g_auto(GVariantDict) dict = G_VARIANT_DICT_INIT (NULL);
+
+  if (!gis_driver_get_parental_controls_enabled (GIS_PAGE (page)->driver))
+    return;
+
+  /* Serialise the app filter which was saved against the user’s account. Add
+   * some additional fields to help group the data. */
+  recorder = emtr_event_recorder_get_default ();
+  serialised_filter = mct_app_filter_serialize (filter);
+
+  g_variant_dict_init (&dict, serialised_filter);
+  g_variant_dict_insert (&dict, "IsAdministrator", "b", FALSE);
+  g_variant_dict_insert (&dict, "IsInitialSetup", "b", TRUE);
+
+  /* Send the metrics for this user. */
+  emtr_event_recorder_record_event (recorder,
+                                    MCT_PARENTAL_CONTROLS_EVENT,
+                                    g_variant_dict_end (&dict));
+}
 
 static gboolean
 gis_parental_controls_page_save_data (GisPage  *gis_page,
@@ -79,6 +109,9 @@ gis_parental_controls_page_save_data (GisPage  *gis_page,
                                    NULL,
                                    error))
     return FALSE;
+
+  /* Endless-specific metrics reporting. */
+  report_parental_controls_metric (page, app_filter);
 
   return TRUE;
 }
