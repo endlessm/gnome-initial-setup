@@ -50,6 +50,7 @@ dependencies = [
     geocode_glib_2_dep,
     dependency ('gnome-desktop-4'),
     dependency ('gsettings-desktop-schemas', version: '>= 3.37.1'),
+    dependency ('eosmetrics-0', version: '>= 0.5.0'),
     dependency ('fontconfig'),
     dependency ('goa-1.0'),
     dependency ('gtk4', version: '>= 4.6'),

@@ -68,7 +68,7 @@ libadwaita_dep = dependency(
 
 # Needed for the parental controls pages
 libmalcontent_dep = dependency ('malcontent-0',
-                                version: '>= 0.6.0',
+                                version: '>= 0.7.0',
                                 required: get_option('parental_controls'))
 libmalcontent_ui_dep = dependency ('malcontent-ui-1',
                                    version: '>= 0.11.0',
