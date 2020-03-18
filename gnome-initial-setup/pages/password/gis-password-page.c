@@ -327,11 +327,15 @@ on_entry_icon_press (GtkEntry            *entry,
   if (icon_pos != GTK_ENTRY_ICON_SECONDARY)
     return;
 
+  /* We show the eye icon with a slash through it when the password is not
+   * visible, which is consistent with how gnome-shell works in
+   * StPasswordEntry.
+   */
   if (gtk_entry_get_visibility (entry))
     {
       gtk_entry_set_visibility (entry, FALSE);
       gtk_entry_set_icon_from_icon_name (entry, GTK_ENTRY_ICON_SECONDARY,
-                                         "eye-open-negative-filled-symbolic");
+                                         "eye-not-looking-symbolic");
       gtk_entry_set_icon_tooltip_text (entry, GTK_ENTRY_ICON_SECONDARY,
                                        _("Show password"));
     }
@@ -339,7 +343,7 @@ on_entry_icon_press (GtkEntry            *entry,
     {
       gtk_entry_set_visibility (entry, TRUE);
       gtk_entry_set_icon_from_icon_name (entry, GTK_ENTRY_ICON_SECONDARY,
-                                         "eye-not-looking-symbolic");
+                                         "eye-open-negative-filled-symbolic");
       gtk_entry_set_icon_tooltip_text (entry, GTK_ENTRY_ICON_SECONDARY,
                                        _("Hide password"));
     }
