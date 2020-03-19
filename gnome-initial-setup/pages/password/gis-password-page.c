@@ -394,7 +394,7 @@ username_or_passwordless_changed (GisPasswordPage *page)
   priv->username = gis_driver_get_username (GIS_PAGE (page)->driver);
   gboolean passwordless = gis_driver_get_passwordless (GIS_PAGE (page)->driver);
 
-  if (priv->username && !passwordless)
+  if (priv->parent_mode || (priv->username && !passwordless))
     gtk_widget_show (GTK_WIDGET (page));
   else
     gtk_widget_hide (GTK_WIDGET (page));
