@@ -25,6 +25,7 @@
 
 #include "config.h"
 
+#include <eosmetrics/eosmetrics.h>
 #include <glib.h>
 #include <glib-object.h>
 #include <glib/gi18n.h>
@@ -45,6 +46,24 @@ struct _GisParentalControlsPage
 };
 
 G_DEFINE_TYPE (GisParentalControlsPage, gis_parental_controls_page, GIS_TYPE_PAGE)
+
+#define GIS_PARENTAL_CONTROLS_EVENT "5eae336c-f431-43f3-8e17-e0976b856bd8"
+
+static void
+report_parental_controls_metric (GisParentalControlsPage *page,
+                                 MctAppFilter            *filter)
+{
+  EmtrEventRecorder *recorder;
+
+  if (!gis_driver_get_parental_controls_enabled (GIS_PAGE (page)->driver))
+    return;
+
+  /* Serialise the app filter which was saved against the user’s account. */
+  recorder = emtr_event_recorder_get_default ();
+  emtr_event_recorder_record_event (recorder,
+                                    GIS_PARENTAL_CONTROLS_EVENT,
+                                    mct_app_filter_serialize (filter));
+}
 
 static void
 gis_parental_controls_page_save_data (GisPage *gis_page)
@@ -89,6 +108,9 @@ gis_parental_controls_page_save_data (GisPage *gis_page)
       g_warning ("Error setting parental controls: %s", local_error->message);
       return;
     }
+
+  /* Endless-specific metrics reporting. */
+  report_parental_controls_metric (page, app_filter);
 }
 
 static void
