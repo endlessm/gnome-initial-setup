@@ -32,7 +32,7 @@ Build-Depends: debhelper-compat (= 12),
                libpolkit-gobject-1-dev (>= 0.103),
                libpwquality-dev,
                librest-dev,
-               libsecret-1-dev,
+               libsecret-1-dev (>= 0.18.8),
                libsystemd-dev [linux-any],
                libwebkit2gtk-4.0-dev,
                meson (>= 0.47.0)
