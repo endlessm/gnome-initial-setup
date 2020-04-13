@@ -1,23 +1,23 @@
-# Chinese (Taiwan) translation for gnome-initial-setup.
-# Copyright (C) 2012 gnome-initial-setup's COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-#
-# pan93412 <pan93412@gmail.com>, 2019.
+# 
+# Translators:
+# byStarTW (pan93412) <pan93412@gmail.com>, 2019
+# Roddy Shuler <roddy@stanfordalumni.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
 "POT-Creation-Date: 2020-04-13 21:20+0100\n"
-"PO-Revision-Date: 2020-02-20 11:45+0800\n"
-"Last-Translator: pan93412 <pan93412@gmail.com>\n"
-"Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
-"Language: zh_TW\n"
+"PO-Revision-Date: 2020-04-13 20:27+0000\n"
+"Last-Translator: Will Thompson <wjt@endlessm.com>\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/endless-os/gnome-initial-setup/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.3\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
@@ -71,7 +71,6 @@ msgstr "SD 卡：%s"
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -102,9 +101,7 @@ msgid ""
 "This allows you to try Endless without activating an account. No changes or "
 "files will be saved, and the computer will return to a clean factory state "
 "when you power it off."
-msgstr ""
-"這可以讓您在不啟用帳號的狀態下試用 Endless。變更及檔案都不會儲存，關閉電源"
-"後，電腦會回復原廠設定。"
+msgstr "這可以讓您在不啟用帳號的狀態下試用 Endless。變更及檔案都不會儲存，關閉電源後，電腦會回復原廠設定。"
 
 #: gnome-initial-setup/gnome-initial-setup.c:340
 msgid "Force existing user mode"
@@ -143,9 +140,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"企業登入讓您可以在此裝置上使用既有的中央管理使用者帳號。您也可以使用此帳號存"
-"取網際網路上的公司資源。"
+msgstr "企業登入讓您可以在此裝置上使用既有的中央管理使用者帳號。您也可以使用此帳號存取網際網路上的公司資源。"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -179,9 +174,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"為了使用企業登入，這臺電腦需要註冊到網域中。請讓您的網路管理員在此輸入網域密"
-"碼，及用於您電腦的獨特電腦名稱。"
+msgstr "為了使用企業登入，這臺電腦需要註冊到網域中。請讓您的網路管理員在此輸入網域密碼，及用於您電腦的獨特電腦名稱。"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -288,8 +281,7 @@ msgstr "該使用者名稱無法使用。請嘗試別的。"
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"使用者名稱之構成只能採用大小寫字母英文字母 a 到 z、數字、與其他字元如：. - _"
+msgstr "使用者名稱之構成只能採用大小寫字母英文字母 a 到 z、數字、與其他字元如：. - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:272
 msgid "This will be used to name your home folder and can’t be changed."
@@ -336,8 +328,8 @@ msgstr "幫助我們讓 Endless 對大家來說更好使用"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr "自動儲存並寄送使用數據統計及問題報告給 Endless。所有的資料皆為匿名。"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
@@ -360,8 +352,7 @@ msgstr "連接您的線上帳號"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"連接您的帳號可讓您輕鬆存取您的電子郵件、線上行事曆、聯絡人資訊、文件和相片。"
+msgstr "連接您的帳號可讓您輕鬆存取您的電子郵件、線上行事曆、聯絡人資訊、文件和相片。"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
@@ -379,7 +370,6 @@ msgstr "更多…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "找不到輸入來源"
@@ -437,7 +427,6 @@ msgstr "歡迎使用"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "歡迎使用！"
@@ -496,9 +485,7 @@ msgstr "Wi-Fi"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr ""
-"連接到網際網絡讓你獲得新的應用程式、資訊和其他升級，而且還可以自動設定時間和"
-"位置。"
+msgstr "連接到網際網絡讓你獲得新的應用程式、資訊和其他升級，而且還可以自動設定時間和位置。"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -542,7 +529,8 @@ msgstr "設定 %s 的密碼"
 msgid "Set a Parent Password"
 msgstr "設定家長密碼"
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -600,7 +588,8 @@ msgstr "這個密碼與你上一個密碼太過相似。試著更大幅改動密
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
+"This is a weak password. A password without your user name would be "
+"stronger."
 msgstr "這個密碼與你上一個密碼太過相似。若密碼不含使用者名稱的相關資訊會更強。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
@@ -664,9 +653,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"這個密碼強度不足。試著避免重複使用相同類型的字元：您需要混用英文字母、數字與"
-"半形標點符號。"
+msgstr "這個密碼強度不足。試著避免重複使用相同類型的字元：您需要混用英文字母、數字與半形標點符號。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
@@ -687,25 +674,23 @@ msgstr "試著混用英文大小寫，並使用一、二個數字。"
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
 msgstr "若能加入更多字母、數字、半形標點符號會讓密碼更強。"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"傳送協助我們改進 %s 的技術問題報告。報告會以匿名方式送出並清除個人資料。"
+msgstr "傳送協助我們改進 %s 的技術問題報告。報告會以匿名方式送出並清除個人資料。"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -813,8 +798,7 @@ msgstr "<b> 在運行評估媒體時無法更新系統軟體。如喜愛的話�
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
-msgstr ""
-"<b>一旦重新啟動或關閉電腦，您下載的檔案或建立的文件都將會永遠遺失。</b>"
+msgstr "<b>一旦重新啟動或關閉電腦，您下載的檔案或建立的文件都將會永遠遺失。</b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:277
 msgid "Setup Complete"
@@ -833,7 +817,6 @@ msgstr "%s，%s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -869,262 +852,3 @@ msgstr "如果可以找到您所在的位置，將自動設定時區。您也可
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
 msgstr "請搜尋鄰近的城市"
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "連接到網際網路可以讓您設定時間、加入您的其他資訊、讓您存取您的電子郵件、行"
-#~ "事曆、聯絡人資訊等。連接網路也是企業登入帳號所必須的。"
-
-#~ msgid "This is a weak password."
-#~ msgstr "這個密碼強度不足。"
-
-#~ msgid "preferences-system"
-#~ msgstr "preferences-system"
-
-#~ msgid "License Agreements"
-#~ msgstr "授權同意"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr "我已同意這個條款與條件(_A)"
-
-#~ msgid "No regions found"
-#~ msgstr "找不到地區"
-
-#~ msgid "Region"
-#~ msgstr "地區"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "選擇您的國家或地區。"
-
-#~ msgid "Software Repositories"
-#~ msgstr "軟體庫"
-
-#~ msgid "Access additional software from selected third party sources."
-#~ msgstr "從選取的第三方來源存取額外軟體。"
-
-#~ msgid ""
-#~ "Some of this software is proprietary and therefore has restrictions on "
-#~ "use, sharing, and access to source code."
-#~ msgstr "有些軟體採用專有授權，因此對於使用、分享、源碼存取等層面都有限制。"
-
-#~ msgid "Additional Software Repositories"
-#~ msgstr "額外軟體庫"
-
-#~ msgid "<a href=\"more\">Find out more…</a>"
-#~ msgstr "<a href=\"more\">深入瞭解…</a>"
-
-#~ msgid ""
-#~ "Proprietary software typically has restrictions on how it can be used and "
-#~ "on access to source code. This prevents anyone but the software owner "
-#~ "from inspecting, improving or learning from its code."
-#~ msgstr ""
-#~ "專有軟體一般都有使用用途、和源始碼存取上的限制。這使得只有軟體擁有者才能檢"
-#~ "閱、改善、或從其程式碼中學習，而其他人都不可以。"
-
-#~ msgid ""
-#~ "In contrast, Free Software can be freely run, copied, distributed, "
-#~ "studied and modified."
-#~ msgstr "相反的，自由軟體則可以自由使用、複製、散布、研究、和修改。"
-
-#~ msgid "Ready to Go"
-#~ msgstr "準備出發"
-
-#~ msgid "You’re ready to go!"
-#~ msgstr "您已經準備好了！"
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to avoid common words."
-#~ msgstr "試著避免常見單字。"
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to use more numbers."
-#~ msgstr "試著使用更多數字。"
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "Password needs to be longer. Try to add more letters, numbers and "
-#~ "punctuation."
-#~ msgstr "這個密碼強度不足。試著加入更多英文字母、數字、半形標點符號等。"
-
-#~ msgid ""
-#~ "Proprietary software sources provide access to additional software, "
-#~ "including web browsers and games. This software typically has "
-#~ "restrictions on use and access to source code, and is not provided by %s."
-#~ msgstr ""
-#~ "專有軟體來源可提供額外軟體，包括一些網頁瀏覽器和遊戲。這類軟體一般對於使用"
-#~ "用途和源始碼存取都有所限制，而且並非由 %s 所提供。"
-
-#~ msgid "Proprietary Software Sources"
-#~ msgstr "專有軟體來源"
-
-#~ msgid "A user with the username ‘%s’ already exists."
-#~ msgstr "以「%s」為名的使用者已經存在。"
-
-#~ msgid "_Verify"
-#~ msgstr "驗證(_V)"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "強度：脆弱"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "強度：低"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "強度：中"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "強度：良好"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "強度：高"
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "這些資料正確嗎？您可以更改它們。"
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr "您可以在設定後檢閱您的線上帳號 (與加入其他帳號)。"
-
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "我們認為您的時區為 %s。請按下「下一步」繼續，或是手動搜尋城市以設定時區。"
-
-#~ msgid "Your username cannot be changed after setup."
-#~ msgstr "您的使用者名稱無法在設定之後變更。"
-
-#~ msgctxt "Password strength"
-#~ msgid "Too short"
-#~ msgstr "太短"
-
-#~ msgctxt "Password strength"
-#~ msgid "Not good enough"
-#~ msgstr "不夠好"
-
-#~ msgctxt "Password strength"
-#~ msgid "Weak"
-#~ msgstr "太弱"
-
-#~ msgctxt "Password strength"
-#~ msgid "Fair"
-#~ msgstr "一般"
-
-#~ msgctxt "Password strength"
-#~ msgid "Good"
-#~ msgstr "良好"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strong"
-#~ msgstr "強固"
-
-#~ msgid "Login"
-#~ msgstr "登入"
-
-#~ msgid "Create a Local Account"
-#~ msgstr "建立本地端帳號"
-
-#~ msgid "page 1"
-#~ msgstr "第 1 頁"
-
-#~ msgid "Create an Enterprise Account"
-#~ msgstr "建立企業版帳號"
-
-#~ msgctxt "Online Account"
-#~ msgid "Other"
-#~ msgstr "其他"
-
-#~ msgid "Mail"
-#~ msgstr "郵件"
-
-#~ msgid "Contacts"
-#~ msgstr "連絡人"
-
-#~ msgid "Chat"
-#~ msgstr "聊天"
-
-#~ msgid "Resources"
-#~ msgstr "資源"
-
-#~ msgid "Error creating account"
-#~ msgstr "建立帳號時發生錯誤"
-
-#~ msgid "Error removing account"
-#~ msgstr "移除帳號時發生錯誤"
-
-#~ msgid "Are you sure you want to remove the account?"
-#~ msgstr "確定要移除這個帳號？"
-
-#~ msgid "This will not remove the account on the server."
-#~ msgstr "這不會移除伺服器上的帳號。"
-
-#~ msgid "_Remove"
-#~ msgstr "移除(_R)"
-
-#~ msgid "Connect to your existing data in the cloud"
-#~ msgstr "與您雲端的既有資料連接"
-
-#~ msgid "_Add Account"
-#~ msgstr "加入帳號(_A)"
-
-#~ msgid "Other"
-#~ msgstr "其他"
-
-#~ msgid "Add an Input Source"
-#~ msgstr "加入輸入來源"
-
-#~ msgid "Search for a location"
-#~ msgstr "搜尋位置"
-
-#~ msgid "_Determine your location automatically"
-#~ msgstr "自動判斷您的位置(_D)"
-
-#~ msgid "No network devices found."
-#~ msgstr "找不到網路裝置。"
-
-#~ msgid "Thank You"
-#~ msgstr "謝謝您"
-
-#~ msgid "Your computer is ready to use."
-#~ msgstr "您的電腦已經可以使用。"
-
-#~ msgid "You may change these options at any time in Settings."
-#~ msgstr "您可以在任何時間於設定值中改變這些選項。"
-
-#~ msgid "_Start using GNOME 3"
-#~ msgstr "開始使用 Gnome 3(_S)"
-
-#~ msgid "Login settings are used by all users when logging into the system"
-#~ msgstr "登入設定值是所有使用者登入系統時所使用的設定值"
-
-#~ msgid "Select input sources"
-#~ msgstr "編輯輸入來源"
-
-#~ msgid "_Back"
-#~ msgstr "上一步(_B)"
-
-#, fuzzy
-#~ msgid "Your session needs to be restarted for changes to take effect"
-#~ msgstr "您的需要重新啟動才能生效"
-
-#~ msgid "Restart Now"
-#~ msgstr "立刻重新啟動"
-
-#~ msgctxt "Language"
-#~ msgid "None"
-#~ msgstr "無"
-
-#~ msgid "Sorry"
-#~ msgstr "很抱歉"
-
-#~ msgid "Input methods can't be used on the login screen"
-#~ msgstr "輸入法無法在登入畫面中使用"

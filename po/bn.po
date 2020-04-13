@@ -1,21 +1,25 @@
-# Bengali translations for gnome-initial-setup package.
-# Copyright (C) 2020 THE gnome-initial-setup'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-# Automatically generated, 2020.
-#
+# 
+# Translators:
+# Aditi Kabir <aditi.kabir@gmail.com>, 2016
+# Automatically generated, 2020
+# Roddy Shuler <roddy@endlessm.com>, 2017
+# Shimon Sharmin <oparthib@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
 "POT-Creation-Date: 2020-04-13 21:20+0100\n"
-"PO-Revision-Date: 2020-04-13 21:14+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
-"Language: bn\n"
+"PO-Revision-Date: 2020-04-13 20:24+0000\n"
+"Last-Translator: Will Thompson <wjt@endlessm.com>\n"
+"Language-Team: Bengali (http://www.transifex.com/endless-os/gnome-initial-setup/language/bn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: bn\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
@@ -69,7 +73,6 @@ msgstr "SD কার্ড: %s"
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -327,11 +330,9 @@ msgstr "এন্ডলেস-কে সবার জন্য আরো উন�
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
-msgstr ""
-"স্বয়ংক্রিয়ভাবে রক্ষা করুন এবং ব্যবহারের পরিসংখ্যান ও সমস্যার খতিয়ান এন্ডলেস-কে "
-"পাঠিয়ে দিন। সকল তথ্য নামবিহীন থাকবে।"
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr "স্বয়ংক্রিয়ভাবে রক্ষা করুন এবং ব্যবহারের পরিসংখ্যান ও সমস্যার খতিয়ান এন্ডলেস-কে পাঠিয়ে দিন। সকল তথ্য নামবিহীন থাকবে।"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
 msgid "Third Party Software"
@@ -371,7 +372,6 @@ msgstr "আরো…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "কোন তথ্য পাওয়া যায়নি"
@@ -429,7 +429,6 @@ msgstr "স্বাগতম"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr ""
@@ -532,7 +531,8 @@ msgstr ""
 msgid "Set a Parent Password"
 msgstr ""
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -590,7 +590,8 @@ msgstr ""
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
+"This is a weak password. A password without your user name would be "
+"stronger."
 msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
@@ -675,13 +676,13 @@ msgstr ""
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
 msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -692,7 +693,6 @@ msgstr ""
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -800,9 +800,7 @@ msgstr ""
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
-msgstr ""
-"<b>আপনি যদি কম্পিউটার বন্ধ বা পুনঃচালু করেন তাহলে আপনি যেসব ফাইল নামিয়েছেন বা "
-"তৈরি করেছেন তা চিরতরে হারিয়ে যাবে। </b> "
+msgstr "<b>আপনি যদি কম্পিউটার বন্ধ বা পুনঃচালু করেন তাহলে আপনি যেসব ফাইল নামিয়েছেন বা তৈরি করেছেন তা চিরতরে হারিয়ে যাবে। </b> "
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:277
 msgid "Setup Complete"
@@ -821,7 +819,6 @@ msgstr ""
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
 msgid "UTC%:::z"
 msgstr ""

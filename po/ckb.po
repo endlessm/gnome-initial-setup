@@ -1,23 +1,22 @@
-# Kurdish (Sorani) translation for gnome-initial-setup
-# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
 "POT-Creation-Date: 2020-04-13 21:20+0100\n"
-"PO-Revision-Date: 2020-03-28 23:58+0300\n"
-"Last-Translator: Jwtiyar Nariman <jwtiyar@gmail.com>\n"
-"Language-Team: Kurdish (Sorani) <ckb@li.org>\n"
-"Language: ckb\n"
+"PO-Revision-Date: 2020-04-13 20:26+0000\n"
+"Last-Translator: Will Thompson <wjt@endlessm.com>\n"
+"Language-Team: Central Kurdish (http://www.transifex.com/endless-os/gnome-initial-setup/language/ckb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2020-03-28 20:56+0000\n"
-"X-Generator: Poedit 2.3\n"
+"Language: ckb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
@@ -45,9 +44,9 @@ msgid "_Cancel"
 msgstr "_وازهێنان"
 
 #: gnome-initial-setup/gis-driver.c:811
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to enter demo mode: %s"
-msgstr "نەتوانرا ڕاپۆرتی زانیاری بەدەستبخەین :%s"
+msgstr ""
 
 #: gnome-initial-setup/gis-page-util.c:431
 msgid "Unknown"
@@ -71,7 +70,6 @@ msgstr ""
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -191,18 +189,15 @@ msgstr "تێپەڕەوشەی بەڕێوبەر"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 msgid "Please check the name and username. You can choose a picture too."
-msgstr ""
-"تکایە پێداچوونەوە بە  ناو و وشەی تێپەڕەکەدا بکە. هەروەها دەتوانی وێنەیەک "
-"هەڵبژێری."
+msgstr "تکایە پێداچوونەوە بە  ناو و وشەی تێپەڕەکەدا بکە. هەروەها دەتوانی وێنەیەک هەڵبژێری."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:461
 msgid "We need a few details to complete setup."
 msgstr "ئێمە هەندێک زانیاریمان پێویستە بۆ تەواوکردنی ڕێکخستنەکان."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:591
-#, fuzzy
 msgid "Administrator"
-msgstr "ناوی _بەڕێوبەر"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:21
 msgid "Avatar image"
@@ -222,9 +217,8 @@ msgid "_Full Name"
 msgstr "_ناوی تەواو"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:144
-#, fuzzy
 msgid "Set a password"
-msgstr "تێپەڕەوشە دابنێ"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:160
 msgid "Set up _parental controls for this user"
@@ -279,17 +273,14 @@ msgid "The username cannot start with a “-”."
 msgstr "نابێ نازناوەکە دەستپێبکات بە “-”."
 
 #: gnome-initial-setup/pages/account/um-utils.c:265
-#, fuzzy
 msgid "That username isn’t available. Please try another."
-msgstr "ببورە، ئەو نازناوە بەردەست نییە. تکایە دانەیەکیتر تاقی بکەرەوە."
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:268
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"نازناوەکە پێویستە تەنها پێکبێ لە پیتی بەرز و نزم لە a-z, ڕەنووسەکان وە ئەم "
-"ئامڕازانە: . - _"
+msgstr "نازناوەکە پێویستە تەنها پێکبێ لە پیتی بەرز و نزم لە a-z, ڕەنووسەکان وە ئەم ئامڕازانە: . - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:272
 msgid "This will be used to name your home folder and can’t be changed."
@@ -336,8 +327,8 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
@@ -357,13 +348,10 @@ msgid "Connect Your Online Accounts"
 msgstr "هەژماری سەرهێڵت پەیوەست بکە"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:18
-#, fuzzy
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
 msgstr ""
-"هەژمارەکەت پەیوەست بکە بۆ ئەوەی بە ئاسانی بگەی بە ڕۆژژمێری سەرهێڵ، "
-"به‌ڵگه‌نامەکان، وێنەکان وە زیاتر."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
@@ -381,15 +369,13 @@ msgstr "زیاتر..."
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "هیچ تێخراوێک نەدۆزرایەوە"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
-#, fuzzy
 msgid "Your keyboard layout seems to be:"
-msgstr "نەخشەی کیبۆردەکەت دیاری بکە یان شێوازی تێخراو"
+msgstr ""
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
@@ -430,9 +416,8 @@ msgid "Enter Store Demo…"
 msgstr ""
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:325
-#, fuzzy
 msgid "Welcome to Store Demo"
-msgstr "بەخێربێی بۆ ئوبونتو"
+msgstr ""
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:327
 msgid "Welcome"
@@ -441,7 +426,6 @@ msgstr "بەخێرهاتی"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "بەخێرهاتی!"
@@ -536,16 +520,16 @@ msgstr "ئاگاداربە تێپەڕەوشە لەدەستنەدەی."
 
 #. Translators: The placeholder is for the user’s full name.
 #: gnome-initial-setup/pages/password/gis-password-page.c:91
-#, fuzzy, c-format
+#, c-format
 msgid "Set a Password for %s"
-msgstr "تێپەڕەوشە دابنێ"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:99
-#, fuzzy
 msgid "Set a Parent Password"
-msgstr "تێپەڕەوشە دابنێ"
+msgstr ""
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -557,14 +541,12 @@ msgstr "تێپەڕەوشەکان وەک یەک نین."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:306
 #: gnome-initial-setup/pages/password/gis-password-page.c:337
-#, fuzzy
 msgid "Show password"
-msgstr "تێپەڕەوشە"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:345
-#, fuzzy
 msgid "Hide password"
-msgstr "تێپەڕەوشە"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:548
 msgid "Password"
@@ -575,9 +557,8 @@ msgid "_Confirm"
 msgstr "_دڵنیابوونەوە"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:202
-#, fuzzy
 msgid "Password _reminder"
-msgstr "تێپەڕەوشە"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:217
 msgid "Password reminder will be shown in case you forget your password."
@@ -593,9 +574,7 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
-"ئەم تێپەڕەوشەیە زۆر نزیکە لە کۆتا دانەت . هەوڵبدە هەندێ لە پیتەکان و "
-"ژمارەکان بگۆڕی."
+msgstr "ئەم تێپەڕەوشەیە زۆر نزیکە لە کۆتا دانەت . هەوڵبدە هەندێ لە پیتەکان و ژمارەکان بگۆڕی."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -603,30 +582,26 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
-"ئەم تێپەڕەوشەیە زۆر نزیکە لر کۆتا دانەت. هەوڵبدە تۆزێ لە تێپەڕەوشەکە بگۆڕی."
+msgstr "ئەم تێپەڕەوشەیە زۆر نزیکە لر کۆتا دانەت. هەوڵبدە تۆزێ لە تێپەڕەوشەکە بگۆڕی."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
+"This is a weak password. A password without your user name would be "
+"stronger."
 msgstr "ئەم تێپەڕەوشەیە لاوازە. تێپەڕەوشە بەبێ بوونی نازناوەکەت بەهێزتر دەبێت."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr ""
-"ئەم تێپەڕەوشەیە لاوازە. هەوڵبدە خۆت بەدوور بگری لە بەکار هێنانی ناوەکەت لە "
-"تێپەڕوشەکە."
+msgstr "ئەم تێپەڕەوشەیە لاوازە. هەوڵبدە خۆت بەدوور بگری لە بەکار هێنانی ناوەکەت لە تێپەڕوشەکە."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
-"ئەم تێپەڕەوشەیە لاوازە. هەوڵبدە خۆت بەدوور بگری لە بەکار هێنانی هەندێ وشە لە "
-"ناو تێپەڕەوشەکەت."
+msgstr "ئەم تێپەڕەوشەیە لاوازە. هەوڵبدە خۆت بەدوور بگری لە بەکار هێنانی هەندێ وشە لە ناو تێپەڕەوشەکەت."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
@@ -677,16 +652,12 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"تێپەڕەوشە لاوازە. هەوڵ بدە بە دووربی لە دووبارەکردنەوەی هەمان هێما: پێویستە "
-"هێماکان تێکەڵبکەی لەگەڵ پیتەکان، ژمارەکان و خاڵبەندییەکان."
+msgstr "تێپەڕەوشە لاوازە. هەوڵ بدە بە دووربی لە دووبارەکردنەوەی هەمان هێما: پێویستە هێماکان تێکەڵبکەی لەگەڵ پیتەکان، ژمارەکان و خاڵبەندییەکان."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr ""
-"تێپەڕەوشە لاوازە. هەوڵ بدە دووربی لە یەکلەدوای یەک وەکو ١٢٣٤ و پیتی یەکلە "
-"دوای یەک."
+msgstr "تێپەڕەوشە لاوازە. هەوڵ بدە دووربی لە یەکلەدوای یەک وەکو ١٢٣٤ و پیتی یەکلە دوای یەک."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
@@ -702,13 +673,13 @@ msgstr "هەردوو پیتی گەورە و بچووک تێکەڵبکە لەگە
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
 msgstr "پیتی زیاتر بەکاربێنە، ژمارە و خاڵبەندی تێپەرەوشە بەهێزتر دەبێت."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -719,7 +690,6 @@ msgstr ""
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -814,9 +784,8 @@ msgid "%s is ready to be used. We hope that you love it!"
 msgstr ""
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:260
-#, fuzzy
 msgid "You're ready to try Endless OS"
-msgstr "تۆ ئامادەی بۆ ڕۆشتن!"
+msgstr ""
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:263
 msgid ""
@@ -847,7 +816,6 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -883,159 +851,3 @@ msgstr ""
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
 msgstr "تکایە گەڕان بکە بۆ شاری نزیک لێمەوە"
-
-#~ msgid "preferences-system"
-#~ msgstr "preferences-system"
-
-#~ msgid "_Done"
-#~ msgstr "_ئەنجامدرا"
-
-#~ msgid "License Agreements"
-#~ msgstr "ڕێککەوتنەکانی مۆڵەت"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr ""
-#~ "من _ڕازیبووم بە شەرتوو مەرجەکان لە کۆتایی ڕێککەوتنەکانی مۆڵەتی بەکارهێنەر."
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "پەیوەستبوون بە ئینتەرنێتەوە کاتت بۆ دا ئەنێ، زانیاریەکانیت زیاد دەکات، وە "
-#~ "تۆ چالاک دەکات بۆ داستکەوتنی پۆستی ئەلیکترۆنی، ڕۆژژمێر، وە پەیوەندیەکان. "
-#~ "وە هەروەها پێویستە بۆ چوونەژوورەوەی هەژاماری پرۆژه‌ی ئابووری."
-
-#~ msgid "This is a weak password."
-#~ msgstr "ئەمە تێپەڕەوشەیەکی بێ ‌هێزە."
-
-#~ msgid "No regions found"
-#~ msgstr "هیچ هەرێمێک نەدۆزرایەوە"
-
-#~ msgid "Region"
-#~ msgstr "هەرێم"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "وڵاتەکەت یا هەرێمەکەت هەڵبژێرە."
-
-#~ msgid "<a href=\"more\">Find out more…</a>"
-#~ msgstr "<a href=\"more\">زیاترببینە...</a>"
-
-#~ msgid "Ready to Go"
-#~ msgstr "ئامادەیە بۆ ڕۆشتن"
-
-#~ msgid "You’re ready to go!"
-#~ msgstr "تۆ ئامادەی بۆ ڕۆشتن"
-
-#~ msgid "Report"
-#~ msgstr "ڕاپۆرت"
-
-#~ msgid "Failed to show privacy policy: %s"
-#~ msgstr "نەتوانی ڕیبازی تایبەتی پیشانبدرێت:%s"
-
-#~ msgid "Help improve Ubuntu"
-#~ msgstr "یارمەتیدەربە لە باشتر کردنی ئوبونتو"
-
-#~ msgid "Show the First Report"
-#~ msgstr "ڕاپۆرت یەکەم پیشان بدە"
-
-#~ msgid "Legal notice"
-#~ msgstr "سرنجدانی یاسایی"
-
-#~ msgid "Would you like to send this information?"
-#~ msgstr "ئایا دەتەوێ ئەم زانیاریانە بنێریت؟"
-
-#~ msgid "Yes, send system info to Canonical"
-#~ msgstr "بەڵێ، ئەم زانیاریانە بنێرە بۆ کانۆنیکاڵ"
-
-#~ msgid "No, don't send system info"
-#~ msgstr "نەخێر، زانیارییەکان مەنێرە"
-
-#~ msgid ""
-#~ "You can change your mind later in Settings -> Privacy -> Diagnostics."
-#~ msgstr "دوواتر دەتوانی بیرت بگۆڕیت لە ڕێکخستن -> تایبەتی -> دەستنیشانکاری"
-
-#~ msgid "Failed to add an Ubuntu Single Sign-on account: %s."
-#~ msgstr "نەتوانرا هەژماری یەک چوونە ژورەوەی ئوبونتو زیادبکرێت: %s."
-
-#~ msgid "To use Livepatch, you need to use an Ubuntu One Account."
-#~ msgstr ""
-#~ "بۆ بەکارهێنانی Livepatch، پێویستە بە هەژماری ئوبونتو وەن بەکاربێنیت."
-
-#~ msgid "Sign In / Register…"
-#~ msgstr "چوونەژورەوە / خۆتۆمارکردن ..."
-
-#~ msgid "To use Livepatch, you need to use your Ubuntu One Account."
-#~ msgstr ""
-#~ "بۆ بەکارهێنانی Livepatch، پێویستە بە هەژماری ئوبونتو وەن بەکاربێنیت."
-
-#~ msgid "Continue"
-#~ msgstr "بەردەوام بە"
-
-#~ msgid "Use"
-#~ msgstr "بەکارهێنان"
-
-#~ msgid "Ubuntu Single Sign-on accounts are not supported"
-#~ msgstr "هەژماری یەک چوونەژورەوەی ئەبونتو وەن پشتگیری ناکرێت"
-
-#~ msgid "Add another…"
-#~ msgstr "دانەیەکی تر زیاد بکە..."
-
-#~ msgid "You're all set: Livepatch is now being enabled."
-#~ msgstr "هەموو شتێک تەواوە: Livepatch ئێستا چالاک کراوە."
-
-#~ msgid "You're all set: Livepatch is now on."
-#~ msgstr "هەموو شتێک تەواوە: Livepatch ئێستا کارایە."
-
-#~ msgid "Failed to setup Livepatch: please retry."
-#~ msgstr "نەتوانی Livepatch ڕێکبخرێت: تکایە دووبارە هەوڵبدەرەوە."
-
-#~ msgid "Failed to disable Livepatch: please retry."
-#~ msgstr "نەتوانرا Livepatch ناچالاک بکرێت: دووبارە هەوڵبدەرەوە"
-
-#~ msgid "Sorry there's been a problem with setting up Canonical Livepatch"
-#~ msgstr "ببورە هەڵەیەک هەیە لە کاتی دەستپێکردنی Livepatch ی کانۆنینیکاڵ"
-
-#~ msgid "The error was: %s"
-#~ msgstr "هەڵەکە ئەمە بوو:%s"
-
-#~ msgid "Settings…"
-#~ msgstr "ڕێکخستنەکان…"
-
-#~ msgid "Ignore"
-#~ msgstr "پشتگوێخستن"
-
-#~ msgid "Failed to show Livepatch policy: %s"
-#~ msgstr "نەتوانی ڕیبازی Livepatch پیشانبدرێت:%s"
-
-#~ msgid "Livepatch"
-#~ msgstr "Livepatch"
-
-#~ msgid ""
-#~ "Canonical Livepatch helps keep your computer secure, by applying some "
-#~ "updates that would normally require restarting."
-#~ msgstr ""
-#~ "گورزەی ڕاستەوخۆی کانۆنیکاڵ یارمەتیدەرن بۆ بەهێزکردنی پاراستنی کۆمپیوتەر، "
-#~ "کە ئەم نوێکارییانە دابمەزرێن ئەوا پێویست بە سەرلەونێ کار پێکردنەوەی "
-#~ "سیستەمەکە دەکات."
-
-#~ msgid "Would you like to set up Livepatch now?"
-#~ msgstr "ئایا دەتەوێت Livepatch بەکاربخەیت ئێستا؟"
-
-#~ msgid "Set Up Livepatch…"
-#~ msgstr "بەکارخستنی Livepatch ..."
-
-#~ msgid "Sign Out"
-#~ msgstr "چوونەدەرەوە"
-
-#~ msgid "Ready to go"
-#~ msgstr "ئامادەیە بۆ ڕۆشتن"
-
-#~ msgid "You can use “Software” to install apps like these:"
-#~ msgstr ""
-#~ "دەتوانی \"داوانامە\" بەکاربێنیت بۆ دەمەزراندنی نەرمەکاڵا وەک ئەمانە:"
-
-#~ msgid "Open “Software” now"
-#~ msgstr "ئێستا \"داوانامە\" بکەرەوە"

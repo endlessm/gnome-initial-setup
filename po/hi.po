@@ -1,24 +1,26 @@
-# Hindi translation for gnome-initial-setup.
-# Copyright (C) 2012 gnome-initial-setup's COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-#
-# chandan kumar <chandankumar.093047@gmail.com>, 2012, 2013.
-# Rajesh Ranjan <rajeshkajha@yahoo.com>, 2013, 2014.
+# 
+# Translators:
+# Chandan kumar <chandankumar.093047@gmail.com>, 2012-2013
+# 25c299dc371da5bff014f86901f492aa, 2016-2017
+# Rajesh Ranjan <rajeshkajha@yahoo.com>, 2013-2014
+# Roddy Shuler <roddy@stanfordalumni.org>, 2017
+# Will Thompson <wjt@endlessm.com>, 2019
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
 "POT-Creation-Date: 2020-04-13 21:20+0100\n"
-"PO-Revision-Date: 2014-09-21 15:24+0530\n"
-"Last-Translator: RaviRatlami <raviratlami@yahoo.com>\n"
-"Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
-"Language: hi\n"
+"PO-Revision-Date: 2020-04-13 20:24+0000\n"
+"Last-Translator: Will Thompson <wjt@endlessm.com>\n"
+"Language-Team: Hindi (http://www.transifex.com/endless-os/gnome-initial-setup/language/hi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.5.5\n"
+"Language: hi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
@@ -72,7 +74,6 @@ msgstr "SD कार्ड: %s"
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -103,9 +104,7 @@ msgid ""
 "This allows you to try Endless without activating an account. No changes or "
 "files will be saved, and the computer will return to a clean factory state "
 "when you power it off."
-msgstr ""
-"यह आपको खाता सक्रिय किए बिना Endless को आज़माने की अनुमति देता है. कोई परिवर्तन या "
-"फ़ाइल सहेजी नहीं जाएगी और कंप्यूटर को जब आप बंद करेंगे वह साफ़ फैक्टरी स्थिति में चला जाएगा."
+msgstr "यह आपको खाता सक्रिय किए बिना Endless को आज़माने की अनुमति देता है. कोई परिवर्तन या फ़ाइल सहेजी नहीं जाएगी और कंप्यूटर को जब आप बंद करेंगे वह साफ़ फैक्टरी स्थिति में चला जाएगा."
 
 #: gnome-initial-setup/gnome-initial-setup.c:340
 msgid "Force existing user mode"
@@ -144,10 +143,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"एंटरप्राइज़ लॉगिन एक मौजूदा केंद्रीय प्रबंधित उपयोगकर्ता खाते का उपयोग इस डिवाइस पर करने "
-"की अनुमति देता है. आप इंटरनेट पर कंपनी संसाधनों तक पहुंचने के लिए भी इस खाते का उपयोग कर "
-"सकते हैं."
+msgstr "एंटरप्राइज़ लॉगिन एक मौजूदा केंद्रीय प्रबंधित उपयोगकर्ता खाते का उपयोग इस डिवाइस पर करने की अनुमति देता है. आप इंटरनेट पर कंपनी संसाधनों तक पहुंचने के लिए भी इस खाते का उपयोग कर सकते हैं."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -181,10 +177,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"एंटरप्राइज लॉगिन के लिए, इस कंप्यूटर को इस डोमेन में नामांकित होने की जरूरत है. कृपया अपने "
-"संजाल प्रशासक को अपने डोमेन कूटशब्द को यहाँ टाइप करने दें और अपने कंप्यूटर के लिए अद्वितीय "
-"नाम चुनें."
+msgstr "एंटरप्राइज लॉगिन के लिए, इस कंप्यूटर को इस डोमेन में नामांकित होने की जरूरत है. कृपया अपने संजाल प्रशासक को अपने डोमेन कूटशब्द को यहाँ टाइप करने दें और अपने कंप्यूटर के लिए अद्वितीय नाम चुनें."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -207,9 +200,8 @@ msgid "We need a few details to complete setup."
 msgstr "सेटअप पूरा करने के लिए हमें कुछ विवरणों की आवश्यकता है."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:591
-#, fuzzy
 msgid "Administrator"
-msgstr "प्रशासक नाम (_N)"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:21
 msgid "Avatar image"
@@ -292,9 +284,7 @@ msgstr ""
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"यूज़रनेम में केवल a-z तक ऊपरी और निचले केस के अक्षर, अंकऔर नीचे दिए गए चिह्न होने चाहिए: . "
-"- _"
+msgstr "यूज़रनेम में केवल a-z तक ऊपरी और निचले केस के अक्षर, अंकऔर नीचे दिए गए चिह्न होने चाहिए: . - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:272
 msgid "This will be used to name your home folder and can’t be changed."
@@ -333,9 +323,7 @@ msgstr "कृपया उपयोग की निम्न शर्तो�
 msgid ""
 "By clicking \"Accept,\" you acknowledge that you have read, understood, and "
 "agree to be bound by the following terms and conditions."
-msgstr ""
-"\"स्वीकार करें\" पर क्लिक करके, आप स्वीकार करते हैं कि आपने निम्नलिखित नियमों और शर्तों को "
-"पढ़ा और समझा है और इन नियमों और शर्तों से बाध्य हैं।"
+msgstr "\"स्वीकार करें\" पर क्लिक करके, आप स्वीकार करते हैं कि आपने निम्नलिखित नियमों और शर्तों को पढ़ा और समझा है और इन नियमों और शर्तों से बाध्य हैं।"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
@@ -343,11 +331,9 @@ msgstr "Endless को सभी के लिए बेहतर बनान�
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
-msgstr ""
-"उपयोग सांख्यिकी और समस्या रिपोर्ट स्वचालित रूप से सहेजें और Endless को भेजें. समस्त डेटा "
-"अनाम है."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr "उपयोग सांख्यिकी और समस्या रिपोर्ट स्वचालित रूप से सहेजें और Endless को भेजें. समस्त डेटा अनाम है."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
 msgid "Third Party Software"
@@ -369,9 +355,7 @@ msgstr "अपने ऑनलाइन खाते कनेक्ट कर�
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"अपने ईमेल, ऑनलाइन कैलेंडर, संपर्क, दस्तावेज़ और फ़ोटो आसानी से एक्सेस करने के लिए अपना खाता "
-"कनेक्ट करें."
+msgstr "अपने ईमेल, ऑनलाइन कैलेंडर, संपर्क, दस्तावेज़ और फ़ोटो आसानी से एक्सेस करने के लिए अपना खाता कनेक्ट करें."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
@@ -389,7 +373,6 @@ msgstr "अधिक…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "कोई इनपुट नहीं मिला"
@@ -447,7 +430,6 @@ msgstr "सुस्वागतम"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "सुस्वागतम!"
@@ -506,9 +488,7 @@ msgstr "वाई-फ़ाई"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr ""
-"इंटरनेट से कनेक्ट करने से आपको नए ऐप्स, जानकारी और अन्य अपग्रेड मिल सकते हैं. यह समय और "
-"आपके स्थान को स्वचालित रूप से सेट करने में भी मदद करता है."
+msgstr "इंटरनेट से कनेक्ट करने से आपको नए ऐप्स, जानकारी और अन्य अपग्रेड मिल सकते हैं. यह समय और आपके स्थान को स्वचालित रूप से सेट करने में भी मदद करता है."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -544,16 +524,16 @@ msgstr "सावधानी पूर्वक अपना कूटशब्
 
 #. Translators: The placeholder is for the user’s full name.
 #: gnome-initial-setup/pages/password/gis-password-page.c:91
-#, fuzzy, c-format
+#, c-format
 msgid "Set a Password for %s"
-msgstr "कूटशब्द नियत करें"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:99
-#, fuzzy
 msgid "Set a Parent Password"
-msgstr "कूटशब्द नियत करें"
+msgstr ""
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -598,9 +578,7 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
-"यह पासवर्ड लगभग आपके पिछले पासवर्ड जैसा ही है। कुछ अक्षरों और संख्याओं को बदलने का प्रयास "
-"करें।"
+msgstr "यह पासवर्ड लगभग आपके पिछले पासवर्ड जैसा ही है। कुछ अक्षरों और संख्याओं को बदलने का प्रयास करें।"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -608,15 +586,14 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
-"यह पासवर्ड आपके पिछले पासवर्ड के समान है। पासवर्ड को थोड़ा और बदलने की कोशिश करें।"
+msgstr "यह पासवर्ड आपके पिछले पासवर्ड के समान है। पासवर्ड को थोड़ा और बदलने की कोशिश करें।"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr ""
-"यह एक कमजोर पासवर्ड है। उपयोगकर्ता के नाम के उपयोग के बिना बना पासवर्ड मजबूत होगा।"
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr "यह एक कमजोर पासवर्ड है। उपयोगकर्ता के नाम के उपयोग के बिना बना पासवर्ड मजबूत होगा।"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
@@ -660,17 +637,14 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
-"यह एक कमजोर पासवर्ड है।  विराम चिह्न जैसे विशेष वर्णों का उपयोग करने का प्रयास करें।"
+msgstr "यह एक कमजोर पासवर्ड है।  विराम चिह्न जैसे विशेष वर्णों का उपयोग करने का प्रयास करें।"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
-"यह एक कमज़ोर पासवर्ड है। अक्षरों, संख्याओं और विराम चिह्न के मिश्रण का उपयोग करने का "
-"प्रयास करें।"
+msgstr "यह एक कमज़ोर पासवर्ड है। अक्षरों, संख्याओं और विराम चिह्न के मिश्रण का उपयोग करने का प्रयास करें।"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
@@ -682,9 +656,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"यह एक कमज़ोर पासवर्ड है। एक ही प्रकार के अक्षरों को न दोहराएँ: आपको अक्षरों, संख्याओं और "
-"विराम चिह्नों के मिश्रण का उपयोग करना होगा।"
+msgstr "यह एक कमज़ोर पासवर्ड है। एक ही प्रकार के अक्षरों को न दोहराएँ: आपको अक्षरों, संख्याओं और विराम चिह्नों के मिश्रण का उपयोग करना होगा।"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
@@ -705,26 +677,23 @@ msgstr "अपरकेस और लोअरकेस मिलाएं औ�
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
 msgstr "अधिक अक्षर, संख्याएं और विराम चिह्न जोड़ना पासवर्ड को और मजबूत बना देगा."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"तकनीकी समस्याओं की रिपोर्ट भेजने से हमें सुधार करने में सहायता मिलती है%s. रिपोर्ट्स अनाम "
-"रूप से भेजी जाती हैं और व्यकितिगत डेटा से मिटा दी जाती हैं."
+msgstr "तकनीकी समस्याओं की रिपोर्ट भेजने से हमें सुधार करने में सहायता मिलती है%s. रिपोर्ट्स अनाम रूप से भेजी जाती हैं और व्यकितिगत डेटा से मिटा दी जाती हैं."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -753,9 +722,7 @@ msgstr "स्थान सेवाएँ"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"एप्लिकेशन को आपका भौगोलिक स्थान निश्चित करने देती हैं. जब स्थान सेवाएँ उपयोग में होती हैं "
-"तो एक संकेत दिखाया जाता है."
+msgstr "एप्लिकेशन को आपका भौगोलिक स्थान निश्चित करने देती हैं. जब स्थान सेवाएँ उपयोग में होती हैं तो एक संकेत दिखाया जाता है."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -774,9 +741,7 @@ msgstr "साइट"
 msgid ""
 "At which site is this computer located? Search for your site here. You may "
 "enter manually if there is no match."
-msgstr ""
-"यह कंप्यूटर किस साइट पर स्थित है? अपनी साइट को यहाँ खोजें। यदि कोई मेल नहीं है, तो आप "
-"मैन्युअल रूप से दर्ज कर सकते हैं।"
+msgstr "यह कंप्यूटर किस साइट पर स्थित है? अपनी साइट को यहाँ खोजें। यदि कोई मेल नहीं है, तो आप मैन्युअल रूप से दर्ज कर सकते हैं।"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:78
 msgid "enter manually"
@@ -818,11 +783,9 @@ msgstr "%s_का उपयोग प्रारंभ करें "
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:236
-#, fuzzy, c-format
+#, c-format
 msgid "%s is ready to be used. We hope that you love it!"
 msgstr ""
-"%s चुनने के लिए आपका हार्दिक धन्यवाद.\n"
-"हमें उम्मीद है कि आप इसे पसंद करेंगे."
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:260
 msgid "You're ready to try Endless OS"
@@ -832,17 +795,13 @@ msgstr "आप एंड्लेस ओ एस का आज़माने क
 msgid ""
 "<b>System software updates are unavailable when running from evaluation "
 "media. Please install Endless if you like it!</b>"
-msgstr ""
-" <b>मूल्यांकन मीडिया से चलने पर सिस्टम सॉफ्टवेयर अपडेट अनुपलब्ध हैं।  यदि आप इसे पसंद करते हैं "
-"तो कृपया अंतहीन इंस्टाल करें! </b>"
+msgstr " <b>मूल्यांकन मीडिया से चलने पर सिस्टम सॉफ्टवेयर अपडेट अनुपलब्ध हैं।  यदि आप इसे पसंद करते हैं तो कृपया अंतहीन इंस्टाल करें! </b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:267
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
-msgstr ""
-"<b>जब आप कंप्यूटर रीस्टार्ट करते हैं या शटडाउन करते हैं, तो कोई भी फ़ाइल जो आप डाउनलोड "
-"करते हैं या दस्तावेज़ जो आप बनाते हैं, हमेशा के लिए गुम हो सकतेे हैं.</b>"
+msgstr "<b>जब आप कंप्यूटर रीस्टार्ट करते हैं या शटडाउन करते हैं, तो कोई भी फ़ाइल जो आप डाउनलोड करते हैं या दस्तावेज़ जो आप बनाते हैं, हमेशा के लिए गुम हो सकतेे हैं.</b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:277
 msgid "Setup Complete"
@@ -861,7 +820,6 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -892,254 +850,8 @@ msgstr "समय क्षेत्र"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"यदि आपका स्थान मिल जाता है तो समय क्षेत्र स्वचालित रूप से सेट किया जाएगा. आप स्वयं इसे "
-"सेट करने के लिए किसी शहर की खोज भी कर सकते हैं."
+msgstr "यदि आपका स्थान मिल जाता है तो समय क्षेत्र स्वचालित रूप से सेट किया जाएगा. आप स्वयं इसे सेट करने के लिए किसी शहर की खोज भी कर सकते हैं."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
 msgstr "कोई आस-पड़ोस का शहर ढूंढें"
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "क्या ये विवरण सही हैं? यदि आप चाहें तो इन्हें बदल सकते हैं."
-
-#~ msgid "Take a photo..."
-#~ msgstr "एक फ़ोटो खींचें..."
-
-#~ msgid "A user with the username '%s' already exists."
-#~ msgstr "एक उपयोक्ता इस नाम '%s' से पहले से ही मौजूद है."
-
-#~ msgid "License Agreements"
-#~ msgstr "लाइसेंस अनुबंध"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr "हम इस उपयोगकर्ता लाइसेंस अनुबंध के नियमों एवं शर्तों से सहमत हैं. (_a)"
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr ""
-#~ "सेटअप के बाद आप अपने ऑनलाइन खाते की समीक्षा कर सकते हैं (तथा अन्य जोड़ सकते हैं)."
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "इंटरनेट से कनेक्ट करने पर आप समय सेट कर सकते हैं, अपने विवरण जोड़ सकते हैं तथा अपने ईमेल, "
-#~ "कैलेंडर और संपर्कों का उपयोग कर सकते हैं. यह एंटरप्राइज़ लॉगिन के लिए भी आवश्यक है."
-
-#~ msgid "_Verify"
-#~ msgstr "सत्यापित करें (_V)"
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to add more letters, numbers and symbols."
-#~ msgstr "कोशिश करें कि और अक्षर, अंक तथा चिह्न जोड़ें."
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "सामर्थ्य: कमजोर"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "सामर्थ्य: निम्न"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "सामर्थ्य: मध्यम [कूटशब्द सामर्थ्य]"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "सामर्थ्य: बढ़िया [कूटशब्द सामर्थ्य]"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "सामर्थ्य: उच्च [कूटशब्द सामर्थ्य]"
-
-#~ msgid "No regions found"
-#~ msgstr "कोई क्षेत्र नहीं मिला"
-
-#~ msgid "Region"
-#~ msgstr "क्षेत्र"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "अपना देश या क्षेत्र चुनें"
-
-#~ msgid "Ready to Go"
-#~ msgstr "जारी रखने के लिए तैयार हैं"
-
-#~ msgid "You're all set!"
-#~ msgstr "आप पूरी तरह से तैयार हैं!"
-
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "हमें लगता है कि आपका समयक्षेत्र %s है. जारी रखने के लिए अगला दबाएं या समयक्षेत्र स्वयं "
-#~ "सेट करने के लिए कोई शहर ढूंढें."
-
-#~ msgid "Login"
-#~ msgstr "लॉगइन"
-
-#~ msgid "Create a Local Account"
-#~ msgstr "स्थानीय खाता बनाएँ"
-
-#~ msgid "page 1"
-#~ msgstr "पृष्ठ 1"
-
-#~ msgctxt "Password strength"
-#~ msgid "Too short"
-#~ msgstr "बहुत छोटा"
-
-#~ msgctxt "Password strength"
-#~ msgid "Not good enough"
-#~ msgstr "बहुत अच्छा नहीं"
-
-#~ msgctxt "Password strength"
-#~ msgid "Weak"
-#~ msgstr "कमजोर "
-
-#~ msgctxt "Password strength"
-#~ msgid "Fair"
-#~ msgstr "साफ"
-
-#~ msgctxt "Password strength"
-#~ msgid "Good"
-#~ msgstr "अच्छा"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strong"
-#~ msgstr "मजबूत"
-
-#~ msgid "Error creating account"
-#~ msgstr "खाता बनाने में त्रुटि"
-
-#~ msgid "Error removing account"
-#~ msgstr "खाता हटाने में त्रुटि"
-
-#~ msgid "Are you sure you want to remove the account?"
-#~ msgstr "क्या आप वाक़ई ख़ाता को मिटाना चाहते हैं?"
-
-#~ msgid "This will not remove the account on the server."
-#~ msgstr "यह सर्वर पर खाता को हटा देगा."
-
-#~ msgid "_Remove"
-#~ msgstr "हटाएं (_R)"
-
-#~ msgid "Connect to your existing data in the cloud"
-#~ msgstr "क्लाउड में अपने मौजूदा डेटा को कनेक्ट करें"
-
-#~ msgid "_Add Account"
-#~ msgstr "खाता जोड़ें (_A)"
-
-#~ msgid "Other"
-#~ msgstr "अन्य"
-
-#~ msgid "Input Sources"
-#~ msgstr "इनपुट स्रोत"
-
-#~ msgid "Select input sources"
-#~ msgstr "इनपुट सूत्रों का चयन करें"
-
-#~ msgid "Login settings are used by all users when logging into the system"
-#~ msgstr ""
-#~ "लॉगइन सेटिंग्स सभी उपयोक्ताओं द्वारा उपयोग किया जाता है जब तंत्र में प्रवेश करते हैं"
-
-#~ msgid "Add an Input Source"
-#~ msgstr "इनपुट स्रोत जोड़ें "
-
-#~ msgid "Search for a location"
-#~ msgstr "किसी स्थान के लिए ढूंढें"
-
-#~ msgid "_Determine your location automatically"
-#~ msgstr "अपने स्थान को स्वतः सुनिश्चित करें (_D)"
-
-#~ msgid "Network is not available."
-#~ msgstr "संजाल उपलब्ध नहीं है."
-
-#~ msgid "No network devices found."
-#~ msgstr "कोई संजाल युक्ति नहीं मिला."
-
-#~ msgid "Thank You"
-#~ msgstr "शुक्रिया"
-
-#~ msgid "Your computer is ready to use."
-#~ msgstr "आपका कंप्यूटर का उपयोग करने के लिए तैयार है."
-
-#~ msgid "You may change these options at any time in Settings."
-#~ msgstr "आप सेटिंग में किसी भी समय पर इन विकल्पों को बदल सकते हैं."
-
-#~ msgid "_Back"
-#~ msgstr "पीछे (_B)"
-
-#~ msgid "Sorry"
-#~ msgstr "क्षमा करें"
-
-#~ msgid "Input methods can't be used on the login screen"
-#~ msgstr "इनपुट विधि लॉगिन स्क्रीन पर नहीं किया जा सकता"
-
-#~ msgid "No input source selected"
-#~ msgstr "कोई इनपुट स्रोत चयनित नहीं"
-
-#~ msgid "Remove Input Source"
-#~ msgstr "इनपुट स्रोत निकालें"
-
-#~ msgid "Move Input Source Up"
-#~ msgstr "इनपुट स्रोत ऊपर ले जाएं"
-
-#~ msgid "Show Keyboard Layout"
-#~ msgstr "कुंजीपट लेआउट दिखाएँ"
-
-#~ msgid "Select an input source"
-#~ msgstr "एक इनपुट स्रोत का चयन करें"
-
-#~ msgid "Create Local Account"
-#~ msgstr "स्थानीय खाता बनाएँ"
-
-#~ msgid "_Done"
-#~ msgstr "संपन्न (_D)"
-
-#~ msgid "_Require a password to use this account"
-#~ msgstr "इस खाते का उपयोग करने के लिए एक कूटशब्द की आवश्यकता होती है (_R)"
-
-#~ msgid "_Act as administrator of this computer"
-#~ msgstr "इस कंप्यूटर के प्रशासक के रूप में कार्य करें (_A)"
-
-#~ msgid "Choose How to Login"
-#~ msgstr "लॉगिन करने के लिए चुनें"
-
-#~ msgid "Remove"
-#~ msgstr "हटाएँ"
-
-#~ msgid "English"
-#~ msgstr "अंग्रेज़ी"
-
-#~ msgid "British English"
-#~ msgstr "ब्रिटिश अंग्रेज़ी"
-
-#~ msgid "German"
-#~ msgstr "जर्मन"
-
-#~ msgid "French"
-#~ msgstr "फ्रांसीसी"
-
-#~ msgid "Spanish"
-#~ msgstr "स्पेनी"
-
-#~ msgid "Chinese (simplified)"
-#~ msgstr "चीनी (सरल)"
-
-#~ msgid "Unspecified"
-#~ msgstr "अविशिष्ट"
-
-#~ msgid "Use %s"
-#~ msgstr "प्रयोग करें %s"
-
-#~ msgid "Show _all"
-#~ msgstr "सभी दिखायें (_a)"
-
-#~ msgid "Enjoy GNOME!"
-#~ msgstr "गनोम का आनंद लें!"
-
-#~ msgid "New to GNOME 3 and need help finding your way around?"
-#~ msgstr "गनोम 3 के लिए नये हैं और अपना तरीके से जानने के लिए मदद चाहते हैं?"
