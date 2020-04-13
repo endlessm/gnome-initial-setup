@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 "issues\n"
-"POT-Creation-Date: 2020-02-14 16:48+0000\n"
+"POT-Creation-Date: 2020-04-13 21:14+0100\n"
 "PO-Revision-Date: 2020-02-14 23:32+0100\n"
 "Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "Language-Team: српски <gnome-sr@googlegroups.org>\n"
@@ -25,31 +25,92 @@ msgstr ""
 msgid "Initial Setup"
 msgstr "Почетно подешавање"
 
-#: gnome-initial-setup/gis-assistant.c:419
+#: gnome-initial-setup/gis-assistant.c:440
 msgid "_Next"
 msgstr "_Следеће"
 
-#: gnome-initial-setup/gis-assistant.c:420
+#: gnome-initial-setup/gis-assistant.c:441
 msgid "_Accept"
 msgstr "Прихв_ати"
 
-#: gnome-initial-setup/gis-assistant.c:421
+#: gnome-initial-setup/gis-assistant.c:442
 msgid "_Skip"
 msgstr "Пре_скочи"
 
-#: gnome-initial-setup/gis-assistant.c:422
+#: gnome-initial-setup/gis-assistant.c:443
 msgid "_Previous"
 msgstr "_Претходно"
 
-#: gnome-initial-setup/gis-assistant.c:423
+#: gnome-initial-setup/gis-assistant.c:444
 msgid "_Cancel"
 msgstr "_Откажи"
 
-#: gnome-initial-setup/gnome-initial-setup.c:241
+#: gnome-initial-setup/gis-driver.c:811
+#, fuzzy, c-format
+msgid "Failed to enter demo mode: %s"
+msgstr "Нисам успео да приступим домену"
+
+#: gnome-initial-setup/gis-page-util.c:431
+msgid "Unknown"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.c:433
+#, c-format
+msgid "Image: %s"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.c:442
+#, fuzzy
+msgid "Disabled"
+msgstr "Искључи слику"
+
+#: gnome-initial-setup/gis-page-util.c:444
+#, c-format
+msgid "SD Card: %s"
+msgstr ""
+
+#. Translators: this is shown when launching the
+#. * reformatter (an external program) fails. The
+#. * placeholder is an error message describing what went
+#. * wrong.
+#.
+#: gnome-initial-setup/gis-page-util.c:549
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:29
+msgid "Test Mode"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:55
+msgid "Power Off"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:190
+msgid "Enter Store Demo"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:195
+msgid "OK"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:202
+msgid "Cancel"
+msgstr "Откажи"
+
+#: gnome-initial-setup/gis-page-util.ui:212
+msgid ""
+"This allows you to try Endless without activating an account. No changes or "
+"files will be saved, and the computer will return to a clean factory state "
+"when you power it off."
+msgstr ""
+
+#: gnome-initial-setup/gnome-initial-setup.c:340
 msgid "Force existing user mode"
 msgstr "Приморај режим постојећег корисника"
 
-#: gnome-initial-setup/gnome-initial-setup.c:247
+#: gnome-initial-setup/gnome-initial-setup.c:346
 msgid "— GNOME initial setup"
 msgstr "— Почетно подешавање Гнома"
 
@@ -136,16 +197,16 @@ msgstr "Име _администратора"
 msgid "Administrator Password"
 msgstr "Лозинка администратора"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:206
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "Проверите име и корисничко име. Можете такође и слику да изаберете."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:455
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:461
 msgid "We need a few details to complete setup."
 msgstr ""
 "Потребно нам је још пар детаља да бисмо завршили са почетним подешавањем."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:562
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:591
 msgid "Administrator"
 msgstr "Администратор"
 
@@ -154,7 +215,7 @@ msgid "Avatar image"
 msgstr "Слика аватара"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:38
-#: gnome-initial-setup/pages/account/gis-account-page.c:281
+#: gnome-initial-setup/pages/account/gis-account-page.c:317
 msgid "About You"
 msgstr "О вама"
 
@@ -166,11 +227,16 @@ msgstr "Доставите име и корисничко име. Можете �
 msgid "_Full Name"
 msgstr "_Име и презиме"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:149
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:144
+#, fuzzy
+msgid "Set a password"
+msgstr "Подесите лозинку"
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:160
 msgid "Set up _parental controls for this user"
 msgstr "_Подеси родитељско управљање за овог корисника"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:156
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:167
 msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 "За коришћење од стране родитеља или старатеља који мора подесити своју "
@@ -184,48 +250,47 @@ msgstr "П_ословна пријава"
 msgid "Go online to set up Enterprise Login."
 msgstr "Повежите се на мрежу да бисте подесили пословну пријаву."
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:310
+#: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
 msgstr "Не могу сам да приступим овој врсти домена"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:373
-#, c-format
+#: gnome-initial-setup/pages/account/um-realm-manager.c:269
 msgid "No such domain or realm found"
 msgstr "Није пронађен такав домен или подручје"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:782
-#: gnome-initial-setup/pages/account/um-realm-manager.c:796
+#: gnome-initial-setup/pages/account/um-realm-manager.c:723
+#: gnome-initial-setup/pages/account/um-realm-manager.c:737
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
 msgstr "Не могу да се пријавим као „%s“ на домену %s"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:788
+#: gnome-initial-setup/pages/account/um-realm-manager.c:729
 msgid "Invalid password, please try again"
 msgstr "Неисправна лозинка, покушајте поново"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:801
+#: gnome-initial-setup/pages/account/um-realm-manager.c:742
 #, c-format
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Не могу да се повежем на домен „%s“: %s"
 
-#: gnome-initial-setup/pages/account/um-utils.c:248
+#: gnome-initial-setup/pages/account/um-utils.c:256
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr "Извините, ово корисничко име није доступно. Пробајте неко друго."
 
-#: gnome-initial-setup/pages/account/um-utils.c:251
+#: gnome-initial-setup/pages/account/um-utils.c:259
 #, c-format
 msgid "The username is too long."
 msgstr "Корисничко име је предуго."
 
-#: gnome-initial-setup/pages/account/um-utils.c:254
+#: gnome-initial-setup/pages/account/um-utils.c:262
 msgid "The username cannot start with a “-”."
 msgstr "Корисничко име не може почињати са „-“."
 
-#: gnome-initial-setup/pages/account/um-utils.c:257
+#: gnome-initial-setup/pages/account/um-utils.c:265
 msgid "That username isn’t available. Please try another."
 msgstr "Ово корисничко име није доступно. Пробајте неко друго."
 
-#: gnome-initial-setup/pages/account/um-utils.c:260
+#: gnome-initial-setup/pages/account/um-utils.c:268
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
@@ -233,11 +298,61 @@ msgstr ""
 "Корисничко име треба да садржи само слова из енглеског алфабета (a-z), "
 "бројеве и следеће знакове (. - _)."
 
-#: gnome-initial-setup/pages/account/um-utils.c:264
+#: gnome-initial-setup/pages/account/um-utils.c:272
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr ""
 "Ово ће бити коришћено за именовање ваше личне фасцикле и не може се мењати "
 "касније."
+
+#: gnome-initial-setup/pages/display/gis-display-page.c:249
+msgid "Display"
+msgstr ""
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:39
+msgid "Adjust for TV screen"
+msgstr ""
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:57
+msgid "Do you see this at the bottom right corner of your screen?"
+msgstr ""
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:105
+msgid "I see it"
+msgstr ""
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:121
+msgid "I do not see it. Shrink screen to fit TV."
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:138
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
+msgid "Terms of Use"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
+msgid "Please read the following terms of use carefully"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
+msgid ""
+"By clicking \"Accept,\" you acknowledge that you have read, understood, and "
+"agree to be bound by the following terms and conditions."
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
+msgid "Help make Endless better for everyone"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
+msgid ""
+"Automatically save and send usage statistics and problem reports to Endless. "
+"All data is anonymous."
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
+#, fuzzy
+msgid "Third Party Software"
+msgstr "Ризнице треће стране"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -264,23 +379,37 @@ msgid ""
 "Accounts can be added and removed at any time from the Settings application."
 msgstr "Налози могу бити додати и уклоњени било када у подешавањима програма."
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:240
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
 msgstr "Преглед"
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:299
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:227
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:291
 msgid "More…"
 msgstr "Још…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
 #.
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:321
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Нисам пронашао уносе"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:482
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
+#, fuzzy
+msgid "Your keyboard layout seems to be:"
+msgstr "Изаберите распоред тастатуре или начин уноса."
+
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
+msgid "Please press one of the following keys:"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
+msgid "Is the following key present on your keyboard?"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:519
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
 msgid "Typing"
 msgstr "Куцање"
@@ -289,11 +418,31 @@ msgstr "Куцање"
 msgid "Select your keyboard layout or an input method."
 msgstr "Изаберите распоред тастатуре или начин уноса."
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:243
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
+msgid "Help Detect My Keyboard Layout"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
+msgid "Detect Keyboard Layout…"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
+msgid "_Select"
+msgstr ""
+
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:307
 msgid "No languages found"
 msgstr "Нисам пронашао језик"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:262
+#: gnome-initial-setup/pages/language/gis-language-page.c:313
+msgid "Enter Store Demo…"
+msgstr ""
+
+#: gnome-initial-setup/pages/language/gis-language-page.c:325
+msgid "Welcome to Store Demo"
+msgstr ""
+
+#: gnome-initial-setup/pages/language/gis-language-page.c:327
 msgid "Welcome"
 msgstr "Добро дошли"
 
@@ -304,6 +453,35 @@ msgstr "Добро дошли"
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "Добро дошли!"
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
+msgid "Try Endless OS by running it from the USB Stick."
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
+msgid "Try Endless OS by running it from the DVD."
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
+msgid "Reformat this computer with Endless OS."
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
+msgid "Try It"
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:180
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
+msgid "Reformat"
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
+msgid "Try or Reformat"
+msgstr ""
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:318
 msgctxt "Wireless access point"
@@ -329,13 +507,9 @@ msgstr "Бежична мрежа"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:19
 msgid ""
-"Connecting to the Internet will enable you to set the time, add your "
-"details, and enable you to access your email, calendar, and contacts. It is "
-"also necessary for enterprise login accounts."
+"Connecting to the internet helps you get new apps, information, and other "
+"upgrades. It also helps set the time and your location automatically."
 msgstr ""
-"Повезивање на интернет ће вам омогућити да подесите ваше време, да додате "
-"детаље и да приступите вашим е-порукама, календару и контактима. Такође, "
-"излаз на интернет је неопходан за пословну пријаву."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -346,63 +520,79 @@ msgid "Turn On"
 msgstr "Укључи"
 
 #. Translators: The placeholder is the user’s full name.
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:110
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:143
 #, c-format
 msgid "Parental Controls for %s"
 msgstr "Родитељско управљање за %s"
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:112
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:145
 msgid "Set restrictions on what this user can run or install."
 msgstr ""
 "Подеси ограничења на ствари које овај корисник може покренути или "
 "инсталирати."
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:207
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:240
 msgid "Parental Controls"
 msgstr "Родитељско управљање"
 
 #. Don’t break UI compatibility if parental controls are disabled.
-#: gnome-initial-setup/pages/password/gis-password-page.c:79
+#: gnome-initial-setup/pages/password/gis-password-page.c:83
 msgid "Set a Password"
 msgstr "Подесите лозинку"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:80
-#: gnome-initial-setup/pages/password/gis-password-page.c:89
+#: gnome-initial-setup/pages/password/gis-password-page.c:84
+#: gnome-initial-setup/pages/password/gis-password-page.c:93
 msgid "Be careful not to lose your password."
 msgstr "Пазите да не изгубите лозинку."
 
 #. Translators: The placeholder is for the user’s full name.
-#: gnome-initial-setup/pages/password/gis-password-page.c:87
+#: gnome-initial-setup/pages/password/gis-password-page.c:91
 #, c-format
 msgid "Set a Password for %s"
 msgstr "Подесите лозинку за корисника %s"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:95
+#: gnome-initial-setup/pages/password/gis-password-page.c:99
 msgid "Set a Parent Password"
 msgstr "Подеси родитељску лозинку"
 
 #. Translators: The placeholder is the full name of the child user on the system.
-#: gnome-initial-setup/pages/password/gis-password-page.c:97
+#: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
 msgstr ""
 "Ова лозинка ће управљати приступом за родитељско управљање за налог %s."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:233
-msgid "This is a weak password."
-msgstr "Ово је слаба лозинка."
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:239
+#: gnome-initial-setup/pages/password/gis-password-page.c:261
 msgid "The passwords do not match."
 msgstr "Лозинке се не подударају."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:425
+#: gnome-initial-setup/pages/password/gis-password-page.c:306
+#: gnome-initial-setup/pages/password/gis-password-page.c:337
+#, fuzzy
+msgid "Show password"
+msgstr "Без лозинке"
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:345
+#, fuzzy
+msgid "Hide password"
+msgstr "Без лозинке"
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:548
 msgid "Password"
 msgstr "Лозинка"
 
-#: gnome-initial-setup/pages/password/gis-password-page.ui:66
+#: gnome-initial-setup/pages/password/gis-password-page.ui:69
 msgid "_Confirm"
 msgstr "_Потврди"
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:202
+#, fuzzy
+msgid "Password _reminder"
+msgstr "Лозинка"
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:217
+msgid "Password reminder will be shown in case you forget your password."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -593,10 +783,48 @@ msgstr ""
 "Подешавања приватности можете изменити у било ком тренутку у подешавањима "
 "програма."
 
+#: gnome-initial-setup/pages/site/gis-site-page.ui:33
+msgid "Site"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:54
+msgid ""
+"At which site is this computer located? Search for your site here. You may "
+"enter manually if there is no match."
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:78
+msgid "enter manually"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:102
+msgid "ID"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:131
+msgid "Facility"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:160
+msgid "Street address"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:189
+msgid "City"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:218
+msgid "State"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:247
+msgid "Country"
+msgstr ""
+
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:227
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:229
 #, c-format
 msgid "_Start Using %s"
 msgstr "За_почни коришћење дистрибуције „%s“"
@@ -604,22 +832,38 @@ msgstr "За_почни коришћење дистрибуције „%s“"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:234
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:236
 #, c-format
 msgid "%s is ready to be used. We hope that you love it!"
 msgstr ""
 "Дистрибуција „%s“ је спремна за коришћење. Надамо се да ће вам се свидети!"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:258
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:260
+msgid "You're ready to try Endless OS"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:263
+msgid ""
+"<b>System software updates are unavailable when running from evaluation "
+"media. Please install Endless if you like it!</b>"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:267
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:277
 msgid "Setup Complete"
 msgstr "Подешавање је завршено"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:70
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:92
 msgid "All done!"
 msgstr "Готово!"
 
 #. Translators: "city, country"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:261
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:268
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
@@ -628,28 +872,28 @@ msgstr "%s, %s"
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
 #.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:298
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
 
 #. Translators: This is the time format used in 12-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:312
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: This is the time format used in 24-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:315
 msgid "%R"
 msgstr "%R"
 
 #. Translators: "timezone (utc shift)"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:318
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:462
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:472
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:17
 msgid "Time Zone"
 msgstr "Временска зона"
@@ -665,6 +909,18 @@ msgstr ""
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
 msgstr "Потражите најближи град"
+
+#~ msgid ""
+#~ "Connecting to the Internet will enable you to set the time, add your "
+#~ "details, and enable you to access your email, calendar, and contacts. It "
+#~ "is also necessary for enterprise login accounts."
+#~ msgstr ""
+#~ "Повезивање на интернет ће вам омогућити да подесите ваше време, да додате "
+#~ "детаље и да приступите вашим е-порукама, календару и контактима. Такође, "
+#~ "излаз на интернет је неопходан за пословну пријаву."
+
+#~ msgid "This is a weak password."
+#~ msgstr "Ово је слаба лозинка."
 
 #~ msgid "preferences-system"
 #~ msgstr "preferences-system"
@@ -706,9 +962,6 @@ msgstr "Потражите најближи град"
 #~ msgid "<a href=\"more\">Find out more…</a>"
 #~ msgstr "<a href=\"more\">Пронађи још…</a>"
 
-#~ msgid "Third Party Repositories"
-#~ msgstr "Ризнице треће стране"
-
 #~ msgid ""
 #~ "Proprietary software typically has restrictions on how it can be used and "
 #~ "on access to source code. This prevents anyone but the software owner "
@@ -730,9 +983,6 @@ msgstr "Потражите најближи град"
 
 #~ msgid "You’re ready to go!"
 #~ msgstr "Спремни сте за полазак!"
-
-#~ msgid "Disable image"
-#~ msgstr "Искључи слику"
 
 #~ msgctxt "Password hint"
 #~ msgid "Try to avoid common words."
@@ -805,13 +1055,6 @@ msgstr "Потражите најближи град"
 #~ msgstr ""
 #~ "Мислимо да је ваша временска зона „%s“. Притисните „Следеће“ да наставите "
 #~ "или потражите град за ручно подешавање временске зоне."
-
-#~| msgid "_Cancel"
-#~ msgid "Cancel"
-#~ msgstr "Откажи"
-
-#~ msgid "No password"
-#~ msgstr "Без лозинке"
 
 #~ msgid "Login"
 #~ msgstr "Пријава"

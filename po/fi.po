@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 "issues\n"
-"POT-Creation-Date: 2020-02-14 16:48+0000\n"
+"POT-Creation-Date: 2020-04-13 21:14+0100\n"
 "PO-Revision-Date: 2020-02-22 16:46+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
@@ -24,31 +24,92 @@ msgstr ""
 msgid "Initial Setup"
 msgstr "Alkuasetukset"
 
-#: gnome-initial-setup/gis-assistant.c:419
+#: gnome-initial-setup/gis-assistant.c:440
 msgid "_Next"
 msgstr "_Seuraava"
 
-#: gnome-initial-setup/gis-assistant.c:420
+#: gnome-initial-setup/gis-assistant.c:441
 msgid "_Accept"
 msgstr "_Hyväksy"
 
-#: gnome-initial-setup/gis-assistant.c:421
+#: gnome-initial-setup/gis-assistant.c:442
 msgid "_Skip"
 msgstr "_Ohita"
 
-#: gnome-initial-setup/gis-assistant.c:422
+#: gnome-initial-setup/gis-assistant.c:443
 msgid "_Previous"
 msgstr "_Edellinen"
 
-#: gnome-initial-setup/gis-assistant.c:423
+#: gnome-initial-setup/gis-assistant.c:444
 msgid "_Cancel"
 msgstr "_Peru"
 
-#: gnome-initial-setup/gnome-initial-setup.c:241
+#: gnome-initial-setup/gis-driver.c:811
+#, fuzzy, c-format
+msgid "Failed to enter demo mode: %s"
+msgstr "Toimialueeseen liittyminen epäonnistui"
+
+#: gnome-initial-setup/gis-page-util.c:431
+msgid "Unknown"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.c:433
+#, c-format
+msgid "Image: %s"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.c:442
+#, fuzzy
+msgid "Disabled"
+msgstr "Poista kuva käytöstä"
+
+#: gnome-initial-setup/gis-page-util.c:444
+#, c-format
+msgid "SD Card: %s"
+msgstr ""
+
+#. Translators: this is shown when launching the
+#. * reformatter (an external program) fails. The
+#. * placeholder is an error message describing what went
+#. * wrong.
+#.
+#: gnome-initial-setup/gis-page-util.c:549
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:29
+msgid "Test Mode"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:55
+msgid "Power Off"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:190
+msgid "Enter Store Demo"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:195
+msgid "OK"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:202
+msgid "Cancel"
+msgstr "Peru"
+
+#: gnome-initial-setup/gis-page-util.ui:212
+msgid ""
+"This allows you to try Endless without activating an account. No changes or "
+"files will be saved, and the computer will return to a clean factory state "
+"when you power it off."
+msgstr ""
+
+#: gnome-initial-setup/gnome-initial-setup.c:340
 msgid "Force existing user mode"
 msgstr "Pakota olemassa oleva käyttäjä -tila"
 
-#: gnome-initial-setup/gnome-initial-setup.c:247
+#: gnome-initial-setup/gnome-initial-setup.c:346
 msgid "— GNOME initial setup"
 msgstr "— Gnomen alkuasetukset"
 
@@ -135,15 +196,15 @@ msgstr "Ylläpitäjän _nimi"
 msgid "Administrator Password"
 msgstr "Ylläpitäjän salasana"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:206
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "Tarkista nimi ja käyttäjätunnus. Voit valita myös kuvan."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:455
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:461
 msgid "We need a few details to complete setup."
 msgstr "Vielä muutama asia, ennen kuin kaikki on valmista."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:562
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:591
 msgid "Administrator"
 msgstr "Ylläpitäjä"
 
@@ -152,7 +213,7 @@ msgid "Avatar image"
 msgstr "Käyttäjäkuva"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:38
-#: gnome-initial-setup/pages/account/gis-account-page.c:281
+#: gnome-initial-setup/pages/account/gis-account-page.c:317
 msgid "About You"
 msgstr "Tietoja sinusta"
 
@@ -164,11 +225,16 @@ msgstr "Anna nimi ja käyttäjätunnus. Voit valita myös kuvan."
 msgid "_Full Name"
 msgstr "_Koko nimi"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:149
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:144
+#, fuzzy
+msgid "Set a password"
+msgstr "Aseta salasana"
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:160
 msgid "Set up _parental controls for this user"
 msgstr "Aseta _perheasetukset tälle käyttäjälle"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:156
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:167
 msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr "Vanhemmalle tai valvojalle, jonka tulee asettaa oma salasanansa."
 
@@ -180,52 +246,51 @@ msgstr "_Yrityskirjautuminen"
 msgid "Go online to set up Enterprise Login."
 msgstr "Yhdistä verkkoon määrittääksesi yrityskirjautumisen asetukset."
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:310
+#: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
 msgstr "Tällaiseen toimialueeseen ei voi liittyä automaattisesti"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:373
-#, c-format
+#: gnome-initial-setup/pages/account/um-realm-manager.c:269
 msgid "No such domain or realm found"
 msgstr "Kyseistä toimialuetta tai realmia ei löytynyt"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:782
-#: gnome-initial-setup/pages/account/um-realm-manager.c:796
+#: gnome-initial-setup/pages/account/um-realm-manager.c:723
+#: gnome-initial-setup/pages/account/um-realm-manager.c:737
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
 msgstr "Kirjautuminen tunnuksella %s toimialueeseen %s epäonnistui"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:788
+#: gnome-initial-setup/pages/account/um-realm-manager.c:729
 msgid "Invalid password, please try again"
 msgstr "Virheellinen salasana, yritä uudelleen"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:801
+#: gnome-initial-setup/pages/account/um-realm-manager.c:742
 #, c-format
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Toimialueeseen %s yhdistäminen epäonnistui: %s"
 
-#: gnome-initial-setup/pages/account/um-utils.c:248
+#: gnome-initial-setup/pages/account/um-utils.c:256
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr ""
 "Valitettavasti kyseinen käyttäjätunnus ei ole käytettävissä. Valitse toinen "
 "käyttäjätunnus."
 
-#: gnome-initial-setup/pages/account/um-utils.c:251
+#: gnome-initial-setup/pages/account/um-utils.c:259
 #, c-format
 msgid "The username is too long."
 msgstr "Käyttäjätunnus on liian pitkä."
 
-#: gnome-initial-setup/pages/account/um-utils.c:254
+#: gnome-initial-setup/pages/account/um-utils.c:262
 msgid "The username cannot start with a “-”."
 msgstr "Käyttäjätunnus ei voi alkaa merkillä “-”."
 
-#: gnome-initial-setup/pages/account/um-utils.c:257
+#: gnome-initial-setup/pages/account/um-utils.c:265
 msgid "That username isn’t available. Please try another."
 msgstr ""
 "Valitettavasti kyseinen käyttäjätunnus ei ole käytettävissä. Valitse toinen "
 "käyttäjätunnus."
 
-#: gnome-initial-setup/pages/account/um-utils.c:260
+#: gnome-initial-setup/pages/account/um-utils.c:268
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
@@ -233,10 +298,60 @@ msgstr ""
 "Käyttäjätunnus voi koostua vain suurista ja pienistä kirjaimista a-z, "
 "numeroista ja merkeistä:  . - _"
 
-#: gnome-initial-setup/pages/account/um-utils.c:264
+#: gnome-initial-setup/pages/account/um-utils.c:272
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr ""
 "Tätä käytetään kotikansiosi nimeämiseen, eikä sitä voi vaihtaa myöhemmin."
+
+#: gnome-initial-setup/pages/display/gis-display-page.c:249
+msgid "Display"
+msgstr ""
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:39
+msgid "Adjust for TV screen"
+msgstr ""
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:57
+msgid "Do you see this at the bottom right corner of your screen?"
+msgstr ""
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:105
+msgid "I see it"
+msgstr ""
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:121
+msgid "I do not see it. Shrink screen to fit TV."
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:138
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
+msgid "Terms of Use"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
+msgid "Please read the following terms of use carefully"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
+msgid ""
+"By clicking \"Accept,\" you acknowledge that you have read, understood, and "
+"agree to be bound by the following terms and conditions."
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
+msgid "Help make Endless better for everyone"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
+msgid ""
+"Automatically save and send usage statistics and problem reports to Endless. "
+"All data is anonymous."
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
+#, fuzzy
+msgid "Third Party Software"
+msgstr "Kolmansien osapuolten ohjelmistolähteet"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -263,23 +378,37 @@ msgid ""
 "Accounts can be added and removed at any time from the Settings application."
 msgstr "Tilejä voi lisätä ja poistaa milloin tahansa järjestelmän asetuksista."
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:240
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
 msgstr "Esikatselu"
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:299
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:227
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:291
 msgid "More…"
 msgstr "Lisää…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
 #.
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:321
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Syötelähteitä ei löytynyt"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:482
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
+#, fuzzy
+msgid "Your keyboard layout seems to be:"
+msgstr "Näytä näppäimistön asettelut"
+
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
+msgid "Please press one of the following keys:"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
+msgid "Is the following key present on your keyboard?"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:519
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
 msgid "Typing"
 msgstr "Kirjoittaminen"
@@ -288,11 +417,33 @@ msgstr "Kirjoittaminen"
 msgid "Select your keyboard layout or an input method."
 msgstr "Valitse näppäimistön asettelu tai muu syötetapa."
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:243
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
+#, fuzzy
+msgid "Help Detect My Keyboard Layout"
+msgstr "Näytä näppäimistön asettelut"
+
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
+#, fuzzy
+msgid "Detect Keyboard Layout…"
+msgstr "Näppäimistön asettelu"
+
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
+msgid "_Select"
+msgstr ""
+
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:307
 msgid "No languages found"
 msgstr "Kieliä ei löytynyt"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:262
+#: gnome-initial-setup/pages/language/gis-language-page.c:313
+msgid "Enter Store Demo…"
+msgstr ""
+
+#: gnome-initial-setup/pages/language/gis-language-page.c:325
+msgid "Welcome to Store Demo"
+msgstr ""
+
+#: gnome-initial-setup/pages/language/gis-language-page.c:327
 msgid "Welcome"
 msgstr "Tervetuloa"
 
@@ -303,6 +454,35 @@ msgstr "Tervetuloa"
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "Tervetuloa!"
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
+msgid "Try Endless OS by running it from the USB Stick."
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
+msgid "Try Endless OS by running it from the DVD."
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
+msgid "Reformat this computer with Endless OS."
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
+msgid "Try It"
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:180
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
+msgid "Reformat"
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
+msgid "Try or Reformat"
+msgstr ""
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:318
 msgctxt "Wireless access point"
@@ -327,12 +507,9 @@ msgstr "Wifi"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:19
 msgid ""
-"Connecting to the Internet will enable you to set the time, add your "
-"details, and enable you to access your email, calendar, and contacts. It is "
-"also necessary for enterprise login accounts."
+"Connecting to the internet helps you get new apps, information, and other "
+"upgrades. It also helps set the time and your location automatically."
 msgstr ""
-"Internetiin yhdistäminen mahdollistaa ajan asettamisen sekä verkkotilien "
-"määrittämisen. Verkkoyhteys vaaditaan myös yritysverkon kirjautumisia varten."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -343,60 +520,76 @@ msgid "Turn On"
 msgstr "Ota käyttöön"
 
 #. Translators: The placeholder is the user’s full name.
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:110
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:143
 #, c-format
 msgid "Parental Controls for %s"
 msgstr "Perheasetukset käyttäjälle %s"
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:112
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:145
 msgid "Set restrictions on what this user can run or install."
 msgstr "Aseta rajoituksia, mitä tämä käyttäjä voi suorittaa tai asentaa."
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:207
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:240
 msgid "Parental Controls"
 msgstr "Perhasetukset"
 
 #. Don’t break UI compatibility if parental controls are disabled.
-#: gnome-initial-setup/pages/password/gis-password-page.c:79
+#: gnome-initial-setup/pages/password/gis-password-page.c:83
 msgid "Set a Password"
 msgstr "Aseta salasana"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:80
-#: gnome-initial-setup/pages/password/gis-password-page.c:89
+#: gnome-initial-setup/pages/password/gis-password-page.c:84
+#: gnome-initial-setup/pages/password/gis-password-page.c:93
 msgid "Be careful not to lose your password."
 msgstr "Huolehdi salasanastasi, älä unohda sitä."
 
 #. Translators: The placeholder is for the user’s full name.
-#: gnome-initial-setup/pages/password/gis-password-page.c:87
+#: gnome-initial-setup/pages/password/gis-password-page.c:91
 #, c-format
 msgid "Set a Password for %s"
 msgstr "Aseta salasana käyttäjälle %s"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:95
+#: gnome-initial-setup/pages/password/gis-password-page.c:99
 msgid "Set a Parent Password"
 msgstr "Aseta vanhemman salasana"
 
 #. Translators: The placeholder is the full name of the child user on the system.
-#: gnome-initial-setup/pages/password/gis-password-page.c:97
+#: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
 msgstr "Tämä salasana määrittää käyttöoikeudet käyttäjän %s perheasetuksiin."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:233
-msgid "This is a weak password."
-msgstr "Tämä on heikko salasana."
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:239
+#: gnome-initial-setup/pages/password/gis-password-page.c:261
 msgid "The passwords do not match."
 msgstr "Salasanat eivät täsmää."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:425
+#: gnome-initial-setup/pages/password/gis-password-page.c:306
+#: gnome-initial-setup/pages/password/gis-password-page.c:337
+#, fuzzy
+msgid "Show password"
+msgstr "Ei salasanaa"
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:345
+#, fuzzy
+msgid "Hide password"
+msgstr "Ei salasanaa"
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:548
 msgid "Password"
 msgstr "Salasana"
 
-#: gnome-initial-setup/pages/password/gis-password-page.ui:66
+#: gnome-initial-setup/pages/password/gis-password-page.ui:69
 msgid "_Confirm"
 msgstr "_Vahvista"
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:202
+#, fuzzy
+msgid "Password _reminder"
+msgstr "Salasana"
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:217
+msgid "Password reminder will be shown in case you forget your password."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -582,10 +775,48 @@ msgid ""
 msgstr ""
 "Yksityisyysasetuksia voi muuttaa milloin tahansa järjestelmän asetuksista."
 
+#: gnome-initial-setup/pages/site/gis-site-page.ui:33
+msgid "Site"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:54
+msgid ""
+"At which site is this computer located? Search for your site here. You may "
+"enter manually if there is no match."
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:78
+msgid "enter manually"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:102
+msgid "ID"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:131
+msgid "Facility"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:160
+msgid "Street address"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:189
+msgid "City"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:218
+msgid "State"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:247
+msgid "Country"
+msgstr ""
+
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:227
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:229
 #, c-format
 msgid "_Start Using %s"
 msgstr "_Aloita käyttö - %s"
@@ -593,21 +824,37 @@ msgstr "_Aloita käyttö - %s"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:234
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:236
 #, c-format
 msgid "%s is ready to be used. We hope that you love it!"
 msgstr "%s on valmis käytettäväksi. Toivottavasti pidät sen käyttämisestä!"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:258
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:260
+msgid "You're ready to try Endless OS"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:263
+msgid ""
+"<b>System software updates are unavailable when running from evaluation "
+"media. Please install Endless if you like it!</b>"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:267
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:277
 msgid "Setup Complete"
 msgstr "Asetukset valmiina"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:70
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:92
 msgid "All done!"
 msgstr "Kaikki valmista!"
 
 #. Translators: "city, country"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:261
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:268
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
@@ -616,28 +863,28 @@ msgstr "%s, %s"
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
 #.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:298
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
 
 #. Translators: This is the time format used in 12-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:312
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: This is the time format used in 24-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:315
 msgid "%R"
 msgstr "%R"
 
 #. Translators: "timezone (utc shift)"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:318
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:462
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:472
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:17
 msgid "Time Zone"
 msgstr "Aikavyöhyke"
@@ -653,6 +900,18 @@ msgstr ""
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
 msgstr "Etsi lähellä olevaa kaupunkia"
+
+#~ msgid ""
+#~ "Connecting to the Internet will enable you to set the time, add your "
+#~ "details, and enable you to access your email, calendar, and contacts. It "
+#~ "is also necessary for enterprise login accounts."
+#~ msgstr ""
+#~ "Internetiin yhdistäminen mahdollistaa ajan asettamisen sekä verkkotilien "
+#~ "määrittämisen. Verkkoyhteys vaaditaan myös yritysverkon kirjautumisia "
+#~ "varten."
+
+#~ msgid "This is a weak password."
+#~ msgstr "Tämä on heikko salasana."
 
 #~ msgid "preferences-system"
 #~ msgstr "preferences-system"
@@ -693,9 +952,6 @@ msgstr "Etsi lähellä olevaa kaupunkia"
 #~ msgid "<a href=\"more\">Find out more…</a>"
 #~ msgstr "<a href=\"more\">Lue lisää…</a>"
 
-#~ msgid "Third Party Repositories"
-#~ msgstr "Kolmansien osapuolten ohjelmistolähteet"
-
 #~ msgid ""
 #~ "Proprietary software typically has restrictions on how it can be used and "
 #~ "on access to source code. This prevents anyone but the software owner "
@@ -717,9 +973,6 @@ msgstr "Etsi lähellä olevaa kaupunkia"
 
 #~ msgid "You’re ready to go!"
 #~ msgstr "Kaikki valmista!"
-
-#~ msgid "Disable image"
-#~ msgstr "Poista kuva käytöstä"
 
 #~ msgctxt "Password hint"
 #~ msgid "Try to avoid common words."
@@ -789,15 +1042,9 @@ msgstr "Etsi lähellä olevaa kaupunkia"
 #~ "Aikavyöhykkeesi on ilmeisesti %s. Napsauta Seuraava jatkaaksesi tai etsi "
 #~ "kaupunkia asettaaksesi muun aikavyöhykkeen."
 
-#~ msgid "Cancel"
-#~ msgstr "Peru"
-
 #~ msgid "Your username cannot be changed after setup."
 #~ msgstr ""
 #~ "Käyttäjätunnustasi ei ole mahdollista vaihtaa asetusten tekemisen jälkeen."
-
-#~ msgid "No password"
-#~ msgstr "Ei salasanaa"
 
 #~ msgctxt "Password strength"
 #~ msgid "Too short"
@@ -893,10 +1140,6 @@ msgstr "Etsi lähellä olevaa kaupunkia"
 #~ msgid "_Add Account"
 #~ msgstr "_Lisää tili"
 
-#~| msgid "Show Keyboard Layout"
-#~ msgid "Select keyboard layouts"
-#~ msgstr "Näytä näppäimistön asettelut"
-
 #~ msgid "Login settings are used by all users when logging into the system"
 #~ msgstr ""
 #~ "Kirjautumisasetukset vaikuttavat kaikkiin käyttäjiin koneelle kirjautuessa"
@@ -919,9 +1162,6 @@ msgstr "Etsi lähellä olevaa kaupunkia"
 
 #~ msgid "_Back"
 #~ msgstr "_Edellinen"
-
-#~ msgid "Keyboard Layout"
-#~ msgstr "Näppäimistön asettelu"
 
 #~ msgid "Select input sources"
 #~ msgstr "Valitse "
