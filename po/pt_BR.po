@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 "issues\n"
-"POT-Creation-Date: 2020-04-13 21:14+0100\n"
+"POT-Creation-Date: 2020-04-13 21:20+0100\n"
 "PO-Revision-Date: 2020-02-16 14:55-0300\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
@@ -51,28 +51,27 @@ msgid "_Cancel"
 msgstr "_Cancelar"
 
 #: gnome-initial-setup/gis-driver.c:811
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to enter demo mode: %s"
-msgstr "Falha ao ingressar no domínio"
+msgstr "Falha ao entrar em modo de demonstração:%s"
 
 #: gnome-initial-setup/gis-page-util.c:431
 msgid "Unknown"
-msgstr ""
+msgstr "Desconhecido"
 
 #: gnome-initial-setup/gis-page-util.c:433
 #, c-format
 msgid "Image: %s"
-msgstr ""
+msgstr "Imagem: %s"
 
 #: gnome-initial-setup/gis-page-util.c:442
-#, fuzzy
 msgid "Disabled"
-msgstr "Desabilitar imagem"
+msgstr "Desabilitado"
 
 #: gnome-initial-setup/gis-page-util.c:444
 #, c-format
 msgid "SD Card: %s"
-msgstr ""
+msgstr "Cartão SD: %s"
 
 #. Translators: this is shown when launching the
 #. * reformatter (an external program) fails. The
@@ -82,23 +81,23 @@ msgstr ""
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
-msgstr ""
+msgstr "Erro ao executar a formatação: %s"
 
 #: gnome-initial-setup/gis-page-util.ui:29
 msgid "Test Mode"
-msgstr ""
+msgstr "Modo de Teste"
 
 #: gnome-initial-setup/gis-page-util.ui:55
 msgid "Power Off"
-msgstr ""
+msgstr "Desligar"
 
 #: gnome-initial-setup/gis-page-util.ui:190
 msgid "Enter Store Demo"
-msgstr ""
+msgstr "Entrar em Modo de Demonstração "
 
 #: gnome-initial-setup/gis-page-util.ui:195
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: gnome-initial-setup/gis-page-util.ui:202
 msgid "Cancel"
@@ -110,6 +109,9 @@ msgid ""
 "files will be saved, and the computer will return to a clean factory state "
 "when you power it off."
 msgstr ""
+"Isso permite que você teste o Endless sem precisar criar uma conta. Nenhuma "
+"alteração ou arquivo será salvo neste modo, e o computador irá retornar ao "
+"estado limpo de fábrica ao desligar."
 
 #: gnome-initial-setup/gnome-initial-setup.c:340
 msgid "Force existing user mode"
@@ -236,9 +238,8 @@ msgid "_Full Name"
 msgstr "Nome _completo"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:144
-#, fuzzy
 msgid "Set a password"
-msgstr "Defina uma senha"
+msgstr "Definir uma senha"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:160
 msgid "Set up _parental controls for this user"
@@ -313,53 +314,56 @@ msgstr ""
 
 #: gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
-msgstr ""
+msgstr "Tela"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:39
 msgid "Adjust for TV screen"
-msgstr ""
+msgstr "Ajuste para tela de televisão"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:57
 msgid "Do you see this at the bottom right corner of your screen?"
-msgstr ""
+msgstr "Você pode ver isto no canto inferior direito da sua tela?"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:105
 msgid "I see it"
-msgstr ""
+msgstr "Eu posso ver"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:121
 msgid "I do not see it. Shrink screen to fit TV."
-msgstr ""
+msgstr "Eu não posso ver. Reduza a tela para caber na televisão."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:138
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
 msgid "Terms of Use"
-msgstr ""
+msgstr "Termos de serviço"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
 msgid "Please read the following terms of use carefully"
-msgstr ""
+msgstr "Por favor, leia os termos de serviço atentamente "
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
 msgid ""
 "By clicking \"Accept,\" you acknowledge that you have read, understood, and "
 "agree to be bound by the following terms and conditions."
 msgstr ""
+"Ao clicar em \"Aceitar\", você reconhece que leu, entendeu e concorda em se "
+"comprometer com os seguintes termos e condições."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
-msgstr ""
+msgstr "Ajude a criar um Endless melhor para todos"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
 "Automatically save and send usage statistics and problem reports to Endless. "
 "All data is anonymous."
 msgstr ""
+"Automaticamente salve e envie estatísticas de usabilidade e avisos de "
+"problemas à Endless. Toda informação é anônima."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
-#, fuzzy
 msgid "Third Party Software"
-msgstr "Repositórios de terceiros"
+msgstr "Aplicativos de terceiros"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -405,18 +409,17 @@ msgid "No inputs found"
 msgstr "Nenhuma entrada encontrada"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
-#, fuzzy
 msgid "Your keyboard layout seems to be:"
-msgstr "Selecione o layout de seu teclado ou um método de entrada."
+msgstr "Sua configuração de teclado parece ser:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
 msgid "Please press one of the following keys:"
-msgstr ""
+msgstr "Por favor, pressione uma das teclas abaixo:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
 msgid "Is the following key present on your keyboard?"
-msgstr ""
+msgstr "A seguinte tecla existe no seu teclado?"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:519
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
@@ -428,18 +431,16 @@ msgid "Select your keyboard layout or an input method."
 msgstr "Selecione o layout de seu teclado ou um método de entrada."
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
-#, fuzzy
 msgid "Help Detect My Keyboard Layout"
-msgstr "Disposição do teclado"
+msgstr "Ajude-me a detectar minha configuração de teclado"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
-#, fuzzy
 msgid "Detect Keyboard Layout…"
-msgstr "Disposição do teclado"
+msgstr "Detectar minha configuração de teclado…"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
 msgid "_Select"
-msgstr ""
+msgstr "_Selecionar"
 
 #: gnome-initial-setup/pages/language/cc-language-chooser.c:307
 msgid "No languages found"
@@ -447,11 +448,11 @@ msgstr "Nenhum idioma encontrado"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:313
 msgid "Enter Store Demo…"
-msgstr ""
+msgstr "Entrar em Modo de Demonstração..."
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:325
 msgid "Welcome to Store Demo"
-msgstr ""
+msgstr "Bem vindo ao Modo de Demonstração."
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:327
 msgid "Welcome"
@@ -468,31 +469,31 @@ msgstr "Bem-vindo!"
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
+msgstr "Teste o Endless OS rodando o sistema em um pendrive"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
 msgid "Try Endless OS by running it from the DVD."
-msgstr ""
+msgstr "Teste o Endless OS à partir de um DVD."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
 msgid "Reformat this computer with Endless OS."
-msgstr ""
+msgstr "Formatar este computador com o Endless OS"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
 msgid "Try It"
-msgstr ""
+msgstr "Experimente"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:180
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
 msgid "Reformat"
-msgstr ""
+msgstr "Formatar"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
 msgid "Try or Reformat"
-msgstr ""
+msgstr "Teste ou Reformate"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:318
 msgctxt "Wireless access point"
@@ -520,6 +521,9 @@ msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
 msgstr ""
+"Conectar-se à internet ajuda você a obter novos aplicativos, informações e "
+"outras atualizações. Também ajuda a definir a hora e a sua localização "
+"automaticamente."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -575,14 +579,12 @@ msgstr "As senhas não coincidem."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:306
 #: gnome-initial-setup/pages/password/gis-password-page.c:337
-#, fuzzy
 msgid "Show password"
-msgstr "Sem senha"
+msgstr "Mostrar senha"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:345
-#, fuzzy
 msgid "Hide password"
-msgstr "Sem senha"
+msgstr "Esconder a senha"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:548
 msgid "Password"
@@ -593,13 +595,12 @@ msgid "_Confirm"
 msgstr "_Confirmar"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:202
-#, fuzzy
 msgid "Password _reminder"
-msgstr "Senha"
+msgstr "_Lembrete de senha"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:217
 msgid "Password reminder will be shown in case you forget your password."
-msgstr ""
+msgstr "Lembrete de senha será mostrado caso você esqueça a sua senha"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -789,41 +790,43 @@ msgstr ""
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
-msgstr ""
+msgstr "Local"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:54
 msgid ""
 "At which site is this computer located? Search for your site here. You may "
 "enter manually if there is no match."
 msgstr ""
+"Em que lugar este computador está localizado? Procure pelo local aqui. Você "
+"pode inserir manualmente se não houver uma entrada válida."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:78
 msgid "enter manually"
-msgstr ""
+msgstr "insira manualmente"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:102
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:131
 msgid "Facility"
-msgstr ""
+msgstr "Estabelecimento"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:160
 msgid "Street address"
-msgstr ""
+msgstr "Endereço"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:189
 msgid "City"
-msgstr ""
+msgstr "Cidade"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:218
 msgid "State"
-msgstr ""
+msgstr "Estado"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:247
 msgid "Country"
-msgstr ""
+msgstr "País"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
@@ -843,19 +846,24 @@ msgstr "%s está pronto para ser usado. Esperamos que você adore!"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:260
 msgid "You're ready to try Endless OS"
-msgstr ""
+msgstr "Você está pronto para testar o Endless OS"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:263
 msgid ""
 "<b>System software updates are unavailable when running from evaluation "
 "media. Please install Endless if you like it!</b>"
 msgstr ""
+"<b>As atualizações de aplicativos e do sistema não estão disponíveis ao "
+"executar a partir da mídia de avaliação. Por favor, instale o Endless OS se "
+"você gostou!</b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:267
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr ""
+"<b>Qualquer arquivo que você baixar ou documento que você criar será perdido "
+"para sempre quando você reiniciar ou desligar o computador.</b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:277
 msgid "Setup Complete"
@@ -946,21 +954,22 @@ msgstr "Por favor pesquise a cidade mais próxima"
 #~ msgstr "Escolha seu país ou região."
 
 #~ msgid "Software Repositories"
-#~ msgstr "Repositórios de programas"
+#~ msgstr "Repositórios de aplicativos"
 
 #~ msgid "Access additional software from selected third party sources."
 #~ msgstr ""
-#~ "Acesse programas adicionais a partir de fontes de terceiros selecionadas."
+#~ "Acesse aplicativos adicionais a partir de fontes de terceiros "
+#~ "selecionadas."
 
 #~ msgid ""
 #~ "Some of this software is proprietary and therefore has restrictions on "
 #~ "use, sharing, and access to source code."
 #~ msgstr ""
-#~ "Alguns destes programas são proprietários e, portanto, possuem restrições "
-#~ "de uso, compartilhamento e acesso ao código fonte."
+#~ "Alguns destes aplicativos são proprietários e, portanto, possuem "
+#~ "restrições de uso, compartilhamento e acesso ao código fonte."
 
 #~ msgid "Additional Software Repositories"
-#~ msgstr "Repositórios de programas adicionais"
+#~ msgstr "Repositórios de aplicativos adicionais"
 
 #~ msgid "<a href=\"more\">Find out more…</a>"
 #~ msgstr "<a href=\"more\">Saiba mais…</a>"
@@ -970,9 +979,9 @@ msgstr "Por favor pesquise a cidade mais próxima"
 #~ "on access to source code. This prevents anyone but the software owner "
 #~ "from inspecting, improving or learning from its code."
 #~ msgstr ""
-#~ "Programas proprietários geralmente possuem restrições de uso e acesso ao "
-#~ "código fonte. Com isso, evita que qualquer pessoa, além do dono do "
-#~ "programa, possa inspecionar, melhorar ou aprender com seu código."
+#~ "Aplicativos proprietários geralmente possuem restrições de uso e acesso "
+#~ "ao código fonte. Com isso, evita que qualquer pessoa, além do dono do "
+#~ "aplicativo, possa inspecionar, melhorar ou aprender com seu código."
 
 #~ msgid ""
 #~ "In contrast, Free Software can be freely run, copied, distributed, "
@@ -1015,7 +1024,6 @@ msgstr "Por favor pesquise a cidade mais próxima"
 #~ msgid "Proprietary Software Sources"
 #~ msgstr "Fontes de programas proprietários"
 
-#~| msgid "A user with the username '%s' already exists."
 #~ msgid "A user with the username ‘%s’ already exists."
 #~ msgstr "Já existe um usuário com o nome de usuário “%s”."
 

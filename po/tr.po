@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 "issues\n"
-"POT-Creation-Date: 2020-04-13 21:14+0100\n"
+"POT-Creation-Date: 2020-04-13 21:20+0100\n"
 "PO-Revision-Date: 2020-02-14 21:44+0300\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
@@ -48,28 +48,27 @@ msgid "_Cancel"
 msgstr "_Vazgeç"
 
 #: gnome-initial-setup/gis-driver.c:811
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to enter demo mode: %s"
-msgstr "Etki alanına katılma başarısız"
+msgstr "Demo moduna girilemedi: %s"
 
 #: gnome-initial-setup/gis-page-util.c:431
 msgid "Unknown"
-msgstr ""
+msgstr "Bilinmeyen"
 
 #: gnome-initial-setup/gis-page-util.c:433
 #, c-format
 msgid "Image: %s"
-msgstr ""
+msgstr "Görüntü: %s"
 
 #: gnome-initial-setup/gis-page-util.c:442
-#, fuzzy
 msgid "Disabled"
-msgstr "Resmi etkisizleştir"
+msgstr "Devre dışı"
 
 #: gnome-initial-setup/gis-page-util.c:444
 #, c-format
 msgid "SD Card: %s"
-msgstr ""
+msgstr "SD Kart: %s"
 
 #. Translators: this is shown when launching the
 #. * reformatter (an external program) fails. The
@@ -79,23 +78,23 @@ msgstr ""
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
-msgstr ""
+msgstr "Biçimlendirici çalıştırılırken hata oluştu: %s"
 
 #: gnome-initial-setup/gis-page-util.ui:29
 msgid "Test Mode"
-msgstr ""
+msgstr "Test modu"
 
 #: gnome-initial-setup/gis-page-util.ui:55
 msgid "Power Off"
-msgstr ""
+msgstr "Kapat"
 
 #: gnome-initial-setup/gis-page-util.ui:190
 msgid "Enter Store Demo"
-msgstr ""
+msgstr "Mağaza Demosuna Gir"
 
 #: gnome-initial-setup/gis-page-util.ui:195
 msgid "OK"
-msgstr ""
+msgstr "Tamam"
 
 #: gnome-initial-setup/gis-page-util.ui:202
 msgid "Cancel"
@@ -107,6 +106,9 @@ msgid ""
 "files will be saved, and the computer will return to a clean factory state "
 "when you power it off."
 msgstr ""
+"Bu, bir hesabı etkinleştirmeden Endless'i denemenizi sağlar. Hiçbir "
+"değişiklik veya dosya kaydedilmez ve bilgisayarı kapattığınızda bilgisayar "
+"fabrika durumuna geri döner."
 
 #: gnome-initial-setup/gnome-initial-setup.c:340
 msgid "Force existing user mode"
@@ -230,7 +232,6 @@ msgid "_Full Name"
 msgstr "_Tam Ad"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:144
-#, fuzzy
 msgid "Set a password"
 msgstr "Parola Belirle"
 
@@ -310,49 +311,52 @@ msgstr ""
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:39
 msgid "Adjust for TV screen"
-msgstr ""
+msgstr "TV ekranı için ayarla"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:57
 msgid "Do you see this at the bottom right corner of your screen?"
-msgstr ""
+msgstr "Bunu ekranınızın sağ alt köşesinde görüyor musunuz?"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:105
 msgid "I see it"
-msgstr ""
+msgstr "Görüyorum"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:121
 msgid "I do not see it. Shrink screen to fit TV."
-msgstr ""
+msgstr "Göremiyorum. TV ekranına sığacak şekilde küçültün."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:138
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
 msgid "Terms of Use"
-msgstr ""
+msgstr "Kullanım Koşulları"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
 msgid "Please read the following terms of use carefully"
-msgstr ""
+msgstr "Lütfen aşağıdaki kullanım koşullarını dikkatlice okuyunuz"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
 msgid ""
 "By clicking \"Accept,\" you acknowledge that you have read, understood, and "
 "agree to be bound by the following terms and conditions."
 msgstr ""
+"\"Kabul Et\"e tıklayarak, aşağıdaki şartlar ve koşullara tabi olduğunu, "
+"okuduğunu, anladığını ve kabul ettiğini kabul etmiş olursun."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
-msgstr ""
+msgstr "Endless'i herkes için daha iyi hale getirmeye yardımcı olun"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
 "Automatically save and send usage statistics and problem reports to Endless. "
 "All data is anonymous."
 msgstr ""
+"Kullanım istatistiklerini ve sorun raporlarını Endless'e otomatik olarak "
+"kaydedin ve gönderin. Tüm veriler anonimdir."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
-#, fuzzy
 msgid "Third Party Software"
-msgstr "Üçüncü Taraf Depolar"
+msgstr "Üçüncü Parti Yazılım"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -398,18 +402,17 @@ msgid "No inputs found"
 msgstr "Hiçbir girdi bulunamadı"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
-#, fuzzy
 msgid "Your keyboard layout seems to be:"
-msgstr "Klavye düzeni veya giriş yöntemi seçin."
+msgstr "Klavye düzeniniz şöyle görünüyor:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
 msgid "Please press one of the following keys:"
-msgstr ""
+msgstr "Lütfen aşağıdaki tuşlardan birine basın:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
 msgid "Is the following key present on your keyboard?"
-msgstr ""
+msgstr "Klavyenizde aşağıdaki tuş var mı?"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:519
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
@@ -422,15 +425,15 @@ msgstr "Klavye düzeni veya giriş yöntemi seçin."
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
 msgid "Help Detect My Keyboard Layout"
-msgstr ""
+msgstr "Klavye Düzenimi Algılamaya Yardımcı Ol"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
 msgid "Detect Keyboard Layout…"
-msgstr ""
+msgstr "Klavye Düzenini Algıla…"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
 msgid "_Select"
-msgstr ""
+msgstr "_Seç"
 
 #: gnome-initial-setup/pages/language/cc-language-chooser.c:307
 msgid "No languages found"
@@ -459,31 +462,31 @@ msgstr "Hoş Geldiniz!"
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
+msgstr "Endless OS'u USB Bellek'ten çalıştırarak deneyin."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
 msgid "Try Endless OS by running it from the DVD."
-msgstr ""
+msgstr "Endless OS'u DVD'den çalıştırarak deneyin."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
 msgid "Reformat this computer with Endless OS."
-msgstr ""
+msgstr "Bu bilgisayarı Endless OS ile yeniden biçimlendirin."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
 msgid "Try It"
-msgstr ""
+msgstr "Dene"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:180
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
 msgid "Reformat"
-msgstr ""
+msgstr "Yeniden biçimlendir"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
 msgid "Try or Reformat"
-msgstr ""
+msgstr "Dene veya Yeniden Biçimlendir"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:318
 msgctxt "Wireless access point"
@@ -511,6 +514,9 @@ msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
 msgstr ""
+"İnternete bağlanmak, yeni uygulamalar, bilgiler ve diğer güncellemeler "
+"almanıza yardımcı olur. Ayrıca, saatin ve konumunuzun otomatik olarak "
+"ayarlanmasına yardımcı olur."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -566,14 +572,12 @@ msgstr "Parolalar eşleşmiyor."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:306
 #: gnome-initial-setup/pages/password/gis-password-page.c:337
-#, fuzzy
 msgid "Show password"
-msgstr "Parola Belirle"
+msgstr "Parolayı göster"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:345
-#, fuzzy
 msgid "Hide password"
-msgstr "Parola Belirle"
+msgstr "Parolayı gizle"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:548
 msgid "Password"
@@ -584,13 +588,12 @@ msgid "_Confirm"
 msgstr "_Onayla"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:202
-#, fuzzy
 msgid "Password _reminder"
-msgstr "Parola"
+msgstr "Parola _hatırlatıcı"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:217
 msgid "Password reminder will be shown in case you forget your password."
-msgstr ""
+msgstr "Parolanızı unutmanız durumunda parola hatırlatıcı gösterilecektir."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -779,7 +782,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
-msgstr ""
+msgstr "Site"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:54
 msgid ""
@@ -789,7 +792,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:78
 msgid "enter manually"
-msgstr ""
+msgstr "elle giriniz"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:102
 msgid "ID"
@@ -801,19 +804,19 @@ msgstr ""
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:160
 msgid "Street address"
-msgstr ""
+msgstr "Sokak"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:189
 msgid "City"
-msgstr ""
+msgstr "Şehir"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:218
 msgid "State"
-msgstr ""
+msgstr "Eyalet"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:247
 msgid "Country"
-msgstr ""
+msgstr "Ülke"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
@@ -833,19 +836,23 @@ msgstr "%s kullanıma hazır. Seveceğinizi umuyoruz!"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:260
 msgid "You're ready to try Endless OS"
-msgstr ""
+msgstr "Endless'i denemeye hazırsınız"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:263
 msgid ""
 "<b>System software updates are unavailable when running from evaluation "
 "media. Please install Endless if you like it!</b>"
 msgstr ""
+"Test ortamında çalıştırılırken sistem yazılımı güncellemeleri kullanılamaz. "
+"Endless'i yükleyebilirsin!"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:267
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr ""
+"<b>İndirdiğiniz dosyalar veya oluşturduğunuz belgeler bilgisayarı yeniden "
+"başlattığınızda veya kapattığınızda sonsuza dek kaybolur.</b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:277
 msgid "Setup Complete"
@@ -1007,7 +1014,6 @@ msgstr "Lütfen yakındaki şehri arayın"
 #~ msgid "Proprietary Software Sources"
 #~ msgstr "Sahipli Yazılım Kaynakları"
 
-#~| msgid "A user with the username '%s' already exists."
 #~ msgid "A user with the username ‘%s’ already exists."
 #~ msgstr "‘%s’ adlı bir kullanıcı zaten var"
 

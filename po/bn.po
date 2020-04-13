@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 "issues\n"
-"POT-Creation-Date: 2020-04-13 21:14+0100\n"
+"POT-Creation-Date: 2020-04-13 21:20+0100\n"
 "PO-Revision-Date: 2020-04-13 21:14+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -20,11 +20,11 @@ msgstr ""
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
 msgid "Initial Setup"
-msgstr ""
+msgstr "প্রাথমিক সেটআপ"
 
 #: gnome-initial-setup/gis-assistant.c:440
 msgid "_Next"
-msgstr ""
+msgstr "_পরবর্তী"
 
 #: gnome-initial-setup/gis-assistant.c:441
 msgid "_Accept"
@@ -36,11 +36,11 @@ msgstr ""
 
 #: gnome-initial-setup/gis-assistant.c:443
 msgid "_Previous"
-msgstr ""
+msgstr "_পূর্ববর্তী"
 
 #: gnome-initial-setup/gis-assistant.c:444
 msgid "_Cancel"
-msgstr ""
+msgstr "_বাতিল"
 
 #: gnome-initial-setup/gis-driver.c:811
 #, c-format
@@ -58,12 +58,12 @@ msgstr ""
 
 #: gnome-initial-setup/gis-page-util.c:442
 msgid "Disabled"
-msgstr ""
+msgstr "নিষ্ক্রিয় "
 
 #: gnome-initial-setup/gis-page-util.c:444
 #, c-format
 msgid "SD Card: %s"
-msgstr ""
+msgstr "SD কার্ড: %s"
 
 #. Translators: this is shown when launching the
 #. * reformatter (an external program) fails. The
@@ -73,7 +73,7 @@ msgstr ""
 #: gnome-initial-setup/gis-page-util.c:549
 #, c-format
 msgid "Error running the reformatter: %s"
-msgstr ""
+msgstr "পুনঃ ফর্ম্যাটকারী চালাতে ত্রুটি:  %s"
 
 #: gnome-initial-setup/gis-page-util.ui:29
 msgid "Test Mode"
@@ -116,19 +116,19 @@ msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:184
 msgid "Failed to register account"
-msgstr ""
+msgstr "একাউন্ট নিবন্ধন করতে ব্যর্থ"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:378
 msgid "No supported way to authenticate with this domain"
-msgstr ""
+msgstr "এই ডোমেইন যাচাই করার কোনো সমর্থিত উপায় নেই"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:418
 msgid "Failed to join domain"
-msgstr ""
+msgstr "ডোমেইনে প্রবেশ করতে ব্যর্থ"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:486
 msgid "Failed to log into domain"
-msgstr ""
+msgstr "ডোমেইনে লগিন করতে ব্যর্থ"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:17
 msgid "Enterprise Login"
@@ -144,29 +144,29 @@ msgstr ""
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
 msgid "_Domain"
-msgstr ""
+msgstr "_ডোমেইন"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:53
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:84
 msgid "_Username"
-msgstr ""
+msgstr "_ব্যবহারকারীর নাম"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:70
 #: gnome-initial-setup/pages/password/gis-password-page.ui:34
 msgid "_Password"
-msgstr ""
+msgstr "_পাসওয়ার্ড"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:146
 msgid "Enterprise domain or realm name"
-msgstr ""
+msgstr "যৌথ ডোমেইন অথবা সাম্রাজ্যের নাম"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:211
 msgid "C_ontinue"
-msgstr ""
+msgstr "চা_লিয়ে যাওয়া "
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:246
 msgid "Domain Administrator Login"
-msgstr ""
+msgstr "ডোমেইন প্রশাসক লগিন "
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:266
 msgid ""
@@ -177,15 +177,15 @@ msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
-msgstr ""
+msgstr "_কম্পিউটার"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:353
 msgid "Administrator _Name"
-msgstr ""
+msgstr "প্রশাসক_নাম"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:387
 msgid "Administrator Password"
-msgstr ""
+msgstr "প্রশাসক পাসওয়ার্ড"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 msgid "Please check the name and username. You can choose a picture too."
@@ -214,7 +214,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:53
 msgid "_Full Name"
-msgstr ""
+msgstr "_পুরো নাম"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:144
 msgid "Set a password"
@@ -238,21 +238,21 @@ msgstr ""
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
-msgstr ""
+msgstr "এধরণের ডোমেইনে স্বয়ংক্রিয়ভাবে যোগ দেয়া যাবে না"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:269
 msgid "No such domain or realm found"
-msgstr ""
+msgstr "এমন কোন ডোমেইন বা সাম্রাজ্য পাওয়া যায়নি"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:723
 #: gnome-initial-setup/pages/account/um-realm-manager.c:737
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
-msgstr ""
+msgstr "%s ডোমেইনে %s হিসেবে লগিন করা যাবে না"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:729
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "সঠিক পাসওয়ার্ড নয়, আবার চেষ্টা করুন"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:742
 #, c-format
@@ -288,32 +288,32 @@ msgstr ""
 
 #: gnome-initial-setup/pages/display/gis-display-page.c:249
 msgid "Display"
-msgstr ""
+msgstr "ডিসপ্লে"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:39
 msgid "Adjust for TV screen"
-msgstr ""
+msgstr "টিভি পর্দার সাথে মিলিয়ে নিন"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:57
 msgid "Do you see this at the bottom right corner of your screen?"
-msgstr ""
+msgstr "আপনার পর্দার নিচে ডান কোণে কি আপনি এটি দেখতে পাচ্ছেন?"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:105
 msgid "I see it"
-msgstr ""
+msgstr "আমি দেখতে পাচ্ছি"
 
 #: gnome-initial-setup/pages/display/gis-display-page.ui:121
 msgid "I do not see it. Shrink screen to fit TV."
-msgstr ""
+msgstr "আমি এটি দেখতে পাচ্ছি না। টিভির সাথে মানানসই হতে পর্দা ছোট করুন।"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:138
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
 msgid "Terms of Use"
-msgstr ""
+msgstr "ব্যবহারের শর্তাবলী"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
 msgid "Please read the following terms of use carefully"
-msgstr ""
+msgstr "অনুগ্রহ করে নিম্নোক্ত শর্তাবলী সতর্কতার সাথে পড়ুন"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
 msgid ""
@@ -323,25 +323,27 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
-msgstr ""
+msgstr "এন্ডলেস-কে সবার জন্য আরো উন্নত করতে সাহায্য করুন"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
 "Automatically save and send usage statistics and problem reports to Endless. "
 "All data is anonymous."
 msgstr ""
+"স্বয়ংক্রিয়ভাবে রক্ষা করুন এবং ব্যবহারের পরিসংখ্যান ও সমস্যার খতিয়ান এন্ডলেস-কে "
+"পাঠিয়ে দিন। সকল তথ্য নামবিহীন থাকবে।"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
 msgid "Third Party Software"
-msgstr ""
+msgstr "তৃতীয় পক্ষ সফটওয়্যার"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
-msgstr ""
+msgstr "একাউন্ট সংযুক্তি"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:357
 msgid "Online Accounts"
-msgstr ""
+msgstr "অনলাইন একাউন্টসমূহ"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:17
 msgid "Connect Your Online Accounts"
@@ -360,37 +362,37 @@ msgstr ""
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
-msgstr ""
+msgstr "আবার দেখুন"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
 #: gnome-initial-setup/pages/language/cc-language-chooser.c:291
 msgid "More…"
-msgstr ""
+msgstr "আরো…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
 #.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
-msgstr ""
+msgstr "কোন তথ্য পাওয়া যায়নি"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
 msgid "Your keyboard layout seems to be:"
-msgstr ""
+msgstr "আপনার কিবোর্ডের ধরন এমন:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
 msgid "Please press one of the following keys:"
-msgstr ""
+msgstr "অনুগ্রহ করে নিম্নোক্ত একটি বোতাম চাপুন:"
 
 #: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
 msgid "Is the following key present on your keyboard?"
-msgstr ""
+msgstr "নিম্নোক্ত বোতামটি কি আপনার কিবোর্ডে আছে?"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:519
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
 msgid "Typing"
-msgstr ""
+msgstr "লেখা হচ্ছে"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
 msgid "Select your keyboard layout or an input method."
@@ -398,19 +400,19 @@ msgstr ""
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
 msgid "Help Detect My Keyboard Layout"
-msgstr ""
+msgstr "আমার কিবোর্ডের লেআউট শনাক্তে সাহায্য করুন"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
 msgid "Detect Keyboard Layout…"
-msgstr ""
+msgstr "কিবোর্ড ধরন শণাক্ত করুন…"
 
 #: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
 msgid "_Select"
-msgstr ""
+msgstr "_নির্বাচন করুন"
 
 #: gnome-initial-setup/pages/language/cc-language-chooser.c:307
 msgid "No languages found"
-msgstr ""
+msgstr "কোনো ভাষা পাওয়া যায়নি"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:313
 msgid "Enter Store Demo…"
@@ -422,7 +424,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:327
 msgid "Welcome"
-msgstr ""
+msgstr "স্বাগতম"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
@@ -435,7 +437,7 @@ msgstr ""
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
+msgstr "ইউএসবি স্টিক থেকে এন্ডলেস ওএস চালাতে চেষ্টা করুন। "
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
@@ -445,17 +447,17 @@ msgstr ""
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
 msgid "Reformat this computer with Endless OS."
-msgstr ""
+msgstr "এন্ডলেস ওএস দিয়ে এই কম্পিউটারটি পুনঃ ফর্ম্যাট করুন। "
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
 msgid "Try It"
-msgstr ""
+msgstr "চেষ্টা করুন "
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:180
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
 msgid "Reformat"
-msgstr ""
+msgstr "পুনঃ ফর্ম্যাট "
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:182
 msgid "Try or Reformat"
@@ -464,7 +466,7 @@ msgstr ""
 #: gnome-initial-setup/pages/network/gis-network-page.c:318
 msgctxt "Wireless access point"
 msgid "Other…"
-msgstr ""
+msgstr "অন্যকিছু…"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:403
 msgid "Wireless networking is disabled"
@@ -472,11 +474,11 @@ msgstr ""
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:410
 msgid "Checking for available wireless networks"
-msgstr ""
+msgstr "ওয়্যারলেস নেটওয়ার্ক খোঁজ করা হচ্ছে"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:805
 msgid "Network"
-msgstr ""
+msgstr "নেটওয়ার্ক"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:18
 msgid "Wi-Fi"
@@ -490,7 +492,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
-msgstr ""
+msgstr "কোন ওয়্যারলেস পাওয়া যায়নি"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:91
 msgid "Turn On"
@@ -543,7 +545,7 @@ msgstr ""
 #: gnome-initial-setup/pages/password/gis-password-page.c:306
 #: gnome-initial-setup/pages/password/gis-password-page.c:337
 msgid "Show password"
-msgstr ""
+msgstr "পাসওয়ার্ড প্রদর্শন"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:345
 msgid "Hide password"
@@ -559,7 +561,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:202
 msgid "Password _reminder"
-msgstr ""
+msgstr "পাসওয়ার্ড_স্মরণকারী চিহ্ন"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:217
 msgid "Password reminder will be shown in case you forget your password."
@@ -799,6 +801,8 @@ msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
 msgstr ""
+"<b>আপনি যদি কম্পিউটার বন্ধ বা পুনঃচালু করেন তাহলে আপনি যেসব ফাইল নামিয়েছেন বা "
+"তৈরি করেছেন তা চিরতরে হারিয়ে যাবে। </b> "
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:277
 msgid "Setup Complete"
@@ -842,7 +846,7 @@ msgstr ""
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:472
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:17
 msgid "Time Zone"
-msgstr ""
+msgstr "সময় অঞ্চল"
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:18
 msgid ""
