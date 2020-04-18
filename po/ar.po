@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
 "POT-Creation-Date: 2020-04-13 21:20+0100\n"
-"PO-Revision-Date: 2020-04-13 20:24+0000\n"
+"PO-Revision-Date: 2020-04-18 06:43+0000\n"
 "Last-Translator: Will Thompson <wjt@endlessm.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/endless-os/gnome-initial-setup/language/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -198,7 +198,7 @@ msgstr "نحتاج لبعض البيانات لإتمام الإعداد."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:591
 msgid "Administrator"
-msgstr ""
+msgstr "المشرف"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:21
 msgid "Avatar image"
@@ -223,11 +223,11 @@ msgstr "تعيين كلمة مرور"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:160
 msgid "Set up _parental controls for this user"
-msgstr ""
+msgstr "إعداد أدوات الرقابة الأبوية لهذا المستخدم"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:167
 msgid "For use by a parent or supervisor, who must set up their own password."
-msgstr ""
+msgstr "للاستخدام بواسطة أحد الوالدين أو المشرف، يجب عليه إعداد كلمة المرور الخاصة به."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
 msgid "_Enterprise Login"
@@ -275,7 +275,7 @@ msgstr "لا يمكن لاسم المستخدم أن يبدأ بـ  “-”."
 
 #: gnome-initial-setup/pages/account/um-utils.c:265
 msgid "That username isn’t available. Please try another."
-msgstr ""
+msgstr "اسم المستخدم هذا غير متاح. يُرجى تجربة آخر."
 
 #: gnome-initial-setup/pages/account/um-utils.c:268
 msgid ""
@@ -499,15 +499,15 @@ msgstr "فعّل"
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:143
 #, c-format
 msgid "Parental Controls for %s"
-msgstr ""
+msgstr "إعدادات التحكم الأبوي الخاصة بـ %s "
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:145
 msgid "Set restrictions on what this user can run or install."
-msgstr ""
+msgstr "ضع قيوداً على ما يمكن لهذا المستخدم تشغيله أو تثبيته."
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:240
 msgid "Parental Controls"
-msgstr ""
+msgstr "الرقابة الأبوية"
 
 #. Don’t break UI compatibility if parental controls are disabled.
 #: gnome-initial-setup/pages/password/gis-password-page.c:83
@@ -523,18 +523,18 @@ msgstr "كن حريصًا على ألا تفقد كلمة السر."
 #: gnome-initial-setup/pages/password/gis-password-page.c:91
 #, c-format
 msgid "Set a Password for %s"
-msgstr ""
+msgstr "قُم بتعيين كلمة مرور لـ %s"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:99
 msgid "Set a Parent Password"
-msgstr ""
+msgstr "تعيين كلمة سر أبوية "
 
 #. Translators: The placeholder is the full name of the child user on the
 #. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
-msgstr ""
+msgstr "ستتحكم كلمة المرور هذه في الوصول إلى أدوات الإشراف العائلي لـ %s."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:261
 msgid "The passwords do not match."
@@ -782,7 +782,7 @@ msgstr "اب_دأ استخدام %s"
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:236
 #, c-format
 msgid "%s is ready to be used. We hope that you love it!"
-msgstr ""
+msgstr "%s جاهز للاستخدام. نأمل أن يعجبك!"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:260
 msgid "You're ready to try Endless OS"
@@ -802,11 +802,11 @@ msgstr "<b>ستفقد أي ملفات قمت بتنزيلها أو مستندا�
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:277
 msgid "Setup Complete"
-msgstr ""
+msgstr "تم الانتهاء من الإعداد"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.ui:92
 msgid "All done!"
-msgstr ""
+msgstr "تم الأمر!"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:268
