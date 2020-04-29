@@ -236,12 +236,12 @@ get_settings_facesdirs (void)
                                                   "org.gnome.desktop.interface",
                                                   FALSE);
 
-        if (!schema || !g_settings_schema_has_key (schema, "facesdirs"))
+        if (!schema || !g_settings_schema_has_key (schema, "avatar-directories"))
                 return facesdirs;
 
         settings = g_settings_new ("org.gnome.desktop.interface");
 
-        settings_dirs = g_settings_get_strv (settings, "facesdirs");
+        settings_dirs = g_settings_get_strv (settings, "avatar-directories");
         if (settings_dirs != NULL) {
                 for (i = 0; settings_dirs[i] != NULL; i++) {
                         char *path = settings_dirs[i];
