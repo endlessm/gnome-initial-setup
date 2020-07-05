@@ -26,6 +26,8 @@ Build-Depends: debhelper-compat (= 12),
                libibus-1.0-dev (>= 1.5.2),
                libjson-glib-dev,
                libkrb5-dev,
+               libmalcontent-0-dev [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64],
+               libmalcontent-ui-0-dev [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64],
                libnm-dev (>= 1.2),
                libnma-dev (>= 1.0),
                libpango1.0-dev (>= 1.32.5),
@@ -52,7 +54,8 @@ Depends: ${shlibs:Depends},
          ${misc:Depends}
 Recommends: gnome-getting-started-docs,
             gnome-keyring,
-Suggests: gdm3
+Suggests: gdm3,
+          malcontent [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64],
 Description: Initial GNOME system setup helper
  After acquiring or installing a new system there are a few essential things
  to set up before use. GNOME Initial Setup aims to provide a simple, easy,
