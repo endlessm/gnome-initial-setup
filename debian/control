@@ -9,7 +9,6 @@ Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.
 Uploaders: Jeremy Bicha <jbicha@debian.org>, Laurent Bigonville <bigon@debian.org>, Sebastien Bacher <seb128@debian.org>
 Build-Depends: debhelper-compat (= 12),
                dh-sequence-gnome,
-               geoclue-2.0 (>= 2.3.1),
                itstool,
                libaccountsservice-dev,
                libcheese-gtk-dev (>= 3.28),
@@ -53,6 +52,7 @@ Depends: ${shlibs:Depends},
          ${logo:Depends},
          ${misc:Depends}
 Recommends: accountsservice,
+            geoclue-2.0 (>= 2.3.1),
             gnome-getting-started-docs,
             gnome-keyring,
             malcontent [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64],
