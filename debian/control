@@ -55,8 +55,8 @@ Depends: ${shlibs:Depends},
 Recommends: accountsservice,
             gnome-getting-started-docs,
             gnome-keyring,
+            malcontent [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64],
 Suggests: gdm3,
-          malcontent [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64],
 Description: Initial GNOME system setup helper
  After acquiring or installing a new system there are a few essential things
  to set up before use. GNOME Initial Setup aims to provide a simple, easy,
