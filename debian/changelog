@@ -1,3 +1,10 @@
+gnome-initial-setup (3.36.3-3) UNRELEASED; urgency=medium
+
+  * debian/control.in: Recommends accountsservice, this is used by gis
+  * debian/control.in: Bump malcontent to Recommends
+
+ -- Laurent Bigonville <bigon@debian.org>  Mon, 06 Jul 2020 14:35:03 +0200
+
 gnome-initial-setup (3.36.3-2) unstable; urgency=medium
 
   * debian/control.in: Bump Standards-Version to 4.5.0 (no further changes)
