@@ -1,6 +1,8 @@
 {
     "hasWindows": true,
     "components": ["networkAgent"],
+    "allowExtensions": true,
+    "enabledExtensions": ["eos-panel@endlessm.com"],
     "panel": { "left": [],
                "center": [],
                "right": ["a11y", "keyboard", "aggregateMenu"]
