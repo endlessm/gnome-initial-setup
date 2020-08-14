@@ -239,6 +239,10 @@ update_navigation_buttons (GisAssistant *assistant)
         set_suggested_action_sensitive (next_widget, FALSE);
         set_navigation_button (assistant, next_widget);
       }
+
+      if (gis_page_get_has_forward (page)) {
+        gtk_widget_hide (next_widget);
+      }
     }
 }
 
@@ -428,14 +432,20 @@ gis_assistant_locale_changed (GisAssistant *assistant)
   update_titlebar (assistant);
 }
 
-void
-gis_assistant_save_data (GisAssistant *assistant)
+gboolean
+gis_assistant_save_data (GisAssistant  *assistant,
+                         GError       **error)
 {
   GisAssistantPrivate *priv = gis_assistant_get_instance_private (assistant);
   GList *l;
 
   for (l = priv->pages; l != NULL; l = l->next)
-    gis_page_save_data (l->data);
+    {
+      if (!gis_page_save_data (l->data, error))
+        return FALSE;
+    }
+
+  return TRUE;
 }
 
 static void

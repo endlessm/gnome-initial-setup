@@ -26,6 +26,7 @@
 #include <errno.h>
 #include <locale.h>
 #include <stdlib.h>
+#include <webkit2/webkit2.h>
 
 #include "cc-common-language.h"
 #include "gis-assistant.h"
@@ -96,6 +97,7 @@ struct _GisDriverPrivate {
 
   locale_t locale;
 
+  const gchar *vendor_conf_file_path;
   GKeyFile *vendor_conf_file;
 };
 typedef struct _GisDriverPrivate GisDriverPrivate;
@@ -502,33 +504,58 @@ gis_driver_hide_window (GisDriver *driver)
   gtk_widget_hide (GTK_WIDGET (priv->main_window));
 }
 
-static void
-load_vendor_conf_file (GisDriver *driver)
+static gboolean
+load_vendor_conf_file_at_path (GisDriver *driver,
+                               const char *path)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
   g_autoptr(GError) error = NULL;
   g_autoptr(GKeyFile) vendor_conf_file = g_key_file_new ();
 
-  if(!g_key_file_load_from_file (vendor_conf_file, VENDOR_CONF_FILE,
-                                 G_KEY_FILE_NONE, &error))
+  if (!g_key_file_load_from_file (vendor_conf_file, path, G_KEY_FILE_NONE, &error))
     {
       if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
-        g_warning ("Could not read file %s: %s", VENDOR_CONF_FILE, error->message);
-      return;
+        g_warning ("Could not read file %s: %s:", path, error->message);
+      return FALSE;
     }
 
+  priv->vendor_conf_file_path = path;
   priv->vendor_conf_file = g_steal_pointer (&vendor_conf_file);
+  return TRUE;
 }
 
 static void
-report_conf_error_if_needed (const gchar *group,
+load_vendor_conf_file (GisDriver *driver)
+{
+#ifdef VENDOR_CONF_FILE
+  load_vendor_conf_file_at_path (driver, VENDOR_CONF_FILE);
+#else
+  /* If no path was passed at build time, then we have search path:
+   *
+   *  - First check $(sysconfdir)/gnome-initial-setup/vendor.conf
+   *  - Then check $(datadir)/gnome-initial-setup/vendor.conf
+   *
+   * This allows distributions to provide a default packaged config in a
+   * location that might be managed by ostree, and allows OEMs to
+   * override using an unmanaged location.
+   */
+  if (!load_vendor_conf_file_at_path (driver, PKGSYSCONFDIR "/vendor.conf"))
+    load_vendor_conf_file_at_path (driver, PKGDATADIR "/vendor.conf");
+#endif
+}
+
+static void
+report_conf_error_if_needed (GisDriver *driver,
+                             const gchar *group,
                              const gchar *key,
                              const GError *error)
 {
+  GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+
   if (!g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_KEY_NOT_FOUND) &&
       !g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_GROUP_NOT_FOUND))
-    g_warning ("Error getting the value for key '%s' of group [%s] in "
-               "%s: %s", group, key, VENDOR_CONF_FILE, error->message);
+    g_warning ("Error getting the value for key '%s' of group [%s] in %s: %s",
+               group, key, priv->vendor_conf_file_path, error->message);
 }
 
 gboolean
@@ -546,7 +573,7 @@ gis_driver_conf_get_boolean (GisDriver *driver,
     if (error == NULL)
       return new_value;
 
-    report_conf_error_if_needed (group, key, error);
+    report_conf_error_if_needed (driver, group, key, error);
   }
 
   return default_value;
@@ -567,7 +594,7 @@ gis_driver_conf_get_string_list (GisDriver *driver,
     if (error == NULL)
       return new_value;
 
-    report_conf_error_if_needed (group, key, error);
+    report_conf_error_if_needed (driver, group, key, error);
   }
 
   return NULL;
@@ -587,7 +614,7 @@ gis_driver_conf_get_string (GisDriver *driver,
     if (error == NULL)
       return new_value;
 
-    report_conf_error_if_needed (group, key, error);
+    report_conf_error_if_needed (driver, group, key, error);
   }
 
   return NULL;
@@ -857,8 +884,11 @@ gis_driver_startup (GApplication *app)
 {
   GisDriver *driver = GIS_DRIVER (app);
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
+  WebKitWebContext *context = webkit_web_context_get_default ();
 
   G_APPLICATION_CLASS (gis_driver_parent_class)->startup (app);
+
+  webkit_web_context_set_sandbox_enabled (context, TRUE);
 
   if (priv->mode == GIS_DRIVER_MODE_NEW_USER)
     connect_to_gdm (driver);
@@ -995,18 +1025,19 @@ gis_driver_class_init (GisDriverClass *klass)
   g_object_class_install_properties (gobject_class, G_N_ELEMENTS (obj_props), obj_props);
 }
 
-void
-gis_driver_save_data (GisDriver *driver)
+gboolean
+gis_driver_save_data (GisDriver  *driver,
+                      GError    **error)
 {
   GisDriverPrivate *priv = gis_driver_get_instance_private (driver);
 
   if (gis_get_mock_mode ())
     {
       g_message ("%s: Skipping saving data due to being in mock mode", G_STRFUNC);
-      return;
+      return TRUE;
     }
 
-  gis_assistant_save_data (priv->assistant);
+  return gis_assistant_save_data (priv->assistant, error);
 }
 
 GisDriver *

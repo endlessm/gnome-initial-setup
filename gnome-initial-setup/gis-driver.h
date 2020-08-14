@@ -119,14 +119,13 @@ GisDriverMode gis_driver_get_mode (GisDriver *driver);
 
 gboolean gis_driver_is_small_screen (GisDriver *driver);
 
-GKeyFile *gis_driver_get_vendor_conf_file (GisDriver *driver);
-
 void gis_driver_add_page (GisDriver *driver,
                           GisPage   *page);
 
 void gis_driver_hide_window (GisDriver *driver);
 
-void gis_driver_save_data (GisDriver *driver);
+gboolean gis_driver_save_data (GisDriver  *driver,
+                               GError    **error);
 
 gboolean gis_driver_conf_get_boolean (GisDriver *driver,
                                       const gchar *group,
