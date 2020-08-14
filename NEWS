@@ -1,19 +1,75 @@
-3.36.4
+3.37.91
+-------
+
+* Revamp the ‘welcome’ screen. See #7 for more details and screenshots.
+
+* Bugs fixed:
+ - #7 Nicer welcome page
+
+3.37.90
+-------
+
+* Use `gnome-tour` instead of `yelp` to start the welcome tour. (MR !90.)
+
+* Switch to a new user session management approach of defining the session
+  services in `gnome-session@gnome-initial-setup.target.d/session.conf` in the
+  systemd user unit directory. This bumps the optional systemd dependency
+  to ≥ 242. See !66 for more details.
+
+* Bugs fixed:
+ - !66 Systemd unit update for 3.38
+ - !90 welcome tour: replace yelp with gnome-tour
+
+* Translation updates:
+ - Chinese (China)
+ - Friulian
+ - Indonesian
+ - Lithuanian
+ - Portuguese (Brazil)
+ - Swedish
+ - Tajik
+ - Turkish
+
+3.37.3
 ------
+
+* The avatars offered in the 'account' page can now be customized by setting
+  the 'org.gnome.desktop.interface avatar-directories' GSetting, which also
+  controls the avatars offered in Settings. (This introduces a dependency on
+  gsettings-desktop-schemas ≥ 3.37.1.)
+
+* Since version 3.30, it has been possible to customize certain aspects of
+  Initial Setup by specifing the 'vendor-conf-file' option at build time, then
+  installing a configuration file to that path. This version adds two paths
+  that will be checked by default: one for distribution configuration, and
+  another to override that configuration on specific deployments.
+
+  If you specify the 'vendor-conf-file' at build time, the old behaviour is
+  preserved and the new paths will not be searched. If possible, please migrate
+  any existing configuration to the new path, and stop specifying the
+  build-time option.
 
 * Bugs fixed:
   - #106 timezone: Don't set timezone if tz page is skipped
+ - #75 Polkit rules seem to list now unneeded privileges
+ - #95 Add error argument to save_data() vfunc
+ - #104 Japanese (Kana Kanji) no longer the default input method for Japanese in 3.36.2
+ - #105 Reconsider installation location of vendor.conf
+ - #106 gnome-initial-setup tries to set timezone even though timezone page is disabled
+ - !60 account: Use facesdirs setting to override faces
+ - !84 Fix pkgdata_dir location
+ - !87 Enable web process sandbox
+ - !88 Fix build with -Dvendor-conf-path
 
 * Translation updates:
+ - Chinese (China)
  - Kazakh
+ - Persian
+ - Romanian
+ - Spanish
+ - Ukrainian
 
-3.36.3
-------
-
-* Bugs fixed:
- - #104 Japanese (Kana Kanji) no longer the default input method for Japanese in 3.36.2
-
-3.36.2
+3.37.1
 ------
 
 * Bugs fixed:
