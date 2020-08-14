@@ -5,6 +5,7 @@ Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.
 Uploaders: @GNOME_TEAM@
 Build-Depends: debhelper-compat (= 12),
                dh-sequence-gnome,
+               gsettings-desktop-schemas-dev (>= 3.37.1),
                itstool,
                libaccountsservice-dev,
                libcheese-gtk-dev (>= 3.28),
@@ -31,7 +32,7 @@ Build-Depends: debhelper-compat (= 12),
                librest-dev,
                libsecret-1-dev (>= 0.18.8),
                libsystemd-dev [linux-any],
-               libwebkit2gtk-4.0-dev,
+               libwebkit2gtk-4.0-dev (>= 2.26),
                meson (>= 0.47.0)
 Rules-Requires-Root: no
 Standards-Version: 4.5.0
