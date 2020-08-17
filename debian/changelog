@@ -1,3 +1,14 @@
+gnome-initial-setup (3.37.91-1endless0) eos; urgency=medium
+
+  * Endless 3.37.91 release
+    - Add dependencies on eos-metrics-0, libattr1, libevince, eos-installer
+    - Bump polkit dependency to drop legacy PKLA support
+    - Move vendor config file to `/var/lib`
+    - Skip the privacy page
+    - Don’t run the welcome tour
+
+ -- Philip Withnall <withnall@endlessm.com>  Mon, 17 Aug 2020 15:47:00 +0100
+
 gnome-initial-setup (3.37.91-1) experimental; urgency=medium
 
   * New upstream release
