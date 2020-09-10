@@ -1,3 +1,11 @@
+gnome-initial-setup (3.37.92-1endless1) eos; urgency=medium
+
+  * Change malcontent recommends to malcontent-data to account for differences
+    in package naming between Endless and Debian; this can be dropped when
+    T30746 is fixed (see also T30173)
+
+ -- Philip Withnall <withnall@endlessm.com>  Thu, 10 Sep 2020 13:38:00 +0100
+
 gnome-initial-setup (3.37.92-1endless0) eos; urgency=medium
 
   * Endless 3.37.92 release
