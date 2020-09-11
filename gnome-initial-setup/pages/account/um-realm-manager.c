@@ -158,7 +158,7 @@ on_provider_new (GObject *source,
         manager->provider = provider;
         g_dbus_proxy_set_default_timeout (G_DBUS_PROXY (manager->provider), -1);
         g_debug ("Created realm manager");
-        g_task_return_pointer (task, manager, g_object_unref);
+        g_task_return_pointer (task, g_object_ref (manager), g_object_unref);
 }
 
 static void
