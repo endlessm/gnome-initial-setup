@@ -146,16 +146,16 @@ on_provider_new (GObject *source,
 {
         g_autoptr(GTask) task = G_TASK (user_data);
         UmRealmManager *manager = g_task_get_task_data (task);
-        GError *error = NULL;
-        UmRealmProvider *provider;
+        g_autoptr(GError) local_error = NULL;
+        g_autoptr(UmRealmProvider) provider = NULL;
 
-        provider = um_realm_provider_proxy_new_finish (result, &error);
-        if (error != NULL) {
-                g_task_return_error (task, error);
+        provider = um_realm_provider_proxy_new_finish (result, &local_error);
+        if (local_error != NULL) {
+                g_task_return_error (task, g_steal_pointer (&local_error));
                 return;
         }
 
-        manager->provider = provider;
+        manager->provider = g_steal_pointer (&provider);
         g_dbus_proxy_set_default_timeout (G_DBUS_PROXY (manager->provider), -1);
         g_debug ("Created realm manager");
         g_task_return_pointer (task, g_object_ref (manager), g_object_unref);
@@ -168,17 +168,17 @@ on_manager_new (GObject *source,
 {
         g_autoptr(GTask) task = G_TASK (user_data);
         GDBusConnection *connection;
-        GError *error = NULL;
-        GObject *object;
+        g_autoptr(GError) local_error = NULL;
+        g_autoptr(GObject) object = NULL;
 
-        object = g_async_initable_new_finish (G_ASYNC_INITABLE (source), result, &error);
-        if (error != NULL) {
-                g_task_return_error (task, error);
+        object = g_async_initable_new_finish (G_ASYNC_INITABLE (source), result, &local_error);
+        if (local_error != NULL) {
+                g_task_return_error (task, g_steal_pointer (&local_error));
                 return;
         }
 
-        g_task_set_task_data (task, object, g_object_unref);
         connection = g_dbus_object_manager_client_get_connection (G_DBUS_OBJECT_MANAGER_CLIENT (object));
+        g_task_set_task_data (task, g_steal_pointer (&object), g_object_unref);
 
         g_debug ("Connected to realmd");
 
