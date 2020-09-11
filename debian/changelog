@@ -1,3 +1,12 @@
+gnome-initial-setup (3.37.92-1endless2) eos; urgency=medium
+
+  * Disable Cheese webcam support to avoid a pipewire crash
+    This can be re-enabled once the upstream pipewire bug is fixed:
+    https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/286
+    See https://phabricator.endlessm.com/T30173
+
+ -- Philip Withnall <withnall@endlessm.com>  Fri, 11 Sep 2020 14:38:00 +0100
+
 gnome-initial-setup (3.37.92-1endless1) eos; urgency=medium
 
   * Change malcontent recommends to malcontent-data to account for differences
