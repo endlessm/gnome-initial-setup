@@ -1,55 +1,92 @@
-# gnome-initial-setup ja.po.
-# Copyright (C) 2012-2017, 2019-2020 gnome-initial-setup's COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2012.
-# Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2012-2016, 2017.
-# Ikuya Awashiro <ikuya@fruitsbasket.info>, 2014.
-# sicklylife <translation@sicklylife.jp>, 2019-2020.
-#
+# 
+# Translators:
+# Ikuya Awashiro <ikuya@fruitsbasket.info>, 2014
+# Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2012-2013
+# Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2017
+# sicklylife <translation@sicklylife.jp>, 2019
+# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2020-08-17 19:50+0000\n"
-"PO-Revision-Date: 2020-08-23 23:30+0900\n"
-"Last-Translator: sicklylife <translation@sicklylife.jp>\n"
-"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
-"Language: ja\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2020-10-12 07:15+0000\n"
+"PO-Revision-Date: 2020-10-12 07:15+0000\n"
+"Last-Translator: endlessmobile_build <admin@endlessos.org>\n"
+"Language-Team: Japanese (http://www.transifex.com/endless-os/gnome-initial-setup/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
 msgid "Initial Setup"
 msgstr "初期セットアップ"
 
-#: gnome-initial-setup/gis-assistant.c:423
+#: gnome-initial-setup/gis-assistant.c:442
 msgid "_Next"
 msgstr "次へ(_N)"
 
-#: gnome-initial-setup/gis-assistant.c:424
+#: gnome-initial-setup/gis-assistant.c:443
 msgid "_Accept"
 msgstr "適用(_A)"
 
-#: gnome-initial-setup/gis-assistant.c:425
+#: gnome-initial-setup/gis-assistant.c:444
 msgid "_Skip"
 msgstr "スキップ(_S)"
 
-#: gnome-initial-setup/gis-assistant.c:426
+#: gnome-initial-setup/gis-assistant.c:445
 msgid "_Previous"
 msgstr "前へ(_P)"
 
-#: gnome-initial-setup/gis-assistant.c:427
+#: gnome-initial-setup/gis-assistant.c:446
 msgid "_Cancel"
 msgstr "キャンセル(_C)"
 
-#: gnome-initial-setup/gnome-initial-setup.c:252
+#: gnome-initial-setup/gis-page-util.c:329
+msgid "Unknown"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.c:331
+#, c-format
+msgid "Image: %s"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.c:338
+msgid "Disabled"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.c:340
+#, c-format
+msgid "SD Card: %s"
+msgstr ""
+
+#. Translators: this is shown when launching the
+#. * reformatter (an external program) fails. The
+#. * placeholder is an error message describing what went
+#. * wrong.
+#: gnome-initial-setup/gis-page-util.c:392
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:29
+msgid "Test Mode"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:55
+msgid "Power Off"
+msgstr ""
+
+#: gnome-initial-setup/gnome-initial-setup.c:293
 msgid "Force existing user mode"
 msgstr "強制的に既存ユーザーモードを使用する"
 
-#: gnome-initial-setup/gnome-initial-setup.c:258
+#: gnome-initial-setup/gnome-initial-setup.c:299
 msgid "— GNOME initial setup"
 msgstr "— GNOME 初期セットアップ"
 
@@ -82,10 +119,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"エンタープライズログインを使用すると、すでに集中管理されているユーザーアカウ"
-"ントをこのデバイスで使用することができます。また、このアカウントを使用してイ"
-"ンターネット上の会社のリソースにアクセスすることができます。"
+msgstr "エンタープライズログインを使用すると、すでに集中管理されているユーザーアカウントをこのデバイスで使用することができます。また、このアカウントを使用してインターネット上の会社のリソースにアクセスすることができます。"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -119,11 +153,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"エンタープライズログインを使用するには、このコンピューターをドメインに登録す"
-"る必要があります。ネットワーク管理者に連絡を取って、ドメインのパスワードをこ"
-"こで入力してもらい、お使いのコンピューター用に一意となるコンピューター名を選"
-"択してください。"
+msgstr "エンタープライズログインを使用するには、このコンピューターをドメインに登録する必要があります。ネットワーク管理者に連絡を取って、ドメインのパスワードをここで入力してもらい、お使いのコンピューター用に一意となるコンピューター名を選択してください。"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -137,30 +167,31 @@ msgstr "管理者名(_N)"
 msgid "Administrator Password"
 msgstr "管理者のパスワード"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:207
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "名前とユーザーを確認してください。画像の選択もできます。"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:453
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:461
 msgid "We need a few details to complete setup."
 msgstr "ユーザーに関する情報を入力してください。"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:559
-msgid "Administrator"
-msgstr "管理者"
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:565
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:608
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:560
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:600
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:643
 #, c-format
 msgid "Failed to create user '%s': "
-msgstr "ユーザー '%s' の作成に失敗しました: "
+msgstr ""
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:594
+msgid "Administrator"
+msgstr "管理者"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:21
 msgid "Avatar image"
 msgstr "アバターの画像"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:38
-#: gnome-initial-setup/pages/account/gis-account-page.c:283
+#: gnome-initial-setup/pages/account/gis-account-page.c:319
 msgid "About You"
 msgstr "ユーザー情報"
 
@@ -172,11 +203,15 @@ msgstr "名前とユーザー名を入力してください。画像の選択も
 msgid "_Full Name"
 msgstr "フルネーム(_F)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:149
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:144
+msgid "Set a password"
+msgstr ""
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:160
 msgid "Set up _parental controls for this user"
 msgstr "このユーザーのペアレンタルコントロールを設定する(_P)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:156
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:167
 msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr "親や管理者のパスワードを設定する必要があります。"
 
@@ -188,59 +223,104 @@ msgstr "エンタープライズログイン(_E)"
 msgid "Go online to set up Enterprise Login."
 msgstr "エンタープライズログインの準備のためにオンライン接続します。"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:310
+#: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
 msgstr "このタイプのドメインは自動で参加できません"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:373
-#, c-format
+#: gnome-initial-setup/pages/account/um-realm-manager.c:269
 msgid "No such domain or realm found"
 msgstr "そのようなドメインやレルムは見つかりませんでした"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:782
-#: gnome-initial-setup/pages/account/um-realm-manager.c:796
+#: gnome-initial-setup/pages/account/um-realm-manager.c:723
+#: gnome-initial-setup/pages/account/um-realm-manager.c:737
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
 msgstr "%2$s ドメインに %1$s としてログインできません"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:788
+#: gnome-initial-setup/pages/account/um-realm-manager.c:729
 msgid "Invalid password, please try again"
 msgstr "無効なパスワードです、やり直してください"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:801
+#: gnome-initial-setup/pages/account/um-realm-manager.c:742
 #, c-format
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "%s ドメインに接続できませんでした: %s"
 
-#: gnome-initial-setup/pages/account/um-utils.c:248
+#: gnome-initial-setup/pages/account/um-utils.c:256
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr "そのユーザー名は利用できません。他の名前を使用してください。"
 
-#: gnome-initial-setup/pages/account/um-utils.c:251
+#: gnome-initial-setup/pages/account/um-utils.c:259
 #, c-format
 msgid "The username is too long."
 msgstr "ユーザー名が長すぎます。"
 
-#: gnome-initial-setup/pages/account/um-utils.c:254
+#: gnome-initial-setup/pages/account/um-utils.c:262
 msgid "The username cannot start with a “-”."
 msgstr "ユーザー名の先頭文字に“-”は使えません。"
 
-#: gnome-initial-setup/pages/account/um-utils.c:257
+#: gnome-initial-setup/pages/account/um-utils.c:265
 msgid "That username isn’t available. Please try another."
 msgstr "そのユーザー名は利用できません。他の名前を使用してください。"
 
-#: gnome-initial-setup/pages/account/um-utils.c:260
+#: gnome-initial-setup/pages/account/um-utils.c:268
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"ユーザー名は、a-z の大文字小文字、数字、'.', '-', '_' の文字だけで構成してく"
-"ださい。"
+msgstr "ユーザー名は、a-z の大文字小文字、数字、'.', '-', '_' の文字だけで構成してください。"
 
-#: gnome-initial-setup/pages/account/um-utils.c:264
+#: gnome-initial-setup/pages/account/um-utils.c:272
 msgid "This will be used to name your home folder and can’t be changed."
+msgstr "ユーザー名はホームフォルダーの名前に使用されます。これは変更できません。"
+
+#: gnome-initial-setup/pages/display/gis-display-page.c:249
+msgid "Display"
 msgstr ""
-"ユーザー名はホームフォルダーの名前に使用されます。これは変更できません。"
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:39
+msgid "Adjust for TV screen"
+msgstr ""
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:57
+msgid "Do you see this at the bottom right corner of your screen?"
+msgstr ""
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:105
+msgid "I see it"
+msgstr ""
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:121
+msgid "I do not see it. Shrink screen to fit TV."
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
+msgid "Terms of Use"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
+msgid "Please read the following terms of use carefully"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
+msgid ""
+"By clicking \"Accept,\" you acknowledge that you have read, understood, and "
+"agree to be bound by the following terms and conditions."
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
+msgid "Help make Endless better for everyone"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
+msgid ""
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
+msgid "Third Party Software"
+msgstr ""
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -258,32 +338,42 @@ msgstr "オンラインアカウントへの接続"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"オンラインアカウントに接続すると、メールやオンラインカレンダー、連絡先、文"
-"書、写真などに簡単にアクセスできるようになります。"
+msgstr "オンラインアカウントに接続すると、メールやオンラインカレンダー、連絡先、文書、写真などに簡単にアクセスできるようになります。"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
 msgstr "オンラインアカウントの追加/削除は、設定メニューからいつでもできます。"
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:240
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
 msgstr "プレビュー"
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:299
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:227
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:291
 msgid "More…"
 msgstr "さらに…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:321
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "入力が見つかりません"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:504
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
+msgid "Your keyboard layout seems to be:"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
+msgid "Please press one of the following keys:"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
+msgid "Is the following key present on your keyboard?"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:541
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
 msgid "Typing"
 msgstr "入力"
@@ -292,21 +382,61 @@ msgstr "入力"
 msgid "Select your keyboard layout or an input method."
 msgstr "キーボードレイアウトや入力メソッドの選択"
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:243
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
+msgid "Help Detect My Keyboard Layout"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
+msgid "Detect Keyboard Layout…"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
+msgid "_Select"
+msgstr ""
+
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:307
 msgid "No languages found"
 msgstr "言語が見つかりません"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:262
+#: gnome-initial-setup/pages/language/gis-language-page.c:365
 msgid "Welcome"
 msgstr "ようこそ"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
-msgstr "ようこそ!"
+msgstr "ようこそ"
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
+msgid "Try Endless OS by running it from the USB Stick."
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
+msgid "Try Endless OS by running it from the DVD."
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
+msgid "Reformat this computer with Endless OS."
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
+msgid "Try It"
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
+msgid "Reformat"
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:181
+msgid "Try or Reformat"
+msgstr ""
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:318
 msgctxt "Wireless access point"
@@ -334,8 +464,6 @@ msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
 msgstr ""
-"インターネットへ接続すると、新しいアプリ、情報、その他のアップグレードを"
-"入手できます。また、時刻と現在地を自動的に設定することもできます。"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -346,62 +474,74 @@ msgid "Turn On"
 msgstr "オンにする"
 
 #. Translators: The placeholder is the user’s full name.
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:102
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:135
 #, c-format
 msgid "Parental Controls for %s"
 msgstr "%s のペアレンタルコントロール"
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:104
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:137
 msgid "Set restrictions on what this user can run or install."
-msgstr ""
-"このユーザーが何をインストールできるか、何を実行できるかの制限を設定します。"
+msgstr "このユーザーが何をインストールできるか、何を実行できるかの制限を設定します。"
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:199
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:232
 msgid "Parental Controls"
 msgstr "ペアレンタルコントロール"
 
 #. Don’t break UI compatibility if parental controls are disabled.
-#: gnome-initial-setup/pages/password/gis-password-page.c:79
+#: gnome-initial-setup/pages/password/gis-password-page.c:83
 msgid "Set a Password"
 msgstr "パスワードを設定する"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:80
-#: gnome-initial-setup/pages/password/gis-password-page.c:89
+#: gnome-initial-setup/pages/password/gis-password-page.c:84
+#: gnome-initial-setup/pages/password/gis-password-page.c:93
 msgid "Be careful not to lose your password."
 msgstr "パスワードを忘れないように注意してください。"
 
 #. Translators: The placeholder is for the user’s full name.
-#: gnome-initial-setup/pages/password/gis-password-page.c:87
+#: gnome-initial-setup/pages/password/gis-password-page.c:91
 #, c-format
 msgid "Set a Password for %s"
 msgstr "%s のパスワードを設定する"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:95
+#: gnome-initial-setup/pages/password/gis-password-page.c:99
 msgid "Set a Parent Password"
 msgstr "親のパスワードを設定する"
 
-#. Translators: The placeholder is the full name of the child user on the system.
-#: gnome-initial-setup/pages/password/gis-password-page.c:97
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
+#: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
-msgstr ""
-"このパスワードで %s のペアレンタルコントロールへのアクセスを制御します。"
+msgstr "このパスワードで %s のペアレンタルコントロールへのアクセスを制御します。"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:228
-msgid "This is a weak password."
-msgstr "弱いパスワードです。"
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:234
+#: gnome-initial-setup/pages/password/gis-password-page.c:263
 msgid "The passwords do not match."
 msgstr "パスワードが一致しません。"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:420
+#: gnome-initial-setup/pages/password/gis-password-page.c:308
+#: gnome-initial-setup/pages/password/gis-password-page.c:339
+msgid "Show password"
+msgstr ""
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:347
+msgid "Hide password"
+msgstr ""
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:550
 msgid "Password"
 msgstr "パスワード"
 
-#: gnome-initial-setup/pages/password/gis-password-page.ui:66
+#: gnome-initial-setup/pages/password/gis-password-page.ui:69
 msgid "_Confirm"
 msgstr "確認(_C)"
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:202
+msgid "Password _reminder"
+msgstr ""
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:217
+msgid "Password reminder will be shown in case you forget your password."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -413,9 +553,7 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
-"このパスワードは前のパスワードとよく似ています。文字や数字をもう少し変更して"
-"みてください。"
+msgstr "このパスワードは前のパスワードとよく似ています。文字や数字をもう少し変更してみてください。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -423,16 +561,14 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
-"このパスワードは前のパスワードとよく似ています。パスワードをもう少し変更して"
-"みてください。"
+msgstr "このパスワードは前のパスワードとよく似ています。パスワードをもう少し変更してみてください。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr ""
-"弱いパスワードです。パスワードからユーザー名を取り除くともっと強くなります。"
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr "弱いパスワードです。パスワードからユーザー名を取り除くともっと強くなります。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
@@ -444,9 +580,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
-"弱いパスワードです。パスワードに含まれる一部の単語を使わないようにしてくださ"
-"い。"
+msgstr "弱いパスワードです。パスワードに含まれる一部の単語を使わないようにしてください。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
@@ -456,9 +590,7 @@ msgstr "弱いパスワードです。一般的な単語を使わないように
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr ""
-"弱いパスワードです。既存の単語の文字を並べ替えたものは避けるようにしてくださ"
-"い。"
+msgstr "弱いパスワードです。既存の単語の文字を並べ替えたものは避けるようにしてください。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
@@ -487,8 +619,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
-"弱いパスワードです。アルファベットや数字、記号を混ぜるようにしてください。"
+msgstr "弱いパスワードです。アルファベットや数字、記号を混ぜるようにしてください。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
@@ -500,16 +631,12 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"弱いパスワードです。同じ種類の文字の繰り返しは避けるようにしてください。アル"
-"ファベット、数字、記号を混ぜてください。"
+msgstr "弱いパスワードです。同じ種類の文字の繰り返しは避けるようにしてください。アルファベット、数字、記号を混ぜてください。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr ""
-"弱いパスワードです。1234 や abcd などの連続する並びは避けるようにしてくださ"
-"い。"
+msgstr "弱いパスワードです。1234 や abcd などの連続する並びは避けるようにしてください。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
@@ -520,33 +647,28 @@ msgstr "弱いパスワードです。文字や数字、記号をもっと増や
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
-"大文字、小文字を混ぜ、さらに数字を 1 つか 2 つは使用するようにしてください。"
+msgstr "大文字、小文字を混ぜ、さらに数字を 1 つか 2 つは使用するようにしてください。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
 msgstr "文字や数字、記号をもっと増やすとパスーワードはもっと強くなります。"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"技術的な問題に遭遇した場合、問題に関するレポートを送信することで %s の改善に"
-"役立てることができます。レポートは匿名で送信され、個人データは取り除かれま"
-"す。"
+msgstr "技術的な問題に遭遇した場合、問題に関するレポートを送信することで %s の改善に役立てることができます。レポートは匿名で送信され、個人データは取り除かれます。"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -575,9 +697,7 @@ msgstr "位置情報サービス"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"アプリケーションがあなたの地理的位置を特定できるようになります。位置情報サー"
-"ビスが有効になっている場合、インジケーターが表示されます。"
+msgstr "アプリケーションがあなたの地理的位置を特定できるようになります。位置情報サービスが有効になっている場合、インジケーターが表示されます。"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -588,10 +708,48 @@ msgid ""
 "Privacy controls can be changed at any time from the Settings application."
 msgstr "プライバシー設定は、設定メニューからいつでも変更できます。"
 
+#: gnome-initial-setup/pages/site/gis-site-page.ui:33
+msgid "Site"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:54
+msgid ""
+"At which site is this computer located? Search for your site here. You may "
+"enter manually if there is no match."
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:78
+msgid "enter manually"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:102
+msgid "ID"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:131
+msgid "Facility"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:160
+msgid "Street address"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:189
+msgid "City"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:218
+msgid "State"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:247
+msgid "Country"
+msgstr ""
+
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:233
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:235
 #, c-format
 msgid "_Start Using %s"
 msgstr "%s を使い始める(_S)"
@@ -599,21 +757,37 @@ msgstr "%s を使い始める(_S)"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:240
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:242
 #, c-format
 msgid "%s is ready to be used. We hope that you love it!"
 msgstr "%s を使用する準備ができました。気に入っていただければ幸いです。"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:264
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:266
+msgid "You're ready to try Endless OS"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:269
+msgid ""
+"<b>System software updates are unavailable when running from evaluation "
+"media. Please install Endless if you like it!</b>"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:273
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:283
 msgid "Setup Complete"
 msgstr "セットアップ完了"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:70
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:92
 msgid "All done!"
 msgstr "すべて終えました!"
 
 #. Translators: "city, country"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:261
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:278
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
@@ -621,29 +795,28 @@ msgstr "%s、%s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:298
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:318
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
 
 #. Translators: This is the time format used in 12-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:322
 msgid "%l:%M %p"
 msgstr "%p%I:%M"
 
 #. Translators: This is the time format used in 24-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:325
 msgid "%R"
 msgstr "%R"
 
 #. Translators: "timezone (utc shift)"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:328
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:473
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:493
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:17
 msgid "Time Zone"
 msgstr "タイムゾーン"
@@ -652,9 +825,7 @@ msgstr "タイムゾーン"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"現在地が特定できれば、タイムゾーンは自動で設定されます。都市を検索して手動で"
-"タイムゾーンを設定することもできます。"
+msgstr "現在地が特定できれば、タイムゾーンは自動で設定されます。都市を検索して手動でタイムゾーンを設定することもできます。"
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
@@ -667,153 +838,21 @@ msgstr "近くの都市を探してください"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
 #, c-format
 msgid "Welcome to %s !"
-msgstr "%s へようこそ!"
+msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
 msgid "Setup"
-msgstr "セットアップ"
+msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:43
 msgid ""
 "Setup will guide you through making an account and enabling some features. "
 "We’ll have you up and running in no time."
 msgstr ""
-"アカウントを作成して、いくつかの機能を有効にします。すぐにお使いいただけるよ"
-"うになります。"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
 msgid "_Start Setup"
-msgstr "セットアップ開始(_S)"
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "インターネットに接続すると時刻の設定や個人の詳細追記、メールやカレンダー、"
-#~ "連絡先へのアクセスができるようになります。エンタープライズログインアカウン"
-#~ "トでもこの接続は必要となります。"
-
-#~ msgid "License Agreements"
-#~ msgstr "ライセンス契約"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr "本エンドユーザーライセンス契約の条件に同意します(_A)。"
-
-#~ msgid "No regions found"
-#~ msgstr "地域が見つかりません"
-
-#~ msgid "Region"
-#~ msgstr "地域"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "国か地域を選択してください。"
-
-#~ msgid "Software Repositories"
-#~ msgstr "ソフトウェアリポジトリ"
-
-#~ msgid "Access additional software from selected third party sources."
-#~ msgstr ""
-#~ "選択したサードパーティーソースにある追加のソフトウェアにアクセスします。"
-
-#~ msgid ""
-#~ "Some of this software is proprietary and therefore has restrictions on "
-#~ "use, sharing, and access to source code."
-#~ msgstr ""
-#~ "このソフトウェアの一部はプロプライエタリです。使用、共有、ソースコードへの"
-#~ "アクセスに制限があります。"
-
-#~ msgid "Additional Software Repositories"
-#~ msgstr "追加のソフトウェアリポジトリ"
-
-#~ msgid "<a href=\"more\">Find out more…</a>"
-#~ msgstr "<a href=\"more\">詳細…</a>"
-
-#~ msgid "Third Party Repositories"
-#~ msgstr "サードパーティーのリポジトリ"
-
-#~ msgid ""
-#~ "Proprietary software typically has restrictions on how it can be used and "
-#~ "on access to source code. This prevents anyone but the software owner "
-#~ "from inspecting, improving or learning from its code."
-#~ msgstr ""
-#~ "プロプライエタリソフトウェアは、一般的に使用やソースコードへのアクセスに制"
-#~ "限があります。これは、ソフトウェアの所有者以外の人がそのソフトウェアを調"
-#~ "査、改良したり、ソースコードから学習することの妨げになります。"
-
-#~ msgid ""
-#~ "In contrast, Free Software can be freely run, copied, distributed, "
-#~ "studied and modified."
-#~ msgstr ""
-#~ "これに対して、自由ソフトウェアは、実行、複製、配布、研究、改変を自由に行う"
-#~ "ことができます。"
-
-#~ msgid "Ready to Go"
-#~ msgstr "準備完了"
-
-#~ msgid "You’re ready to go!"
-#~ msgstr "使用する準備が完了しました。"
-
-#~ msgid "Disable image"
-#~ msgstr "画像を無効にする"
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to avoid common words."
-#~ msgstr "一般的な単語は避けるようにしてください。"
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to use more numbers."
-#~ msgstr "数字をもっと増やしてみてください。"
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "Password needs to be longer. Try to add more letters, numbers and "
-#~ "punctuation."
-#~ msgstr ""
-#~ "パスワードが短すぎます。アルファベット、数字、記号をもっと追加するようにし"
-#~ "てください。"
-
-#~ msgid ""
-#~ "Proprietary software sources provide access to additional software, "
-#~ "including web browsers and games. This software typically has "
-#~ "restrictions on use and access to source code, and is not provided by %s."
-#~ msgstr ""
-#~ "プロプライエタリソフトウェアソースを利用すれば、ウェブブラウザーやゲームな"
-#~ "どの追加のソフトウェアを利用できるようになります。この種のソフトウェアは、"
-#~ "一般的に使用やソースコードへのアクセスに制限があり、%s では提供されていま"
-#~ "せん。"
-
-#~ msgid "Proprietary Software Sources"
-#~ msgstr "プロプライエタリソフトウェアソース"
-
-#~ msgid "A user with the username '%s' already exists."
-#~ msgstr "'%s' というユーザーはすでに存在します。"
-
-#~ msgid "_Verify"
-#~ msgstr "検証する(_V)"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "強度: 弱"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "強度: 低"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "強度: 中"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "強度: 良"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "強度: 高"
+msgstr ""

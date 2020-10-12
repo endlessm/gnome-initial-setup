@@ -1,60 +1,96 @@
-# Dutch translation for gnome-initial-setup.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-# enterprise login - Hannie: enterprise-aanmelding vervangen door bedrijfsaanmelding
-# brentx <deweerdt.brent@gmail.com>, 2013.
-# Reinout van Schouwen <reinouts@gnome.org>, 2013, 2014.
-# Wouter Bolsterlee <wbolster@gnome.org>, 2013.
-# Erwin Poeze <donnut@outlook.com>, 2013.
-# Nathan Follens <nthn@unseen.is>, 2015-2020.
-# Hannie Dumoleyn <hannie@ubuntu-nl.org>, 2014, 2015, 2018.
-# Justin van Steijn <jvs@fsfe.org>, 2018.
+# 
+# Translators:
+# brentx <deweerdt.brent@gmail.com>, 2013
+# tyfjoh, 2013
+# Hannie Dumoleyn <hannie@ubuntu-nl.org>, 2014-2015,2018
+# Heimen Stoffels <vistausss@outlook.com>, 2018-2019
+# Justin van Steijn <jvs@fsfe.org>, 2018
+# Nathan Follens <nthn@unseen.is>, 2015
+# Reinout van Schouwen <reinouts@gnome.org>, 2013-2014
+# tyfjoh, 2013
+# Wouter Bolsterlee <wbolster@gnome.org>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2020-08-17 19:50+0000\n"
-"PO-Revision-Date: 2020-08-25 18:05+0200\n"
-"Last-Translator: Nathan Follens <nthn@unseen.is>\n"
-"Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
-"Language: nl\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2020-10-12 07:15+0000\n"
+"PO-Revision-Date: 2020-10-12 07:15+0000\n"
+"Last-Translator: endlessmobile_build <admin@endlessos.org>\n"
+"Language-Team: Dutch (http://www.transifex.com/endless-os/gnome-initial-setup/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.1\n"
-"X-Project-Style: gnome\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
 msgid "Initial Setup"
 msgstr "Instellingen voor eerste gebruik"
 
-#: gnome-initial-setup/gis-assistant.c:423
+#: gnome-initial-setup/gis-assistant.c:442
 msgid "_Next"
 msgstr "Volge_nde"
 
-#: gnome-initial-setup/gis-assistant.c:424
+#: gnome-initial-setup/gis-assistant.c:443
 msgid "_Accept"
 msgstr "_Accepteren"
 
-#: gnome-initial-setup/gis-assistant.c:425
+#: gnome-initial-setup/gis-assistant.c:444
 msgid "_Skip"
 msgstr "Over_slaan"
 
-#: gnome-initial-setup/gis-assistant.c:426
+#: gnome-initial-setup/gis-assistant.c:445
 msgid "_Previous"
 msgstr "_Vorige"
 
-#: gnome-initial-setup/gis-assistant.c:427
+#: gnome-initial-setup/gis-assistant.c:446
 msgid "_Cancel"
 msgstr "_Annuleren"
 
-#: gnome-initial-setup/gnome-initial-setup.c:252
+#: gnome-initial-setup/gis-page-util.c:329
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: gnome-initial-setup/gis-page-util.c:331
+#, c-format
+msgid "Image: %s"
+msgstr "Afbeelding: %s"
+
+#: gnome-initial-setup/gis-page-util.c:338
+msgid "Disabled"
+msgstr "Uitgeschakeld"
+
+#: gnome-initial-setup/gis-page-util.c:340
+#, c-format
+msgid "SD Card: %s"
+msgstr "SD-kaart: %s"
+
+#. Translators: this is shown when launching the
+#. * reformatter (an external program) fails. The
+#. * placeholder is an error message describing what went
+#. * wrong.
+#: gnome-initial-setup/gis-page-util.c:392
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr "Fout tijdens opnieuw formatteren: %s"
+
+#: gnome-initial-setup/gis-page-util.ui:29
+msgid "Test Mode"
+msgstr "Testmodus"
+
+#: gnome-initial-setup/gis-page-util.ui:55
+msgid "Power Off"
+msgstr "Uitschakelen"
+
+#: gnome-initial-setup/gnome-initial-setup.c:293
 msgid "Force existing user mode"
 msgstr "Bestaande gebruikersmodus forceren"
 
-#: gnome-initial-setup/gnome-initial-setup.c:258
+#: gnome-initial-setup/gnome-initial-setup.c:299
 msgid "— GNOME initial setup"
 msgstr "— Instellingen voor eerste gebruik van Gnome"
 
@@ -87,10 +123,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"Met Bedrijfsaanmelding kunt u een bestaande, centraal beheerde "
-"gebruikersaccount gebruiken op dit apparaat. U kan deze account ook "
-"gebruiken om toegang te krijgen tot middelen van het bedrijf op het internet."
+msgstr "Met Bedrijfsaanmelding kunt u een bestaande, centraal beheerde gebruikersaccount gebruiken op dit apparaat. U kan deze account ook gebruiken om toegang te krijgen tot middelen van het bedrijf op het internet."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -124,10 +157,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"Om bedrijfsaanmeldingen te gebruiken moet deze computer ingeschreven zijn "
-"bij een domein. Laat uw netwerkbeheerder het domeinwachtwoord invoeren en "
-"kies een unieke naam voor uw computer."
+msgstr "Om bedrijfsaanmeldingen te gebruiken moet deze computer ingeschreven zijn bij een domein. Laat uw netwerkbeheerder het domeinwachtwoord invoeren en kies een unieke naam voor uw computer."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -141,30 +171,31 @@ msgstr "_Naam beheerder"
 msgid "Administrator Password"
 msgstr "_Wachtwoord beheerder"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:207
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "Controleer de naam en gebruikersnaam. U kan ook een afbeelding kiezen."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:453
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:461
 msgid "We need a few details to complete setup."
 msgstr "We hebben wat gegevens nodig om het instellen te voltooien."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:559
-msgid "Administrator"
-msgstr "Beheerder"
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:565
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:608
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:560
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:600
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:643
 #, c-format
 msgid "Failed to create user '%s': "
-msgstr "Aanmaken van gebruiker ‘%s’ mislukt: "
+msgstr ""
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:594
+msgid "Administrator"
+msgstr "Beheerder"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:21
 msgid "Avatar image"
 msgstr "Gebruikersafbeelding"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:38
-#: gnome-initial-setup/pages/account/gis-account-page.c:283
+#: gnome-initial-setup/pages/account/gis-account-page.c:319
 msgid "About You"
 msgstr "Over u"
 
@@ -176,15 +207,17 @@ msgstr "Voer een naam en gebruikersnaam in. U kan ook een afbeelding kiezen."
 msgid "_Full Name"
 msgstr "_Volledige naam"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:149
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:144
+msgid "Set a password"
+msgstr "Wachtwoord instellen"
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:160
 msgid "Set up _parental controls for this user"
 msgstr "Stel ouderlijk toezicht in voor deze gebruiker"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:156
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:167
 msgid "For use by a parent or supervisor, who must set up their own password."
-msgstr ""
-"Te gebruiken door een ouder of toezichthouder, die zelf een wachtwoord moet "
-"instellen."
+msgstr "Te gebruiken door een ouder of toezichthouder, die zelf een wachtwoord moet instellen."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
 msgid "_Enterprise Login"
@@ -194,60 +227,104 @@ msgstr "B_edrijfsaanmelding"
 msgid "Go online to set up Enterprise Login."
 msgstr "Ga online om bedrijfsaanmelding in te stellen."
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:310
+#: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
 msgstr "Automatisch aanmelden bij dit type domein is niet mogelijk"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:373
-#, c-format
+#: gnome-initial-setup/pages/account/um-realm-manager.c:269
 msgid "No such domain or realm found"
 msgstr "Dergelijk domein of realm niet gevonden"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:782
-#: gnome-initial-setup/pages/account/um-realm-manager.c:796
+#: gnome-initial-setup/pages/account/um-realm-manager.c:723
+#: gnome-initial-setup/pages/account/um-realm-manager.c:737
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
 msgstr "Aanmelden als %s bij domein %s is mislukt"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:788
+#: gnome-initial-setup/pages/account/um-realm-manager.c:729
 msgid "Invalid password, please try again"
 msgstr "Ongeldig wachtwoord, probeer het opnieuw"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:801
+#: gnome-initial-setup/pages/account/um-realm-manager.c:742
 #, c-format
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Verbinding maken met het domein %s is mislukt: %s"
 
-#: gnome-initial-setup/pages/account/um-utils.c:248
+#: gnome-initial-setup/pages/account/um-utils.c:256
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr "Sorry, die gebruikersnaam is niet beschikbaar. Probeer een andere."
 
-#: gnome-initial-setup/pages/account/um-utils.c:251
+#: gnome-initial-setup/pages/account/um-utils.c:259
 #, c-format
 msgid "The username is too long."
 msgstr "De gebruikersnaam is te lang."
 
-#: gnome-initial-setup/pages/account/um-utils.c:254
+#: gnome-initial-setup/pages/account/um-utils.c:262
 msgid "The username cannot start with a “-”."
 msgstr "De gebruikersnaam kan niet beginnen met een ‘-’."
 
-#: gnome-initial-setup/pages/account/um-utils.c:257
+#: gnome-initial-setup/pages/account/um-utils.c:265
 msgid "That username isn’t available. Please try another."
 msgstr "Die gebruikersnaam is niet beschikbaar. Probeer een andere."
 
-#: gnome-initial-setup/pages/account/um-utils.c:260
+#: gnome-initial-setup/pages/account/um-utils.c:268
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"De gebruikersnaam mag alleen maar bestaan uit hoofdletters en kleine letters "
-"van a t/m z, cijfers, en volgende tekens: . - _"
+msgstr "De gebruikersnaam mag alleen maar bestaan uit hoofdletters en kleine letters van a t/m z, cijfers, en volgende tekens: . - _"
 
-#: gnome-initial-setup/pages/account/um-utils.c:264
+#: gnome-initial-setup/pages/account/um-utils.c:272
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr ""
-"Dit zal worden gebruikt als naam van uw thuismap en kan niet worden "
-"gewijzigd."
+msgstr "Dit zal worden gebruikt als naam van uw thuismap en kan niet worden gewijzigd."
+
+#: gnome-initial-setup/pages/display/gis-display-page.c:249
+msgid "Display"
+msgstr "Scherm"
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:39
+msgid "Adjust for TV screen"
+msgstr "Aanpassen aan tv-scherm"
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:57
+msgid "Do you see this at the bottom right corner of your screen?"
+msgstr "Zie je dit rechtsonder op je scherm?"
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:105
+msgid "I see it"
+msgstr "Ik zie het"
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:121
+msgid "I do not see it. Shrink screen to fit TV."
+msgstr "Ik zie het niet; verklein het scherm."
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
+msgid "Terms of Use"
+msgstr "Algemene voorwaarden"
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
+msgid "Please read the following terms of use carefully"
+msgstr "Lees de volgende algemene voorwaarden zorgvuldig"
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
+msgid ""
+"By clicking \"Accept,\" you acknowledge that you have read, understood, and "
+"agree to be bound by the following terms and conditions."
+msgstr "Door te klikken op \"Accepteren en doorgaan\", ga je akkoord met het feit dat je de volgende algemene voorwaarden hebt gelezen en begrepen en je hieraan gebonden bent."
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
+msgid "Help make Endless better for everyone"
+msgstr "Help om Endless voor iedereen te verbeteren"
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
+msgid ""
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr "Automatisch gebruiksstatistieken en probleemrapportages versturen naar Endless. Alle gegevens zijn anoniem."
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
+msgid "Third Party Software"
+msgstr "Externe software"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -265,33 +342,42 @@ msgstr "Uw online-accounts koppelen"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"Door accounts te koppelen kun u eenvoudig verbinding maken met uw e-mail, "
-"online agenda, contactpersonen en fotoboeken."
+msgstr "Door accounts te koppelen kun u eenvoudig verbinding maken met uw e-mail, online agenda, contactpersonen en fotoboeken."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr ""
-"Accounts kunnen altijd toegevoegd en verwijderd worden via Instellingen."
+msgstr "Accounts kunnen altijd toegevoegd en verwijderd worden via Instellingen."
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:240
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
 msgstr "Voorbeeld"
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:299
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:227
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:291
 msgid "More…"
 msgstr "Meer…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:321
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Geen invoer gevonden"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:504
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
+msgid "Your keyboard layout seems to be:"
+msgstr "Je toetsenbordindeling lijkt de volgende te zijn:"
+
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
+msgid "Please press one of the following keys:"
+msgstr "Druk op één van de volgende toetsen:"
+
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
+msgid "Is the following key present on your keyboard?"
+msgstr "Is de volgende toets aanwezig op je toetsenbord?"
+
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:541
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
 msgid "Typing"
 msgstr "Typen"
@@ -300,33 +386,67 @@ msgstr "Typen"
 msgid "Select your keyboard layout or an input method."
 msgstr "Selecteer uw toetsenbordindeling of een invoermethode."
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:243
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
+msgid "Help Detect My Keyboard Layout"
+msgstr "Probeer mijn toetsenbordindeling te herkennen"
+
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
+msgid "Detect Keyboard Layout…"
+msgstr "Toetsenbordindeling herkennen..."
+
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
+msgid "_Select"
+msgstr "_Selecteren"
+
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:307
 msgid "No languages found"
 msgstr "Geen talen gevonden"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:262
+#: gnome-initial-setup/pages/language/gis-language-page.c:365
 msgid "Welcome"
 msgstr "Welkom"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "Welkom!"
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
+msgid "Try Endless OS by running it from the USB Stick."
+msgstr "Probeer om Endless OS te draaien vanaf de USB-schijf."
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
+msgid "Try Endless OS by running it from the DVD."
+msgstr "Probeer om Endless OS te draaien vanaf de DVD."
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
+msgid "Reformat this computer with Endless OS."
+msgstr "Herformatteer deze computer met Endless OS."
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
+msgid "Try It"
+msgstr "Uitproberen"
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
+msgid "Reformat"
+msgstr "Herformatteren"
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:181
+msgid "Try or Reformat"
+msgstr "Uitproberen of herformatteren"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:318
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "Overige…"
 
-# Dit komt beter over dan 'Draadloos
-# netwerken is uitgeschakeld',
-# waarbij het niet meteen duidelijk is
-# dat het om het werkwoord
-# 'netwerken' gaat, en niet het
-# zelfstandige naamwoord - Nathan
 #: gnome-initial-setup/pages/network/gis-network-page.c:403
 msgid "Wireless networking is disabled"
 msgstr "Draadloze netwerken zijn uitgeschakeld"
@@ -347,10 +467,7 @@ msgstr "Wifi"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr ""
-"Door met het internet te verbinden kunt u nieuwe toepassingen, informatie en "
-"andere updates verkrijgen. Het helpt u ook de tijd en uw locatie automatisch "
-"in te stellen."
+msgstr "Door verbinding te maken met het internet kun je nieuwe apps, informatie en andere upgrades verkrijgen. Het helpt ook bij het automatisch instellen van je tijd en locatie."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -361,62 +478,74 @@ msgid "Turn On"
 msgstr "Inschakelen"
 
 #. Translators: The placeholder is the user’s full name.
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:102
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:135
 #, c-format
 msgid "Parental Controls for %s"
 msgstr "Ouderlijk toezicht voor %s"
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:104
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:137
 msgid "Set restrictions on what this user can run or install."
 msgstr "Beperk wat deze gebruiker kan uitvoeren of installeren."
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:199
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:232
 msgid "Parental Controls"
 msgstr "Ouderlijk toezicht"
 
 #. Don’t break UI compatibility if parental controls are disabled.
-#: gnome-initial-setup/pages/password/gis-password-page.c:79
+#: gnome-initial-setup/pages/password/gis-password-page.c:83
 msgid "Set a Password"
 msgstr "Wachtwoord instellen"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:80
-#: gnome-initial-setup/pages/password/gis-password-page.c:89
+#: gnome-initial-setup/pages/password/gis-password-page.c:84
+#: gnome-initial-setup/pages/password/gis-password-page.c:93
 msgid "Be careful not to lose your password."
 msgstr "Zorg ervoor dat u uw wachtwoord niet verliest."
 
 #. Translators: The placeholder is for the user’s full name.
-#: gnome-initial-setup/pages/password/gis-password-page.c:87
+#: gnome-initial-setup/pages/password/gis-password-page.c:91
 #, c-format
 msgid "Set a Password for %s"
 msgstr "Stel een wachtwoord in voor %s"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:95
+#: gnome-initial-setup/pages/password/gis-password-page.c:99
 msgid "Set a Parent Password"
 msgstr "Stel een ouderwachtwoord in"
 
-#. Translators: The placeholder is the full name of the child user on the system.
-#: gnome-initial-setup/pages/password/gis-password-page.c:97
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
+#: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
-msgstr ""
-"Dit wachtwoord zal de toegang tot de instellingen voor ouderlijk toezicht "
-"voor %s beschermen."
+msgstr "Dit wachtwoord zal de toegang tot de instellingen voor ouderlijk toezicht voor %s beschermen."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:228
-msgid "This is a weak password."
-msgstr "Dit is een zwak wachtwoord."
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:234
+#: gnome-initial-setup/pages/password/gis-password-page.c:263
 msgid "The passwords do not match."
 msgstr "Wachtwoorden komen niet overeen."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:420
+#: gnome-initial-setup/pages/password/gis-password-page.c:308
+#: gnome-initial-setup/pages/password/gis-password-page.c:339
+msgid "Show password"
+msgstr "Wachtwoord tonen"
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:347
+msgid "Hide password"
+msgstr "Wachtwoord verbergen"
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:550
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: gnome-initial-setup/pages/password/gis-password-page.ui:66
+#: gnome-initial-setup/pages/password/gis-password-page.ui:69
 msgid "_Confirm"
 msgstr "_Bevestigen"
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:202
+msgid "Password _reminder"
+msgstr "Wachtwoord_herinnering"
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:217
+msgid "Password reminder will be shown in case you forget your password."
+msgstr "De wachtwoordherinnering wordt getoond als je je wachtwoord bent vergeten."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -428,9 +557,7 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
-"Dit wachtwoord lijkt erg op uw laatste wachtwoord. Probeer een paar letters "
-"en cijfers te wijzigen."
+msgstr "Dit wachtwoord lijkt erg op uw laatste wachtwoord. Probeer een paar letters en cijfers te wijzigen."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -438,33 +565,26 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
-"Dit wachtwoord lijkt erg op uw laatste wachtwoord. Probeer het wachtwoord "
-"iets meer te wijzigen."
+msgstr "Dit wachtwoord lijkt erg op uw laatste wachtwoord. Probeer het wachtwoord iets meer te wijzigen."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr ""
-"Dit is een zwak wachtwoord. Een wachtwoord zonder uw gebruikersnaam zou "
-"sterker zijn."
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr "Dit is een zwak wachtwoord. Een wachtwoord zonder uw gebruikersnaam zou sterker zijn."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr ""
-"Dit is een zwak wachtwoord. Probeer het gebruik van uw naam in het "
-"wachtwoord te vermijden."
+msgstr "Dit is een zwak wachtwoord. Probeer het gebruik van uw naam in het wachtwoord te vermijden."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
-"Dit is een zwak wachtwoord. Probeer enkele van de woorden die in het "
-"wachtwoord voorkomen te vermijden."
+msgstr "Dit is een zwak wachtwoord. Probeer enkele van de woorden die in het wachtwoord voorkomen te vermijden."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
@@ -474,9 +594,7 @@ msgstr "Dit is een zwak wachtwoord. Probeer algemene woorden te vermijden."
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr ""
-"Dit is een zwak wachtwoord. Probeer het herschikken van bestaande woorden te "
-"vermijden."
+msgstr "Dit is een zwak wachtwoord. Probeer het herschikken van bestaande woorden te vermijden."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
@@ -498,48 +616,37 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
-"Dit is een zwak wachtwoord. Probeer meer speciale tekens, zoals leestekens, "
-"te gebruiken."
+msgstr "Dit is een zwak wachtwoord. Probeer meer speciale tekens, zoals leestekens, te gebruiken."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
-"Dit is een zwak wachtwoord. Probeer een combinatie van letters, cijfers en "
-"leestekens te gebruiken."
+msgstr "Dit is een zwak wachtwoord. Probeer een combinatie van letters, cijfers en leestekens te gebruiken."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr ""
-"Dit is een zwak wachtwoord. Probeer herhaling van hetzelfde teken te "
-"vermijden."
+msgstr "Dit is een zwak wachtwoord. Probeer herhaling van hetzelfde teken te vermijden."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"Dit is een zwak wachtwoord. Probeer herhaling van hetzelfde soort teken te "
-"vermijden: u dient letters, cijfers en leestekens met elkaar te combineren."
+msgstr "Dit is een zwak wachtwoord. Probeer herhaling van hetzelfde soort teken te vermijden: u dient letters, cijfers en leestekens met elkaar te combineren."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr ""
-"Dit is een zwak wachtwoord. Probeer reeksen zoals 1234 of abcd te vermijden."
+msgstr "Dit is een zwak wachtwoord. Probeer reeksen zoals 1234 of abcd te vermijden."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr ""
-"Dit is een zwak wachtwoord. Probeer meer letters, cijfers en leestekens toe "
-"te voegen."
+msgstr "Dit is een zwak wachtwoord. Probeer meer letters, cijfers en leestekens toe te voegen."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
@@ -549,28 +656,23 @@ msgstr "Meng hoofdletters en kleine letters en gebruik een paar cijfers."
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-"Het toevoegen van meer letters, cijfers en leestekens zal het wachtwoord nog "
-"sterker maken."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
+msgstr "Het toevoegen van meer letters, cijfers en leestekens zal het wachtwoord nog sterker maken."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"Het melden van technische problemen helpt ons %s te verbeteren. Meldingen "
-"worden anoniem verzonden en persoonlijke gegevens worden eruit gewist."
+msgstr "Het melden van technische problemen helpt ons %s te verbeteren. Meldingen worden anoniem verzonden en persoonlijke gegevens worden eruit gewist."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -599,9 +701,7 @@ msgstr "Locatiediensten"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Laat toepassingen toe uw geografische locatie te bepalen. Wanneer "
-"locatiediensten in gebruik zijn, wordt dit aangegeven."
+msgstr "Laat toepassingen toe uw geografische locatie te bepalen. Wanneer locatiediensten in gebruik zijn, wordt dit aangegeven."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -612,10 +712,48 @@ msgid ""
 "Privacy controls can be changed at any time from the Settings application."
 msgstr "Privacyvoorkeuren kunnen altijd gewijzigd worden via Instellingen."
 
+#: gnome-initial-setup/pages/site/gis-site-page.ui:33
+msgid "Site"
+msgstr "Faciliteit"
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:54
+msgid ""
+"At which site is this computer located? Search for your site here. You may "
+"enter manually if there is no match."
+msgstr "In welke faciliteit staat deze computer? Zoek hier naar je faciliteit. Als er geen overeenkomst, kun je de naam ook handmatig invoeren."
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:78
+msgid "enter manually"
+msgstr "handmatig invoeren"
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:102
+msgid "ID"
+msgstr "ID"
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:131
+msgid "Facility"
+msgstr "Faciliteit"
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:160
+msgid "Street address"
+msgstr "Adres"
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:189
+msgid "City"
+msgstr "Stad"
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:218
+msgid "State"
+msgstr "Staat/Provincie"
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:247
+msgid "Country"
+msgstr "Land"
+
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:233
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:235
 #, c-format
 msgid "_Start Using %s"
 msgstr "_Beginnen met %s"
@@ -623,21 +761,37 @@ msgstr "_Beginnen met %s"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:240
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:242
 #, c-format
 msgid "%s is ready to be used. We hope that you love it!"
 msgstr "%s is klaar om te gebruiken. We hopen dat het u bevalt!"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:264
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:266
+msgid "You're ready to try Endless OS"
+msgstr "Je bent er klaar voor om Endless OS te proberen"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:269
+msgid ""
+"<b>System software updates are unavailable when running from evaluation "
+"media. Please install Endless if you like it!</b>"
+msgstr "<b>Software-updates zijn niet beschikbaar in de live-omgeving. Installeer Endless!</b>"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:273
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr "<b>Gedownloade bestanden en gecreëerde documenten gaan verloren zodra je de computer herstart of afsluit.</b>"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:283
 msgid "Setup Complete"
 msgstr "Installatie voltooid"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:70
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:92
 msgid "All done!"
 msgstr "Klaar!"
 
 #. Translators: "city, country"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:261
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:278
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
@@ -645,29 +799,28 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:298
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:318
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
 
 #. Translators: This is the time format used in 12-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:322
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: This is the time format used in 24-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:325
 msgid "%R"
 msgstr "%R"
 
 #. Translators: "timezone (utc shift)"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:328
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:473
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:493
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:17
 msgid "Time Zone"
 msgstr "Tijdzone"
@@ -676,9 +829,7 @@ msgstr "Tijdzone"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"Indien uw locatie niet gevonden kan worden, wordt de tijdzone automatisch "
-"ingesteld. U kan ook zelf een stad zoeken en deze instellen."
+msgstr "Indien uw locatie niet gevonden kan worden, wordt de tijdzone automatisch ingesteld. U kan ook zelf een stad zoeken en deze instellen."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
@@ -691,239 +842,21 @@ msgstr "Zoek de dichtstbijgelegen stad"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
 #, c-format
 msgid "Welcome to %s !"
-msgstr "Welkom bij %s!"
+msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
 msgid "Setup"
-msgstr "Configuratie"
+msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:43
 msgid ""
 "Setup will guide you through making an account and enabling some features. "
 "We’ll have you up and running in no time."
 msgstr ""
-"Configuratie zal u door het proces leiden van het aanmaken van een account "
-"en het inschakelen van enkele functies. Op deze manier bent u zo snel "
-"mogelijk klaar."
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
 msgid "_Start Setup"
-msgstr "Configuratie _starten"
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "Als er verbinding met het internet is, kunt u de tijd instellen, uw "
-#~ "gegevens toevoegen, en toegang krijgen tot uw e-mail, agenda en "
-#~ "contactpersonen. Verbinding is ook noodzakelijk voor bedrijfsaanmeldingen."
-
-#~ msgid "preferences-system"
-#~ msgstr "voorkeuren-systeem"
-
-#~ msgid "License Agreements"
-#~ msgstr "Licentieovereenkomsten"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr ""
-#~ "Ik ga akkoord met de voorwaarden en bepalingen in deze "
-#~ "licentieovereenkomst voor eindgebruikers."
-
-#~ msgid "No regions found"
-#~ msgstr "Geen regio’s gevonden"
-
-#~ msgid "Region"
-#~ msgstr "Regio"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "Kies uw land of regio."
-
-#~ msgid "Software Repositories"
-#~ msgstr "Softwarebronnen"
-
-#~ msgid "Access additional software from selected third party sources."
-#~ msgstr ""
-#~ "Toegang krijgen tot aanvullende software van geselecteerde derde partijen."
-
-#~ msgid ""
-#~ "Some of this software is proprietary and therefore has restrictions on "
-#~ "use, sharing, and access to source code."
-#~ msgstr ""
-#~ "Deze software is niet-vrij en er heeft daarom beperkingen met betrekking "
-#~ "tot het gebruik, verspreiding, en toegang tot de broncode."
-
-#~ msgid "Additional Software Repositories"
-#~ msgstr "Aanvullende softwarebronnen"
-
-#~ msgid "<a href=\"more\">Find out more…</a>"
-#~ msgstr "<a href=\"more\">Lees meer…</a>"
-
-#~ msgid "Third Party Repositories"
-#~ msgstr "Softwarebronnen van derden"
-
-#~ msgid ""
-#~ "Proprietary software typically has restrictions on how it can be used and "
-#~ "on access to source code. This prevents anyone but the software owner "
-#~ "from inspecting, improving or learning from its code."
-#~ msgstr ""
-#~ "Niet-vrije software heeft doorgaans beperkingen op het gebruik van en de "
-#~ "toegang tot broncode. Dit verhindert iedereen behalve de eigenaar van de "
-#~ "software deze code te kunnen controleren, verbeteren of er van te leren."
-
-#~ msgid ""
-#~ "In contrast, Free Software can be freely run, copied, distributed, "
-#~ "studied and modified."
-#~ msgstr ""
-#~ "Vrije software daarentegen kan vrij uitgevoerd, verspreid, bestudeerd en "
-#~ "aangepast worden."
-
-#~ msgid "Ready to Go"
-#~ msgstr "Klaar om verder te gaan"
-
-#~ msgid "You’re ready to go!"
-#~ msgstr "U bent klaar om te beginnen!"
-
-#~ msgid "Disable image"
-#~ msgstr "Afbeelding uitschakelen"
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to avoid common words."
-#~ msgstr "Probeer algemene woorden te vermijden."
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to use more numbers."
-#~ msgstr "Probeer meer cijfers te gebruiken."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "Password needs to be longer. Try to add more letters, numbers and "
-#~ "punctuation."
-#~ msgstr ""
-#~ "Probeer een combinatie van letters, cijfers en leestekens te gebruiken."
-
-#~ msgid ""
-#~ "Proprietary software sources provide access to additional software, "
-#~ "including web browsers and games. This software typically has "
-#~ "restrictions on use and access to source code, and is not provided by %s."
-#~ msgstr ""
-#~ "Propriëtaire softwarebronnen bieden toegang tot extra software, inclusief "
-#~ "webbrowsers en games. Deze software heeft doorgaans beperkingen op het "
-#~ "gebruik van en de toegang tot broncode, en wordt niet aangeboden door %s."
-
-#~ msgid "Proprietary Software Sources"
-#~ msgstr "Propriëtaire softwarebronnen"
-
-#~ msgid "A user with the username ‘%s’ already exists."
-#~ msgstr "Een gebruiker met de gebruikersnaam ‘%s’ bestaat al."
-
-#~ msgid "_Verify"
-#~ msgstr "_Verifiëren"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "Sterkte: Zwak"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "Sterkte: Laag"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "Sterkte: Middelsterk"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "Sterkte: Goed"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "Sterkte: Hoog"
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "Zijn dit de juiste gegevens? U kunt ze desgewenst wijzigen."
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr ""
-#~ "U kunt uw online-accounts bekijken (en andere toevoegen) na het instellen."
-
-#~ msgid "You're all set!"
-#~ msgstr "U bent helemaal klaar!"
-
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "Wij denken dat uw tijdzone %s is. Druk op Volgende om verder te gaan of "
-#~ "zoek naar een stad om de tijdzone handmatig in te stellen."
-
-#~ msgid "Cancel"
-#~ msgstr "Annuleren"
-
-#~ msgid "Your username cannot be changed after setup."
-#~ msgstr ""
-#~ "Uw gebruikersnaam kan niet worden gewijzigd nadat de instellingen zijn "
-#~ "voltooid."
-
-#~ msgid ""
-#~ "In order to use enterprise logins, this computer needs to be enrolled in "
-#~ "the domain. Please have your network administrator type their domain "
-#~ "password here, and choose a unique computer name for your computer."
-#~ msgstr ""
-#~ "Om bedrijfsaanmeldingen te gebruiken moet deze computer ingeschreven zijn "
-#~ "bij het domein. Laat uw netwerkbeheerder hier het domeinwachtwoord "
-#~ "invoeren en kies een unieke naam voor uw computer."
-
-#~ msgid "No password"
-#~ msgstr "Geen wachtwoord"
-
-#~ msgctxt "Password strength"
-#~ msgid "Too short"
-#~ msgstr "Te kort"
-
-#~ msgctxt "Password strength"
-#~ msgid "Not good enough"
-#~ msgstr "Niet goed genoeg"
-
-#~ msgctxt "Password strength"
-#~ msgid "Weak"
-#~ msgstr "Zwak"
-
-#~ msgctxt "Password strength"
-#~ msgid "Fair"
-#~ msgstr "Redelijk"
-
-#~ msgctxt "Password strength"
-#~ msgid "Good"
-#~ msgstr "Goed"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strong"
-#~ msgstr "Sterk"
-
-#~ msgid "Login"
-#~ msgstr "Aanmelden"
-
-#~ msgid "Create a Local Account"
-#~ msgstr "Een lokaal account aanmaken"
-
-#~ msgid "page 1"
-#~ msgstr "pagina 1"
-
-#~ msgid "Create an Enterprise Account"
-#~ msgstr "Een bedrijfsaccount aanmaken"
-
-#~ msgid "Other"
-#~ msgstr "Overige"
-
-#~ msgid "No input source selected"
-#~ msgstr "Er zijn geen invoerbronnen geselecteerd"
-
-#~ msgid "Add an Input Source"
-#~ msgstr "Een invoerapparaat toevoegen"
+msgstr ""

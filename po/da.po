@@ -1,59 +1,93 @@
-# Danish translation for gnome-initial-setup.
-# Copyright (C) 2012-2018 gnome-initial-setup's COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-#
-# Kris Thomsen <mail@kristhomsen.dk>, 2012.
-# Kenneth Nielsen <k.nielsen81@gmail.com>, 2013-2014.
-# Ask Hjorth Larsen <asklarsen@gmail.com>, 2013-18.
-# scootergrisen, 2015-2016.
-# Joe Hansen <joedalton2@yahoo.dk>.
-#
+# 
+# Translators:
+# askhl <asklarsen@gmail.com>, 2013
+# askhl <asklarsen@gmail.com>, 2013
+# Kenneth Nielsen <k.nielsen81@gmail.com>, 2013
+# Kris Thomsen <mail@kristhomsen.dk>, 2012
+# scootergrisen, 2015-2016
+# Will Thompson <wjt@endlessos.org>, 2020
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2020-02-14 16:48+0000\n"
-"PO-Revision-Date: 2020-02-27 18:48+0100\n"
-"Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
-"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
-"Language: da\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2020-10-12 07:15+0000\n"
+"PO-Revision-Date: 2020-10-12 07:15+0000\n"
+"Last-Translator: endlessmobile_build <admin@endlessos.org>\n"
+"Language-Team: Danish (http://www.transifex.com/endless-os/gnome-initial-setup/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
 msgid "Initial Setup"
 msgstr "Førstegangsopsætning"
 
-#: gnome-initial-setup/gis-assistant.c:419
+#: gnome-initial-setup/gis-assistant.c:442
 msgid "_Next"
 msgstr "_Næste"
 
-#: gnome-initial-setup/gis-assistant.c:420
+#: gnome-initial-setup/gis-assistant.c:443
 msgid "_Accept"
 msgstr "_Acceptér"
 
-#: gnome-initial-setup/gis-assistant.c:421
+#: gnome-initial-setup/gis-assistant.c:444
 msgid "_Skip"
 msgstr "_Spring over"
 
-#: gnome-initial-setup/gis-assistant.c:422
+#: gnome-initial-setup/gis-assistant.c:445
 msgid "_Previous"
 msgstr "_Forrige"
 
-#: gnome-initial-setup/gis-assistant.c:423
+#: gnome-initial-setup/gis-assistant.c:446
 msgid "_Cancel"
 msgstr "_Annullér"
 
-#: gnome-initial-setup/gnome-initial-setup.c:241
+#: gnome-initial-setup/gis-page-util.c:329
+msgid "Unknown"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.c:331
+#, c-format
+msgid "Image: %s"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.c:338
+msgid "Disabled"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.c:340
+#, c-format
+msgid "SD Card: %s"
+msgstr ""
+
+#. Translators: this is shown when launching the
+#. * reformatter (an external program) fails. The
+#. * placeholder is an error message describing what went
+#. * wrong.
+#: gnome-initial-setup/gis-page-util.c:392
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:29
+msgid "Test Mode"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:55
+msgid "Power Off"
+msgstr ""
+
+#: gnome-initial-setup/gnome-initial-setup.c:293
 msgid "Force existing user mode"
 msgstr "Tving eksisterende bruger-tilstand"
 
-#: gnome-initial-setup/gnome-initial-setup.c:247
+#: gnome-initial-setup/gnome-initial-setup.c:299
 msgid "— GNOME initial setup"
 msgstr "— Førstegangsopsætning af GNOME"
 
@@ -86,10 +120,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"Enterprise-login tillader at en eksisterende, centralt håndteret brugerkonto "
-"bruges på denne enhed. Du kan også bruge denne konto til at tilgå "
-"firmaressourcer på nettet."
+msgstr "Enterprise-login tillader at en eksisterende, centralt håndteret brugerkonto bruges på denne enhed. Du kan også bruge denne konto til at tilgå firmaressourcer på nettet."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -123,10 +154,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"For at kunne bruge enterprise-logins skal computeren tilknyttes et domæne. "
-"Bed venligst netværksadministratoren om at skrive domæneadgangskoden her og "
-"vælg et unikt navn til din computer."
+msgstr "For at kunne bruge enterprise-logins skal computeren tilknyttes et domæne. Bed venligst netværksadministratoren om at skrive domæneadgangskoden her og vælg et unikt navn til din computer."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -140,15 +168,22 @@ msgstr "Administrator_navn"
 msgid "Administrator Password"
 msgstr "Adgangskode for administrator"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:206
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "Tjek venligst navnet og brugernavnet. Du kan også vælge et billede."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:455
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:461
 msgid "We need a few details to complete setup."
 msgstr "Vi har brug for et par detaljer for at færdiggøre opsætningen."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:562
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:560
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:600
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:643
+#, c-format
+msgid "Failed to create user '%s': "
+msgstr ""
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:594
 msgid "Administrator"
 msgstr "Administrator"
 
@@ -157,7 +192,7 @@ msgid "Avatar image"
 msgstr "Profilbillede"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:38
-#: gnome-initial-setup/pages/account/gis-account-page.c:281
+#: gnome-initial-setup/pages/account/gis-account-page.c:319
 msgid "About You"
 msgstr "Om dig"
 
@@ -169,11 +204,15 @@ msgstr "Angiv venligst et navn og et brugernavn. Du kan også vælge et billede.
 msgid "_Full Name"
 msgstr "_Fulde navn"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:149
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:144
+msgid "Set a password"
+msgstr ""
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:160
 msgid "Set up _parental controls for this user"
 msgstr "Indstil _forældrekontrol for denne bruger"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:156
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:167
 msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr "Til brug for en forælder eller værge som skal angive egen adgangskode."
 
@@ -183,62 +222,106 @@ msgstr "_Enterprise-login"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:53
 msgid "Go online to set up Enterprise Login."
-msgstr "Gå online for at sætte enterprise-login op."
+msgstr "Gå online for at sætte enterprise-login op"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:310
+#: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
 msgstr "Kan ikke forbinde til denne type af domæne automatisk"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:373
-#, c-format
+#: gnome-initial-setup/pages/account/um-realm-manager.c:269
 msgid "No such domain or realm found"
 msgstr "Intet sådant domæne eller realm fundet"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:782
-#: gnome-initial-setup/pages/account/um-realm-manager.c:796
+#: gnome-initial-setup/pages/account/um-realm-manager.c:723
+#: gnome-initial-setup/pages/account/um-realm-manager.c:737
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
 msgstr "Kan ikke logge ind som %s på domænet %s"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:788
+#: gnome-initial-setup/pages/account/um-realm-manager.c:729
 msgid "Invalid password, please try again"
 msgstr "Ugyldig adgangskode. Prøv venligst igen"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:801
+#: gnome-initial-setup/pages/account/um-realm-manager.c:742
 #, c-format
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Kunne ikke forbinde til %s-domænet: %s"
 
-#: gnome-initial-setup/pages/account/um-utils.c:248
+#: gnome-initial-setup/pages/account/um-utils.c:256
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr ""
-"Beklager, men brugernavnet er ikke tilgængeligt. Prøv venligst et andet."
+msgstr "Beklager, men brugernavnet er ikke tilgængeligt. Prøv venligst et andet."
 
-#: gnome-initial-setup/pages/account/um-utils.c:251
+#: gnome-initial-setup/pages/account/um-utils.c:259
 #, c-format
 msgid "The username is too long."
 msgstr "Brugernavnet er for langt."
 
-#: gnome-initial-setup/pages/account/um-utils.c:254
+#: gnome-initial-setup/pages/account/um-utils.c:262
 msgid "The username cannot start with a “-”."
 msgstr "Brugernavnet må ikke begynde med “-”."
 
-#: gnome-initial-setup/pages/account/um-utils.c:257
+#: gnome-initial-setup/pages/account/um-utils.c:265
 msgid "That username isn’t available. Please try another."
 msgstr "Brugernavnet er ikke tilgængeligt. Prøv venligst et andet."
 
-#: gnome-initial-setup/pages/account/um-utils.c:260
+#: gnome-initial-setup/pages/account/um-utils.c:268
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"Brugernavnet må kun bestå af store og små bogstaver fra a–z, tal og tegnene "
-"“.”, “-” og “_”"
+msgstr "Brugernavnet må kun bestå af store og små bogstaver fra a–z, tal og tegnene “.”, “-” og “_”"
 
-#: gnome-initial-setup/pages/account/um-utils.c:264
+#: gnome-initial-setup/pages/account/um-utils.c:272
 msgid "This will be used to name your home folder and can’t be changed."
+msgstr "Dette vil blive brugt til at navngive din hjemmemappe, og kan ikke ændres."
+
+#: gnome-initial-setup/pages/display/gis-display-page.c:249
+msgid "Display"
 msgstr ""
-"Dette vil blive brugt til at navngive din hjemmemappe, og kan ikke ændres."
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:39
+msgid "Adjust for TV screen"
+msgstr ""
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:57
+msgid "Do you see this at the bottom right corner of your screen?"
+msgstr ""
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:105
+msgid "I see it"
+msgstr ""
+
+#: gnome-initial-setup/pages/display/gis-display-page.ui:121
+msgid "I do not see it. Shrink screen to fit TV."
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
+msgid "Terms of Use"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
+msgid "Please read the following terms of use carefully"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
+msgid ""
+"By clicking \"Accept,\" you acknowledge that you have read, understood, and "
+"agree to be bound by the following terms and conditions."
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
+msgid "Help make Endless better for everyone"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
+msgid ""
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
+msgid "Third Party Software"
+msgstr ""
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -256,34 +339,42 @@ msgstr "Forbind dine onlinekonti"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"Forbind dine konti for nem adgang til din e-mail, onlinekalender, kontakter, "
-"dokumenter og billeder."
+msgstr "Forbind dine konti for nem adgang til din e-mail, onlinekalender, kontakter, dokumenter og billeder."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
 msgstr "Konti kan altid tilføjes og fjernes i programmet Indstillinger."
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:240
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
 msgstr "Forhåndsvisning"
 
-# Jeg går ud fra at det er sprog der henvises til og har fejlmeldt:
-# https://bugzilla.gnome.org/show_bug.cgi?id=695992
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:299
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:227
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:291
 msgid "More…"
 msgstr "Flere …"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:321
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Ingen input fundet"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:482
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
+msgid "Your keyboard layout seems to be:"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
+msgid "Please press one of the following keys:"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
+msgid "Is the following key present on your keyboard?"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:541
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
 msgid "Typing"
 msgstr "Indtastning"
@@ -292,21 +383,61 @@ msgstr "Indtastning"
 msgid "Select your keyboard layout or an input method."
 msgstr "Vælg dit tastaturlayout eller en indtastningsmetode."
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:243
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
+msgid "Help Detect My Keyboard Layout"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
+msgid "Detect Keyboard Layout…"
+msgstr ""
+
+#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
+msgid "_Select"
+msgstr ""
+
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:307
 msgid "No languages found"
 msgstr "Ingen sprog fundet"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:262
+#: gnome-initial-setup/pages/language/gis-language-page.c:365
 msgid "Welcome"
 msgstr "Velkommen"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "Velkommen!"
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
+msgid "Try Endless OS by running it from the USB Stick."
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
+msgid "Try Endless OS by running it from the DVD."
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
+msgid "Reformat this computer with Endless OS."
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
+msgid "Try It"
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
+msgid "Reformat"
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:181
+msgid "Try or Reformat"
+msgstr ""
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:318
 msgctxt "Wireless access point"
@@ -331,13 +462,9 @@ msgstr "Wi-Fi"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:19
 msgid ""
-"Connecting to the Internet will enable you to set the time, add your "
-"details, and enable you to access your email, calendar, and contacts. It is "
-"also necessary for enterprise login accounts."
+"Connecting to the internet helps you get new apps, information, and other "
+"upgrades. It also helps set the time and your location automatically."
 msgstr ""
-"Internetforbindelse vil lade dig indstille tidspunktet, tilføje dine "
-"detaljer, læse din e-mail, kalender samt kontakter. Internetforbindelse er "
-"også nødvendig for enterprise-loginkonti."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -348,60 +475,74 @@ msgid "Turn On"
 msgstr "Aktivér"
 
 #. Translators: The placeholder is the user’s full name.
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:110
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:135
 #, c-format
 msgid "Parental Controls for %s"
 msgstr "Forældrekontrol for %s"
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:112
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:137
 msgid "Set restrictions on what this user can run or install."
 msgstr "Angiv begrænsninger for, hvad denne bruger kan køre eller installere."
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:207
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:232
 msgid "Parental Controls"
 msgstr "Forældrekontrol"
 
 #. Don’t break UI compatibility if parental controls are disabled.
-#: gnome-initial-setup/pages/password/gis-password-page.c:79
+#: gnome-initial-setup/pages/password/gis-password-page.c:83
 msgid "Set a Password"
 msgstr "Angiv en adgangskode"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:80
-#: gnome-initial-setup/pages/password/gis-password-page.c:89
+#: gnome-initial-setup/pages/password/gis-password-page.c:84
+#: gnome-initial-setup/pages/password/gis-password-page.c:93
 msgid "Be careful not to lose your password."
 msgstr "Vær forsigtig at du ikke mister din adgangskode."
 
 #. Translators: The placeholder is for the user’s full name.
-#: gnome-initial-setup/pages/password/gis-password-page.c:87
+#: gnome-initial-setup/pages/password/gis-password-page.c:91
 #, c-format
 msgid "Set a Password for %s"
 msgstr "Angiv en adgangskode for %s"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:95
+#: gnome-initial-setup/pages/password/gis-password-page.c:99
 msgid "Set a Parent Password"
 msgstr "Angiv en forældreadgangskode"
 
-#. Translators: The placeholder is the full name of the child user on the system.
-#: gnome-initial-setup/pages/password/gis-password-page.c:97
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
+#: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
 msgstr "Denne adgangskode vil kontrollere adgangen til forældrekontrol for %s."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:233
-msgid "This is a weak password."
-msgstr "Adgangskoden er svag."
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:239
+#: gnome-initial-setup/pages/password/gis-password-page.c:263
 msgid "The passwords do not match."
 msgstr "Adgangskoderne er ikke ens."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:425
+#: gnome-initial-setup/pages/password/gis-password-page.c:308
+#: gnome-initial-setup/pages/password/gis-password-page.c:339
+msgid "Show password"
+msgstr ""
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:347
+msgid "Hide password"
+msgstr ""
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:550
 msgid "Password"
 msgstr "Adgangskode"
 
-#: gnome-initial-setup/pages/password/gis-password-page.ui:66
+#: gnome-initial-setup/pages/password/gis-password-page.ui:69
 msgid "_Confirm"
 msgstr "_Bekræft"
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:202
+msgid "Password _reminder"
+msgstr ""
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:217
+msgid "Password reminder will be shown in case you forget your password."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -413,9 +554,7 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
-"Adgangskoden er meget tæt på din forrige. Prøv at ændre nogle bogstaver og "
-"tal."
+msgstr "Adgangskoden er meget tæt på din forrige. Prøv at ændre nogle bogstaver og tal."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -423,17 +562,14 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
-"Adgangskoden er meget tæt på din forrige. Prøv at ændre adgangskoden en "
-"smule mere."
+msgstr "Adgangskoden er meget tæt på din forrige. Prøv at ændre adgangskoden en smule mere."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr ""
-"Adgangskoden er svag. En adgangskode uden dit brugernavn i ville være "
-"stærkere."
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr "Adgangskoden er svag. En adgangskode uden dit brugernavn i ville være stærkere."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
@@ -445,9 +581,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
-"Adgangskoden er svag. Prøv at undgå nogle af de ord, som er inkluderet i "
-"adgangskoden."
+msgstr "Adgangskoden er svag. Prøv at undgå nogle af de ord, som er inkluderet i adgangskoden."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
@@ -457,8 +591,7 @@ msgstr "Adgangskoden er svag. Prøv at undgå almindelige ord."
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr ""
-"Adgangskoden er svag. Prøv at undgå at flytte rundt på eksisterede ord."
+msgstr "Adgangskoden er svag. Prøv at undgå at flytte rundt på eksisterede ord."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
@@ -480,17 +613,14 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
-"Adgangskoden er svag. Prøv at bruge flere specialtegn, såsom specialtegn."
+msgstr "Adgangskoden er svag. Prøv at bruge flere specialtegn, såsom specialtegn."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
-"Adgangskoden er svag. Prøv at bruge en blanding af bogstaver, tal og "
-"specialtegn."
+msgstr "Adgangskoden er svag. Prøv at bruge en blanding af bogstaver, tal og specialtegn."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
@@ -502,9 +632,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"Adgangskoden er svag. Prøv at undgå gentagelser af den samme type tegn. Du "
-"bør blande bogstaver, tal og specialtegn."
+msgstr "Adgangskoden er svag. Prøv at undgå gentagelser af den samme type tegn. Du bør blande bogstaver, tal og specialtegn."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
@@ -515,8 +643,7 @@ msgstr "Adgangskoden er svag. Prøv at undgå sekvenser som 1234 og abcd."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr ""
-"Adgangskoden er svag. Prøv at tilføje flere bogstaver, tal og specialtegn."
+msgstr "Adgangskoden er svag. Prøv at tilføje flere bogstaver, tal og specialtegn."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
@@ -526,28 +653,23 @@ msgstr "Bland store og små bogstaver, og prøv at bruge et tal eller to."
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-"Adgangskoden vil blive stærkere, hvis du tilføjer flere bogstaver, tal og "
-"andre tegn."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
+msgstr "Adgangskoden vil blive stærkere, hvis du tilføjer flere bogstaver, tal og andre tegn."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"Afsendelse af rapporter om tekniske problemer hjælper os med at forbedre %s. "
-"Rapporter sendes anonymt og renses for personlige data."
+msgstr "Afsendelse af rapporter om tekniske problemer hjælper os med at forbedre %s. Rapporter sendes anonymt og renses for personlige data."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -576,9 +698,7 @@ msgstr "Positionstjenester"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Tillader programmer at bestemme dit geografiske sted. Når positionstjenester "
-"er i brug, vil dette være angivet."
+msgstr "Tillader programmer at bestemme dit geografiske sted. Når positionstjenester er i brug, vil dette være angivet."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -589,10 +709,48 @@ msgid ""
 "Privacy controls can be changed at any time from the Settings application."
 msgstr "Styring af privatliv kan altid ændres i programmet Indstillinger."
 
+#: gnome-initial-setup/pages/site/gis-site-page.ui:33
+msgid "Site"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:54
+msgid ""
+"At which site is this computer located? Search for your site here. You may "
+"enter manually if there is no match."
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:78
+msgid "enter manually"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:102
+msgid "ID"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:131
+msgid "Facility"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:160
+msgid "Street address"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:189
+msgid "City"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:218
+msgid "State"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:247
+msgid "Country"
+msgstr ""
+
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:227
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:235
 #, c-format
 msgid "_Start Using %s"
 msgstr "_Kom i gang med %s"
@@ -600,21 +758,37 @@ msgstr "_Kom i gang med %s"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:234
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:242
 #, c-format
 msgid "%s is ready to be used. We hope that you love it!"
 msgstr "%s er klar til at blive brugt. Vi håber, du vil synes godt om det!"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:258
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:266
+msgid "You're ready to try Endless OS"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:269
+msgid ""
+"<b>System software updates are unavailable when running from evaluation "
+"media. Please install Endless if you like it!</b>"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:273
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:283
 msgid "Setup Complete"
 msgstr "Opsætningen er færdig"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:70
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:92
 msgid "All done!"
 msgstr "Færdig!"
 
 #. Translators: "city, country"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:261
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:278
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
@@ -622,29 +796,28 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:298
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:318
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
 
 #. Translators: This is the time format used in 12-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:322
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: This is the time format used in 24-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:325
 msgid "%R"
 msgstr "%R"
 
 #. Translators: "timezone (utc shift)"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:328
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:462
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:493
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:17
 msgid "Time Zone"
 msgstr "Tidszone"
@@ -653,132 +826,34 @@ msgstr "Tidszone"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"Tidszonen indstilles automatisk hvis din placering kan findes. Du kan også "
-"søge efter en by, for selv at indstille den."
+msgstr "Tidszonen indstilles automatisk hvis din placering kan findes. Du kan også søge efter en by, for selv at indstille den."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
 msgstr "Søg venligst efter en nærliggende by"
 
-#~ msgid "License Agreements"
-#~ msgstr "Licensbetingelser"
+#. Translators: This is meant to be a warm, engaging welcome message,
+#. * like greeting somebody at the door. If the exclamation mark is not
+#. * suitable for this in your language you may replace it. The space
+#. * before the exclamation mark in this string is a typographical thin
+#. * space (U200a) to improve the spacing in the title, which you can
+#. * keep or remove. The %s is getting replaced with the name and version
+#. * of the OS, e.g. "GNOME 3.38"
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
+#, c-format
+msgid "Welcome to %s !"
+msgstr ""
 
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr ""
-#~ "Jeg har _accepteret vilkår og betingelser i denne slutbruger-licensaftale."
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
+msgid "Setup"
+msgstr ""
 
-#~ msgid "No regions found"
-#~ msgstr "Ingen regioner fundet"
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:43
+msgid ""
+"Setup will guide you through making an account and enabling some features. "
+"We’ll have you up and running in no time."
+msgstr ""
 
-#~ msgid "Region"
-#~ msgstr "Region"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "Vælg dit land eller region."
-
-#~ msgid "Software Repositories"
-#~ msgstr "Softwarearkiver"
-
-#~ msgid "Access additional software from selected third party sources."
-#~ msgstr "Tilgå flere programmer fra valgte tredjepartskilder."
-
-#~ msgid ""
-#~ "Some of this software is proprietary and therefore has restrictions on "
-#~ "use, sharing, and access to source code."
-#~ msgstr ""
-#~ "Nogle af disse programmer er proprietære og begrænser derfor rettigheder "
-#~ "for brug, deling og adgang til kildekode."
-
-#~ msgid "Additional Software Repositories"
-#~ msgstr "Yderligere softwarearkiver"
-
-#~ msgid "<a href=\"more\">Find out more…</a>"
-#~ msgstr "<a href=\"more\">Læs mere …</a>"
-
-#~ msgid "Third Party Repositories"
-#~ msgstr "Tredjepartsarkiver"
-
-#~ msgid ""
-#~ "Proprietary software typically has restrictions on how it can be used and "
-#~ "on access to source code. This prevents anyone but the software owner "
-#~ "from inspecting, improving or learning from its code."
-#~ msgstr ""
-#~ "Proprietær software har typisk begræsninger af hvordan det kan bruges "
-#~ "samt adgang til kildekoden. Dette forhindrer alle andre end programmets "
-#~ "ejer i at undersøge, forbedre eller lære fra dets kode."
-
-#~ msgid ""
-#~ "In contrast, Free Software can be freely run, copied, distributed, "
-#~ "studied and modified."
-#~ msgstr ""
-#~ "I modsætning kan fri software frit køres, kopieres, distribueres, "
-#~ "studeres og ændres."
-
-#~ msgid "Ready to Go"
-#~ msgstr "Klar"
-
-#~ msgid "You’re ready to go!"
-#~ msgstr "Så er du klar!"
-
-#~ msgid "preferences-system"
-#~ msgstr "preferences-system"
-
-#~ msgid "Disable image"
-#~ msgstr "Deaktivér billede"
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to avoid common words."
-#~ msgstr "Prøv at undgå almindelige ord."
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to use more numbers."
-#~ msgstr "Prøv at bruge flere tal."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "Password needs to be longer. Try to add more letters, numbers and "
-#~ "punctuation."
-#~ msgstr ""
-#~ "Adgangskoden bør være længere. Prøv at tilføje flere bogstaver, tal og "
-#~ "andre tegn."
-
-#~ msgid ""
-#~ "Proprietary software sources provide access to additional software, "
-#~ "including web browsers and games. This software typically has "
-#~ "restrictions on use and access to source code, and is not provided by %s."
-#~ msgstr ""
-#~ "Proprietære softwarekilder giver adgang til yderligere software, "
-#~ "inklusive webbrowsere og spil. Denne software har typisk begrænsninger af "
-#~ "brug og adgang til kildekode, og udbydes ikke af %s."
-
-#~ msgid "Proprietary Software Sources"
-#~ msgstr "Proprietære softwarekilder"
-
-#~ msgid "A user with the username ‘%s’ already exists."
-#~ msgstr "Der findes allerede en bruger med brugernavnet “%s”."
-
-#~ msgid "_Verify"
-#~ msgstr "_Bekræft"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "Styrke: Svag"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "Styrke: Lav"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "Styrke: Middel"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "Styrke: God"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "Styrke: Høj"
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
+msgid "_Start Setup"
+msgstr ""
