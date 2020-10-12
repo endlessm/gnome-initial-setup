@@ -6,7 +6,7 @@
 # brentx <deweerdt.brent@gmail.com>, 2013
 # tyfjoh, 2013
 # Hannie Dumoleyn <hannie@ubuntu-nl.org>, 2014-2015,2018
-# Heimen Stoffels <vistausss@outlook.com>, 2018-2019
+# Heimen Stoffels <vistausss@outlook.com>, 2018-2020
 # Justin van Steijn <jvs@fsfe.org>, 2018
 # Nathan Follens <nthn@unseen.is>, 2015
 # Reinout van Schouwen <reinouts@gnome.org>, 2013-2014
@@ -16,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2020-04-13 21:20+0100\n"
-"PO-Revision-Date: 2020-04-13 20:28+0000\n"
-"Last-Translator: Will Thompson <wjt@endlessm.com>\n"
+"POT-Creation-Date: 2020-10-12 19:22+0000\n"
+"PO-Revision-Date: 2020-10-12 19:22+0000\n"
+"Last-Translator: endlessmobile_build <admin@endlessos.org>\n"
 "Language-Team: Dutch (http://www.transifex.com/endless-os/gnome-initial-setup/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,7 +54,7 @@ msgstr "_Annuleren"
 #: gnome-initial-setup/gis-driver.c:811
 #, c-format
 msgid "Failed to enter demo mode: %s"
-msgstr "Kan demomodus niet inschakelen: %s"
+msgstr ""
 
 #: gnome-initial-setup/gis-page-util.c:431
 msgid "Unknown"
@@ -93,50 +93,50 @@ msgstr "Uitschakelen"
 
 #: gnome-initial-setup/gis-page-util.ui:190
 msgid "Enter Store Demo"
-msgstr "Demonstratiemodus voor winkels inschakelen"
+msgstr ""
 
 #: gnome-initial-setup/gis-page-util.ui:195
 msgid "OK"
-msgstr "Oké"
+msgstr ""
 
 #: gnome-initial-setup/gis-page-util.ui:202
 msgid "Cancel"
-msgstr "Annuleren"
+msgstr ""
 
 #: gnome-initial-setup/gis-page-util.ui:212
 msgid ""
 "This allows you to try Endless without activating an account. No changes or "
 "files will be saved, and the computer will return to a clean factory state "
 "when you power it off."
-msgstr "Dit stelt je in staat om Endless uit te proberen zonder account. Aangebrachte wijzigingen en bestanden worden niet opgeslagen; de computer begint, na het herstarten, met een schone lei."
+msgstr ""
 
 #: gnome-initial-setup/gnome-initial-setup.c:340
 msgid "Force existing user mode"
-msgstr "Bestaande gebruikersmodus forceren"
+msgstr "Bestaande gebruikersmodus afdwingen"
 
 #: gnome-initial-setup/gnome-initial-setup.c:346
 msgid "— GNOME initial setup"
-msgstr "— Instellingen voor eerste gebruik van Gnome"
+msgstr "— Instellingen voor eerste gebruik van GNOME"
 
 #: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:36
 msgid "Take a Picture…"
-msgstr "Een foto maken…"
+msgstr "Foto maken…"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:184
 msgid "Failed to register account"
-msgstr "Registreren van account is mislukt"
+msgstr "Kan account niet registreren"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:378
 msgid "No supported way to authenticate with this domain"
-msgstr "Authenticatie met dit domein is niet ondersteund"
+msgstr "Authenticatie met dit domein wordt niet ondersteund"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:418
 msgid "Failed to join domain"
-msgstr "Lid worden van domein is mislukt"
+msgstr "Kan geen lid worden van het domein"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:486
 msgid "Failed to log into domain"
-msgstr "Aanmelden bij domein is mislukt"
+msgstr "Kan niet aanmelden bij het domein"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:17
 msgid "Enterprise Login"
@@ -147,7 +147,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr "Met Bedrijfsaanmelding kunt u een bestaande, centraal beheerde gebruikersaccount gebruiken op dit apparaat. U kan deze account ook gebruiken om toegang te krijgen tot middelen van het bedrijf op het internet."
+msgstr "Met bedrijfsaanmelding kun je een bestaand, centraal beheerd gebruikersaccount gebruiken op dit apparaat. Je kunt dit account ook gebruiken om toegang te krijgen tot middelen van het bedrijf op het internet."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -174,14 +174,14 @@ msgstr "_Verder"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:246
 msgid "Domain Administrator Login"
-msgstr "Aanmelden domeinbeheerder"
+msgstr "Aanmelden als domeinbeheerder"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:266
 msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr "Om bedrijfsaanmeldingen te gebruiken moet deze computer ingeschreven zijn bij een domein. Laat uw netwerkbeheerder het domeinwachtwoord invoeren en kies een unieke naam voor uw computer."
+msgstr "Om bedrijfsaanmeldingen te gebruiken moet deze computer ingeschreven zijn bij een domein. Laat je netwerkbeheerder het domeinwachtwoord invoeren en kies een unieke naam voor je computer."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -189,15 +189,15 @@ msgstr "_Computer"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:353
 msgid "Administrator _Name"
-msgstr "_Naam beheerder"
+msgstr "Beheerders_naam"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:387
 msgid "Administrator Password"
-msgstr "_Wachtwoord beheerder"
+msgstr "Beheerderswachtwoord"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 msgid "Please check the name and username. You can choose a picture too."
-msgstr "Controleer de naam en gebruikersnaam. U kan ook een afbeelding kiezen."
+msgstr "Controleer de naam en gebruikersnaam. Verder kun je een afbeelding kiezen."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:461
 msgid "We need a few details to complete setup."
@@ -214,11 +214,11 @@ msgstr "Gebruikersafbeelding"
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:38
 #: gnome-initial-setup/pages/account/gis-account-page.c:317
 msgid "About You"
-msgstr "Over u"
+msgstr "Over mij"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:39
 msgid "Please provide a name and username. You can choose a picture too."
-msgstr "Voer een naam en gebruikersnaam in. U kan ook een afbeelding kiezen."
+msgstr "Geef een naam en gebruikersnaam op. Verder kun je een afbeelding kiezen."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:53
 msgid "_Full Name"
@@ -230,7 +230,7 @@ msgstr "Wachtwoord instellen"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:160
 msgid "Set up _parental controls for this user"
-msgstr "Stel ouderlijk toezicht in voor deze gebruiker"
+msgstr "Ouderlijk _toezicht instellen voor deze gebruiker"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:167
 msgid "For use by a parent or supervisor, who must set up their own password."
@@ -242,11 +242,11 @@ msgstr "B_edrijfsaanmelding"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:53
 msgid "Go online to set up Enterprise Login."
-msgstr "Ga online om bedrijfsaanmelding in te stellen."
+msgstr "Maak verbinding met een netwerk om bedrijfsaanmelding in te stellen."
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
-msgstr "Automatisch aanmelden bij dit type domein is niet mogelijk"
+msgstr "Kan niet automatisch aanmelden bij dit type domein"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:269
 msgid "No such domain or realm found"
@@ -256,11 +256,11 @@ msgstr "Dergelijk domein of realm niet gevonden"
 #: gnome-initial-setup/pages/account/um-realm-manager.c:737
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
-msgstr "Aanmelden als %s bij domein %s is mislukt"
+msgstr "Kan niet aanmelden als %s bij domein %s "
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:729
 msgid "Invalid password, please try again"
-msgstr "Ongeldig wachtwoord, probeer het opnieuw"
+msgstr "Ongeldig wachtwoord - probeer het opnieuw"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:742
 #, c-format
@@ -421,11 +421,11 @@ msgstr "Geen talen gevonden"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:313
 msgid "Enter Store Demo…"
-msgstr "Demonstratiemodus voor winkels inschakelen..."
+msgstr ""
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:325
 msgid "Welcome to Store Demo"
-msgstr "Welkom bij de demonstratiemodus voor winkels"
+msgstr ""
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:327
 msgid "Welcome"
