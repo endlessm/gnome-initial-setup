@@ -1,543 +1,367 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gnome-initial-setup package.
-# 
-# Translators:
-# Sveinn í Felli <sv1@fellsnet.is>, 2015-2019
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2016, 2017, 2018, 2019.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2020-10-12 07:15+0000\n"
-"PO-Revision-Date: 2020-10-12 07:15+0000\n"
-"Last-Translator: endlessmobile_build <admin@endlessos.org>\n"
-"Language-Team: Icelandic (http://www.transifex.com/endless-os/gnome-initial-setup/language/is/)\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issue"
+"s\n"
+"POT-Creation-Date: 2019-01-07 17:29+0000\n"
+"PO-Revision-Date: 2019-02-21 09:03+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
+"Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: is\n"
-"Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 2.0\n"
 
-#: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
+#: data/gnome-initial-setup-first-login.desktop.in.in:3
 msgid "Initial Setup"
 msgstr "Upphafsstillingar"
 
-#: gnome-initial-setup/gis-assistant.c:442
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/gnome-initial-setup.desktop.in.in:5
+#: data/gnome-initial-setup-first-login.desktop.in.in:5
+msgid "preferences-system"
+msgstr "preferences-system"
+
+#: gnome-initial-setup/gis-assistant.c:423
 msgid "_Next"
 msgstr "_Næsta"
 
-#: gnome-initial-setup/gis-assistant.c:443
+#: gnome-initial-setup/gis-assistant.c:424
 msgid "_Accept"
 msgstr "S_amþykkja"
 
-#: gnome-initial-setup/gis-assistant.c:444
+#: gnome-initial-setup/gis-assistant.c:425
 msgid "_Skip"
 msgstr "_Sleppa"
 
-#: gnome-initial-setup/gis-assistant.c:445
+#: gnome-initial-setup/gis-assistant.c:426
 msgid "_Previous"
 msgstr "_Fyrra"
 
-#: gnome-initial-setup/gis-assistant.c:446
+#: gnome-initial-setup/gis-assistant.c:427
 msgid "_Cancel"
 msgstr "_Hætta við"
 
-#: gnome-initial-setup/gis-page-util.c:329
-msgid "Unknown"
-msgstr ""
-
-#: gnome-initial-setup/gis-page-util.c:331
-#, c-format
-msgid "Image: %s"
-msgstr ""
-
-#: gnome-initial-setup/gis-page-util.c:338
-msgid "Disabled"
-msgstr ""
-
-#: gnome-initial-setup/gis-page-util.c:340
-#, c-format
-msgid "SD Card: %s"
-msgstr ""
-
-#. Translators: this is shown when launching the
-#. * reformatter (an external program) fails. The
-#. * placeholder is an error message describing what went
-#. * wrong.
-#: gnome-initial-setup/gis-page-util.c:392
-#, c-format
-msgid "Error running the reformatter: %s"
-msgstr ""
-
-#: gnome-initial-setup/gis-page-util.ui:29
-msgid "Test Mode"
-msgstr ""
-
-#: gnome-initial-setup/gis-page-util.ui:55
-msgid "Power Off"
-msgstr ""
-
-#: gnome-initial-setup/gnome-initial-setup.c:293
+#: gnome-initial-setup/gnome-initial-setup.c:259
 msgid "Force existing user mode"
 msgstr "Þvinga núverandi notandaham"
 
-#: gnome-initial-setup/gnome-initial-setup.c:299
+#: gnome-initial-setup/gnome-initial-setup.c:265
 msgid "— GNOME initial setup"
 msgstr "— GNOME upphafsstillingar"
 
-#: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:36
+#: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:27
+#| msgid "Take a photo…"
 msgid "Take a Picture…"
 msgstr "Taka mynd…"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:184
+#: gnome-initial-setup/pages/account/gis-account-page.c:242
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:41
+msgid "About You"
+msgstr "Um þig"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:182
 msgid "Failed to register account"
 msgstr "Mistókst að skrá aðgang"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:378
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:376
 msgid "No supported way to authenticate with this domain"
 msgstr "Engin aðferð er studd til auðkenningar á þessu léni"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:418
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:416
 msgid "Failed to join domain"
 msgstr "Mistókst að fá aðgang að léni"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:486
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:484
 msgid "Failed to log into domain"
 msgstr "Mistókst að skrá inn á lén"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:17
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:31
 msgid "Enterprise Login"
 msgstr "Innskráning í fyrirtæki"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:18
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:45
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr "Innskráning í fyrirtæki þýðir að hægt er að nota miðlægt skráðan notandaaðgang á þessu tæki. Þú getur líka notað þennan notandaaðgang til að tengjast netlægum tilföngum viðkomandi fyrirtækis."
+msgstr ""
+"Innskráning í fyrirtæki þýðir að hægt er að nota miðlægt skráðan "
+"notandaaðgang á þessu tæki. Þú getur líka notað þennan notandaaðgang til að "
+"tengjast netlægum tilföngum viðkomandi fyrirtækis."
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:65
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:316
 msgid "_Domain"
 msgstr "_Lén"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:53
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:84
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:82
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:101
 msgid "_Username"
 msgstr "Notan_danafn"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:70
-#: gnome-initial-setup/pages/password/gis-password-page.ui:34
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:99
+#: gnome-initial-setup/pages/password/gis-password-page.ui:66
 msgid "_Password"
 msgstr "_Lykilorð"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:146
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:175
 msgid "Enterprise domain or realm name"
 msgstr "Fyrirtækislén eða heiti svæðis"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:211
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:240
 msgid "C_ontinue"
 msgstr "_Halda áfram"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:246
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:275
 msgid "Domain Administrator Login"
 msgstr "Innskráning lénstjóra"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:266
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:295
 msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr "Til þess að geta notað fyrirtækjainnskráningu verður þessi\ntölva að vera skráð á lénið. Láttu stjórnanda netkerfisins\nsetja inn viðeigandi lykilorð hérna og velja einstakt heiti fyrir t-lvuna."
+msgstr ""
+"Til þess að geta notað fyrirtækjainnskráningu verður þessi\n"
+"tölva að vera skráð á lénið. Láttu stjórnanda netkerfisins\n"
+"setja inn viðeigandi lykilorð hérna og velja einstakt heiti fyrir t-lvuna."
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:350
 msgid "_Computer"
 msgstr "_Tölva"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:353
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:382
 msgid "Administrator _Name"
 msgstr "_Nafn kerfisstjóra"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:387
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:416
 msgid "Administrator Password"
 msgstr "Lykilorð kerfisstjóra"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:203
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "Athugaðu notandanafnið og lykilorðið. Þú getur einnig valið mynd."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:461
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:413
 msgid "We need a few details to complete setup."
 msgstr "Okkur vantar nokkur atriði áður en hægt er að ljúka uppsetningu."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:560
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:600
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:643
-#, c-format
-msgid "Failed to create user '%s': "
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:594
-msgid "Administrator"
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:21
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:18
 msgid "Avatar image"
 msgstr "Auðkennismynd"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:38
-#: gnome-initial-setup/pages/account/gis-account-page.c:319
-msgid "About You"
-msgstr "Um þig"
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:39
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:53
 msgid "Please provide a name and username. You can choose a picture too."
 msgstr "Settu inn notandanafn og lykilorð. Þú getur einnig valið mynd."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:53
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:70
 msgid "_Full Name"
 msgstr "_Fullt nafn"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:144
-msgid "Set a password"
-msgstr ""
+#: gnome-initial-setup/pages/account/gis-account-page.ui:37
+msgid "Set Up _Enterprise Login"
+msgstr "Setja upp _innskráningu í fyrirtæki"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:160
-msgid "Set up _parental controls for this user"
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:167
-msgid "For use by a parent or supervisor, who must set up their own password."
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page.ui:43
-msgid "_Enterprise Login"
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page.ui:53
-msgid "Go online to set up Enterprise Login."
-msgstr ""
-
-#: gnome-initial-setup/pages/account/um-realm-manager.c:266
+#: gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
 msgstr "Get ekki tengst sjálfvirkt á þessa tegund léns"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:269
+#: gnome-initial-setup/pages/account/um-realm-manager.c:373
 msgid "No such domain or realm found"
 msgstr "Ekkert slíkt lén eða svæði fannst"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:723
-#: gnome-initial-setup/pages/account/um-realm-manager.c:737
+#: gnome-initial-setup/pages/account/um-realm-manager.c:782
+#: gnome-initial-setup/pages/account/um-realm-manager.c:796
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
 msgstr "Get ekki skráðst inn sem %s á %s lénið"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:729
+#: gnome-initial-setup/pages/account/um-realm-manager.c:788
 msgid "Invalid password, please try again"
 msgstr "Rangt lykilorð, reyndu aftur"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:742
+#: gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Gat ekki tengst %s léninu: %s"
 
-#: gnome-initial-setup/pages/account/um-utils.c:256
+#: gnome-initial-setup/pages/account/um-utils.c:245
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr "Því miður, þetta notandanafn er ekki tiltækt. Veldu eitthvað annað nafn."
+msgstr ""
+"Því miður, þetta notandanafn er ekki tiltækt. Veldu eitthvað annað nafn."
 
-#: gnome-initial-setup/pages/account/um-utils.c:259
-#, c-format
+#: gnome-initial-setup/pages/account/um-utils.c:248
 msgid "The username is too long."
 msgstr "Notandanafnið er of langt."
 
-#: gnome-initial-setup/pages/account/um-utils.c:262
+#: gnome-initial-setup/pages/account/um-utils.c:251
 msgid "The username cannot start with a “-”."
 msgstr "Notandanafn má ekki byrja með '-'."
 
-#: gnome-initial-setup/pages/account/um-utils.c:265
-msgid "That username isn’t available. Please try another."
-msgstr ""
-
-#: gnome-initial-setup/pages/account/um-utils.c:268
+#: gnome-initial-setup/pages/account/um-utils.c:254
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr "Notandanafn ætti einungis að innihalda lág/hástafi frá a-z, tölustafi eða einhvern af eftirfarandi stöfum: . - _"
+msgstr ""
+"Notandanafn ætti einungis að innihalda lág/hástafi frá a-z, tölustafi eða "
+"einhvern af eftirfarandi stöfum: . - _"
 
-#: gnome-initial-setup/pages/account/um-utils.c:272
+#: gnome-initial-setup/pages/account/um-utils.c:258
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr "Þetta verður notað til að nefna heimamöppuna þína og er ekki hægt að breyta síðar."
-
-#: gnome-initial-setup/pages/display/gis-display-page.c:249
-msgid "Display"
 msgstr ""
+"Þetta verður notað til að nefna heimamöppuna þína og er ekki hægt að breyta "
+"síðar."
 
-#: gnome-initial-setup/pages/display/gis-display-page.ui:39
-msgid "Adjust for TV screen"
-msgstr ""
+#: gnome-initial-setup/pages/eulas/gis-eula-page.c:301
+#: gnome-initial-setup/pages/eulas/gis-eula-page.ui:21
+msgid "License Agreements"
+msgstr "Notkunarskilmálar"
 
-#: gnome-initial-setup/pages/display/gis-display-page.ui:57
-msgid "Do you see this at the bottom right corner of your screen?"
-msgstr ""
-
-#: gnome-initial-setup/pages/display/gis-display-page.ui:105
-msgid "I see it"
-msgstr ""
-
-#: gnome-initial-setup/pages/display/gis-display-page.ui:121
-msgid "I do not see it. Shrink screen to fit TV."
-msgstr ""
-
-#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
-#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
-msgid "Terms of Use"
-msgstr ""
-
-#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
-msgid "Please read the following terms of use carefully"
-msgstr ""
-
-#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
+#: gnome-initial-setup/pages/eulas/gis-eula-page.ui:50
 msgid ""
-"By clicking \"Accept,\" you acknowledge that you have read, understood, and "
-"agree to be bound by the following terms and conditions."
-msgstr ""
+"I have _agreed to the terms and conditions in this end user license "
+"agreement."
+msgstr "Ég hef s_amþykkt skilmálana í þessum samningi um notkunarleyfi."
 
-#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
-msgid "Help make Endless better for everyone"
-msgstr ""
-
-#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
-msgid ""
-"Automatically save and send usage statistics and problem reports to Endless."
-" All data is anonymous."
-msgstr ""
-
-#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
-msgid "Third Party Software"
-msgstr ""
-
-#: gnome-initial-setup/pages/goa/gis-goa-page.c:92
+#: gnome-initial-setup/pages/goa/gis-goa-page.c:87
 msgid "Add Account"
 msgstr "Bæta við notandaaðgangi"
 
-#: gnome-initial-setup/pages/goa/gis-goa-page.c:357
+#: gnome-initial-setup/pages/goa/gis-goa-page.c:339
 msgid "Online Accounts"
 msgstr "Aðgangar á neti"
 
-#: gnome-initial-setup/pages/goa/gis-goa-page.ui:17
+#: gnome-initial-setup/pages/goa/gis-goa-page.ui:39
 msgid "Connect Your Online Accounts"
 msgstr "Tengstu notandaaðgöngum þínum á netinu"
 
-#: gnome-initial-setup/pages/goa/gis-goa-page.ui:18
+#: gnome-initial-setup/pages/goa/gis-goa-page.ui:58
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr "Tengdu aðgangana þína svo þú getir komist í tölvupóstinn þinn, nettengt dagatal, tengiliðalista, skjöl og myndir."
+msgstr ""
+"Tengdu aðgangana þína svo þú getir komist í tölvupóstinn þinn, nettengt "
+"dagatal, tengiliðalista, skjöl og myndir."
 
-#: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
+#: gnome-initial-setup/pages/goa/gis-goa-page.ui:95
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr "Hægt er að bæta við og fjarlægja aðganga hvenær sem er með því að fara í stillingaforritið."
+msgstr ""
+"Hægt er að bæta við og fjarlægja aðganga hvenær sem er með því að fara í "
+"stillingaforritið."
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:240
 msgid "Preview"
 msgstr "Forskoðun"
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:291
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:299
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:222
+#: gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "Meira…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
+#.
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:321
 msgid "No inputs found"
 msgstr "Engin inntök fundust"
 
-#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
-msgid "Your keyboard layout seems to be:"
-msgstr ""
-
-#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
-#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
-msgid "Please press one of the following keys:"
-msgstr ""
-
-#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
-msgid "Is the following key present on your keyboard?"
-msgstr ""
-
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:541
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:480
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:30
 msgid "Typing"
 msgstr "Innsláttur"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:42
 msgid "Select your keyboard layout or an input method."
 msgstr "Veldu lyklaborðsuppsetningu eða inntaksaðferð."
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
-msgid "Help Detect My Keyboard Layout"
-msgstr ""
-
-#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
-msgid "Detect Keyboard Layout…"
-msgstr ""
-
-#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
-msgid "_Select"
-msgstr ""
-
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:307
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:238
 msgid "No languages found"
 msgstr "Engin tungumál fundust"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:365
+#: gnome-initial-setup/pages/language/gis-language-page.c:300
 msgid "Welcome"
 msgstr "Velkomin"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
+#.
+#: gnome-initial-setup/pages/language/gis-welcome-widget.c:123
 msgid "Welcome!"
 msgstr "Velkomin!"
 
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
-msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
-
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
-msgid "Try Endless OS by running it from the DVD."
-msgstr ""
-
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
-msgid "Reformat this computer with Endless OS."
-msgstr ""
-
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
-msgid "Try It"
-msgstr ""
-
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
-msgid "Reformat"
-msgstr ""
-
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:181
-msgid "Try or Reformat"
-msgstr ""
-
-#: gnome-initial-setup/pages/network/gis-network-page.c:318
+#: gnome-initial-setup/pages/network/gis-network-page.c:313
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "Annað…"
 
-#: gnome-initial-setup/pages/network/gis-network-page.c:403
+#: gnome-initial-setup/pages/network/gis-network-page.c:398
 msgid "Wireless networking is disabled"
 msgstr "Þráðlausar nettengingar eru óvirkar"
 
-#: gnome-initial-setup/pages/network/gis-network-page.c:410
+#: gnome-initial-setup/pages/network/gis-network-page.c:405
 msgid "Checking for available wireless networks"
 msgstr "Athuga með þráðlaus net"
 
-#: gnome-initial-setup/pages/network/gis-network-page.c:805
+#: gnome-initial-setup/pages/network/gis-network-page.c:713
 msgid "Network"
 msgstr "Netkerfi"
 
-#: gnome-initial-setup/pages/network/gis-network-page.ui:18
+#: gnome-initial-setup/pages/network/gis-network-page.ui:33
 msgid "Wi-Fi"
 msgstr "Þráðlaust net"
 
-#: gnome-initial-setup/pages/network/gis-network-page.ui:19
+#: gnome-initial-setup/pages/network/gis-network-page.ui:45
 msgid ""
-"Connecting to the internet helps you get new apps, information, and other "
-"upgrades. It also helps set the time and your location automatically."
+"Connecting to the Internet will enable you to set the time, add your "
+"details, and enable you to access your email, calendar, and contacts. It is "
+"also necessary for enterprise login accounts."
 msgstr ""
+"Ef þú tengist internetinu geturðu stillt klukkuna, bætt við "
+"persónuupplýsingum og tengst tölvupósti, dagatali og tengiliðalistum. "
+"Nettenging er einnig nauðsynleg fyrir fyrirtækjainnskráningu."
 
-#: gnome-initial-setup/pages/network/gis-network-page.ui:76
+#: gnome-initial-setup/pages/network/gis-network-page.ui:103
 msgid "No wireless available"
 msgstr "Engin þráðlaus net tiltæk"
 
-#: gnome-initial-setup/pages/network/gis-network-page.ui:91
+#: gnome-initial-setup/pages/network/gis-network-page.ui:118
 msgid "Turn On"
 msgstr "Kveikja á"
 
-#. Translators: The placeholder is the user’s full name.
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:135
-#, c-format
-msgid "Parental Controls for %s"
-msgstr ""
+#: gnome-initial-setup/pages/password/gis-password-page.c:142
+msgid "This is a weak password."
+msgstr "Þetta er veikt lykilorð."
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:137
-msgid "Set restrictions on what this user can run or install."
-msgstr ""
-
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:232
-msgid "Parental Controls"
-msgstr ""
-
-#. Don’t break UI compatibility if parental controls are disabled.
-#: gnome-initial-setup/pages/password/gis-password-page.c:83
-msgid "Set a Password"
-msgstr "Settu lykilorð"
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:84
-#: gnome-initial-setup/pages/password/gis-password-page.c:93
-msgid "Be careful not to lose your password."
-msgstr "Passaðu upp á að týna ekki lykilorðinu þínu."
-
-#. Translators: The placeholder is for the user’s full name.
-#: gnome-initial-setup/pages/password/gis-password-page.c:91
-#, c-format
-msgid "Set a Password for %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:99
-msgid "Set a Parent Password"
-msgstr ""
-
-#. Translators: The placeholder is the full name of the child user on the
-#. system.
-#: gnome-initial-setup/pages/password/gis-password-page.c:101
-#, c-format
-msgid "This password will control access to the parental controls for %s."
-msgstr ""
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:263
+#: gnome-initial-setup/pages/password/gis-password-page.c:148
 msgid "The passwords do not match."
 msgstr "Lykilorðin stemma ekki."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:308
-#: gnome-initial-setup/pages/password/gis-password-page.c:339
-msgid "Show password"
-msgstr ""
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:347
-msgid "Hide password"
-msgstr ""
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:550
+#: gnome-initial-setup/pages/password/gis-password-page.c:270
 msgid "Password"
 msgstr "Lykilorð"
 
-#: gnome-initial-setup/pages/password/gis-password-page.ui:69
+#: gnome-initial-setup/pages/password/gis-password-page.ui:34
+msgid "Set a Password"
+msgstr "Settu lykilorð"
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:47
+msgid "Be careful not to lose your password."
+msgstr "Passaðu upp á að týna ekki lykilorðinu þínu."
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:98
 msgid "_Confirm"
 msgstr "Stað_festa"
-
-#: gnome-initial-setup/pages/password/gis-password-page.ui:202
-msgid "Password _reminder"
-msgstr ""
-
-#: gnome-initial-setup/pages/password/gis-password-page.ui:217
-msgid "Password reminder will be shown in case you forget your password."
-msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -545,245 +369,306 @@ msgid "The new password needs to be different from the old one."
 msgstr "Nýja lykilorðið verður að vera ólíkt því gamla."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:83
+#| msgctxt "Password hint"
+#| msgid "Try changing some letters and numbers."
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr "Þetta lykilorð er mjög líkt því sem þú notaðir síðast. Reyndu að breyta einhverjum stöfum og tölum."
+msgstr ""
+"Þetta lykilorð er mjög líkt því sem þú notaðir síðast. Reyndu að breyta "
+"einhverjum stöfum og tölum."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
+#| msgctxt "Password hint"
+#| msgid "Try changing the password a bit more."
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr "Þetta lykilorð er mjög líkt því sem þú notaðir síðast. Reyndu að breyta lykilorðinu örlítið meira."
+msgstr ""
+"Þetta lykilorð er mjög líkt því sem þú notaðir síðast. Reyndu að breyta "
+"lykilorðinu örlítið meira."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
+#| msgctxt "Password hint"
+#| msgid "A password without your user name would be stronger."
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be "
-"stronger."
-msgstr "Þetta er veikt lykilorð. Lykilorð sem ekki inniheldur notandanafnið þitt væri sterkara."
+"This is a weak password. A password without your user name would be stronger."
+msgstr ""
+"Þetta er veikt lykilorð. Lykilorð sem ekki inniheldur notandanafnið þitt "
+"væri sterkara."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
+#| msgctxt "Password hint"
+#| msgid "Try to avoid using your name in the password."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
 msgstr "Þetta er veikt lykilorð. Forðastu að nota nafnið þitt í lykilorðinu."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
+#| msgctxt "Password hint"
+#| msgid "Try to avoid some of the words included in the password."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr "Þetta er veikt lykilorð. Forðastu að nota einhver orðanna sem eru í lykilorðinu."
+msgstr ""
+"Þetta er veikt lykilorð. Forðastu að nota einhver orðanna sem eru í "
+"lykilorðinu."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
+#| msgctxt "Password hint"
+#| msgid ""
+#| "This is a weak password. Try to add more letters, numbers and symbols."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
 msgstr "Þetta er veikt lykilorð. Forðastu að nota algeng orð."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
+#| msgctxt "Password hint"
+#| msgid "Try to avoid reordering existing words."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
 msgstr "Þetta er veikt lykilorð. Forðastu að endurraða algengum orðum."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
+#| msgctxt "Password hint"
+#| msgid ""
+#| "This is a weak password. Try to add more letters, numbers and symbols."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
 msgstr "Þetta er veikt lykilorð. Reyndu að nota fleiri tölustafi."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
+#| msgctxt "Password hint"
+#| msgid "Try to use more uppercase letters."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
 msgstr "Þetta er veikt lykilorð. Reyndu að nota fleiri hástafi."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
+#| msgctxt "Password hint"
+#| msgid "Try to use more lowercase letters."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
 msgstr "Þetta er veikt lykilorð. Reyndu að nota fleiri lágstafi."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
+#| msgctxt "Password hint"
+#| msgid "Try to use more special characters, like punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr "Þetta er veikt lykilorð. Reyndu að nota fleiri sértákn, eins og greinamerki."
+msgstr ""
+"Þetta er veikt lykilorð. Reyndu að nota fleiri sértákn, eins og greinamerki."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
+#| msgctxt "Password hint"
+#| msgid "Try to use a mixture of letters, numbers and punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr "Þetta er veikt lykilorð. Reyndu að blanda saman bókstöfum, tölustöfum og greinamerkjum."
+msgstr ""
+"Þetta er veikt lykilorð. Reyndu að blanda saman bókstöfum, tölustöfum og "
+"greinamerkjum."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
+#| msgctxt "Password hint"
+#| msgid "Try to avoid repeating the same character."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
 msgstr "Þetta er veikt lykilorð. Forðastu að endurtaka sama stafinn oft."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
+#| msgctxt "Password hint"
+#| msgid ""
+#| "Try to avoid repeating the same type of character: you need to mix up "
+#| "letters, numbers and punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr "Þetta er veikt lykilorð. Forðastu að endurtaka sömu tegund stafa: best er að blanda saman bókstöfum, tölustöfum og greinamerkjum."
+msgstr ""
+"Þetta er veikt lykilorð. Forðastu að endurtaka sömu tegund stafa: best er að "
+"blanda saman bókstöfum, tölustöfum og greinamerkjum."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
+#| msgctxt "Password hint"
+#| msgid "Try to avoid sequences like 1234 or abcd."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
 msgstr "Þetta er veikt lykilorð. Forðastu að nota runur eins og 1234 eða abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
+#| msgctxt "Password hint"
+#| msgid ""
+#| "This is a weak password. Try to add more letters, numbers and symbols."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr "Þetta er veikt lykilorð. Reyndu að bæta við fleiri bókstöfum, tölustöfum og táknum."
+msgstr ""
+"Þetta er veikt lykilorð. Reyndu að bæta við fleiri bókstöfum, tölustöfum og "
+"táknum."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr "Blandaðu saman hástöfum, lágstöfum og notaðu einn eða fleiri tölustafi."
+msgstr ""
+"Blandaðu saman hástöfum, lágstöfum og notaðu einn eða fleiri tölustafi."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password "
-"stronger."
-msgstr "Gott lykilorð! Ef þú bætir við fleiri bókstöfum, tölustöfum og greinamerkjum verður það ennþá sterkara."
+"Adding more letters, numbers and punctuation will make the password stronger."
+msgstr ""
+"Gott lykilorð! Ef þú bætir við fleiri bókstöfum, tölustöfum og greinamerkjum "
+"verður það ennþá sterkara."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
+#.
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:110
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr "Ef þú sendir okkur upplýsingar um tæknileg vandamál hjálpar okkur að bæta %s hugbúnaðinn. Skýrslur eru sendar nafnlaust og eru hreinsaðar af persónugreinanlegum gögnum."
+msgstr ""
+"Ef þú sendir okkur upplýsingar um tæknileg vandamál hjálpar okkur að bæta %s "
+"hugbúnaðinn. Skýrslur eru sendar nafnlaust og eru hreinsaðar af "
+"persónugreinanlegum gögnum."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
+#.
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:120
 #, c-format
 msgid "Problem data will be collected by %s:"
 msgstr "%s mun safna gögnum varðandi vandamál:"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:135
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:210
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:121
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:256
 msgid "Privacy Policy"
 msgstr "Stefna vegna gagnaleyndar og friðhelgi"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:135
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:181
 msgid "Uses Mozilla Location Service:"
 msgstr "Nota Mozilla staðsetningarþjónustu:"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:246
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:16
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:292
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:32
 msgid "Privacy"
 msgstr "Gagnaleynd"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:31
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:49
 msgid "Location Services"
 msgstr "Staðsetningarþjónustur"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:52
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:70
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr "Leyfir forritum að finna út landfræðilega staðsetningu þína. Sjónrænt merki birtist þegar staðsetningarþjónustur eru í notkun."
+msgstr ""
+"Leyfir forritum að finna út landfræðilega staðsetningu þína. Sjónrænt merki "
+"birtist þegar staðsetningarþjónustur eru í notkun."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:92
 msgid "Automatic Problem Reporting"
 msgstr "Tilkynna sjálfkrafa um vandamál"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:110
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:128
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr "Hægt er að breyta stýringum fyrir gagnaleynd hvenær sem er með því að fara í stillingaforritið."
-
-#: gnome-initial-setup/pages/site/gis-site-page.ui:33
-msgid "Site"
 msgstr ""
+"Hægt er að breyta stýringum fyrir gagnaleynd hvenær sem er með því að fara í "
+"stillingaforritið."
 
-#: gnome-initial-setup/pages/site/gis-site-page.ui:54
+#: gnome-initial-setup/pages/region/cc-region-chooser.c:227
+msgid "No regions found"
+msgstr "Engin svæði fundust"
+
+#: gnome-initial-setup/pages/region/gis-region-page.c:226
+#: gnome-initial-setup/pages/region/gis-region-page.ui:31
+msgid "Region"
+msgstr "Hérað"
+
+#: gnome-initial-setup/pages/region/gis-region-page.ui:44
+msgid "Choose your country or region."
+msgstr "Veldu þér land eða hérað."
+
+#: gnome-initial-setup/pages/software/gis-software-page.c:184
+msgid "Software Repositories"
+msgstr "Hugbúnaðarsöfn"
+
+#. TRANSLATORS: this is the third party repositories info bar.
+#: gnome-initial-setup/pages/software/gis-software-page.c:188
+msgid "Access additional software from selected third party sources."
+msgstr "Settu upp hugbúnað frá utanaðkomandi aðilum/upptökum."
+
+#. TRANSLATORS: this is the third party repositories info bar.
+#: gnome-initial-setup/pages/software/gis-software-page.c:192
 msgid ""
-"At which site is this computer located? Search for your site here. You may "
-"enter manually if there is no match."
+"Some of this software is proprietary and therefore has restrictions on use, "
+"sharing, and access to source code."
 msgstr ""
+"Sumt af þessu hugbúnaði er séreignarhugbúnaður og er þar af leiðandi með "
+"hömlur á notkun, deilingu og aðgangi að grunnkóða."
 
-#: gnome-initial-setup/pages/site/gis-site-page.ui:78
-msgid "enter manually"
-msgstr ""
+#: gnome-initial-setup/pages/software/gis-software-page.ui:31
+msgid "Additional Software Repositories"
+msgstr "Aukahugbúnaðarsöfn"
 
-#: gnome-initial-setup/pages/site/gis-site-page.ui:102
-msgid "ID"
-msgstr ""
+#: gnome-initial-setup/pages/software/gis-software-page.ui:55
+msgid "<a href=\"more\">Find out more…</a>"
+msgstr "<a href=\"more\">Frekari upplýsingar…</a>"
 
-#: gnome-initial-setup/pages/site/gis-site-page.ui:131
-msgid "Facility"
-msgstr ""
+#: gnome-initial-setup/pages/software/gis-software-page.ui:69
+msgid "Third Party Repositories"
+msgstr "Hugbúnaðarsöfn annarra aðila"
 
-#: gnome-initial-setup/pages/site/gis-site-page.ui:160
-msgid "Street address"
+#: gnome-initial-setup/pages/software/gis-software-page.ui:165
+msgid ""
+"Proprietary software typically has restrictions on how it can be used and on "
+"access to source code. This prevents anyone but the software owner from "
+"inspecting, improving or learning from its code."
 msgstr ""
+"Séreignarhugbúnaður er venjulega með takmarkanir varðandi notkun og aðgang "
+"að grunnkóða. Þetta kemur í veg fyrir að nokkur annar en eigandi "
+"hugbúnaðarins geti rannsakað hann, bætt hann eða lært af kóðanum."
 
-#: gnome-initial-setup/pages/site/gis-site-page.ui:189
-msgid "City"
+#: gnome-initial-setup/pages/software/gis-software-page.ui:177
+msgid ""
+"In contrast, Free Software can be freely run, copied, distributed, studied "
+"and modified."
 msgstr ""
-
-#: gnome-initial-setup/pages/site/gis-site-page.ui:218
-msgid "State"
-msgstr ""
-
-#: gnome-initial-setup/pages/site/gis-site-page.ui:247
-msgid "Country"
-msgstr ""
+"Aftur á móti má hver sem er keyra frjálsan hugbúnað, lært af honum eða "
+"breytt eftir sínu höfði."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:235
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:304
 #, c-format
 msgid "_Start Using %s"
 msgstr "_Byrjaðu að nota %s"
 
-#. Translators: the parameter here is the name of a distribution,
-#. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
-#. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:242
-#, c-format
-msgid "%s is ready to be used. We hope that you love it!"
-msgstr ""
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:334
+msgid "Ready to Go"
+msgstr "Klár í slaginn"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:266
-msgid "You're ready to try Endless OS"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:269
-msgid ""
-"<b>System software updates are unavailable when running from evaluation "
-"media. Please install Endless if you like it!</b>"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:273
-msgid ""
-"<b>Any files you download or documents you create will be lost forever when "
-"you restart or shutdown the computer.</b>"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:283
-msgid "Setup Complete"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:92
-msgid "All done!"
-msgstr ""
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:64
+msgid "You’re ready to go!"
+msgstr "Þú ert klár í slaginn!"
 
 #. Translators: "city, country"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:278
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:236
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
@@ -791,64 +676,122 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:318
+#.
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:273
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
 
 #. Translators: This is the time format used in 12-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:322
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:277
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: This is the time format used in 24-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:325
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:280
 msgid "%R"
 msgstr "%R"
 
 #. Translators: "timezone (utc shift)"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:328
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:283
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:493
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:17
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:426
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:33
 msgid "Time Zone"
 msgstr "Tímabelti"
 
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:18
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:53
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr "Tímabeltið verður stillt sjálfvirkt ef staðsetningin þín finnst. Þú getur líka leitað að borg til að stilla það sjálf(ur)."
+msgstr ""
+"Tímabeltið verður stillt sjálfvirkt ef staðsetningin þín finnst. Þú getur "
+"líka leitað að borg til að stilla það sjálf(ur)."
 
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:82
 msgid "Please search for a nearby city"
 msgstr "Leitaðu að næstu borg"
 
-#. Translators: This is meant to be a warm, engaging welcome message,
-#. * like greeting somebody at the door. If the exclamation mark is not
-#. * suitable for this in your language you may replace it. The space
-#. * before the exclamation mark in this string is a typographical thin
-#. * space (U200a) to improve the spacing in the title, which you can
-#. * keep or remove. The %s is getting replaced with the name and version
-#. * of the OS, e.g. "GNOME 3.38"
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
-#, c-format
-msgid "Welcome to %s !"
-msgstr ""
+#~ msgid "Disable image"
+#~ msgstr "Gera mynd óvirka"
 
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
-msgid "Setup"
-msgstr ""
+#~| msgctxt "Password hint"
+#~| msgid "This is a weak password. Try to avoid common words."
+#~ msgctxt "Password hint"
+#~ msgid "Try to avoid common words."
+#~ msgstr "Forðastu að nota algeng orð."
 
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:43
-msgid ""
-"Setup will guide you through making an account and enabling some features. "
-"We’ll have you up and running in no time."
-msgstr ""
+#~| msgctxt "Password hint"
+#~| msgid "This is a weak password. Try to use more numbers."
+#~ msgctxt "Password hint"
+#~ msgid "Try to use more numbers."
+#~ msgstr "Reyndu að nota fleiri tölustafi."
 
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
-msgid "_Start Setup"
-msgstr ""
+#~| msgctxt "Password hint"
+#~| msgid ""
+#~| "This is a weak password. Try to use a mixture of letters, numbers and "
+#~| "punctuation."
+#~ msgctxt "Password hint"
+#~ msgid ""
+#~ "Password needs to be longer. Try to add more letters, numbers and "
+#~ "punctuation."
+#~ msgstr ""
+#~ "Lykilorðið þarf að vera lengra. Reyndu að blanda saman bókstöfum, "
+#~ "tölustöfum og greinamerkjum."
+
+#~| msgid "A user with the username '%s' already exists."
+#~ msgid "A user with the username ‘%s’ already exists."
+#~ msgstr "Notandi með notandanafnið '%s' er þegar til."
+
+#~ msgid "_Verify"
+#~ msgstr "_Sannreyna"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Weak"
+#~ msgstr "Styrkur: Veikt"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Low"
+#~ msgstr "Styrkur: Lítill"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Medium"
+#~ msgstr "Styrkur: Miðlungs"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Good"
+#~ msgstr "Styrkur: Góður"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: High"
+#~ msgstr "Styrkur: Mikill"
+
+#~ msgid ""
+#~ "Proprietary software sources provide access to additional software, "
+#~ "including web browsers and games. This software typically has "
+#~ "restrictions on use and access to source code, and is not provided by %s."
+#~ msgstr ""
+#~ "Veitur með séreignarhugbúnaði gefa aðgang að viðbótarhugbúnaði, eins og "
+#~ "vöfrum og leikjum. Slíkur hugbúnaður er með takmarkanir varðandi notkun "
+#~ "og aðgang að grunnkóða og er því ekki innifalinn í %s."
+
+#~ msgid "Proprietary Software Sources"
+#~ msgstr "Upptök séreignarhugbúnaðar"
+
+#~ msgid "Are these the right details? You can change them if you want."
+#~ msgstr "Eru þessi atriði rétt? Þú getur breytt þeim ef þú vilt."
+
+#~ msgid "You can review your online accounts (and add others) after setup."
+#~ msgstr ""
+#~ "Þú getur endurskoðað aðganga þína á netinu (og bætt við fleiri) eftir "
+#~ "uppsetningu."
+
+#~ msgid ""
+#~ "Thank you for choosing %s.\n"
+#~ "We hope that you love it."
+#~ msgstr ""
+#~ "Takk fyrir að velja %s.\n"
+#~ "Við vonum að þér líki það vel."

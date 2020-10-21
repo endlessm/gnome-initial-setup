@@ -1,91 +1,56 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Ukrainian translation for gnome-initial-setup.
+# Copyright (C) 2012 gnome-initial-setup's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-# 
-# Translators:
-# Данило Коростіль <ted.korostiled@gmail.com>, 2013-2017
-# Данило Коростіль <ted.korostiled@gmail.com>, 2012
-# Yuri Chornoivan <yurchor@ukr.net>, 2020
-# Данило Коростіль <ted.korostiled@gmail.com>, 2012
+# Daniel Korostil <ted.korostiled@gmail.com>, 2013, 2014, 2015, 2016, 2017.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2020-10-12 07:15+0000\n"
-"PO-Revision-Date: 2020-10-12 07:15+0000\n"
-"Last-Translator: endlessmobile_build <admin@endlessos.org>\n"
-"Language-Team: Ukrainian (http://www.transifex.com/endless-os/gnome-initial-setup/language/uk/)\n"
+"Project-Id-Version: gnome-initial-setup master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issue"
+"s\n"
+"POT-Creation-Date: 2020-08-17 19:50+0000\n"
+"PO-Revision-Date: 2020-08-18 09:21+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 20.11.70\n"
+"X-Project-Style: gnome\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
 msgid "Initial Setup"
 msgstr "Перший запуск"
 
-#: gnome-initial-setup/gis-assistant.c:442
+#: gnome-initial-setup/gis-assistant.c:423
 msgid "_Next"
 msgstr "_Далі"
 
-#: gnome-initial-setup/gis-assistant.c:443
+#: gnome-initial-setup/gis-assistant.c:424
 msgid "_Accept"
 msgstr "_Ухвалити"
 
-#: gnome-initial-setup/gis-assistant.c:444
+#: gnome-initial-setup/gis-assistant.c:425
 msgid "_Skip"
 msgstr "_Пропустити"
 
-#: gnome-initial-setup/gis-assistant.c:445
+#: gnome-initial-setup/gis-assistant.c:426
 msgid "_Previous"
 msgstr "_Назад"
 
-#: gnome-initial-setup/gis-assistant.c:446
+#: gnome-initial-setup/gis-assistant.c:427
 msgid "_Cancel"
 msgstr "_Скасувати"
 
-#: gnome-initial-setup/gis-page-util.c:329
-msgid "Unknown"
-msgstr ""
-
-#: gnome-initial-setup/gis-page-util.c:331
-#, c-format
-msgid "Image: %s"
-msgstr ""
-
-#: gnome-initial-setup/gis-page-util.c:338
-msgid "Disabled"
-msgstr ""
-
-#: gnome-initial-setup/gis-page-util.c:340
-#, c-format
-msgid "SD Card: %s"
-msgstr ""
-
-#. Translators: this is shown when launching the
-#. * reformatter (an external program) fails. The
-#. * placeholder is an error message describing what went
-#. * wrong.
-#: gnome-initial-setup/gis-page-util.c:392
-#, c-format
-msgid "Error running the reformatter: %s"
-msgstr ""
-
-#: gnome-initial-setup/gis-page-util.ui:29
-msgid "Test Mode"
-msgstr ""
-
-#: gnome-initial-setup/gis-page-util.ui:55
-msgid "Power Off"
-msgstr ""
-
-#: gnome-initial-setup/gnome-initial-setup.c:293
+#: gnome-initial-setup/gnome-initial-setup.c:252
 msgid "Force existing user mode"
 msgstr "Примусовий режим для наявного користувача"
 
-#: gnome-initial-setup/gnome-initial-setup.c:299
+#: gnome-initial-setup/gnome-initial-setup.c:258
 msgid "— GNOME initial setup"
 msgstr "— Перший запуск GNOME"
 
@@ -118,7 +83,10 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr "Комерційний вхід дозволяє наявним обліковим записам централізовано використовуватись на цьому пристрою. Ви також можете скористатися цим обліковим записом для доступу до ресурсів компанії у інтернеті."
+msgstr ""
+"Комерційний вхід дозволяє наявним обліковим записам централізовано "
+"використовуватись на цьому пристрою. Ви також можете скористатися цим "
+"обліковим записом для доступу до ресурсів компанії у інтернеті."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -152,7 +120,10 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr "Комп'ютер потрібно зареєструвати в домені, щоб використовувати комерційний вхід. Попрохайте вашого мережевого адміністратора ввести тут пароль домену і виберіть унікальну назву комп'ютера."
+msgstr ""
+"Комп'ютер потрібно зареєструвати в домені, щоб використовувати комерційний "
+"вхід. Попрохайте вашого мережевого адміністратора ввести тут пароль домену і "
+"виберіть унікальну назву комп'ютера."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -166,31 +137,30 @@ msgstr "_Адміністратор"
 msgid "Administrator Password"
 msgstr "Пароль адміністратора"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:207
 msgid "Please check the name and username. You can choose a picture too."
 msgstr "Перевірте користувача. Можете також вибрати малюнок."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:461
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:453
 msgid "We need a few details to complete setup."
 msgstr "Нам потрібно кілька дрібничок, щоб завершити."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:560
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:600
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:643
-#, c-format
-msgid "Failed to create user '%s': "
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:594
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:559
 msgid "Administrator"
 msgstr "Адміністратор"
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:565
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:608
+#, c-format
+msgid "Failed to create user '%s': "
+msgstr "Не вдалося створити запис користувача «%s»: "
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:21
 msgid "Avatar image"
 msgstr "Зображення аватара"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:38
-#: gnome-initial-setup/pages/account/gis-account-page.c:319
+#: gnome-initial-setup/pages/account/gis-account-page.c:283
 msgid "About You"
 msgstr "Про себе"
 
@@ -202,17 +172,15 @@ msgstr "Вкажіть користувача. Можете також вибр�
 msgid "_Full Name"
 msgstr "Повне і_м'я"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:144
-msgid "Set a password"
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:160
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:149
 msgid "Set up _parental controls for this user"
 msgstr "Встановити _батьківський контроль для цього користувача"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:167
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:156
 msgid "For use by a parent or supervisor, who must set up their own password."
-msgstr "Для використання батьками або опікунами, які мають налаштувати власний пароль."
+msgstr ""
+"Для використання батьками або опікунами, які мають налаштувати власний "
+"пароль."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
 msgid "_Enterprise Login"
@@ -222,104 +190,60 @@ msgstr "_Комерційний вхід"
 msgid "Go online to set up Enterprise Login."
 msgstr "Увійдіть до інтернету, щоб налаштувати комерційний вхід."
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:266
+#: gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
 msgstr "Неможливо автоматично долучити цей тип домену"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:269
+#: gnome-initial-setup/pages/account/um-realm-manager.c:373
+#, c-format
 msgid "No such domain or realm found"
 msgstr "Немає такого домену чи області"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:723
-#: gnome-initial-setup/pages/account/um-realm-manager.c:737
+#: gnome-initial-setup/pages/account/um-realm-manager.c:782
+#: gnome-initial-setup/pages/account/um-realm-manager.c:796
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
 msgstr "Неможливо ввійти як %s на домен %s"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:729
+#: gnome-initial-setup/pages/account/um-realm-manager.c:788
 msgid "Invalid password, please try again"
 msgstr "Неправильний пароль, спробуйте ще раз"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:742
+#: gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Неможливо з'єднатись з доменом %s: %s"
 
-#: gnome-initial-setup/pages/account/um-utils.c:256
+#: gnome-initial-setup/pages/account/um-utils.c:248
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr "Вибачте, таким ім'ям користувача скористатися не можна. Будь ласка, спробуйте інше."
+msgstr ""
+"Вибачте, таким ім'ям користувача скористатися не можна. Будь ласка, "
+"спробуйте інше."
 
-#: gnome-initial-setup/pages/account/um-utils.c:259
+#: gnome-initial-setup/pages/account/um-utils.c:251
 #, c-format
 msgid "The username is too long."
 msgstr "Перейменуйте користувача на меншу кількість символів."
 
-#: gnome-initial-setup/pages/account/um-utils.c:262
+#: gnome-initial-setup/pages/account/um-utils.c:254
 msgid "The username cannot start with a “-”."
 msgstr "Перейменуйте користувача без використання «-» на початку."
 
-#: gnome-initial-setup/pages/account/um-utils.c:265
+#: gnome-initial-setup/pages/account/um-utils.c:257
 msgid "That username isn’t available. Please try another."
 msgstr "Цей ім'я користувача зайнято. Будь ласка, спробуйте інше."
 
-#: gnome-initial-setup/pages/account/um-utils.c:268
+#: gnome-initial-setup/pages/account/um-utils.c:260
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr "Найменування користувача може містити малі й великі букви з a-z, цифри і символи «.», «-», «_»."
+msgstr ""
+"Найменування користувача може містити малі й великі букви з a-z, цифри і "
+"символи «.», «-», «_»."
 
-#: gnome-initial-setup/pages/account/um-utils.c:272
+#: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr "Так буде названо вашу домашню теку і її неможливо змінити."
-
-#: gnome-initial-setup/pages/display/gis-display-page.c:249
-msgid "Display"
-msgstr ""
-
-#: gnome-initial-setup/pages/display/gis-display-page.ui:39
-msgid "Adjust for TV screen"
-msgstr ""
-
-#: gnome-initial-setup/pages/display/gis-display-page.ui:57
-msgid "Do you see this at the bottom right corner of your screen?"
-msgstr ""
-
-#: gnome-initial-setup/pages/display/gis-display-page.ui:105
-msgid "I see it"
-msgstr ""
-
-#: gnome-initial-setup/pages/display/gis-display-page.ui:121
-msgid "I do not see it. Shrink screen to fit TV."
-msgstr ""
-
-#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
-#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
-msgid "Terms of Use"
-msgstr ""
-
-#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
-msgid "Please read the following terms of use carefully"
-msgstr ""
-
-#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
-msgid ""
-"By clicking \"Accept,\" you acknowledge that you have read, understood, and "
-"agree to be bound by the following terms and conditions."
-msgstr ""
-
-#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
-msgid "Help make Endless better for everyone"
-msgstr ""
-
-#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
-msgid ""
-"Automatically save and send usage statistics and problem reports to Endless."
-" All data is anonymous."
-msgstr ""
-
-#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
-msgid "Third Party Software"
-msgstr ""
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -337,42 +261,32 @@ msgstr "З'єднатись з мережевим обліковим запис�
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr "З'єднання ваших облікових записів для легкого доступу до вашої пошти, контактів, документів і світлин у мережі."
+msgstr ""
+"З'єднання ваших облікових записів для легкого доступу до вашої пошти, "
+"контактів, документів і світлин у мережі."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
 msgstr "Облікові записи можна додати і вилучити в будь-яку мить з Параметрів."
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:240
 msgid "Preview"
 msgstr "Попередній перегляд"
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:291
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:299
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:227
 msgid "More…"
 msgstr "Ще…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
+#.
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:321
 msgid "No inputs found"
 msgstr "Не знайдено жодного введення"
 
-#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:190
-msgid "Your keyboard layout seems to be:"
-msgstr ""
-
-#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:254
-#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:21
-msgid "Please press one of the following keys:"
-msgstr ""
-
-#: gnome-initial-setup/pages/keyboard/cc-keyboard-query.c:255
-msgid "Is the following key present on your keyboard?"
-msgstr ""
-
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:541
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:504
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
 msgid "Typing"
 msgstr "Введення"
@@ -381,61 +295,21 @@ msgstr "Введення"
 msgid "Select your keyboard layout or an input method."
 msgstr "Вибрати розкладку клавіатури або спосіб введення."
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:33
-msgid "Help Detect My Keyboard Layout"
-msgstr ""
-
-#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:5
-msgid "Detect Keyboard Layout…"
-msgstr ""
-
-#: gnome-initial-setup/pages/keyboard/keyboard-detector.ui:82
-msgid "_Select"
-msgstr ""
-
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:307
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:243
 msgid "No languages found"
 msgstr "Не знайдено жодної мови"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:365
+#: gnome-initial-setup/pages/language/gis-language-page.c:262
 msgid "Welcome"
 msgstr "Вітаємо"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "Вітаємо!"
-
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:175
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
-msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
-
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:176
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:61
-msgid "Try Endless OS by running it from the DVD."
-msgstr ""
-
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:177
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:147
-msgid "Reformat this computer with Endless OS."
-msgstr ""
-
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:178
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:102
-msgid "Try It"
-msgstr ""
-
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:179
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:176
-msgid "Reformat"
-msgstr ""
-
-#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:181
-msgid "Try or Reformat"
-msgstr ""
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:318
 msgctxt "Wireless access point"
@@ -463,6 +337,9 @@ msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
 msgstr ""
+"З'єднання із інтернетом допоможе вам в отриманні нових програм, даних та"
+" інших оновлень. Воно також допоможе в автоматичному встановленні часу та"
+" місця вашого перебування."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -473,74 +350,63 @@ msgid "Turn On"
 msgstr "Увімкнути"
 
 #. Translators: The placeholder is the user’s full name.
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:135
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:102
 #, c-format
 msgid "Parental Controls for %s"
 msgstr "Батьківський контроль для %s"
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:137
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:104
 msgid "Set restrictions on what this user can run or install."
-msgstr "Встановити обмеження щодо того, що може запускати і встановлювати користувач."
+msgstr ""
+"Встановити обмеження щодо того, що може запускати і встановлювати користувач."
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:232
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:199
 msgid "Parental Controls"
 msgstr "Батьківський контроль"
 
 #. Don’t break UI compatibility if parental controls are disabled.
-#: gnome-initial-setup/pages/password/gis-password-page.c:83
+#: gnome-initial-setup/pages/password/gis-password-page.c:79
 msgid "Set a Password"
 msgstr "Вказати пароль"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:84
-#: gnome-initial-setup/pages/password/gis-password-page.c:93
+#: gnome-initial-setup/pages/password/gis-password-page.c:80
+#: gnome-initial-setup/pages/password/gis-password-page.c:89
 msgid "Be careful not to lose your password."
 msgstr "Будьте обережні, не втратьте пароль."
 
 #. Translators: The placeholder is for the user’s full name.
-#: gnome-initial-setup/pages/password/gis-password-page.c:91
+#: gnome-initial-setup/pages/password/gis-password-page.c:87
 #, c-format
 msgid "Set a Password for %s"
 msgstr "Вказати пароль для %s"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:99
+#: gnome-initial-setup/pages/password/gis-password-page.c:95
 msgid "Set a Parent Password"
 msgstr "Вказати батьківський пароль"
 
-#. Translators: The placeholder is the full name of the child user on the
-#. system.
-#: gnome-initial-setup/pages/password/gis-password-page.c:101
+#. Translators: The placeholder is the full name of the child user on the system.
+#: gnome-initial-setup/pages/password/gis-password-page.c:97
 #, c-format
 msgid "This password will control access to the parental controls for %s."
-msgstr "За допомогою цього пароля буде обмежено доступ до батьківського контролю для %s."
+msgstr ""
+"За допомогою цього пароля буде обмежено доступ до батьківського контролю для "
+"%s."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:263
+#: gnome-initial-setup/pages/password/gis-password-page.c:228
+msgid "This is a weak password."
+msgstr "Це слабкий пароль."
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:234
 msgid "The passwords do not match."
 msgstr "Пароль не збігається."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:308
-#: gnome-initial-setup/pages/password/gis-password-page.c:339
-msgid "Show password"
-msgstr ""
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:347
-msgid "Hide password"
-msgstr ""
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:550
+#: gnome-initial-setup/pages/password/gis-password-page.c:420
 msgid "Password"
 msgstr "Пароль"
 
-#: gnome-initial-setup/pages/password/gis-password-page.ui:69
+#: gnome-initial-setup/pages/password/gis-password-page.ui:66
 msgid "_Confirm"
 msgstr "_Підтвердити"
-
-#: gnome-initial-setup/pages/password/gis-password-page.ui:202
-msgid "Password _reminder"
-msgstr ""
-
-#: gnome-initial-setup/pages/password/gis-password-page.ui:217
-msgid "Password reminder will be shown in case you forget your password."
-msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -552,7 +418,9 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr "Цей пароль дуже схожий на ваш попередній. Спробуйте змінити деякі букви і числа."
+msgstr ""
+"Цей пароль дуже схожий на ваш попередній. Спробуйте змінити деякі букви і "
+"числа."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -560,14 +428,15 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr "Цей пароль дуже схожий на попередній. Спробуйте ще трохи переінакшити пароль."
+msgstr ""
+"Цей пароль дуже схожий на попередній. Спробуйте ще трохи переінакшити пароль."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be "
-"stronger."
-msgstr "Цей пароль — слабкий. Пароль без зазначення користувача в ньому — сильніший."
+"This is a weak password. A password without your user name would be stronger."
+msgstr ""
+"Цей пароль — слабкий. Пароль без зазначення користувача в ньому — сильніший."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
@@ -611,14 +480,17 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr "Це слабкий пароль. Намагайтесь уживати більше спеціальних символів, як-от розділові знаки."
+msgstr ""
+"Це слабкий пароль. Намагайтесь уживати більше спеціальних символів, як-от "
+"розділові знаки."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr "Це слабкий пароль. Намагайтесь змішувати букви, числа і розділові знаки."
+msgstr ""
+"Це слабкий пароль. Намагайтесь змішувати букви, числа і розділові знаки."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
@@ -630,18 +502,23 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr "Це слабкий пароль. Намагайтесь уникати повторення однакового типу символів: варто змішувати букви, числа та розділові знаки."
+msgstr ""
+"Це слабкий пароль. Намагайтесь уникати повторення однакового типу символів: "
+"варто змішувати букви, числа та розділові знаки."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr "Це слабкий пароль. Намагайтесь уникати послідовностей, як-от 1234 або abcd."
+msgstr ""
+"Це слабкий пароль. Намагайтесь уникати послідовностей, як-от 1234 або abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr "Це надто простий пароль. Спробуйте додати більше літер, цифр і розділових знаків."
+msgstr ""
+"Це надто простий пароль. Спробуйте додати більше літер, цифр і розділових "
+"знаків."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
@@ -651,23 +528,26 @@ msgstr "Змішуйте великі літери з малими і спроб
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password "
-"stronger."
+"Adding more letters, numbers and punctuation will make the password stronger."
 msgstr "Додавання літер, цифр і розділових знаків зробить пароль надійнішим!"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr "Надсилання звітів щодо технічних проблем допоможе нам покращити %s. Звіти надсилаються анонімно та відкидають особисті дані."
+msgstr ""
+"Надсилання звітів щодо технічних проблем допоможе нам покращити %s. Звіти "
+"надсилаються анонімно та відкидають особисті дані."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -696,7 +576,9 @@ msgstr "Служби розташування"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr "Дозволяє програмам визначити ваше географічне розміщення. Вказівка показується, коли використовується служба розташування."
+msgstr ""
+"Дозволяє програмам визначити ваше географічне розміщення. Вказівка "
+"показується, коли використовується служба розташування."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -707,48 +589,10 @@ msgid ""
 "Privacy controls can be changed at any time from the Settings application."
 msgstr "Правила конфіденційності можна змінити в будь-яку мить у Параметрах."
 
-#: gnome-initial-setup/pages/site/gis-site-page.ui:33
-msgid "Site"
-msgstr ""
-
-#: gnome-initial-setup/pages/site/gis-site-page.ui:54
-msgid ""
-"At which site is this computer located? Search for your site here. You may "
-"enter manually if there is no match."
-msgstr ""
-
-#: gnome-initial-setup/pages/site/gis-site-page.ui:78
-msgid "enter manually"
-msgstr ""
-
-#: gnome-initial-setup/pages/site/gis-site-page.ui:102
-msgid "ID"
-msgstr ""
-
-#: gnome-initial-setup/pages/site/gis-site-page.ui:131
-msgid "Facility"
-msgstr ""
-
-#: gnome-initial-setup/pages/site/gis-site-page.ui:160
-msgid "Street address"
-msgstr ""
-
-#: gnome-initial-setup/pages/site/gis-site-page.ui:189
-msgid "City"
-msgstr ""
-
-#: gnome-initial-setup/pages/site/gis-site-page.ui:218
-msgid "State"
-msgstr ""
-
-#: gnome-initial-setup/pages/site/gis-site-page.ui:247
-msgid "Country"
-msgstr ""
-
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:235
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:233
 #, c-format
 msgid "_Start Using %s"
 msgstr "_Почати роботу з %s"
@@ -756,37 +600,22 @@ msgstr "_Почати роботу з %s"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:242
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:240
 #, c-format
 msgid "%s is ready to be used. We hope that you love it!"
-msgstr "Система %s готова до користування. Сподіваємося, вона вам сподобається!"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:266
-msgid "You're ready to try Endless OS"
 msgstr ""
+"Система %s готова до користування. Сподіваємося, вона вам сподобається!"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:269
-msgid ""
-"<b>System software updates are unavailable when running from evaluation "
-"media. Please install Endless if you like it!</b>"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:273
-msgid ""
-"<b>Any files you download or documents you create will be lost forever when "
-"you restart or shutdown the computer.</b>"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:283
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:264
 msgid "Setup Complete"
 msgstr "Налаштовування завершено"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:92
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:70
 msgid "All done!"
 msgstr "Виконано!"
 
 #. Translators: "city, country"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:278
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:261
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
@@ -794,28 +623,29 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:318
+#.
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:298
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
 
 #. Translators: This is the time format used in 12-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:322
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: This is the time format used in 24-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:325
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
 msgid "%R"
 msgstr "%R"
 
 #. Translators: "timezone (utc shift)"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:328
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:493
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:473
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:17
 msgid "Time Zone"
 msgstr "Часовий пояс"
@@ -824,7 +654,9 @@ msgstr "Часовий пояс"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr "Часовий пояс буде визначено автоматично, якщо ваше розміщення можна визначити. Можете знайти місто і вказати самостійно."
+msgstr ""
+"Часовий пояс буде визначено автоматично, якщо ваше розміщення можна "
+"визначити. Можете знайти місто і вказати самостійно."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
@@ -837,21 +669,25 @@ msgstr "Пошукайте міста поблизу"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
 #, c-format
 msgid "Welcome to %s !"
-msgstr ""
+msgstr "Вітаємо у %s!"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
 msgid "Setup"
-msgstr ""
+msgstr "Налаштування"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:43
 msgid ""
 "Setup will guide you through making an account and enabling some features. "
 "We’ll have you up and running in no time."
 msgstr ""
+"«Налаштування» допоможуть вам пройти процедуру створення облікового запису "
+"та вмикання деяких можливостей. Щоб почати роботу, вам знадобиться зовсім "
+"трохи часу."
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
 msgid "_Start Setup"
-msgstr ""
+msgstr "_Почати налаштовування"
