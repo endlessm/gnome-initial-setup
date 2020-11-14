@@ -835,7 +835,7 @@ monitor_is_small (GdkMonitor *monitor)
     return TRUE;
 
   gdk_monitor_get_geometry (monitor, &geom);
-  return geom.height < 768;
+  return geom.height < 800;
 }
 
 static void
