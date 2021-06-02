@@ -96,19 +96,7 @@ configure_file(
     configuration: desktop_conf,
 )
 
-systemd_system_unit_dir = get_option('systemd-system-unit-dir')
 systemd_dep = dependency ('systemd')
-if systemd_system_unit_dir == ''
-    systemd_system_unit_dir = systemd_dep.get_pkgconfig_variable('systemdsystemunitdir')
-endif
-
-configure_file(
-    input: 'eos-transient-setup.service.in',
-    output: 'eos-transient-setup.service',
-    install: true,
-    install_dir: systemd_system_unit_dir,
-    configuration: desktop_conf
-)
 
 install_data(
     'product_serial.conf',
