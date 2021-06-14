@@ -14,9 +14,3 @@ sources += files(
     'gis-language-page.c',
     'gis-language-page.h',
 )
-
-install_data(
-    'eos-test-mode',
-    install_dir: libexec_dir,
-    install_mode: 'rwxr-xr-x'
-)

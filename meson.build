@@ -81,9 +81,6 @@ libmalcontent_ui_dep = dependency ('malcontent-ui-0',
                                    required: get_option('parental_controls'))
 conf.set('HAVE_PARENTAL_CONTROLS', libmalcontent_dep.found() and libmalcontent_ui_dep.found())
 
-# Needed in both gnome-initial-setup/ and data/
-policykit_dep = dependency('polkit-gobject-1', version: '>= 0.103')
-
 configure_file(output: 'config.h',
                configuration: conf)
 config_h_dir = include_directories('.')
