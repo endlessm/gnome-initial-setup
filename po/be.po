@@ -1,24 +1,25 @@
-# Belarusian translation for gnome-initial-setup.
-# Copyright (C) 2012 gnome-initial-setup's COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-# Yuri Matsuk <yuri@matsuk.net>, 2012.
-# Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2013, 2014.
-# Yuras Shumovich <shumovichy@gmail.com>, 2017.
-#
+# 
+# Translators:
+# booxter <ihar.hrachyshka@gmail.com>, 2013-2014
+# Yuras Shumovich <shumovichy@gmail.com>, 2017
+# Yury Matsuk <yuri@matsuk.net>, 2012
+# Yury Matsuk <yuri@matsuk.net>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2021-09-14 21:37+0100\n"
-"PO-Revision-Date: 2017-09-15 17:30+0300\n"
-"Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
-"Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
-"Language: be\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2021-09-15 12:12+0000\n"
+"PO-Revision-Date: 2021-09-15 12:12+0000\n"
+"Last-Translator: endlessmobile_build <admin@endlessos.org>\n"
+"Language-Team: Belarusian (http://www.transifex.com/endless-os/gnome-initial-setup/language/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.3\n"
+"Language: be\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
@@ -58,7 +59,6 @@ msgstr ""
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:362
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -81,9 +81,8 @@ msgid "— GNOME initial setup"
 msgstr "- Пачатковая настройка GNOME"
 
 #: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:36
-#, fuzzy
 msgid "Take a Picture…"
-msgstr "Зрабіць здымак..."
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:184
 msgid "Failed to register account"
@@ -110,10 +109,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"Карпаратыўны ўваход у сістэму дазваляе выкарыстанне адзінага конта "
-"карыстальніка на гэтым прыстасаванні. Таксама праз гэты конт можна "
-"карыстацца карпаратыўнымі рэсурсамі ў інтэрнэт."
+msgstr "Карпаратыўны ўваход у сістэму дазваляе выкарыстанне адзінага конта карыстальніка на гэтым прыстасаванні. Таксама праз гэты конт можна карыстацца карпаратыўнымі рэсурсамі ў інтэрнэт."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -147,10 +143,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"Каб ужыць карпаратыўныя конты, трэба спачатку ўвесці гэты камп'ютар у дамен. "
-"Папрасіце вашага сеткавага адміністратара ўвесці вось тут пароль дамена і "
-"прызначыць гэтаму камп'ютару ўнікальнае імя ў межах сеткі."
+msgstr "Каб ужыць карпаратыўныя конты, трэба спачатку ўвесці гэты камп'ютар у дамен. Папрасіце вашага сеткавага адміністратара ўвесці вось тут пароль дамена і прызначыць гэтаму камп'ютару ўнікальнае імя ў межах сеткі."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -173,9 +166,8 @@ msgid "We need a few details to complete setup."
 msgstr "Для завяршэння наладкі патрабуецца дадатковая інфармацыя."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:566
-#, fuzzy
 msgid "Administrator"
-msgstr "І_мя адміністратара"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:572
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:615
@@ -201,9 +193,8 @@ msgid "_Full Name"
 msgstr "_Поўнае імя"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
-#, fuzzy
 msgid "Set a password"
-msgstr "Настаўленне пароля"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
@@ -214,14 +205,12 @@ msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
-#, fuzzy
 msgid "_Enterprise Login"
-msgstr "Карпаратыўны ўваход у сістэму"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:53
-#, fuzzy
 msgid "Go online to set up Enterprise Login."
-msgstr "Наладзіць _карпаратыўны ўваход у сістэму"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
@@ -260,22 +249,18 @@ msgid "The username cannot start with a “-”."
 msgstr "Імя карыстальніка не можа пачынацца з \"-\"."
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
-#, fuzzy
 msgid "That username isn’t available. Please try another."
-msgstr "Гэтае імя карыстальніка недаступнае. Калі ласка, выберыце іншае."
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"Імя карыстальніка павінна складацца толькі з літар англійскага алфавіта "
-"верхняга ці ніжняга рэгістраў з 'a' да 'z', лічбаў і знакаў '.', '-' i '_'"
+msgstr "Імя карыстальніка павінна складацца толькі з літар англійскага алфавіта верхняга ці ніжняга рэгістраў з 'a' да 'z', лічбаў і знакаў '.', '-' i '_'"
 
 #: gnome-initial-setup/pages/account/um-utils.c:268
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr ""
-"Гэта назва будзе ўжыта для дамашняй папкі і не можа быць зменена пазней."
+msgstr "Гэта назва будзе ўжыта для дамашняй папкі і не можа быць зменена пазней."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
@@ -298,8 +283,8 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
@@ -322,15 +307,12 @@ msgstr "Злучэнне з вашымі сеціўнымі контамі"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"Злучыцеся з вашымі контамі каб атрымаць просты доступ да сваёй пошты, "
-"сеціўнага календара, кантактаў, дакументаў і фатаграфій."
+msgstr "Злучыцеся з вашымі контамі каб атрымаць просты доступ да сваёй пошты, сеціўнага календара, кантактаў, дакументаў і фатаграфій."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr ""
-"Вы можаце дадаць ці выдаліць конты ў любы момант праз дастасаванне Настройкі."
+msgstr "Вы можаце дадаць ці выдаліць конты ў любы момант праз дастасаванне Настройкі."
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
@@ -343,7 +325,6 @@ msgstr "Яшчэ..."
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Спосабы ўводу ды раскладкі не знойдзены"
@@ -368,7 +349,6 @@ msgstr "Вітаем Вас!"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "Вітаем Вас!"
@@ -458,16 +438,16 @@ msgstr "Калі ласка, не губляйце свой пароль."
 
 #. Translators: The placeholder is for the user’s full name.
 #: gnome-initial-setup/pages/password/gis-password-page.c:90
-#, fuzzy, c-format
+#, c-format
 msgid "Set a Password for %s"
-msgstr "Настаўленне пароля"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:98
-#, fuzzy
 msgid "Set a Parent Password"
-msgstr "Настаўленне пароля"
+msgstr ""
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -479,14 +459,12 @@ msgstr "Паролі не супадаюць"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:299
 #: gnome-initial-setup/pages/password/gis-password-page.c:330
-#, fuzzy
 msgid "Show password"
-msgstr "Пароль адсутнічае"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:338
-#, fuzzy
 msgid "Hide password"
-msgstr "Пароль адсутнічае"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:531
 msgid "Password"
@@ -502,152 +480,126 @@ msgid "The new password needs to be different from the old one."
 msgstr "Новы пароль мусіць адрознівацца ад старога."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:83
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr "Паспрабуйце змяніць некалькі літар ці лічбаў."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr "Паспрабуйце яшчэ больш змяніць пароль."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr "Пароль, які б не ўключаў вашага імені карыстальніка, быў бы мацнейшым."
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr "Прыбярыце сваё імя карыстальніка з пароля."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr "Паспрабуйце прыбраць некаторыя словы з пароля."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr "Пазбягайце агульнавядомых слоў."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr "Пазбягайце перастановак у існуючых словах."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr "Паспрабуйце ўжыць болей лічбаў."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr "Паспрабуйце ўжыць больш літар верхняга рэгістра."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr "Паспрабуйце ўжыць больш літар ніжняга рэгістра."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr "Паспрабуйце ўжыць больш спецыяльных знакаў, напрыклад, пунктуацыйных."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr "Паспрабуйце мяшанку з літар, лічбаў і пунктуацыйных знакаў."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr "Не паўтарайце адзін і той жа знак."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
 msgstr ""
-"Паспрабуйце зрабіць тыпы ўжытых знакаў больш разнастайнымі: перамяшайце "
-"літары, лічбы і пунктуацыйныя знакі."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr "Пазбягайце такіх паслядоўнасцяў, як 1234 ці abcd."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
 msgstr ""
-"Пароль мусіць быць даўжэйшы. Паспрабуйце дадаць яшчэ літар, лічбаў і знакаў "
-"прыпынку."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
-"Перамяшайце літары верхняга і ніжняга рэгістра, ужыйце адну ці некалькі "
-"лічбаў."
+msgstr "Перамяшайце літары верхняга і ніжняга рэгістра, ужыйце адну ці некалькі лічбаў."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-"Дадаўшы яшчэ літар, лічбаў і пунктуацыйных знакаў, вы зробіце пароль яшчэ "
-"мацнейшым."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
+msgstr "Дадаўшы яшчэ літар, лічбаў і пунктуацыйных знакаў, вы зробіце пароль яшчэ мацнейшым."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"Справаздачы аб тэхнічных праблемах дапамагаюць нам палепшыць %s. Справаздачы "
-"дасылаюцца ананімна і не ўтрымліваюць асабістай інфармацыі."
+msgstr "Справаздачы аб тэхнічных праблемах дапамагаюць нам палепшыць %s. Справаздачы дасылаюцца ананімна і не ўтрымліваюць асабістай інфармацыі."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -676,9 +628,7 @@ msgstr "Службы месцазнаходжання"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Дазваляе дастасаванням вызначаць ваша геаграфічнае месцазнаходжанне. "
-"Індыкатар з'явіцца, калі службы месцазнаходжання выкарыстоўваюцца."
+msgstr "Дазваляе дастасаванням вызначаць ваша геаграфічнае месцазнаходжанне. Індыкатар з'явіцца, калі службы месцазнаходжання выкарыстоўваюцца."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -687,8 +637,7 @@ msgstr "Аўтаматычная справаздача аб праблемах"
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:110
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr ""
-"Палітыку прыватнасці можна змяніць у любы час праз дастасаванне Настройкі."
+msgstr "Палітыку прыватнасці можна змяніць у любы час праз дастасаванне Настройкі."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
@@ -740,11 +689,9 @@ msgstr "_Пачаць працу з %s"
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:242
-#, fuzzy, c-format
+#, c-format
 msgid "%s is ready to be used. We hope that you love it!"
 msgstr ""
-"Дзякуй за выбар %s.\n"
-"Спадзяёмся, ён вас не расчаруе."
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:266
 msgid "You're ready to try Endless OS"
@@ -779,7 +726,6 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -810,10 +756,7 @@ msgstr "Часавы пояс"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"Калі атрымаецца вызначыць ваша месцазнаходжанне, часавы пояс будзе "
-"настаўлены аўтаматычна. Таксама можаце знайсці ваш горад і наставіць часавы "
-"пояс самастойна."
+msgstr "Калі атрымаецца вызначыць ваша месцазнаходжанне, часавы пояс будзе настаўлены аўтаматычна. Таксама можаце знайсці ваш горад і наставіць часавы пояс самастойна."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
@@ -826,11 +769,10 @@ msgstr "Знайдзіце бліжэйшы горад"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
-#, fuzzy, c-format
+#, c-format
 msgid "Welcome to %s !"
-msgstr "Вітаем Вас!"
+msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
 msgid "Setup"
@@ -843,129 +785,5 @@ msgid ""
 msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
-#, fuzzy
 msgid "_Start Setup"
-msgstr "Пачатковая настройка"
-
-#~ msgid "Disable image"
-#~ msgstr "Выключыць выяву"
-
-#~ msgid "License Agreements"
-#~ msgstr "Ліцэнзійныя пагадненні"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr "_Я згадзіўся з умовамі гэтага ліцэнзійнага пагаднення."
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "Злучэнне з Інтэрнэтам дазволіць наставіць час, дадаць звесткі пра сябе, а "
-#~ "таксама даступіцца да пошты, календара і кантактаў. Таксама злучэнне "
-#~ "патрэбна для карпаратыўнага ўваходу ў сістэму."
-
-#~ msgid "No regions found"
-#~ msgstr "Рэгіёны не знойдзены"
-
-#~ msgid "Region"
-#~ msgstr "Рэгіён"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "Выберыце сваю краіну або рэгіён."
-
-#~ msgid "Ready to Go"
-#~ msgstr "Гатова"
-
-#~ msgid "You’re ready to go!"
-#~ msgstr "Готовы пачаць працу!"
-
-#, c-format
-#~ msgid ""
-#~ "Proprietary software sources provide access to additional software, "
-#~ "including web browsers and games. This software typically has "
-#~ "restrictions on use and access to source code, and is not provided by %s."
-#~ msgstr ""
-#~ "Крыніцы патэнтаванага апраграмавання даюць доступ да дадатковага "
-#~ "праграмнага забеспячэння, у тым ліку аглядальнікаў сеціва і гульняў. "
-#~ "Гэтыя праграмы звычайна маюць абмежаванні на выкарыстанне і доступ да "
-#~ "выточнага коду, %s не мае да іх ніякага дачынення."
-
-#~ msgid "Software Sources"
-#~ msgstr "Крыніцы апраграмавання"
-
-#~ msgid "Additional Software Sources"
-#~ msgstr "Дадатковыя крыніцы апраграмавання"
-
-#~ msgid "<a href=\"more\">Find out more…</a>"
-#~ msgstr "<a href=\"more\">Даведацца больш...</a>"
-
-#~ msgid "Proprietary Software Sources"
-#~ msgstr "Крыніцы патэнтаванага апраграмавання"
-
-#~ msgid ""
-#~ "Proprietary software typically has restrictions on how it can be used and "
-#~ "on access to source code. This prevents anyone but the software owner "
-#~ "from inspecting, improving or learning from its code."
-#~ msgstr ""
-#~ "Патэнтаванае апраграмаванне звычайна мае абмежаванні на выкарыстанне і "
-#~ "доступ да выточнага коду. Гэта не дазваляе нікому акрамя ўладальніка "
-#~ "даследаваць або паляпшаць выточны код, а таксама вучыцца на ім."
-
-#~ msgid ""
-#~ "In contrast, Free Software can be freely run, copied, distributed, "
-#~ "studied and modified."
-#~ msgstr ""
-#~ "Свабоднае апраграмаванне, у сваю чаргу, можна свабодна запускаць, "
-#~ "капіраваць, распаўсюджваць, вывучаць і змяняць."
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "Праверце правільнасць гэтых звестак. Пры патрэбе іх можна змяніць."
-
-#~ msgid "Your username cannot be changed after setup."
-#~ msgstr "Імя карыстальніка немагчыма змяніць пасля наладкі."
-
-#~ msgid "A user with the username '%s' already exists"
-#~ msgstr "Карыстальнік \"%s\" ужо існуе"
-
-#~ msgid "Cancel"
-#~ msgstr "Скасаваць"
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr ""
-#~ "Праглядзець сеціўныя конты, а таксама дадаць новыя, можна і пасля наладкі."
-
-#~ msgid "Strength: %s"
-#~ msgstr "Трываласць: %s"
-
-#~ msgid "Choose a _password"
-#~ msgstr "_Выберыце пароль"
-
-#~ msgctxt "Password strength"
-#~ msgid "Too short"
-#~ msgstr "Надта кароткі"
-
-#~ msgctxt "Password strength"
-#~ msgid "Not good enough"
-#~ msgstr "Недастаткова добры"
-
-#~ msgctxt "Password strength"
-#~ msgid "Weak"
-#~ msgstr "Слабы"
-
-#~ msgctxt "Password strength"
-#~ msgid "Fair"
-#~ msgstr "Неблагі"
-
-#~ msgctxt "Password strength"
-#~ msgid "Good"
-#~ msgstr "Добры"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strong"
-#~ msgstr "Моцны"
-
-#~ msgid "You're all set!"
-#~ msgstr "Усё падрыхтавана!"
+msgstr ""

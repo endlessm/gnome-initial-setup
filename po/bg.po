@@ -1,22 +1,22 @@
-# Bulgarian translation for gnome-initial-setup po-file.
-# Copyright (C) 2012, 2013, 2014, 2015, 2016, 2017 Free Software Foundation, Inc.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-# Ivaylo Valkov <ivaylo@e-valkov.org>, 2012, 2013.
-# Alexander Shopov <ash@kambanaria.org>, 2014, 2015, 2016, 2017.
-#
+# 
+# Translators:
+# Alexander Shopov <ash@kambanaria.org>, 2014-2017
+# Ivaylo Valkov <ivaylo@e-valkov.org>, 2012-2013
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2021-09-14 21:37+0100\n"
-"PO-Revision-Date: 2017-08-31 21:38+0200\n"
-"Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
-"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
-"Language: bg\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2021-09-15 12:12+0000\n"
+"PO-Revision-Date: 2021-09-15 12:12+0000\n"
+"Last-Translator: endlessmobile_build <admin@endlessos.org>\n"
+"Language-Team: Bulgarian (http://www.transifex.com/endless-os/gnome-initial-setup/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
@@ -57,7 +57,6 @@ msgstr ""
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:362
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -80,9 +79,8 @@ msgid "— GNOME initial setup"
 msgstr "– първоначални настройки на GNOME"
 
 #: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:36
-#, fuzzy
 msgid "Take a Picture…"
-msgstr "Снимка сега…"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:184
 msgid "Failed to register account"
@@ -109,10 +107,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"Корпоративният вход позволява на този компютър да бъдат ползвани централно "
-"управлявани потребителски регистрации. Чрез него може да ползвате "
-"корпоративни ресурси по Интернет."
+msgstr "Корпоративният вход позволява на този компютър да бъдат ползвани централно управлявани потребителски регистрации. Чрез него може да ползвате корпоративни ресурси по Интернет."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -146,10 +141,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"Този компютър трябва да бъде включен в областта/домейна, за да се ползва "
-"корпоративен вход. Тук корпоративният администратор трябва да въведе "
-"паролата за областта/домейна и да избере уникално име за този компютър."
+msgstr "Този компютър трябва да бъде включен в областта/домейна, за да се ползва корпоративен вход. Тук корпоративният администратор трябва да въведе паролата за областта/домейна и да избере уникално име за този компютър."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -172,9 +164,8 @@ msgid "We need a few details to complete setup."
 msgstr "За завършване на първоначалните настройки трябват още няколко детайла."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:566
-#, fuzzy
 msgid "Administrator"
-msgstr "_Име на администратора"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:572
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:615
@@ -200,9 +191,8 @@ msgid "_Full Name"
 msgstr "П_ълно име"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
-#, fuzzy
 msgid "Set a password"
-msgstr "Задаване на парола"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
@@ -213,14 +203,12 @@ msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
-#, fuzzy
 msgid "_Enterprise Login"
-msgstr "Корпоративен вход"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:53
-#, fuzzy
 msgid "Go online to set up Enterprise Login."
-msgstr "Създаване на _корпоративна регистрация"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
@@ -259,19 +247,14 @@ msgid "The username cannot start with a “-”."
 msgstr "Потребителското име не може да започва с „-“."
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
-#, fuzzy
 msgid "That username isn’t available. Please try another."
-msgstr "Това име на потребител не е свободно. Пробвайте с друго."
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"Потребителското може да съдържа:\n"
-" ⁃ главни и/или малки букви от английската азбука;\n"
-" ⁃ цифри;\n"
-" ⁃ знаците „.“ (точка), „-“ (тире) и „_“ (долно тире)."
+msgstr "Потребителското може да съдържа:\n ⁃ главни и/или малки букви от английската азбука;\n ⁃ цифри;\n ⁃ знаците „.“ (точка), „-“ (тире) и „_“ (долно тире)."
 
 #: gnome-initial-setup/pages/account/um-utils.c:268
 msgid "This will be used to name your home folder and can’t be changed."
@@ -298,8 +281,8 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
@@ -322,16 +305,12 @@ msgstr "Свързване към регистрации в сайтове"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"Свързването към регистрациите позволява да използвате вашите снимки, "
-"контакти, документи, календар, е-поща и др. през Интернет."
+msgstr "Свързването към регистрациите позволява да използвате вашите снимки, контакти, документи, календар, е-поща и др. през Интернет."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr ""
-"По всяко време може да промените политиката за лични данни през контролния "
-"център"
+msgstr "По всяко време може да промените политиката за лични данни през контролния център"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
@@ -344,7 +323,6 @@ msgstr "Допълнителни…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Липсват входни устройства"
@@ -369,7 +347,6 @@ msgstr "Добре дошли"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "Добре дошли!"
@@ -459,16 +436,16 @@ msgstr "Внимавайте да не загубите паролата си!"
 
 #. Translators: The placeholder is for the user’s full name.
 #: gnome-initial-setup/pages/password/gis-password-page.c:90
-#, fuzzy, c-format
+#, c-format
 msgid "Set a Password for %s"
-msgstr "Задаване на парола"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:98
-#, fuzzy
 msgid "Set a Parent Password"
-msgstr "Задаване на парола"
+msgstr ""
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -480,14 +457,12 @@ msgstr "Паролите не съвпадат."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:299
 #: gnome-initial-setup/pages/password/gis-password-page.c:330
-#, fuzzy
 msgid "Show password"
-msgstr "Парола"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:338
-#, fuzzy
 msgid "Hide password"
-msgstr "Парола"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:531
 msgid "Password"
@@ -503,116 +478,100 @@ msgid "The new password needs to be different from the old one."
 msgstr "Новата парола трябва да се различава от старата."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:83
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr "Променете някои от знаците и цифрите."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr "Променете паролата още малко."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr "По-добре е паролата да не съдържа потребителското ви име."
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr "Не използвайте потребителското си име в паролата."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr "Не използвайте част от думите в паролата."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr "Избягвайте често срещани думи."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr "Не може просто да разменяте думите, включени в паролата."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr "Използвайте още цифри."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr "Използвайте още главни букви."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr "Използвайте още малки букви."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr "Използвайте още специални знаци — като пунктуация."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr "Използвайте и букви, и цифри, и пунктуация."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr "Не повтаряйте един и същи знак."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
 msgstr ""
-"Не използвайте само един вид знаци. Включете и букви, и цифри, и пунктуация."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr "Не използвайте последователности като „1234“ или „abcd“."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr "Паролата трябва да е по-дълга. Добавете букви, цифри и пунктуация."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
@@ -622,27 +581,23 @@ msgstr "Използвайте главни и малки букви, добав
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-"Ако добавите още букви, цифри или знаци ще направите паролата още по-силна."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
+msgstr "Ако добавите още букви, цифри или знаци ще направите паролата още по-силна."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"Изпращането на доклади при технически проблеми помага на разработчиците да "
-"подобрят %s. Докладите се изпращат анонимно и без идентифициращи данни в тях."
+msgstr "Изпращането на доклади при технически проблеми помага на разработчиците да подобрят %s. Докладите се изпращат анонимно и без идентифициращи данни в тях."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -671,9 +626,7 @@ msgstr "Местоположение"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Разрешаване на програмите да определят географското ви местоположение. При "
-"ползването на тази възможност се извежда индикация."
+msgstr "Разрешаване на програмите да определят географското ви местоположение. При ползването на тази възможност се извежда индикация."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -682,9 +635,7 @@ msgstr "Автоматично докладване на проблеми"
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:110
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr ""
-"По всяко време може да промените политиката за лични данни през контролния "
-"център."
+msgstr "По всяко време може да промените политиката за лични данни през контролния център."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
@@ -773,7 +724,6 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -804,9 +754,7 @@ msgstr "Часови пояс"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"Часовият пояс ще се зададе автоматично, ако местоположението ви бъде "
-"открито. Можете и ръчна да потърсите град, чийто пояс да ползвате."
+msgstr "Часовият пояс ще се зададе автоматично, ако местоположението ви бъде открито. Можете и ръчна да потърсите град, чийто пояс да ползвате."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
@@ -819,11 +767,10 @@ msgstr "Потърсете за град наблизо"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
-#, fuzzy, c-format
+#, c-format
 msgid "Welcome to %s !"
-msgstr "Добре дошли!"
+msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
 msgid "Setup"
@@ -836,81 +783,5 @@ msgid ""
 msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
-#, fuzzy
 msgid "_Start Setup"
-msgstr "Първоначални настройки"
-
-#~ msgid "Disable image"
-#~ msgstr "Без изображение"
-
-#~ msgid "License Agreements"
-#~ msgstr "Условия на лиценза"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr "_Съгласен съм с условията на този лиценз."
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "Ако се свържете към Интернет, ще можете да зададете точно време и "
-#~ "допълнителна информация за вас и ще получите достъп до е-пощата, "
-#~ "календара и контактите ви онлайн. Такава връзка е необходима и за "
-#~ "ползването на корпоративен вход."
-
-#~ msgid "No regions found"
-#~ msgstr "Не са намерени държави или територии"
-
-#~ msgid "Region"
-#~ msgstr "Държава или територия"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "Избор на държава и територия"
-
-#~ msgid "Ready to Go"
-#~ msgstr "Готово!"
-
-#~ msgid "You’re ready to go!"
-#~ msgstr "Всичко е настроено!"
-
-#, c-format
-#~ msgid ""
-#~ "Proprietary software sources provide access to additional software, "
-#~ "including web browsers and games. This software typically has "
-#~ "restrictions on use and access to source code, and is not provided by %s."
-#~ msgstr ""
-#~ "Източниците на собственически софтуер дават достъп до още програми като "
-#~ "браузъри и игри. Има най-различни ограничения как и за какво може да ги "
-#~ "ползвате, нямате достъп до изходният код и не се предоставят от %s."
-
-#~ msgid "Software Sources"
-#~ msgstr "Software Sources"
-
-#~ msgid "Additional Software Sources"
-#~ msgstr "Допълнителни източници на софтуер"
-
-#~ msgid "<a href=\"more\">Find out more…</a>"
-#~ msgstr "<a href='more'>За повече информация…</a>"
-
-#~ msgid "Proprietary Software Sources"
-#~ msgstr "Източници на собственически софтуер"
-
-#~ msgid ""
-#~ "Proprietary software typically has restrictions on how it can be used and "
-#~ "on access to source code. This prevents anyone but the software owner "
-#~ "from inspecting, improving or learning from its code."
-#~ msgstr ""
-#~ "Собственическият софтуер е с ограничения как да се ползва и кой има "
-#~ "достъп до изходния му код. Никой друг не може да се учи от него, само "
-#~ "производителят на софтуера може да го подобрява, проверява как работи и "
-#~ "поддържа."
-
-#~ msgid ""
-#~ "In contrast, Free Software can be freely run, copied, distributed, "
-#~ "studied and modified."
-#~ msgstr ""
-#~ "В пълна противоположност на това — свободният софтуер дава възможност на "
-#~ "всеки да го изпълнява, копира, разпространява, изучава и променя."
+msgstr ""

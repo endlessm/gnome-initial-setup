@@ -1,26 +1,24 @@
-# Catalan translation for gnome-initial-setup.
-# Copyright (C) 2012 gnome-initial-setup's COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-# Gil Forcada <gilforcada@guifi.net>, 2012, 2013, 2014.
-# Josep Sànchez <papapep@gmx.com>, 2013.
-# Jordi Mas <jmas@softcatala.org>, 2015-2016
-# Jordi Serratosa <jordis@softcatala.cat>, 2017.
-#
+# 
+# Translators:
+# Gil Forcada <gilforcada@guifi.net>, 2012-2014
+# Jordi Serratosa <jordis@softcatala.cat>, 2017
+# Josep Sànchez <papapep@gmx.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2021-09-14 21:37+0100\n"
-"PO-Revision-Date: 2017-07-11 19:31+0200\n"
-"Last-Translator: Xavi Ivars <xavi.ivars@gmail.com>\n"
-"Language-Team: Catalan <tradgnome@softcatala.org>\n"
-"Language: ca-valencia\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2021-09-15 12:12+0000\n"
+"PO-Revision-Date: 2021-09-15 12:12+0000\n"
+"Last-Translator: endlessmobile_build <admin@endlessos.org>\n"
+"Language-Team: Catalan (Valencian) (http://www.transifex.com/endless-os/gnome-initial-setup/language/ca@valencia/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.11\n"
+"Language: ca@valencia\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
@@ -60,7 +58,6 @@ msgstr ""
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:362
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -83,9 +80,8 @@ msgid "— GNOME initial setup"
 msgstr "— Configuració inicial del GNOME"
 
 #: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:36
-#, fuzzy
 msgid "Take a Picture…"
-msgstr "Fes una foto..."
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:184
 msgid "Failed to register account"
@@ -112,10 +108,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"L'entrada corporativa permet l'ús d'un compte d'usuari gestionat de forma "
-"centralitzada en este dispositiu. També podeu utilitzar el compte per "
-"accedir a recursos de l'empresa a Internet."
+msgstr "L'entrada corporativa permet l'ús d'un compte d'usuari gestionat de forma centralitzada en este dispositiu. També podeu utilitzar el compte per accedir a recursos de l'empresa a Internet."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -149,10 +142,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"Per poder utilitzar entrades corporatives, este ordinador ha de formar part "
-"del domini. Demaneu a l'administrador de xarxa que introduïsca ací la "
-"contrasenya de domini i trieu un nom d'ordinador únic per l'ordinador."
+msgstr "Per poder utilitzar entrades corporatives, este ordinador ha de formar part del domini. Demaneu a l'administrador de xarxa que introduïsca ací la contrasenya de domini i trieu un nom d'ordinador únic per l'ordinador."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -175,9 +165,8 @@ msgid "We need a few details to complete setup."
 msgstr "Necessitem algunes dades per completar la configuració."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:566
-#, fuzzy
 msgid "Administrator"
-msgstr "_Nom de l'administrador"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:572
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:615
@@ -203,9 +192,8 @@ msgid "_Full Name"
 msgstr "_Nom complet"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
-#, fuzzy
 msgid "Set a password"
-msgstr "Establiu la contrasenya"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
@@ -216,14 +204,12 @@ msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
-#, fuzzy
 msgid "_Enterprise Login"
-msgstr "Entrada corporativa"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:53
-#, fuzzy
 msgid "Go online to set up Enterprise Login."
-msgstr "Configura l'_entrada corporativa"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
@@ -262,22 +248,18 @@ msgid "The username cannot start with a “-”."
 msgstr "El nom d'usuari no pot començar amb «-»."
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
-#, fuzzy
 msgid "That username isn’t available. Please try another."
-msgstr "El nom d'usuari no està disponible. Proveu-ne un altre."
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"El nom d'usuari només ha de consistir en lletres majúscules i minúscules de "
-"la «a» a la «z», dígits i qualsevol dels caràcters següents: . - _"
+msgstr "El nom d'usuari només ha de consistir en lletres majúscules i minúscules de la «a» a la «z», dígits i qualsevol dels caràcters següents: . - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:268
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr ""
-"Es farà servir per anomenar la vostra carpeta personal i no es pot canviar."
+msgstr "Es farà servir per anomenar la vostra carpeta personal i no es pot canviar."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
@@ -300,8 +282,8 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
@@ -324,16 +306,12 @@ msgstr "Connecteu els vostres comptes en línia"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"Connecteu els vostres comptes per poder accedir fàcilment al correu, el "
-"calendari en línia, els contactes, els documents i les fotos."
+msgstr "Connecteu els vostres comptes per poder accedir fàcilment al correu, el calendari en línia, els contactes, els documents i les fotos."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr ""
-"Es poden afegir o suprimir comptes en qualsevol moment des de les "
-"preferències."
+msgstr "Es poden afegir o suprimir comptes en qualsevol moment des de les preferències."
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
@@ -346,7 +324,6 @@ msgstr "Més…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "No s'ha trobat cap font d'entrada"
@@ -371,7 +348,6 @@ msgstr "Vos donem la benvinguda"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "Vos donem la benvinguda!"
@@ -461,16 +437,16 @@ msgstr "Tingueu cura de no perdre la contrasenya."
 
 #. Translators: The placeholder is for the user’s full name.
 #: gnome-initial-setup/pages/password/gis-password-page.c:90
-#, fuzzy, c-format
+#, c-format
 msgid "Set a Password for %s"
-msgstr "Establiu la contrasenya"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:98
-#, fuzzy
 msgid "Set a Parent Password"
-msgstr "Establiu la contrasenya"
+msgstr ""
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -482,14 +458,12 @@ msgstr "Les contrasenyes no coincideixen."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:299
 #: gnome-initial-setup/pages/password/gis-password-page.c:330
-#, fuzzy
 msgid "Show password"
-msgstr "Contrasenya"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:338
-#, fuzzy
 msgid "Hide password"
-msgstr "Contrasenya"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:531
 msgid "Password"
@@ -505,120 +479,100 @@ msgid "The new password needs to be different from the old one."
 msgstr "La contrasenya nova ha de ser diferent de la vella."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:83
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr "Canvieu algunes lletres i números."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr "Canvieu la contrasenya una mica més."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr "Una contrasenya sense el vostre nom d'usuari seria més segura."
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr "Eviteu l'ús del vostre nom a la contrasenya."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr "Eviteu algunes de les paraules incloses a la contrasenya."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
 msgstr ""
-"Aquesta contrasenya és feble. Afegiu-hi més lletres, nombres i símbols."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr "Eviteu reordenar paraules existents."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
 msgstr ""
-"Aquesta contrasenya és feble. Afegiu-hi més lletres, nombres i símbols."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr "Utilitzeu més lletres majúscules."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr "Utilitzeu més lletres minúscules."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr "Utilitzeu més caràcters especials, com ara signes de puntuació."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr "Utilitzeu una combinació de lletres, nombres i signes de puntuació."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr "Eviteu repetir el mateix caràcter."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
 msgstr ""
-"Eviteu repetir el mateix tipus de caràcter: combineu lletres, números i "
-"signes de puntuació."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr "Eviteu emprar seqüències com ara 1234 o abcd."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
 msgstr ""
-"Aquesta contrasenya és feble. Afegiu-hi més lletres, nombres i símbols."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
@@ -628,28 +582,23 @@ msgstr "Combineu majúscules i minúscules i empreu un o dos nombres."
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-"Si hi afegiu més lletres, nombres i signes de puntuació encara serà més "
-"segura."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
+msgstr "Si hi afegiu més lletres, nombres i signes de puntuació encara serà més segura."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"Enviar informes de problemes tècnics ajuda a millorar %s. Els informes "
-"s'envien anònimament i sense dades personals."
+msgstr "Enviar informes de problemes tècnics ajuda a millorar %s. Els informes s'envien anònimament i sense dades personals."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -678,9 +627,7 @@ msgstr "Serveis d'ubicació"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Permet a les aplicacions determinar la posició geogràfica. Es mostra una "
-"indicació quan els serveis d'ubicació estan en ús."
+msgstr "Permet a les aplicacions determinar la posició geogràfica. Es mostra una indicació quan els serveis d'ubicació estan en ús."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -689,9 +636,7 @@ msgstr "Informa de problemes automàticament"
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:110
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr ""
-"Els controls de privadesa es poden canviar en qualsevol moment des de les "
-"preferències."
+msgstr "Els controls de privadesa es poden canviar en qualsevol moment des de les preferències."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
@@ -743,11 +688,9 @@ msgstr "_Comenceu a utilitzar %s"
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:242
-#, fuzzy, c-format
+#, c-format
 msgid "%s is ready to be used. We hope that you love it!"
 msgstr ""
-"Gràcies per triar %s.\n"
-"Esperem que us agradi!"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:266
 msgid "You're ready to try Endless OS"
@@ -782,7 +725,6 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -813,9 +755,7 @@ msgstr "Fus horari"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"El fus horari s'establirà automàticament si es pot determinar la vostra "
-"ubicació. Podeu també buscar una ciutat i configurar-lo vosaltres mateixos."
+msgstr "El fus horari s'establirà automàticament si es pot determinar la vostra ubicació. Podeu també buscar una ciutat i configurar-lo vosaltres mateixos."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
@@ -828,11 +768,10 @@ msgstr "Cerqueu una ciutat propera"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
-#, fuzzy, c-format
+#, c-format
 msgid "Welcome to %s !"
-msgstr "Vos donem la benvinguda!"
+msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
 msgid "Setup"
@@ -845,144 +784,5 @@ msgid ""
 msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
-#, fuzzy
 msgid "_Start Setup"
-msgstr "Configuració inicial"
-
-#~ msgid "Disable image"
-#~ msgstr "Inhabilita la imatge"
-
-#~ msgid "License Agreements"
-#~ msgstr "Acords de llicència"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr "He _acceptat les condicions d'ús de la llicència d'usuari."
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "La connexió a Internet vos permetrà establir l'hora, afegir detalls i "
-#~ "accedir al vostre correu electrònic, calendari i contactes. També és "
-#~ "necessària per als comptes d'entrada corporativa."
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to avoid common words."
-#~ msgstr "Eviteu utilitzar paraules comunes."
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to use more numbers."
-#~ msgstr "Utilitzeu més nombres."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "Password needs to be longer. Try to add more letters, numbers and "
-#~ "punctuation."
-#~ msgstr ""
-#~ "La contrasenya ha de ser més llarga. Afegiu més lletres, nombres i signes "
-#~ "de puntuació."
-
-#~ msgid "No regions found"
-#~ msgstr "No s'ha trobat cap regió"
-
-#~ msgid "Region"
-#~ msgstr "Regió"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "Trieu el vostre país o regió."
-
-#~ msgid "Ready to Go"
-#~ msgstr "Llest"
-
-#~ msgid "You’re ready to go!"
-#~ msgstr "Tot a punt!"
-
-#, c-format
-#~ msgid ""
-#~ "Proprietary software sources provide access to additional software, "
-#~ "including web browsers and games. This software typically has "
-#~ "restrictions on use and access to source code, and is not provided by %s."
-#~ msgstr ""
-#~ "Les fonts de programari de propietat proveïxen accés a programari "
-#~ "addicional, incloent-hi navegadors web i jocs. Este programari té "
-#~ "habitualment restriccions en el seu ús i en l'accés al seu codi font, i "
-#~ "no està proveït per %s."
-
-#~ msgid "Software Sources"
-#~ msgstr "Fonts de programari"
-
-#~ msgid "Additional Software Sources"
-#~ msgstr "Fonts de programari addicionals"
-
-#~ msgid "<a href=\"more\">Find out more…</a>"
-#~ msgstr "<a href=\"more\">Descobriu-ne més...</a>"
-
-#~ msgid "Proprietary Software Sources"
-#~ msgstr "Fonts de programari de propietat"
-
-#~ msgid ""
-#~ "Proprietary software typically has restrictions on how it can be used and "
-#~ "on access to source code. This prevents anyone but the software owner "
-#~ "from inspecting, improving or learning from its code."
-#~ msgstr ""
-#~ "El programari propietari té habitualment restriccions respecte a com pot "
-#~ "ser utilitzat i en l'accés al seu codi font. Això impedeix a qualsevol "
-#~ "persona que no siga el propietari inspeccionar-lo, millorar-lo o "
-#~ "aprendre'n del seu codi."
-
-#~ msgid ""
-#~ "In contrast, Free Software can be freely run, copied, distributed, "
-#~ "studied and modified."
-#~ msgstr ""
-#~ "Per contra, el programari lliure pot ser lliurement usat, copiat, "
-#~ "distribuït, estudiat i modificat."
-
-#~ msgid "A user with the username ‘%s’ already exists."
-#~ msgstr "Ja existeix un usuari amb el nom d'usuari «%s»."
-
-#~ msgid "This is a weak password."
-#~ msgstr "Aquesta contrasenya és feble."
-
-#~ msgid "_Verify"
-#~ msgstr "_Verifica"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "Seguretat: dèbil"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "Seguretat: baixa"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "Seguretat: mitjana"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "Seguretat: bona"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "Seguretat: alta"
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "Són correctes aquestes dades? Podeu canviar-les si voleu."
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr ""
-#~ "Podeu revisar els comptes en línia (i afegir-ne de nous) després de la "
-#~ "configuració."
-
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "La vostra zona horària deu ser %s. Premeu «Següent» per continuar o "
-#~ "cerqueu una ciutat per establir manualment la zona horària."
-
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"
+msgstr ""

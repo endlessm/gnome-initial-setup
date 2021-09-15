@@ -1,25 +1,26 @@
-# Swedish translation for gnome-initial-setup.
-# Copyright © 2012-2020 Free Software Foundation, Inc.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-# Daniel Nylander <po@danielnylander.se>, 2012.
-# Mattias Eriksson <snaggen@gmail.com>, 2014.
-# Sebastian Rasmussen <sebras@gmail.com>, 2015.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015, 2016, 2017, 2018, 2019, 2020.
-#
+# 
+# Translators:
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015-2020
+# Daniel Nylander <po@danielnylander.se>, 2012
+# Mattias Eriksson <snaggen@gmail.com>, 2014
+# Sebastian Rasmussen <sebras@gmail.com>, 2015
+# Sebastian Rasmussen <sebras@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2021-09-14 21:37+0100\n"
-"PO-Revision-Date: 2020-08-24 18:29+0200\n"
-"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
-"Language: sv\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2021-09-15 12:12+0000\n"
+"PO-Revision-Date: 2021-09-15 12:12+0000\n"
+"Last-Translator: endlessmobile_build <admin@endlessos.org>\n"
+"Language-Team: Swedish (http://www.transifex.com/endless-os/gnome-initial-setup/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
@@ -59,7 +60,6 @@ msgstr ""
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:362
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -110,10 +110,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"Företagsinloggning möjliggör att ett existerande centralt hanterat "
-"användarkonto används med den här enheten. Du kan också använda detta konto "
-"för att komma åt företagsresurser på internet."
+msgstr "Företagsinloggning möjliggör att ett existerande centralt hanterat användarkonto används med den här enheten. Du kan också använda detta konto för att komma åt företagsresurser på internet."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -147,10 +144,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"För att använda företagsinloggning, måste denna dator anslutas till en "
-"domän. Be din nätverksadministratör ange domänlösenord här, och välj ett "
-"unikt datornamn för din dator."
+msgstr "För att använda företagsinloggning, måste denna dator anslutas till en domän. Be din nätverksadministratör ange domänlösenord här, och välj ett unikt datornamn för din dator."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -200,9 +194,8 @@ msgid "_Full Name"
 msgstr "_Fullständigt namn"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
-#, fuzzy
 msgid "Set a password"
-msgstr "Sätt ett lösenord"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
@@ -210,9 +203,7 @@ msgstr "Ställ in _föräldrakontroller för denna användare"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:168
 msgid "For use by a parent or supervisor, who must set up their own password."
-msgstr ""
-"Att användas av en förälder eller övervakare, som måste ställa in ett eget "
-"lösenord."
+msgstr "Att användas av en förälder eller övervakare, som måste ställa in ett eget lösenord."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
 msgid "_Enterprise Login"
@@ -266,14 +257,11 @@ msgstr "Det där användarnamnet är inte tillgängligt. Försök med ett annat.
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr ""
-"Användarnamnet får endast bestå av stora och små bokstäver från a-z, siffror "
-"samt följande tecken: . - _"
+msgstr "Användarnamnet får endast bestå av stora och små bokstäver från a-z, siffror samt följande tecken: . - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:268
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr ""
-"Detta kommer att användas för att namnge din hemkatalog och kan inte ändras."
+msgstr "Detta kommer att användas för att namnge din hemkatalog och kan inte ändras."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
@@ -296,14 +284,13 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
-#, fuzzy
 msgid "Third Party Software"
-msgstr "Förråd från tredje part"
+msgstr ""
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -321,16 +308,12 @@ msgstr "Anslut dina nätkonton"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"Anslut dina konton för att enkelt komma åt din e-post och nätkalender samt "
-"dina kontakter, dokument och foton."
+msgstr "Anslut dina konton för att enkelt komma åt din e-post och nätkalender samt dina kontakter, dokument och foton."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr ""
-"Konton kan läggas till och tas bort när som helst från "
-"inställningsprogrammet."
+msgstr "Konton kan läggas till och tas bort när som helst från inställningsprogrammet."
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
@@ -343,7 +326,6 @@ msgstr "Mer…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Inga inmatningsenheter hittades"
@@ -368,7 +350,6 @@ msgstr "Välkommen"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "Välkommen!"
@@ -422,10 +403,7 @@ msgstr "Trådlöst nätverk"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr ""
-"Att ansluta till internet hjälper dig skaffa nya program, information samt "
-"andra uppgraderingar. Det hjälper också till med att automatiskt ställa in "
-"tiden och din plats."
+msgstr "Att ansluta till internet hjälper dig skaffa nya program, information samt andra uppgraderingar. Det hjälper också till med att automatiskt ställa in tiden och din plats."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -443,8 +421,7 @@ msgstr "Föräldrakontroller för %s"
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:137
 msgid "Set restrictions on what this user can run or install."
-msgstr ""
-"Ställ in begränsningar på vad denna användare kan köra eller installera."
+msgstr "Ställ in begränsningar på vad denna användare kan köra eller installera."
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:232
 msgid "Parental Controls"
@@ -470,7 +447,8 @@ msgstr "Sätt ett lösenord för %s"
 msgid "Set a Parent Password"
 msgstr "Sätt ett föräldralösenord"
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -482,14 +460,12 @@ msgstr "Lösenorden stämmer inte överens."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:299
 #: gnome-initial-setup/pages/password/gis-password-page.c:330
-#, fuzzy
 msgid "Show password"
-msgstr "Sätt ett lösenord"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:338
-#, fuzzy
 msgid "Hide password"
-msgstr "Sätt ett lösenord"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:531
 msgid "Password"
@@ -509,9 +485,7 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
-"Detta lösenord liknar ditt föregående väldigt mycket. Försök att ändra några "
-"bokstäver och siffror."
+msgstr "Detta lösenord liknar ditt föregående väldigt mycket. Försök att ändra några bokstäver och siffror."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -519,33 +493,26 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
-"Detta lösenord liknar ditt föregående väldigt mycket. Försök att ändra "
-"lösenordet lite till."
+msgstr "Detta lösenord liknar ditt föregående väldigt mycket. Försök att ändra lösenordet lite till."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr ""
-"Detta är ett svagt lösenord. Ett lösenord utan ditt användarnamn skulle vara "
-"säkrare."
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr "Detta är ett svagt lösenord. Ett lösenord utan ditt användarnamn skulle vara säkrare."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr ""
-"Detta är ett svagt lösenord. Försök att undvika att använda ditt namn i "
-"lösenordet."
+msgstr "Detta är ett svagt lösenord. Försök att undvika att använda ditt namn i lösenordet."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
-"Detta är ett svagt lösenord. Försök att undvika några av orden som ingår i "
-"lösenordet."
+msgstr "Detta är ett svagt lösenord. Försök att undvika några av orden som ingår i lösenordet."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
@@ -555,8 +522,7 @@ msgstr "Detta är ett svagt lösenord. Försök att undvika vanliga ord."
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr ""
-"Detta är ett svagt lösenord. Försök att undvika att kasta om existerande ord."
+msgstr "Detta är ett svagt lösenord. Försök att undvika att kasta om existerande ord."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
@@ -578,80 +544,63 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
-"Detta är ett svagt lösenord. Försök att använda fler specialtecken, till "
-"exempel skiljetecken."
+msgstr "Detta är ett svagt lösenord. Försök att använda fler specialtecken, till exempel skiljetecken."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
-"Detta är ett svagt lösenord. Försök att använda en blandning av bokstäver, "
-"siffror och skiljetecken."
+msgstr "Detta är ett svagt lösenord. Försök att använda en blandning av bokstäver, siffror och skiljetecken."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr ""
-"Detta är ett svagt lösenord. Försök att undvika att upprepa samma tecken."
+msgstr "Detta är ett svagt lösenord. Försök att undvika att upprepa samma tecken."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"Detta är ett svagt lösenord. Försök att undvika att upprepa samma typ av "
-"tecken: du behöver blanda bokstäver, nummer och skiljetecken."
+msgstr "Detta är ett svagt lösenord. Försök att undvika att upprepa samma typ av tecken: du behöver blanda bokstäver, nummer och skiljetecken."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr ""
-"Detta är ett svagt lösenord. Försök att undvika sekvenser som 1234 eller "
-"abcd."
+msgstr "Detta är ett svagt lösenord. Försök att undvika sekvenser som 1234 eller abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr ""
-"Detta är ett svagt lösenord. Försök att lägga till fler bokstäver, siffror "
-"och skiljetecken."
+msgstr "Detta är ett svagt lösenord. Försök att lägga till fler bokstäver, siffror och skiljetecken."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
-"Blanda stora och små bokstäver samt försök använda en siffra eller två."
+msgstr "Blanda stora och små bokstäver samt försök använda en siffra eller två."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-"Att lägga till fler bokstäver, siffror och skiljetecken kommer göra "
-"lösenordet starkare."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
+msgstr "Att lägga till fler bokstäver, siffror och skiljetecken kommer göra lösenordet starkare."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"Att skicka rapporter om tekniska problem hjälper oss att förbättra %s. "
-"Rapporter skickas anonymt och rensas från personlig information."
+msgstr "Att skicka rapporter om tekniska problem hjälper oss att förbättra %s. Rapporter skickas anonymt och rensas från personlig information."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -680,9 +629,7 @@ msgstr "Platstjänster"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Låter program ta reda på din geografiska position. En indikation visas när "
-"platstjänster används."
+msgstr "Låter program ta reda på din geografiska position. En indikation visas när platstjänster används."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -691,8 +638,7 @@ msgstr "Automatisk problemrapportering"
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:110
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr ""
-"Sekretessinställningar kan ändras när som helst från inställningsprogrammet."
+msgstr "Sekretessinställningar kan ändras när som helst från inställningsprogrammet."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
@@ -781,7 +727,6 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -812,9 +757,7 @@ msgstr "Tidszon"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"Tidszonen kommer ställas in automatiskt om din plats kan hittas. Du kan "
-"också söka efter en stad för att ställa in den manuellt."
+msgstr "Tidszonen kommer ställas in automatiskt om din plats kan hittas. Du kan också söka efter en stad för att ställa in den manuellt."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
@@ -827,7 +770,6 @@ msgstr "Sök efter en stad i närheten"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
 #, c-format
 msgid "Welcome to %s !"
@@ -841,158 +783,8 @@ msgstr "Konfiguration"
 msgid ""
 "Setup will guide you through making an account and enabling some features. "
 "We’ll have you up and running in no time."
-msgstr ""
-"Konfigurationen kommer guida dig genom att skapa ett konto och aktivera "
-"några funktioner. Vi kommer ha dig redo på nolltid."
+msgstr "Konfigurationen kommer guida dig genom att skapa ett konto och aktivera några funktioner. Vi kommer ha dig redo på nolltid."
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
 msgid "_Start Setup"
 msgstr "_Starta konfiguration"
-
-#~ msgid "This is a weak password."
-#~ msgstr "Detta är ett svagt lösenord."
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "Att ansluta till internet gör det möjligt att automatiskt ställa klockan, "
-#~ "lägga till information om dig, samt ger åtkomst till din e-post, "
-#~ "kalendrar och kontakter. Det är även nödvändigt för konton med "
-#~ "företagsinloggning."
-
-#~ msgid "preferences-system"
-#~ msgstr "preferences-system"
-
-#~ msgid "License Agreements"
-#~ msgstr "Licensavtal"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr "Jag _godkänner villkoren i slutanvändaravtalet."
-
-#~ msgid "No regions found"
-#~ msgstr "Inga regioner hittades"
-
-#~ msgid "Region"
-#~ msgstr "Region"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "Välj ditt land eller region."
-
-#~ msgid "Software Repositories"
-#~ msgstr "Programförråd"
-
-#~ msgid "Access additional software from selected third party sources."
-#~ msgstr "Kom åt ytterligare programvara från utvalda tredjepartskällor."
-
-#~ msgid ""
-#~ "Some of this software is proprietary and therefore has restrictions on "
-#~ "use, sharing, and access to source code."
-#~ msgstr ""
-#~ "Delar av denna programvara är proprietär och har därför restriktioner vad "
-#~ "gäller användning, delning och åtkomst till källkod."
-
-#~ msgid "Additional Software Repositories"
-#~ msgstr "Ytterligare programförråd"
-
-#~ msgid "<a href=\"more\">Find out more…</a>"
-#~ msgstr "<a href=\"more\">Lär dig mer…</a>"
-
-#~ msgid ""
-#~ "Proprietary software typically has restrictions on how it can be used and "
-#~ "on access to source code. This prevents anyone but the software owner "
-#~ "from inspecting, improving or learning from its code."
-#~ msgstr ""
-#~ "Proprietär programvara har vanligtvis restriktioner på hur den kan "
-#~ "användas och vad gäller åtkomst till källkod. Detta förhindrar alla utom "
-#~ "programvarans ägare från att undersöka, förbättra och lära sig från dess "
-#~ "kod."
-
-#~ msgid ""
-#~ "In contrast, Free Software can be freely run, copied, distributed, "
-#~ "studied and modified."
-#~ msgstr ""
-#~ "I kontrast till detta kan fri programvara fritt köras, kopieras, "
-#~ "distribueras, studeras och ändras."
-
-#~ msgid "Ready to Go"
-#~ msgstr "Klar att sätta igång"
-
-#~ msgid "You’re ready to go!"
-#~ msgstr "Du är klar att sätta igång!"
-
-#~ msgid "Disable image"
-#~ msgstr "Inaktivera bild"
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to avoid common words."
-#~ msgstr "Försök att undvika vanliga ord."
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to use more numbers."
-#~ msgstr "Försök att använda fler siffror."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "Password needs to be longer. Try to add more letters, numbers and "
-#~ "punctuation."
-#~ msgstr ""
-#~ "Lösenordet behöver vara längre. Försök att lägga till fler bokstäver, "
-#~ "siffror och skiljetecken."
-
-#~ msgid ""
-#~ "Proprietary software sources provide access to additional software, "
-#~ "including web browsers and games. This software typically has "
-#~ "restrictions on use and access to source code, and is not provided by %s."
-#~ msgstr ""
-#~ "Proprietära programvarukällor tillhandahåller åtkomst till ytterligare "
-#~ "programvara som webbläsare och spel. Denna programvara har vanligtvis "
-#~ "restriktioner på användning och åtkomst till källkod, och tillhandahålls "
-#~ "inte av %s."
-
-#~ msgid "Proprietary Software Sources"
-#~ msgstr "Proprietära programvarukällor"
-
-#~ msgid "A user with the username ‘%s’ already exists."
-#~ msgstr "En användare med användarnamnet ”%s” finns redan."
-
-#~ msgid "_Verify"
-#~ msgstr "_Verifiera"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "Styrka: Svag"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "Styrka: Låg"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "Styrka: Medel"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "Styrka: Bra"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "Styrka: Hög"
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "Är dessa uppgifter korrekta? Du kan ändra dem om du önskar."
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr ""
-#~ "Du kan granska dina nätkonton (och lägga till fler) efter att "
-#~ "konfigurationen är klar."
-
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "Vi tror att din tidszon är %s. Klicka Nästa för att fortsätta eller sök "
-#~ "efter en stad för att manuellt sätta tidszonen."
