@@ -5,13 +5,14 @@
 # Translators:
 # Adam Matoušek <adamatousek@gmail.com>, 2012-2013
 # Marek Černocký <marek@manet.cz>, 2013-2020
+# Pavel Borecki <pavel.borecki@gmail.com>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2021-09-15 12:12+0000\n"
-"PO-Revision-Date: 2021-09-15 12:12+0000\n"
-"Last-Translator: endlessmobile_build <admin@endlessos.org>\n"
+"POT-Creation-Date: 2021-10-01 17:26+0000\n"
+"PO-Revision-Date: 2021-09-27 09:35+0000\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/endless-os/gnome-initial-setup/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,12 +47,12 @@ msgstr "_Zrušit"
 
 #: gnome-initial-setup/gis-page-util.c:308
 msgid "Unknown"
-msgstr ""
+msgstr "Neznámé"
 
 #: gnome-initial-setup/gis-page-util.c:310
 #, c-format
 msgid "Image: %s"
-msgstr ""
+msgstr "Obrázek: %s"
 
 #. Translators: this is shown when launching the
 #. * reformatter (an external program) fails. The
@@ -60,15 +61,15 @@ msgstr ""
 #: gnome-initial-setup/gis-page-util.c:362
 #, c-format
 msgid "Error running the reformatter: %s"
-msgstr ""
+msgstr "Chyba při spouštění nástroje pro přeformátování: %s"
 
 #: gnome-initial-setup/gis-page-util.ui:29
 msgid "Test Mode"
-msgstr ""
+msgstr "Testovací režim"
 
 #: gnome-initial-setup/gis-page-util.ui:55
 msgid "Power Off"
-msgstr ""
+msgstr "Vypnout"
 
 #: gnome-initial-setup/gnome-initial-setup.c:278
 msgid "Force existing user mode"
@@ -76,7 +77,7 @@ msgstr "Vynutit režim existujícího uživatele"
 
 #: gnome-initial-setup/gnome-initial-setup.c:284
 msgid "— GNOME initial setup"
-msgstr "– Prvotní nastavení"
+msgstr "– prvotní nastavení"
 
 #: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:36
 msgid "Take a Picture…"
@@ -84,7 +85,7 @@ msgstr "Vyfotit se…"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:184
 msgid "Failed to register account"
-msgstr "Registrace účtu selhala"
+msgstr "Registrace účtu se nezdařila"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:378
 msgid "No supported way to authenticate with this domain"
@@ -92,11 +93,11 @@ msgstr "Není žádný podporovaný způsob, jak provést ověření vůči tét
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:418
 msgid "Failed to join domain"
-msgstr "Připojení do domény selhalo"
+msgstr "Připojení do domény se nezdařilo"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:486
 msgid "Failed to log into domain"
-msgstr "Přihlášení do domény selhalo"
+msgstr "Přihlášení do domény se nezdařilo"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:17
 msgid "Enterprise Login"
@@ -107,7 +108,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr "Podnikové přihlašování umožní na tomto zařízení použít stávající centrálně spravovaný uživatelský účet. Můžete tento účet také používat k přístupu k firemním prostředkům na Internetu."
+msgstr "Podnikové přihlašování umožní na tomto zařízení použít stávající centrálně spravovaný uživatelský účet. Ten také můžete používat pro přístup k firemním prostředkům na Internetu."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -126,7 +127,7 @@ msgstr "_Heslo"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:146
 msgid "Enterprise domain or realm name"
-msgstr "Název firemní domény nebo sféry"
+msgstr "Název podnikové: domény nebo sféry (realm)"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:211
 msgid "C_ontinue"
@@ -141,7 +142,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr "Aby šlo používat firemní přihlášování, musí být počítač zaregistrován do nějaké domény. Požádejte prosím správce sítě o zadání jeho hesla k doméně sem a zvolte pro svůj počítač jedinečný název."
+msgstr "Aby šlo používat podnikové přihlašování, je třeba, aby počítač byl zaregistrován do nějaké domény. Požádejte prosím správce sítě o zadání jeho hesla k doméně sem a zvolte pro svůj počítač název, který zde není používán nějakým jiným."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -149,7 +150,7 @@ msgstr "_Počítač"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:353
 msgid "Administrator _Name"
-msgstr "J_méno správce"
+msgstr "Uživatelské jmé_no správce"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:387
 msgid "Administrator Password"
@@ -171,7 +172,7 @@ msgstr "Správce"
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:615
 #, c-format
 msgid "Failed to create user '%s': "
-msgstr "Selhalo vytvoření uživatele „%s“: "
+msgstr "Nepodařilo se vytvořit uživatele „%s“: "
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:21
 msgid "Avatar image"
@@ -184,7 +185,7 @@ msgstr "O vás"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:39
 msgid "Please provide a name and username. You can choose a picture too."
-msgstr "Zadejte prosím jméno a uživatelské jméno. Můžete si také zvolit obrázek."
+msgstr "Zadejte si prosím své jméno (pod tím budete zobrazováni) a vámi zvolené uživatelské jméno (tím se budete přihlašovat). Můžete si také vybrat obrázek."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:53
 msgid "_Full Name"
@@ -192,7 +193,7 @@ msgstr "_Celé jméno"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
 msgid "Set a password"
-msgstr ""
+msgstr "Nastavit heslo"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
@@ -200,7 +201,7 @@ msgstr "Nastavit _rodičovskou kontrolu pro tohoto uživatele"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:168
 msgid "For use by a parent or supervisor, who must set up their own password."
-msgstr "Pro používání rodičem nebo správcem musíte nastavit jejich hesla."
+msgstr "Určeno rodičům nebo vychovatelům – je třeba, aby si nastavili své vlastní heslo."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
 msgid "_Enterprise Login"
@@ -208,30 +209,30 @@ msgstr "Po_dnikové přihlašování"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:53
 msgid "Go online to set up Enterprise Login."
-msgstr "Přejděte on-line, abyste mohli nastavit podnikové přihlašování."
+msgstr "Pokud chcete nastavit podnikové přihlašování, připojte se k příslušné síti."
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
-msgstr "Nelze automaticky připojit tento typ domény"
+msgstr "Do tohoto typu domény se nelze připojit automaticky"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:269
 msgid "No such domain or realm found"
-msgstr "Doména nebo sféra nenalezena"
+msgstr "Doména nebo sféra (realm) nenalezena"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:723
 #: gnome-initial-setup/pages/account/um-realm-manager.c:737
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
-msgstr "Nelze se přihlásit jako „%s“ do domény „%s“"
+msgstr "Nedaří se přihlásit jako „%s“ do domény „%s“"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:729
 msgid "Invalid password, please try again"
-msgstr "Špatné heslo, zkuste to prosím znovu"
+msgstr "Nesprávné heslo, zkuste to prosím znovu"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:742
 #, c-format
 msgid "Couldn’t connect to the %s domain: %s"
-msgstr "Nelze se připojit k doméně „%s“: %s"
+msgstr "Nedaří se připojit k doméně „%s“: %s"
 
 #: gnome-initial-setup/pages/account/um-utils.c:252
 msgid "Sorry, that user name isn’t available. Please try another."
@@ -244,7 +245,7 @@ msgstr "Uživatelské jméno je příliš dlouhé."
 
 #: gnome-initial-setup/pages/account/um-utils.c:258
 msgid "The username cannot start with a “-”."
-msgstr "Uživatelské jméno nesmí začínat znakem „-“."
+msgstr "Uživatelské jméno nemůže začínat znakem „-“."
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
 msgid "That username isn’t available. Please try another."
@@ -254,40 +255,40 @@ msgstr "Toto uživatelské jméno není k dispozici. Zkuste prosím jiné."
 msgid ""
 "The username should only consist of upper and lower case letters from a-z, "
 "digits and the following characters: . - _"
-msgstr "Uživatelské jméno může sestávat pouze z malých a velkých písmen a-z (bez diakritiky), číslic a znaků . - _ (tečka, spojovník a podtržítko)."
+msgstr "Uživatelské jméno se může sestávat pouze z malých a velkých písmen a-z (bez diakritiky), číslic a znaků . - _ (tečka, spojovník a podtržítko)."
 
 #: gnome-initial-setup/pages/account/um-utils.c:268
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr "Bude použito jako název vaší domovské složky a nelze jej později změnit."
+msgstr "Bude použito jako název vaší domovské složky a nelze ho později změnit."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
 msgid "Terms of Use"
-msgstr ""
+msgstr "Všeobecné podmínky"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
 msgid "Please read the following terms of use carefully"
-msgstr ""
+msgstr "Prosíme pečlivě si přečtěte následující podmínky"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
 msgid ""
 "By clicking \"Accept,\" you acknowledge that you have read, understood, and "
 "agree to be bound by the following terms and conditions."
-msgstr ""
+msgstr "Kliknutím na „Přijímám“ souhlasíte, že jste si přečetli, porozuměli a souhlasíte s následujícími podmínkami."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
 msgid "Help make Endless better for everyone"
-msgstr ""
+msgstr "Pomozte vylepšit Endless pro všechny"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
 "Automatically save and send usage statistics and problem reports to Endless."
 " All data is anonymous."
-msgstr ""
+msgstr "Automaticky ukládat a odesílat statistiky využívání a hlášení problémů do Endless. Všechna data jsou anonymní. "
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
 msgid "Third Party Software"
-msgstr ""
+msgstr "Software třetích stran"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -338,7 +339,7 @@ msgstr "Vyberte své rozložení klávesnice nebo některou vstupní metodu."
 
 #: gnome-initial-setup/pages/language/cc-language-chooser.c:307
 msgid "No languages found"
-msgstr "Žádné jazyky nenalezeny"
+msgstr "Nenalezeny žádné jazyky"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:357
 msgid "Welcome"
@@ -354,26 +355,26 @@ msgstr "Vítejte!"
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:167
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
 msgid "Try Endless OS by running it from the USB Stick."
-msgstr ""
+msgstr "Vyzkoušejte si Endles OS jeho spuštěním přímo z USB klíčenky."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:168
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:116
 msgid "Reformat this computer with Endless OS."
-msgstr ""
+msgstr "Přeformátovat tento počítač na Endless OS."
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:169
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:71
 msgid "Try It"
-msgstr ""
+msgstr "Vyzkoušet"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:170
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:145
 msgid "Reformat"
-msgstr ""
+msgstr "Přeformátovat"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:172
 msgid "Try or Reformat"
-msgstr ""
+msgstr "Zkusit nebo přeformátovat"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:318
 msgctxt "Wireless access point"
@@ -400,11 +401,11 @@ msgstr "Wi-Fi"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr "Díky připojení k Internetu můžete získávat nové aplikace, informace a aktualizace. Také pomůže s nastavením času a automatickým zjišťováním polohy."
+msgstr "Díky připojení k Internetu můžete získávat nové aplikace, informace a aktualizace. Také pomůže s automatickým nastavením času a polohy."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
-msgstr "Žádné bezdrátové připojení není k dispozici"
+msgstr "Není k dispozici žádné bezdrátové připojení"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:91
 msgid "Turn On"
@@ -453,16 +454,16 @@ msgstr "Tímto heslem se řídí přístup do rodičovské kontroly pro %s."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:255
 msgid "The passwords do not match."
-msgstr "Hesla se neshodují."
+msgstr "Zadání hesla se neshodují."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:299
 #: gnome-initial-setup/pages/password/gis-password-page.c:330
 msgid "Show password"
-msgstr ""
+msgstr "Zobrazit heslo"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:338
 msgid "Hide password"
-msgstr ""
+msgstr "Skrýt heslo"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:531
 msgid "Password"
@@ -475,7 +476,7 @@ msgstr "_Potvrdit"
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
 msgid "The new password needs to be different from the old one."
-msgstr "Nové heslo se musí od starého lišit."
+msgstr "Je třeba, aby nové heslo nebylo stejné jako to staré."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
@@ -490,100 +491,100 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr "Heslo se hodně podobá vašemu předchozímu heslu. Zkuste jej změnit trochu víc."
+msgstr "Heslo se hodně podobá vašemu předchozímu heslu. Zkuste ho změnit trochu víc."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. A password without your user name would be "
 "stronger."
-msgstr "Heslo je slabé. Bude silnější, když v něm nebude vaše jméno."
+msgstr "Heslo je snadno prolomitelné. Bude silnější, když v něm nebude vaše jméno."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr "Heslo je slabé. Zkuste v něm nepoužít své jméno."
+msgstr "Heslo je snadno prolomitelné. Zkuste v něm nepoužít své jméno."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr "Heslo je slabé. Zkuste z něj vynechat některá běžná slova."
+msgstr "Heslo je snadno prolomitelné. Zkuste místě některý slov použít něco jiného."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr "Heslo je slabé. Zkuste v něm nepoužívat běžná slova."
+msgstr "Heslo je snadno prolomitelné. Zkuste v něm nepoužívat běžná slova."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr "Heslo je slabé. Zkuste něco víc, než jen přehodit pořadí slov."
+msgstr "Heslo je snadno prolomitelné. Zkuste něco víc, než jen přehodit pořadí slov."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr "Heslo je slabé. Zkuste použít více číslic."
+msgstr "Heslo je snadno prolomitelné. Zkuste použít více číslic."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr "Heslo je slabé. Zkuste použít více velkých písmen."
+msgstr "Heslo je snadno prolomitelné. Zkuste použít více velkých písmen."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr "Heslo je slabé. Zkuste použít více malých písmen."
+msgstr "Heslo je snadno prolomitlené. Zkuste použít více malých písmen."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr "Heslo je slabé. Zkuste použít více speciálních znaků, třeba interpunkční znaménka."
+msgstr "Heslo je snadno prolomitelné. Zkuste použít více speciálních znaků, třeba interpunkční znaménka."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr "Heslo je slabé. Zkuste použít směs písmen, číslic a speciálních znaků."
+msgstr "Heslo je snadno prolomitelné. Zkuste použít směs písmen, číslic a speciálních znaků."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr "Heslo je slabé. Zkuste neopakovat po sobě stejné znaky."
+msgstr "Heslo je snadno prolomitelné. Zkuste neopakovat po sobě stejné znaky."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr "Heslo je slabé. Zkuste nepoužívat opakování stejného typu znaků: potřebujete směs písmen, číslic a speciálních znaků."
+msgstr "Heslo je snadno prolomitelné. Zkuste nepoužívat opakování stejného typu znaků: potřebujete směs písmen, číslic a speciálních znaků."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr "Heslo je slabé. Zkuste nepoužívat posloupnosti, jako je 1234 nebo abcd."
+msgstr "Heslo je snadno prolomitelné. Zkuste nepoužívat posloupnosti, jako je 1234 nebo abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr "Heslo je slabé. Zkuste přidat další písmena, číslice a speciální znaky."
+msgstr "Heslo je snadno prolomitelné. Zkuste přidat další písmena, číslice a speciální znaky."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr "Nakombinujte velká i malá písmena a použijte jedno, dvě čísla."
+msgstr "Nakombinujte velká i malá písmena a použijte jednu-dvě číslice."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password "
 "stronger."
-msgstr "Když přidáte ještě pár písmen, číslic a speciálních znaků, bude ještě silnější."
+msgstr "Když přidáte ještě pár písmen, číslic a speciálních znaků, bude ještě odolnější."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -639,41 +640,41 @@ msgstr "Řízení soukromí můžete kdykoliv změnit v aplikaci Nastavení."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
-msgstr ""
+msgstr "Místo"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:54
 msgid ""
 "At which site is this computer located? Search for your site here. You may "
 "enter manually if there is no match."
-msgstr ""
+msgstr "Kde se váš počítač nachází? Místo vyhledejte zde. Pokud nenaleznete, je možné zadat ručně."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:78
 msgid "enter manually"
-msgstr ""
+msgstr "zadat ručně"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:102
 msgid "ID"
-msgstr ""
+msgstr "Identifikátor"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:131
 msgid "Facility"
-msgstr ""
+msgstr "Lokalita"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:160
 msgid "Street address"
-msgstr ""
+msgstr "Ulice"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:189
 msgid "City"
-msgstr ""
+msgstr "Město"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:218
 msgid "State"
-msgstr ""
+msgstr "Stát"
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:247
 msgid "Country"
-msgstr ""
+msgstr "Země"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
@@ -689,23 +690,23 @@ msgstr "_Začít používat systém %s"
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:242
 #, c-format
 msgid "%s is ready to be used. We hope that you love it!"
-msgstr "Systém %s je připravený k používání. Věříme, že si jej oblíbíte!"
+msgstr "Systém %s je připravený k používání. Věříme, že si ho oblíbíte!"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:266
 msgid "You're ready to try Endless OS"
-msgstr ""
+msgstr "Nyní jste připravení vyzkoušet si Endless OS"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:269
 msgid ""
 "<b>System software updates are unavailable when running from evaluation "
 "media. Please install Endless if you like it!</b>"
-msgstr ""
+msgstr "<b>Při provozování přímo z instalačního média není možné systémový software aktualizovat. Pokud se vám líbí, Endless si nainstalujte!</b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:273
 msgid ""
 "<b>Any files you download or documents you create will be lost forever when "
 "you restart or shutdown the computer.</b>"
-msgstr ""
+msgstr "<b>Po restartu či vypnutí budou všechny soubory, které si stáhnete či dokumenty, které vytvoříte natrvalo ztraceny.</b>"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:283
 msgid "Setup Complete"
@@ -754,11 +755,11 @@ msgstr "Časové pásmo"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr "Časové pásmo bude nastaveno automaticky v případě, že bude nalezeno vaše místo. Můžete také vyhledat město, abyste si časové pásmo nastavili sami."
+msgstr "Časové pásmo bude automaticky nastaveno v případě, že bude nalezena vaše poloha. Můžete ho také nastavit sami a to vyhledáním města poblíž."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
-msgstr "Vyhledejte prosím nejbližší město"
+msgstr "Vyhledejte město poblíž"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
