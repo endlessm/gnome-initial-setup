@@ -49,6 +49,7 @@
 #include "gis-bubble-widget.h"
 
 #include "gis-page-header.h"
+#include "gis-location-entry.h"
 
 #define DEFAULT_TZ "Europe/London"
 #define DESKTOP_ID "gnome-datetime-panel"
@@ -235,15 +236,14 @@ entry_text_changed (GtkEditable *editable,
   priv->search_entry_text_changed_id = 0;
 }
 
-#if 0
 static void
 entry_location_changed (GObject *object, GParamSpec *param, GisTimezonePage *page)
 {
   GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
-  GWeatherLocationEntry *entry = GWEATHER_LOCATION_ENTRY (object);
+  GisLocationEntry *entry = GIS_LOCATION_ENTRY (object);
   g_autoptr(GWeatherLocation) location = NULL;
 
-  location = gweather_location_entry_get_location (entry);
+  location = gis_location_entry_get_location (entry);
   if (!location)
     return;
 
@@ -251,7 +251,6 @@ entry_location_changed (GObject *object, GParamSpec *param, GisTimezonePage *pag
   set_location (page, location);
   priv->in_search = FALSE;
 }
-#endif
 
 #define GETTEXT_PACKAGE_TIMEZONES "gnome-control-center-2.0-timezones"
 
@@ -453,10 +452,8 @@ gis_timezone_page_constructed (GObject *object)
   priv->search_entry_text_changed_id =
       g_signal_connect (priv->search_entry, "changed",
                         G_CALLBACK (entry_text_changed), page);
-#if 0
   g_signal_connect (priv->search_entry, "notify::location",
                     G_CALLBACK (entry_location_changed), page);
-#endif
   g_signal_connect (priv->search_entry, "map",
                     G_CALLBACK (entry_mapped), page);
   g_signal_connect (priv->map, "location-changed",
