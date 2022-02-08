@@ -20,7 +20,8 @@ endif
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		-Dauto_features=enabled \
-		$(PARENTAL_CONTROL)
+		$(PARENTAL_CONTROL) \
+		-Dvendor-conf-file=/var/lib/eos-image-defaults/branding/gnome-initial-setup.conf
 
 # Skip language chooser on Ubuntu since it doesn't work there
 ifeq (yes,$(shell dpkg-vendor --derives-from Ubuntu && echo yes))
@@ -34,6 +35,10 @@ override_dh_gencontrol:
 ifeq (yes,$(shell dpkg-vendor --derives-from Ubuntu && echo yes))
 	dh_gencontrol -- -Vlogo:Depends='gnome-control-center-data'
 else
+ifeq (yes,$(shell dpkg-vendor --derives-from Endless && echo yes))
+	dh_gencontrol -- -Vlogo:Depends='gnome-control-center-data'
+else
 	dh_gencontrol -- -Vlogo:Depends='desktop-base' \
 	-Vmalcontent:Recommends='malcontent [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64]'
+endif
 endif

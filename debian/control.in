@@ -33,6 +33,9 @@ Build-Depends: debhelper-compat (= 13),
                libsecret-1-dev (>= 0.18.8),
                libsystemd-dev [linux-any],
                libwebkit2gtk-4.0-dev (>= 2.26),
+               eos-metrics-0-dev (>= 0.5.0),
+               libattr1-dev,
+               libevince-dev,
                meson (>= 0.50.0),
                systemd ( >= 242),
 Rules-Requires-Root: no
@@ -44,6 +47,7 @@ Homepage: https://git.gnome.org/browse/gnome-initial-setup/
 Package: gnome-initial-setup
 Architecture: linux-any
 Depends: ${shlibs:Depends},
+         eos-installer,
          policykit-1 (>= 0.103),
          adduser,
          gnome-settings-daemon (>= 3.24),
