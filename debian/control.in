@@ -3,7 +3,7 @@ Section: gnome
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
 Uploaders: @GNOME_TEAM@
-Build-Depends: debhelper-compat (= 12),
+Build-Depends: debhelper-compat (= 13),
                dh-sequence-gnome,
                gsettings-desktop-schemas-dev (>= 3.37.1),
                itstool,
@@ -22,21 +22,19 @@ Build-Depends: debhelper-compat (= 12),
                libibus-1.0-dev (>= 1.5.2),
                libjson-glib-dev,
                libkrb5-dev,
-               libmalcontent-0-dev (>= 0.7.0) [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64],
-               libmalcontent-ui-0-dev (>= 0.7.0) [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64],
+               libmalcontent-0-dev [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64],
+               libmalcontent-ui-0-dev [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64],
                libnm-dev (>= 1.2),
                libnma-dev (>= 1.0),
                libpango1.0-dev (>= 1.32.5),
-               libpolkit-gobject-1-dev (>= 0.106),
+               libpolkit-gobject-1-dev (>= 0.103),
                libpwquality-dev,
                librest-dev,
                libsecret-1-dev (>= 0.18.8),
                libsystemd-dev [linux-any],
                libwebkit2gtk-4.0-dev (>= 2.26),
-               eos-metrics-0-dev (>= 0.5.0),
-               libattr1-dev,
-               libevince-dev,
-               meson (>= 0.47.0)
+               meson (>= 0.50.0),
+               systemd ( >= 242),
 Rules-Requires-Root: no
 Standards-Version: 4.5.0
 Vcs-Browser: https://salsa.debian.org/gnome-team/gnome-initial-setup
@@ -46,17 +44,15 @@ Homepage: https://git.gnome.org/browse/gnome-initial-setup/
 Package: gnome-initial-setup
 Architecture: linux-any
 Depends: ${shlibs:Depends},
-         eos-installer,
-         policykit-1 (>= 0.106),
+         policykit-1 (>= 0.103),
          adduser,
          gnome-settings-daemon (>= 3.24),
          ${logo:Depends},
          ${misc:Depends}
 Recommends: accountsservice,
             geoclue-2.0 (>= 2.3.1),
-            gnome-getting-started-docs,
             gnome-keyring,
-            malcontent [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64],
+            ${malcontent:Recommends}
 Suggests: gdm3,
 Description: Initial GNOME system setup helper
  After acquiring or installing a new system there are a few essential things

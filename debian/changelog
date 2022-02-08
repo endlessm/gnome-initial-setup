@@ -1,33 +1,103 @@
-gnome-initial-setup (3.38.5-1endless1) eos; urgency=medium
+gnome-initial-setup (41.2-2) unstable; urgency=medium
 
-  * Endless 3.38.5 release
+  * Team upload
+  * d/patches: Update to upstream gnome-41 branch commit 41.2-2-g916995f0
+    - Update Icelandic translation
+  * d/p/build-Fix-Meson-deprecation-warning.patch:
+    Add patch from upstream to fix FTBFS with recent Meson
+    (Closes: #1004780)
 
- -- Georges Basile Stavracas Neto <georges@endlessos.org>  Thu, 17 Jun 2021 16:18:01 -0300
+ -- Simon McVittie <smcv@debian.org>  Tue, 01 Feb 2022 23:03:00 +0000
 
-gnome-initial-setup (3.38.0-1endless0) eos; urgency=medium
+gnome-initial-setup (41.2-1) unstable; urgency=medium
 
-  * Endless 3.38.0 release
-    - Rebase on 3.38.0 upstream release
+  * New upstream release
+  * debian/vendor.conf: Don't try to run the welcome tour on Ubuntu
 
- -- Philip Withnall <pwithnall@endlessos.org>  Thu, 17 Sep 2020 17:00:00 +0100
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 05 Dec 2021 02:57:19 -0500
 
-gnome-initial-setup (3.37.92-1endless0) eos; urgency=medium
+gnome-initial-setup (41.0-1) unstable; urgency=medium
 
-  * Endless 3.37.92 release
-    - Rebase on 3.37.92 upstream release
+  * New upstream release
+  * Bump minimum meson to 0.50.0
+  * Install Ubuntu's vendor.conf in upstream recommended /usr/share/
+  * Don't build with malcontent on Ubuntu since it's not in Ubuntu main
 
- -- Philip Withnall <withnall@endlessm.com>  Tue, 08 Sep 2020 11:47:00 +0100
+ -- Jeremy Bicha <jbicha@debian.org>  Fri, 17 Sep 2021 07:05:14 -0400
 
-gnome-initial-setup (3.37.91-1endless0) eos; urgency=medium
+gnome-initial-setup (40.4-1) unstable; urgency=medium
 
-  * Endless 3.37.91 release
-    - Add dependencies on eos-metrics-0, libattr1, libevince, eos-installer
-    - Bump polkit dependency to drop legacy PKLA support
-    - Move vendor config file to `/var/lib`
-    - Skip the privacy page
-    - Don’t run the welcome tour
+  * New upstream release
 
- -- Philip Withnall <withnall@endlessm.com>  Mon, 17 Aug 2020 15:47:00 +0100
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 22 Aug 2021 09:34:06 -0400
+
+gnome-initial-setup (40.2-2) unstable; urgency=medium
+
+  * Bump debhelper-compat to 13
+  * debian/rules: minor cleanup
+  * Release to unstable
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 22 Aug 2021 09:00:43 -0400
+
+gnome-initial-setup (40.2-1) experimental; urgency=medium
+
+  * New upstream release
+  * debian/gnome-initial-setup.maintscript:
+    - remove obsolete gnome-welcome-tour.desktop
+
+  [ Gunnar Hjalmarsson ]
+  * Stop recommending gnome-getting-started-docs - archived upstream
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 08 Jun 2021 16:20:16 +0200
+
+gnome-initial-setup (40.1-1) experimental; urgency=medium
+
+  * New upstream release
+  * Remove .desktop symlink hack, the issue is fixed upstream now
+  * debian/patches/revert_gnome_tour.patch:
+    - removed, the code it was patching has been deprecated
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 28 May 2021 12:56:59 +0200
+
+gnome-initial-setup (3.38.5-2) experimental; urgency=medium
+
+  * debian/control.in:
+    - Build-Depends on systemd, some other required package used to pull
+      it in but isn't anymore which is failing the build
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 17 May 2021 21:56:29 +0200
+
+gnome-initial-setup (3.38.5-1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 17 May 2021 16:23:38 +0200
+
+gnome-initial-setup (3.38.4-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 19 Feb 2021 11:47:41 +0100
+
+gnome-initial-setup (3.38.3-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 20 Jan 2021 16:46:38 +0100
+
+gnome-initial-setup (3.38.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control.in:
+    - updated meson requirement
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 05 Oct 2020 11:15:01 +0200
+
+gnome-initial-setup (3.38.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 15 Sep 2020 16:27:03 +0200
 
 gnome-initial-setup (3.37.91-1) experimental; urgency=medium
 
