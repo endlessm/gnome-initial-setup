@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2022-05-27 17:26+0000\n"
+"POT-Creation-Date: 2022-09-13 18:45+0000\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: FIRST AUTHOR <EMAIL@ADDRESS>, 2019\n"
 "Language-Team: Central Kurdish (http://www.transifex.com/endless-os/gnome-initial-setup/language/ckb/)\n"
@@ -232,30 +232,30 @@ msgstr "ووشەی تێپەڕبوون هەڵەیە ،تکایە هەوڵ بدە�
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:252
+#: gnome-initial-setup/pages/account/um-utils.c:255
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr "ببورە، ئەو نازناوە بەردەست نییە. تکایە دانەیەکیتر تاقی بکەرەوە."
 
-#: gnome-initial-setup/pages/account/um-utils.c:255
+#: gnome-initial-setup/pages/account/um-utils.c:258
 #, c-format
 msgid "The username is too long."
 msgstr "نازناوەکە زۆر درێژە"
 
-#: gnome-initial-setup/pages/account/um-utils.c:258
-msgid "The username cannot start with a “-”."
-msgstr "نابێ نازناوەکە دەستپێبکات بە “-”."
-
 #: gnome-initial-setup/pages/account/um-utils.c:261
-msgid "That username isn’t available. Please try another."
+msgid "The username must start with a lower case letter from a-z."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
-msgid ""
-"The username should only consist of upper and lower case letters from a-z, "
-"digits and the following characters: . - _"
-msgstr "نازناوەکە پێویستە تەنها پێکبێ لە پیتی بەرز و نزم لە a-z, ڕەنووسەکان وە ئەم ئامڕازانە: . - _"
+msgid "That username isn’t available. Please try another."
+msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:268
+#: gnome-initial-setup/pages/account/um-utils.c:267
+msgid ""
+"The username should only consist of lower case letters from a-z, digits, and"
+" the following characters: - _"
+msgstr ""
+
+#: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr "ئەمە بەکاردێ بۆ بوخچەی ماڵەوە وە ناتوانرێ بگۆڕدرێ."
 

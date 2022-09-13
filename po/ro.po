@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2022-05-27 17:26+0000\n"
+"POT-Creation-Date: 2022-09-13 18:45+0000\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2015,2017-2018\n"
 "Language-Team: Romanian (http://www.transifex.com/endless-os/gnome-initial-setup/language/ro/)\n"
@@ -236,30 +236,30 @@ msgstr "Parolă nevalidă, încercați din nou"
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Nu s-a putut conecta la domeniul %s: %s"
 
-#: gnome-initial-setup/pages/account/um-utils.c:252
+#: gnome-initial-setup/pages/account/um-utils.c:255
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr "Ne pare rău dar numele de utilizator nu este disponibil. Încercați altul."
 
-#: gnome-initial-setup/pages/account/um-utils.c:255
+#: gnome-initial-setup/pages/account/um-utils.c:258
 #, c-format
 msgid "The username is too long."
 msgstr "Numele de utilizator este prea lung."
 
-#: gnome-initial-setup/pages/account/um-utils.c:258
-msgid "The username cannot start with a “-”."
-msgstr "Numele de utilizator nu poate începe cu „-”."
-
 #: gnome-initial-setup/pages/account/um-utils.c:261
+msgid "The username must start with a lower case letter from a-z."
+msgstr ""
+
+#: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
 msgstr "Numele de utilizator nu este disponibil. Încercați altul."
 
-#: gnome-initial-setup/pages/account/um-utils.c:264
+#: gnome-initial-setup/pages/account/um-utils.c:267
 msgid ""
-"The username should only consist of upper and lower case letters from a-z, "
-"digits and the following characters: . - _"
-msgstr "Numele de utilizator ar trebui să conțină doar litere mici și majuscule de la a-z, numere și oricare dintre caracterele următoare: . - _"
+"The username should only consist of lower case letters from a-z, digits, and"
+" the following characters: - _"
+msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:268
+#: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr "Acesta va fi folosit pentru denumirea dosarului personal și nu poate fi modificat."
 

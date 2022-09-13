@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2022-05-27 17:26+0000\n"
+"POT-Creation-Date: 2022-09-13 18:45+0000\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: Rajesh Ranjan <rajeshkajha@yahoo.com>, 2013-2014\n"
 "Language-Team: Hindi (http://www.transifex.com/endless-os/gnome-initial-setup/language/hi/)\n"
@@ -237,30 +237,30 @@ msgstr "अमान्य कूटशब्द, पुनः कोशिश �
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "%s डोमेन से कनेक्ट नहीं कर सका: %s"
 
-#: gnome-initial-setup/pages/account/um-utils.c:252
+#: gnome-initial-setup/pages/account/um-utils.c:255
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr "क्षमा करें, वह यूज़रनेम उपलब्ध नहीं है. कृपया दूसरा प्रयास करें."
 
-#: gnome-initial-setup/pages/account/um-utils.c:255
+#: gnome-initial-setup/pages/account/um-utils.c:258
 #, c-format
 msgid "The username is too long."
 msgstr "उपयोक्ता नाम बहुत बड़ा है."
 
-#: gnome-initial-setup/pages/account/um-utils.c:258
-msgid "The username cannot start with a “-”."
-msgstr "उपयोगकर्ता नाम \"-\" से शुरू नहीं हो सकता है."
-
 #: gnome-initial-setup/pages/account/um-utils.c:261
+msgid "The username must start with a lower case letter from a-z."
+msgstr ""
+
+#: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
 msgstr "वह उपयोगकर्ता नाम उपलब्ध नहीं है। कृपया कोई अन्य उपयोग करें।"
 
-#: gnome-initial-setup/pages/account/um-utils.c:264
+#: gnome-initial-setup/pages/account/um-utils.c:267
 msgid ""
-"The username should only consist of upper and lower case letters from a-z, "
-"digits and the following characters: . - _"
-msgstr "यूज़रनेम में केवल a-z तक ऊपरी और निचले केस के अक्षर, अंकऔर नीचे दिए गए चिह्न होने चाहिए: . - _"
+"The username should only consist of lower case letters from a-z, digits, and"
+" the following characters: - _"
+msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:268
+#: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr "इसका उपयोग आपके होम फ़ोल्डर के नामकरण में किया जाएगा और इसे बदला नहीं जा सकता."
 

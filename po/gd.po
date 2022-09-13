@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2022-05-27 17:26+0000\n"
+"POT-Creation-Date: 2022-09-13 18:45+0000\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: GunChleoc, 2016-2018\n"
 "Language-Team: Gaelic, Scottish (http://www.transifex.com/endless-os/gnome-initial-setup/language/gd/)\n"
@@ -233,30 +233,30 @@ msgstr "Facal-faire mì-dhligheach, feuch ris a-rithist"
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Cha b’ urrainn ceangal a dhèanamh ris an àrainn %s: %s"
 
-#: gnome-initial-setup/pages/account/um-utils.c:252
+#: gnome-initial-setup/pages/account/um-utils.c:255
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr "Tha sinn duilich ach chan eil an t-ainm-cleachdaiche seo ri fhaighinn. Feuch fear eile."
 
-#: gnome-initial-setup/pages/account/um-utils.c:255
+#: gnome-initial-setup/pages/account/um-utils.c:258
 #, c-format
 msgid "The username is too long."
 msgstr "Tha an t-ainm-cleachdaiche ro fhada."
 
-#: gnome-initial-setup/pages/account/um-utils.c:258
-msgid "The username cannot start with a “-”."
-msgstr "Chan fhaod an t-ainm-cleachdaiche tòiseachadh le “-”."
-
 #: gnome-initial-setup/pages/account/um-utils.c:261
-msgid "That username isn’t available. Please try another."
+msgid "The username must start with a lower case letter from a-z."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
-msgid ""
-"The username should only consist of upper and lower case letters from a-z, "
-"digits and the following characters: . - _"
-msgstr "Cha bu chòir a bhith am broinn ainm-cleachdaiche ach litrichean mòra ’s beaga o a-z, àireamhan agus gin dhe na caractaran seo: “.”, “-” agus “_”."
+msgid "That username isn’t available. Please try another."
+msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:268
+#: gnome-initial-setup/pages/account/um-utils.c:267
+msgid ""
+"The username should only consist of lower case letters from a-z, digits, and"
+" the following characters: - _"
+msgstr ""
+
+#: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr "Thèid seo a chleachdadh gus ainm a chur air a’ phasgan dachaigh agad is cha ghabh atharrachadh."
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2022-05-27 17:26+0000\n"
+"POT-Creation-Date: 2022-09-13 18:45+0000\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: Shaddai, 2019-2020\n"
 "Language-Team: Slovenian (http://www.transifex.com/endless-os/gnome-initial-setup/language/sl/)\n"
@@ -233,30 +233,30 @@ msgstr "Geslo je neveljavno, poskusite znova."
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Ni se mogoče povezati z domeno %s: %s"
 
-#: gnome-initial-setup/pages/account/um-utils.c:252
+#: gnome-initial-setup/pages/account/um-utils.c:255
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr "Uporabniško ime ni na voljo! Izberite drugo ime."
 
-#: gnome-initial-setup/pages/account/um-utils.c:255
+#: gnome-initial-setup/pages/account/um-utils.c:258
 #, c-format
 msgid "The username is too long."
 msgstr "Uporabniško ime je predolgo."
 
-#: gnome-initial-setup/pages/account/um-utils.c:258
-msgid "The username cannot start with a “-”."
-msgstr "Uporabniškega imena ni mogoče začeti z vezajem » - «."
-
 #: gnome-initial-setup/pages/account/um-utils.c:261
+msgid "The username must start with a lower case letter from a-z."
+msgstr ""
+
+#: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
 msgstr "Uporabniško ime ni na voljo! Izberite drugo ime."
 
-#: gnome-initial-setup/pages/account/um-utils.c:264
+#: gnome-initial-setup/pages/account/um-utils.c:267
 msgid ""
-"The username should only consist of upper and lower case letters from a-z, "
-"digits and the following characters: . - _"
-msgstr "Uporabniško ime je lahko sestavljeno le iz majhnih in velikih črk od a do z, številk in znakov » . «, » - « ter » _ «."
+"The username should only consist of lower case letters from a-z, digits, and"
+" the following characters: - _"
+msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:268
+#: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr "S tem imenom bo poimenovana osebna mapa. Izbire kasneje ni mogoče spreminjati."
 

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2022-05-27 17:26+0000\n"
+"POT-Creation-Date: 2022-09-13 18:45+0000\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: Anish Sheela <aneesh.nl@gmail.com>, 2013\n"
 "Language-Team: Malayalam (http://www.transifex.com/endless-os/gnome-initial-setup/language/ml/)\n"
@@ -234,30 +234,30 @@ msgstr "അസാധുവായ  രഹസ്യവാക്ക്, വീണ�
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "%s ഡൊമെയിനുമായി ബന്ധപെടാന്‍ സാധിക്കുന്നില്ല: %s"
 
-#: gnome-initial-setup/pages/account/um-utils.c:252
+#: gnome-initial-setup/pages/account/um-utils.c:255
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr "ക്ഷമിക്കണം, ആ ഉപയോക്തൃനാമം ലഭ്യമല്ല. ദയവായി മറ്റൊന്ന് തിരഞ്ഞെടുക്കുക."
 
-#: gnome-initial-setup/pages/account/um-utils.c:255
+#: gnome-initial-setup/pages/account/um-utils.c:258
 #, c-format
 msgid "The username is too long."
 msgstr "ഉപയോക്തൃനാമം വളരെ വലുതായിപ്പോയി."
 
-#: gnome-initial-setup/pages/account/um-utils.c:258
-msgid "The username cannot start with a “-”."
-msgstr "ഉപയോക്തൃനാമം ഒരു \"-\" കൊണ്ട് തുടങ്ങാന്‍ പാടില്ല."
-
 #: gnome-initial-setup/pages/account/um-utils.c:261
-msgid "That username isn’t available. Please try another."
+msgid "The username must start with a lower case letter from a-z."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
-msgid ""
-"The username should only consist of upper and lower case letters from a-z, "
-"digits and the following characters: . - _"
-msgstr "ഉപയോക്തൃനാമത്തില്‍ ഇംഗ്ലീഷ് അക്ഷരങ്ങള്‍, അക്കങ്ങള്‍, '.', '-', '_' എന്നിവ മാത്രമേ പാടുള്ളൂ"
+msgid "That username isn’t available. Please try another."
+msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:268
+#: gnome-initial-setup/pages/account/um-utils.c:267
+msgid ""
+"The username should only consist of lower case letters from a-z, digits, and"
+" the following characters: - _"
+msgstr ""
+
+#: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr "ഇതു നിങ്ങളുടെ ആസ്ഥാന അറയുടെ പേരായി ഉപയോഗിക്കപെടും, പിന്നെ അതു മാറ്റാന്‍ പറ്റില്ല."
 
