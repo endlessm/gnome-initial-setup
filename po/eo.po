@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2022-09-16 17:26+0000\n"
+"POT-Creation-Date: 2022-09-30 17:27+0000\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: kristjan <kristjan.schmidt@googlemail.com>, 2012,2015\n"
 "Language-Team: Esperanto (http://www.transifex.com/endless-os/gnome-initial-setup/language/eo/)\n"
@@ -166,13 +166,13 @@ msgstr "Ni bezonas kelkajn detalojn, por fini la agordon."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:566
 msgid "Administrator"
-msgstr ""
+msgstr "Administranto"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:572
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:615
 #, c-format
 msgid "Failed to create user '%s': "
-msgstr ""
+msgstr "Malsukcesis krei uzanton '%s': "
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:21
 msgid "Avatar image"
@@ -197,11 +197,11 @@ msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
-msgstr ""
+msgstr "Agordi ge_patrajn kontrolilojn por ĉi tiu uzanto"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:168
 msgid "For use by a parent or supervisor, who must set up their own password."
-msgstr ""
+msgstr "Uzenda de gepatro aŭ zorganto, kiu devas agordi sian propran pasvorton"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
 msgid "_Enterprise Login"
@@ -249,7 +249,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
-msgstr ""
+msgstr "Tiu uzantonomo ne disponeblas. Bonvolu klopodi alian."
 
 #: gnome-initial-setup/pages/account/um-utils.c:267
 msgid ""
@@ -401,7 +401,7 @@ msgstr "Vifio"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr ""
+msgstr "Konekti al la interreto permesas al vi akiri novajn aplikaĵojn, informojn, aŭ aliajn ĝisdatigojn. Ĝi ankaŭ helpas aŭtomatan agordadon de via tempo kaj loko."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -415,15 +415,15 @@ msgstr "Ŝalti"
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:135
 #, c-format
 msgid "Parental Controls for %s"
-msgstr ""
+msgstr "Gepatraj kontroliloj por %s"
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:137
 msgid "Set restrictions on what this user can run or install."
-msgstr ""
+msgstr "Agordi limigojn pri la instalaj kaj rulaj kapabloj de ĉi tiu uzanto."
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:232
 msgid "Parental Controls"
-msgstr ""
+msgstr "Gepatraj kontroliloj"
 
 #. Don’t break UI compatibility if parental controls are disabled.
 #: gnome-initial-setup/pages/password/gis-password-page.c:82
@@ -439,18 +439,18 @@ msgstr "Estu zorgema, ke vi ne perdu vian pasvorton."
 #: gnome-initial-setup/pages/password/gis-password-page.c:90
 #, c-format
 msgid "Set a Password for %s"
-msgstr ""
+msgstr "Agordi pasvorton por %s"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:98
 msgid "Set a Parent Password"
-msgstr ""
+msgstr "Agordi gepatran pasvorton"
 
 #. Translators: The placeholder is the full name of the child user on the
 #. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
-msgstr ""
+msgstr "Ĉi tiu pasvorto atingas aliron al la gepatraj kontrililoj de %s."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:255
 msgid "The passwords do not match."
@@ -690,7 +690,7 @@ msgstr "_Komenci uzi %s"
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:242
 #, c-format
 msgid "%s is ready to be used. We hope that you love it!"
-msgstr ""
+msgstr "%s pretas por uzo. Ni esperas, ke vi ĝin ŝatos!"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:266
 msgid "You're ready to try Endless OS"
@@ -710,11 +710,11 @@ msgstr ""
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:283
 msgid "Setup Complete"
-msgstr ""
+msgstr "Plenumis agordadon"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.ui:92
 msgid "All done!"
-msgstr ""
+msgstr "Plenumita!"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:280
@@ -771,18 +771,18 @@ msgstr "Bonvolu serĉi proksiman urbon"
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
 #, c-format
 msgid "Welcome to %s !"
-msgstr ""
+msgstr "Bonvenon al %s!"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
 msgid "Setup"
-msgstr ""
+msgstr "Agordado"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:43
 msgid ""
 "Setup will guide you through making an account and enabling some features. "
 "We’ll have you up and running in no time."
-msgstr ""
+msgstr "Agordado gvidos vin tra kreado de konto kaj ŝaltigo de kelkaj funkcioj. Vi pretos tre baldaŭ."
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
 msgid "_Start Setup"
-msgstr ""
+msgstr "_Komenci agordadon"

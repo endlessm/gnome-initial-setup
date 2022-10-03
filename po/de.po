@@ -6,21 +6,24 @@
 # Benjamin Steinwender <b@stbe.at>, 2013
 # Bernd Homuth <dev@hmt>, 2019
 # Christian Kirbach <christian.kirbach@gmail.com>, 2013
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2012,2016
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2012,2016,2020
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2020
+# Roddy Shuler <roddy@stanfordalumni.org>, 2017
 # Roddy Shuler <roddy@stanfordalumni.org>, 2017
 # Stefan Schroeder <ondekoza@gmail.com>, 2016
 # Thomas Siegele <tsiegele@gmx.at>, 2019
 # Tobias Endrigkeit <tobiasendrigkeit@googlemail.com>, 2012
 # Will Thompson <wjt@endlessos.org>, 2020
+# Will Thompson <wjt@endlessos.org>, 2020
+# Wolfgang Stöggl <c72578@yahoo.de>, 2018,2020
 # Wolfgang Stöggl <c72578@yahoo.de>, 2018,2020
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2022-09-16 17:26+0000\n"
+"POT-Creation-Date: 2022-09-30 17:27+0000\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
-"Last-Translator: Bernd Homuth <dev@hmt>, 2019\n"
+"Last-Translator: Wolfgang Stöggl <c72578@yahoo.de>, 2018,2020\n"
 "Language-Team: German (http://www.transifex.com/endless-os/gnome-initial-setup/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -253,7 +256,7 @@ msgstr "Der Benutzername ist zu lang."
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
 msgid "The username must start with a lower case letter from a-z."
-msgstr ""
+msgstr "Der Benutzername muss mit einem Kleinbuchstaben (kein Umlaut) beginnen."
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
@@ -263,7 +266,7 @@ msgstr "Dieser Benutzername ist nicht verfügbar. Bitte versuchen Sie einen ande
 msgid ""
 "The username should only consist of lower case letters from a-z, digits, and"
 " the following characters: - _"
-msgstr ""
+msgstr "Der Benutzername darf nur aus Kleinbuchstaben ohne Umlaute, Ziffern und den Zeichen »-« und »_« bestehen"
 
 #: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."

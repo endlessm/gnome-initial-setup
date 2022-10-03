@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2022-09-16 17:26+0000\n"
+"POT-Creation-Date: 2022-09-30 17:27+0000\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2021\n"
 "Language-Team: Czech (http://www.transifex.com/endless-os/gnome-initial-setup/language/cs/)\n"
@@ -245,7 +245,7 @@ msgstr "Uživatelské jméno je příliš dlouhé."
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
 msgid "The username must start with a lower case letter from a-z."
-msgstr ""
+msgstr "Uživatelské jméno musí začínat malým písmenem a-z (bez diakritiky)."
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
@@ -255,7 +255,7 @@ msgstr "Toto uživatelské jméno není k dispozici. Zkuste prosím jiné."
 msgid ""
 "The username should only consist of lower case letters from a-z, digits, and"
 " the following characters: - _"
-msgstr ""
+msgstr "Uživatelské jméno může sestávat pouze z malých písmen a-z (bez diakritiky), číslic a znaků - _ (spojovník a podtržítko)."
 
 #: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."

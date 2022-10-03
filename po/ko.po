@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2022-09-16 17:26+0000\n"
+"POT-Creation-Date: 2022-09-30 17:27+0000\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
-"Last-Translator: Moses Kim <creatinov.kim@gmail.com>, 2018\n"
+"Last-Translator: Seong-ho Cho <shcho@gnome.org>, 2012-2015, 2016\n"
 "Language-Team: Korean (http://www.transifex.com/endless-os/gnome-initial-setup/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -245,7 +245,7 @@ msgstr "사용자 이름이 너무 깁니다."
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
 msgid "The username must start with a lower case letter from a-z."
-msgstr ""
+msgstr "사용자 이름은 a-z 범위의 영문 소문자로 시작해야합니다."
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
@@ -255,7 +255,7 @@ msgstr "해당 사용자 이름을 사용할 수 없습니다. 다른 이름을 
 msgid ""
 "The username should only consist of lower case letters from a-z, digits, and"
 " the following characters: - _"
-msgstr ""
+msgstr "사용자 이름에는 a-z 범위의 영문 소문자, 숫자, 하이픈(-), 언더스코어(_)만 사용할 수 있습니다"
 
 #: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."

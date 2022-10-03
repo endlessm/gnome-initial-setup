@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the gnome-initial-setup package.
 # 
 # Translators:
-# Cédric Valmary <cvalmary@yahoo.fr>, 2015-2016
+# Cédric Valmary <cvalmary@yahoo.fr>, 2015-2016,2018
 # Cédric Valmary <cvalmary@yahoo.fr>, 2015
 # Cédric Valmary <cvalmary@yahoo.fr>, 2016,2018
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2022-09-16 17:26+0000\n"
+"POT-Creation-Date: 2022-09-30 17:27+0000\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
-"Last-Translator: Cédric Valmary <cvalmary@yahoo.fr>, 2016,2018\n"
+"Last-Translator: Cédric Valmary <cvalmary@yahoo.fr>, 2015-2016,2018\n"
 "Language-Team: Occitan (post 1500) (http://www.transifex.com/endless-os/gnome-initial-setup/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -166,13 +166,13 @@ msgstr "Nos cal qualques detalhs per acabar la configuracion."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:566
 msgid "Administrator"
-msgstr ""
+msgstr "Administrator"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:572
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:615
 #, c-format
 msgid "Failed to create user '%s': "
-msgstr ""
+msgstr "Impossible de crear l'utilizaire « %s » : "
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:21
 msgid "Avatar image"
@@ -197,19 +197,19 @@ msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
-msgstr ""
+msgstr "Configurar lo contraròtle parental per aqueste utilizaire"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:168
 msgid "For use by a parent or supervisor, who must set up their own password."
-msgstr ""
+msgstr "A destinacion d'un parent o supervisor, qu'an mestièr de definir lor pròpri senhal."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
 msgid "_Enterprise Login"
-msgstr ""
+msgstr "Identificant d'e_ntrepresa"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:53
 msgid "Go online to set up Enterprise Login."
-msgstr ""
+msgstr "Anatz en linha per configurar la Connexion d'_Entrepresa."
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
@@ -245,17 +245,17 @@ msgstr "Lo nom d'utilizaire es tròp long."
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
 msgid "The username must start with a lower case letter from a-z."
-msgstr ""
+msgstr "Lo nom d'utilizaire deu començar per una minuscula compresa entre a e z."
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
-msgstr ""
+msgstr "Aqueste nom d'utilizaire es pas disponible. Ensajatz-en un autre."
 
 #: gnome-initial-setup/pages/account/um-utils.c:267
 msgid ""
 "The username should only consist of lower case letters from a-z, digits, and"
 " the following characters: - _"
-msgstr ""
+msgstr "Lo nom d'utilizaire deu èsser unicament compausat de letras minisculas de a a z, de nombres e dels caractèrs seguents : - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."
@@ -401,7 +401,7 @@ msgstr "Wi-Fi"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr ""
+msgstr "Se connectar a l'internet vos permet d'obténer d'aplicacions novèlas, d'informacions e d'autras mesas a nivèl. Vos ajuda tanben a reglar l'ora e vòstra posicion geografica automaticament."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -415,15 +415,15 @@ msgstr "Activar"
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:135
 #, c-format
 msgid "Parental Controls for %s"
-msgstr ""
+msgstr "Contraròtle parental per %s"
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:137
 msgid "Set restrictions on what this user can run or install."
-msgstr ""
+msgstr "Definir las restriccions tocant çò que l'utilizaire pòt executar o installar."
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:232
 msgid "Parental Controls"
-msgstr ""
+msgstr "Contraròtle parental"
 
 #. Don’t break UI compatibility if parental controls are disabled.
 #: gnome-initial-setup/pages/password/gis-password-page.c:82
@@ -439,18 +439,18 @@ msgstr "Atencion de pèrdre pas vòstre senhal."
 #: gnome-initial-setup/pages/password/gis-password-page.c:90
 #, c-format
 msgid "Set a Password for %s"
-msgstr ""
+msgstr "Definir un senhal per %s"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:98
 msgid "Set a Parent Password"
-msgstr ""
+msgstr "Definir un senhal pel contraròtle parent"
 
 #. Translators: The placeholder is the full name of the child user on the
 #. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
-msgstr ""
+msgstr "Aqueste senhal contrarotlarà l'accès al contraròtle parent per %s."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:255
 msgid "The passwords do not match."
@@ -690,7 +690,7 @@ msgstr "_Començar d'utilizar %s"
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:242
 #, c-format
 msgid "%s is ready to be used. We hope that you love it!"
-msgstr ""
+msgstr "%s es prèst a èsser utilizat. Esperam que vos agradarà !"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:266
 msgid "You're ready to try Endless OS"
@@ -710,11 +710,11 @@ msgstr ""
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:283
 msgid "Setup Complete"
-msgstr ""
+msgstr "Configuracion acabada"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.ui:92
 msgid "All done!"
-msgstr ""
+msgstr "Tot es prest !"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:280
@@ -771,18 +771,18 @@ msgstr "Recercar una vila vesina"
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
 #, c-format
 msgid "Welcome to %s !"
-msgstr ""
+msgstr "Benvenguda a %s !"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
 msgid "Setup"
-msgstr ""
+msgstr "Configuracion"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:43
 msgid ""
 "Setup will guide you through making an account and enabling some features. "
 "We’ll have you up and running in no time."
-msgstr ""
+msgstr "L'assistent de configuracion vos guidarà per la creacion d'un compte e l'activacion d'unas foncionalitats. Vos prepararem abans que lo diable ne fume."
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
 msgid "_Start Setup"
-msgstr ""
+msgstr "_Començar la configuracion"

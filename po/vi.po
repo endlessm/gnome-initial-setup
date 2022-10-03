@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2022-09-16 17:26+0000\n"
+"POT-Creation-Date: 2022-09-30 17:27+0000\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>, 2014-2017\n"
 "Language-Team: Vietnamese (http://www.transifex.com/endless-os/gnome-initial-setup/language/vi/)\n"
@@ -80,7 +80,7 @@ msgstr "— Cài đặt GNOME lần đầu"
 
 #: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:36
 msgid "Take a Picture…"
-msgstr ""
+msgstr "Chụp ảnh…"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:184
 msgid "Failed to register account"
@@ -165,13 +165,13 @@ msgstr "Chúng tôi cần một ít thông tin chi tiết để hoàn tất vi�
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:566
 msgid "Administrator"
-msgstr ""
+msgstr "Quản trị viên"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:572
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:615
 #, c-format
 msgid "Failed to create user '%s': "
-msgstr ""
+msgstr "Gặp lỗi khi người dùng '%s': "
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:21
 msgid "Avatar image"
@@ -196,19 +196,19 @@ msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
-msgstr ""
+msgstr "Thiết lập điều khiển _cha mẹ cho người dùng này"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:168
 msgid "For use by a parent or supervisor, who must set up their own password."
-msgstr ""
+msgstr "Để sử dụng bởi cha mẹ hoặc người giám sát, người phải thiết lập mật khẩu của riêng họ."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
 msgid "_Enterprise Login"
-msgstr ""
+msgstr "Đăng nhập kiểu công t_y"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:53
 msgid "Go online to set up Enterprise Login."
-msgstr ""
+msgstr "Lên mạng để thiết lập Đăng nhập Doanh nghiệp."
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
@@ -248,7 +248,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
-msgstr ""
+msgstr "Rất tiếc rằng tài khoản không sẵn dùng. Vui lòng thử cái khác."
 
 #: gnome-initial-setup/pages/account/um-utils.c:267
 msgid ""
@@ -414,15 +414,15 @@ msgstr "Bật lên"
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:135
 #, c-format
 msgid "Parental Controls for %s"
-msgstr ""
+msgstr "Điều khiển cha mẹ cho %s"
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:137
 msgid "Set restrictions on what this user can run or install."
-msgstr ""
+msgstr "Đặt giới hạn về những gì người dùng này có thể chạy hoặc cài đặt."
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:232
 msgid "Parental Controls"
-msgstr ""
+msgstr "Điều khiển cha mẹ"
 
 #. Don’t break UI compatibility if parental controls are disabled.
 #: gnome-initial-setup/pages/password/gis-password-page.c:82
@@ -438,18 +438,18 @@ msgstr "Hãy cẩn thận đừng quên mật khẩu của mình."
 #: gnome-initial-setup/pages/password/gis-password-page.c:90
 #, c-format
 msgid "Set a Password for %s"
-msgstr ""
+msgstr "Đặt mật khẩu cho %s"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:98
 msgid "Set a Parent Password"
-msgstr ""
+msgstr "Đặt mật khẩu cho cha mẹ"
 
 #. Translators: The placeholder is the full name of the child user on the
 #. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
-msgstr ""
+msgstr "Mật khẩu này sẽ điều khiển truy cập của cha mẹ cho %s."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:255
 msgid "The passwords do not match."
@@ -482,7 +482,7 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
+msgstr "Mật khẩu vẫn rất giống với cái bạn đã nhập lần trước. Hãy thay đổi một số chữ cái và chữ số."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -490,88 +490,88 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
+msgstr "Mật khẩu vẫn rất giống với cái bạn đã nhập lần trước. Hãy thay đổi mật khẩu thêm một chút nữa."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. A password without your user name would be "
 "stronger."
-msgstr ""
+msgstr "Đây là mật khẩu yếu. Mật khẩu mạnh hơn nếu không chứa tên của bạn."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr ""
+msgstr "Đây là mật khẩu yếu. Không nên dùng tên của bạn làm mật khẩu."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
+msgstr "Đây là mật khẩu yếu. Tránh sử dụng mật khẩu có chứa một số từ."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr ""
+msgstr "Đây là mật khẩu yếu. Hãy tránh dùng các từ phổ biến."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr ""
+msgstr "Đây là mật khẩu yếu. Tránh đảo ngược thứ tự chữ cái của một từ cụ thể."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr ""
+msgstr "Đây là mật khẩu yếu. Hãy dùng thêm một số chữ số."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr ""
+msgstr "Đây là mật khẩu yếu. Hãy dùng thêm các chữ HOA."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr ""
+msgstr "Đây là mật khẩu yếu. Nên dùng nhiều chữ cái thường hơn."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
+msgstr "Đây là mật khẩu yếu. Hãy dùng nhiều ký tự đặc biệt hơn nữa, như là dấu chấm câu chẳng hạn."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
+msgstr "Đây là mật khẩu yếu. Hãy trộn lẫn chữ cái, chữ số và dấu chấm câu."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr ""
+msgstr "Đây là mật khẩu yếu. Tránh lặp lại cùng một ký tự."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
+msgstr "Đây là mật khẩu yếu. Không được lặp cùng một kiểu chữ: bạn cần trộn lẫn chữ cái, số và dấu chấm."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr ""
+msgstr "Đây là mật khẩu yếu. Hãy tránh sử dụng các chuỗi kế tiếp nhau như là 1234 hay abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr ""
+msgstr "Đây là mật khẩu yếu. Hãy thử thêm các chữ cái, chữ số và dấu chấm câu."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
@@ -689,7 +689,7 @@ msgstr "_Bắt đầu dùng %s"
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:242
 #, c-format
 msgid "%s is ready to be used. We hope that you love it!"
-msgstr ""
+msgstr "%s đã sẵn sàng cho bạn dùng. Chúng tôi hi vọng rằng bạn thích nó!"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:266
 msgid "You're ready to try Endless OS"
@@ -709,11 +709,11 @@ msgstr "<b>Bất kỳ tệp nào bạn tải xuống hoặc tài liệu nào b�
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:283
 msgid "Setup Complete"
-msgstr ""
+msgstr "Cài đặt đã hoàn tất"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.ui:92
 msgid "All done!"
-msgstr ""
+msgstr "Đã xong!"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:280
@@ -770,18 +770,18 @@ msgstr "Vui lòng tìm thành phố gần đây"
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
 #, c-format
 msgid "Welcome to %s !"
-msgstr ""
+msgstr "Chào mừng bạn dùng %s!"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
 msgid "Setup"
-msgstr ""
+msgstr "Cài đặt"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:43
 msgid ""
 "Setup will guide you through making an account and enabling some features. "
 "We’ll have you up and running in no time."
-msgstr ""
+msgstr "Cài đặt sẽ hướng dẫn bạn thông qua việc tạo tài khoản và bật một số tính năng. Chúng tôi sẽ cho bạn chạy ngay lập tức."
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
 msgid "_Start Setup"
-msgstr ""
+msgstr "Cài đặt _ban đầu"
