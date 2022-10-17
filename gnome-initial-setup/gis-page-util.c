@@ -30,6 +30,7 @@
 #include <gio/gio.h>
 #include <glib.h>
 #include <glib/gstdio.h>
+#include <gio/gdesktopappinfo.h>
 #include <gtk/gtk.h>
 #include <langinfo.h>
 #include <locale.h>
@@ -378,6 +379,8 @@ reformatter_exited_cb (GObject      *source,
   on_reformatter_exited (task, g_steal_pointer (&error));
 }
 
+#define EOS_INSTALLER_DESKTOP_ID "com.endlessm.Installer.desktop"
+
 /**
  * gis_page_util_run_reformatter:
  *
@@ -397,12 +400,33 @@ gis_page_util_run_reformatter (GisPage            *page,
   g_autoptr(GSubprocessLauncher) launcher = NULL;
   g_autoptr(GSubprocess) subprocess = NULL;
   const gchar *locale = nl_langinfo (NL_LOCALE_NAME (LC_MESSAGES));
-  const gchar *command = "/usr/lib/eos-installer/gnome-image-installer";
+  g_autoptr(GDesktopAppInfo) installer = NULL;
+  const gchar *executable = NULL;
   g_autoptr(GError) error = NULL;
+
+  installer = g_desktop_app_info_new (EOS_INSTALLER_DESKTOP_ID);
+  if (installer == NULL)
+    {
+      g_set_error (&error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND,
+                   EOS_INSTALLER_DESKTOP_ID " not found");
+      on_reformatter_exited (task, g_steal_pointer (&error));
+    }
+
+  /* We can't just activate the GAppInfo because that API gives no way to
+   * track success or failure of the launched application, and it has proven
+   * helpful in practice to be able to show an error message on failure.
+   */
+  executable = g_app_info_get_executable (G_APP_INFO (installer));
+  if (executable == NULL)
+    {
+      g_set_error (&error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND,
+                   "No executable path for " EOS_INSTALLER_DESKTOP_ID);
+      on_reformatter_exited (task, g_steal_pointer (&error));
+    }
 
   launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_NONE);
   g_subprocess_launcher_setenv (launcher, "LANG", locale, TRUE);
-  subprocess = g_subprocess_launcher_spawn (launcher, &error, command, NULL);
+  subprocess = g_subprocess_launcher_spawn (launcher, &error, executable, NULL);
 
   if (error)
     {
