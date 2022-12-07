@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 "issues\n"
-"POT-Creation-Date: 2021-09-14 21:37+0100\n"
+"POT-Creation-Date: 2022-12-07 15:45-0700\n"
 "PO-Revision-Date: 2021-09-14 21:37+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -23,31 +23,31 @@ msgstr ""
 msgid "Initial Setup"
 msgstr ""
 
-#: gnome-initial-setup/gis-assistant.c:442
+#: gnome-initial-setup/gis-assistant.c:426
 msgid "_Next"
 msgstr ""
 
-#: gnome-initial-setup/gis-assistant.c:443
+#: gnome-initial-setup/gis-assistant.c:427
 msgid "_Accept"
 msgstr ""
 
-#: gnome-initial-setup/gis-assistant.c:444
+#: gnome-initial-setup/gis-assistant.c:428
 msgid "_Skip"
 msgstr ""
 
-#: gnome-initial-setup/gis-assistant.c:445
+#: gnome-initial-setup/gis-assistant.c:429
 msgid "_Previous"
 msgstr ""
 
-#: gnome-initial-setup/gis-assistant.c:446
+#: gnome-initial-setup/gis-assistant.c:430
 msgid "_Cancel"
 msgstr ""
 
-#: gnome-initial-setup/gis-page-util.c:308
+#: gnome-initial-setup/gis-page-util.c:309
 msgid "Unknown"
 msgstr ""
 
-#: gnome-initial-setup/gis-page-util.c:310
+#: gnome-initial-setup/gis-page-util.c:311
 #, c-format
 msgid "Image: %s"
 msgstr ""
@@ -57,7 +57,7 @@ msgstr ""
 #. * placeholder is an error message describing what went
 #. * wrong.
 #.
-#: gnome-initial-setup/gis-page-util.c:362
+#: gnome-initial-setup/gis-page-util.c:363
 #, c-format
 msgid "Error running the reformatter: %s"
 msgstr ""
@@ -70,11 +70,11 @@ msgstr ""
 msgid "Power Off"
 msgstr ""
 
-#: gnome-initial-setup/gnome-initial-setup.c:278
+#: gnome-initial-setup/gnome-initial-setup.c:279
 msgid "Force existing user mode"
 msgstr ""
 
-#: gnome-initial-setup/gnome-initial-setup.c:284
+#: gnome-initial-setup/gnome-initial-setup.c:285
 msgid "— GNOME initial setup"
 msgstr ""
 
@@ -82,19 +82,19 @@ msgstr ""
 msgid "Take a Picture…"
 msgstr ""
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:184
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:185
 msgid "Failed to register account"
 msgstr ""
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:378
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:379
 msgid "No supported way to authenticate with this domain"
 msgstr ""
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:418
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:419
 msgid "Failed to join domain"
 msgstr ""
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:486
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:487
 msgid "Failed to log into domain"
 msgstr ""
 
@@ -233,30 +233,30 @@ msgstr ""
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:252
+#: gnome-initial-setup/pages/account/um-utils.c:255
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:255
+#: gnome-initial-setup/pages/account/um-utils.c:258
 #, c-format
 msgid "The username is too long."
 msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:258
-msgid "The username cannot start with a “-”."
-msgstr ""
-
 #: gnome-initial-setup/pages/account/um-utils.c:261
-msgid "That username isn’t available. Please try another."
+msgid "The username must start with a lower case letter from a-z."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
-msgid ""
-"The username should only consist of upper and lower case letters from a-z, "
-"digits and the following characters: . - _"
+msgid "That username isn’t available. Please try another."
 msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:268
+#: gnome-initial-setup/pages/account/um-utils.c:267
+msgid ""
+"The username should only consist of lower case letters from a-z, digits, and "
+"the following characters: - _"
+msgstr ""
+
+#: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr ""
 
@@ -674,6 +674,19 @@ msgstr ""
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:247
 msgid "Country"
+msgstr ""
+
+#: gnome-initial-setup/pages/software/gis-software-page.c:112
+#: gnome-initial-setup/pages/software/gis-software-page.ui:16
+#: gnome-initial-setup/pages/software/gis-software-page.ui:31
+msgid "Third-Party Repositories"
+msgstr ""
+
+#: gnome-initial-setup/pages/software/gis-software-page.c:113
+msgid ""
+"Third-party repositories provide access to additional software from selected "
+"external sources. They include popular apps, as well as firmware that is "
+"important for some devices. Some proprietary software is included."
 msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
