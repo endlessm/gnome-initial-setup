@@ -1,25 +1,28 @@
-# Alexsey Nadtochey <irbis4lan@yandex.com>, 2012.
-# Julia Dronova <juliette.tux@gmail.com>, 2013.
-# Valery Kirichenko <valera5505@gmail.com>, 2014.
-# Yuri Myasoedov <ymyasoedov@yandex.ru>, 2012, 2013, 2015.
-# Stas Solovey <whats_up@tut.by>, 2015, 2016, 2017, 2018.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-initial-setup package.
+# 
+# Translators:
+# Alexsey Nadtochey <irbis4lan@yandex.com>, 2012
+# Julia <juliette.tux@gmail.com>, 2013
+# Julia <juliette.tux@gmail.com>, 2013
+# Stas Solovey <whats_up@tut.by>, 2015-2018
+# Valery Kirichenko <valera5505@gmail.com>, 2014
+# Yuri Myasoedov <omerta13@yandex.ru>, 2012-2013
+# Yuri Myasoedov <ymyasoedov@yandex.ru>, 2012-2013,2015
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2022-12-07 15:45-0700\n"
-"PO-Revision-Date: 2021-08-12 15:09+0300\n"
-"Last-Translator: Alexey Rubtsov <rushills@gmail.com>\n"
-"Language-Team: Русский <gnome-cyr@gnome.org>\n"
-"Language: ru\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2022-12-08 00:11+0000\n"
+"PO-Revision-Date: 2014-06-16 22:11+0000\n"
+"Last-Translator: Stas Solovey <whats_up@tut.by>, 2015-2018\n"
+"Language-Team: Russian (http://www.transifex.com/endless-os/gnome-initial-setup/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.4.3\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
@@ -59,7 +62,6 @@ msgstr ""
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:363
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -110,11 +112,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"Корпоративная учётная запись позволяет использовать на этом устройстве "
-"существующее централизованное средство управления учётными записями. Вы "
-"также можете использовать эту учётную запись для доступа к ресурсам компании "
-"в Интернете."
+msgstr "Корпоративная учётная запись позволяет использовать на этом устройстве существующее централизованное средство управления учётными записями. Вы также можете использовать эту учётную запись для доступа к ресурсам компании в Интернете."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -148,10 +146,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"Для использования корпоративных учётных записей этот компьютер должен быть "
-"зарегистрирован в домене. Администратор сети должен ввести здесь доменный "
-"пароль и выбрать уникальное имя для вашего компьютера."
+msgstr "Для использования корпоративных учётных записей этот компьютер должен быть зарегистрирован в домене. Администратор сети должен ввести здесь доменный пароль и выбрать уникальное имя для вашего компьютера."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -201,9 +196,8 @@ msgid "_Full Name"
 msgstr "П_олное имя"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
-#, fuzzy
 msgid "Set a password"
-msgstr "Установите пароль"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
@@ -211,9 +205,7 @@ msgstr "Установить _родительский контроль для �
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:168
 msgid "For use by a parent or supervisor, who must set up their own password."
-msgstr ""
-"Для использования родителями или другими ответственными, кто должен "
-"назначить отдельный пароль."
+msgstr "Для использования родителями или другими ответственными, кто должен назначить отдельный пароль."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
 msgid "_Enterprise Login"
@@ -256,28 +248,22 @@ msgid "The username is too long."
 msgstr "Имя пользователя слишком длинное."
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
-#, fuzzy
 msgid "The username must start with a lower case letter from a-z."
-msgstr "Имя пользователя не может начинаться с символа «-»."
+msgstr "Имя пользователя должно начинаться со строчной буквы от а до я."
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
 msgstr "Данное имя пользователя недоступно. Попробуйте ввести другое."
 
 #: gnome-initial-setup/pages/account/um-utils.c:267
-#, fuzzy
 msgid ""
-"The username should only consist of lower case letters from a-z, digits, and "
-"the following characters: - _"
-msgstr ""
-"Имя пользователя может состоять только из букв латинского алфавита в верхнем "
-"и нижнем регистре, цифр и следующих символов: . - _"
+"The username should only consist of lower case letters from a-z, digits, and"
+" the following characters: - _"
+msgstr "Имя пользователя должно состоять только из строчных букв от а до я, цифр и следующих символов: - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr ""
-"Будет использовано для именования вашей домашней папки; не может быть "
-"изменено."
+msgstr "Будет использовано для именования вашей домашней папки; не может быть изменено."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
@@ -300,14 +286,13 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
-#, fuzzy
 msgid "Third Party Software"
-msgstr "Сторонние репозитории"
+msgstr ""
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -325,16 +310,12 @@ msgstr "Подключить сетевые учётные записи"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"Подключите ваши учётные записи для простого доступа к электронной почте, "
-"онлайн-календарю, контактам, документам и фотографиям."
+msgstr "Подключите ваши учётные записи для простого доступа к электронной почте, онлайн-календарю, контактам, документам и фотографиям."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr ""
-"Учётные записи можно добавлять и убирать в любое время в приложении "
-"Параметры."
+msgstr "Учётные записи можно добавлять и убирать в любое время в приложении Параметры."
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
@@ -347,7 +328,6 @@ msgstr "Ещё…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Источники ввода не найдены"
@@ -372,7 +352,6 @@ msgstr "Добро пожаловать"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "Добро пожаловать!"
@@ -426,10 +405,7 @@ msgstr "Wi-Fi"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr ""
-"Подключение к интернету поможет вам получать новые приложения, информацию и "
-"другие обновления. Это также поможет автоматически устанавливать время и "
-"ваше местоположение."
+msgstr "Подключение к интернету поможет вам получать новые приложения, информацию и другие обновления. Это также поможет автоматически устанавливать время и ваше местоположение."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -447,8 +423,7 @@ msgstr "Родительский контроль для %s"
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:137
 msgid "Set restrictions on what this user can run or install."
-msgstr ""
-"Установить ограничения на то, что этот пользователь может устанавливать."
+msgstr "Установить ограничения на то, что этот пользователь может устанавливать."
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:232
 msgid "Parental Controls"
@@ -474,7 +449,8 @@ msgstr "Установить пароль для %s"
 msgid "Set a Parent Password"
 msgstr "Установить пароль родителя"
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -486,14 +462,12 @@ msgstr "Пароли не совпадают."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:299
 #: gnome-initial-setup/pages/password/gis-password-page.c:330
-#, fuzzy
 msgid "Show password"
-msgstr "Установите пароль"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:338
-#, fuzzy
 msgid "Hide password"
-msgstr "Установите пароль"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:531
 msgid "Password"
@@ -513,9 +487,7 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
-"Пароль очень похож на предыдущий. Попробуйте изменить некоторые буквы и "
-"цифры."
+msgstr "Пароль очень похож на предыдущий. Попробуйте изменить некоторые буквы и цифры."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -523,20 +495,19 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
-"Пароль очень похож на предыдущий. Попробуйте изменить пароль немного больше."
+msgstr "Пароль очень похож на предыдущий. Попробуйте изменить пароль немного больше."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
+"This is a weak password. A password without your user name would be "
+"stronger."
 msgstr "Слабый пароль. Пароль не содержащий имя пользователя будет надёжнее."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr ""
-"Слабый пароль. Старайтесь избегать использования вашего имени в пароле."
+msgstr "Слабый пароль. Старайтесь избегать использования вашего имени в пароле."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
@@ -575,40 +546,31 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
-"Слабый пароль. Попробуйте использовать больше специальных символов, например "
-"знаки препинания."
+msgstr "Слабый пароль. Попробуйте использовать больше специальных символов, например знаки препинания."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
-"Слабый пароль. Попробуйте использовать вперемешку буквы, цифры и знаки "
-"препинания."
+msgstr "Слабый пароль. Попробуйте использовать вперемешку буквы, цифры и знаки препинания."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr ""
-"Слабый пароль. Старайтесь избегать повторения одного и того же символа."
+msgstr "Слабый пароль. Старайтесь избегать повторения одного и того же символа."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"Слабый пароль. Старайтесь избегать повторения одного и того же символа: "
-"используйте вперемешку буквы, цифры и знаки препинания."
+msgstr "Слабый пароль. Старайтесь избегать повторения одного и того же символа: используйте вперемешку буквы, цифры и знаки препинания."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr ""
-"Слабый пароль. Старайтесь избегать последовательностей, например 1234 или "
-"abcd."
+msgstr "Слабый пароль. Старайтесь избегать последовательностей, например 1234 или abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
@@ -624,28 +586,23 @@ msgstr "Смешайте заглавные и строчные буквы не�
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-"Добавление большего количества букв, цифр и знаков препинания сделает пароль "
-"надёжнее."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
+msgstr "Добавление большего количества букв, цифр и знаков препинания сделает пароль надёжнее."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"Отправка отчётов о технических неполадках поможет нам улучшить %s. Отчёты "
-"отправляются анонимно и не содержат персональных данных."
+msgstr "Отправка отчётов о технических неполадках поможет нам улучшить %s. Отчёты отправляются анонимно и не содержат персональных данных."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -674,9 +631,7 @@ msgstr "Службы определения местоположения"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Позволяют приложениям определять ваше географическое местоположение. "
-"Специальный индикатор будет уведомлять о включении служб."
+msgstr "Позволяют приложениям определять ваше географическое местоположение. Специальный индикатор будет уведомлять о включении служб."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -685,9 +640,7 @@ msgstr "Автоматические отчёты о проблемах"
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:110
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr ""
-"Настройки конфиденциальности можно изменять в любое время в приложении "
-"Параметры."
+msgstr "Настройки конфиденциальности можно изменять в любое время в приложении Параметры."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
@@ -735,14 +688,10 @@ msgstr "Сторонние репозитории"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:113
 msgid ""
-"Third-party repositories provide access to additional software from selected "
-"external sources. They include popular apps, as well as firmware that is "
+"Third-party repositories provide access to additional software from selected"
+" external sources. They include popular apps, as well as firmware that is "
 "important for some devices. Some proprietary software is included."
-msgstr ""
-"Сторонние репозитории предоставляют доступ к дополнительному программному "
-"обеспечению из избранных источников. Они включают популярные приложения, "
-"также как ПО для устройств. Некоторые приложения являются приложениями с "
-"закрытым кодом."
+msgstr "Сторонние репозитории предоставляют доступ к дополнительному программному обеспечению из избранных источников. Они включают популярные приложения, также как ПО для устройств. Некоторые приложения являются приложениями с закрытым кодом."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
@@ -793,7 +742,6 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -824,10 +772,7 @@ msgstr "Часовой пояс"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"При определении вашего местоположения, часовой пояс установится "
-"автоматически. Также можно установить часовой пояс самостоятельно, указав "
-"город."
+msgstr "При определении вашего местоположения, часовой пояс установится автоматически. Также можно установить часовой пояс самостоятельно, указав город."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
@@ -840,7 +785,6 @@ msgstr "Найдите ближайший город"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
 #, c-format
 msgid "Welcome to %s !"
@@ -854,162 +798,8 @@ msgstr "Настройка"
 msgid ""
 "Setup will guide you through making an account and enabling some features. "
 "We’ll have you up and running in no time."
-msgstr ""
-"Настройка проведёт вас от создания учётной записи до подключения некоторых "
-"возможностей. Мы поможем вам всё подготовить за мгновение."
+msgstr "Настройка проведёт вас от создания учётной записи до подключения некоторых возможностей. Мы поможем вам всё подготовить за мгновение."
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
 msgid "_Start Setup"
 msgstr "Начать _настройку"
-
-#~ msgid "This is a weak password."
-#~ msgstr "Это слабый пароль."
-
-#~ msgid "preferences-system"
-#~ msgstr "preferences-system"
-
-#~ msgid "License Agreements"
-#~ msgstr "Лицензионные соглашения"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr "Я _принимаю соглашения и условия этой лицензии."
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "Интернет-соединение позволит настроить время, добавить персональные "
-#~ "сведения, а также предоставит доступ к электронной почте, календарю и "
-#~ "контактам. Оно также необходимо для корпоративных учётных записей."
-
-#~ msgid "No regions found"
-#~ msgstr "Регион не найден"
-
-#~ msgid "Region"
-#~ msgstr "Регион"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "Выберите вашу страну или регион."
-
-#~ msgid "Software Repositories"
-#~ msgstr "Источники программного обеспечения"
-
-#~ msgid "Access additional software from selected third party sources."
-#~ msgstr ""
-#~ "Доступ к дополнительному программному обеспечению из выбранных сторонних "
-#~ "источников."
-
-#~ msgid ""
-#~ "Some of this software is proprietary and therefore has restrictions on "
-#~ "use, sharing, and access to source code."
-#~ msgstr ""
-#~ "Некоторые из этих программ являются проприетарными и поэтому имеют "
-#~ "ограничения на использование, совместное использование и доступ к "
-#~ "исходному коду."
-
-#~ msgid "Additional Software Repositories"
-#~ msgstr "Дополнительные источники программного обеспечения"
-
-#~ msgid "<a href=\"more\">Find out more…</a>"
-#~ msgstr "<a href=\"more\">Узнать больше…</a>"
-
-#~ msgid ""
-#~ "Proprietary software typically has restrictions on how it can be used and "
-#~ "on access to source code. This prevents anyone but the software owner "
-#~ "from inspecting, improving or learning from its code."
-#~ msgstr ""
-#~ "Проприетарное программное обеспечение имеет ограничения на использование "
-#~ "и доступ к исходному коду. Это не позволяет никому, кроме владельца "
-#~ "программного обеспечения, проверять, улучшать или обучаться используя код "
-#~ "этого программного обеспечения."
-
-#~ msgid ""
-#~ "In contrast, Free Software can be freely run, copied, distributed, "
-#~ "studied and modified."
-#~ msgstr ""
-#~ "В отличие от этого, свободное программное обеспечение можно свободно "
-#~ "запускать, копировать, распространять, изучать и вносить изменения."
-
-#~ msgid "Ready to Go"
-#~ msgstr "Готово к работе"
-
-#~ msgid "You’re ready to go!"
-#~ msgstr "Теперь всё готово!"
-
-#~ msgid "Disable image"
-#~ msgstr "Отключить изображение"
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to avoid common words."
-#~ msgstr "Старайтесь избегать общих слов."
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to use more numbers."
-#~ msgstr "Попробуйте использовать больше чисел."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "Password needs to be longer. Try to add more letters, numbers and "
-#~ "punctuation."
-#~ msgstr ""
-#~ "Пароль должен быть длиннее. Попробуйте добавить больше букв, цифр и "
-#~ "знаков препинания."
-
-#~ msgid "A user with the username ‘%s’ already exists."
-#~ msgstr "Пользователь с именем «%s» уже существует."
-
-#~ msgid "_Verify"
-#~ msgstr "_Проверить"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "Стойкость: очень слабая"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "Стойкость: плохая"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "Стойкость: средняя"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "Стойкость: хорошая"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "Стойкость: очень сильная"
-
-#~ msgid ""
-#~ "Proprietary software sources provide access to additional software, "
-#~ "including web browsers and games. This software typically has "
-#~ "restrictions on use and access to source code, and is not provided by %s."
-#~ msgstr ""
-#~ "Проприетарные источники программного обеспечения предоставляют доступ к "
-#~ "дополнительным приложениям, включая веб-браузеры и игры. Это программное "
-#~ "обеспечение, как правило, имеет ограничения на использование и доступ к "
-#~ "исходному коду, и не предоставлено %s."
-
-#~ msgid "Proprietary Software Sources"
-#~ msgstr "Проприетарные источники программного обеспечения"
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "Всё указано верно? Вы можете изменить данные, если хотите."
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr ""
-#~ "Изменить сетевые учётные записи (и добавить другие) можно после настройки."
-
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "Мы полагаем, что ваш часовой пояс — %s. Нажмите «Далее», чтобы продолжить "
-#~ "или найдите город, чтобы выбрать часовой пояс вручную."
-
-#~ msgid "Cancel"
-#~ msgstr "Отмена"

@@ -1,23 +1,22 @@
-# Bosnian translation for bosnianuniversetranslation
-# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
-# This file is distributed under the same license as the bosnianuniversetranslation package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-initial-setup package.
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: bosnianuniversetranslation\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2022-12-07 15:45-0700\n"
-"PO-Revision-Date: 2015-03-02 12:01+0100\n"
-"Last-Translator: Samir Ribić <Unknown>\n"
-"Language-Team: Bosnian <bs@li.org>\n"
-"Language: bs\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2022-12-08 00:11+0000\n"
+"PO-Revision-Date: 2014-06-16 22:11+0000\n"
+"Last-Translator: FIRST AUTHOR <EMAIL@ADDRESS>, 2013\n"
+"Language-Team: Bosnian (http://www.transifex.com/endless-os/gnome-initial-setup/language/bs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-05 06:49+0000\n"
-"X-Generator: Poedit 1.7.4\n"
+"Language: bs\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
@@ -57,7 +56,6 @@ msgstr ""
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:363
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -76,9 +74,8 @@ msgid "Force existing user mode"
 msgstr "Forsiraj postojeći korisnički mod"
 
 #: gnome-initial-setup/gnome-initial-setup.c:285
-#, fuzzy
 msgid "— GNOME initial setup"
-msgstr "GNOME Poćetna postavka"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:36
 msgid "Take a Picture…"
@@ -105,14 +102,11 @@ msgid "Enterprise Login"
 msgstr "Službena prijava"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:18
-#, fuzzy
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
 msgstr ""
-"Službena prijava dozvoljava korištenje postojećeg centralno kontrolisanog "
-"korisničkog računa na ovom uređaju."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -146,10 +140,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"Da biste koristili službene prijave,  ovaj računar treba upisan u domenu. "
-"Molim neka Vaš administrator mreže upiše lozinku domene ovdje, i izaberite "
-"jedinstveno ime za Vaš računar."
+msgstr "Da biste koristili službene prijave,  ovaj računar treba upisan u domenu. Molim neka Vaš administrator mreže upiše lozinku domene ovdje, i izaberite jedinstveno ime za Vaš računar."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -172,9 +163,8 @@ msgid "We need a few details to complete setup."
 msgstr "Potrebno je nekoliko detalja za završetak postavki."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:566
-#, fuzzy
 msgid "Administrator"
-msgstr "Ime _administratora"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:572
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:615
@@ -200,9 +190,8 @@ msgid "_Full Name"
 msgstr "_Ime i prezime"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
-#, fuzzy
 msgid "Set a password"
-msgstr "Postavi lozinku"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
@@ -213,14 +202,12 @@ msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
-#, fuzzy
 msgid "_Enterprise Login"
-msgstr "Službena prijava"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:53
-#, fuzzy
 msgid "Go online to set up Enterprise Login."
-msgstr "Postavi _Službenu prijavu"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
@@ -241,9 +228,9 @@ msgid "Invalid password, please try again"
 msgstr "Pogrešna šifra, molimo pokušajte ponovo"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:742
-#, fuzzy, c-format
+#, c-format
 msgid "Couldn’t connect to the %s domain: %s"
-msgstr "Nemoguće povezivanje na domenu: %s preko %s"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:255
 msgid "Sorry, that user name isn’t available. Please try another."
@@ -255,28 +242,22 @@ msgid "The username is too long."
 msgstr "Kornisničko ime je previše dugo."
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
-#, fuzzy
 msgid "The username must start with a lower case letter from a-z."
-msgstr "Korisničko ime počinje sa '-'."
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:267
-#, fuzzy
 msgid ""
-"The username should only consist of lower case letters from a-z, digits, and "
-"the following characters: - _"
+"The username should only consist of lower case letters from a-z, digits, and"
+" the following characters: - _"
 msgstr ""
-"Korisničko ime bi se trebalo sastojati od malih i velikih slova od a do z, "
-"brojeva i karaktera '.', '-' i '_'."
 
 #: gnome-initial-setup/pages/account/um-utils.c:271
-#, fuzzy
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr ""
-"Ovo će biti korišteno kao ime početne datoteke i neće se moći promjeniti."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
@@ -299,8 +280,8 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
@@ -320,20 +301,15 @@ msgid "Connect Your Online Accounts"
 msgstr "Konektuj vaše online korisničke račune"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:18
-#, fuzzy
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
 msgstr ""
-"Povezivanje Vaših računa će dozvoliti da lahko pristupite Vašem email-u, "
-"online kalendaru, kontaktima, dokumentima i fotografijama."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
-#, fuzzy
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
 msgstr ""
-"Kontrole privatnosti mogu se mijenjati u bilo koje vrijeme od Postavke."
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
@@ -346,7 +322,6 @@ msgstr "Više…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Nema pronađenih ulaza"
@@ -371,7 +346,6 @@ msgstr "Dobro došli"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "Dobro došli!"
@@ -461,16 +435,16 @@ msgstr "Budite pažljivi da ne izgubite svoju lozinku."
 
 #. Translators: The placeholder is for the user’s full name.
 #: gnome-initial-setup/pages/password/gis-password-page.c:90
-#, fuzzy, c-format
+#, c-format
 msgid "Set a Password for %s"
-msgstr "Postavi lozinku"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:98
-#, fuzzy
 msgid "Set a Parent Password"
-msgstr "Postavi lozinku"
+msgstr ""
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -482,14 +456,12 @@ msgstr "Lozinke se ne podudaraju."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:299
 #: gnome-initial-setup/pages/password/gis-password-page.c:330
-#, fuzzy
 msgid "Show password"
-msgstr "Lozinka"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:338
-#, fuzzy
 msgid "Hide password"
-msgstr "Lozinka"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:531
 msgid "Password"
@@ -505,151 +477,126 @@ msgid "The new password needs to be different from the old one."
 msgstr "Nova lozinka mora biti različita od stare."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:83
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr "Probajte promijeniti neka slova i brojeve."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr "Pokušaj promijeniti lozinku još malo."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr "Lozinka bez vašeg korisničkog imena bi bila jača."
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr "Pokušaj izbjeći korištenje svog imena u lozinci."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr "Pokušaj izbjeći neke riječi uključene u lozinku."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr "Pokušaj izbjeći obične riječi."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr "Pokušaj izbjeći promjenu mjesta postojećih riječi."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr "Pokušaj koristiti više brojeva."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr "Pokušaj koristiti više velikih slova."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr "Pokušaj koristiti više malih slova."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
 msgstr ""
-"Pokušaj korisiti više posebnih znakova, naprimjer znakovi interpunkcije."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr "Pokušaj koristit mješavinu slova,brojeva i interpunkciskih znakova."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr "Pokušaj izbječi ponavljanje istog znaka."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
 msgstr ""
-"Pokušaj izbjeći ponavljanje istog tipa znaka:trebaš miješati slova,brojeve i "
-"interpunkcijske znakove."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr "Pokušaj izbjeći senkvence kao 1234 ili abcd."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr "Pokušaj koristit mješavinu slova,brojeva i interpunkciskih znakova."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
-#, fuzzy
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr "Miješaj velika i mala slova i iskoristi broj ili dva."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
 msgstr ""
-"Dobra lozinka! Dodavanje više slova,brojeva i znakova interpunkcije učiniti "
-"će je jačom."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"Slanje izvještaja o tehničkim problemima nam pomaže da se poboljša %s. "
-"Izvještaji se anonimno šalju bez ličnih podataka."
+msgstr "Slanje izvještaja o tehničkim problemima nam pomaže da se poboljša %s. Izvještaji se anonimno šalju bez ličnih podataka."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -662,9 +609,8 @@ msgid "Privacy Policy"
 msgstr "Polica privatnosti"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:135
-#, fuzzy
 msgid "Uses Mozilla Location Service:"
-msgstr "Usluge vezane za Lokaciju"
+msgstr ""
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:246
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:16
@@ -679,20 +625,16 @@ msgstr "Usluge vezane za Lokaciju"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Omogućava aplikaciji da utvrdi vaš geografski položaj. Indikator se "
-"prikazuje kada su u upotrebi usluge lokacije."
+msgstr "Omogućava aplikaciji da utvrdi vaš geografski položaj. Indikator se prikazuje kada su u upotrebi usluge lokacije."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
 msgstr "Automatsko javljanje problema"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:110
-#, fuzzy
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
 msgstr ""
-"Kontrole privatnosti mogu se mijenjati u bilo koje vrijeme od Postavke."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
@@ -740,8 +682,8 @@ msgstr ""
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:113
 msgid ""
-"Third-party repositories provide access to additional software from selected "
-"external sources. They include popular apps, as well as firmware that is "
+"Third-party repositories provide access to additional software from selected"
+" external sources. They include popular apps, as well as firmware that is "
 "important for some devices. Some proprietary software is included."
 msgstr ""
 
@@ -749,19 +691,17 @@ msgstr ""
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:235
-#, fuzzy, c-format
+#, c-format
 msgid "_Start Using %s"
-msgstr "_Početak korištenja %s"
+msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:242
-#, fuzzy, c-format
+#, c-format
 msgid "%s is ready to be used. We hope that you love it!"
 msgstr ""
-"Hvala na odabiru %s.\n"
-"Nadamo se da Vam se sviđa."
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:266
 msgid "You're ready to try Endless OS"
@@ -796,7 +736,6 @@ msgstr ""
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr ""
@@ -840,11 +779,10 @@ msgstr "Molim nađite grad koji je u blizini."
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
-#, fuzzy, c-format
+#, c-format
 msgid "Welcome to %s !"
-msgstr "Dobro došli!"
+msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
 msgid "Setup"
@@ -857,94 +795,5 @@ msgid ""
 msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
-#, fuzzy
 msgid "_Start Setup"
-msgstr "Početna postavka"
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr ""
-#~ "Da li su ovo ispravni detalji? Možete ih promijeniti ukoliko želite."
-
-#~ msgid "Disable image"
-#~ msgstr "Onemogući sliku"
-
-#~ msgid "Take a photo..."
-#~ msgstr "Uslikaj..."
-
-#, c-format
-#~ msgid "A user with the username '%s' already exists."
-#~ msgstr "Korisnik sa imenom '%s' već postoji."
-
-#~ msgid "License Agreements"
-#~ msgstr "Licencni ugovor"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr ""
-#~ "Slažem se sa pojmovima i uslovima u ovom finalnom korisničkom licencnom "
-#~ "ugovoru."
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr ""
-#~ "Možete pogledati Vaše postojeće online račune (i dodati druge) nakon "
-#~ "podešavanja postavki."
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "Spajanje na internet će Vam omogućiti da postavite vrijeme, dodate svoje "
-#~ "podatke i omogućiti Vam pristup email-u , kalendaru i kontaktima . To je "
-#~ "također potrebno za službenu prijavu računima ."
-
-#~ msgid "_Verify"
-#~ msgstr "_Potvrdi"
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to add more letters, numbers and symbols."
-#~ msgstr "Pokušaj dodati više slova,brojeva i znakova."
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "Jačina: Slaba"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "Jačina: Niska"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "Jačina: Srednja"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "Jačina: Dobra"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "Jačina: Visoka"
-
-#~ msgid "No regions found"
-#~ msgstr "Nisu pronađene regije"
-
-#~ msgid "Region"
-#~ msgstr "Regija"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "Izberite Vašu državu ili regiju."
-
-#~ msgid "Ready to Go"
-#~ msgstr "Spreman za polazak"
-
-#~ msgid "You're all set!"
-#~ msgstr "Sve ste postavili!"
-
-#, c-format
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "Mislimo da je vaša vremenska zona %s . Pritisnite Dalje za nastavak ili "
-#~ "tražite grad da biste ručno postavili vremensku zonu ."
+msgstr ""

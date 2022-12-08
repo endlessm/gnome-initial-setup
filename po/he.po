@@ -1,26 +1,24 @@
-# Hebrew translations for PACKAGE package.
-# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2012.
-# Yosef Or Boczko <yoseforb@gmail.com>, 2013-2020.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-initial-setup package.
+# 
+# Translators:
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2012
+# Yosef Or Boczko <yoseforb@gmail.com>, 2013
+# Yosef Or Boczko <yoseforb@gnome.org>, 2013-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2022-12-07 15:45-0700\n"
-"PO-Revision-Date: 2021-08-15 02:09+0300\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <yoseforb@gmail.com>\n"
-"Language: he\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2022-12-08 00:11+0000\n"
+"PO-Revision-Date: 2014-06-16 22:11+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>, 2012\n"
+"Language-Team: Hebrew (http://www.transifex.com/endless-os/gnome-initial-setup/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
-"2 : 3);\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 3.0\n"
+"Language: he\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
@@ -60,7 +58,6 @@ msgstr ""
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:363
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -111,9 +108,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"התחברות ארגונית מאפשרת ניהול חשבון משתמש מרוכז לשימוש בהתקן זה. נתן גם "
-"להשתמש בחשבון זה לגישה למשאבי חברות באינטרנט."
+msgstr "התחברות ארגונית מאפשרת ניהול חשבון משתמש מרוכז לשימוש בהתקן זה. נתן גם להשתמש בחשבון זה לגישה למשאבי חברות באינטרנט."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -147,9 +142,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"כדי להשתמש בכניסה ארגונית על מחשב זה להיות רשום במתחם. נא לבקש ממנהל הרשת "
-"שלך להזין את ססמת המתחם להלן ולבחור בשם ייחודי למחשב שלך."
+msgstr "כדי להשתמש בכניסה ארגונית על מחשב זה להיות רשום במתחם. נא לבקש ממנהל הרשת שלך להזין את ססמת המתחם להלן ולבחור בשם ייחודי למחשב שלך."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -199,9 +192,8 @@ msgid "_Full Name"
 msgstr "שם מ_לא"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
-#, fuzzy
 msgid "Set a password"
-msgstr "הגדרת ססמה"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
@@ -252,22 +244,18 @@ msgid "The username is too long."
 msgstr "שם המשתמש ארוך מדי."
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
-#, fuzzy
 msgid "The username must start with a lower case letter from a-z."
-msgstr "שם המשתמש לא יכול להתחיל עם „-”."
+msgstr "שם המשתמש חייב להתחיל עם אות קטנה מהאלפבית האנגלי."
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
 msgstr "שם משתמש זה אינו זמין. יש לנסות שם אחר."
 
 #: gnome-initial-setup/pages/account/um-utils.c:267
-#, fuzzy
 msgid ""
-"The username should only consist of lower case letters from a-z, digits, and "
-"the following characters: - _"
-msgstr ""
-"שם המשתמש יכול להכיל רק אותיות קטנות ורישיות מהאלפבית האנגלי, ספרות ואחד  "
-"מהתווים: . - _"
+"The username should only consist of lower case letters from a-z, digits, and"
+" the following characters: - _"
+msgstr "שם המשתמש יכול להכיל רק אותיות קטנות מהאלפבית האנגלי, ספרות ואחד  מהתווים: . - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."
@@ -294,14 +282,13 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
-#, fuzzy
 msgid "Third Party Software"
-msgstr "מאגרי צד־שלישי"
+msgstr ""
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -319,9 +306,7 @@ msgstr "התחברות לחשבונות המקוונים שלך"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"התחברות לחשבונות שלך לגישה נוחה לדוא״ל, לוח שנה מקוון, אנשי קשר, תמונות ושאר "
-"מסמכים שלך."
+msgstr "התחברות לחשבונות שלך לגישה נוחה לדוא״ל, לוח שנה מקוון, אנשי קשר, תמונות ושאר מסמכים שלך."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
@@ -339,7 +324,6 @@ msgstr "עוד…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "לא נמצא קלט"
@@ -364,7 +348,6 @@ msgstr "ברוך בואך"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "ברוך בואך!"
@@ -418,9 +401,7 @@ msgstr "רשת אלחוטית"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr ""
-"התחברות לרשת תעזור לך לקבל יישומים חדשים, מידע ושדרוגים אחרים. זה גם יסייע "
-"להגדרת התאריך והשעה לפי האזור שלך באופן אוטומטי."
+msgstr "התחברות לרשת תעזור לך לקבל יישומים חדשים, מידע ושדרוגים אחרים. זה גם יסייע להגדרת התאריך והשעה לפי האזור שלך באופן אוטומטי."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -464,7 +445,8 @@ msgstr "הגדרת ססמה עבור %s"
 msgid "Set a Parent Password"
 msgstr "הגדרת ססמת הורה"
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -476,14 +458,12 @@ msgstr "הססמאות אינן תואמות."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:299
 #: gnome-initial-setup/pages/password/gis-password-page.c:330
-#, fuzzy
 msgid "Show password"
-msgstr "ללא ססמה"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:338
-#, fuzzy
 msgid "Hide password"
-msgstr "ללא ססמה"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:531
 msgid "Password"
@@ -516,7 +496,8 @@ msgstr "ססמה זו דומה מאוד לזו הקודמת. כדאי לשנות
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
+"This is a weak password. A password without your user name would be "
+"stronger."
 msgstr "זו ססמה חלשה. ססמה ללא השם שלך תהיה חזקה יותר."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
@@ -580,9 +561,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"זו ססמה חלשה. כדאי לנסות להימנע מחזרה על אותו סוג של תו: צריך לערבב אותיות, "
-"מספרים וסימני פיסוק."
+msgstr "זו ססמה חלשה. כדאי לנסות להימנע מחזרה על אותו סוג של תו: צריך לערבב אותיות, מספרים וסימני פיסוק."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
@@ -603,26 +582,23 @@ msgstr "יש לערבב אותיות רישיות וקטנות ולהשתמש ב
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
 msgstr "הוספת תווים נוספים, מספרים וסימני פיסוק תחזק את הססמה עוד יותר."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"שליחת דיווחים על בעיות טכניות תעזור לנו לשפר את %s. הדיווחים נשלחים בעילום "
-"שם וללא מידע אישי."
+msgstr "שליחת דיווחים על בעיות טכניות תעזור לנו לשפר את %s. הדיווחים נשלחים בעילום שם וללא מידע אישי."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -651,9 +627,7 @@ msgstr "שירותי איכון"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"מאפשר ליישומים לקבוע את המיקום הגאוגרפי שלך. סימן מוצג כאשר שירותי האיכון "
-"בשימוש."
+msgstr "מאפשר ליישומים לקבוע את המיקום הגאוגרפי שלך. סימן מוצג כאשר שירותי האיכון בשימוש."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -710,12 +684,10 @@ msgstr "מאגרי צד־שלישי"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:113
 msgid ""
-"Third-party repositories provide access to additional software from selected "
-"external sources. They include popular apps, as well as firmware that is "
+"Third-party repositories provide access to additional software from selected"
+" external sources. They include popular apps, as well as firmware that is "
 "important for some devices. Some proprietary software is included."
-msgstr ""
-"מאגרי צד־שלישי מספקים גישה לתכניות נוספות ממקורות חיצוניים נבחרים. הם מכילים "
-"יישומים נפוצים לרבות קושחה שחשובה לחלק מההתקנים. יש גם תכניות קנייניות."
+msgstr "מאגרי צד־שלישי מספקים גישה לתכניות נוספות ממקורות חיצוניים נבחרים. הם מכילים יישומים נפוצים לרבות קושחה שחשובה לחלק מההתקנים. יש גם תכניות קנייניות."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
@@ -734,9 +706,8 @@ msgid "%s is ready to be used. We hope that you love it!"
 msgstr "‏%s מוכן לשימוש. אנו מקווים שישא חן בעיניך!"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:266
-#, fuzzy
 msgid "You're ready to try Endless OS"
-msgstr "הכול מוכן לצאת לדרך!"
+msgstr ""
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:269
 msgid ""
@@ -767,7 +738,6 @@ msgstr "‏%s, ‏%s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -798,9 +768,7 @@ msgstr "אזור זמן"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"אזור הזמן יוגדר באופן אוטומטי אם המיקום שלך ניתן לאיכון. ניתן גם לחפש עיר "
-"ולהגדיר אותו בעצמך."
+msgstr "אזור הזמן יוגדר באופן אוטומטי אם המיקום שלך ניתן לאיכון. ניתן גם לחפש עיר ולהגדיר אותו בעצמך."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
@@ -813,7 +781,6 @@ msgstr "נא לחפש עיר סמוכה"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
 #, c-format
 msgid "Welcome to %s !"
@@ -827,321 +794,8 @@ msgstr "התקנה"
 msgid ""
 "Setup will guide you through making an account and enabling some features. "
 "We’ll have you up and running in no time."
-msgstr ""
-"התקנה תדריך אותך דרך יצירת חשבון ואפשור כמה תכונות. נקבל בשבילך מערכת מוכנה "
-"ופועלת בזמן קצר."
+msgstr "התקנה תדריך אותך דרך יצירת חשבון ואפשור כמה תכונות. נקבל בשבילך מערכת מוכנה ופועלת בזמן קצר."
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
 msgid "_Start Setup"
 msgstr "התחלת ה_תקנה"
-
-#~ msgid "This is a weak password."
-#~ msgstr "ססמה זו חלשה."
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "חיבור לאינטרנט יאפשר לך להגדיר את השעה, להוסיף את פרטיך, לאפשר לך לגשת "
-#~ "לדוא״ל, ללוח שנה ולאנשי הקשר שלך. קישור זה נדרש גם לחשבונות כניסה ארגונית."
-
-#~ msgid "Disable image"
-#~ msgstr "ביטול התמונה"
-
-#~ msgid "Take a photo..."
-#~ msgstr "צילום תמונה…"
-
-#~ msgid "A user with the username '%s' already exists."
-#~ msgstr "משתמש בשם '%s' כבר קיים."
-
-#~ msgid "License Agreements"
-#~ msgstr "הסכמי רישוי"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr "הס_כמתי לתנאי השימוש בהסכם רישוי משתמש קצה זה."
-
-#~ msgid "_Verify"
-#~ msgstr "אי_מות"
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "This is a weak password. Try to add more letters, numbers and symbols."
-#~ msgstr "זו ססמה חלשה. כדאי להוסיף תווים, מספרים וסימנים."
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "חוזק: חלשה"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "חוזק: חלשה"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "חוזק: בינונית"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "חוזק: טובה"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "חוזק: גבוהה"
-
-#~ msgid "No regions found"
-#~ msgstr "לא נמצאו אזורים"
-
-#~ msgid "Region"
-#~ msgstr "אזור"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "בחירת המדינה או האזור שלך."
-
-#~ msgid "Ready to Go"
-#~ msgstr "מוכן לשימוש"
-
-#~ msgid ""
-#~ "Proprietary software sources provide access to additional software, "
-#~ "including web browsers and games. This software typically has "
-#~ "restrictions on use and access to source code, and is not provided by %s."
-#~ msgstr ""
-#~ "מקורת תכנה קניינית מספקות גישה לתכנות נוספות, לרבות דפדפנים ומשחקים. לרוב "
-#~ "לתכנות אלה הגבלות בשימוש ובגישה לקוד המקור, ואינן מסופקות על ידי %s."
-
-#~ msgid "Software Sources"
-#~ msgstr "מקורות תכנה"
-
-#~ msgid "Additional Software Sources"
-#~ msgstr "מקורות תכנה נוספים"
-
-#~ msgid "<a href=\"more\">Find out more…</a>"
-#~ msgstr "<a href=\"more\">למידע נוסף…</a>"
-
-#~ msgid "Proprietary Software Sources"
-#~ msgstr "מקורות תכנה קניינית"
-
-#~ msgid ""
-#~ "Proprietary software typically has restrictions on how it can be used and "
-#~ "on access to source code. This prevents anyone but the software owner "
-#~ "from inspecting, improving or learning from its code."
-#~ msgstr ""
-#~ "לרוב לתכנה קניינית יש הגבלות בשימוש ובגישה לקוד המקור. זה מונע כל אחד "
-#~ "מלבד בעלי התכנה מבדיקה, שיפור או למידה מהקוד שלה."
-
-#~ msgid ""
-#~ "In contrast, Free Software can be freely run, copied, distributed, "
-#~ "studied and modified."
-#~ msgstr ""
-#~ "בניגוד לכך, תכנה חופשית ניתנת להרצה, העתקה, הפצה, למידה ושינוי באופן "
-#~ "חופשי."
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "האם אלה הפרטים הנכונים? ניתן לשנות אותם אם זהו רצונך."
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr "ניתן לסקור את החשבונות המקוונים שלך (ולהוסיף אחרים) לאחר ההתקנה."
-
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "אנו סבורים כי אזור הזמן שלך הוא %s. ניתן ללחוץ על הבא כדי להמשיך או לחפש "
-#~ "אחר עיר כדי להגדיר את אזור הזמן ידנית."
-
-#~ msgid "Cancel"
-#~ msgstr "ביטול"
-
-#~ msgid "Your username cannot be changed after setup."
-#~ msgstr "שם המשתמש שלך לא יהיה ניתן לשינוי לאחר ההתקנה."
-
-#~ msgid ""
-#~ "In order to use enterprise logins, this computer needs to be enrolled in "
-#~ "the domain. Please have your network administrator type their domain "
-#~ "password here, and choose a unique computer name for your computer."
-#~ msgstr ""
-#~ "כדי להשתמש בכניסה ארגונית על מחשב זה להיות רשום במתחם. נא לבקש ממנהל הרשת "
-#~ "שלך להזין את ססמת המתחם להלן ולבחור בשם ייחודי למחשב שלך."
-
-#~ msgctxt "Password strength"
-#~ msgid "Too short"
-#~ msgstr "קצרה מדי"
-
-#~ msgctxt "Password strength"
-#~ msgid "Not good enough"
-#~ msgstr "לא טובה מספיק"
-
-#~ msgctxt "Password strength"
-#~ msgid "Weak"
-#~ msgstr "חלשה"
-
-#~ msgctxt "Password strength"
-#~ msgid "Fair"
-#~ msgstr "סבירה"
-
-#~ msgctxt "Password strength"
-#~ msgid "Good"
-#~ msgstr "טובה"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strong"
-#~ msgstr "חזקה"
-
-#~ msgid "Login"
-#~ msgstr "כניסה"
-
-#~ msgid "Create a Local Account"
-#~ msgstr "יצירת חשבון מקומי"
-
-#~ msgid "page 1"
-#~ msgstr "עמוד 1"
-
-#~ msgid "Create an Enterprise Account"
-#~ msgstr "יצירת חשבון ארגוני"
-
-#~ msgctxt "Online Account"
-#~ msgid "Other"
-#~ msgstr "אחר"
-
-#~ msgid "Mail"
-#~ msgstr "דואר"
-
-#~ msgid "Contacts"
-#~ msgstr "אנשי קשר"
-
-#~ msgid "Chat"
-#~ msgstr "צ׳אט"
-
-#~ msgid "Resources"
-#~ msgstr "משאבים"
-
-#~ msgid "Error creating account"
-#~ msgstr "שגיאה ביצירת חשבון"
-
-#~ msgid "Error removing account"
-#~ msgstr "שגיאה בהסרת חשבון"
-
-#~ msgid "Are you sure you want to remove the account?"
-#~ msgstr "האם אכן ברצונך להסיר את החשבון?"
-
-#~ msgid "This will not remove the account on the server."
-#~ msgstr "פעולה זו לא תסיר את החשבון מהשרת."
-
-#~ msgid "_Remove"
-#~ msgstr "ה_סרה"
-
-#~ msgid "Connect to your existing data in the cloud"
-#~ msgstr "ניתן להתחבר לנתונים הנוכחיים שלך בענן"
-
-#~ msgid "_Add Account"
-#~ msgstr "הו_ספת חשבון"
-
-#~ msgid "Other"
-#~ msgstr "אחר"
-
-#~ msgid "Add an Input Source"
-#~ msgstr "הוספת מקור קלט"
-
-#~ msgid "Search for a location"
-#~ msgstr "חיפוש אחר מיקום"
-
-#~ msgid "_Determine your location automatically"
-#~ msgstr "_איתור המיקום שלך אוטומטית"
-
-#~ msgid "No network devices found."
-#~ msgstr "לא נמצא התקן רשת."
-
-#~ msgid "Thank You"
-#~ msgstr "תודה רבה לך"
-
-#~ msgid "Your computer is ready to use."
-#~ msgstr "המחשב שלך מוכן לשימוש."
-
-#~ msgid "You may change these options at any time in Settings."
-#~ msgstr "ניתן לשנות כל אחת מאפשרויות אלה בכל עת דרך ההגדרות."
-
-#~ msgid "_Start using GNOME 3"
-#~ msgstr "להת_חיל להשתמש ב־GNOME 3"
-
-#~ msgid "Login settings are used by all users when logging into the system"
-#~ msgstr "הגדרות הכניסה משמשות את כל המשתמשים בעת הכניסה למערכת"
-
-#~ msgid "Select input sources"
-#~ msgstr "נא לבחור במקורות קלט"
-
-#~ msgid "_Back"
-#~ msgstr "ה_קודם"
-
-#~ msgid "Unspecified"
-#~ msgstr "לא צוינה"
-
-#~ msgid "_Use Local Login"
-#~ msgstr "שימוש בחשבון מ_קומי"
-
-#~ msgid "Keyboard Layout"
-#~ msgstr "פריסת מקלדת"
-
-#~ msgid "Remove Input Source"
-#~ msgstr "הסרת מקור קלט"
-
-#~ msgid "Move Input Source Up"
-#~ msgstr "הגבהת מקור הקלט"
-
-#~ msgid "Input Source Settings"
-#~ msgstr "הגדרות מקור הקלט"
-
-#~ msgid "Select an input source"
-#~ msgstr "נא לבחור במקור קלט"
-
-#~ msgid "English"
-#~ msgstr "אנגלית"
-
-#~ msgid "British English"
-#~ msgstr "אנגלית בריטית"
-
-#~ msgid "German"
-#~ msgstr "גרמנית"
-
-#~ msgid "French"
-#~ msgstr "צרפתית"
-
-#~ msgid "Spanish"
-#~ msgstr "ספרדית"
-
-#~ msgid "Chinese (simplified)"
-#~ msgstr "סינית (מפושטת)"
-
-#~ msgid "Use %s"
-#~ msgstr "שימוש ב%s"
-
-#~ msgid "_Login Name"
-#~ msgstr "שם ה_כניסה"
-
-#~ msgid "Remove"
-#~ msgstr "הסרה"
-
-#~ msgid "Link other accounts"
-#~ msgstr "קישור לחשבונות באחרים"
-
-#~ msgid "Enjoy GNOME!"
-#~ msgstr "שיהיה לך בכיף עם GNOME!"
-
-#~ msgid "New to GNOME 3 and need help finding your way around?"
-#~ msgstr "עדיין לא ערכת היכרות עם GNOME 3 ודרושה לך עזרה כדי להתמצא?"
-
-#~ msgid "Choose How to Login"
-#~ msgstr "נא לבחור באופן הכניסה"
-
-#~ msgid "Show _all"
-#~ msgstr "הצגת ה_כול"
-
-#~ msgid "_Done"
-#~ msgstr "_בוצע"
-
-#~ msgid "_Require a password to use this account"
-#~ msgstr "_דרישת ססמה לצורך שימוש בחשבון זה"
-
-#~ msgid "_Act as administrator of this computer"
-#~ msgstr "הת_נהגות כמנהל המחשב"

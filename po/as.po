@@ -1,23 +1,22 @@
-# Assamese translation for gnome-initial-setup.
-# Copyright (C) 2012 gnome-initial-setup's COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-#
-# Nilamdyuti Goswami <ngoswami@redhat.com>, 2012, 2013, 2014.
+# 
+# Translators:
+# Nilamdyuti Goswami <ngoswami@redhat.com>, 2012-2014
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2022-12-07 15:45-0700\n"
-"PO-Revision-Date: 2014-08-13 20:39+0530\n"
-"Last-Translator: Nilamdyuti Goswami <ngoswami@redhat.com>\n"
-"Language-Team: Assamese <kde-i18n-doc@kde.org>\n"
-"Language: as\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2022-12-08 00:11+0000\n"
+"PO-Revision-Date: 2014-06-16 22:11+0000\n"
+"Last-Translator: Nilamdyuti Goswami <ngoswami@redhat.com>, 2012-2014\n"
+"Language-Team: Assamese (http://www.transifex.com/endless-os/gnome-initial-setup/language/as/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language: as\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
@@ -57,7 +56,6 @@ msgstr ""
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:363
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -76,14 +74,12 @@ msgid "Force existing user mode"
 msgstr "ব্যৱহাৰকাৰী অৱস্থা বলৱৎভাৱে প্ৰস্থান কৰা হৈছে"
 
 #: gnome-initial-setup/gnome-initial-setup.c:285
-#, fuzzy
 msgid "— GNOME initial setup"
-msgstr "- GNOME আৰম্ভণি সংস্থাপন"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:36
-#, fuzzy
 msgid "Take a Picture…"
-msgstr "এবাৰ ভ্ৰমণ কৰক (_T)"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:185
 msgid "Failed to register account"
@@ -106,14 +102,11 @@ msgid "Enterprise Login"
 msgstr "এন্টাৰপ্ৰাইজ লগিন"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:18
-#, fuzzy
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
 msgstr ""
-"এন্টাৰপ্ৰাইজ লগিনে এটা স্থায়ী কেন্দ্ৰীয়ভাৱে ব্যৱস্থিত ব্যৱহাৰকাৰী একাওন্টক এই ডিভাইচত "
-"ব্যৱহাৰ কৰাৰ অনুমতি দিয়ে।"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -147,10 +140,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"এন্টাৰপ্ৰাইজ লগিনসমূহ ব্যৱহাৰ কৰিবলে, এই কমপিউটাৰক এটা ডমেইনত এনৰোল কৰিব লাগিব। "
-"অনুগ্ৰহ কৰি আপোনাৰ নেটৱৰ্ক প্ৰশাসকক তেওৰ ডমেইন পাছৱৰ্ড ইয়াত টাইপ কৰিব দি, "
-"আপোনাৰকমপিউটাৰৰ বাবে এটা অবিকল্প নাম বাছক।"
+msgstr "এন্টাৰপ্ৰাইজ লগিনসমূহ ব্যৱহাৰ কৰিবলে, এই কমপিউটাৰক এটা ডমেইনত এনৰোল কৰিব লাগিব। অনুগ্ৰহ কৰি আপোনাৰ নেটৱৰ্ক প্ৰশাসকক তেওৰ ডমেইন পাছৱৰ্ড ইয়াত টাইপ কৰিব দি, আপোনাৰকমপিউটাৰৰ বাবে এটা অবিকল্প নাম বাছক।"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -173,9 +163,8 @@ msgid "We need a few details to complete setup."
 msgstr "আমাক সংস্থাপন সম্পূৰ্ণ কৰিবলৈ কিছুমান বিৱৰণৰ প্ৰয়োজন হব।"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:566
-#, fuzzy
 msgid "Administrator"
-msgstr "প্ৰশাসকৰ নাম (_N)"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:572
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:615
@@ -201,9 +190,8 @@ msgid "_Full Name"
 msgstr "সম্পূৰ্ণ নাম (_F)"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
-#, fuzzy
 msgid "Set a password"
-msgstr "এটা পাছৱৰ্ড সংহতি কৰক"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
@@ -214,14 +202,12 @@ msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
-#, fuzzy
 msgid "_Enterprise Login"
-msgstr "এন্টাৰপ্ৰাইজ লগিন"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:53
-#, fuzzy
 msgid "Go online to set up Enterprise Login."
-msgstr "এন্টাৰপ্ৰাইজ লগিন সংস্থাপন কৰক (_E)"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
@@ -242,9 +228,9 @@ msgid "Invalid password, please try again"
 msgstr "অবৈধ পাছৱৰ্ড, অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:742
-#, fuzzy, c-format
+#, c-format
 msgid "Couldn’t connect to the %s domain: %s"
-msgstr "%s ডমেইনলে সংযোগ কৰিব নোৱাৰি: %s"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:255
 msgid "Sorry, that user name isn’t available. Please try another."
@@ -256,28 +242,22 @@ msgid "The username is too long."
 msgstr "ব্যৱহাৰকাৰীনাম অতি দীঘল।"
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
-#, fuzzy
 msgid "The username must start with a lower case letter from a-z."
-msgstr "ব্যৱহাৰকাৰীনাম '-' ৰ সৈতে আৰম্ভ হব নোৱাৰিব।"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:267
-#, fuzzy
 msgid ""
-"The username should only consist of lower case letters from a-z, digits, and "
-"the following characters: - _"
+"The username should only consist of lower case letters from a-z, digits, and"
+" the following characters: - _"
 msgstr ""
-"ব্যৱহাৰকাৰীনামত কেৱল a-z ডিজিটৰ পৰা তলৰ আৰু ওপৰ ফলা আখৰ আৰু আখৰসমূহ '.', '-' আৰু "
-"'_' ৰ পৰা যিকোনো আখৰ থাকিব পাৰিব।"
 
 #: gnome-initial-setup/pages/account/um-utils.c:271
-#, fuzzy
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr ""
-"ইয়াক আপোনাৰ ঘৰ ফোল্ডাৰ নামকৰণৰ বাবে ব্যৱহাৰ কৰা হব আৰু ইয়াক পৰিবৰ্তন কৰিব নোৱাৰি।"
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
@@ -300,8 +280,8 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
@@ -321,13 +301,10 @@ msgid "Connect Your Online Accounts"
 msgstr "আপোনাৰ অনলাইন একাওন্টসমূহ সংযোগ কৰক"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:18
-#, fuzzy
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
 msgstr ""
-"আপোনাৰ একাওন্টসমূহ যোগ কৰিলে আপুনি সহজতে আপোনাৰ ইমেইল, অনলাইন কেলেন্ডাৰ, "
-"পৰিচয়সমূহ, দস্তাবেজসমূহ আৰু ফ'টোসমূহ অভিগম কৰিব পাৰিব।"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
@@ -345,7 +322,6 @@ msgstr "অধিক…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "কোনো ইনপুট পোৱা নগল"
@@ -370,7 +346,6 @@ msgstr "স্বাগতম"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "স্বাগতম!"
@@ -405,9 +380,8 @@ msgid "Other…"
 msgstr "অন্য…"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:403
-#, fuzzy
 msgid "Wireless networking is disabled"
-msgstr "বেতাঁৰ নেটৱৰ্কসমূহ"
+msgstr ""
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:410
 msgid "Checking for available wireless networks"
@@ -461,16 +435,16 @@ msgstr "আপোনাৰ পাছৱৰ্ড নেহেৰুৱাব।"
 
 #. Translators: The placeholder is for the user’s full name.
 #: gnome-initial-setup/pages/password/gis-password-page.c:90
-#, fuzzy, c-format
+#, c-format
 msgid "Set a Password for %s"
-msgstr "এটা পাছৱৰ্ড সংহতি কৰক"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:98
-#, fuzzy
 msgid "Set a Parent Password"
-msgstr "এটা পাছৱৰ্ড সংহতি কৰক"
+msgstr ""
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -482,23 +456,20 @@ msgstr "পাছৱৰ্ডসমূহ মিল নাখায়।"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:299
 #: gnome-initial-setup/pages/password/gis-password-page.c:330
-#, fuzzy
 msgid "Show password"
-msgstr "কোনো পাছৱৰ্ড নাই"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:338
-#, fuzzy
 msgid "Hide password"
-msgstr "কোনো পাছৱৰ্ড নাই"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:531
 msgid "Password"
 msgstr "পাছৱৰ্ড"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:69
-#, fuzzy
 msgid "_Confirm"
-msgstr "পাছৱৰ্ড সুনিশ্চিত কৰক (_C)"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -506,136 +477,116 @@ msgid "The new password needs to be different from the old one."
 msgstr "নতুন পাছৱৰ্ড পুৰনি পাছৱৰ্ডৰ পৰা ভিন্ন হব লাগিব।"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:83
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr "কিছুমান আখৰ আৰু সংখ্যা পৰিবৰ্তন কৰি চাওক।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr "পাছৱৰ্ডটো আৰু অলপ পৰিবৰ্তন কৰাৰ চেষ্টা কৰক।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr "আপোনাৰ ব্যৱহাৰকাৰী নাম নথকা এটা পাছৱৰ্ড অধিক শক্তিশালী হব।"
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr "পাছৱৰ্ডত আপোনাৰ নাম ব্যৱহাৰ নকৰাৰ চেষ্টা কৰক।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr "পাছৱৰ্ডত ব্যৱহৃত কিছুমান শব্দ ব্যৱহাৰ নকৰাৰ চেষ্টা কৰক।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr "সাধাৰণ শব্দবোৰ বাদ দিয়াৰ চেষ্টা কৰক।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr "স্থায়ী শব্দবোৰ পুনৰ ব্যৱস্থিত নকৰাৰ চেষ্টা কৰক।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr "অধিক সংখ্যা ব্যৱহাৰ কৰাৰ চেষ্টা কৰক।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr "অধিক ওপৰফলা আখৰ ব্যৱহাৰ কৰাৰ চেষ্টা কৰক।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr "অধিক তলৰফলা আখৰ ব্যৱহাৰ কৰাৰ চেষ্টা কৰক।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr "অধিক বিশেষ আখৰ, যেনে বিৰাম চিহ্ন ব্যৱহাৰ কৰাৰ চেষ্টা কৰক।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr "আখৰ, সংখ্যা আৰু বিৰাম চিহ্নৰ এটা সংমিশ্ৰণ ব্যৱহাৰ কৰাৰ চেষ্টা কৰক।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr "একেটা আখৰ পুনৰাবৃত্তি নকৰাৰ চেষ্টা কৰিব।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
 msgstr ""
-"একেধৰণ আখৰ পুনৰাবৃত্তি নকৰাৰ চেষ্টা কৰিব: আপুনি আখৰ, সংখ্যা আৰু বিৰাম চিহ্ন সংমিশ্ৰণ "
-"কৰিব লাগিব।"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr "ক্ৰম যেনে 1234 অথবা abcd বাদ দিয়াৰ চেষ্টা কৰক।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr "আখৰ, সংখ্যা আৰু বিৰাম চিহ্নৰ এটা সংমিশ্ৰণ ব্যৱহাৰ কৰাৰ চেষ্টা কৰক।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
-#, fuzzy
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr "ওপৰফলা আৰু তলৰফলা সংমিশ্ৰণ কৰক আৰু এটা বা দুটা সংখ্যা ব্যৱহাৰ কৰক।"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
 msgstr ""
-"ভাল পাছৱৰ্ড! অধিক আখৰ, সংখ্যা আৰু বিৰাম চিহ্ন যোগ কৰিলে ই আৰু অধিক শক্তিশালী হব।"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -646,7 +597,6 @@ msgstr ""
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -668,9 +618,8 @@ msgid "Privacy"
 msgstr ""
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:31
-#, fuzzy
 msgid "Location Services"
-msgstr "অবস্থান"
+msgstr ""
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:52
 msgid ""
@@ -733,8 +682,8 @@ msgstr ""
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:113
 msgid ""
-"Third-party repositories provide access to additional software from selected "
-"external sources. They include popular apps, as well as firmware that is "
+"Third-party repositories provide access to additional software from selected"
+" external sources. They include popular apps, as well as firmware that is "
 "important for some devices. Some proprietary software is included."
 msgstr ""
 
@@ -742,19 +691,17 @@ msgstr ""
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:235
-#, fuzzy, c-format
+#, c-format
 msgid "_Start Using %s"
-msgstr "%s ব্যৱহাৰ কৰা আৰম্ভ কৰক (_S)"
+msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:242
-#, fuzzy, c-format
+#, c-format
 msgid "%s is ready to be used. We hope that you love it!"
 msgstr ""
-"%s বাচি লোৱাৰ বাবে ধন্যবাদ।\n"
-"আপুনি ইয়াক ভাল পাব বুলি আমি আশা কৰিছো।"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:266
 msgid "You're ready to try Endless OS"
@@ -789,7 +736,6 @@ msgstr ""
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr ""
@@ -833,11 +779,10 @@ msgstr "এটা ওচৰৰ নগৰৰ বাবে সন্ধান ক�
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
-#, fuzzy, c-format
+#, c-format
 msgid "Welcome to %s !"
-msgstr "স্বাগতম!"
+msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
 msgid "Setup"
@@ -850,310 +795,5 @@ msgid ""
 msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
-#, fuzzy
 msgid "_Start Setup"
-msgstr "আৰম্ভণিৰ সংস্থাপন"
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "এই বিৱৰণসমূহ সঠিক নে? আপুনি বিচাৰিলে ইয়াক সলনি কৰিব পাৰে।"
-
-#~ msgid "Disable image"
-#~ msgstr "ছবি অসামৰ্থবান কৰক"
-
-#~ msgid "Take a photo..."
-#~ msgstr "এটা ছবি লওক..."
-
-#, c-format
-#~| msgid "A user with the username '%s' already exists"
-#~ msgid "A user with the username '%s' already exists."
-#~ msgstr "'%s' ব্যৱহাৰকাৰীনামৰ সৈতে এজন ব্যৱহাৰকাৰী ইতিমধ্যে অস্তিত্ববান।"
-
-#~ msgid "License Agreements"
-#~ msgstr "অনুজ্ঞা চুক্তিসমূহ"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr "মই এই অন্ত ব্যৱহাৰকাৰী অনুজ্ঞা চুক্তিৰ চুক্তি আৰু চৰ্তবোৰ মানি লৈছো (_a)।"
-
-#~ msgid "Cancel"
-#~ msgstr "বাতিল কৰক"
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr ""
-#~ "সংস্থাপনৰ পিছত আপুনি আপোনাৰ অনলাইন একাওন্টসমূহ পুনৰদৰ্শন (আৰু অন্যবোৰ যোগ) কৰিব "
-#~ "পাৰিব।"
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "ইন্টাৰনেটৰ সৈতে সংযোগ কৰিলে আপুনি সময় সংহতি কৰিব পাৰিব, আপোনাৰ বিৱৰণসমূহ যোগ "
-#~ "কৰিব পাৰিব, আৰু আপোনাৰ ইমেইল, কেলেন্ডাৰ, আৰু পৰিচয়সমূহ অভিগম কৰিবলৈ সামৰ্থবান "
-#~ "হব। ই লগতে এন্টাৰপ্ৰাইজ লগিন একাওন্টসমূহৰ বাবে প্ৰয়োজনীয়।"
-
-#~ msgid "_Verify"
-#~ msgstr "সত্যাপন কৰক (_V)"
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to add more letters, numbers and symbols."
-#~ msgstr "অধিক আখৰ, সংখ্যা আৰু চিহ্ন যোগ কৰাৰ চেষ্টা কৰক।"
-
-#~| msgid "Strength: %s"
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "শক্তি: দূৰ্বল"
-
-#~| msgid "Strength: %s"
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "শক্তি: কম"
-
-#~| msgid "Strength: %s"
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "শক্তি: মধ্যম"
-
-#~| msgid "Strength: %s"
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "শক্তি: ভাল"
-
-#~| msgid "Strength: %s"
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "শক্তি: উচ্চ"
-
-#~ msgid "No regions found"
-#~ msgstr "কোনো অঞ্চল পোৱা নগল"
-
-#~ msgid "Region"
-#~ msgstr "অঞ্চল"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "আপোনাৰ ৰাজ্য অথবা অঞ্চল বাছক।"
-
-#~ msgid "Ready to Go"
-#~ msgstr "যাবলৈ প্ৰস্তুত"
-
-#~ msgid "You're all set!"
-#~ msgstr "আপুনি প্ৰস্তুত!"
-
-#, c-format
-#~| msgid ""
-#~| "We think that your time zone is <b>%s</b>. Press Next to continue or "
-#~| "search for a city to manually set the time zone."
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "আপুনি ভাৱো যে আপোনাৰ সময়অঞ্চল %s। আগবাঢ়িবলৈ পৰৱৰ্তী টিপক অথবা সময়অঞ্চল "
-#~ "হস্তচালিতভাৱে সংহতি কৰিবলৈ এটা নগৰ সন্ধান কৰক।"
-
-#~ msgid "Your username cannot be changed after setup."
-#~ msgstr "আপোনাৰ ব্যৱহাৰকাৰীনাম সংস্থাপনৰ পিছত পৰিবৰ্তন কৰিব পৰা নহব।"
-
-#~| msgid "No password"
-#~ msgid "Choose a _password"
-#~ msgstr "এটা পাছৱৰ্ড বাছক (_p)"
-
-#~ msgctxt "Password strength"
-#~ msgid "Too short"
-#~ msgstr "অতি সৰু"
-
-#~ msgctxt "Password strength"
-#~ msgid "Not good enough"
-#~ msgstr "পৰ্যাপ্ত ভাল নহয়"
-
-#~ msgctxt "Password strength"
-#~ msgid "Weak"
-#~ msgstr "দুৰ্বল"
-
-#~ msgctxt "Password strength"
-#~ msgid "Fair"
-#~ msgstr "নিৰপেক্ষ"
-
-#~ msgctxt "Password strength"
-#~ msgid "Good"
-#~ msgstr "ভাল"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strong"
-#~ msgstr "শক্তিশালী"
-
-#~ msgid "Login"
-#~ msgstr "লগিন"
-
-#~ msgid "Create a Local Account"
-#~ msgstr "এটা স্থানীয় একাওন্ট সৃষ্টি কৰক"
-
-#~ msgid "page 1"
-#~ msgstr "পৃষ্ঠা ১"
-
-#~ msgid "Create an Enterprise Account"
-#~ msgstr "এটা এন্টাৰপ্ৰাইজ একাওন্ট সৃষ্টি কৰক"
-
-#~ msgid "Other"
-#~ msgstr "অন্য"
-
-#~ msgid "No input source selected"
-#~ msgstr "কোনো ইনপুট উৎস নিৰ্বাচন কৰা হোৱা নাই"
-
-#~ msgid "Add an Input Source"
-#~ msgstr "এটা ইনপুট উৎস যোগ কৰক"
-
-#~| msgid "Other"
-#~ msgctxt "Online Account"
-#~ msgid "Other"
-#~ msgstr "অন্য"
-
-#~ msgid "Mail"
-#~ msgstr "মেইল"
-
-#~ msgid "Contacts"
-#~ msgstr "পৰিচয়সমূহ"
-
-#~ msgid "Chat"
-#~ msgstr "চেট"
-
-#~ msgid "Resources"
-#~ msgstr "সম্পদসমূহ"
-
-#~ msgid "Error creating account"
-#~ msgstr "একাওন্ট সৃষ্টি কৰোতে ত্ৰুটি"
-
-#~ msgid "Error removing account"
-#~ msgstr "একাওন্ট আতৰাওতে ত্ৰুটি"
-
-#~ msgid "Are you sure you want to remove the account?"
-#~ msgstr "আপুনি একাওন্ট আতৰাবলে নিশ্চিত নে?"
-
-#~ msgid "This will not remove the account on the server."
-#~ msgstr "ই চাৰ্ভাৰত একাওন্টক আতৰাই নিদিয়ে।"
-
-#~ msgid "_Remove"
-#~ msgstr "আতৰাওক (_R)"
-
-#~ msgid "Connect to your existing data in the cloud"
-#~ msgstr "cloud ত আপোনাৰ স্থায়ী তথ্যৰ সৈতে সংযোগ কৰক"
-
-#~ msgid "_Add Account"
-#~ msgstr "একাওন্ট যোগ কৰক (_A)"
-
-#~ msgid "Input Sources"
-#~ msgstr "ইনপুট উৎসসমূহ"
-
-#~| msgid "Show Keyboard Layout"
-#~ msgid "Select keyboard layouts"
-#~ msgstr "কিবৰ্ড বিন্যাসসমূহ বাছক"
-
-#~ msgid "Login settings are used by all users when logging into the system"
-#~ msgstr ""
-#~ "চিস্টেমত লগিন কৰোতে লগিন সংহতিসমূহ সকলো ব্যৱহাৰকাৰী দ্বাৰা ব্যৱহাৰ কৰা হয়"
-
-#~ msgid "Search for a location"
-#~ msgstr "এটা অৱস্থা সন্ধান কৰক"
-
-#~ msgid "_Determine your location automatically"
-#~ msgstr "আপোনাৰ অৱস্থান স্বচালিতভাৱে নিৰ্ধাৰণ কৰক (_D)"
-
-#~ msgid "No network devices found."
-#~ msgstr "কোনো নেটৱৰ্ক ডিভাইচ পোৱা নগল।"
-
-#~ msgid "Thank You"
-#~ msgstr "আপোনাক ধন্যবাদ"
-
-#~ msgid "Your computer is ready to use."
-#~ msgstr "আপোনাৰ কমপিউটাৰ ব্যৱহাৰ কৰিবলে প্ৰস্তুত।"
-
-#~ msgid "You may change these options at any time in Settings."
-#~ msgstr "আপুনি এই বিকল্পসমূহক যিকোনো সময়তে সংহতিসমূহত সাল সলনি কৰিব পাৰিব।"
-
-#~ msgid "_Start using GNOME 3"
-#~ msgstr "GNOME 3 ব্যৱহাৰ কৰা আৰম্ভ কৰক (_S)"
-
-#~ msgid "Select input sources"
-#~ msgstr "ইনপুট উৎসসমূহ বাছক"
-
-#~ msgid "_Back"
-#~ msgstr "পিছলৈ (_B)"
-
-#~ msgid "Sorry"
-#~ msgstr "ক্ষমা কৰিব"
-
-#~ msgid "Input methods can't be used on the login screen"
-#~ msgstr "ইনপুট পদ্ধতিসমূহ লগিন পৰ্দাত ব্যৱহাৰ কৰিব নোৱাৰি"
-
-#~ msgid "Your session needs to be restarted for changes to take effect"
-#~ msgstr "পৰিবৰ্তনসমূহ প্ৰভাৱশালী হবলে আপোনাৰ অধিবেশন পুনৰাম্ভ কৰিব লাগিব"
-
-#~ msgid "Restart Now"
-#~ msgstr "এতিয়া পুনৰাম্ভ কৰক"
-
-#~ msgctxt "Language"
-#~ msgid "None"
-#~ msgstr "কোনো নহয়"
-
-#~ msgid "Keyboard Layout"
-#~ msgstr "কিবৰ্ড বিন্যাস"
-
-#~ msgid "Remove Input Source"
-#~ msgstr "ইনপুট উৎস আতৰাওক"
-
-#~ msgid "Move Input Source Up"
-#~ msgstr "ইনপুট উৎসক উপৰত স্থানান্তৰ কৰক"
-
-#~ msgid "Select an input source"
-#~ msgstr "এটা ইনপুট উৎস বাছক"
-
-#~ msgid "Use %s"
-#~ msgstr "%s ব্যৱহাৰ কৰক"
-
-#~ msgid "Create Local Account"
-#~ msgstr "স্থানীয় একাওন্ট সৃষ্টি কৰক"
-
-#~ msgid "_Done"
-#~ msgstr "কৰা হল (_D)"
-
-#~ msgid "_Require a password to use this account"
-#~ msgstr "এই একাওন্ট ব্যৱহাৰ কৰিবলে এটা পাছৱৰ্ডৰ প্ৰয়োজন (_R)"
-
-#~ msgid "_Act as administrator of this computer"
-#~ msgstr "এই কমপিউটাৰৰ প্ৰশাসক হিচাপে কাৰ্য্য কৰক (_A)"
-
-#~ msgid "Choose How to Login"
-#~ msgstr "লগিন কৰাৰ ধৰণ বাছক"
-
-#~ msgid "Remove"
-#~ msgstr "আতৰাওক"
-
-#~ msgid "English"
-#~ msgstr "ইংৰাজী"
-
-#~ msgid "British English"
-#~ msgstr "ব্ৰিটিচ ইংৰাজী"
-
-#~ msgid "German"
-#~ msgstr "জাৰ্মান"
-
-#~ msgid "French"
-#~ msgstr "ফৰাচী"
-
-#~ msgid "Spanish"
-#~ msgstr "স্পেনিচ"
-
-#~ msgid "Chinese (simplified)"
-#~ msgstr "চীনা (সৰলীকৃত)"
-
-#~ msgid "Unspecified"
-#~ msgstr "অধাৰ্য্যত"
-
-#~ msgid "Show _all"
-#~ msgstr "সকলো দেখুৱাওক (_a)"
-
-#~ msgid "Enjoy GNOME!"
-#~ msgstr "GNOME ৰ আনন্দ লওক!"
-
-#~ msgid "New to GNOME 3 and need help finding your way around?"
-#~ msgstr "আপুনি GNOME 3 লে নতুন নেকি আৰু অধিক জানিবলে সহায়ৰ প্ৰয়োজন অনুভৱ কৰিছে?"
+msgstr ""

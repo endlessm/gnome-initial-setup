@@ -1,24 +1,24 @@
-# Korean translation for gnome-initial-setup.
-# Copyright (C) 2012 gnome-initial-setup's COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-# Moses Kim <creatinov.kim@gmail.com>, 2018.
-# Seong-ho Cho <shcho@gnome.org>, 2012-2021.
-#
+# 
+# Translators:
+# Moses Kim <creatinov.kim@gmail.com>, 2018
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2013
+# Seong-ho Cho <shcho@gnome.org>, 2012-2015, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2022-12-07 15:45-0700\n"
-"PO-Revision-Date: 2021-08-30 18:20+0900\n"
-"Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
-"Language-Team: 한국어 <gnome-kr@googlegroups.com>\n"
-"Language: ko\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2022-12-08 00:11+0000\n"
+"PO-Revision-Date: 2014-06-16 22:11+0000\n"
+"Last-Translator: Moses Kim <creatinov.kim@gmail.com>, 2018\n"
+"Language-Team: Korean (http://www.transifex.com/endless-os/gnome-initial-setup/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.3.1\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
@@ -58,7 +58,6 @@ msgstr ""
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:363
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -109,9 +108,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"기업 로그인 기능을 사용하면 이 장치에서 기존의 중앙 관리 사용자 계정을 사용"
-"할 수 있습니다. 또한 이 계정으로 인터넷의 기업 자료에 접근할 수 있습니다."
+msgstr "기업 로그인 기능을 사용하면 이 장치에서 기존의 중앙 관리 사용자 계정을 사용할 수 있습니다. 또한 이 계정으로 인터넷의 기업 자료에 접근할 수 있습니다."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -145,10 +142,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"기업 로그인을 사용하려면, 이 컴퓨터를 도메인의 범주에 넣어야 합니다. 네트워"
-"크 관리자에게 이곳에 도메인 암호 입력을 요청하고, 컴퓨터에 유일한 이름을 골"
-"라 입력하십시오."
+msgstr "기업 로그인을 사용하려면, 이 컴퓨터를 도메인의 범주에 넣어야 합니다. 네트워크 관리자에게 이곳에 도메인 암호 입력을 요청하고, 컴퓨터에 유일한 이름을 골라 입력하십시오."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -198,9 +192,8 @@ msgid "_Full Name"
 msgstr "전체 이름(_F)"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
-#, fuzzy
 msgid "Set a password"
-msgstr "암호 지정"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
@@ -243,8 +236,7 @@ msgstr "%s 도메인에 연결할 수 없습니다: %s"
 
 #: gnome-initial-setup/pages/account/um-utils.c:255
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr ""
-"죄송하지만, 사용자 이름을 사용할 수 없습니다. 다른 이름을 사용해보십시오."
+msgstr "죄송하지만, 사용자 이름을 사용할 수 없습니다. 다른 이름을 사용해보십시오."
 
 #: gnome-initial-setup/pages/account/um-utils.c:258
 #, c-format
@@ -252,22 +244,18 @@ msgid "The username is too long."
 msgstr "사용자 이름이 너무 깁니다."
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
-#, fuzzy
 msgid "The username must start with a lower case letter from a-z."
-msgstr "사용자 이름을 “-”로 시작할 수 없습니다."
+msgstr "사용자 이름은 a-z 범위의 영문 소문자로 시작해야합니다."
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
 msgstr "해당 사용자 이름을 사용할 수 없습니다. 다른 이름을 사용해보십시오."
 
 #: gnome-initial-setup/pages/account/um-utils.c:267
-#, fuzzy
 msgid ""
-"The username should only consist of lower case letters from a-z, digits, and "
-"the following characters: - _"
-msgstr ""
-"사용자 이름은 영문 알파벳 대소문자, 숫자, ‘.’, ‘-’, ‘_’ 문자로만 구성해야 합"
-"니다"
+"The username should only consist of lower case letters from a-z, digits, and"
+" the following characters: - _"
+msgstr "사용자 이름에는 a-z 범위의 영문 소문자, 숫자, 하이픈(-), 언더스코어(_)만 사용할 수 있습니다"
 
 #: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."
@@ -294,14 +282,13 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
-#, fuzzy
 msgid "Third Party Software"
-msgstr "서드 파티 저장소"
+msgstr ""
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -319,9 +306,7 @@ msgstr "온라인 계정 연결"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"전자메일 계정, 온라인 달력, 연락처, 문서, 사진에 쉽게 접근할 계정에 연결합니"
-"다."
+msgstr "전자메일 계정, 온라인 달력, 연락처, 문서, 사진에 쉽게 접근할 계정에 연결합니다."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
@@ -339,7 +324,6 @@ msgstr "자세히…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "입력기가 없습니다"
@@ -364,7 +348,6 @@ msgstr "환영합니다"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "환영합니다!"
@@ -418,9 +401,7 @@ msgstr "무선 네트워크"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr ""
-"인터넷에 연결하면 새 앱, 정보, 기타 업그레이드 설치에 도움을 받을 수 있습니"
-"다. 또한 시간과 지역을 자동으로 설정해줍니다."
+msgstr "인터넷에 연결하면 새 앱, 정보, 기타 업그레이드 설치에 도움을 받을 수 있습니다. 또한 시간과 지역을 자동으로 설정해줍니다."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -464,7 +445,8 @@ msgstr "%s 암호 설정"
 msgid "Set a Parent Password"
 msgstr "자녀 보호 암호 설정"
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -476,14 +458,12 @@ msgstr "암호가 일치하지 않습니다."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:299
 #: gnome-initial-setup/pages/password/gis-password-page.c:330
-#, fuzzy
 msgid "Show password"
-msgstr "암호 지정"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:338
-#, fuzzy
 msgid "Hide password"
-msgstr "암호 지정"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:531
 msgid "Password"
@@ -516,7 +496,8 @@ msgstr "암호가 약합니다. 암호를 좀 더 바꾸십시오."
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
+"This is a weak password. A password without your user name would be "
+"stronger."
 msgstr "암호가 약합니다. 사용자 이름을 빼면 암호가 더 강력합니다."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
@@ -580,9 +561,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"암호가 약합니다. 같은 글자 반복을 피하십시오. 문자, 숫자, 마침표를 섞어야 합"
-"니다."
+msgstr "암호가 약합니다. 같은 글자 반복을 피하십시오. 문자, 숫자, 마침표를 섞어야 합니다."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
@@ -603,26 +582,23 @@ msgstr "대소문자를 섞어 사용하고 숫자를 사용하거나 두가지 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
 msgstr "문자, 숫자, 문장부호를 더 넣으면 더 강력한 암호가 만들어집니다."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"기술적 문제 보고를 보내시면 %s을(를) 개선하는데 도움을 줍니다. 보고서는 익명"
-"으로 보내며 개인 데이터는 빠집니다."
+msgstr "기술적 문제 보고를 보내시면 %s을(를) 개선하는데 도움을 줍니다. 보고서는 익명으로 보내며 개인 데이터는 빠집니다."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -651,9 +627,7 @@ msgstr "위치 정보 서비스"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"위치 정보를 판단하는 프로그램을 허용합니다. 위치 정보 서비스를 사용할 때 표시"
-"가 나타납니다."
+msgstr "위치 정보를 판단하는 프로그램을 허용합니다. 위치 정보 서비스를 사용할 때 표시가 나타납니다."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -710,13 +684,10 @@ msgstr "서드 파티 저장소"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:113
 msgid ""
-"Third-party repositories provide access to additional software from selected "
-"external sources. They include popular apps, as well as firmware that is "
+"Third-party repositories provide access to additional software from selected"
+" external sources. They include popular apps, as well as firmware that is "
 "important for some devices. Some proprietary software is included."
-msgstr ""
-"서드파티 저장소에서는 선택한 외부 저장소에서 추가 프로그램에 접근할 수 있게 "
-"해줍니다. 일부 장치에 중요한 펌웨어와 인기있는 앱이 추가 프로그램에 해당합니"
-"다. 일부 상업용 프로그램도 들어있습니다."
+msgstr "서드파티 저장소에서는 선택한 외부 저장소에서 추가 프로그램에 접근할 수 있게 해줍니다. 일부 장치에 중요한 펌웨어와 인기있는 앱이 추가 프로그램에 해당합니다. 일부 상업용 프로그램도 들어있습니다."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
@@ -767,7 +738,6 @@ msgstr "%2$s %1$s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -798,9 +768,7 @@ msgstr "시간대"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"위치를 찾을 수 있으면 시간대를 자동으로 설정할 수 있습니다. 설정할 시간대의 "
-"도시를 검색할 수도 있습니다."
+msgstr "위치를 찾을 수 있으면 시간대를 자동으로 설정할 수 있습니다. 설정할 시간대의 도시를 검색할 수도 있습니다."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
@@ -813,7 +781,6 @@ msgstr "인근 도시를 검색하십시오"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
 #, c-format
 msgid "Welcome to %s !"
@@ -827,135 +794,8 @@ msgstr "설정"
 msgid ""
 "Setup will guide you through making an account and enabling some features. "
 "We’ll have you up and running in no time."
-msgstr ""
-"설정 과정에서 계정을 만들고 몇가지 기능을 사용할 수 있게 안내해드립니다. 이"
-"후 바로 사용하실 수 있도록 준비해드리겠습니다."
+msgstr "설정 과정에서 계정을 만들고 몇가지 기능을 사용할 수 있게 안내해드립니다. 이후 바로 사용하실 수 있도록 준비해드리겠습니다."
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
 msgid "_Start Setup"
 msgstr "설정 시작(_S)"
-
-#~ msgid "This is a weak password."
-#~ msgstr "암호가 약합니다."
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "인터넷에 연결하면 시간 설정, 개인 세부정보 추가, 전자메일, 달력, 연락처 접"
-#~ "근 활성화를 할 수 있습니다. 기업 로그인 계정에 필요합니다."
-
-#~ msgid "preferences-system"
-#~ msgstr "preferences-system"
-
-#~ msgid "License Agreements"
-#~ msgstr "라이선스 동의서"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr "최종 사용자 라이선스 동의서의 조항에 동의합니다(_A)."
-
-#~ msgid "No regions found"
-#~ msgstr "지역을 찾을 수 없습니다"
-
-#~ msgid "Region"
-#~ msgstr "지역"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "국가 또는 지역을 선택하십시오."
-
-#~ msgid "Software Repositories"
-#~ msgstr "프로그램 저장소"
-
-#~ msgid "Access additional software from selected third party sources."
-#~ msgstr "선택한 서드 파티 소스로부터 추가 프로그램에 접근합니다."
-
-#~ msgid ""
-#~ "Some of this software is proprietary and therefore has restrictions on "
-#~ "use, sharing, and access to source code."
-#~ msgstr ""
-#~ "이 프로그램의 일부는 상업용으로 사용, 공유 및 소스 코드 접근을 제한합니다."
-
-#~ msgid "Additional Software Repositories"
-#~ msgstr "추가 프로그램 저장소"
-
-#~ msgid "<a href=\"more\">Find out more…</a>"
-#~ msgstr "<a href=\"more\">더 찾아보기…</a>"
-
-#~ msgid ""
-#~ "Proprietary software typically has restrictions on how it can be used and "
-#~ "on access to source code. This prevents anyone but the software owner "
-#~ "from inspecting, improving or learning from its code."
-#~ msgstr ""
-#~ "상업용 프로그램은 보통 사용 방식과 소스 코드 접근을 제한합니다. 프로그램"
-#~ "의 소유자만 코드를 살펴보거나 개선할 수 있습니다."
-
-#~ msgid ""
-#~ "In contrast, Free Software can be freely run, copied, distributed, "
-#~ "studied and modified."
-#~ msgstr ""
-#~ "반면에 자유 프로그램은 자유롭게 실행, 복사, 배포, 연구, 수정할 수 있습니"
-#~ "다."
-
-#~ msgid "Ready to Go"
-#~ msgstr "준비 완료"
-
-#~ msgid "You’re ready to go!"
-#~ msgstr "준비됐습니다!"
-
-#~ msgid "Disable image"
-#~ msgstr "이미지 비활성화"
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to avoid common words."
-#~ msgstr "일반적인 단어를 피해보십시오."
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to use more numbers."
-#~ msgstr "더 많은 숫자를 사용해보십시오."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "Password needs to be longer. Try to add more letters, numbers and "
-#~ "punctuation."
-#~ msgstr "암호가 좀더 길어야 합니다. 문자, 숫자, 마침표를 혼용해보십시오."
-
-#~ msgid ""
-#~ "Proprietary software sources provide access to additional software, "
-#~ "including web browsers and games. This software typically has "
-#~ "restrictions on use and access to source code, and is not provided by %s."
-#~ msgstr ""
-#~ "상업용 프로그램 공급원에서는 웹 브라우저 및 게임 같은 추가 프로그램 접근책"
-#~ "을 제공합니다. 이 프로그램은 보통 사용 및 소스 코드 접근을 제한하며, %s에"
-#~ "서 제공하지 않습니다."
-
-#~ msgid "Proprietary Software Sources"
-#~ msgstr "상업용 프로그램 공급원"
-
-#~ msgid "A user with the username ‘%s’ already exists."
-#~ msgstr "이미 ‘%s’ 이름을 가진 사용자가 있습니다."
-
-#~ msgid "_Verify"
-#~ msgstr "검증(_V)"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "강도: 약함"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "강도: 낮음"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "강도: 적당"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "강도: 양호"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "강도: 강함"

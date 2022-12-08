@@ -1,22 +1,21 @@
-# Kazakh translation for gnome-initial-setup.
-# Copyright (C) 2013 gnome-initial-setup's COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-initial-setup package.
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2013-2021.
-#
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2022-12-07 15:45-0700\n"
-"PO-Revision-Date: 2021-08-28 20:11+0500\n"
-"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
-"Language-Team: Kazakh <kk@li.org>\n"
-"Language: kk\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2022-12-08 00:11+0000\n"
+"PO-Revision-Date: 2014-06-16 22:11+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Kazakh (http://www.transifex.com/endless-os/gnome-initial-setup/language/kk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"Language: kk\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
@@ -56,7 +55,6 @@ msgstr ""
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:363
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -107,11 +105,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"Кәсіпорындық кіру бар болып тұрған және орталықтан басқарылатын пайданушы "
-"тіркелгісіне бұл құрылғыда қолданылуды мүмкін етеді. Сонымен қатар, сіз бұл "
-"тіркелгіні кәсіпорынның интернеттегі ресурстарына қатынау үшін қолдана "
-"аласыз."
+msgstr "Кәсіпорындық кіру бар болып тұрған және орталықтан басқарылатын пайданушы тіркелгісіне бұл құрылғыда қолданылуды мүмкін етеді. Сонымен қатар, сіз бұл тіркелгіні кәсіпорынның интернеттегі ресурстарына қатынау үшін қолдана аласыз."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -145,10 +139,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"Кәсіпорын тіркелгілерін қолдану үшін, бұл компьютер доменге кіруі керек. "
-"Желілік әкімшісі осында өз домендік паролін енгізуі тиіс және компьютеріңіз "
-"үшін бірегей атауды таңдау керек."
+msgstr "Кәсіпорын тіркелгілерін қолдану үшін, бұл компьютер доменге кіруі керек. Желілік әкімшісі осында өз домендік паролін енгізуі тиіс және компьютеріңіз үшін бірегей атауды таңдау керек."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -164,9 +155,7 @@ msgstr "Әкімші паролі"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:209
 msgid "Please check the name and username. You can choose a picture too."
-msgstr ""
-"Атыңыз және пайдаланушы атын таңдаңыз. Сонымен қатар, сіз суретті де таңдай "
-"аласыз."
+msgstr "Атыңыз және пайдаланушы атын таңдаңыз. Сонымен қатар, сіз суретті де таңдай аласыз."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:460
 msgid "We need a few details to complete setup."
@@ -193,18 +182,15 @@ msgstr "Өзіңіз туралы"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:39
 msgid "Please provide a name and username. You can choose a picture too."
-msgstr ""
-"Атыңыз және пайдаланушы атын енгізіңіз. Сонымен қатар, сіз суретті де таңдай "
-"аласыз."
+msgstr "Атыңыз және пайдаланушы атын енгізіңіз. Сонымен қатар, сіз суретті де таңдай аласыз."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:53
 msgid "_Full Name"
 msgstr "Тол_ық аты"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
-#, fuzzy
 msgid "Set a password"
-msgstr "Парольді орнату"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
@@ -255,28 +241,22 @@ msgid "The username is too long."
 msgstr "Пайдаланушы аты тым ұзын."
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
-#, fuzzy
 msgid "The username must start with a lower case letter from a-z."
-msgstr "Пайдаланушы аты \"-\" таңбасынан басталмауы тиіс."
+msgstr "Пайдаланушы аты a-z ішінен алынған кіші әріптен басталуы тиіс."
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
 msgstr "Бұл пайдаланушы аты қолжетімсіз. Басқасын көріңіз."
 
 #: gnome-initial-setup/pages/account/um-utils.c:267
-#, fuzzy
 msgid ""
-"The username should only consist of lower case letters from a-z, digits, and "
-"the following characters: - _"
-msgstr ""
-"Пайдаланушы атында тек ағылшын әліппесінің a-z арасындағы бас/кіші әріптері, "
-"сандар, және келесі таңбалар болуы мүмкін: . - _"
+"The username should only consist of lower case letters from a-z, digits, and"
+" the following characters: - _"
+msgstr "Пайдаланушы атында тек ағылшын әліппесінің a-z арасындағы кіші әріптер, сандар, және келесі таңбалар болуы мүмкін: . - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr ""
-"Бұл сіздің үй бумаңыздың аты ретінде қолданылады, және оны кейін өзгертуге "
-"болмайды."
+msgstr "Бұл сіздің үй бумаңыздың аты ретінде қолданылады, және оны кейін өзгертуге болмайды."
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
@@ -299,14 +279,13 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
-#, fuzzy
 msgid "Third Party Software"
-msgstr "Үшінші жақты репозиторийлер"
+msgstr ""
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -324,15 +303,12 @@ msgstr "Желідегі тіркелгілерді байланыстыру"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr ""
-"Эл. пошта, онлайн күнтізбе, контакттар, құжаттар және фотоларға оңай қатынау "
-"үшін желілік тіркелгілерді қосыңыз."
+msgstr "Эл. пошта, онлайн күнтізбе, контакттар, құжаттар және фотоларға оңай қатынау үшін желілік тіркелгілерді қосыңыз."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
-msgstr ""
-"Тіркелгілерді кез-кезген кезде Баптаулар ішінен қосу немесе өшіруге болады."
+msgstr "Тіркелгілерді кез-кезген кезде Баптаулар ішінен қосу немесе өшіруге болады."
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
@@ -345,7 +321,6 @@ msgstr "Көбірек…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Кіріс көздері табылмады"
@@ -370,7 +345,6 @@ msgstr "Қош келдіңіз"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "Қош келдіңіз!"
@@ -424,10 +398,7 @@ msgstr "Wi-Fi"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr ""
-"Интернетке байланысу жаңа қолданбаларды, ақпаратты және басқа жаңартуларды "
-"алуға көмектеседі. Сондай-ақ, уақыт пен орналасуды автоматты түрде орнатуға "
-"көмектеседі."
+msgstr "Интернетке байланысу жаңа қолданбаларды, ақпаратты және басқа жаңартуларды алуға көмектеседі. Сондай-ақ, уақыт пен орналасуды автоматты түрде орнатуға көмектеседі."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -445,9 +416,7 @@ msgstr "%s үшін ата-ана бақылауы"
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:137
 msgid "Set restrictions on what this user can run or install."
-msgstr ""
-"Бұл пайдаланушы нені іске қоса немесе орната алатынын анықтайтын шектеулерін "
-"орнату."
+msgstr "Бұл пайдаланушы нені іске қоса немесе орната алатынын анықтайтын шектеулерін орнату."
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:232
 msgid "Parental Controls"
@@ -473,7 +442,8 @@ msgstr "%s үшін парольді орнату"
 msgid "Set a Parent Password"
 msgstr "Ата-ана бақылау паролін орнату"
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -485,14 +455,12 @@ msgstr "Парольдер өзара сәйкес келмейді."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:299
 #: gnome-initial-setup/pages/password/gis-password-page.c:330
-#, fuzzy
 msgid "Show password"
-msgstr "Пароль жоқ"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:338
-#, fuzzy
 msgid "Hide password"
-msgstr "Пароль жоқ"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:531
 msgid "Password"
@@ -512,9 +480,7 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
-"Бұл пароль сіздің соңғы пароліңізге өте ұқсайды. Кейбір әріптер мен сандарды "
-"өзгертіп көріңіз."
+msgstr "Бұл пароль сіздің соңғы пароліңізге өте ұқсайды. Кейбір әріптер мен сандарды өзгертіп көріңіз."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -522,17 +488,14 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
-"Бұл пароль сіздің соңғы пароліңізге өте ұқсайды. Парольді әрі қарай өзгертіп "
-"қараңыз."
+msgstr "Бұл пароль сіздің соңғы пароліңізге өте ұқсайды. Парольді әрі қарай өзгертіп қараңыз."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr ""
-"Бұл пароль әлсіз. Сіздің пайдаланушы атыңызды қолданбайтын пароль күштірек "
-"болады."
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr "Бұл пароль әлсіз. Сіздің пайдаланушы атыңызды қолданбайтын пароль күштірек болады."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
@@ -544,9 +507,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
-"Бұл пароль әлсіз. Пароль ішіндегі сөздердің кейбіреулерін қолданбауға "
-"тырысыңыз."
+msgstr "Бұл пароль әлсіз. Пароль ішіндегі сөздердің кейбіреулерін қолданбауға тырысыңыз."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
@@ -556,9 +517,7 @@ msgstr "Бұл пароль әлсіз. Қарапайым сөздерді қо
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr ""
-"Бұл пароль әлсіз. Бар сөздерді тек орындарымен ауыстыруды қолданбауға "
-"тырысыңыз."
+msgstr "Бұл пароль әлсіз. Бар сөздерді тек орындарымен ауыстыруды қолданбауға тырысыңыз."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
@@ -580,18 +539,14 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
-"Бұл пароль әлсіз. Көбірек арнайы таңбаларды, тыныс белгілері сияқты, "
-"қолданып көріңіз."
+msgstr "Бұл пароль әлсіз. Көбірек арнайы таңбаларды, тыныс белгілері сияқты, қолданып көріңіз."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
-"Бұл пароль әлсіз. Әріптер, сандар мен тыныс белгілерді араластыруды қолданып "
-"көріңіз."
+msgstr "Бұл пароль әлсіз. Әріптер, сандар мен тыныс белгілерді араластыруды қолданып көріңіз."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
@@ -603,9 +558,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"Бұл пароль әлсіз. Бір таңбаны қайталамауды қолданып көріңіз: сізге әріптер, "
-"сандар мен тыныс белгілерді араластырып, қолдану керек."
+msgstr "Бұл пароль әлсіз. Бір таңбаны қайталамауды қолданып көріңіз: сізге әріптер, сандар мен тыныс белгілерді араластырып, қолдану керек."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
@@ -616,41 +569,33 @@ msgstr "Бұл пароль әлсіз. 1234 не abcd сияқты тізбек
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr ""
-"Бұл пароль әлсіз. Көбірек әріптер, сандар мен тыныс белгілерін қосып көріңіз."
+msgstr "Бұл пароль әлсіз. Көбірек әріптер, сандар мен тыныс белгілерін қосып көріңіз."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
-"Бас және кіші әріптерді араластырыңыз және бір-екі санды қолдануға тырысыңыз."
+msgstr "Бас және кіші әріптерді араластырыңыз және бір-екі санды қолдануға тырысыңыз."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-"Көбірек әріптер, сандар және тыныс белгілерін қосу арқылы парольді күштірек "
-"қылуға болады."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
+msgstr "Көбірек әріптер, сандар және тыныс белгілерін қосу арқылы парольді күштірек қылуға болады."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"Техникалық мәселелер жөнінде хабарламаларды жіберу бізге %s жақсартуға "
-"көмектеседі. Хабарламалар анонимды түрде жіберіледі және олардан жеке "
-"деректер кетіріледі."
+msgstr "Техникалық мәселелер жөнінде хабарламаларды жіберу бізге %s жақсартуға көмектеседі. Хабарламалар анонимды түрде жіберіледі және олардан жеке деректер кетіріледі."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -679,9 +624,7 @@ msgstr "Орналасулар қызметі"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Қолданбаларға сіздің географиялық орналасуыңызды білуді рұқсат ету. "
-"Орналасулар қызметі қолданылған кезде арнайы индикатор көрсетіледі."
+msgstr "Қолданбаларға сіздің географиялық орналасуыңызды білуді рұқсат ету. Орналасулар қызметі қолданылған кезде арнайы индикатор көрсетіледі."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
@@ -690,8 +633,7 @@ msgstr "Мәселелер жөнінде автохабарлау"
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:110
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
-msgstr ""
-"Жекелік баптауларын кез-кезген кезде Баптаулар ішінен өзгертуге болады."
+msgstr "Жекелік баптауларын кез-кезген кезде Баптаулар ішінен өзгертуге болады."
 
 #: gnome-initial-setup/pages/site/gis-site-page.ui:33
 msgid "Site"
@@ -739,14 +681,10 @@ msgstr "Үшінші жақты репозиторийлер"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:113
 msgid ""
-"Third-party repositories provide access to additional software from selected "
-"external sources. They include popular apps, as well as firmware that is "
+"Third-party repositories provide access to additional software from selected"
+" external sources. They include popular apps, as well as firmware that is "
 "important for some devices. Some proprietary software is included."
-msgstr ""
-"Үшінші жақты репозиторийлер таңдалған сыртқы көздерден қосымша бағдарламалық "
-"қамтамаға қол жеткізуге мүмкін етеді. Соның ішінде танымал бағдарламалар, "
-"сондай-ақ кейбір құрылғылар үшін маңызды бинарлық кодтар жатады. Кейбір "
-"проприетарлы бағдарламалық қамтама да бар."
+msgstr "Үшінші жақты репозиторийлер таңдалған сыртқы көздерден қосымша бағдарламалық қамтамаға қол жеткізуге мүмкін етеді. Соның ішінде танымал бағдарламалар, сондай-ақ кейбір құрылғылар үшін маңызды бинарлық кодтар жатады. Кейбір проприетарлы бағдарламалық қамтама да бар."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
@@ -797,7 +735,6 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -828,9 +765,7 @@ msgstr "Уақыт белдеуі"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"Сіздің орналасуыңыз табылған кезде уақыт белдеу автоматты түрде орнатылады. "
-"Сонымен қатар, сіз өз қалаңызды орнату үшін қолмен да іздей аласыз."
+msgstr "Сіздің орналасуыңыз табылған кезде уақыт белдеу автоматты түрде орнатылады. Сонымен қатар, сіз өз қалаңызды орнату үшін қолмен да іздей аласыз."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:56
 msgid "Please search for a nearby city"
@@ -843,7 +778,6 @@ msgstr "Жақын қаланы іздеңіз"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
 #, c-format
 msgid "Welcome to %s !"
@@ -857,199 +791,8 @@ msgstr "Бастапқы баптау"
 msgid ""
 "Setup will guide you through making an account and enabling some features. "
 "We’ll have you up and running in no time."
-msgstr ""
-"Бастапқы баптау қолданбасы сізге тіркелгі жасау және кейбір мүмкіндіктерді "
-"іске қосуға көмектеседі. Сізге жылдам жұмысты бастауға көмектесеміз."
+msgstr "Бастапқы баптау қолданбасы сізге тіркелгі жасау және кейбір мүмкіндіктерді іске қосуға көмектеседі. Сізге жылдам жұмысты бастауға көмектесеміз."
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
 msgid "_Start Setup"
 msgstr "Бастапқы баптауды ба_стау"
-
-#~ msgid "This is a weak password."
-#~ msgstr "Бұл пароль әлсіз."
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "Интернетке байланысты орнату сізге дұрыс уақытты орнату, мәліметтеріңізді "
-#~ "қосу, және эл. пошта, күнтізбе және контакттарға қатынауға мүмкін етеді. "
-#~ "Сонымен қатар, ол кәсіпорын тіркелгісін қолдану үшін керек."
-
-#~ msgid "preferences-system"
-#~ msgstr "preferences-system"
-
-#~ msgid "License Agreements"
-#~ msgstr "Лицензиялық келісім-шарт"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr ""
-#~ "Мен осы түпкі пайдаланушы келісімшартындағы барлық шарттармен к_елісемін."
-
-#~ msgid "No regions found"
-#~ msgstr "Аймақтар табылмады"
-
-#~ msgid "Region"
-#~ msgstr "Аймақ"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "Ел не аймағыңызды таңдаңыз."
-
-#~ msgid "Software Repositories"
-#~ msgstr "БҚ репозиторийлері"
-
-#~ msgid "Access additional software from selected third party sources."
-#~ msgstr "Таңдалған үшінші жақты ұсынушыларынан қосымша БҚ-ға қол жеткізу."
-
-#~ msgid ""
-#~ "Some of this software is proprietary and therefore has restrictions on "
-#~ "use, sharing, and access to source code."
-#~ msgstr ""
-#~ "Бұл БҚ ішінен кейбірі проприетарлы БҚ, оның қолданылу және бастапқы "
-#~ "кодтарға қатынау бойынша шектеулері бар."
-
-#~ msgid "Additional Software Repositories"
-#~ msgstr "Қосымша БҚ репозиторийлері"
-
-#~ msgid "<a href=\"more\">Find out more…</a>"
-#~ msgstr "<a href=\"more\">Көбірек білу…</a>"
-
-#~ msgid ""
-#~ "Proprietary software typically has restrictions on how it can be used and "
-#~ "on access to source code. This prevents anyone but the software owner "
-#~ "from inspecting, improving or learning from its code."
-#~ msgstr ""
-#~ "Проприетарлы БҚ әдетте қолдану және бастапқы кодтарын алуда шектеулері "
-#~ "бар. Бұл шектеу оның кодын бақылау, жақсарту немесе одан үйренуді тек өз "
-#~ "иесіне мүмкін қылады."
-
-#~ msgid ""
-#~ "In contrast, Free Software can be freely run, copied, distributed, "
-#~ "studied and modified."
-#~ msgstr ""
-#~ "Ал, еркін БҚ болса, оны еркін түрде орындау, көшіріп алу, тарату, одан "
-#~ "оқу және оны түзетуге болады."
-
-#~ msgid "Ready to Go"
-#~ msgstr "Жұмысқа дайын"
-
-#~ msgid "You’re ready to go!"
-#~ msgstr "Бәрі де дайын!"
-
-#~ msgid "Disable image"
-#~ msgstr "Суретті сөндіру"
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to avoid common words."
-#~ msgstr "Қарапайым сөздерді қолданбауға тырысыңыз."
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to use more numbers."
-#~ msgstr "Көбірек сандарды қолданып көріңіз."
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "Password needs to be longer. Try to add more letters, numbers and "
-#~ "punctuation."
-#~ msgstr ""
-#~ "Пароль ұзынырақ болуы тиіс. Көбірек әріптер, сандар және тыныс белгілерін "
-#~ "қосып көріңіз."
-
-#~ msgid ""
-#~ "Proprietary software sources provide access to additional software, "
-#~ "including web browsers and games. This software typically has "
-#~ "restrictions on use and access to source code, and is not provided by %s."
-#~ msgstr ""
-#~ "Проприетарлы БҚ қайнар көздері веб браузерлері және ойындар сияқты "
-#~ "қосымша БҚ орнату мүмкіндігін береді. Бұл БҚ әдетте қолдану және бастапқы "
-#~ "кодтарын алуда шектеулері бар, және оны ұсынушы %s емес."
-
-#~ msgid "Proprietary Software Sources"
-#~ msgstr "Проприетарлы БҚ қайнар көздері"
-
-#~ msgid "A user with the username ‘%s’ already exists."
-#~ msgstr "\"%s\" деген пайдаланушы бар болып тұр."
-
-#~ msgid "_Verify"
-#~ msgstr "_Тексеру"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "Деңгейі: Әлсіз"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "Деңгейі: Төмен"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "Деңгейі: Орташа"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "Деңгейі: Жақсы"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "Деңгейі: Өте жақсы"
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "Бұл мәлімет дұрыс па? Қаласаңыз, оны өзгерте аласыз."
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr ""
-#~ "Орнатудан кейін сіз өзіңіздің желідегі тіркелгілеріңізді қарай аласыз "
-#~ "(және басқаларын қоса аласыз)."
-
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "Сіздің уақыт белдеуіңіз %s деп ойлаймыз. Жалғастыру үшін Келесі "
-#~ "батырмасын басыңыз, ал уақыт белдеуін қолмен орнату үшін өз қалаңызды "
-#~ "іздеп көріңіз."
-
-#~ msgid "Cancel"
-#~ msgstr "Бас тарту"
-
-#~ msgid "Your username cannot be changed after setup."
-#~ msgstr "Пайдаланушы атыңызды орнату аяқталғаннан кейін өзгерту мүмкін емес."
-
-#~ msgctxt "Password strength"
-#~ msgid "Too short"
-#~ msgstr "Тым қысқа"
-
-#~ msgctxt "Password strength"
-#~ msgid "Not good enough"
-#~ msgstr "Жақсыға жетпей тұр"
-
-#~ msgctxt "Password strength"
-#~ msgid "Weak"
-#~ msgstr "Әлсіз"
-
-#~ msgctxt "Password strength"
-#~ msgid "Fair"
-#~ msgstr "Жақсы"
-
-#~ msgctxt "Password strength"
-#~ msgid "Good"
-#~ msgstr "Жақсы"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strong"
-#~ msgstr "Күшті"
-
-#~ msgid "Login"
-#~ msgstr "Кіру"
-
-#~ msgid "Create a Local Account"
-#~ msgstr "Жергілікті тіркелгіні жасау"
-
-#~ msgid "page 1"
-#~ msgstr "бет 1"
-
-#~ msgid "Create an Enterprise Account"
-#~ msgstr "Кәсіпорын деңгейінің тіркелгісін жасау"

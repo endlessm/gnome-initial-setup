@@ -1,23 +1,24 @@
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-#
-# naveenmtp <naveenmtp@gmail.com>, 2012.
-# Shantha kumar <shkumar@redhat.com>, 2013, 2014.
+# This file is distributed under the same license as the gnome-initial-setup package.
+# 
+# Translators:
+# naveenkumar palaniswamy <naveenmtp@gmail.com>, 2012
+# naveenkumar palaniswamy <naveenmtp@gmail.com>, 2012
+# shkumar <shkumar@redhat.com>, 2013-2014
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2022-12-07 15:45-0700\n"
-"PO-Revision-Date: 2014-09-13 21:02+0630\n"
-"Last-Translator: Shantha kumar <shkumar@redhat.com>\n"
-"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
-"Language: ta\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2022-12-08 00:11+0000\n"
+"PO-Revision-Date: 2014-06-16 22:11+0000\n"
+"Last-Translator: shkumar <shkumar@redhat.com>, 2013-2014\n"
+"Language-Team: Tamil (http://www.transifex.com/endless-os/gnome-initial-setup/language/ta/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.5\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
 #: data/gnome-initial-setup.desktop.in.in:3
@@ -57,7 +58,6 @@ msgstr ""
 #. * reformatter (an external program) fails. The
 #. * placeholder is an error message describing what went
 #. * wrong.
-#.
 #: gnome-initial-setup/gis-page-util.c:363
 #, c-format
 msgid "Error running the reformatter: %s"
@@ -76,9 +76,8 @@ msgid "Force existing user mode"
 msgstr "முன்பே உள்ள பயனர் பயன்முறையை நிர்ப்பந்தி"
 
 #: gnome-initial-setup/gnome-initial-setup.c:285
-#, fuzzy
 msgid "— GNOME initial setup"
-msgstr "- GNOME தொடக்க அமைவு"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:36
 msgid "Take a Picture…"
@@ -105,14 +104,11 @@ msgid "Enterprise Login"
 msgstr "என்டர்ப்ரைஸ் புகுபதிகை"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:18
-#, fuzzy
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
 msgstr ""
-"என்டர்ப்ரைஸ் புகுபதிவைக் கொண்டு, இந்த சாதனத்தில் மைய முறையில் நிர்வகிக்கப்படும் முன்பே உள்ள "
-"பயனர் கணக்கைப் பயன்படுத்த முடிகிறது."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -146,10 +142,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"தொழில் ரீதியான புகுபதிவுகளைப் பயன்படுத்த, இந்தக் கணினி டொமைனில் பதிவு செய்யப்பட்டிருக்க "
-"வேண்டும். உங்கள் பிணைய நிர்வாகியை இங்கு டொமைன் கடவுச்சொல்லைத் தட்டச்சு செய்து, உங்கள் "
-"கணினிக்கு ஒரு தனித்துவமான பெயரைத் தேர்வு செய்யுமாறு கேட்கவும்."
+msgstr "தொழில் ரீதியான புகுபதிவுகளைப் பயன்படுத்த, இந்தக் கணினி டொமைனில் பதிவு செய்யப்பட்டிருக்க வேண்டும். உங்கள் பிணைய நிர்வாகியை இங்கு டொமைன் கடவுச்சொல்லைத் தட்டச்சு செய்து, உங்கள் கணினிக்கு ஒரு தனித்துவமான பெயரைத் தேர்வு செய்யுமாறு கேட்கவும்."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -172,9 +165,8 @@ msgid "We need a few details to complete setup."
 msgstr "அமைவை முடிக்க எங்களுக்கு இன்னும் சில விவரங்கள் வேண்டும்."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:566
-#, fuzzy
 msgid "Administrator"
-msgstr "நிர்வாகி பெயர் (_N)"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:572
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:615
@@ -200,9 +192,8 @@ msgid "_Full Name"
 msgstr "முழுப் பெயர் (_F)"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
-#, fuzzy
 msgid "Set a password"
-msgstr "கடவுச்சொல்லை அமைக்கவும்"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
@@ -213,14 +204,12 @@ msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
-#, fuzzy
 msgid "_Enterprise Login"
-msgstr "என்டர்ப்ரைஸ் புகுபதிகை"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:53
-#, fuzzy
 msgid "Go online to set up Enterprise Login."
-msgstr "தொழில் ரீதியான புகுபதிவை அமைத்தல்"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
@@ -241,9 +230,9 @@ msgid "Invalid password, please try again"
 msgstr "செல்லுபடியாகாத கடவுச்சொல், மீண்டும் முயற்சிக்கவும்"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:742
-#, fuzzy, c-format
+#, c-format
 msgid "Couldn’t connect to the %s domain: %s"
-msgstr "%s டொமைனுடன் இணைக்க முடியவில்லை: %s"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:255
 msgid "Sorry, that user name isn’t available. Please try another."
@@ -255,27 +244,22 @@ msgid "The username is too long."
 msgstr "பயனர் பெயர் மிக நீளமாக உள்ளது."
 
 #: gnome-initial-setup/pages/account/um-utils.c:261
-#, fuzzy
 msgid "The username must start with a lower case letter from a-z."
-msgstr "பயனர் பெயர் '-' ஐக் கொண்டு தொடங்கக்கூடாது."
+msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:267
-#, fuzzy
 msgid ""
-"The username should only consist of lower case letters from a-z, digits, and "
-"the following characters: - _"
+"The username should only consist of lower case letters from a-z, digits, and"
+" the following characters: - _"
 msgstr ""
-"பயனர் பெயரில் a-z வரையிலான எழுத்துகள், இலக்கங்கள் மற்றும் '.', '-' மற்றும் '_' "
-"ஆகியவற்றில் ஏதேனும் எழுத்து ஆகியவை மட்டுமே இருக்கலாம்."
 
 #: gnome-initial-setup/pages/account/um-utils.c:271
-#, fuzzy
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr "உங்கள் இல்லக் கோப்புறைக்குப் பெயரிட இதுவே பயன்படுத்தப்படும், இதை மாற்ற முடியாது."
+msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
@@ -298,8 +282,8 @@ msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
 msgid ""
-"Automatically save and send usage statistics and problem reports to Endless. "
-"All data is anonymous."
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
 msgstr ""
 
 #: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
@@ -319,13 +303,10 @@ msgid "Connect Your Online Accounts"
 msgstr "உங்கள் ஆன்லைன் கணக்குகளுக்கு இணைக்கவும்"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:18
-#, fuzzy
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
 msgstr ""
-"உங்கள் கணக்குகளை இணைப்பதால், நீங்கள் உங்கள் மின்னஞ்சல், ஆன்லைன் நாள்காட்டி, தொடர்புகள், ஆவணங்கள் "
-"மற்றும் புகைப்படங்களை எளிதாக அணுகலாம்."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
 msgid ""
@@ -343,7 +324,6 @@ msgstr "மேலும்…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "உள்ளீடுகள் இல்லை"
@@ -368,7 +348,6 @@ msgstr "வருக"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "வரவேற்கிறோம்!"
@@ -403,9 +382,8 @@ msgid "Other…"
 msgstr "மற்றவை…"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:403
-#, fuzzy
 msgid "Wireless networking is disabled"
-msgstr "வயர்லெஸ் பிணையங்கள்"
+msgstr ""
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:410
 msgid "Checking for available wireless networks"
@@ -459,16 +437,16 @@ msgstr "கடவுச்சொல்லை மறந்துவிடாத�
 
 #. Translators: The placeholder is for the user’s full name.
 #: gnome-initial-setup/pages/password/gis-password-page.c:90
-#, fuzzy, c-format
+#, c-format
 msgid "Set a Password for %s"
-msgstr "கடவுச்சொல்லை அமைக்கவும்"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:98
-#, fuzzy
 msgid "Set a Parent Password"
-msgstr "கடவுச்சொல்லை அமைக்கவும்"
+msgstr ""
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -480,23 +458,20 @@ msgstr "கடவுச்சொற்கள் பொருந்தவில�
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:299
 #: gnome-initial-setup/pages/password/gis-password-page.c:330
-#, fuzzy
 msgid "Show password"
-msgstr "கடவுச்சொல் இல்லை"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:338
-#, fuzzy
 msgid "Hide password"
-msgstr "கடவுச்சொல் இல்லை"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:531
 msgid "Password"
 msgstr "கடவுச்சொல்"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:69
-#, fuzzy
 msgid "_Confirm"
-msgstr "கடவுச்சொல்லை உறுதிபடுத்துக (_C)"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -504,139 +479,116 @@ msgid "The new password needs to be different from the old one."
 msgstr "புதிய கடவுச்சொல் பழைய கடவுச்சொல்லிலிருந்து வேறுபட்டதாக இருக்க வேண்டும்."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:83
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr "சில எழுத்துகள் மற்றும் எண்களை மாற்ற முயற்சிக்கவும்."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr "கடவுச்சொல்லை இன்னும் கொஞ்சம் மாற்ற முயற்சிக்கவும்."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr "உங்கள் பயனர் பெயரைக் கொண்டிருக்காத கடவுச்சொல் இன்னும் வலிமையானதாக இருக்கும்."
+"This is a weak password. A password without your user name would be "
+"stronger."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr "கடவுச்சொல்லில் உங்கள் பெயரைப் பயன்படுத்த வேண்டாம்."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr "கடவுச்சொல்லில் சேர்த்துள்ள சில சொற்களைத் தவிர்க்க முயற்சிக்கவும். "
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr "பொதுவான சொற்களைத் தவிர்க்க முயற்சிக்கவும்."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr "முன்பே உள்ள சொற்களை மறுவரிசைப்படுத்துவதைத் தவிர்க்கவும்."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr "அதிக எண்களைப் பயன்படுத்த முயற்சிக்கவும்."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr "அதிக பெரிய எழுத்துகளைப் பயன்படுத்த முயற்சிக்கவும்."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr "அதிக சிறிய எழுத்துகளைப் பயன்படுத்த முயற்சிக்கவும்."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr "நிறுத்தக்குறிகள் போன்ற சிறப்பு எழுத்துக்குறிகளை அதிகம் பயன்படுத்த முயற்சிக்கவும்."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr "எழுத்துகள், எண்கள், நிறுத்தக்குறிகள் ஆகியவற்றைக் கலந்து பயன்படுத்த முயற்சிக்கவும்."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr "ஒரே எழுத்தை மீண்டும் மீண்டும் பயன்படுத்துவதைத் தவிர்க்க முயற்சிக்கவும்."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
 msgstr ""
-"ஒரே வகை எழுத்தை மீண்டும் மீண்டும் பயன்படுத்துவதைத் தவிர்க்க முயற்சிக்கவும்: எழுத்துகள், எண்கள், "
-"நிறுத்தக்குறிகள் ஆகியவற்றைக் கலந்து பயன்படுத்த வேண்டும்."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
-#, fuzzy
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr "1234 அல்லது abcd போன்ற தொடர்ச்சியான வரிசைகளைத் தவிர்க்க முயற்சிக்கவும்."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr "எழுத்துகள், எண்கள், நிறுத்தக்குறிகள் ஆகியவற்றைக் கலந்து பயன்படுத்த முயற்சிக்கவும்."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
-#, fuzzy
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
 msgstr ""
-"பெரிய எழுத்துகளையும் சிறிய எழுத்துகளையும் கலந்து பயன்படுத்தவும், ஒன்றிரண்டு எண்களையும் "
-"பயன்படுத்தவும்."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
-#, fuzzy
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
 msgstr ""
-"நல்ல கடவுச்சொல்! இன்னும் எழுத்துகள், எண்கள் மற்றும் நிறுத்தக்குறிகளைச் சேர்த்தால் இது இன்னும் "
-"வலிமையாகும்."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -647,7 +599,6 @@ msgstr ""
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -669,9 +620,8 @@ msgid "Privacy"
 msgstr ""
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:31
-#, fuzzy
 msgid "Location Services"
-msgstr "இருப்பிடம்"
+msgstr ""
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:52
 msgid ""
@@ -734,8 +684,8 @@ msgstr ""
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:113
 msgid ""
-"Third-party repositories provide access to additional software from selected "
-"external sources. They include popular apps, as well as firmware that is "
+"Third-party repositories provide access to additional software from selected"
+" external sources. They include popular apps, as well as firmware that is "
 "important for some devices. Some proprietary software is included."
 msgstr ""
 
@@ -743,19 +693,17 @@ msgstr ""
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:235
-#, fuzzy, c-format
+#, c-format
 msgid "_Start Using %s"
-msgstr "%s ஐப் பயன்படுத்தத் தொடங்கவும் (_S)"
+msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:242
-#, fuzzy, c-format
+#, c-format
 msgid "%s is ready to be used. We hope that you love it!"
 msgstr ""
-"%s ஐத் தேர்வு செய்ததற்கு நன்றி.\n"
-"உங்களுக்கு பிடிக்கும் என நம்புகிறோம்."
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:266
 msgid "You're ready to try Endless OS"
@@ -790,7 +738,6 @@ msgstr ""
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr ""
@@ -834,11 +781,10 @@ msgstr "அருகிலுள்ள ஒரு நகரத்தைத் த
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
-#, fuzzy, c-format
+#, c-format
 msgid "Welcome to %s !"
-msgstr "வரவேற்கிறோம்!"
+msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
 msgid "Setup"
@@ -851,240 +797,5 @@ msgid ""
 msgstr ""
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
-#, fuzzy
 msgid "_Start Setup"
-msgstr "தொடக்க அமைவு"
-
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr "இந்த விவரங்கள் சரியானவையா? நீங்கள் விரும்பினால் இவற்றை மாற்றலாம்."
-
-#~ msgid "Disable image"
-#~ msgstr "படத்தை முடக்கு"
-
-#~ msgid "Take a photo..."
-#~ msgstr "ஒரு புகைப்படம் எடுக்கவும்..."
-
-#, c-format
-#~| msgid "A user with the username '%s' already exists"
-#~ msgid "A user with the username '%s' already exists."
-#~ msgstr "'%s' என்ற பயனர் பெயரில் ஏற்கனவே ஒரு பயனர் உள்ளார்."
-
-#~ msgid "License Agreements"
-#~ msgstr "உரிம ஒப்பந்தங்கள்"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr ""
-#~ "இந்த இறுதிப்பயனர் ஒப்பந்தத்தில் உள்ள விதிமுறைகள் மற்றும் நிபந்தனைகளை நான் ஏற்றுக்கொண்டேன். "
-#~ "(_a)"
-
-#~ msgid "Cancel"
-#~ msgstr "ரத்துசெய்"
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr ""
-#~ "அமைவுக்குப் பிறகு நீங்கள் உங்கள் ஆன்லைன் கணக்குகளை (மற்றும் பிறவற்றை) மறுஆய்வு செய்யலாம்."
-
-#~ msgid ""
-#~ "Connecting to the Internet will enable you to set the time, add your "
-#~ "details, and enable you to access your email, calendar, and contacts. It "
-#~ "is also necessary for enterprise login accounts."
-#~ msgstr ""
-#~ "இணையத்துடன் இணைந்தால், நீங்கள் நேரத்தை அமைக்க முடியும், உங்கள் விவரங்களைச் சேர்க்க "
-#~ "முடியும், உங்கள் மின்னஞ்சல், நாள்காட்டி மற்றும் தொடர்புகளை அணுக முடியும். தொழில் "
-#~ "ரீதியான புகுபதிவு கணக்குகளுக்கும் இது அவசியம்."
-
-#~ msgid "_Verify"
-#~ msgstr "சரிபார் (_V)"
-
-#~ msgctxt "Password hint"
-#~ msgid "Try to add more letters, numbers and symbols."
-#~ msgstr "மேலும் அதிக எழுத்துகள், எண்கள் மற்றும் குறியீடுகளைச் சேர்க்க முயற்சிக்கவும்."
-
-#~| msgid "Strength: %s"
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "வலிமை: பலவீனமானது"
-
-#~| msgid "Strength: %s"
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "வலிமை: குறைவு"
-
-#~| msgid "Strength: %s"
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "வலிமை: நடுத்தரம்"
-
-#~| msgid "Strength: %s"
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "வலிமை: நன்று"
-
-#~| msgid "Strength: %s"
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "வலிமை: அதிகம்"
-
-#~ msgid "No regions found"
-#~ msgstr "பகுதிகள் இல்லை"
-
-#~ msgid "Region"
-#~ msgstr "பகுதி"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "உங்கள் நாடு அல்லது இருப்பிடத்தை தேர்ந்தெடுக்கவும்."
-
-#~ msgid "Ready to Go"
-#~ msgstr "தொடங்கத் தயார்"
-
-#~ msgid "You're all set!"
-#~ msgstr "தயார்!"
-
-#, c-format
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "உங்கள் நேர மண்டலம் %s என்று நினைக்கிறோம். தொடர அடுத்து என்பதை அழுத்தவும் அலது நேர "
-#~ "மண்டலத்தை நீங்களே அமைக்க நகரத்தைத் தேடவும்."
-
-#~ msgid "Your username cannot be changed after setup."
-#~ msgstr "அமைவு முடிந்த பிறகு உங்கள் பயனர் பெயரை நீங்கள் மாற்ற முடியாது."
-
-#~| msgid "No password"
-#~ msgid "Choose a _password"
-#~ msgstr "ஒரு கடவுச்சொல்லைத் தேர்வு செய்யவும் (_P)"
-
-#~ msgctxt "Password strength"
-#~ msgid "Too short"
-#~ msgstr "மிகவும் சிறியது"
-
-#~ msgctxt "Password strength"
-#~ msgid "Not good enough"
-#~ msgstr "போதிய அளவு நல்லதாக இல்லை"
-
-#~ msgctxt "Password strength"
-#~ msgid "Weak"
-#~ msgstr "வலுவற்றது"
-
-#~ msgctxt "Password strength"
-#~ msgid "Fair"
-#~ msgstr "நியாயமானது"
-
-#~ msgctxt "Password strength"
-#~ msgid "Good"
-#~ msgstr "நன்று"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strong"
-#~ msgstr "பலமானது"
-
-#~ msgid "Login"
-#~ msgstr "புகுபதிகை"
-
-#~ msgid "Create a Local Account"
-#~ msgstr "ஒரு அக கணக்கை உருவாக்கு"
-
-#~ msgid "page 1"
-#~ msgstr "பக்கம் 1"
-
-#~ msgid "Create an Enterprise Account"
-#~ msgstr "என்டர்பிரைஸ் கணக்கை உருவாக்கவும்"
-
-#~ msgid "Other"
-#~ msgstr "மற்றவை"
-
-#~ msgid "No input source selected"
-#~ msgstr "உள்ளீட்டு மூலம் தேர்ந்தெடுக்கப்படவில்லை"
-
-#~ msgid "Add an Input Source"
-#~ msgstr "ஒரு உள்ளீட்டு மூலத்தைச் சேர்"
-
-#~ msgid "Error creating account"
-#~ msgstr "கணக்கை சேர்ப்பதில் பிழை"
-
-#~ msgid "Error removing account"
-#~ msgstr "கணக்கை நீக்குவதில் பிழை"
-
-#~ msgid "Are you sure you want to remove the account?"
-#~ msgstr "உங்கள் கணக்கை உறுதியாக நீக்கலாமா?"
-
-#~ msgid "This will not remove the account on the server."
-#~ msgstr "இதனால் சேவையகத்தில் உள்ள கணக்கு நீக்கப்படாது."
-
-#~ msgid "_Remove"
-#~ msgstr "நீக்கு (_R)"
-
-#~ msgid "Connect to your existing data in the cloud"
-#~ msgstr "க்ளௌடில் முன்பேயுள்ள உங்கள் தரவுடன் இணைக்கவும்"
-
-#~ msgid "_Add Account"
-#~ msgstr "கணக்கைச் சேர் (_A)"
-
-#~ msgid "Input Sources"
-#~ msgstr "உள்ளீட்டு மூலங்கள்"
-
-#~ msgid "Select input sources"
-#~ msgstr "உள்ளீட்டு மூலத்தைத் தேர்ந்தெடுக்கவும்"
-
-#~ msgid "Login settings are used by all users when logging into the system"
-#~ msgstr ""
-#~ "எல்லா பயனர்களும் கணினியில் புகுபதிவு செய்யும் போது புகுபதிவு அமைவுகள் "
-#~ "பயன்படுத்தப்படும்"
-
-#~ msgid "Search for a location"
-#~ msgstr "ஒரு இடத்தைத் தேடுகிறது"
-
-#~ msgid "_Determine your location automatically"
-#~ msgstr "உங்கள் இருப்பிடத்தை தானாகவே தீர்மானிக்க (_D)"
-
-#~ msgid "No network devices found."
-#~ msgstr "பிணைய சாதனங்கள் எதுவும் இல்லை."
-
-#~ msgid "Thank You"
-#~ msgstr "நன்றி"
-
-#~ msgid "Your computer is ready to use."
-#~ msgstr "உங்கள் கணினி இப்போது பயன்படுத்துவதற்கு தயாராக உள்ளது."
-
-#~ msgid "You may change these options at any time in Settings."
-#~ msgstr "நீங்கள் எப்போது வேண்டுமானாலும் அமைவுகளுக்குச் சென்று இந்த விருப்பங்களை மாற்றலாம்."
-
-#~ msgid "_Back"
-#~ msgstr "பின்னால் (_B)"
-
-#~ msgid "Your session needs to be restarted for changes to take effect"
-#~ msgstr "மாற்றங்கள் விளைவை ஏற்படுத்த உங்கள் அமர்வை மறுதொடக்கம் செய்ய வேண்டும்"
-
-#~ msgid "Restart Now"
-#~ msgstr "இப்போது மறுதுவக்கு"
-
-#~ msgctxt "Language"
-#~ msgid "None"
-#~ msgstr "எதுவுமில்லை"
-
-#~ msgid "Sorry"
-#~ msgstr "மன்னிக்கவும்"
-
-#~ msgid "Input methods can't be used on the login screen"
-#~ msgstr "புகுபதிவு திரையில் உள்ளீட்டு மூலங்களைப் பயன்படுத்த முடியாது"
-
-#~ msgid "Remove"
-#~ msgstr "நீக்கு"
-
-#~ msgid "English"
-#~ msgstr "ஆங்கிலம்"
-
-#~ msgid "British English"
-#~ msgstr "பிரித்தானிய ஆங்கிலம்"
-
-#~ msgid "German"
-#~ msgstr "ஜெர்மானியம்"
-
-#~ msgid "French"
-#~ msgstr "பிரென்ச்சு"
-
-#~ msgid "Use %s"
-#~ msgstr "%s ஐ உபயோகப்படுத்து"
+msgstr ""
