@@ -62,7 +62,7 @@ dependencies = [
     dependency ('krb5'),
     dependency ('libsecret-1', version: '>= 0.18.8'),
     dependency ('pwquality'),
-    dependency ('webkit2gtk-4.0', version: '>= 2.26.0'),
+    dependency ('webkit2gtk-4.1', version: '>= 2.26.0'),
     cheese_dep,
     cheese_gtk_dep,
     ibus_dep,
