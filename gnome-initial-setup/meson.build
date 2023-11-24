@@ -53,7 +53,7 @@ dependencies = [
     dependency ('glib-2.0', version: '>= 2.63.1'),
     dependency ('gio-unix-2.0', version: '>= 2.53.0'),
     dependency ('gdm', version: '>= 3.8.3'),
-    dependency ('geocode-glib-1.0'),
+    dependency ('geocode-glib-2.0'),
     dependency ('libgeoclue-2.0', version: '>= 2.3.1'),
     cc.find_library('m', required: false),
     dependency ('pango', version: '>= 1.32.5'),
