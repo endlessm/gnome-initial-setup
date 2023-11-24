@@ -57,7 +57,7 @@ dependencies = [
     dependency ('libgeoclue-2.0', version: '>= 2.3.1'),
     cc.find_library('m', required: false),
     dependency ('pango', version: '>= 1.32.5'),
-    dependency ('rest-0.7'),
+    dependency ('rest-1.0'),
     dependency ('json-glib-1.0'),
     dependency ('krb5'),
     dependency ('libsecret-1', version: '>= 0.18.8'),
