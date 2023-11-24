@@ -6,16 +6,7 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs
 %:
 	dh $@
 
-# malcontent it not in Ubuntu main yet & is only built on some arches
-ifeq (yes,$(shell dpkg-vendor --derives-from Ubuntu && echo yes))
 PARENTAL_CONTROL := -Dparental_controls=disabled
-else
-ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64))
-PARENTAL_CONTROL := -Dparental_controls=enabled
-else
-PARENTAL_CONTROL := -Dparental_controls=disabled
-endif
-endif
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
