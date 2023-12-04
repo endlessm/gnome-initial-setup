@@ -34,6 +34,11 @@ override_dh_gencontrol:
 ifeq (yes,$(shell dpkg-vendor --derives-from Ubuntu && echo yes))
 	dh_gencontrol -- -Vlogo:Depends='gnome-control-center-data'
 else
+ifeq (yes,$(shell dpkg-vendor --derives-from Endless && echo yes))
+	dh_gencontrol -- -Vlogo:Depends='eos-logos' \
+	-Vmalcontent:Recommends='malcontent [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64]'
+else
 	dh_gencontrol -- -Vlogo:Depends='desktop-base' \
 	-Vmalcontent:Recommends='malcontent [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64]'
+endif
 endif
