@@ -1,0 +1,121 @@
+From: Georges Basile Stavracas Neto <georges.stavracas@gmail.com>
+Date: Tue, 14 Mar 2023 15:29:45 -0300
+Subject: privacy: Move subtitles to separate labels
+
+Prior to 71e3e2b4, the subtitles were contained into separate
+GtkLabels connected to the the 'activate-link' signal. That commit
+moved these labels to inside the corresponding AdwActionRows, but
+did not account for the 'activate-link' signal.
+
+To the best of my knowledgethere is currently no way to properly
+support this with libadwaita rows. In addition to that, the latest
+mockup [1] suggest placing these labels beneath the listbox anyway.
+
+Move the subtitle labels to outside the action row, into a separate
+labels beneath the listbox. Connect to the 'activate-link' signal
+again.
+
+[1] https://gitlab.gnome.org/Teams/Design/os-mockups/-/raw/master/initial-setup/initial-setup.png
+
+(cherry picked from commit d230f18dc50bc40977b613845c8d50d1327cacf4)
+
+Bug: https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/issues/181
+Bug-Debian: https://bugs.debian.org/1033228
+Forwarded: https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/merge_requests/196
+---
+ .../pages/privacy/gis-privacy-page.c               |  6 ++---
+ .../pages/privacy/gis-privacy-page.ui              | 31 +++++++++++++++++++++-
+ 2 files changed, 33 insertions(+), 4 deletions(-)
+
+diff --git a/gnome-initial-setup/pages/privacy/gis-privacy-page.c b/gnome-initial-setup/pages/privacy/gis-privacy-page.c
+index 3632142..21e5d48 100644
+--- a/gnome-initial-setup/pages/privacy/gis-privacy-page.c
++++ b/gnome-initial-setup/pages/privacy/gis-privacy-page.c
+@@ -42,7 +42,7 @@ struct _GisPrivacyPagePrivate
+ {
+   GtkWidget *location_switch;
+   GtkWidget *reporting_group;
+-  GtkWidget *reporting_row;
++  GtkWidget *reporting_label;
+   GtkWidget *reporting_switch;
+   GSettings *location_settings;
+   GSettings *privacy_settings;
+@@ -82,7 +82,7 @@ update_os_data (GisPrivacyPage *page)
+       subtitle = g_strdup_printf (_("Sends technical reports that have personal information automatically "
+                                     "removed. Data is collected by %s."), name);
+     }
+-  adw_action_row_set_subtitle (ADW_ACTION_ROW (priv->reporting_row), subtitle);
++  gtk_label_set_markup (GTK_LABEL (priv->reporting_label), subtitle);
+ }
+ 
+ static void
+@@ -244,7 +244,7 @@ gis_privacy_page_class_init (GisPrivacyPageClass *klass)
+   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-privacy-page.ui");
+   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPrivacyPage, location_switch);
+   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPrivacyPage, reporting_group);
+-  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPrivacyPage, reporting_row);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPrivacyPage, reporting_label);
+   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisPrivacyPage, reporting_switch);
+   gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), activate_link);
+ 
+diff --git a/gnome-initial-setup/pages/privacy/gis-privacy-page.ui b/gnome-initial-setup/pages/privacy/gis-privacy-page.ui
+index 84ea8e3..6c48d5f 100644
+--- a/gnome-initial-setup/pages/privacy/gis-privacy-page.ui
++++ b/gnome-initial-setup/pages/privacy/gis-privacy-page.ui
+@@ -25,7 +25,6 @@
+               <object class="AdwActionRow">
+                 <property name="use-markup">True</property>
+                 <property name="title" translatable="yes">Location Services</property>
+-                <property name="subtitle" translatable="yes">Allows applications to determine your geographical location. Uses the Mozilla Location Service (&lt;a href='https://location.services.mozilla.com/privacy'&gt;privacy policy&lt;/a&gt;).</property>
+                 <property name="activatable-widget">location_switch</property>
+                 <child>
+                   <object class="GtkSwitch" id="location_switch">
+@@ -34,11 +33,27 @@
+                 </child>
+               </object>
+             </child>
++            <child>
++              <object class="GtkLabel">
++                <property name="margin-top">12</property>
++                <property name="wrap">True</property>
++                <property name="wrap-mode">word-char</property>
++                <property name="use-markup">True</property>
++                <property name="ellipsize">none</property>
++                <property name="xalign">0.0</property>
++                <property name="label" translatable="yes">Allows applications to determine your geographical location. Uses the Mozilla Location Service (&lt;a href='https://location.services.mozilla.com/privacy'&gt;privacy policy&lt;/a&gt;).</property>
++                <signal name="activate-link" handler="activate_link" object="GisPrivacyPage" swapped="no" />
++                <style>
++                  <class name="caption" />
++                </style>
++              </object>
++            </child>
+           </object>
+         </child>
+ 
+         <child>
+           <object class="AdwPreferencesGroup" id="reporting_group">
++            <property name="margin-top">12</property>
+             <child>
+               <object class="AdwActionRow" id="reporting_row">
+                 <property name="title" translatable="yes">Automatic Problem Reporting</property>
+@@ -50,6 +65,20 @@
+                 </child>
+               </object>
+             </child>
++            <child>
++              <object class="GtkLabel" id="reporting_label">
++                <property name="margin-top">12</property>
++                <property name="wrap">True</property>
++                <property name="wrap-mode">word-char</property>
++                <property name="use-markup">True</property>
++                <property name="ellipsize">none</property>
++                <property name="xalign">0.0</property>
++                <signal name="activate-link" handler="activate_link" object="GisPrivacyPage" swapped="no" />
++                <style>
++                  <class name="caption" />
++                </style>
++              </object>
++            </child>
+           </object>
+         </child>
+ 

@@ -1,0 +1,189 @@
+From: Simon McVittie <smcv@debian.org>
+Date: Mon, 6 Mar 2023 22:23:28 +0000
+Subject: keyboard: Correctly update labels for IBus engines
+
+After the port from GTK 3 to 4, in general there's an additional level
+of indirection: the children of priv->input_list are GtkListBoxRow
+objects containing the widget whose user-data is the InputWidget. This
+means we didn't find the InputWidget and therefore couldn't update its
+display name.
+
+Unfortunately, there is one exception to the rule that every child
+of a GtkListBox is a GtkListBoxRow: the placeholder object, in our
+case priv->no_results, is not wrapped in a GtkListBoxRow (see also
+GNOME/gtk#4523). This means that walking the GtkWidget tree seems rather
+fragile: it's difficult to tell whether each child of the GtkListBox
+is a GtkListBoxRow, or the placeholder object priv->no_results, or
+some third type of object that could be added by a future GTK version
+(particularly since there is no particular type-safety here).
+
+Instead of walking the widget tree, maintain our own parallel list of
+known keyboard layouts and other input methods. For this list, we can
+safely assert that every item is something that we put there, with the
+invariant that it's a GtkBox with an InputWidget attached.
+
+This means that we can reliably find the InputWidget, and update its
+associated display name.
+
+Fixes: ad500afc "keyboard: Port to GTK4"
+Bug: https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/issues/180
+Signed-off-by: Simon McVittie <smcv@debian.org>
+Bug-Debian: https://bugs.debian.org/1032382
+Forwarded: https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/issues/180
+---
+ .../pages/keyboard/cc-input-chooser.c              | 56 ++++++++++++----------
+ 1 file changed, 31 insertions(+), 25 deletions(-)
+
+diff --git a/gnome-initial-setup/pages/keyboard/cc-input-chooser.c b/gnome-initial-setup/pages/keyboard/cc-input-chooser.c
+index 2dd58e9..ae8f2d7 100644
+--- a/gnome-initial-setup/pages/keyboard/cc-input-chooser.c
++++ b/gnome-initial-setup/pages/keyboard/cc-input-chooser.c
+@@ -50,6 +50,7 @@ struct _CcInputChooserPrivate
+ {
+         GtkWidget *filter_entry;
+         GtkWidget *input_list;
++        GPtrArray *input_widget_boxes;
+ 	GHashTable *inputs;
+ 
+         GtkWidget *no_results;
+@@ -96,6 +97,11 @@ typedef struct {
+         gboolean is_extra;
+ } InputWidget;
+ 
++/*
++ * Invariant: for each box in priv->input_widget_boxes,
++ * get_input_widget (row) is non-null and
++ * get_input_widget (row)->box == box
++ */
+ static InputWidget *
+ get_input_widget (GtkWidget *widget)
+ {
+@@ -258,21 +264,20 @@ static void
+ sync_all_checkmarks (CcInputChooser *chooser)
+ {
+         CcInputChooserPrivate *priv;
+-        GtkWidget *row;
+         gboolean invalidate = FALSE;
++        gsize i;
+ 
+         priv = cc_input_chooser_get_instance_private (chooser);
+-        row = gtk_widget_get_first_child (priv->input_list);
+-        while (row) {
++
++        for (i = 0; i < priv->input_widget_boxes->len; i++) {
+                 InputWidget *widget;
+                 GtkWidget *child;
+                 gboolean should_be_visible;
+ 
+-                child = gtk_list_box_row_get_child (GTK_LIST_BOX_ROW (row));
++                child = g_ptr_array_index (priv->input_widget_boxes, i);
+                 widget = get_input_widget (child);
+-
+-                if (widget == NULL)
+-                        break;
++                g_assert (widget != NULL);
++                g_assert (widget->box == child);
+ 
+ 	        if (priv->id == NULL || priv->type == NULL)
+ 		        should_be_visible = FALSE;
+@@ -287,8 +292,6 @@ sync_all_checkmarks (CcInputChooser *chooser)
+                         widget->is_extra = FALSE;
+                         invalidate = TRUE;
+                 }
+-
+-                row = gtk_widget_get_next_sibling (row);
+         }
+ 
+         if (invalidate) {
+@@ -335,28 +338,26 @@ static void
+ choose_non_extras (CcInputChooser *chooser)
+ {
+         CcInputChooserPrivate *priv;
+-        GtkWidget *row;
+         guint count = 0;
++        gsize i;
+ 
+         priv = cc_input_chooser_get_instance_private (chooser);
+-        row = gtk_widget_get_first_child (priv->input_list);
+-        while (row) {
++
++        for (i = 0; i < priv->input_widget_boxes->len; i++) {
+                 InputWidget *widget;
+                 GtkWidget *child;
+ 
+                 if (++count > MIN_ROWS)
+                         break;
+ 
+-                child = gtk_list_box_row_get_child (GTK_LIST_BOX_ROW (row));
++                child = g_ptr_array_index (priv->input_widget_boxes, i);
+                 widget = get_input_widget (child);
+-                if (widget == NULL)
+-                        break;
++                g_assert (widget != NULL);
++                g_assert (widget->box == child);
+ 
+                 g_debug ("Picking %s (%s:%s) as non-extra",
+                          widget->name, widget->type, widget->id);
+                 widget->is_extra = FALSE;
+-
+-                row = gtk_widget_get_next_sibling (row);
+         }
+ 
+         /* Changing is_extra above affects the ordering and the visibility
+@@ -391,6 +392,7 @@ add_rows_to_list (CcInputChooser  *chooser,
+ 		g_hash_table_add (priv->inputs, key);
+ 
+ 		widget = input_widget_new (chooser, type, id, TRUE);
++		g_ptr_array_add (priv->input_widget_boxes, g_object_ref_sink (widget));
+ 		gtk_list_box_append (GTK_LIST_BOX (priv->input_list), widget);
+ 	}
+ }
+@@ -588,21 +590,21 @@ update_ibus_active_sources (CcInputChooser *chooser)
+ {
+         CcInputChooserPrivate *priv;
+         IBusEngineDesc *engine_desc;
+-        GtkWidget *child;
+         const gchar *type;
+         const gchar *id;
+         gchar *name;
++        gsize i;
+ 
+         priv = cc_input_chooser_get_instance_private (chooser);
+-        child = gtk_widget_get_first_child (priv->input_list);
+-        while (child) {
+-                InputWidget *row;
+ 
+-		row = get_input_widget (child);
+-                child = gtk_widget_get_next_sibling (child);
++        for (i = 0; i < priv->input_widget_boxes->len; i++) {
++                GtkWidget *child;
++                InputWidget *row;
+ 
+-		if (row == NULL)
+-			continue;
++                child = g_ptr_array_index (priv->input_widget_boxes, i);
++                row = get_input_widget (child);
++                g_assert (row != NULL);
++                g_assert (row->box == child);
+ 
+                 type = row->type;
+                 id = row->id;
+@@ -774,6 +776,7 @@ cc_input_chooser_finalize (GObject *object)
+ 
+ 	g_clear_object (&priv->xkb_info);
+ 	g_hash_table_unref (priv->inputs);
++        g_clear_pointer (&priv->input_widget_boxes, g_ptr_array_unref);
+ #ifdef HAVE_IBUS
+         g_clear_object (&priv->ibus);
+         if (priv->ibus_cancellable)
+@@ -844,7 +847,10 @@ cc_input_chooser_class_init (CcInputChooserClass *klass)
+ static void
+ cc_input_chooser_init (CcInputChooser *chooser)
+ {
++        CcInputChooserPrivate *priv = cc_input_chooser_get_instance_private (chooser);
++
+         gtk_widget_init_template (GTK_WIDGET (chooser));
++        priv->input_widget_boxes = g_ptr_array_new_with_free_func (g_object_unref);
+ }
+ 
+ void

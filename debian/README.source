@@ -1,0 +1,19 @@
+Testing this package
+====================
+
+Test Case 1
+---------------
+rm ~/.config/gnome-initial-setup-done
+Log out then log back in
+gnome-initial-setup should automatically start
+
+Test Case 2
+----------------
+Create a new user
+Log in as the new user
+gnome-initial-setup should automatically start
+
+Test Case 3
+----------------
+Run this command
+/usr/libexec/gnome-initial-setup --existing-user

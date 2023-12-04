@@ -1,0 +1,29 @@
+From: Will Thompson <wjt@endlessos.org>
+Date: Fri, 3 Mar 2023 11:04:52 +0000
+Subject: Add StartupWMClass to .desktop file
+
+Initial Setup's application ID is org.gnome.InitialSetup. This does not
+match the desktop file name. It is too late in the current development
+cycle to rename the desktop file to match.
+
+Instead, allow the shell to associate the initial setup window with its
+desktop file by specifying StartupWMClass.
+
+See https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/issues/179 and
+https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/merge_requests/186
+for more background.
+
+Origin: upstream, 44~rc, commit:87e81b9c80dfb05f43fe62bb5dad62f707f3b824
+---
+ data/gnome-initial-setup.desktop.in.in | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/data/gnome-initial-setup.desktop.in.in b/data/gnome-initial-setup.desktop.in.in
+index e7aa666..c15fd6e 100644
+--- a/data/gnome-initial-setup.desktop.in.in
++++ b/data/gnome-initial-setup.desktop.in.in
+@@ -10,3 +10,4 @@ Categories=GNOME;GTK;System;
+ OnlyShowIn=GNOME;
+ NoDisplay=true
+ X-GNOME-HiddenUnderSystemd=@systemd_hidden@
++StartupWMClass=org.gnome.InitialSetup

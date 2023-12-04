@@ -1,16 +1,188 @@
-gnome-initial-setup (41.2-2endless1) eos; urgency=medium
+gnome-initial-setup (43.2-6) unstable; urgency=medium
 
-  * Rebase for Endless 41.2-2 release:
-    - debian/control(.in):
-      Add dependencies on eos-metrics-0, libattr1, libevince, eos-installer
-    - Bump polkit dependency to drop legacy PKLA support
-    - debian/rules:
-      - Move vendor config file to `/var/lib`
-      - Drop desktop-base dependency for Endless OS
+  * Team upload
+  * d/p/privacy-Move-subtitles-to-separate-labels.patch:
+    Fix Mozilla Location Services privacy policy link in kiosk mode.
+    The privacy policy links on the Privacy page are meant to be overridden
+    to open in an embedded (WebKitGTK-based) web browser widget instead of
+    an external web browser, but a regression in the port to GTK 4 between
+    GNOME 42 and 43 caused this behaviour to break.
+    In existing-user mode (run on the first GNOME login for a new user
+    account), the link would previously have opened in the default web
+    browser (normally Firefox), which is harmless but was not the
+    intended UX.
+    In new-user mode (when no user accounts exist), Initial Setup runs in a
+    captive "kiosk mode" to create the first user account. In this mode, the
+    link would previously not do anything. A mitigation is that this failure
+    mode is rarely seen in Debian, because the installer normally creates a
+    user account. (Closes: #1033228)
 
-    https://phabricator.endlessm.com/T32958
+ -- Simon McVittie <smcv@debian.org>  Mon, 20 Mar 2023 15:27:27 +0000
 
- -- Jian-Hong Pan <jhp@endlessos.org>  Tue, 08 Feb 2022 14:55:11 +0800
+gnome-initial-setup (43.2-5) unstable; urgency=medium
+
+  * Build against webkitgtk 6.0 instead of 5.0
+  * Cherry-pick a build fix for latest webkitgtk
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 15 Mar 2023 20:18:52 -0400
+
+gnome-initial-setup (43.2-4) unstable; urgency=medium
+
+  * Team upload
+  * d/p/keyboard-Resort-refilter-list-when-picking-shortlist.patch:
+    Add patch from upstream 44.rc to display more input methods and
+    keyboard layouts without clicking the "more..." button. This has
+    a known issue that the shortlist of keyboard layouts is often not
+    particularly useful, but at least it includes the default and
+    current layouts (possibly different) and some other possibilities.
+  * d/p/keyboard-Correctly-update-labels-for-IBus-engines.patch,
+    d/p/keyboard-Update-filter-and-sort-when-the-display-name-cha.patch:
+    Rework patches for xkb layout and IBus method selection, fixing a
+    crash on startup (Closes: #1032448)
+  * d/README.source: Add some notes on how to smoke-test this package.
+    Thanks to Jeremy Bicha (via #1032448)
+  * d/p/driver-Set-a-non-trivial-window-title.patch:
+    Add patch to set a window title.
+    This is one of the first things a new GNOME user will see, so let's
+    make it a bit more polished.
+
+ -- Simon McVittie <smcv@debian.org>  Mon, 06 Mar 2023 23:46:19 +0000
+
+gnome-initial-setup (43.2-3) unstable; urgency=medium
+
+  * Team upload
+  * d/p/Add-StartupWMClass-to-.desktop-file.patch:
+    Replace previous patch for app ID handling with upstream equivalent.
+    gnome-initial-setup is not a syntactically valid app ID. Return to the
+    syntactically valid app ID used upstream, and set the StartupWMClass
+    instead.
+    This gives us a correct window title in the Overview and the
+    Alt+(key above Tab) window switcher, unlike the patch in 43.2-2.
+  * d/p/reenable-existing-user-mode.patch:
+    Add a note of which upstream commit we're reverting
+  * d/patches: Reorder with closest-to-upstream first
+  * d/p/keyboard-Correctly-update-labels-for-IBus-engines.patch,
+    d/p/keyboard-Update-filter-and-sort-when-the-display-name-cha.patch:
+    Correctly update input method chooser with info from IBus.
+    This ensures that when the default is an IBus-based input method like
+    Anthy (currently GNOME's default for ja_JP in bookworm) or Mozc (requested
+    as a new default for ja_JP in #1029821), it will be displayed with its
+    correct label like "Japanese (Anthy)" or "日本語 (Mozc)" instead of
+    a placeholder name "anthy" or "mozc-jp". (Closes: #1032382)
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 05 Mar 2023 17:39:30 +0000
+
+gnome-initial-setup (43.2-2) unstable; urgency=medium
+
+  * Add patch to fix broken icon and app name
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 02 Mar 2023 17:32:26 -0500
+
+gnome-initial-setup (43.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Tue, 06 Dec 2022 09:27:10 -0500
+
+gnome-initial-setup (43.1-2) unstable; urgency=medium
+
+  * Team upload
+  * Depend on polkitd and pkexec instead of transitional policykit-1.
+    This package runs pkexec, so that dependency is still needed.
+  * d/copyright: use spaces rather than tabs to start continuation lines
+  * d/control.in: Update standards version to 4.6.1 (no changes needed)
+  * d/upstream/metadata: Update Gitlab URLs
+
+ -- Simon McVittie <smcv@debian.org>  Tue, 15 Nov 2022 08:36:43 +0000
+
+gnome-initial-setup (43.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Tue, 18 Oct 2022 13:08:46 -0400
+
+gnome-initial-setup (43.0-1) unstable; urgency=medium
+
+  [ Jeremy Bicha ]
+  * New upstream release
+  * Re-enable Privacy page
+  * Re-enable malcontent integration for Debian
+
+  [ Simon McVittie ]
+  * d/control.in: Replace transitional libfontconfig1-dev with libfontconfig-dev
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 19 Sep 2022 11:44:22 -0400
+
+gnome-initial-setup (43~rc.1-1) unstable; urgency=high
+
+  * New upstream release
+  * Add patch to disable privacy page. It uses webkitgtk 5.0
+    which is still only in Debian Experimental
+  * debian/control.in: Drop webkitgtk from Build-Depends for now
+  * Add patch from Ubuntu to re-enable existing-user mode.
+    It was disabled upstream because it conflicts with gnome-tour
+    but gnome-tour isn't available in Debian or Ubuntu yet
+  * Release to unstable (Closes: #1019106)
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 07 Sep 2022 11:04:27 -0400
+
+gnome-initial-setup (43~beta-1) experimental; urgency=medium
+
+  * New upstream release
+  * Switch to gtk4, libadwaita, and libsoup3
+  * Drop obsolete cheese dependency
+  * Build-Depend on libxml2-utils for xmllint
+  * Temporarily disable malcontent integration
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Sun, 28 Aug 2022 15:34:39 -0400
+
+gnome-initial-setup (42.2-1) unstable; urgency=medium
+
+  * New upstream translations release
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 06 Jun 2022 16:47:25 -0400
+
+gnome-initial-setup (42.1.1-1) unstable; urgency=medium
+
+  * New upstream translations release
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 21 Apr 2022 13:37:45 -0400
+
+gnome-initial-setup (42.1-1) unstable; urgency=medium
+
+  [ Jeremy Bicha ]
+  * New upstream translations release
+  * Add debian/upstream/metadata
+  * Bump Standards-Version to 4.6.0
+
+  [ Will Thompson ]
+  * debian/copyright: Remove obsolete license exception for um-realm-manager.*
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 18 Apr 2022 11:55:21 -0400
+
+gnome-initial-setup (42.0.1-2) unstable; urgency=medium
+
+  * Switch to libgweather4
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 28 Mar 2022 11:55:08 -0400
+
+gnome-initial-setup (42.0.1-1) unstable; urgency=medium
+
+  * New upstream release, remove patch included in the update
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 24 Mar 2022 14:50:12 +0100
+
+gnome-initial-setup (42~beta-1) unstable; urgency=medium
+
+  * New upstream release
+  * Drop all patches: applied in new release
+  * Add patch to support GNOME 42 dark theme preference
+  * Revert switch to libgweather4
+  * Build-Depend on libgnome-desktop-4-dev instead of libgnome-desktop-3-dev
+  * debian/control.in: Build-Depend on libhandy
+  * debian/vendor.conf: Drop unused run_welcome_tour line
+
+ -- Jeremy Bicha <jeremy.bicha@canonical.com>  Wed, 16 Feb 2022 10:34:12 -0500
 
 gnome-initial-setup (41.2-2) unstable; urgency=medium
 

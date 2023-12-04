@@ -6,44 +6,42 @@ Source: gnome-initial-setup
 Section: gnome
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: Jeremy Bicha <jbicha@debian.org>, Laurent Bigonville <bigon@debian.org>, Sebastien Bacher <seb128@debian.org>
+Uploaders: Jeremy Bicha <jbicha@ubuntu.com>
 Build-Depends: debhelper-compat (= 13),
                dh-sequence-gnome,
                gsettings-desktop-schemas-dev (>= 3.37.1),
                itstool,
                libaccountsservice-dev,
-               libcheese-gtk-dev (>= 3.28),
-               libfontconfig1-dev,
+               libadwaita-1-dev (>= 1.2~alpha),
+               libfontconfig-dev,
                libgdm-dev (>= 3.8.3),
                libgeoclue-2-dev (>= 2.3.1),
                libgeocode-glib-dev,
                libglib2.0-dev (>= 2.63.1),
-               libgnome-desktop-3-dev (>= 3.7.5),
-               libgoa-1.0-dev,
-               libgoa-backend-1.0-dev,
-               libgtk-3-dev (>= 3.19.12),
-               libgweather-3-dev (>= 3.13.91),
+               libgnome-desktop-4-dev,
+               libgoa-1.0-dev (>= 3.45.1),
+               libgoa-backend-1.0-dev (>= 3.45.1),
+               libgtk-4-dev,
+               libgweather-4-dev (>= 4.1),
                libibus-1.0-dev (>= 1.5.2),
                libjson-glib-dev,
                libkrb5-dev,
-               libmalcontent-0-dev [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64],
-               libmalcontent-ui-0-dev [amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x hppa powerpc powerpcspe ppc64],
+               libmalcontent-0-dev [amd64 arm64 armel armhf i386 mipsel mips64el ppc64el s390x hppa hurd-i386 ppc64 riscv64],
+               libmalcontent-ui-dev [amd64 arm64 armel armhf i386 mipsel mips64el ppc64el s390x hppa hurd-i386 ppc64 riscv64],
                libnm-dev (>= 1.2),
-               libnma-dev (>= 1.0),
+               libnma-gtk4-dev (>= 1.0),
                libpango1.0-dev (>= 1.32.5),
                libpolkit-gobject-1-dev (>= 0.103),
                libpwquality-dev,
-               librest-dev,
+               librest-dev (>= 0.9.1),
                libsecret-1-dev (>= 0.18.8),
                libsystemd-dev [linux-any],
-               libwebkit2gtk-4.0-dev (>= 2.26),
-               eos-metrics-0-dev (>= 0.5.0),
-               libattr1-dev,
-               libevince-dev,
+               libwebkitgtk-6.0-dev,
+               libxml2-utils,
                meson (>= 0.50.0),
                systemd ( >= 242),
 Rules-Requires-Root: no
-Standards-Version: 4.5.0
+Standards-Version: 4.6.1
 Vcs-Browser: https://salsa.debian.org/gnome-team/gnome-initial-setup
 Vcs-Git: https://salsa.debian.org/gnome-team/gnome-initial-setup.git
 Homepage: https://git.gnome.org/browse/gnome-initial-setup/
@@ -51,8 +49,8 @@ Homepage: https://git.gnome.org/browse/gnome-initial-setup/
 Package: gnome-initial-setup
 Architecture: linux-any
 Depends: ${shlibs:Depends},
-         eos-installer,
-         policykit-1 (>= 0.103),
+         pkexec (>= 0.103),
+         polkitd (>= 0.103),
          adduser,
          gnome-settings-daemon (>= 3.24),
          ${logo:Depends},
