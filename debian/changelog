@@ -1,3 +1,18 @@
+gnome-initial-setup (43.2-6endless1) UNRELEASED; urgency=medium
+
+  * Rebase on Debian's 43.2-6 package https://phabricator.endlessm.com/T35040
+  * Drop all patches from Debian: all are either merged to the upstream
+    gnome-43 branch, which we are building on, or unnecessary on Endless OS
+    since we package GNOME Tour
+  * Drop PKLA file: Even Debian's polkit now supports JavaScript rules!
+  * Depend on eos-logos rather than desktop-base
+  * Keep Debian (and upstream) defaults of reading vendor.conf from
+    /etc/gnome-initial-setup/vendor.conf and
+    /usr/share/gnome-initial-setup/vendor.conf, rather than overriding the
+    path to /var/lib/branding/gnome-initial-setup.conf at build time
+
+ -- Will Thompson <wjt@endlessos.org>  Mon, 04 Dec 2023 16:04:28 +0000
+
 gnome-initial-setup (43.2-6) unstable; urgency=medium
 
   * Team upload
@@ -183,6 +198,20 @@ gnome-initial-setup (42~beta-1) unstable; urgency=medium
   * debian/vendor.conf: Drop unused run_welcome_tour line
 
  -- Jeremy Bicha <jeremy.bicha@canonical.com>  Wed, 16 Feb 2022 10:34:12 -0500
+
+gnome-initial-setup (41.2-2endless1) eos; urgency=medium
+
+  * Rebase for Endless 41.2-2 release:
+    - debian/control(.in):
+      Add dependencies on eos-metrics-0, libattr1, libevince, eos-installer
+    - Bump polkit dependency to drop legacy PKLA support
+    - debian/rules:
+      - Move vendor config file to `/var/lib`
+      - Drop desktop-base dependency for Endless OS
+
+    https://phabricator.endlessm.com/T32958
+
+ -- Jian-Hong Pan <jhp@endlessos.org>  Tue, 08 Feb 2022 14:55:11 +0800
 
 gnome-initial-setup (41.2-2) unstable; urgency=medium
 
