@@ -53,6 +53,7 @@ Depends: ${shlibs:Depends},
          ${logo:Depends},
          ${misc:Depends}
 Recommends: accountsservice,
+            eos-installer,
             geoclue-2.0 (>= 2.3.1),
             gnome-keyring,
             ${malcontent:Recommends}
