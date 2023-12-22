@@ -91,16 +91,31 @@ void gis_driver_set_avatar (GisDriver    *driver,
                             GdkPaintable *avatar);
 GdkPaintable *gis_driver_get_avatar (GisDriver *driver);
 
+void gis_driver_set_passwordless (GisDriver *self,
+                                  gboolean   passwordless);
+
+gboolean gis_driver_get_passwordless (GisDriver *self);
+
 gboolean gis_driver_get_gdm_objects (GisDriver        *driver,
                                      GdmGreeter      **greeter,
                                      GdmUserVerifier **user_verifier);
 
 GisDriverMode gis_driver_get_mode (GisDriver *driver);
 
+gboolean gis_driver_is_live_session (GisDriver *driver);
+
+gboolean gis_driver_has_live_persistence (GisDriver *driver);
+
+gboolean gis_driver_is_reformatter (GisDriver *driver);
+
 gboolean gis_driver_is_small_screen (GisDriver *driver);
+
+const gchar *gis_driver_get_product_name (GisDriver *driver);
 
 void gis_driver_add_page (GisDriver *driver,
                           GisPage   *page);
+
+void gis_driver_show_window (GisDriver *driver);
 
 void gis_driver_hide_window (GisDriver *driver);
 

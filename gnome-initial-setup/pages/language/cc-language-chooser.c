@@ -47,6 +47,7 @@ struct _CcLanguageChooserPrivate
 
         gboolean showing_extra;
         gchar *language;
+        gchar *initial_language;
 };
 typedef struct _CcLanguageChooserPrivate CcLanguageChooserPrivate;
 G_DEFINE_TYPE_WITH_PRIVATE (CcLanguageChooser, cc_language_chooser, GTK_TYPE_BOX);
@@ -348,6 +349,8 @@ sort_languages (GtkListBoxRow *a,
                 GtkListBoxRow *b,
                 gpointer       data)
 {
+        CcLanguageChooser *chooser = data;
+        CcLanguageChooserPrivate *priv = cc_language_chooser_get_instance_private (chooser);
         LanguageWidget *la, *lb;
         int ret;
 
@@ -359,6 +362,12 @@ sort_languages (GtkListBoxRow *a,
 
         if (lb == NULL)
                 return -1;
+
+        if (g_strcmp0 (la->locale_id, priv->initial_language) == 0)
+                return -1;
+
+        if (g_strcmp0 (lb->locale_id, priv->initial_language) == 0)
+                return 1;
 
         if (la->is_extra && !lb->is_extra)
                 return 1;
@@ -465,6 +474,11 @@ cc_language_chooser_constructed (GObject *object)
                                       language_visible, chooser, NULL);
         gtk_list_box_set_selection_mode (GTK_LIST_BOX (priv->language_list),
                                          GTK_SELECTION_NONE);
+
+        if (priv->language == NULL)
+                priv->language = cc_common_language_get_current_language ();
+        priv->initial_language = g_strdup (priv->language);
+
         add_all_languages (chooser);
 
         g_signal_connect (priv->filter_entry, "changed",
@@ -474,10 +488,8 @@ cc_language_chooser_constructed (GObject *object)
         g_signal_connect (priv->language_list, "row-activated",
                           G_CALLBACK (row_activated), chooser);
 
-        if (priv->language == NULL)
-                priv->language = cc_common_language_get_current_language ();
-
         sync_all_checkmarks (chooser);
+        show_more (chooser);
 }
 
 static void
@@ -487,6 +499,7 @@ cc_language_chooser_finalize (GObject *object)
         CcLanguageChooserPrivate *priv = cc_language_chooser_get_instance_private (chooser);
 
         g_free (priv->language);
+        g_free (priv->initial_language);
 
 	G_OBJECT_CLASS (cc_language_chooser_parent_class)->finalize (object);
 }

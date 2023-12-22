@@ -257,6 +257,24 @@ validate (GisPasswordPage *page)
   return G_SOURCE_REMOVE;
 }
 
+static void
+page_visibility_changed (GtkWidget  *w,
+                         GParamSpec *pspec,
+                         gpointer    unused)
+{
+  /* Make sure to reset the password page in this case, to prevent situations
+   * where a previously introduced password, that is no longer required, would
+   * end up being used anyway when creating the user's account.
+   */
+  if (!gtk_widget_get_visible (w)) {
+    GisPasswordPage *page = GIS_PASSWORD_PAGE (w);
+    GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
+
+    gtk_editable_set_text (GTK_EDITABLE (priv->password_entry), "");
+    gtk_editable_set_text (GTK_EDITABLE (priv->confirm_entry), "");
+  }
+}
+
 static gboolean
 on_focusout (GisPasswordPage *page)
 {
@@ -301,12 +319,13 @@ confirm_changed (GtkWidget      *w,
 }
 
 static void
-username_changed (GObject *obj, GParamSpec *pspec, GisPasswordPage *page)
+username_or_passwordless_changed (GisPasswordPage *page)
 {
   GisPasswordPagePrivate *priv = gis_password_page_get_instance_private (page);
-  priv->username = gis_driver_get_username (GIS_DRIVER (obj));
+  priv->username = gis_driver_get_username (GIS_PAGE (page)->driver);
+  gboolean passwordless = gis_driver_get_passwordless (GIS_PAGE (page)->driver);
 
-  if (priv->username)
+  if (priv->parent_mode || (priv->username && !passwordless))
     gtk_widget_show (GTK_WIDGET (page));
   else
     gtk_widget_hide (GTK_WIDGET (page));  
@@ -354,6 +373,9 @@ gis_password_page_constructed (GObject *object)
 
   G_OBJECT_CLASS (gis_password_page_parent_class)->constructed (object);
 
+  g_signal_connect (page, "notify::visible",
+                    G_CALLBACK (page_visibility_changed), NULL);
+
   g_signal_connect (priv->password_entry, "notify::text",
                     G_CALLBACK (password_changed), page);
   g_signal_connect_swapped (priv->password_entry, "activate",
@@ -366,8 +388,11 @@ gis_password_page_constructed (GObject *object)
                             G_CALLBACK (confirm), page);
   track_focus_out (page, priv->confirm_entry);
 
-  g_signal_connect (GIS_PAGE (page)->driver, "notify::username",
-                    G_CALLBACK (username_changed), page);
+  g_signal_connect_swapped (GIS_PAGE (page)->driver, "notify::username",
+                            G_CALLBACK (username_or_passwordless_changed), page);
+  g_signal_connect_swapped (GIS_PAGE (page)->driver, "notify::passwordless",
+                            G_CALLBACK (username_or_passwordless_changed), page);
+
   g_signal_connect (GIS_PAGE (page)->driver, "notify::full-name",
                     G_CALLBACK (full_name_or_avatar_changed), page);
   g_signal_connect (GIS_PAGE (page)->driver, "notify::avatar",
@@ -376,7 +401,8 @@ gis_password_page_constructed (GObject *object)
   validate (page);
   update_header (page);
 
-  gtk_widget_show (GTK_WIDGET (page));
+  /* This callback shows the page widget conditionally on if it's needed */
+  username_or_passwordless_changed (page);
 }
 
 static void
@@ -423,7 +449,7 @@ gis_password_page_dispose (GObject *object)
 {
   if (GIS_PAGE (object)->driver) {
     g_signal_handlers_disconnect_by_func (GIS_PAGE (object)->driver,
-                                          username_changed, object);
+                                          username_or_passwordless_changed, object);
     g_signal_handlers_disconnect_by_func (GIS_PAGE (object)->driver,
                                           full_name_or_avatar_changed, object);
   }

@@ -79,8 +79,10 @@ struct _GisTimezonePagePrivate
   GCancellable *dtm_cancellable;
 
   GnomeWallClock *clock;
-  GDesktopClockFormat clock_format;
+  GSettings *clock_settings;
   gboolean in_search;
+
+  gboolean show_if_detected;
 
   gulong search_entry_text_changed_id;
 };
@@ -142,6 +144,11 @@ set_location (GisTimezonePage  *page,
       tzid = g_time_zone_get_identifier (zone);
 
       cc_timezone_map_set_timezone (CC_TIMEZONE_MAP (priv->map), tzid);
+
+      /* If the page hasn't yet been shown and we found the timezone
+       * automatically, then don't show the page */
+      if (!priv->show_if_detected)
+        gtk_widget_hide (GTK_WIDGET (page));
 
       /* If this location is manually set, stop waiting for geolocation. */
       if (!priv->in_geoclue_callback)
@@ -288,9 +295,12 @@ update_timezone (GisTimezonePage *page, TzLocation *location)
   char *time_label;
   GTimeZone *zone;
   GDateTime *date;
+  GDesktopClockFormat clock_format;
   gboolean use_ampm;
 
-  if (priv->clock_format == G_DESKTOP_CLOCK_FORMAT_12H)
+  clock_format = g_settings_get_enum (priv->clock_settings, CLOCK_FORMAT_KEY);
+
+  if (clock_format == G_DESKTOP_CLOCK_FORMAT_12H)
     use_ampm = TRUE;
   else
     use_ampm = FALSE;
@@ -418,7 +428,6 @@ gis_timezone_page_constructed (GObject *object)
   GisTimezonePage *page = GIS_TIMEZONE_PAGE (object);
   GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (page);
   GError *error;
-  GSettings *settings;
 
   G_OBJECT_CLASS (gis_timezone_page_parent_class)->constructed (object);
 
@@ -439,9 +448,7 @@ gis_timezone_page_constructed (GObject *object)
   priv->clock = g_object_new (GNOME_TYPE_WALL_CLOCK, NULL);
   g_signal_connect (priv->clock, "notify::clock", G_CALLBACK (on_clock_changed), page);
 
-  settings = g_settings_new (CLOCK_SCHEMA);
-  priv->clock_format = g_settings_get_enum (settings, CLOCK_FORMAT_KEY);
-  g_object_unref (settings);
+  priv->clock_settings = g_settings_new (CLOCK_SCHEMA);
 
   set_location (page, NULL);
 
@@ -454,6 +461,8 @@ gis_timezone_page_constructed (GObject *object)
                     G_CALLBACK (entry_mapped), page);
   g_signal_connect (priv->map, "location-changed",
                     G_CALLBACK (map_location_changed), page);
+  g_signal_connect (priv->clock_settings, "notify::" CLOCK_FORMAT_KEY,
+                    G_CALLBACK (update_timezone), page);
 
   gtk_widget_show (GTK_WIDGET (page));
 }
@@ -474,6 +483,7 @@ gis_timezone_page_dispose (GObject *object)
 
   g_clear_object (&priv->dtm);
   g_clear_object (&priv->clock);
+  g_clear_object (&priv->clock_settings);
 
   G_OBJECT_CLASS (gis_timezone_page_parent_class)->dispose (object);
 }
@@ -482,6 +492,17 @@ static void
 gis_timezone_page_locale_changed (GisPage *page)
 {
   gis_page_set_title (GIS_PAGE (page), _("Time Zone"));
+}
+
+static void
+gis_timezone_page_shown (GisPage *page)
+{
+  GisTimezonePage *tz_page = GIS_TIMEZONE_PAGE (page);
+  GisTimezonePagePrivate *priv = gis_timezone_page_get_instance_private (tz_page);
+
+  /* After the page has been shown already, don't hide it even if the location
+   * is detected */
+  priv->show_if_detected = TRUE;
 }
 
 static gboolean
@@ -511,6 +532,7 @@ gis_timezone_page_class_init (GisTimezonePageClass *klass)
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_timezone_page_locale_changed;
+  page_class->shown = gis_timezone_page_shown;
   page_class->apply = gis_timezone_page_apply;
   object_class->constructed = gis_timezone_page_constructed;
   object_class->dispose = gis_timezone_page_dispose;

@@ -56,6 +56,8 @@ struct _GisAccountPageLocal
   GtkWidget *enable_parental_controls_check_button;
   gboolean   has_custom_username;
   GtkWidget *username_explanation;
+  GtkWidget *password_toggle;
+  gboolean   passwordless;
   UmPhotoDialog *photo_dialog;
 
   gint timeout_id;
@@ -280,6 +282,8 @@ validate (GisAccountPageLocal *page)
 
   um_photo_dialog_generate_avatar (page->photo_dialog, name);
 
+  page->passwordless = !gtk_check_button_get_active (GTK_CHECK_BUTTON (page->password_toggle));
+
   validation_changed (page);
 
   return G_SOURCE_REMOVE;
@@ -311,6 +315,7 @@ fullname_changed (GtkWidget      *w,
 
   if ((name == NULL || strlen (name) == 0) && !page->has_custom_username) {
     gtk_editable_set_text (GTK_EDITABLE (entry), "");
+    generate_username_choices ("", GTK_LIST_STORE (model));
   }
   else if (name != NULL && strlen (name) != 0) {
     generate_username_choices (name, GTK_LIST_STORE (model));
@@ -442,6 +447,8 @@ gis_account_page_local_constructed (GObject *object)
                             "activate", G_CALLBACK (confirm), page);
   g_signal_connect_swapped (page->fullname_entry, "activate",
                             G_CALLBACK (confirm), page);
+  g_signal_connect_swapped (page->password_toggle, "toggled",
+                            G_CALLBACK (validate), page);
   g_signal_connect (page->enable_parental_controls_check_button, "toggled",
                     G_CALLBACK (enable_parental_controls_check_button_toggled_cb), page);
 
@@ -610,6 +617,9 @@ local_create_user (GisAccountPageLocal  *local,
 
   set_user_avatar (local, main_user);
 
+  if (local->passwordless)
+    act_user_set_password_mode (main_user, ACT_USER_PASSWORD_MODE_NONE);
+
   g_signal_emit (local, signals[MAIN_USER_CREATED], 0, main_user, "");
 
   return TRUE;
@@ -628,6 +638,7 @@ gis_account_page_local_class_init (GisAccountPageLocalClass *klass)
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, fullname_entry);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, username_combo);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, username_explanation);
+  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, password_toggle);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, enable_parental_controls_box);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, enable_parental_controls_check_button);
 
@@ -680,6 +691,7 @@ gis_account_page_local_apply (GisAccountPageLocal *local, GisPage *page)
 
   username = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (local->username_combo));
   gis_driver_set_username (GIS_PAGE (page)->driver, username);
+  gis_driver_set_passwordless (page->driver, local->passwordless);
 
   full_name = gtk_editable_get_text (GTK_EDITABLE (local->fullname_entry));
   gis_driver_set_full_name (GIS_PAGE (page)->driver, full_name);

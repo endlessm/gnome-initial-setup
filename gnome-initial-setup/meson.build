@@ -13,6 +13,7 @@ sources += [
     'gis-assistant.c',
     'gis-page.c',
     'gis-page-header.c',
+    'gis-page-util.c',
     'gis-pkexec.c',
     'gis-driver.c',
     'gis-keyring.c',
@@ -20,6 +21,7 @@ sources += [
     'gis-assistant.h',
     'gis-page.h',
     'gis-page-header.h',
+    'gis-page-util.h',
     'gis-pkexec.h',
     'gis-driver.h',
     'gis-keyring.h'
@@ -48,6 +50,7 @@ dependencies = [
     geocode_glib_2_dep,
     dependency ('gnome-desktop-4'),
     dependency ('gsettings-desktop-schemas', version: '>= 3.37.1'),
+    dependency ('eosmetrics-0', version: '>= 0.5.0'),
     dependency ('fontconfig'),
     dependency ('goa-1.0'),
     dependency ('gtk4', version: '>= 4.6'),
