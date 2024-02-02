@@ -83,6 +83,38 @@
         </child>
 
         <child>
+          <object class="AdwPreferencesGroup" id="metrics_group">
+            <property name="margin-top">12</property>
+            <child>
+              <object class="AdwActionRow" id="metrics_row">
+                <property name="title" translatable="yes">Help make Endless better for everyone</property>
+                <property name="activatable-widget">metrics_switch</property>
+                <child>
+                  <object class="GtkSwitch" id="metrics_switch">
+                    <property name="valign">center</property>
+                    <property name="active">true</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="metrics_label">
+                <property name="margin-top">12</property>
+                <property name="wrap">True</property>
+                <property name="wrap-mode">word-char</property>
+                <property name="use-markup">True</property>
+                <property name="ellipsize">none</property>
+                <property name="xalign">0.0</property>
+                <property name="label" translatable="yes">Automatically save and send usage statistics and problem reports to Endless. All data is anonymous.</property>
+                <style>
+                  <class name="caption" />
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
           <object class="AdwPreferencesGroup">
             <child>
               <object class="GtkLabel" id="footer_label">

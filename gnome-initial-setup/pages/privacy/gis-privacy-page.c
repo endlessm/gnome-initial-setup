@@ -42,9 +42,13 @@ struct _GisPrivacyPage
   GtkWidget *reporting_group;
   GtkWidget *reporting_label;
   GtkWidget *reporting_switch;
+  GtkWidget *metrics_group;
+  GtkWidget *metrics_switch;
   GSettings *location_settings;
   GSettings *privacy_settings;
   guint abrt_watch_id;
+  GDBusProxy *metrics_proxy;
+  gboolean have_metrics_daemon;
 };
 
 G_DEFINE_TYPE (GisPrivacyPage, gis_privacy_page, GIS_TYPE_PAGE);
@@ -107,6 +111,59 @@ abrt_vanished_cb (GDBusConnection *connection,
 }
 
 static void
+gis_privacy_page_metrics_name_owner_changed_cb (GDBusProxy *metrics_proxy,
+                                                GParamSpec *param_spec,
+                                                gpointer    user_data)
+{
+  GisPrivacyPage *page = GIS_PRIVACY_PAGE (user_data);
+  const char *name_owner = g_dbus_proxy_get_name_owner (metrics_proxy);
+
+  page->have_metrics_daemon = name_owner != NULL;
+
+  gtk_widget_set_visible (page->metrics_group, page->have_metrics_daemon);
+}
+
+static void
+gis_privacy_page_metrics_proxy_ready_cb (GObject      *object,
+                                         GAsyncResult *result,
+                                         gpointer      user_data)
+{
+  g_autoptr(GisPrivacyPage) page = GIS_PRIVACY_PAGE (user_data);
+  g_autoptr(GError) error = NULL;
+
+  g_assert (page->metrics_proxy == NULL);
+
+  if ((page->metrics_proxy = g_dbus_proxy_new_for_bus_finish (result, &error)))
+    {
+      g_signal_connect_object (page->metrics_proxy,
+                               "notify::g-name-owner",
+                               (GCallback) gis_privacy_page_metrics_name_owner_changed_cb,
+                               page,
+                               0);
+      gis_privacy_page_metrics_name_owner_changed_cb (page->metrics_proxy, NULL, page);
+
+      /* We do not sync the Enabled state from the metrics daemon at startup
+       * because the daemon actually defaults to an intermediate state where
+       * events are buffered but not submitted; this is exposed on the bus as
+       * Enabled: False. Calling SetEnabled(False) disables buffering and
+       * discards the buffer; calling SetEnabled(True) enables submission. We
+       * want the effective default to be True, but to not submit anything
+       * until the device owner has gone past this screen and had the
+       * opportunity to opt out.
+       */
+    }
+  else
+    {
+      /* If the metrics daemon doesn't exist on the system, this branch is not
+       * taken: the proxy is constructed successfully, just without a name
+       * owner. So any error here is really an error.
+       */
+      g_warning ("Failed to construct metrics proxy: %s", error->message);
+      page->have_metrics_daemon = FALSE;
+    }
+}
+
+static void
 gis_privacy_page_constructed (GObject *object)
 {
   GisPrivacyPage *page = GIS_PRIVACY_PAGE (object);
@@ -134,6 +191,17 @@ gis_privacy_page_constructed (GObject *object)
                                               page,
                                               NULL);
     }
+
+  g_dbus_proxy_new_for_bus (G_BUS_TYPE_SYSTEM,
+                            G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES |
+                            G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS,
+                            (GDBusInterfaceInfo *) NULL,
+                            "com.endlessm.Metrics",
+                            "/com/endlessm/Metrics",
+                            "com.endlessm.Metrics.EventRecorderServer",
+                            (GCancellable *) NULL,
+                            gis_privacy_page_metrics_proxy_ready_cb,
+                            g_object_ref (page));
 }
 
 static void
@@ -145,6 +213,8 @@ gis_privacy_page_dispose (GObject *object)
   g_clear_object (&page->privacy_settings);
 
   g_clear_handle_id (&page->abrt_watch_id, g_bus_unwatch_name);
+
+  g_clear_object (&page->metrics_proxy);
 
   G_OBJECT_CLASS (gis_privacy_page_parent_class)->dispose (object);
 }
@@ -172,6 +242,41 @@ gis_privacy_page_locale_changed (GisPage *page)
 }
 
 static void
+gis_privacy_page_sync_metrics_state (GisPrivacyPage *page)
+{
+  if (!page->have_metrics_daemon)
+    return;
+
+  g_return_if_fail (page->metrics_proxy != NULL);
+
+  gboolean active = gtk_switch_get_active (GTK_SWITCH (page->metrics_switch));
+  g_autoptr(GVariant) reply = NULL;
+  g_autoptr(GError) error = NULL;
+
+  reply = g_dbus_proxy_call_sync (page->metrics_proxy, "SetEnabled",
+                                  g_variant_new ("(b)", active),
+                                  G_DBUS_CALL_FLAGS_NONE,
+                                  -1,
+                                  NULL, /* GCancellable */
+                                  &error);
+  if (error != NULL)
+    {
+      g_warning ("Failed to set metrics state: %s",
+                 error->message);
+    }
+}
+
+static gboolean
+gis_privacy_page_save_data (GisPage  *page,
+                                 GError  **error)
+{
+  gis_privacy_page_sync_metrics_state (GIS_PRIVACY_PAGE (page));
+
+  return TRUE;
+}
+
+
+static void
 gis_privacy_page_class_init (GisPrivacyPageClass *klass)
 {
   GisPageClass *page_class = GIS_PAGE_CLASS (klass);
@@ -180,6 +285,8 @@ gis_privacy_page_class_init (GisPrivacyPageClass *klass)
   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-privacy-page.ui");
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, location_switch);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, location_privacy_label);
+  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, metrics_group);
+  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, metrics_switch);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, reporting_group);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, reporting_label);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, reporting_switch);
@@ -188,6 +295,7 @@ gis_privacy_page_class_init (GisPrivacyPageClass *klass)
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_privacy_page_locale_changed;
   page_class->apply = gis_privacy_page_apply;
+  page_class->save_data = gis_privacy_page_save_data;
   object_class->constructed = gis_privacy_page_constructed;
   object_class->dispose = gis_privacy_page_dispose;
 }
