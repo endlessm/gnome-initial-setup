@@ -33,9 +33,9 @@
 
 #define EOS_IMAGE_VERSION_XATTR "user.eos-image-version"
 
-gchar *
-gis_page_util_get_image_version (const gchar *path,
-                                 GError     **error)
+static char *
+get_image_version (const char *path,
+                   GError **error)
 {
   ssize_t attrsize;
   g_autofree gchar *value = NULL;
@@ -64,4 +64,23 @@ gis_page_util_get_image_version (const gchar *path,
                    path, g_strerror (errsv));
       return NULL;
     }
+}
+
+gchar *
+gis_page_util_get_image_version (void)
+{
+  g_autoptr(GError) error_sysroot = NULL;
+  g_autoptr(GError) error_root = NULL;
+  char *image_version = get_image_version ("/sysroot", &error_sysroot);
+
+  if (image_version == NULL)
+    image_version = get_image_version ("/", &error_root);
+
+  if (image_version == NULL)
+    {
+      g_warning ("%s", error_sysroot->message);
+      g_warning ("%s", error_root->message);
+    }
+
+  return image_version;
 }
