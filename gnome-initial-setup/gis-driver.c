@@ -185,30 +185,6 @@ check_live_persistence (GisDriver *driver)
     }
 }
 
-#define EOS_IMAGE_VERSION_PATH "/sysroot"
-#define EOS_IMAGE_VERSION_ALT_PATH "/"
-
-static char *
-get_image_version (void)
-{
-  g_autoptr(GError) error_sysroot = NULL;
-  g_autoptr(GError) error_root = NULL;
-  char *image_version =
-    gis_page_util_get_image_version (EOS_IMAGE_VERSION_PATH, &error_sysroot);
-
-  if (image_version == NULL)
-    image_version =
-      gis_page_util_get_image_version (EOS_IMAGE_VERSION_ALT_PATH, &error_root);
-
-  if (image_version == NULL)
-    {
-      g_warning ("%s", error_sysroot->message);
-      g_warning ("%s", error_root->message);
-    }
-
-  return image_version;
-}
-
 static gboolean
 image_is_reformatter (const gchar *image_version)
 {
@@ -998,7 +974,7 @@ gis_driver_startup (GApplication *app)
   gtk_window_set_child (GTK_WINDOW (driver->main_window),
                         GTK_WIDGET (driver->assistant));
 
-  image_version = get_image_version ();
+  image_version = gis_page_util_get_image_version ();
   driver->product_name = get_product_from_image_version (image_version);
 
   driver->is_live_session = running_live_session ();
