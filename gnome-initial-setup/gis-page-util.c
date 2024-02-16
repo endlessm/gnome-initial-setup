@@ -25,43 +25,49 @@
 
 #include "gis-page-util.h"
 
-#include <errno.h>
 #include <gio/gio.h>
 #include <glib.h>
-#include <sys/types.h>
-#include <sys/xattr.h>
 
-#define EOS_IMAGE_VERSION_XATTR "user.eos-image-version"
+#define EOS_IMAGE_VERSION_XATTR "xattr::eos-image-version"
+
+static char *
+get_image_version (const char *path,
+                   GError **error)
+{
+  g_autoptr(GFile) file = g_file_new_for_path (path);
+  g_autoptr(GFileInfo) info = NULL;
+
+  info = g_file_query_info (file,
+                            EOS_IMAGE_VERSION_XATTR,
+                            G_FILE_QUERY_INFO_NONE,
+                            NULL /* cancellable */,
+                            error);
+
+  if (info == NULL)
+    return NULL;
+
+  return g_strdup (g_file_info_get_attribute_string (info, EOS_IMAGE_VERSION_XATTR));
+}
 
 gchar *
-gis_page_util_get_image_version (const gchar *path,
-                                 GError     **error)
+gis_page_util_get_image_version (void)
 {
-  ssize_t attrsize;
-  g_autofree gchar *value = NULL;
+  g_autoptr(GError) error_sysroot = NULL;
+  g_autoptr(GError) error_root = NULL;
+  char *image_version = get_image_version ("/sysroot", &error_sysroot);
 
-  g_return_val_if_fail (path != NULL, NULL);
+  if (image_version == NULL)
+    image_version = get_image_version ("/", &error_root);
 
-  attrsize = getxattr (path, EOS_IMAGE_VERSION_XATTR, NULL, 0);
-  if (attrsize >= 0)
+  if (image_version == NULL)
     {
-      value = g_malloc (attrsize + 1);
-      value[attrsize] = 0;
-
-      attrsize = getxattr (path, EOS_IMAGE_VERSION_XATTR, value,
-                           attrsize);
+      if (error_sysroot != NULL)
+        g_warning ("%s", error_sysroot->message);
+      else if (error_root != NULL)
+        g_warning ("%s", error_root->message);
+      else
+        g_debug ("Neither /sysroot nor / had " EOS_IMAGE_VERSION_XATTR);
     }
 
-  if (attrsize >= 0)
-    {
-      return g_steal_pointer (&value);
-    }
-  else
-    {
-      int errsv = errno;
-      g_set_error (error, G_IO_ERROR, g_io_error_from_errno (errsv),
-                   "Error examining " EOS_IMAGE_VERSION_XATTR " on %s: %s",
-                   path, g_strerror (errsv));
-      return NULL;
-    }
+  return image_version;
 }

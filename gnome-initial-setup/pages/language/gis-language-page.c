@@ -33,6 +33,7 @@
 #include "language-resources.h"
 #include "gis-welcome-widget.h"
 #include "cc-language-chooser.h"
+#include "gis-factory-dialog.h"
 #include "gis-language-page.h"
 
 #include <errno.h>
@@ -290,6 +291,16 @@ language_confirmed (CcLanguageChooser *chooser,
   gis_assistant_next_page (gis_driver_get_assistant (GIS_PAGE (page)->driver));
 }
 
+static gboolean
+gis_language_page_show_factory_dialog (GtkWidget *widget,
+                                       GVariant  *args,
+                                       gpointer   user_data)
+{
+  gis_factory_dialog_show_for_widget (widget);
+
+  return TRUE;
+}
+
 static void
 gis_language_page_constructed (GObject *object)
 {
@@ -376,6 +387,16 @@ gis_language_page_init (GisLanguagePage *page)
   g_type_ensure (CC_TYPE_LANGUAGE_CHOOSER);
 
   gtk_widget_init_template (GTK_WIDGET (page));
+
+  GtkEventController *controller = gtk_shortcut_controller_new ();
+  gtk_event_controller_set_propagation_phase (controller, GTK_PHASE_CAPTURE);
+  gtk_shortcut_controller_set_scope (GTK_SHORTCUT_CONTROLLER (controller), GTK_SHORTCUT_SCOPE_MANAGED);
+
+  GtkShortcutTrigger *trigger = gtk_shortcut_trigger_parse_string ("<Ctrl>f");
+  GtkShortcutAction *action = gtk_callback_action_new (gis_language_page_show_factory_dialog, NULL, NULL);
+  GtkShortcut *shortcut = gtk_shortcut_new (trigger, action);
+  gtk_shortcut_controller_add_shortcut (GTK_SHORTCUT_CONTROLLER (controller), shortcut);
+  gtk_widget_add_controller (GTK_WIDGET (page), controller);
 }
 
 GisPage *

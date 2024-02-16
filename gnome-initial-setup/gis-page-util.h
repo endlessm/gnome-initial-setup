@@ -28,8 +28,7 @@
 
 G_BEGIN_DECLS
 
-gchar *gis_page_util_get_image_version (const gchar *path,
-                                        GError     **error);
+gchar *gis_page_util_get_image_version (void);
 
 G_END_DECLS
 
