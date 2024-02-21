@@ -255,34 +255,6 @@ gis_driver_finalize (GObject *object)
 }
 
 static void
-assistant_page_changed (GtkScrolledWindow *sw)
-{
-  gtk_adjustment_set_value (gtk_scrolled_window_get_vadjustment (sw), 0);
-}
-
-static void
-prepare_main_window (GisDriver *driver)
-{
-  GtkWidget *child, *sw;
-
-  child = gtk_window_get_child (GTK_WINDOW (driver->main_window));
-  g_object_ref (child);
-  gtk_window_set_child (GTK_WINDOW (driver->main_window), NULL);
-  sw = gtk_scrolled_window_new ();
-  gtk_window_set_child (GTK_WINDOW (driver->main_window), sw);
-  gtk_scrolled_window_set_child (GTK_SCROLLED_WINDOW (sw), child);
-  g_object_unref (child);
-
-  g_signal_connect_swapped (driver->assistant,
-                            "page-changed",
-                            G_CALLBACK (assistant_page_changed),
-                            sw);
-
-  gtk_window_set_titlebar (driver->main_window,
-                           gis_assistant_get_titlebar (driver->assistant));
-}
-
-static void
 rebuild_pages (GisDriver *driver)
 {
   g_signal_emit (G_OBJECT (driver), signals[REBUILD_PAGES], 0);
@@ -868,20 +840,13 @@ recompute_small_screen (GisDriver *driver)
 static void
 update_screen_size (GisDriver *driver)
 {
-  GtkWidget *sw;
-
   recompute_small_screen (driver);
 
   if (!gtk_widget_get_realized (GTK_WIDGET (driver->main_window)))
     return;
 
-  sw = gtk_window_get_child (GTK_WINDOW (driver->main_window));
-
   if (driver->small_screen)
     {
-      gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (sw),
-                                      GTK_POLICY_AUTOMATIC,
-                                      GTK_POLICY_AUTOMATIC);
       gtk_window_set_default_size (driver->main_window, -1, -1);
       gtk_window_set_resizable (driver->main_window, TRUE);
       gtk_window_maximize (driver->main_window);
@@ -889,9 +854,6 @@ update_screen_size (GisDriver *driver)
     }
   else
     {
-      gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (sw),
-                                      GTK_POLICY_NEVER,
-                                      GTK_POLICY_NEVER);
       gtk_window_set_default_size (driver->main_window, 1024, 768);
       gtk_window_set_resizable (driver->main_window, FALSE);
       gtk_window_unmaximize (driver->main_window);
@@ -991,7 +953,9 @@ gis_driver_startup (GApplication *app)
 
   gis_driver_set_user_language (driver, setlocale (LC_MESSAGES, NULL), FALSE);
 
-  prepare_main_window (driver);
+  gtk_window_set_titlebar (driver->main_window,
+                           gis_assistant_get_titlebar (driver->assistant));
+
   rebuild_pages (driver);
 }
 
