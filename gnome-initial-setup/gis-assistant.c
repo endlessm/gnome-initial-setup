@@ -64,12 +64,6 @@ struct _GisAssistant
 G_DEFINE_TYPE (GisAssistant, gis_assistant, GTK_TYPE_BOX)
 
 static void
-visible_child_changed (GisAssistant *assistant)
-{
-  g_signal_emit (assistant, signals[PAGE_CHANGED], 0);
-}
-
-static void
 switch_to (GisAssistant          *assistant,
            GisPage               *page)
 {
@@ -384,15 +378,17 @@ update_current_page (GisAssistant *assistant,
 }
 
 static void
-current_page_changed (GObject    *gobject,
-                      GParamSpec *pspec,
-                      gpointer    user_data)
+visible_child_changed (GisAssistant *assistant,
+                       GParamSpec   *pspec,
+                       GtkStack     *stack)
 {
-  GisAssistant *assistant = GIS_ASSISTANT (user_data);
-  GtkStack *stack = GTK_STACK (gobject);
+  g_return_if_fail (GIS_IS_ASSISTANT (assistant));
+  g_return_if_fail (GTK_IS_STACK (stack));
+
   GtkWidget *new_page = gtk_stack_get_visible_child (stack);
 
   update_current_page (assistant, GIS_PAGE (new_page));
+  g_signal_emit (assistant, signals[PAGE_CHANGED], 0);
 }
 
 void
@@ -431,9 +427,6 @@ static void
 gis_assistant_init (GisAssistant *assistant)
 {
   gtk_widget_init_template (GTK_WIDGET (assistant));
-
-  g_signal_connect (assistant->stack, "notify::visible-child",
-                    G_CALLBACK (current_page_changed), assistant);
 
   g_signal_connect (assistant->forward, "clicked", G_CALLBACK (go_forward), assistant);
   g_signal_connect (assistant->accept, "clicked", G_CALLBACK (go_forward), assistant);
