@@ -34,12 +34,6 @@ enum {
   PROP_LAST,
 };
 
-enum {
-  PAGE_CHANGED,
-  LAST_SIGNAL
-};
-
-static guint signals[LAST_SIGNAL];
 static GParamSpec *obj_props[PROP_LAST];
 
 struct _GisAssistant
@@ -388,7 +382,6 @@ visible_child_changed (GisAssistant *assistant,
   GtkWidget *new_page = gtk_stack_get_visible_child (stack);
 
   update_current_page (assistant, GIS_PAGE (new_page));
-  g_signal_emit (assistant, signals[PAGE_CHANGED], 0);
 }
 
 void
@@ -486,22 +479,6 @@ gis_assistant_class_init (GisAssistantClass *klass)
                          "", "",
                          NULL,
                          G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
-
-
-  /**
-   * GisAssistant::page-changed:
-   * @assistant: the #GisAssistant
-   *
-   * The ::page-changed signal is emitted when the visible page
-   * changed.
-   */
-  signals[PAGE_CHANGED] =
-    g_signal_new ("page-changed",
-                  G_TYPE_FROM_CLASS (gobject_class),
-                  G_SIGNAL_RUN_LAST,
-                  0,
-                  NULL, NULL, NULL,
-                  G_TYPE_NONE, 0);
 
   g_object_class_install_properties (gobject_class, PROP_LAST, obj_props);
 }
