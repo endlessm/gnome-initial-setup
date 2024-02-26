@@ -139,7 +139,7 @@ gis_live_chooser_page_constructed (GObject *object)
 
   G_OBJECT_CLASS (gis_live_chooser_page_parent_class)->constructed (object);
 
-  gis_page_set_has_forward (GIS_PAGE (page), FALSE);
+  gis_page_set_has_forward (GIS_PAGE (page), TRUE);
 
   priv->act_client = act_user_manager_get_default ();
 
