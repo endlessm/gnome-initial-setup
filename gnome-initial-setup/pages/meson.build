@@ -3,6 +3,7 @@ pages = [
    'language',
    'live-chooser',
    'keyboard',
+   'endless-eula',
    'network',
    'timezone',
    'privacy',
