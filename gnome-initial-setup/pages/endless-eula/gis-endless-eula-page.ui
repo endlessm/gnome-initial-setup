@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="GisEndlessEulaPage" parent="GisPage">
+    <property name="needs-accept">true</property>
+    <property name="complete">true</property>
+    <property name="title" translatable="yes">Terms of Use</property>
+    <child>
+      <object class="GtkBox" id="box">
+        <property name="orientation">vertical</property>
+        <property name="halign">fill</property>
+        <property name="valign">fill</property>
+        <child>
+          <object class="GisPageHeader" id="header">
+            <property name="margin_top">24</property>
+            <property name="title" translatable="yes">Please read the following terms of use carefully</property>
+            <property name="subtitle" translatable="yes">By clicking "Accept," you acknowledge that you have read, understood, and agree to be bound by the following terms and conditions.</property>
+            <property name="show_icon">false</property>
+          </object>
+        </child>
+        <child>
+          <object class="GisEndlessEulaViewer" id="eula_view">
+            <property name="margin_top">18</property>
+            <property name="halign">fill</property>
+            <property name="valign">fill</property>
+            <property name="vexpand">true</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

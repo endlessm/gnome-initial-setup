@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="GisEndlessEulaViewer" parent="WebKitWebView">
+    <signal name="decide-policy" handler="gis_endless_eula_viewer_decide_policy_cb"/>
+    <signal name="context-menu" handler="gis_endless_eula_viewer_context_menu_cb"/>
+  </template>
+</interface>

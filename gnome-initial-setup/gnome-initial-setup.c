@@ -32,6 +32,7 @@
 #include "pages/welcome/gis-welcome-page.h"
 #include "pages/language/gis-language-page.h"
 #include "pages/keyboard/gis-keyboard-page.h"
+#include "pages/endless-eula/gis-endless-eula-page.h"
 #include "pages/network/gis-network-page.h"
 #include "pages/timezone/gis-timezone-page.h"
 #include "pages/privacy/gis-privacy-page.h"
@@ -67,6 +68,7 @@ static PageData page_table[] = {
   PAGE (language, FALSE),
   PAGE (live_chooser, TRUE),
   PAGE (keyboard, FALSE),
+  PAGE (endless_eula, TRUE),
   PAGE (network,  FALSE),
   PAGE (privacy,  FALSE),
   PAGE (timezone, TRUE),
