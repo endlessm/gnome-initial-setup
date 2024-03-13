@@ -64,7 +64,7 @@ data_conf.set('libexecdir', libexec_dir)
 if enable_systemd
     unit_files = {
         'gnome-initial-setup-first-login.service' : [ 'gnome-session.target.wants/' ],
-        'gnome-initial-setup-copy-worker.service' : [ 'gnome-session.target.wants/' ],
+        'gnome-initial-setup-copy-worker.service' : [ 'default.target.wants/' ],
     }
 
     foreach unit, wants: unit_files
