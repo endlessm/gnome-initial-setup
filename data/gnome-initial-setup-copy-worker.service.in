@@ -1,8 +1,11 @@
 [Unit]
 Description=GNOME Initial Setup Copy Worker
 
-# Make sure we run really early
-Before=gnome-session-pre.target graphical-session-pre.target
+# Make sure we complete very early before most consumers are started.
+Before=default.target graphical-session-pre.target
+
+# Run before any systemd activated consumers.
+Before=gnome-keyring-daemon.service
 
 # Never run in GDM
 ConditionUser=!@system
