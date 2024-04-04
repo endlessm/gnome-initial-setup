@@ -1,21 +1,21 @@
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-#
-# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013, 2014, 2015, 2020.
+# This file is distributed under the same license as the gnome-initial-setup package.
+# 
+# Translators:
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013-2015,2020
 msgid ""
 msgstr ""
-"Project-Id-Version: Tajik Gnome\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issue"
-"s\n"
-"POT-Creation-Date: 2020-06-26 13:14+0000\n"
-"PO-Revision-Date: 2020-07-29 13:36+0500\n"
-"Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
-"Language-Team: Tajik <victor.ibragimov@gmail.com>\n"
-"Language: tg\n"
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
+"POT-Creation-Date: 2024-03-21 06:32+0000\n"
+"PO-Revision-Date: 2014-06-16 22:11+0000\n"
+"Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>, 2013-2015,2020\n"
+"Language-Team: Tajik (http://app.transifex.com/endless-os/gnome-initial-setup/language/tg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.04.2\n"
+"Language: tg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/gnome-initial-setup-first-login.desktop.in.in:3
@@ -23,53 +23,77 @@ msgstr ""
 msgid "Initial Setup"
 msgstr "Танзимоти ибтидоӣ"
 
-#: gnome-initial-setup/gis-assistant.c:419
+#: gnome-initial-setup/gis-assistant.c:426
 msgid "_Next"
 msgstr "_Навбатӣ"
 
-#: gnome-initial-setup/gis-assistant.c:420
+#: gnome-initial-setup/gis-assistant.c:427
 msgid "_Accept"
 msgstr "_Қабул кардан"
 
-#: gnome-initial-setup/gis-assistant.c:421
+#: gnome-initial-setup/gis-assistant.c:428
 msgid "_Skip"
 msgstr "_Нодида гузарондан"
 
-#: gnome-initial-setup/gis-assistant.c:422
+#: gnome-initial-setup/gis-assistant.c:429
 msgid "_Previous"
 msgstr "_Қаблӣ"
 
-#: gnome-initial-setup/gis-assistant.c:423
+#: gnome-initial-setup/gis-assistant.c:430
 msgid "_Cancel"
 msgstr "_Бекор кардан"
 
-#: gnome-initial-setup/gnome-initial-setup.c:241
+#: gnome-initial-setup/gis-page-util.c:309
+msgid "Unknown"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.c:311
+#, c-format
+msgid "Image: %s"
+msgstr ""
+
+#. Translators: this is shown when launching the
+#. * reformatter (an external program) fails. The
+#. * placeholder is an error message describing what went
+#. * wrong.
+#: gnome-initial-setup/gis-page-util.c:363
+#, c-format
+msgid "Error running the reformatter: %s"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:29
+msgid "Test Mode"
+msgstr ""
+
+#: gnome-initial-setup/gis-page-util.ui:55
+msgid "Power Off"
+msgstr ""
+
+#: gnome-initial-setup/gnome-initial-setup.c:279
 msgid "Force existing user mode"
 msgstr "Маҷбур кардани хуруҷ аз ҳолати корбар"
 
-#: gnome-initial-setup/gnome-initial-setup.c:247
-#, fuzzy
-#| msgid "- GNOME initial setup"
+#: gnome-initial-setup/gnome-initial-setup.c:285
 msgid "— GNOME initial setup"
-msgstr "- Танзимоти ибтидоии GNOME"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-avatar-chooser.ui:36
 msgid "Take a Picture…"
 msgstr "Гирифтани сурат…"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:184
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:185
 msgid "Failed to register account"
 msgstr "Ҳангоми қайдкунии ҳисоб хатогӣ ба вуҷуд омад"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:378
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:379
 msgid "No supported way to authenticate with this domain"
 msgstr "Ягон тарзи санҷиши ҳаққоният барои ин домен дастгирӣ намешавад"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:418
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:419
 msgid "Failed to join domain"
 msgstr "Ҳангоми ҳамроҳ шудан ба домен хатогӣ ба вуҷуд омад"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:486
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:487
 msgid "Failed to log into domain"
 msgstr "Ҳангоми ворид шудан ба домен хатогӣ ба вуҷуд омад"
 
@@ -78,17 +102,11 @@ msgid "Enterprise Login"
 msgstr "Вуруди тиҷорӣ"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:18
-#, fuzzy
-#| msgid ""
-#| "Enterprise login allows an existing centrally managed user account to be "
-#| "used on this device."
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
 msgstr ""
-"Вуруди тиҷорӣ имкон медиҳад, ки ҳисоби корбари идорашудаи марказии "
-"мавҷудбуда тавонад дар ин ҳисоб истифода бурда шавад."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:36
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:287
@@ -122,10 +140,7 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"Барои истифодаи воридшавии корӣ, ин компютер бояд дар домен қайд карда "
-"шавад. Лутфан, маъмури шабакаи худро пурсед, ки пароли доменро ин ҷо ворид "
-"кунад ва номи ягонаи компютерро барои компютери шумо ворид кунад."
+msgstr "Барои истифодаи воридшавии корӣ, ин компютер бояд дар домен қайд карда шавад. Лутфан, маъмури шабакаи худро пурсед, ки пароли доменро ин ҷо ворид кунад ва номи ягонаи компютерро барои компютери шумо ворид кунад."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:321
 msgid "_Computer"
@@ -139,22 +154,20 @@ msgstr "_Номи маъмур"
 msgid "Administrator Password"
 msgstr "Пароли маъмур"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:207
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:209
 msgid "Please check the name and username. You can choose a picture too."
 msgstr ""
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:453
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:460
 msgid "We need a few details to complete setup."
 msgstr "Барои ба анҷом расонидани танзим баъзе тафсилот лозиманд."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:559
-#, fuzzy
-#| msgid "Administrator _Name"
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:566
 msgid "Administrator"
-msgstr "_Номи маъмур"
+msgstr ""
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:565
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:608
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:572
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:615
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "Корбари '%s' эҷод карда нашуд: "
@@ -176,88 +189,104 @@ msgstr ""
 msgid "_Full Name"
 msgstr "_Номи пурра"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:149
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:145
+msgid "Set a password"
+msgstr ""
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:161
 msgid "Set up _parental controls for this user"
 msgstr ""
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:156
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:168
 msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:43
-#, fuzzy
-#| msgid "Enterprise Login"
 msgid "_Enterprise Login"
-msgstr "Вуруди тиҷорӣ"
+msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:53
-#, fuzzy
-#| msgid "Set Up _Enterprise Login"
 msgid "Go online to set up Enterprise Login."
-msgstr "Танзими _вуруди тиҷорӣ"
+msgstr ""
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:310
+#: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
 msgstr "Ҳамроҳ шудан ба ин намуди домен ба таври худкор имконнопазир аст"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:373
-#, c-format
+#: gnome-initial-setup/pages/account/um-realm-manager.c:269
 msgid "No such domain or realm found"
 msgstr "Чунин домен ё соҳиб ёфт нашуд"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:782
-#: gnome-initial-setup/pages/account/um-realm-manager.c:796
+#: gnome-initial-setup/pages/account/um-realm-manager.c:723
+#: gnome-initial-setup/pages/account/um-realm-manager.c:737
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
 msgstr "Ҳамчун %s ба домени %s ворид намешавад"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:788
+#: gnome-initial-setup/pages/account/um-realm-manager.c:729
 msgid "Invalid password, please try again"
 msgstr "Пароли беэътибор, лутфан, амалро такрор кунед"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:801
-#, fuzzy, c-format
-#| msgid "Couldn't connect to the %s domain: %s"
+#: gnome-initial-setup/pages/account/um-realm-manager.c:742
+#, c-format
 msgid "Couldn’t connect to the %s domain: %s"
-msgstr "Ба домени %s пайваст нашуд: %s"
+msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:248
+#: gnome-initial-setup/pages/account/um-utils.c:255
 msgid "Sorry, that user name isn’t available. Please try another."
 msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:251
+#: gnome-initial-setup/pages/account/um-utils.c:258
 #, c-format
 msgid "The username is too long."
 msgstr "Номи корбар хеле дароз аст."
 
-#: gnome-initial-setup/pages/account/um-utils.c:254
-#, fuzzy
-#| msgid "The username cannot start with a '-'."
-msgid "The username cannot start with a “-”."
-msgstr "Номи корбар бояд бо '-' сар нашавад."
+#: gnome-initial-setup/pages/account/um-utils.c:261
+msgid "The username must start with a lower case letter from a-z."
+msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:257
+#: gnome-initial-setup/pages/account/um-utils.c:264
 msgid "That username isn’t available. Please try another."
 msgstr ""
 
-#: gnome-initial-setup/pages/account/um-utils.c:260
-#, fuzzy
-#| msgid ""
-#| "The username should only consist of lower and upper case letters from a-"
-#| "z, digits and any of characters '.', '-' and '_'."
+#: gnome-initial-setup/pages/account/um-utils.c:267
 msgid ""
-"The username should only consist of upper and lower case letters from a-z, "
-"digits and the following characters: . - _"
+"The username should only consist of lower case letters from a-z, digits, and"
+" the following characters: - _"
 msgstr ""
-"Номи корбар бояд танҳо аз ҳарфҳои хурду калон аз a-z, рақамҳо ва аломатҳои "
-"'.', '-' ва '_' иборат шавад."
 
-#: gnome-initial-setup/pages/account/um-utils.c:264
-#, fuzzy
-#| msgid "This will be used to name your home folder and can't be changed."
+#: gnome-initial-setup/pages/account/um-utils.c:271
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr ""
-"Ин барои номи ҷузвдони асосӣ истифода мешавад ва тағйир дода намешавад."
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.c:128
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:235
+msgid "Terms of Use"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:20
+msgid "Please read the following terms of use carefully"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:37
+msgid ""
+"By clicking \"Accept,\" you acknowledge that you have read, understood, and "
+"agree to be bound by the following terms and conditions."
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:88
+msgid "Help make Endless better for everyone"
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-page.ui:119
+msgid ""
+"Automatically save and send usage statistics and problem reports to Endless."
+" All data is anonymous."
+msgstr ""
+
+#: gnome-initial-setup/pages/endless-eula/gis-endless-eula-viewer.c:240
+msgid "Third Party Software"
+msgstr ""
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:92
 msgid "Add Account"
@@ -272,44 +301,32 @@ msgid "Connect Your Online Accounts"
 msgstr "Пайваст кардани ҳисобҳои онлайни худ"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:18
-#, fuzzy
-#| msgid ""
-#| "Connecting your accounts will allow you to easily access your email, "
-#| "online calendar, contacts, documents and photos."
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
 msgstr ""
-"Пайвасткунии ҳисобҳои худ ба шумо имкон медиҳад, ки тавонед ба почтаи "
-"электронӣ, тақвими онлайн, тамосҳо, ҳуҷҷатҳо ва суратҳо дастрасии осон пайдо "
-"кунед."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:48
-#, fuzzy
-#| msgid "Privacy controls can be changed at any time from Settings."
 msgid ""
 "Accounts can be added and removed at any time from the Settings application."
 msgstr ""
-"Унсурҳои идоракунии махфият метавонанд дар Танзимот дар вақти дилхоҳ иваз "
-"карда шаванд."
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:240
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:280
 msgid "Preview"
 msgstr "Пешнамоиш"
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:299
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:227
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:339
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:291
 msgid "More…"
 msgstr "Бештар..."
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:321
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:361
 msgid "No inputs found"
 msgstr "Ягон вуруд ёфт нашуд"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:505
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:504
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
 msgid "Typing"
 msgstr "Ҳуруфчинӣ"
@@ -318,21 +335,44 @@ msgstr "Ҳуруфчинӣ"
 msgid "Select your keyboard layout or an input method."
 msgstr "Интихоб кардани тарҳбандии клавиатура ё тарзи вуруд."
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:243
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:307
 msgid "No languages found"
 msgstr "Ягон забон ёфт нашуд"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:262
+#: gnome-initial-setup/pages/language/gis-language-page.c:357
 msgid "Welcome"
 msgstr "Хуш омадед"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:136
 msgid "Welcome!"
 msgstr "Хуш омадед!"
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:167
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:42
+msgid "Try Endless OS by running it from the USB Stick."
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:168
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:116
+msgid "Reformat this computer with Endless OS."
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:169
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:71
+msgid "Try It"
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:170
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:145
+msgid "Reformat"
+msgstr ""
+
+#: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:172
+msgid "Try or Reformat"
+msgstr ""
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:318
 msgctxt "Wireless access point"
@@ -357,14 +397,9 @@ msgstr "Wi-Fi"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:19
 msgid ""
-"Connecting to the Internet will enable you to set the time, add your "
-"details, and enable you to access your email, calendar, and contacts. It is "
-"also necessary for enterprise login accounts."
+"Connecting to the internet helps you get new apps, information, and other "
+"upgrades. It also helps set the time and your location automatically."
 msgstr ""
-"Пайвастагӣ бо Интернет ба шумо имкон медиҳад, ки тавонед вақтро танзим "
-"кунед, тафсилоти худро илова кунед ва ба почтаи электронии худ, тақвимҳо ва "
-"тамосҳо дастрасӣ пайдо кунед. Интернет инчунин барои вуруд ба ҳисобҳои корӣ "
-"лозим аст."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:76
 msgid "No wireless available"
@@ -375,65 +410,66 @@ msgid "Turn On"
 msgstr "Фаъол кардан"
 
 #. Translators: The placeholder is the user’s full name.
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:102
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:135
 #, c-format
 msgid "Parental Controls for %s"
 msgstr ""
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:104
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:137
 msgid "Set restrictions on what this user can run or install."
 msgstr ""
 
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:199
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:232
 msgid "Parental Controls"
 msgstr ""
 
 #. Don’t break UI compatibility if parental controls are disabled.
-#: gnome-initial-setup/pages/password/gis-password-page.c:79
+#: gnome-initial-setup/pages/password/gis-password-page.c:82
 msgid "Set a Password"
 msgstr "Паролеро танзим кунед"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:80
-#: gnome-initial-setup/pages/password/gis-password-page.c:89
+#: gnome-initial-setup/pages/password/gis-password-page.c:83
+#: gnome-initial-setup/pages/password/gis-password-page.c:92
 msgid "Be careful not to lose your password."
 msgstr "Боэҳтиёт бошед, ки пароли худро гум накунед."
 
 #. Translators: The placeholder is for the user’s full name.
-#: gnome-initial-setup/pages/password/gis-password-page.c:87
-#, fuzzy, c-format
-#| msgid "Set a Password"
+#: gnome-initial-setup/pages/password/gis-password-page.c:90
+#, c-format
 msgid "Set a Password for %s"
-msgstr "Паролеро танзим кунед"
+msgstr ""
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:95
-#, fuzzy
-#| msgid "Set a Password"
+#: gnome-initial-setup/pages/password/gis-password-page.c:98
 msgid "Set a Parent Password"
-msgstr "Паролеро танзим кунед"
+msgstr ""
 
-#. Translators: The placeholder is the full name of the child user on the system.
-#: gnome-initial-setup/pages/password/gis-password-page.c:97
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
+#: gnome-initial-setup/pages/password/gis-password-page.c:100
 #, c-format
 msgid "This password will control access to the parental controls for %s."
 msgstr ""
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:228
-msgid "This is a weak password."
-msgstr "Ин пароли беқувват аст."
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:234
+#: gnome-initial-setup/pages/password/gis-password-page.c:255
 msgid "The passwords do not match."
 msgstr "Паролҳо мувофиқат намекунанд."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:420
+#: gnome-initial-setup/pages/password/gis-password-page.c:299
+#: gnome-initial-setup/pages/password/gis-password-page.c:330
+msgid "Show password"
+msgstr ""
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:338
+msgid "Hide password"
+msgstr ""
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:531
 msgid "Password"
 msgstr "Парол"
 
-#: gnome-initial-setup/pages/password/gis-password-page.ui:66
-#, fuzzy
-#| msgid "_Confirm password"
+#: gnome-initial-setup/pages/password/gis-password-page.ui:69
 msgid "_Confirm"
-msgstr "_Паролро тасдиқ намоед"
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -445,9 +481,7 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
-"Ин парол ба пароли охирини шумо хеле монанд аст. Баъзеи ҳарфҳо ва рақамҳоро "
-"иваз кунед."
+msgstr "Ин парол ба пароли охирини шумо хеле монанд аст. Баъзеи ҳарфҳо ва рақамҳоро иваз кунед."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -455,55 +489,46 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
-"Ин парол ба пароли охирини шумо хеле монанд аст. Паролеро каме иваз кунед."
+msgstr "Ин парол ба пароли охирини шумо хеле монанд аст. Паролеро каме иваз кунед."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
-"This is a weak password. A password without your user name would be stronger."
+"This is a weak password. A password without your user name would be "
+"stronger."
 msgstr "Ин пароли беқувват аст. Парол бе номи корбари шумо қавитар мешавад."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr ""
-"Ин пароли беқувват аст. Кӯшиш кунед, ки номи корбари худро дар парол "
-"истифода набаред."
+msgstr "Ин пароли беқувват аст. Кӯшиш кунед, ки номи корбари худро дар парол истифода набаред."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
-"Ин пароли беқувват аст. Кӯшиш кунед, ки баъзе калимаҳои иловашударо аз парол "
-"истисно кунед."
+msgstr "Ин пароли беқувват аст. Кӯшиш кунед, ки баъзе калимаҳои иловашударо аз парол истисно кунед."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr ""
-"Ин пароли беқувват аст. Кӯшиш кунед, ки баъзе калимаҳои иддиро истисно кунед."
+msgstr "Ин пароли беқувват аст. Кӯшиш кунед, ки баъзе калимаҳои иддиро истисно кунед."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr ""
-"Ин пароли беқувват аст. Кӯшиш кунед, ки калимаҳои мавҷудбударо ба таври "
-"дигар мураттаб кунед."
+msgstr "Ин пароли беқувват аст. Кӯшиш кунед, ки калимаҳои мавҷудбударо ба таври дигар мураттаб кунед."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr ""
-"Ин пароли беқувват аст. Кӯшиш кунед, ки рақами иловагиро истифода баред."
+msgstr "Ин пароли беқувват аст. Кӯшиш кунед, ки рақами иловагиро истифода баред."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr ""
-"Ин пароли беқувват аст. Кӯшиш кунед, ки ҳарфҳои калонро истифода баред."
+msgstr "Ин пароли беқувват аст. Кӯшиш кунед, ки ҳарфҳои калонро истифода баред."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
@@ -515,94 +540,63 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
-"Ин пароли беқувват аст. Кӯшиш кунед, ки аломатҳои махсусро, монанди аломати "
-"китобат, истифода баред."
+msgstr "Ин пароли беқувват аст. Кӯшиш кунед, ки аломатҳои махсусро, монанди аломати китобат, истифода баред."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
-"Ин пароли беқувват аст. Кӯшиш кунед, ки омезиши ҳарфҳо, рақамҳо ва аломатҳои "
-"китобатиро истифода баред."
+msgstr "Ин пароли беқувват аст. Кӯшиш кунед, ки омезиши ҳарфҳо, рақамҳо ва аломатҳои китобатиро истифода баред."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr ""
-"Ин пароли беқувват аст. Кӯшиш кунед, ки такрории баъзе аломатҳоро истисно "
-"кунед."
+msgstr "Ин пароли беқувват аст. Кӯшиш кунед, ки такрории баъзе аломатҳоро истисно кунед."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"Ин пароли беқувват аст. Кӯшиш кунед, ки такрории баъзе намудҳои аломатҳоро "
-"истисно кунед: шумо бояд ҳарфҳо, рақамҳо ва аломати китобатиро омезиш кунед."
+msgstr "Ин пароли беқувват аст. Кӯшиш кунед, ки такрории баъзе намудҳои аломатҳоро истисно кунед: шумо бояд ҳарфҳо, рақамҳо ва аломати китобатиро омезиш кунед."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr ""
-"Ин пароли беқувват аст. Кӯшиш кунед, ки силсиларо монанди 1234 ё abcd "
-"истисно кунед."
+msgstr "Ин пароли беқувват аст. Кӯшиш кунед, ки силсиларо монанди 1234 ё abcd истисно кунед."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
-#, fuzzy
-#| msgctxt "Password hint"
-#| msgid ""
-#| "This is a weak password. Try to use a mixture of letters, numbers and "
-#| "punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
 msgstr ""
-"Ин пароли беқувват аст. Кӯшиш кунед, ки омезиши ҳарфҳо, рақамҳо ва аломатҳои "
-"китобатиро истифода баред."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
-#, fuzzy
-#| msgctxt "Password hint"
-#| msgid "Mix uppercase and lowercase and use a number or two."
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr "Ҳарфҳои хурду калон бо рақамҳо аралаш кунед."
+msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
-#, fuzzy
-#| msgctxt "Password hint"
-#| msgid ""
-#| "Good password! Adding more letters, numbers and punctuation will make it "
-#| "stronger."
 msgctxt "Password hint"
 msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
+"Adding more letters, numbers and punctuation will make the password "
+"stronger."
 msgstr ""
-"Пароли хуб! Барои қавитар кардани парол, ҳарфҳо, рақамҳо ва аломатҳои "
-"бештарро илова кунед."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sending reports of technical problems helps us to improve %s. Reports are "
 "sent anonymously and are scrubbed of personal data."
-msgstr ""
-"Ирсолкунии гузоришҳо оиди мушкилиҳои техникӣ ба мо барои такмилдиҳии %s "
-"кумак мерасонад. Гузоришҳо ба таври махфӣ фиристода мешаванд ва маълумоти "
-"шахсиро дар бар намегиранд."
+msgstr "Ирсолкунии гузоришҳо оиди мушкилиҳои техникӣ ба мо барои такмилдиҳии %s кумак мерасонад. Гузоришҳо ба таври махфӣ фиристода мешаванд ва маълумоти шахсиро дар бар намегиранд."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:78
 #, c-format
 msgid "Problem data will be collected by %s:"
@@ -615,10 +609,8 @@ msgid "Privacy Policy"
 msgstr "Сиёсати махфият"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:135
-#, fuzzy
-#| msgid "Location Services"
 msgid "Uses Mozilla Location Service:"
-msgstr "Хидматҳои ҷойгиршавӣ"
+msgstr ""
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:246
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:16
@@ -633,55 +625,110 @@ msgstr "Хидматҳои ҷойгиршавӣ"
 msgid ""
 "Allows applications to determine your geographical location. An indication "
 "is shown when location services are in use."
-msgstr ""
-"Ба барномаҳо иҷозат медиҳанд, то ки макони ҷуғрофиро муайян кунанд. Вақте ки "
-"хидматҳои ҷойгиршавӣ истифода мешаванд, индикатор намоиш дода мешавад."
+msgstr "Ба барномаҳо иҷозат медиҳанд, то ки макони ҷуғрофиро муайян кунанд. Вақте ки хидматҳои ҷойгиршавӣ истифода мешаванд, индикатор намоиш дода мешавад."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:74
 msgid "Automatic Problem Reporting"
 msgstr "Гузоришдиҳии худкор оиди мушкилиҳо"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:110
-#, fuzzy
-#| msgid "Privacy controls can be changed at any time from Settings."
 msgid ""
 "Privacy controls can be changed at any time from the Settings application."
 msgstr ""
-"Унсурҳои идоракунии махфият метавонанд дар Танзимот дар вақти дилхоҳ иваз "
-"карда шаванд."
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:33
+msgid "Site"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:54
+msgid ""
+"At which site is this computer located? Search for your site here. You may "
+"enter manually if there is no match."
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:78
+msgid "enter manually"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:102
+msgid "ID"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:131
+msgid "Facility"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:160
+msgid "Street address"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:189
+msgid "City"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:218
+msgid "State"
+msgstr ""
+
+#: gnome-initial-setup/pages/site/gis-site-page.ui:247
+msgid "Country"
+msgstr ""
+
+#: gnome-initial-setup/pages/software/gis-software-page.c:112
+#: gnome-initial-setup/pages/software/gis-software-page.ui:16
+#: gnome-initial-setup/pages/software/gis-software-page.ui:31
+msgid "Third-Party Repositories"
+msgstr ""
+
+#: gnome-initial-setup/pages/software/gis-software-page.c:113
+msgid ""
+"Third-party repositories provide access to additional software from selected"
+" external sources. They include popular apps, as well as firmware that is "
+"important for some devices. Some proprietary software is included."
+msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:233
-#, fuzzy, c-format
-#| msgid "_Start using %s"
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:235
+#, c-format
 msgid "_Start Using %s"
-msgstr "_Оғози истифодаи %s"
+msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:240
-#, fuzzy, c-format
-#| msgid ""
-#| "Thank you for choosing %s.\n"
-#| "We hope that you love it."
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:242
+#, c-format
 msgid "%s is ready to be used. We hope that you love it!"
 msgstr ""
-"Ташаккур барои интихоби %s.\n"
-"Умедворем, ки он ба шумо маъқул аст."
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:264
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:266
+msgid "You're ready to try Endless OS"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:269
+msgid ""
+"<b>System software updates are unavailable when running from evaluation "
+"media. Please install Endless if you like it!</b>"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:273
+msgid ""
+"<b>Any files you download or documents you create will be lost forever when "
+"you restart or shutdown the computer.</b>"
+msgstr ""
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:283
 msgid "Setup Complete"
 msgstr "Танзим ба анҷом расид"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:70
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:92
 msgid "All done!"
 msgstr "Ҳамааш тайёр!"
 
 #. Translators: "city, country"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:261
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:280
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
@@ -689,29 +736,28 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:298
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
 
 #. Translators: This is the time format used in 12-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:302
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:324
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
 #. Translators: This is the time format used in 24-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:305
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:327
 msgid "%R"
 msgstr "%R"
 
 #. Translators: "timezone (utc shift)"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:308
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:330
 #, c-format
 msgctxt "timezone map"
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:473
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:495
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:17
 msgid "Time Zone"
 msgstr "Минтақаи вақт"
@@ -726,231 +772,28 @@ msgstr ""
 msgid "Please search for a nearby city"
 msgstr "Лутфан, шаҳри наздикеро интихоб кунед"
 
-#~ msgid "Are these the right details? You can change them if you want."
-#~ msgstr ""
-#~ "Оё ин тафсилот дурустанд? Шумо метавонед онҳоро ба таври лозими тағйир "
-#~ "диҳед."
+#. Translators: This is meant to be a warm, engaging welcome message,
+#. * like greeting somebody at the door. If the exclamation mark is not
+#. * suitable for this in your language you may replace it. The space
+#. * before the exclamation mark in this string is a typographical thin
+#. * space (U200a) to improve the spacing in the title, which you can
+#. * keep or remove. The %s is getting replaced with the name and version
+#. * of the OS, e.g. "GNOME 3.38"
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:209
+#, c-format
+msgid "Welcome to %s !"
+msgstr ""
 
-#~ msgid "Disable image"
-#~ msgstr "Ғайрифаъол кардани тасвир"
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:5
+msgid "Setup"
+msgstr ""
 
-#~ msgid "Take a photo..."
-#~ msgstr "Гирифтани сурат..."
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:43
+msgid ""
+"Setup will guide you through making an account and enabling some features. "
+"We’ll have you up and running in no time."
+msgstr ""
 
-#~ msgid "A user with the username '%s' already exists."
-#~ msgstr "Корбар бо номи '%s' аллакай мавҷуд аст."
-
-#~ msgid "License Agreements"
-#~ msgstr "Шартномаи иҷозатнома"
-
-#~ msgid ""
-#~ "I have _agreed to the terms and conditions in this end user license "
-#~ "agreement."
-#~ msgstr "Ман _бо шарту шароити ин шартномаи иҷозатномаи корбарӣ розӣ ҳастам."
-
-#~ msgid "You can review your online accounts (and add others) after setup."
-#~ msgstr ""
-#~ "Шумо метавонед ҳисобҳои онлайни хдро баъд аз танзим бозбинӣ унед (ва "
-#~ "дигаронро илова кунед)."
-
-#~ msgid "_Verify"
-#~ msgstr "_Тасдиқ кардан"
-
-#~ msgctxt "Password hint"
-#~ msgid ""
-#~ "This is a weak password. Try to add more letters, numbers and symbols."
-#~ msgstr ""
-#~ "Ин пароли беқувват аст. Кӯшиш кунед, ки ҳарфҳо, рақамҳо ва аломатҳои "
-#~ "бештарро илова кунед."
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Weak"
-#~ msgstr "Тавоноӣ: Беқувват"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Low"
-#~ msgstr "Тавоноӣ: Камқувват"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Medium"
-#~ msgstr "Тавоноӣ: Миёна"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: Good"
-#~ msgstr "Тавоноӣ: Боқувват"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strength: High"
-#~ msgstr "Тавоноӣ: Пурқувват"
-
-#~ msgid "No regions found"
-#~ msgstr "Ягон минтақа ёфт нашуд"
-
-#~ msgid "Region"
-#~ msgstr "Минтақа"
-
-#~ msgid "Choose your country or region."
-#~ msgstr "Минтақа ё кишвари худро интихоб намоед."
-
-#~ msgid "Ready to Go"
-#~ msgstr "Барои истифода тайёр аст"
-
-#~ msgid "You're all set!"
-#~ msgstr "Ҳамааш тайёр!"
-
-#~ msgid ""
-#~ "We think that your time zone is %s. Press Next to continue or search for "
-#~ "a city to manually set the time zone."
-#~ msgstr ""
-#~ "Мо фикр мекунем, ки минтақаи вақти шумо %s мебошад. Тугмаи \"Навбатӣ\"-ро "
-#~ "барои идома зер кунед ё барои танзими минтақаи вақт ба таври дастӣ "
-#~ "шаҳреро интихоб кунед."
-
-#~ msgid "Your username cannot be changed after setup."
-#~ msgstr "Номи корбари шумо баъд аз танзим тағйир дода намешавад."
-
-#~ msgid "Cancel"
-#~ msgstr "Бекор кардан"
-
-#~ msgid ""
-#~ "In order to use enterprise logins, this computer needs to be enrolled in "
-#~ "the domain. Please have your network administrator type their domain "
-#~ "password here, and choose a unique computer name for your computer."
-#~ msgstr ""
-#~ "Барои истифодаи воридшавии корӣ, ин компютер бояд дар домен қайд карда "
-#~ "шавад. Лутфан, маъмури шабакаро пурсед, ки пароли доменро ин ҷо ворид "
-#~ "кунад ва номи ягонаи компютерро барои компютери шумо гузарад."
-
-#~ msgid "No password"
-#~ msgstr "Бе парол"
-
-#~ msgctxt "Password strength"
-#~ msgid "Too short"
-#~ msgstr "Хеле кӯтоҳ"
-
-#~ msgctxt "Password strength"
-#~ msgid "Not good enough"
-#~ msgstr "Он қадар хуб нест"
-
-#~ msgctxt "Password strength"
-#~ msgid "Weak"
-#~ msgstr "Паст"
-
-#~ msgctxt "Password strength"
-#~ msgid "Fair"
-#~ msgstr "Хуб"
-
-#~ msgctxt "Password strength"
-#~ msgid "Good"
-#~ msgstr "Хуб"
-
-#~ msgctxt "Password strength"
-#~ msgid "Strong"
-#~ msgstr "Қавӣ"
-
-#~ msgid "Login"
-#~ msgstr "Воридшавӣ"
-
-#~ msgid "Create an Enterprise Account"
-#~ msgstr "Эҷод кардани ҳисоби корӣ"
-
-#~ msgid "Create a Local Account"
-#~ msgstr "Эҷод кардани ҳисоби маҳаллӣ"
-
-#~ msgid "page 1"
-#~ msgstr "саҳифаи 1"
-
-#~ msgid "Other"
-#~ msgstr "Дигар"
-
-#~| msgid "No input sources found"
-#~ msgid "No input source selected"
-#~ msgstr "Ягон манбаи вуруд интихоб нашуд"
-
-#~ msgid "Add an Input Source"
-#~ msgstr "Илова кардани манбаи вуруд"
-
-#~| msgid "Other"
-#~ msgctxt "Online Account"
-#~ msgid "Other"
-#~ msgstr "Дигар"
-
-#~ msgid "Mail"
-#~ msgstr "Почта"
-
-#~ msgid "Contacts"
-#~ msgstr "Тамосҳо"
-
-#~ msgid "Chat"
-#~ msgstr "Чат"
-
-#~ msgid "Resources"
-#~ msgstr "Сарчашмаҳо"
-
-#~ msgid "Error creating account"
-#~ msgstr "Ҳангоми эҷодкунии ҳисоб хатогӣ ба вуҷуд омад"
-
-#~ msgid "Error removing account"
-#~ msgstr "Ҳангоми тозакунии ҳисоб хатогӣ ба вуҷуд омад"
-
-#~ msgid "Are you sure you want to remove the account?"
-#~ msgstr "Шумо мутмаин ҳастед, ки мехоҳед ҳисобро тоза кунед?"
-
-#~ msgid "This will not remove the account on the server."
-#~ msgstr "Ин ҳисобро дар сервер нест намекунад."
-
-#~ msgid "_Remove"
-#~ msgstr "_Тоза кардан"
-
-#~ msgid "Connect to your existing data in the cloud"
-#~ msgstr "Пайваст шудан ба иттилооти мавҷудбуда дар абр"
-
-#~ msgid "_Add Account"
-#~ msgstr "_Илова кардани ҳисоб"
-
-#~ msgid "Input Sources"
-#~ msgstr "Манбаҳои вуруд"
-
-#~ msgid "Select keyboard layouts"
-#~ msgstr "Интихоби тарҳбандиҳои клавиатура"
-
-#~ msgid "Login settings are used by all users when logging into the system"
-#~ msgstr ""
-#~ "Танзимоти воридшавӣ бо ҳамаи корбарон барои ворид шудан ба система "
-#~ "истифода мешаванд"
-
-#~ msgid "Search for a location"
-#~ msgstr "Ҷустуҷӯи ҷойгиршавӣ"
-
-#~ msgid "_Determine your location automatically"
-#~ msgstr "_Муайян кардани ҷойгиршавии худ ба таври худкор"
-
-#~ msgid "No network devices found."
-#~ msgstr "Ягон дастгоҳи шабакавӣ ёфт нашуд."
-
-#~ msgid "Thank You"
-#~ msgstr "Ташаккур ба шумо"
-
-#~ msgid "Your computer is ready to use."
-#~ msgstr "Компютери шумо барои истифода тайёр аст."
-
-#~ msgid "You may change these options at any time in Settings."
-#~ msgstr "Шумо метавонед ин имконотро дар Танзимот тағйир диҳед."
-
-#~ msgid "_Start using GNOME 3"
-#~ msgstr "_Оғози кор бо GNOME 3"
-
-#~ msgid "Select input sources"
-#~ msgstr "Интихоби манбаҳои вуруд"
-
-#~ msgid "_Back"
-#~ msgstr "_Қаблӣ"
-
-#~ msgid "Remove Input Source"
-#~ msgstr "Тоза кардани манбаи вуруд"
-
-#~ msgid "Move Input Source Up"
-#~ msgstr "Интиқол додани манбаи вуруд ба боло"
-
-#~ msgid "Input Source Settings"
-#~ msgstr "Танзимоти манбаи вуруд"
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:54
+msgid "_Start Setup"
+msgstr ""
