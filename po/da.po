@@ -4,6 +4,7 @@
 # 
 # Translators:
 # askhl <asklarsen@gmail.com>, 2013
+# askhl <asklarsen@gmail.com>, 2022
 # askhl <asklarsen@gmail.com>, 2013
 # Kenneth Nielsen <k.nielsen81@gmail.com>, 2013
 # Kris Thomsen <mail@kristhomsen.dk>, 2012
@@ -14,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2024-04-04 20:49+0000\n"
+"POT-Creation-Date: 2024-04-09 13:06+0100\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
-"Last-Translator: Kris Thomsen <mail@kristhomsen.dk>, 2012\n"
+"Last-Translator: askhl <asklarsen@gmail.com>, 2022\n"
 "Language-Team: Danish (http://app.transifex.com/endless-os/gnome-initial-setup/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,14 +58,6 @@ msgstr ""
 #: gnome-initial-setup/gis-factory-dialog.c:219
 #, c-format
 msgid "Image: %s"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:61
-msgid "Test Mode"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:75
-msgid "Power Off"
 msgstr ""
 
 #: gnome-initial-setup/gnome-initial-setup.c:286
@@ -300,11 +293,11 @@ msgstr "Konti kan altid tilføjes og fjernes i programmet Indstillinger."
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:430
 #, c-format
 msgid "%s Account"
-msgstr ""
+msgstr "%s-konto"
 
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:433
 msgid "Remove Account"
-msgstr ""
+msgstr "Fjern konto"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:289
 msgid "Preview"
@@ -578,7 +571,7 @@ msgstr "Adgangskoden vil blive stærkere, hvis du tilføjer flere bogstaver, tal
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-msgstr ""
+msgstr "Sender tekniske rapporter, hvori personlige oplysninger automatisk fjernes. Data indsamles af %1$s (<a href='%2$s'>privatlivspolitik</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -588,7 +581,7 @@ msgstr ""
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %s."
-msgstr ""
+msgstr "Sender tekniske rapporter, hvori personlige oplysninger automatisk fjernes. Data indsamles af %1$s."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:274
 msgid "Privacy Policy"
@@ -608,7 +601,7 @@ msgid ""
 "Allows applications to determine your geographical location. Uses the "
 "Mozilla Location Service (<a "
 "href='https://location.services.mozilla.com/privacy'>privacy policy</a>)."
-msgstr ""
+msgstr "Tillader programmer at bestemme dit geografiske sted. Bruger Mozilla Location Service (<a href='https://location.services.mozilla.com/privacy'>privatlivspolitik</a>)."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:59
 msgid "Automatic Problem Reporting"
@@ -639,15 +632,15 @@ msgid ""
 "Third-party repositories provide access to additional software from selected"
 " external sources, including popular apps and drivers that are important for"
 " some devices. Some proprietary software is included."
-msgstr ""
+msgstr "Tredjepartsarkiver giver adgang til flere programmer fra udvalgte eksterne kilder. De indeholder populære programmer og drivere, som er vigtige for visse enheder. Nogle proprietære programmer er med."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:120
 msgid "_Disable Third-Party Repositories"
-msgstr ""
+msgstr "Slå tredjepartsarkiver _fra"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:125
 msgid "_Enable Third-Party Repositories"
-msgstr ""
+msgstr "Slå tredjepartsarkiver _til"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -705,7 +698,7 @@ msgstr "Færdig!"
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:576
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:267

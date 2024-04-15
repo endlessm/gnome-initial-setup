@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2024-04-04 20:49+0000\n"
+"POT-Creation-Date: 2024-04-09 13:06+0100\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: Cédric Valmary <cvalmary@yahoo.fr>, 2016,2018\n"
 "Language-Team: Occitan (post 1500) (http://app.transifex.com/endless-os/gnome-initial-setup/language/oc/)\n"
@@ -53,14 +53,6 @@ msgstr ""
 #: gnome-initial-setup/gis-factory-dialog.c:219
 #, c-format
 msgid "Image: %s"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:61
-msgid "Test Mode"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:75
-msgid "Power Off"
 msgstr ""
 
 #: gnome-initial-setup/gnome-initial-setup.c:286
@@ -224,7 +216,7 @@ msgstr "Senhal invalid, ensajatz tornamai"
 #: gnome-initial-setup/pages/account/um-realm-manager.c:742
 #, c-format
 msgid "Couldn’t connect to the %s domain: %s"
-msgstr "Impossible de se connectar al domeni %s : %s"
+msgstr "Impossible de se connectar al domeni %s : %s"
 
 #: gnome-initial-setup/pages/account/um-utils.c:157
 msgid "Sorry, that user name isn’t available. Please try another."
@@ -296,11 +288,11 @@ msgstr "Los paramètres de confidencialitat son modificables a tot moment dins P
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:430
 #, c-format
 msgid "%s Account"
-msgstr ""
+msgstr "Compte %s"
 
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:433
 msgid "Remove Account"
-msgstr ""
+msgstr "Suprimir lo compte"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:289
 msgid "Preview"
@@ -339,7 +331,7 @@ msgstr "Benvenguda"
 #. * suitable for this in your language you may replace it.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
-msgstr "Benvenguda !"
+msgstr "Benvenguda !"
 
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.c:167
 #: gnome-initial-setup/pages/live-chooser/gis-live-chooser-page.ui:22
@@ -541,7 +533,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr "Aqueste senhal es feble. Evitatz de repetir los meteisses tipes de caractèrs : mesclatz de letras, de chifras e de la pontuacion."
+msgstr "Aqueste senhal es feble. Evitatz de repetir los meteisses tipes de caractèrs : mesclatz de letras, de chifras e de la pontuacion."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
@@ -574,7 +566,7 @@ msgstr "L'apondon de mai de letras, de chifras o de pontuacion rendrà lo senhal
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-msgstr ""
+msgstr "Envia de rapòrts tecnics amb las informacions personalas automaticament tiradas. Las donadas son reculhidas per %1$s (<a href='%2$s'>politica de confidencialitat</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -584,7 +576,7 @@ msgstr ""
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %s."
-msgstr ""
+msgstr "Envia de rapòrts tecnics amb las informacions personalas automaticament tiradas. Las donadas son reculhidas per %s."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:274
 msgid "Privacy Policy"
@@ -604,7 +596,7 @@ msgid ""
 "Allows applications to determine your geographical location. Uses the "
 "Mozilla Location Service (<a "
 "href='https://location.services.mozilla.com/privacy'>privacy policy</a>)."
-msgstr ""
+msgstr "Autoriza las aplicacions a geolocalizar vòstra posicion actuala. Utiliza lo servici de localizacion de Mozilla (<a href='https://location.services.mozilla.com/privacy'>politica de confidencialitat</a>)."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:59
 msgid "Automatic Problem Reporting"
@@ -635,15 +627,15 @@ msgid ""
 "Third-party repositories provide access to additional software from selected"
 " external sources, including popular apps and drivers that are important for"
 " some devices. Some proprietary software is included."
-msgstr ""
+msgstr "Los depauses tèrces fornisson un accès a de logicials addicionals a partir de fonts extèrnas selecionadas, aquò inclutz d’aplicacions popularas e tanben de micrologicials que son importants per d’unes periferics. Qualques logicials proprietaris son incluses."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:120
 msgid "_Disable Third-Party Repositories"
-msgstr ""
+msgstr "_Desactivar los depauses tèrces"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:125
 msgid "_Enable Third-Party Repositories"
-msgstr ""
+msgstr "_Activar los depauses tèrces"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -701,7 +693,7 @@ msgstr "Tot es prest !"
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:576
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:267

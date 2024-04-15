@@ -9,7 +9,7 @@
 # Felipe Borges <felipeborges@src.gnome.org>, 2012
 # Fernando Carvalho <phaetonkde@gmail.com>, 2013
 # Georges Basile Stavracas Neto <georges.stavracas@gmail.com>, 2013
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2020
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2020-2022
 # Juliano Camargo <julianosc@pm.me>, 2020
 # Juliano de Souza Camargo <julianosc@pm.me>, 2020
 # Pedro Albuquerque <palbuquerque73@gmail.com>, 2015
@@ -26,9 +26,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2024-04-04 20:49+0000\n"
+"POT-Creation-Date: 2024-04-09 13:06+0100\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
-"Last-Translator: Juliano de Souza Camargo <julianosc@pm.me>, 2020\n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>, 2020-2022\n"
 "Language-Team: Portuguese (http://app.transifex.com/endless-os/gnome-initial-setup/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +40,7 @@ msgstr ""
 #: data/gnome-initial-setup.desktop.in.in:3
 #: gnome-initial-setup/gis-driver.c:927
 msgid "Initial Setup"
-msgstr "Configuração Inicial"
+msgstr "Configuração inicial"
 
 #: gnome-initial-setup/gis-assistant.c:392
 msgid "_Next"
@@ -69,14 +69,6 @@ msgstr ""
 #: gnome-initial-setup/gis-factory-dialog.c:219
 #, c-format
 msgid "Image: %s"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:61
-msgid "Test Mode"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:75
-msgid "Power Off"
 msgstr ""
 
 #: gnome-initial-setup/gnome-initial-setup.c:286
@@ -109,14 +101,14 @@ msgstr "Falha ao iniciar sessão no domínio"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:12
 msgid "Enterprise Login"
-msgstr "Autenticação Empresarial"
+msgstr "Autenticação empresarial"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:13
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr "Autenticação empresarial permite que uma conta de utilizador gerida centralmente seja utilizada neste dispositivo. Também pode usar esta conta para aceder a recursos empresariais na Internet."
+msgstr "A autenticação empresarial permite que uma conta de utilizador gerida centralmente seja utilizada neste dispositivo. Também pode usar esta conta para aceder a recursos empresariais na Internet."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:27
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:153
@@ -154,11 +146,11 @@ msgstr "_Computador"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:203
 msgid "Administrator _Name"
-msgstr "_Nome do Administrador"
+msgstr "_Nome do administrador"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:227
 msgid "Administrator Password"
-msgstr "Palavra-passe do Administrador"
+msgstr "Palavra-passe do administrador"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:260
 msgid "C_ontinue"
@@ -189,7 +181,7 @@ msgstr "Imagem de avatar"
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:31
 #: gnome-initial-setup/pages/account/gis-account-page.c:274
 msgid "About You"
-msgstr "Sobre Si"
+msgstr "Acerca de si"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:32
 msgid "Please provide a name and username. You can choose a picture too."
@@ -197,7 +189,7 @@ msgstr "Introduza o nome e o nome de utilizador. Também pode escolher uma image
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:44
 msgid "_Full Name"
-msgstr "Nome _Completo"
+msgstr "Nome _completo"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:113
 msgid "Set a password"
@@ -213,11 +205,11 @@ msgstr "Para utilização por pais ou supervisores, que devem definir suas próp
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
 msgid "_Enterprise Login"
-msgstr "Autenticação _Empresarial"
+msgstr "Autenticação _empresarial"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:41
 msgid "Go online to set up Enterprise Login."
-msgstr "Ligar-se à Internet para configurar a Autenticação Empresarial."
+msgstr "Ligar-se à Internet para configurar a Autenticação empresarial."
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:266
 msgid "Cannot automatically join this type of domain"
@@ -257,7 +249,7 @@ msgstr "O nome de utilizador deve começar com uma letra minúscula de a-z."
 
 #: gnome-initial-setup/pages/account/um-utils.c:166
 msgid "That username isn’t available. Please try another."
-msgstr "Desculpe, este nome de utilizador não está disponível. Por favor, tente outro."
+msgstr "Desculpe, este nome de utilizador não está disponível. Tente outro."
 
 #: gnome-initial-setup/pages/account/um-utils.c:169
 msgid ""
@@ -290,7 +282,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.c:549
 msgid "Online Accounts"
-msgstr "Contas Online"
+msgstr "Contas online"
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:12
 msgid "Connect Your Online Accounts"
@@ -312,11 +304,11 @@ msgstr "Controlos de privacidade podem ser alterados em qualquer altura nas defi
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:430
 #, c-format
 msgid "%s Account"
-msgstr ""
+msgstr "Conta %s"
 
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:433
 msgid "Remove Account"
-msgstr ""
+msgstr "Remover conta"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:289
 msgid "Preview"
@@ -428,7 +420,7 @@ msgstr "Definir restrições a que este utilizador pode executar ou instalar."
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:232
 msgid "Parental Controls"
-msgstr "Controlos Parentais"
+msgstr "Controlo parental"
 
 #. Don’t break UI compatibility if parental controls are disabled.
 #: gnome-initial-setup/pages/password/gis-password-page.c:90
@@ -590,7 +582,7 @@ msgstr "Adicionar mais letras, números e pontuação tornará a palavra-passe m
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-msgstr ""
+msgstr "Envia relatórios técnicos que têm informações pessoais automaticamente removidas. Os dados são recolhidos por %1$s (<a href='%2$s'>política de privacidade</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -600,11 +592,11 @@ msgstr ""
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %s."
-msgstr ""
+msgstr "Envia relatórios técnicos que têm informações pessoais automaticamente removidas. Os dados são recolhidos por %s."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:274
 msgid "Privacy Policy"
-msgstr "Política de Privacidade"
+msgstr "Política de privacidade"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:309
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
@@ -613,14 +605,14 @@ msgstr "Privacidade"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:27
 msgid "Location Services"
-msgstr "Serviços de Localização"
+msgstr "Serviços de localização"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:44
 msgid ""
 "Allows applications to determine your geographical location. Uses the "
 "Mozilla Location Service (<a "
 "href='https://location.services.mozilla.com/privacy'>privacy policy</a>)."
-msgstr ""
+msgstr "Permite às aplicações determinarem a sua localização geográfica. Utiliza o Serviço de Localização Mozilla (<a href='https://location.services.mozilla.com/privacy'>política de privacidade</a>)."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:59
 msgid "Automatic Problem Reporting"
@@ -651,15 +643,15 @@ msgid ""
 "Third-party repositories provide access to additional software from selected"
 " external sources, including popular apps and drivers that are important for"
 " some devices. Some proprietary software is included."
-msgstr ""
+msgstr "Os repositórios de terceiros permitem o acesso a software adicional de fontes externas selecionadas, incluindo aplicações e controladores populares que são importantes para alguns dispositivos. Alguns softwares proprietários estão incluídos."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:120
 msgid "_Disable Third-Party Repositories"
-msgstr ""
+msgstr "_Desativar repositórios de terceiros"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:125
 msgid "_Enable Third-Party Repositories"
-msgstr ""
+msgstr "_Ativar repositórios de terceiros"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -695,7 +687,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:284
 msgid "Setup Complete"
-msgstr "Configuração Concluída"
+msgstr "Configuração concluída"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.ui:7
 msgid "All done!"
@@ -717,7 +709,7 @@ msgstr "Tudo pronto!"
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:576
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:267
@@ -788,4 +780,4 @@ msgstr "A configuração guiar-lhe-á pela criação de uma conta e ativação d
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:49
 msgid "_Start Setup"
-msgstr "_Iniciar Configuração"
+msgstr "_Iniciar configuração"

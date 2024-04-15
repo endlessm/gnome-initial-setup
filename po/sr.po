@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2024-04-04 20:49+0000\n"
+"POT-Creation-Date: 2024-04-09 13:06+0100\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>, 2012-2013\n"
 "Language-Team: Serbian (http://app.transifex.com/endless-os/gnome-initial-setup/language/sr/)\n"
@@ -51,14 +51,6 @@ msgstr ""
 #: gnome-initial-setup/gis-factory-dialog.c:219
 #, c-format
 msgid "Image: %s"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:61
-msgid "Test Mode"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:75
-msgid "Power Off"
 msgstr ""
 
 #: gnome-initial-setup/gnome-initial-setup.c:286
@@ -294,11 +286,11 @@ msgstr "Налози могу бити додати и уклоњени било
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:430
 #, c-format
 msgid "%s Account"
-msgstr ""
+msgstr "%s налог"
 
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:433
 msgid "Remove Account"
-msgstr ""
+msgstr "Уклони налог"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:289
 msgid "Preview"
@@ -572,7 +564,7 @@ msgstr "Додавање више слова, бројева и интерпун
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-msgstr ""
+msgstr "Шаљи техничке извештаје у којима су приватни подаци самостално уклоњени. Подаци се прикупљају у складу са %1$s (<a href='%2$s'>политиком приватности</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -582,7 +574,7 @@ msgstr ""
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %s."
-msgstr ""
+msgstr "Шаљи техничке извештаје у којима су приватни подаци самостално уклоњени. Податке прикупља дистрибуција „%s“."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:274
 msgid "Privacy Policy"
@@ -602,7 +594,7 @@ msgid ""
 "Allows applications to determine your geographical location. Uses the "
 "Mozilla Location Service (<a "
 "href='https://location.services.mozilla.com/privacy'>privacy policy</a>)."
-msgstr ""
+msgstr "Омогућава програмима да одреде ваш географски положај. Користи Мозилину услугу одређивања места (<a href='https://location.services.mozilla.com/privacy'>политика приватности</a>)."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:59
 msgid "Automatic Problem Reporting"
@@ -633,15 +625,15 @@ msgid ""
 "Third-party repositories provide access to additional software from selected"
 " external sources, including popular apps and drivers that are important for"
 " some devices. Some proprietary software is included."
-msgstr ""
+msgstr "Ризнице треће стране омогућавају приступ додатним програма из пробраних спољних извора, који садрже популарне програме, као и управљаче који су потребни за одређене уређаје. Садрже и власнички софтвер."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:120
 msgid "_Disable Third-Party Repositories"
-msgstr ""
+msgstr "Онемо_гући ризнице треће стране"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:125
 msgid "_Enable Third-Party Repositories"
-msgstr ""
+msgstr "О_могући ризнице треће стране"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -699,7 +691,7 @@ msgstr "Готово!"
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:576
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:267

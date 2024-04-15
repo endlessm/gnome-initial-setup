@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2024-04-04 20:49+0000\n"
+"POT-Creation-Date: 2024-04-09 13:06+0100\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian (http://app.transifex.com/endless-os/gnome-initial-setup/language/hr/)\n"
@@ -50,14 +50,6 @@ msgstr ""
 #: gnome-initial-setup/gis-factory-dialog.c:219
 #, c-format
 msgid "Image: %s"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:61
-msgid "Test Mode"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:75
-msgid "Power Off"
 msgstr ""
 
 #: gnome-initial-setup/gnome-initial-setup.c:286
@@ -178,7 +170,7 @@ msgstr "Omogućite ime i korisničko ime. Možete isto odabrati i sliku."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:44
 msgid "_Full Name"
-msgstr "_Puno ime"
+msgstr "_Ime i prezime"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:113
 msgid "Set a password"
@@ -194,7 +186,7 @@ msgstr "Za korištenje roditelja ili nadglednika, koji mora postaviti vlastitu l
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
 msgid "_Enterprise Login"
-msgstr "_Poslovno prijava"
+msgstr "_Poslovna prijava"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:41
 msgid "Go online to set up Enterprise Login."
@@ -293,11 +285,11 @@ msgstr "Računi se mogu dodati i ukloniti u bilo koje vrijeme iz aplikacije post
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:430
 #, c-format
 msgid "%s Account"
-msgstr ""
+msgstr "%s račun"
 
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:433
 msgid "Remove Account"
-msgstr ""
+msgstr "Ukloni račun"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:289
 msgid "Preview"
@@ -571,7 +563,7 @@ msgstr "Dodavanje više slova, brojeva i interpunkcija učinit će lozinku snaž
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-msgstr ""
+msgstr "Šalje tehničke izvještaje koji automatski uklanjaju osobne informacije. Podatke prikuplja %1$s (<a href='%2$s'>pravila privatnosti</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -581,7 +573,7 @@ msgstr ""
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %s."
-msgstr ""
+msgstr "Šalje tehničke izvještaje koji automatski uklanjaju osobne informacije. Podatke prikuplja %s."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:274
 msgid "Privacy Policy"
@@ -601,7 +593,7 @@ msgid ""
 "Allows applications to determine your geographical location. Uses the "
 "Mozilla Location Service (<a "
 "href='https://location.services.mozilla.com/privacy'>privacy policy</a>)."
-msgstr ""
+msgstr "Dopušta aplikacijama otkrivanje vašeg zemljopisnog položaja. Koristi se usluga Mozilla lociranja (<a href='https://location.services.mozilla.com/privacy'>pravila privatnosti</a>)."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:59
 msgid "Automatic Problem Reporting"
@@ -632,15 +624,15 @@ msgid ""
 "Third-party repositories provide access to additional software from selected"
 " external sources, including popular apps and drivers that are important for"
 " some devices. Some proprietary software is included."
-msgstr ""
+msgstr "Repozitoriji treće strane omogućuju pristup dodatnom softveru iz odabranih vanjskih izvora, uključuju popularne aplikacije i upravljačke programe koji su bitni za pojedine uređaje. Određeni vlasnički softver je isto uključen."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:120
 msgid "_Disable Third-Party Repositories"
-msgstr ""
+msgstr "_Onemogući repozitorije treće strane"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:125
 msgid "_Enable Third-Party Repositories"
-msgstr ""
+msgstr "_Omogući repozitorije treće strane"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -698,7 +690,7 @@ msgstr "Sve je završeno!"
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:576
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:267

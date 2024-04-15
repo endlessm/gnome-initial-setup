@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2024-04-04 20:49+0000\n"
+"POT-Creation-Date: 2024-04-09 13:06+0100\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Nepali (http://app.transifex.com/endless-os/gnome-initial-setup/language/ne/)\n"
@@ -50,14 +50,6 @@ msgstr ""
 #: gnome-initial-setup/gis-factory-dialog.c:219
 #, c-format
 msgid "Image: %s"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:61
-msgid "Test Mode"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:75
-msgid "Power Off"
 msgstr ""
 
 #: gnome-initial-setup/gnome-initial-setup.c:286
@@ -293,11 +285,11 @@ msgstr "सेटिङ अनुप्रयोगबाट कुनै पन
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:430
 #, c-format
 msgid "%s Account"
-msgstr ""
+msgstr "%s खाता"
 
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:433
 msgid "Remove Account"
-msgstr ""
+msgstr "खाता हटाउनुहोस्"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:289
 msgid "Preview"
@@ -317,7 +309,7 @@ msgstr "निर्गत फेला परेन "
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:504
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:15
 msgid "Typing"
-msgstr " टाइप गर्दै "
+msgstr "टाइप गर्दै"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
 msgid "Select your keyboard layout or an input method."
@@ -440,11 +432,11 @@ msgstr "यो पासवर्डले %s का लागि अभिभ�
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:243
 msgid "The passwords do not match."
-msgstr "पासवर्ड "
+msgstr "पासवर्ड मिलेन"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:463
 msgid "Password"
-msgstr "पासवर्ड :"
+msgstr "पासवर्ड"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:53
 msgid "_Confirm"
@@ -571,7 +563,7 @@ msgstr "धेरै अक्षर, सङ्ख्या र विराम 
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-msgstr ""
+msgstr "व्यक्तिगत जानकारी स्वचालित रूपमा हटाइएका प्राविधिक रिपोर्टहरू पठाउँदछ । %1$s द्वारा डेटा सङ्कलन गरिएको छ (<a href='%2$s'>प्राइभेसी नीति</a>)।"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -581,7 +573,7 @@ msgstr ""
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %s."
-msgstr ""
+msgstr "व्यक्तिगत जानकारी स्वचालित रूपमा हटाइएका प्राविधिक रिपोर्टहरू पठाउँदछ । %s द्वारा डेटा सङ्कलन गरिएको छ।"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:274
 msgid "Privacy Policy"
@@ -601,7 +593,7 @@ msgid ""
 "Allows applications to determine your geographical location. Uses the "
 "Mozilla Location Service (<a "
 "href='https://location.services.mozilla.com/privacy'>privacy policy</a>)."
-msgstr ""
+msgstr "अनुप्रयोगहरूलाई तपाईँको भौगोलिक स्थान निर्धारण गर्न अनुमति दिन्छ । मोजिला स्थान सेवा प्रयोग गर्दछ (<a href='https://location.services.mozilla.com/privacy'>प्राइभेसी नीति</a>)।"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:59
 msgid "Automatic Problem Reporting"
@@ -625,22 +617,22 @@ msgstr "गोपनीयता नियन्त्रणहरू सेट�
 #: gnome-initial-setup/pages/software/gis-software-page.c:109
 #: gnome-initial-setup/pages/software/gis-software-page.ui:11
 msgid "Third-Party Repositories"
-msgstr ""
+msgstr "तेस्रो-पक्ष भण्डार"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:110
 msgid ""
 "Third-party repositories provide access to additional software from selected"
 " external sources, including popular apps and drivers that are important for"
 " some devices. Some proprietary software is included."
-msgstr ""
+msgstr "तेस्रो-पक्ष भण्डारहरूले चयन गरिएका बाह्य स्रोतहरूबाट अतिरिक्त सफ्टवेयरमा पहुँच प्रदान गर्दछ, जसमा लोकप्रिय अनुप्रयोगहरू र ड्राइभरहरू समावेश छन् जुन केहि उपकरणहरूको लागि महत्त्वपूर्ण छन्। केही स्वामित्व सफ्टवेयर समावेश गरिएको छ।"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:120
 msgid "_Disable Third-Party Repositories"
-msgstr ""
+msgstr "तेस्रो-पक्ष भण्डार असक्षम पार्नुहोस्"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:125
 msgid "_Enable Third-Party Repositories"
-msgstr ""
+msgstr "तेस्रो-पक्ष भण्डार सक्षम पार्नुहोस्"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -698,7 +690,7 @@ msgstr "सबै गरियो !"
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:576
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:267

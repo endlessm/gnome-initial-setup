@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2024-04-04 20:49+0000\n"
+"POT-Creation-Date: 2024-04-09 13:06+0100\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: Arash Mousavi <mousavi.arash@gmail.com>, 2017\n"
 "Language-Team: Persian (http://app.transifex.com/endless-os/gnome-initial-setup/language/fa/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: data/gnome-initial-setup.desktop.in.in:3
 #: gnome-initial-setup/gis-driver.c:927
 msgid "Initial Setup"
-msgstr "برپاسازی نخستین"
+msgstr "برپایی نخستین"
 
 #: gnome-initial-setup/gis-assistant.c:392
 msgid "_Next"
@@ -32,7 +32,7 @@ msgstr "_بعدی"
 
 #: gnome-initial-setup/gis-assistant.c:393
 msgid "_Accept"
-msgstr "_قبول"
+msgstr "_پذیرش"
 
 #: gnome-initial-setup/gis-assistant.c:394
 msgid "_Skip"
@@ -53,14 +53,6 @@ msgstr ""
 #: gnome-initial-setup/gis-factory-dialog.c:219
 #, c-format
 msgid "Image: %s"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:61
-msgid "Test Mode"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:75
-msgid "Power Off"
 msgstr ""
 
 #: gnome-initial-setup/gnome-initial-setup.c:286
@@ -296,11 +288,11 @@ msgstr "حساب‌ها می‌توانند در هر زمانی از طریق �
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:430
 #, c-format
 msgid "%s Account"
-msgstr ""
+msgstr "حساب %s"
 
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:433
 msgid "Remove Account"
-msgstr ""
+msgstr "برداشتن حساب"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:289
 msgid "Preview"
@@ -574,7 +566,7 @@ msgstr "افزودن حروف، اعداد و نشانه‌های بیش‌تر�
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-msgstr ""
+msgstr "گزارش‌های فنی‌ای که اطّلاعات شخصیشان به طور خودکار برداشته شده را می‌فرستد. داده‌ها به دست %1$s جمع می‌شوند (<a href='%2$s'>سیاست محرمانگی</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -584,7 +576,7 @@ msgstr ""
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %s."
-msgstr ""
+msgstr "گزارش‌های فنی‌ای که اطّلاعات شخصیشان به طور خودکار برداشته شده را می‌فرستد. داده‌ها به دست %s جمع می‌شوند."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:274
 msgid "Privacy Policy"
@@ -604,7 +596,7 @@ msgid ""
 "Allows applications to determine your geographical location. Uses the "
 "Mozilla Location Service (<a "
 "href='https://location.services.mozilla.com/privacy'>privacy policy</a>)."
-msgstr ""
+msgstr "می‌گذارد برنامه‌ها از مکان جغرافیاییتان آگاه شوند. از خدمت مکانی موزیلا استفاده می‌کند (<a href='https://location.services.mozilla.com/privacy'>سیاست محرمانگی</a>)."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:59
 msgid "Automatic Problem Reporting"
@@ -635,15 +627,15 @@ msgid ""
 "Third-party repositories provide access to additional software from selected"
 " external sources, including popular apps and drivers that are important for"
 " some devices. Some proprietary software is included."
-msgstr ""
+msgstr "مخزن‌های سوم‌شخص دسترسی به نرم‌افزارهای اضافی از منبع‌های خارجی گزیده را شامل کاره‌های محبوب و راه‌اندازهایی که برای برخی افزاره‌ها مهمند، فراهم می‌کنند.شامل چند نرم‌افزار مالکیتی."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:120
 msgid "_Disable Third-Party Repositories"
-msgstr ""
+msgstr "_از کار انداختن مخزن‌های سوم‌شخص"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:125
 msgid "_Enable Third-Party Repositories"
-msgstr ""
+msgstr "_به کار انداختن مخزن‌های سوم‌شخص"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -701,7 +693,7 @@ msgstr "انجام شد!"
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:576
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s، %s"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:267

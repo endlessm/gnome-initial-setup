@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2024-04-04 20:49+0000\n"
+"POT-Creation-Date: 2024-04-09 13:06+0100\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: Sucipto <sucipto@pm.me>, 2020\n"
 "Language-Team: Indonesian (http://app.transifex.com/endless-os/gnome-initial-setup/language/id/)\n"
@@ -61,14 +61,6 @@ msgstr "Tak dikenal"
 #, c-format
 msgid "Image: %s"
 msgstr "Gambar: %s"
-
-#: gnome-initial-setup/gis-factory-dialog.ui:61
-msgid "Test Mode"
-msgstr "Mode Uji Coba"
-
-#: gnome-initial-setup/gis-factory-dialog.ui:75
-msgid "Power Off"
-msgstr "Matikan"
 
 #: gnome-initial-setup/gnome-initial-setup.c:286
 msgid "Force existing user mode"
@@ -303,11 +295,11 @@ msgstr "Akun dapat ditambahkan dan dihapus kapanpun dari aplikasi Pengaturan."
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:430
 #, c-format
 msgid "%s Account"
-msgstr ""
+msgstr "Akun %s"
 
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:433
 msgid "Remove Account"
-msgstr ""
+msgstr "Hapus Akun"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:289
 msgid "Preview"
@@ -581,7 +573,7 @@ msgstr "Menambah lebih banyak huruf, angka, dan tanda baca akan membuatnya lebih
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-msgstr ""
+msgstr "Mengirimkan laporan teknis yang informasi pribadinya dihapus secara otomatis. Data dikumpulkan oleh %1$s (<a href='%2$s'>kebijakan privasi</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -591,7 +583,7 @@ msgstr ""
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %s."
-msgstr ""
+msgstr "Mengirimkan laporan teknis yang informasi pribadinya dihapus secara otomatis. Data dikumpulkan oleh %s."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:274
 msgid "Privacy Policy"
@@ -611,7 +603,7 @@ msgid ""
 "Allows applications to determine your geographical location. Uses the "
 "Mozilla Location Service (<a "
 "href='https://location.services.mozilla.com/privacy'>privacy policy</a>)."
-msgstr ""
+msgstr "Mengizinkan aplikasi menentukan lokasi geografis Anda. Menggunakan Layanan Lokasi Mozilla (<a href='https://location.services.mozilla.com/privacy'>kebijakan privasi</a>)."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:59
 msgid "Automatic Problem Reporting"
@@ -642,15 +634,15 @@ msgid ""
 "Third-party repositories provide access to additional software from selected"
 " external sources, including popular apps and drivers that are important for"
 " some devices. Some proprietary software is included."
-msgstr ""
+msgstr "Repositori pihak ketiga menyediakan akses ke perangkat lunak tambahan dari sumber eksternal yang dipilih, termasuk aplikasi dan driver populer yang penting untuk beberapa perangkat. Beberapa perangkat lunak berpemilik disertakan."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:120
 msgid "_Disable Third-Party Repositories"
-msgstr ""
+msgstr "Non-Aktifkan _Repositori Pihak Ketiga"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:125
 msgid "_Enable Third-Party Repositories"
-msgstr ""
+msgstr "Aktifkan R_epositori Pihak Ketiga"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -708,7 +700,7 @@ msgstr "Semua selesai!"
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:576
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:267

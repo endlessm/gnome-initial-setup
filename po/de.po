@@ -6,6 +6,7 @@
 # Benjamin Steinwender <b@stbe.at>, 2013
 # Bernd Homuth <dev@hmt>, 2019
 # Christian Kirbach <christian.kirbach@gmail.com>, 2013
+# Jürgen Benvenuti <gastornis@posteo.org>, 2022
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2012,2016,2020
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2020
 # Philipp <philipp.kiemle@gmail.com>, 2021
@@ -13,6 +14,7 @@
 # Roddy Shuler <roddy@stanfordalumni.org>, 2017
 # Stefan Schroeder <ondekoza@gmail.com>, 2016
 # Thomas Siegele <tsiegele@gmx.at>, 2019
+# Tim, 2022
 # Tobias Endrigkeit <tobiasendrigkeit@googlemail.com>, 2012
 # Will Thompson <wjt@endlessos.org>, 2020
 # Will Thompson <wjt@endlessos.org>, 2020
@@ -22,9 +24,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2024-04-04 20:49+0000\n"
+"POT-Creation-Date: 2024-04-09 13:06+0100\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
-"Last-Translator: Philipp <philipp.kiemle@gmail.com>, 2021\n"
+"Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>, 2022\n"
 "Language-Team: German (http://app.transifex.com/endless-os/gnome-initial-setup/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,14 +69,6 @@ msgstr "Unbekannt"
 msgid "Image: %s"
 msgstr "Bild: %s"
 
-#: gnome-initial-setup/gis-factory-dialog.ui:61
-msgid "Test Mode"
-msgstr "Testmodus"
-
-#: gnome-initial-setup/gis-factory-dialog.ui:75
-msgid "Power Off"
-msgstr "Ausschalten"
-
 #: gnome-initial-setup/gnome-initial-setup.c:286
 msgid "Force existing user mode"
 msgstr "Existierenden Benutzermodus erzwingen"
@@ -112,7 +106,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr "Unternehmensanmeldung erlaubt es einen existierenden, zentral verwalteten Benutzer auf diesem Gerät zu verwenden. Sie können dieses Konto auch dazu verwenden, um auf Ressourcen eines Unternehmens im Internet zuzugreifen."
+msgstr "Unternehmensanmeldung erlaubt es, einen existierenden, zentral verwalteten Benutzer auf diesem Gerät zu verwenden. Sie können dieses Konto auch dazu verwenden, um auf Ressourcen eines Unternehmens im Internet zuzugreifen."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:27
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:153
@@ -166,7 +160,7 @@ msgstr "Bitte überprüfen Sie den Namen und den Benutzernamen. Sie können auch
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:466
 msgid "We need a few details to complete setup."
-msgstr "Wir benötigen ein paar Details um das Einrichten abzuschließen."
+msgstr "Wir benötigen ein paar Details, um das Einrichten abzuschließen."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.c:562
 msgid "Administrator"
@@ -296,7 +290,7 @@ msgstr "Verbinden Sie Ihre Online-Konten"
 msgid ""
 "Connect your accounts to easily access your email, online calendar, "
 "contacts, documents and photos."
-msgstr "Durch Verbinden Ihrer Konten können Sie einfach auf E-Mails, Kalender, Kontakte, Dokumente und Fotos zugreifen."
+msgstr "Durch Verbinden Ihrer Konten können Sie einfach auf E-Mails, Online-Kalender, Kontakte, Dokumente und Fotos zugreifen."
 
 #: gnome-initial-setup/pages/goa/gis-goa-page.ui:40
 msgid ""
@@ -308,11 +302,11 @@ msgstr "Benutzerkonten können jederzeit in den Einstellungen hinzugefügt und e
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:430
 #, c-format
 msgid "%s Account"
-msgstr ""
+msgstr "%s-Konto"
 
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:433
 msgid "Remove Account"
-msgstr ""
+msgstr "Konto entfernen"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:289
 msgid "Preview"
@@ -340,7 +334,7 @@ msgstr "Wählen Sie Ihre Tastaturbelegung oder eine Eingabemethode."
 
 #: gnome-initial-setup/pages/language/cc-language-chooser.c:243
 msgid "No languages found"
-msgstr "Keine Sprachen gefunden"
+msgstr "Es wurden keine Sprachen gefunden"
 
 #: gnome-initial-setup/pages/language/gis-language-page.c:351
 msgid "Welcome"
@@ -429,7 +423,7 @@ msgstr "Kindersicherung"
 #. Don’t break UI compatibility if parental controls are disabled.
 #: gnome-initial-setup/pages/password/gis-password-page.c:90
 msgid "Set a Password"
-msgstr "Ein Passwort setzen"
+msgstr "Ein Passwort festlegen"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:91
 #: gnome-initial-setup/pages/password/gis-password-page.c:100
@@ -502,7 +496,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr "Dies ist ein schwaches Passwort. Versuchen Sie einige der Wörter zu vermeiden, die im Passwort vorkommen."
+msgstr "Dies ist ein schwaches Passwort. Versuchen Sie, einige der Wörter zu vermeiden, die im Passwort vorkommen."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
@@ -541,7 +535,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr "Dies ist ein schwaches Passwort. Versuchen Sie Buchstaben, Ziffern und Satzzeichen zu mischen."
+msgstr "Dies ist ein schwaches Passwort. Versuchen Sie, Buchstaben, Ziffern und Satzzeichen zu mischen."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
@@ -564,7 +558,7 @@ msgstr "Dies ist ein schwaches Passwort. Versuchen Sie, Zeichenfolgen wie »1234
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr "Dies ist ein schwaches Passwort. Das Passwort muss länger sein. Versuchen Sie Buchstaben, Ziffern und Satzzeichen zu mischen."
+msgstr "Dies ist ein schwaches Passwort. Das Passwort muss länger sein. Versuchen Sie, Buchstaben, Ziffern und Satzzeichen zu mischen."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
@@ -586,7 +580,7 @@ msgstr "Weitere Buchstaben, Zahlen und Satzzeichen werden es noch sicherer mache
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-msgstr ""
+msgstr "Sendet technische Berichte, deren persönliche Informationen automatisch entfernt werden. Daten werden von %1$s (<a href='%2$s'>Datenschutzrichtlinie</a>) gesammelt."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -596,7 +590,7 @@ msgstr ""
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %s."
-msgstr ""
+msgstr "Sendet technische Berichte, deren persönliche Informationen automatisch entfernt werden. Daten werden von %s gesammelt."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:274
 msgid "Privacy Policy"
@@ -616,7 +610,7 @@ msgid ""
 "Allows applications to determine your geographical location. Uses the "
 "Mozilla Location Service (<a "
 "href='https://location.services.mozilla.com/privacy'>privacy policy</a>)."
-msgstr ""
+msgstr "Legen Sie fest, ob Anwendungen Ihren geographischen Ort bestimmen dürfen. Verwendet den Mozilla-Ortungsdienst (<a href='https://location.services.mozilla.com/privacy'>Datenschutzrichtlinie</a>)."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:59
 msgid "Automatic Problem Reporting"
@@ -647,15 +641,15 @@ msgid ""
 "Third-party repositories provide access to additional software from selected"
 " external sources, including popular apps and drivers that are important for"
 " some devices. Some proprietary software is included."
-msgstr ""
+msgstr "Softwarequellen von Drittanbietern bieten Zugriff auf zusätzliche Software von ausgewählten, externen Quellen. Sie beinhalten beliebte Anwendungen sowie Treiber, die für manche Geräte wichtig ist. Einige proprietäre Software ist enthalten."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:120
 msgid "_Disable Third-Party Repositories"
-msgstr ""
+msgstr "Drittanbieter-Softwarequellen _deaktivieren"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:125
 msgid "_Enable Third-Party Repositories"
-msgstr ""
+msgstr "Drittanbieter-Softwarequellen _aktivieren"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -713,7 +707,7 @@ msgstr "Alles erledigt!"
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:576
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:267
@@ -780,7 +774,7 @@ msgstr "Einrichtung"
 msgid ""
 "Setup will guide you through making an account and enabling some features. "
 "We’ll have you up and running in no time."
-msgstr "Die Einrichtung unterstützt Sie beim Anlegen eines Benutzerkontos und Aktivieren einiger Funktionsmerkmale. Dies ist im Handumdrehen erledigt."
+msgstr "Die Einrichtung unterstützt Sie beim Anlegen eines Benutzerkontos und beim Aktivieren einiger Funktionen. Dies ist im Handumdrehen erledigt."
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:49
 msgid "_Start Setup"

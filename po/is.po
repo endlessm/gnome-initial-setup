@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the gnome-initial-setup package.
 # 
 # Translators:
-# Sveinn í Felli <sv1@fellsnet.is>, 2015-2019,2022
+# Sveinn í Felli <sv1@fellsnet.is>, 2015-2019,2021-2022
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2024-04-04 20:49+0000\n"
+"POT-Creation-Date: 2024-04-09 13:06+0100\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>, 2015-2019,2022\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>, 2015-2019,2021-2022\n"
 "Language-Team: Icelandic (http://app.transifex.com/endless-os/gnome-initial-setup/language/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,14 +51,6 @@ msgstr ""
 #: gnome-initial-setup/gis-factory-dialog.c:219
 #, c-format
 msgid "Image: %s"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:61
-msgid "Test Mode"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:75
-msgid "Power Off"
 msgstr ""
 
 #: gnome-initial-setup/gnome-initial-setup.c:286
@@ -235,7 +227,7 @@ msgstr "Notandanafnið er of langt."
 
 #: gnome-initial-setup/pages/account/um-utils.c:163
 msgid "The username must start with a lower case letter from a-z."
-msgstr ""
+msgstr "Notandanafn verður að byrja á litlum staf frá a-z"
 
 #: gnome-initial-setup/pages/account/um-utils.c:166
 msgid "That username isn’t available. Please try another."
@@ -245,7 +237,7 @@ msgstr "Þetta notandanafn er ekki tiltækt. Prófaðu eitthvað annað."
 msgid ""
 "The username should only consist of lower case letters from a-z, digits, and"
 " the following characters: - _"
-msgstr ""
+msgstr "Notandanafn ætti einungis að innihalda lág/hástafi frá a-z, tölustafi eða einhvern af eftirfarandi stöfum:  - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:173
 msgid "This will be used to name your home folder and can’t be changed."
@@ -294,11 +286,11 @@ msgstr "Hægt er að bæta við og fjarlægja aðganga hvenær sem er með því
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:430
 #, c-format
 msgid "%s Account"
-msgstr ""
+msgstr "Aðgangur %s"
 
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:433
 msgid "Remove Account"
-msgstr ""
+msgstr "Fjarlægja notandaaðgang"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:289
 msgid "Preview"
@@ -426,7 +418,7 @@ msgstr "Passaðu upp á að týna ekki lykilorðinu þínu."
 #: gnome-initial-setup/pages/password/gis-password-page.c:98
 #, c-format
 msgid "Set a Password for %s"
-msgstr "Settu inn lykilorð fyrir %s"
+msgstr "Settu lykilorð fyrir %s"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:106
 msgid "Set a Parent Password"
@@ -572,7 +564,7 @@ msgstr "Gott lykilorð! Ef þú bætir við fleiri bókstöfum, tölustöfum og 
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-msgstr ""
+msgstr "Sendir tæknilegar skýrslur þar sem persónugreinanlegar upplýsingar hafa verið fjarlægðar. Gögnum er safnað af %1$s (<a href='%2$s'>persónuverndarstefna</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -582,7 +574,7 @@ msgstr ""
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %s."
-msgstr ""
+msgstr "Sendir tæknilegar skýrslur þar sem persónugreinanlegar upplýsingar hafa verið fjarlægðar Gögnum er safnað af %s."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:274
 msgid "Privacy Policy"
@@ -602,7 +594,7 @@ msgid ""
 "Allows applications to determine your geographical location. Uses the "
 "Mozilla Location Service (<a "
 "href='https://location.services.mozilla.com/privacy'>privacy policy</a>)."
-msgstr ""
+msgstr "Leyfir forritum að finna út landfræðilega staðsetningu þína. Notar Mozilla staðsetningarþjónustuna (<a href='https://location.services.mozilla.com/privacy'>persónuverndarstefna</a>)."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:59
 msgid "Automatic Problem Reporting"
@@ -633,15 +625,15 @@ msgid ""
 "Third-party repositories provide access to additional software from selected"
 " external sources, including popular apps and drivers that are important for"
 " some devices. Some proprietary software is included."
-msgstr ""
+msgstr "Hugbúnaðarsöfn annarra aðila gefa kost á uppsetningu hugbúnaðar frá sérvöldum utanaðkomandi söfnum, meðal annars ýmissa vinsælla forrita og rekla sem nauðsynlegir eru fyrir sum tæki. Þarna má einnig telja ýmsan séreignahugbúnað."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:120
 msgid "_Disable Third-Party Repositories"
-msgstr ""
+msgstr "_Gera hugbúnaðarsöfn annarra aðila óvirk"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:125
 msgid "_Enable Third-Party Repositories"
-msgstr ""
+msgstr "Virkja _hugbúnaðarsöfn annarra aðila"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -699,7 +691,7 @@ msgstr "Allt klárt!"
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:576
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:267

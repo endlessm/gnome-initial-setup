@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the gnome-initial-setup package.
 # 
 # Translators:
-# Alexander Shopov <ash@kambanaria.org>, 2014-2017,2021
+# Alexander Shopov <ash@kambanaria.org>, 2014-2017,2021-2022
 # Ivaylo Valkov <ivaylo@e-valkov.org>, 2012-2013
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2024-04-04 20:49+0000\n"
+"POT-Creation-Date: 2024-04-09 13:06+0100\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
-"Last-Translator: Alexander Shopov <ash@kambanaria.org>, 2014-2017,2021\n"
+"Last-Translator: Alexander Shopov <ash@kambanaria.org>, 2014-2017,2021-2022\n"
 "Language-Team: Bulgarian (http://app.transifex.com/endless-os/gnome-initial-setup/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,14 +52,6 @@ msgstr ""
 #: gnome-initial-setup/gis-factory-dialog.c:219
 #, c-format
 msgid "Image: %s"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:61
-msgid "Test Mode"
-msgstr ""
-
-#: gnome-initial-setup/gis-factory-dialog.ui:75
-msgid "Power Off"
 msgstr ""
 
 #: gnome-initial-setup/gnome-initial-setup.c:286
@@ -295,11 +287,11 @@ msgstr "По всяко време може да промените полити
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:430
 #, c-format
 msgid "%s Account"
-msgstr ""
+msgstr "Регистрация в %s"
 
 #: gnome-initial-setup/pages/goa/gnome-initial-setup-goa-helper.c:433
 msgid "Remove Account"
-msgstr ""
+msgstr "Изтриване на регистрация"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:289
 msgid "Preview"
@@ -573,7 +565,7 @@ msgstr "Ако добавите още букви, цифри или знаци 
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-msgstr ""
+msgstr "Изпращане на технически доклади, в които личните данни са изтрити. Данните се събират от %1$s (<a href='%2$s'>Политика за лични данни</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -583,7 +575,7 @@ msgstr ""
 msgid ""
 "Sends technical reports that have personal information automatically "
 "removed. Data is collected by %s."
-msgstr ""
+msgstr "Изпращане на технически доклади, в които личните данни са изтрити. Данните се събират от %s."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:274
 msgid "Privacy Policy"
@@ -603,7 +595,7 @@ msgid ""
 "Allows applications to determine your geographical location. Uses the "
 "Mozilla Location Service (<a "
 "href='https://location.services.mozilla.com/privacy'>privacy policy</a>)."
-msgstr ""
+msgstr "Разрешаване на програмите да определят географското ви местоположение. Ползва се услугата за определяне на местоположението на Mozilla (<a href='https://location.services.mozilla.com/privacy'>Политика за лични данни</a>)."
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:59
 msgid "Automatic Problem Reporting"
@@ -634,15 +626,15 @@ msgid ""
 "Third-party repositories provide access to additional software from selected"
 " external sources, including popular apps and drivers that are important for"
 " some devices. Some proprietary software is included."
-msgstr ""
+msgstr "Хранилищата от трети страни дават достъп до допълнителен софтуер, подбран от външни източници. Те включват някои популярни програми, фърмуер и драйвери, които са необходим за някои устройства. Част от софтуера е собственически."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:120
 msgid "_Disable Third-Party Repositories"
-msgstr ""
+msgstr "_Изключване на хранилищата от трети страни"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:125
 msgid "_Enable Third-Party Repositories"
-msgstr ""
+msgstr "_Включване на хранилища от трети страни"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
@@ -700,7 +692,7 @@ msgstr "Готови сте!"
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:576
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #. Translators: "city, country"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:267
