@@ -82,17 +82,11 @@ static void
 show_error (GisFactoryDialog *self,
             const GError     *error)
 {
-  GtkWidget *dialog;
+  g_autoptr(GtkAlertDialog) dialog = NULL;
 
-  dialog = gtk_message_dialog_new (GTK_WINDOW (self),
-                                   GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-                                   GTK_MESSAGE_ERROR,
-                                   GTK_BUTTONS_CLOSE,
-                                   "%s", error->message);
-  g_signal_connect (dialog, "response",
-                    G_CALLBACK (gtk_window_destroy),
-                    NULL);
-  gtk_window_present (GTK_WINDOW (dialog));
+  dialog = gtk_alert_dialog_new (_("Failed to Enter Test Mode"));
+  gtk_alert_dialog_set_detail (dialog, error->message);
+  gtk_alert_dialog_show (dialog, GTK_WINDOW (self));
 }
 
 static void
