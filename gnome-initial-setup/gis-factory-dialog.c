@@ -202,7 +202,6 @@ gis_factory_dialog_show_for_widget (GtkWidget *widget)
   GisFactoryDialog *factory_dialog = NULL;
   g_autofree gchar *software_version = NULL;
   g_autofree gchar *image_version = NULL;
-  g_autofree gchar *image_version_text = NULL;
 
   software_version = g_get_os_info (G_OS_INFO_KEY_PRETTY_NAME);
 
@@ -210,9 +209,7 @@ gis_factory_dialog_show_for_widget (GtkWidget *widget)
   if (!image_version)
     image_version = g_strdup (_("Unknown"));
 
-  image_version_text = g_strdup_printf (_("Image: %s"), image_version);
-
-  factory_dialog = gis_factory_dialog_new (software_version, image_version_text);
+  factory_dialog = gis_factory_dialog_new (software_version, image_version);
 
   gtk_window_set_transient_for (GTK_WINDOW (factory_dialog),
                                 GTK_WINDOW (gtk_widget_get_root (widget)));
