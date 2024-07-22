@@ -4,6 +4,7 @@
   <template class="GisFactoryDialog" parent="GtkWindow">
     <property name="focus_widget">poweroff-button</property>
     <property name="default_widget">poweroff-button</property>
+    <property name="resizable">false</property>
     <property name="title"/>
 
     <child type="titlebar">
