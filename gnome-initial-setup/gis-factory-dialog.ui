@@ -71,6 +71,34 @@
                 </layout>
               </object>
             </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="true">Machine ID</property>
+                <property name="halign">end</property>
+                <style>
+                  <class name="dim-label"/>
+                </style>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">2</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="machine_id_label">
+                <property name="label">00000000000000000000000000000000</property>
+                <property name="hexpand">true</property>
+                <property name="halign">start</property>
+                <attributes>
+                  <attribute name="font-desc" value="default 16"/>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">2</property>
+                </layout>
+              </object>
+            </child>
           </object>
         </child>
         <child>
