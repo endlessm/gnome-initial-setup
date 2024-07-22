@@ -4,6 +4,7 @@
   <template class="GisFactoryDialog" parent="GtkWindow">
     <property name="focus_widget">poweroff-button</property>
     <property name="default_widget">poweroff-button</property>
+    <property name="resizable">false</property>
     <property name="title"/>
 
     <child type="titlebar">
@@ -19,14 +20,16 @@
         <property name="orientation">vertical</property>
         <property name="spacing">8</property>
         <child>
-          <object class="GtkBox" id="box1">
+          <object class="GtkGrid">
             <property name="vexpand">true</property>
             <property name="valign">center</property>
+            <property name="halign">center</property>
             <property name="margin-start">16</property>
             <property name="margin-end">16</property>
             <property name="margin-top">16</property>
             <property name="orientation">vertical</property>
-            <property name="spacing">8</property>
+            <property name="row-spacing">16</property>
+            <property name="column-spacing">16</property>
             <child>
               <object class="GtkLabel" id="software_version_label">
                 <property name="label">Endless 1.x.y</property>
@@ -34,15 +37,67 @@
                   <attribute name="font-desc" value="default 32"/>
                   <attribute name="weight" value="bold"/>
                 </attributes>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="column-span">2</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="true">Image</property>
+                <property name="halign">end</property>
+                <style>
+                  <class name="dim-label"/>
+                </style>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">1</property>
+                </layout>
               </object>
             </child>
             <child>
               <object class="GtkLabel" id="image_version_label">
-                <property name="label">image version</property>
+                <property name="label">fake-eos1.0-amd64-amd64.160101-001234.en</property>
+                <property name="hexpand">true</property>
+                <property name="halign">start</property>
                 <attributes>
                   <attribute name="font-desc" value="default 16"/>
                   <attribute name="weight" value="bold"/>
                 </attributes>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="true">Machine ID</property>
+                <property name="halign">end</property>
+                <style>
+                  <class name="dim-label"/>
+                </style>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">2</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="machine_id_label">
+                <property name="label">00000000000000000000000000000000</property>
+                <property name="hexpand">true</property>
+                <property name="halign">start</property>
+                <attributes>
+                  <attribute name="font-desc" value="default 16"/>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">2</property>
+                </layout>
               </object>
             </child>
           </object>

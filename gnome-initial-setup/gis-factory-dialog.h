@@ -28,9 +28,6 @@ G_BEGIN_DECLS
 
 G_DECLARE_FINAL_TYPE (GisFactoryDialog, gis_factory_dialog, GIS, FACTORY_DIALOG, GtkWindow)
 
-GisFactoryDialog *gis_factory_dialog_new (const char *software_version,
-                                          const char *image_version);
-
 void              gis_factory_dialog_show_for_widget (GtkWidget *widget);
 
 G_END_DECLS

@@ -31,6 +31,7 @@ struct _GisFactoryDialog
 
   GtkLabel *software_version_label;
   GtkLabel *image_version_label;
+  GtkLabel *machine_id_label;
 };
 
 G_DEFINE_FINAL_TYPE (GisFactoryDialog, gis_factory_dialog, GTK_TYPE_WINDOW)
@@ -38,6 +39,7 @@ G_DEFINE_FINAL_TYPE (GisFactoryDialog, gis_factory_dialog, GTK_TYPE_WINDOW)
 enum {
   PROP_SOFTWARE_VERSION = 1,
   PROP_IMAGE_VERSION,
+  PROP_MACHINE_ID,
   N_PROPS
 };
 
@@ -82,17 +84,11 @@ static void
 show_error (GisFactoryDialog *self,
             const GError     *error)
 {
-  GtkWidget *dialog;
+  g_autoptr(GtkAlertDialog) dialog = NULL;
 
-  dialog = gtk_message_dialog_new (GTK_WINDOW (self),
-                                   GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-                                   GTK_MESSAGE_ERROR,
-                                   GTK_BUTTONS_CLOSE,
-                                   "%s", error->message);
-  g_signal_connect (dialog, "response",
-                    G_CALLBACK (gtk_window_destroy),
-                    NULL);
-  gtk_window_present (GTK_WINDOW (dialog));
+  dialog = gtk_alert_dialog_new (_("Failed to Enter Test Mode"));
+  gtk_alert_dialog_set_detail (dialog, error->message);
+  gtk_alert_dialog_show (dialog, GTK_WINDOW (self));
 }
 
 static void
@@ -119,14 +115,15 @@ testmode_clicked_cb (GisFactoryDialog *self,
     show_error (self, error);
 }
 
-GisFactoryDialog *
+static GisFactoryDialog *
 gis_factory_dialog_new (const char *software_version,
-                        const char *image_version)
-
+                        const char *image_version,
+                        const char *machine_id)
 {
   return g_object_new (GIS_TYPE_FACTORY_DIALOG,
                        "software-version", software_version,
                        "image-version", image_version,
+                       "machine-id", machine_id,
                        NULL);
 }
 
@@ -148,6 +145,10 @@ gis_factory_dialog_set_property (GObject      *object,
       gtk_label_set_text (self->image_version_label, g_value_get_string (value));
       break;
 
+    case PROP_MACHINE_ID:
+      gtk_label_set_text (self->machine_id_label, g_value_get_string (value));
+      break;
+
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
     }
@@ -163,6 +164,7 @@ gis_factory_dialog_class_init (GisFactoryDialogClass *klass)
 
   gtk_widget_class_bind_template_child (widget_class, GisFactoryDialog, software_version_label);
   gtk_widget_class_bind_template_child (widget_class, GisFactoryDialog, image_version_label);
+  gtk_widget_class_bind_template_child (widget_class, GisFactoryDialog, machine_id_label);
 
   gtk_widget_class_bind_template_callback (widget_class, poweroff_clicked_cb);
   gtk_widget_class_bind_template_callback (widget_class, testmode_clicked_cb);
@@ -187,6 +189,16 @@ gis_factory_dialog_class_init (GisFactoryDialogClass *klass)
                           G_PARAM_EXPLICIT_NOTIFY |
                           G_PARAM_STATIC_STRINGS));
 
+  properties [PROP_MACHINE_ID] =
+    g_param_spec_string ("machine-id", NULL,
+                         "value of /etc/machine-id",
+                         "",
+                         (G_PARAM_WRITABLE |
+                          G_PARAM_CONSTRUCT_ONLY |
+                          G_PARAM_EXPLICIT_NOTIFY |
+                          G_PARAM_STATIC_STRINGS));
+
+
   g_object_class_install_properties (object_class, G_N_ELEMENTS (properties), properties);
 
   gtk_widget_class_add_binding_action (widget_class, GDK_KEY_Escape, 0, "window.close", NULL);
@@ -208,7 +220,8 @@ gis_factory_dialog_show_for_widget (GtkWidget *widget)
   GisFactoryDialog *factory_dialog = NULL;
   g_autofree gchar *software_version = NULL;
   g_autofree gchar *image_version = NULL;
-  g_autofree gchar *image_version_text = NULL;
+  g_autofree gchar *machine_id = NULL;
+  g_autoptr(GError) error = NULL;
 
   software_version = g_get_os_info (G_OS_INFO_KEY_PRETTY_NAME);
 
@@ -216,9 +229,12 @@ gis_factory_dialog_show_for_widget (GtkWidget *widget)
   if (!image_version)
     image_version = g_strdup (_("Unknown"));
 
-  image_version_text = g_strdup_printf (_("Image: %s"), image_version);
+  if (g_file_get_contents ("/etc/machine-id", &machine_id, NULL, &error))
+    g_strchomp (machine_id);
+  else
+    machine_id = g_steal_pointer (&error->message);
 
-  factory_dialog = gis_factory_dialog_new (software_version, image_version_text);
+  factory_dialog = gis_factory_dialog_new (software_version, image_version, machine_id);
 
   gtk_window_set_transient_for (GTK_WINDOW (factory_dialog),
                                 GTK_WINDOW (gtk_widget_get_root (widget)));
