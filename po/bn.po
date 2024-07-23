@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues\n"
-"POT-Creation-Date: 2024-04-23 10:07+0000\n"
+"POT-Creation-Date: 2024-07-23 08:35+0000\n"
 "PO-Revision-Date: 2014-06-16 22:11+0000\n"
 "Last-Translator: Shimon Sharmin <oparthib@gmail.com>, 2016\n"
 "Language-Team: Bengali (http://app.transifex.com/endless-os/gnome-initial-setup/language/bn/)\n"
@@ -47,20 +47,27 @@ msgstr "_পূর্ববর্তী"
 msgid "_Cancel"
 msgstr "_বাতিল"
 
-#: gnome-initial-setup/gis-factory-dialog.c:217
+#: gnome-initial-setup/gis-factory-dialog.c:89
+msgid "Failed to Enter Test Mode"
+msgstr ""
+
+#: gnome-initial-setup/gis-factory-dialog.c:230
 msgid "Unknown"
 msgstr ""
 
-#: gnome-initial-setup/gis-factory-dialog.c:219
-#, c-format
-msgid "Image: %s"
+#: gnome-initial-setup/gis-factory-dialog.ui:49
+msgid "Image"
 msgstr ""
 
-#: gnome-initial-setup/gis-factory-dialog.ui:61
+#: gnome-initial-setup/gis-factory-dialog.ui:77
+msgid "Machine ID"
+msgstr ""
+
+#: gnome-initial-setup/gis-factory-dialog.ui:116
 msgid "Test Mode"
 msgstr "পরীক্ষা রূপ"
 
-#: gnome-initial-setup/gis-factory-dialog.ui:75
+#: gnome-initial-setup/gis-factory-dialog.ui:130
 msgid "Power Off"
 msgstr "বন্ধ করুন"
 
