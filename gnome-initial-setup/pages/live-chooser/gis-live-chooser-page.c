@@ -53,27 +53,31 @@ typedef struct _GisLiveChooserPagePrivate GisLiveChooserPagePrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GisLiveChooserPage, gis_live_chooser_page, GIS_TYPE_PAGE);
 
-static gboolean
-gis_live_chooser_page_save_data (GisPage  *page,
-                                 GError  **error)
+static void
+gis_live_chooser_page_save_data (GisPage *page)
 {
   GisLiveChooserPage *self = GIS_LIVE_CHOOSER_PAGE (page);
   GisLiveChooserPagePrivate *priv = gis_live_chooser_page_get_instance_private (self);
   g_autoptr(ActUser) user = NULL;
+  g_autoptr(GError) error = NULL;
   const gchar *language;
 
   if (gis_driver_has_live_persistence (page->driver))
-    return TRUE;
+    {
+      gis_page_save_complete (page, NULL);
+      return;
+    }
 
   user = act_user_manager_create_user (priv->act_client,
                                        LIVE_ACCOUNT_USERNAME,
                                        LIVE_ACCOUNT_FULLNAME,
                                        ACT_USER_ACCOUNT_TYPE_ADMINISTRATOR,
-                                       error);
+                                       &error);
   if (user == NULL)
     {
-      g_prefix_error (error, "Failed to create live user: ");
-      return FALSE;
+      g_prefix_error (&error, "Failed to create live user: ");
+      gis_page_save_complete (page, error);
+      return;
     }
 
   act_user_set_password_mode (user, ACT_USER_PASSWORD_MODE_NONE);
@@ -89,7 +93,7 @@ gis_live_chooser_page_save_data (GisPage  *page,
 
   gis_update_login_keyring_password ("");
 
-  return TRUE;
+  gis_page_save_complete (page, NULL);
 }
 
 static void
