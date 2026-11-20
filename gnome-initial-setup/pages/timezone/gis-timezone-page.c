@@ -517,6 +517,8 @@ gis_timezone_page_shown (GisPage *page)
   /* After the page has been shown already, don't hide it even if the location
    * is detected */
   tz_page->show_if_detected = TRUE;
+
+  gtk_widget_grab_focus (GTK_WIDGET (tz_page->search_entry));
 }
 
 static gboolean
@@ -529,13 +531,6 @@ gis_timezone_page_apply (GisPage      *page,
   stop_geolocation (GIS_TIMEZONE_PAGE (page));
 
   return FALSE;
-}
-
-void
-gis_timezone_page_shown (GisPage *gis_page)
-{
-        GisTimezonePage *page = GIS_TIMEZONE_PAGE (gis_page);
-        gtk_widget_grab_focus (GTK_WIDGET (page->search_entry));
 }
 
 static void
@@ -555,7 +550,6 @@ gis_timezone_page_class_init (GisTimezonePageClass *klass)
   page_class->locale_changed = gis_timezone_page_locale_changed;
   page_class->shown = gis_timezone_page_shown;
   page_class->apply = gis_timezone_page_apply;
-  page_class->shown = gis_timezone_page_shown;
   object_class->constructed = gis_timezone_page_constructed;
   object_class->dispose = gis_timezone_page_dispose;
   widget_class->root = gis_timezone_page_root;
