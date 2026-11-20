@@ -91,8 +91,6 @@ gis_live_chooser_page_save_data (GisPage *page)
 
   gis_driver_set_user_permissions (page->driver, user, NULL);
 
-  gis_update_login_keyring_password ("");
-
   gis_page_save_complete (page, NULL);
 }
 
