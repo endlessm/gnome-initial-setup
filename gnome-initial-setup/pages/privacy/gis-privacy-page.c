@@ -274,12 +274,12 @@ gis_privacy_page_sync_metrics_state (GisPrivacyPage *page)
     }
 }
 
-static gboolean
-gis_privacy_page_save_data (GisPage  *page)
+static void
+gis_privacy_page_save_data (GisPage *page)
 {
   gis_privacy_page_sync_metrics_state (GIS_PRIVACY_PAGE (page));
 
-  return TRUE;
+  gis_page_save_complete (page, NULL);
 }
 
 static void
